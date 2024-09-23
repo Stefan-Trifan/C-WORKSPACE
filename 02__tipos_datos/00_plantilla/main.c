@@ -1,23 +1,13 @@
-/*
-	Autor{
-		nombre: Stefan Trifan;
-	}
-		
-
-	Compilar (dentro de la carpeta) {
-		mac: gcc main.c -o main;
-		windows: gcc main.c -o main.exe;
-	}
-
-	Introducir después de scanf{
-	
-	}
-		limpiar() 
-
-	Enunciado: 
-		LoremIpsumDummyText
-*/
-
+/*	{
+ *		"Autor": "Stefan Trifan", 
+ *		"Compilar": {
+ *			"mac": "gcc main.c -o main;",
+ *			"windows": "gcc main.c -o main.exe;"
+ *		},
+ *		"Introducir después de scanf": "limpiar()",
+ *		"Enunciado": "LoremIpsumDummyText"
+ *	}
+ */
 
 #include <stdio.h>
 
