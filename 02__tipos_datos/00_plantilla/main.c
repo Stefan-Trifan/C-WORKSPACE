@@ -1,15 +1,21 @@
 /*
-	Autor: 
-	Stefan Trifan
+	Autor{
+		nombre: Stefan Trifan;
+	}
+		
 
-	Compilar (dentro de la carpeta)
-	gcc main.c -o main
+	Compilar (dentro de la carpeta) {
+		mac: gcc main.c -o main;
+		windows: gcc main.c -o main.exe;
+	}
 
-	Introducir después de scanf
-	while(getchar() != '\n');
+	Introducir después de scanf{
+	
+	}
+		limpiar() 
 
 	Enunciado: 
-	Crea un programa que reciba 2 numeros decimales y un caractesr '+' si se desea hacer una suma 0 '-' si se desea realidar una resra entre ellos. Muestra el resultado x pantalla.
+		LoremIpsumDummyText
 */
 
 
