@@ -5,7 +5,7 @@
  *			"windows": "gcc main.c -o main.exe;"
  *		},
  *		"Introducir después de scanf": "limpiar()",
- *		"Enunciado": "LoremIpsumDummyText"
+ *		"Enunciado": "Realizad un programa que calcule el incremento de un salario de un empleado por un porcentaje especificado. Tanto salario como porcentaje se piden al usuario."
  *	}
  */
 
@@ -18,4 +18,21 @@ void limpiar(){
 
 int main(){
 	
+	// Declaramos las variables
+	float salario       = 0;
+	float incremento    = 0;
+	float salario_nuevo = 0;
+
+	// Pedimos por pantalla el salario
+	printf("Introduce tu salario\n");
+	scanf("%f", &salario);
+
+	// Pedimos el porcentaje del incremento
+	printf("Introduce el incremento (Solo número del 0 al 100) \n");
+	scanf("%f", &incremento);
+
+	// Calculamos el icnremento
+	salario_nuevo = salario + (salario * (incremento/100));
+	printf("El salario nuevo que recibirías es %f\n", salario_nuevo);
+
 }
