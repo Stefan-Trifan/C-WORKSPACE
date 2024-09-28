@@ -31,32 +31,25 @@ int main(){
 
 
 	// Pedimos los números de coma flotante
-	printf("Introduce el primer número\n");
-	scanf("%f", &num1);
-
-	printf("Introduce el segundo número\n");
-	scanf("%f", &num2);
-
-	printf("Introduce el tercer número\n");
-	scanf("%f", &num3);
-
-	printf("Introduce el cuarto número\n");
-	scanf("%f", &num4);
+	printf("Introduce los 4 números separados por espacios\n");
+	scanf("%f %f %f %f", &num1, &num2, &num3, &num4);
+	printf("Tus númeos son %f %f %f %f\n", num1, num2, num3, num4);
 
 	// Si el primero es mayor que el segundo "y" el primero es mayor que el tercero
-	// num1 > num2  &&  num1 > 3
-	resultado1 = num1 > num2  &&  num1 > 3;
+	resultado1 = (num1 > num2)  &&  (num1 > num3);
 
 	// Si el cuadrado del tercero es menor que el segundo por el cuarto "o" el tercero por 2 menor que el segundo
-	// num3^2 < num2*num4  ||  num3*2 < num2
-	resultado2 = num3^2 < num2*num4 || num3*2 < num2;
+	resultado2 = (num3 * num3 < num2 * num4) || (num3 * 2 < num2);
 
 	// Si el resto de la división entre el primero y el cuarto es mayor que el tercero "y" el primero es mayor que el cuarto
-	// num1%num4 > num3 && num1 > num4
-	resultado3 = num1%num4 > num3 && num1 > num4;
+	resultado3 = ((int)num1 % (int)num4 > num3) && (num1 > num4);
 
 	// Si la división entre el segundo y el cuarto "no es" distinta al primero
-	// num2/4 != num1
-	resultado4 = num2/4 != num1;
+	resultado4 = num2 / num4 != num1;
 
+	printf("El resultado de las operaciones son:\n"
+	"\t1: %i\n"
+	"\t2: %i\n"
+	"\t3: %i\n"
+	"\t4: %i\n", resultado1, resultado2, resultado3, resultado4);
 }
