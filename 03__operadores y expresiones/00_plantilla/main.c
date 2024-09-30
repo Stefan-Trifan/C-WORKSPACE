@@ -11,7 +11,7 @@
 		limpiar()
 
 *	Enunciado
-		* LoremIpsumDummyText
+		LoremIpsumDummyText
  */
 
 #include <stdio.h>
@@ -22,5 +22,5 @@ void limpiar(){
 }
 
 int main(){
-	
+
 }
