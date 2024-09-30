@@ -5,6 +5,7 @@
 *	Compilar
 		mac    : gcc main.c -o main
 		windows: gcc main.c -o main.exe
+			   : ./main.c
 
 *	Introducir después de scanf
 		limpiar()
