@@ -3,9 +3,9 @@
 		Stefan Trifan
 
 *	Compilar
-		mac    : gcc main.c -o main
-		windows: gcc main.c -o main.exe
-			   : ./main.exe
+		mac     : gcc main.c -o main
+		windows : gcc main.c -o main.exe
+			    : ./main.exe
 
 *	Introducir después de scanf
 		limpiar()
