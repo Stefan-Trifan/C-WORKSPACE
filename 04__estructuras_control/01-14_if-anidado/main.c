@@ -26,8 +26,7 @@ void limpiar(){
 int main(){
 
 	// Declaramos las variables
-	int numero = 0;
-	int centena;
+	int numero = 0, centena = 0;
 
 	// Pedimos el número por pantalla
 	printf("Introduce un número de 3 cifras\n");
