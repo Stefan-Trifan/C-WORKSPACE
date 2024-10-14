@@ -15,17 +15,23 @@
  */
 
 #include <stdio.h>
+
 int main(){
+
 	int Edad;
 	int ResultadoScanf = 0;
 	printf("Introduce tu Edad: \n");
+
 	while (ResultadoScanf == 0){
+
 		ResultadoScanf = scanf("%d", &Edad);
 		printf("el resultado de scanf es %d\n", ResultadoScanf);
+
 		if (ResultadoScanf == 0){
 			printf("No has introducido numero. Introduce un numero: \n");
 			while (getchar() != '\n');
 		}
 	}
+	
 	printf("La Edad es %d\n", Edad);
 }

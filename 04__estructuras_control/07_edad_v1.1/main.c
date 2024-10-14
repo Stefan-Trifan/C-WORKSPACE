@@ -25,12 +25,12 @@ int main(){
 
 	int edad = 0;
 	int resultadoScanf = 0;
-
 	printf("Introduce tu edad\n");
 
 	while (resultadoScanf == 0){
 
 		resultadoScanf = scanf("%i", &edad);
+		while (getchar() != '\n');
 		printf("El resultado de scanf es: %i\n", resultadoScanf);
 
 		if (resultadoScanf == 0){
