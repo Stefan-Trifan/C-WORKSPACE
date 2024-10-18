@@ -95,6 +95,7 @@ Nota de asistencia: 0.9
 El alumno ha suspendido.
 Las pruebas no han superado la nota mínima.
 ```
+
 ```bash
 $ ./grades.exe
 Nota de la primera prueba: 7.0

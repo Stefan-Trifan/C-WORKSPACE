@@ -11,7 +11,7 @@
 		limpiar()
 
 *	Enunciado
-		# Ejercicio A. Clave de tres caracteres
+	*	# Ejercicio A. Clave de tres caracteres
 
 		El programa deberá pedir una clave de 3 caracteres separados por guiones al usuario.  
 
@@ -20,7 +20,7 @@
 		El programa deberá comprobar si la clave es válida o no y mostrar el mensaje correspondiente:  
 		“Clave correcta” o “Clave incorrecta”.
 
-		### Ejemplo de ejecución:
+	*	### Ejemplo de ejecución:
 
 		```bash
 		$ ./clave.exe
