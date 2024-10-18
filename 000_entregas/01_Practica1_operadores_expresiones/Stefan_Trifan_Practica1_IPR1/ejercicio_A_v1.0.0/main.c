@@ -55,11 +55,9 @@ int main(){
 	bool claveCorrecta = false;
 
 	// Pedimos la clave al usuario
-	printf(
-	"- Por favor, introduce una clave de 3 caracteres separados por guiones. \n"
-	"- La clave debe contener una letra mayúscula, una letra minúscula y un dígito (escritos en cualquier orden): \n");
+	printf("Por favor, Introduce la clave: ");
 
-	scanf("%5s", clave);
+	scanf("%s", clave);
 	limpiar();
 	printf("Tu clave es: %s\n", clave);
 
