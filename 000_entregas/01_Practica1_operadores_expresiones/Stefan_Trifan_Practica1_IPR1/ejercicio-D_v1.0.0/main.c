@@ -14,7 +14,7 @@
 
 		* Ejercicio D - Operaciones aritméticas, lógicas y relacionales
 
-		Escriba un programa en **C** que solicite al usuario que ingrese dos números enteros. Luego, el programa debe usar operadores relacionales y lógicos para realizar lo siguiente:
+		Escriba un programa en C que solicite al usuario que ingrese dos números enteros. Luego, el programa debe usar operadores relacionales y lógicos para realizar lo siguiente:
 
 		1. Verificar e imprimir si el primer número es mayor o igual que el segundo número.
 		2. Verificar e imprimir si el primer número es menor que 100 y el segundo número es mayor que 50.
