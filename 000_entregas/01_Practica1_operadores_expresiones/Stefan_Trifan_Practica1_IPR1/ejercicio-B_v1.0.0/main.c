@@ -82,8 +82,6 @@ int main(){
 	float asistencia = 0; // 5%
 	float notaFinal  = 0;
 
-	int aprobado = 0;
-
 	// Pedimos las notas del usuario por consola
 	printf("Nota de la primera prueba (0-10): ");
 	scanf("%f", &prueba1);

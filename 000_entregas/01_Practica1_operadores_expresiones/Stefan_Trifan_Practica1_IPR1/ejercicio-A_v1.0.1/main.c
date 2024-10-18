@@ -78,15 +78,15 @@ int main(){
 		contadorClave++;
 
 	// Comprobamos si algun caracter es letra mayús
-	if ((c1 >= 65) && (c1 <= 90) || (c2 >= 65) && (c2 <= 90) || (c3 >= 65) && (c3 <= 90))
+	if (((c1 >= 65) && (c1 <= 90)) || ((c2 >= 65) && (c2 <= 90)) || ((c3 >= 65) && (c3 <= 90)))
 		contadorClave++;
 	
 	// Comprobamos si algun caracter es letra minus
-	if ((c1 >= 97) && (c1 <= 122) || (c2 >= 97) && (c2 <= 122) || (c3 >= 97) && (c3 <= 122))
+	if (((c1 >= 97) && (c1 <= 122)) || ((c2 >= 97) && (c2 <= 122)) || ((c3 >= 97) && (c3 <= 122)))
 		contadorClave++;
 
 	// Comprobamos si algun caracter es dígito
-	if ((c1 >= 48) && (c1 <= 57) || (c2 >= 48) && (c2 <= 57) || (c3 >= 48) && (c3 <= 57))
+	if (((c1 >= 48) && (c1 <= 57)) || ((c2 >= 48) && (c2 <= 57)) || ((c3 >= 48) && (c3 <= 57)))
 		contadorClave++;
 
 	// Comprobamos si la clave solo tiene 5 caracteres.
