@@ -23,4 +23,5 @@ void limpiar(){
 
 int main(){
 
+	return 0;
 }
