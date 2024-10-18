@@ -14,7 +14,7 @@
 
 		* Ejercicio E - Descomposición de un Número Entero de 32 Bits en Partes de 8 Bits
 
-		Escribe un programa en **C** que solicite al usuario un número entero de 32 bits y luego imprima las cuatro partes de 8 bits de ese número. El programa debe utilizar desplazamientos de bits y operaciones AND para extraer y mostrar cada parte de 8 bits por separado. Usa la función printBinary proporcionada para imprimir cada parte en binario.
+		Escribe un programa en C que solicite al usuario un número entero de 32 bits y luego imprima las cuatro partes de 8 bits de ese número. El programa debe utilizar desplazamientos de bits y operaciones AND para extraer y mostrar cada parte de 8 bits por separado. Usa la función printBinary proporcionada para imprimir cada parte en binario.
 
 		* Requisitos:
 		1. Solicitar al usuario que ingrese un número entero de 32 bits.
