@@ -11,17 +11,16 @@
 		limpiar()
 
 *	Enunciado
-		# Ejercicio E - Descomposición de un Número Entero de 32 Bits en Partes de 8 Bits
+		* Ejercicio E - Descomposición de un Número Entero de 32 Bits en Partes de 8 Bits
 
 		Escribe un programa en **C** que solicite al usuario un número entero de 32 bits y luego imprima las cuatro partes de 8 bits de ese número. El programa debe utilizar desplazamientos de bits y operaciones AND para extraer y mostrar cada parte de 8 bits por separado. Usa la función printBinary proporcionada para imprimir cada parte en binario.
 
-		### Requisitos:
+		* Requisitos:
 		1. Solicitar al usuario que ingrese un número entero de 32 bits.
 		2. Descomponer el número en cuatro partes de 8 bits utilizando desplazamientos de bits y operaciones AND.
 		3. Usar la función `printBinary` para imprimir cada parte en binario.
 
-		### Función Proporcionada:
-		```c
+		* Función Proporcionada:
 		
 		Asignar 8 al parámetro positions, si se desean mostrar los 8
 		bits menos significativos. Asignar 32 si se desea ver el número
@@ -44,24 +43,20 @@
 			}
 			printf("\n");
 		}
-		```
 
-		### Ejemplo de Ejecución:
+		* Ejemplo de Ejecución:
 
-		#### Entrada:
+		* Entrada:
 
-		```bash
 		Ingrese un número entero de 32 bits: 305419896
-		```
 
-		#### Salida:
+		* Salida:
 
-		```bash
 		Parte 1 (bits 31-24): 00010010
 		Parte 2 (bits 23-16): 00101100
 		Parte 3 (bits 15-8): 01001101
 		Parte 4 (bits 7-0): 01101000
-		```
+
  */
 
 #include <stdio.h>

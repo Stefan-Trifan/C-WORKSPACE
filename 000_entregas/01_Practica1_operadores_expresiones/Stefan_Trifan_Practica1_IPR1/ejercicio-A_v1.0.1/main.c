@@ -12,7 +12,7 @@
 		limpiar()
 
 *	Enunciado
-	*	# Ejercicio A. Clave de tres caracteres
+	*	Ejercicio A. Clave de tres caracteres
 
 		El programa deberá pedir una clave de 3 caracteres separados por guiones al usuario.  
 
@@ -21,7 +21,7 @@
 		El programa deberá comprobar si la clave es válida o no y mostrar el mensaje correspondiente:  
 		“Clave correcta” o “Clave incorrecta”.
 
-	*	### Ejemplo de ejecución:
+	*	Ejemplo de ejecución:
 
 		$ ./clave.exe
 		Introduce la clave: u-6-F
@@ -52,7 +52,6 @@ int main(){
 	// Declaramos las variables que utilizaremos en el programa
 	char c1, guion1, c2, guion2, c3, c4;
 	int  contadorClave  = 0;
-	bool claveCorrecta  = false;
 
 	// Pedimos la clave al usuario y la mostramos por pantalla
 	printf("La clave deberá contener 3 caracteres separados por guines. Ejemplo: 3-a-D\n");

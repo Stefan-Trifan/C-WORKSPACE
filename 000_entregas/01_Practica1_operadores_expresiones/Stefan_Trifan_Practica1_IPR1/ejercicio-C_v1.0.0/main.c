@@ -11,11 +11,11 @@
 		limpiar()
 
 *	Enunciado
-		# Ejercicio C - Entero de tres cifras
+		* Ejercicio C - Entero de tres cifras
 
 		Desarrolla un programa que pida al usuario un número entero positivo de tres cifras. El programa debe clasificar el número en función de sus dígitos.
 
-		### Reglas:
+		* Reglas:
 		- Si el número tiene **tres dígitos diferentes**, debe mostrar:  
 		`"El número tiene tres dígitos únicos."`
 		- Si el número tiene **dos dígitos iguales**, debe mostrar:  
@@ -23,19 +23,15 @@
 		- Si los **tres dígitos son iguales**, debe mostrar:  
 		`"El número tiene tres dígitos iguales."`
 
-		### Ejemplo de ejecución:
+		* Ejemplo de ejecución:
 
-		```bash
 		$ ./digits.exe
 		Introduce un número entero positivo de 3 dígitos: 100
 		El número tiene dos dígitos iguales.
-		```
 
-		```bash
 		$ ./digits.exe
 		Introduce un número entero positivo de 3 dígitos: 123
 		El número tiene tres dígitos únicos.
-		```
  */
 
 #include <stdio.h>

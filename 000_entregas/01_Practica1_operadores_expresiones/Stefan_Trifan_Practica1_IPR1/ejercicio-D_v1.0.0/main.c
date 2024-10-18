@@ -11,7 +11,7 @@
 		limpiar()
 
 *	Enunciado
-		# Ejercicio D - Operaciones aritméticas, lógicas y relacionales
+		* Ejercicio D - Operaciones aritméticas, lógicas y relacionales
 
 		Escriba un programa en **C** que solicite al usuario que ingrese dos números enteros. Luego, el programa debe usar operadores relacionales y lógicos para realizar lo siguiente:
 
@@ -21,23 +21,20 @@
 		4. Verificar e imprimir si los dos números no son iguales.
 		5. Verificar e imprimir si los dos números son pares.
 
-		### Ejemplo de ejecución:
+		* Ejemplo de ejecución:
 
-		#### Entrada:
-		```bash
+		* Entrada:
+		
 		Introduce el primer número: 75
 		Introduce el segundo número: 60
-		```
 
-		#### Salida:
+		* Salida:
 
-		```bash
 		El primer número es mayor o igual que el segundo número: Sí
 		El primer número es menor que 100 y el segundo número es mayor que 50: Sí
 		Uno de los números es 0 o ambos son pares: No
 		Los dos números son diferentes: Sí
 		Los dos números son pares: No
-		```
  */
 
 #include <stdio.h>
