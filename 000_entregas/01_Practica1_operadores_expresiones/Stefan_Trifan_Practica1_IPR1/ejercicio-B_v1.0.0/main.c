@@ -19,6 +19,7 @@
 		- Si se suspende algún apartado, se debe informar al usuario mediante la consola.
 
 		* El programa debe solicitar:
+
 		- Nota de primera prueba (0-10)
 		- Nota de segunda prueba (0-10)
 		- Nota de tercera prueba (0-10)
@@ -26,6 +27,7 @@
 		- Asistencia a clase (0%-100%)
 
 		* Cálculo de la nota final:
+
 		- Pruebas (40% del total):
 			- Prueba 1 (20%)
 			- Prueba 2 y 3 (40%) cada una
@@ -33,6 +35,7 @@
 		- Asistencia (5%)
 
 		* Criterios para aprobar:
+		
 		- Nota de examen superior o igual a 4
 		- Media de las pruebas superior o igual a 5
 		- Nota final superior o igual a 5

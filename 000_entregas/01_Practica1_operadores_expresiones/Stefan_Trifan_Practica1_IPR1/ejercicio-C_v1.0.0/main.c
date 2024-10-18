@@ -14,15 +14,19 @@
 
 		* Ejercicio C - Entero de tres cifras
 
-		Desarrolla un programa que pida al usuario un número entero positivo de tres cifras. El programa debe clasificar el número en función de sus dígitos.
+		Desarrolla un programa que pida al usuario un número entero positivo de tres cifras. 
+		El programa debe clasificar el número en función de sus dígitos.
 
 		* Reglas:
-		- Si el número tiene **tres dígitos diferentes**, debe mostrar:  
-		`"El número tiene tres dígitos únicos."`
-		- Si el número tiene **dos dígitos iguales**, debe mostrar:  
-		`"El número tiene dos dígitos iguales."`
-		- Si los **tres dígitos son iguales**, debe mostrar:  
-		`"El número tiene tres dígitos iguales."`
+		
+		- Si el número tiene tres dígitos diferentes, debe mostrar:  
+			"El número tiene tres dígitos únicos."
+
+		- Si el número tiene dos dígitos iguales, debe mostrar:  
+			"El número tiene dos dígitos iguales."
+
+		- Si los tres dígitos son iguales, debe mostrar:  
+			"El número tiene tres dígitos iguales."
 
 		* Ejemplo de ejecución:
 
