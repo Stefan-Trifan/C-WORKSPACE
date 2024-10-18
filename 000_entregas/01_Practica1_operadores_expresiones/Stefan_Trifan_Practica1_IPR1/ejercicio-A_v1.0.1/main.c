@@ -52,7 +52,9 @@ int main(){
 
 	// Declaramos las variables que utilizaremos en el programa
 	char c1, guion1, c2, guion2, c3, c4;
-	int  contadorClave  = 0;
+	// Contador de requisitos. Si la clave cumple con los 5 requisitos 
+	// que declararemos a continuación, consideraremos que la clave es correcta
+	int contadorClave  = 0; 
 
 	// Pedimos la clave al usuario y la mostramos por pantalla
 	printf("La clave deberá contener 3 caracteres separados por guines. Ejemplo: 3-a-D\n");
@@ -67,7 +69,7 @@ int main(){
 	printf("Tu clave es: %c%c%c%c%c\n", c1, guion1, c2, guion2, c3);
 
 	/*
-		Clave debe tener al menos: letra mayúscula, letra minúscula, dígito (cualquier orden)
+		La clave debe tener al menos: letra mayúscula, letra minúscula, dígito (cualquier orden)
 		Comrpobamos si la clave es correcta o no
 	*/
 

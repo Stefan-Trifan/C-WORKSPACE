@@ -68,4 +68,51 @@ void limpiar(){
 
 int main(){
 
+	// Declaramos las variables que utilizaremos en el programa
+	float prueba1       = 0;
+	float prueba2       = 0;
+	float prueba3	    = 0;
+	float examen        = 0; // 55%
+	float pctAsistencia = 0; // Porcentaje asistencia
+
+	float pruebas    = 0; // 40%
+	float asistencia = 0; // 5%
+	float notaFinal  = 0;
+
+	int aprobado = 0;
+
+	// Pedimos las notas del usuario por consola
+	printf("Nota de la primera prueba (0-10): ");
+	scanf("%f", &prueba1);
+	
+	printf("Nota de la segunda prueba (0-10): ");
+	scanf("%f", &prueba2);
+
+	printf("Nota de la tercera prueba (0-10): ");
+	scanf("%f", &prueba3);
+
+	printf("Nota del examen final (0-10): ");
+	scanf("%f", &examen);
+
+	printf("Porcentaje de asistencia (0-100): ");
+	scanf("%f", &pctAsistencia);
+
+	// Calculamos la nota ponderada de las pruebas
+	pruebas = 0.2 * prueba1 + 0.4 * prueba2 + 0.4 * prueba3;
+
+	// Calculamos la nota de la asistencia
+	asistencia = pctAsistencia / 10;
+
+	// Calculamos la nota final
+	notaFinal = 0.4 * pruebas + 0.55 * examen + 0.05 * asistencia;
+
+	// Comprobamos si el alumno ha aprobado
+	if ((examen >= 4) && (pruebas >= 5) && (notaFinal >= 5) && (pctAsistencia > 80)){
+		printf("El alumno ha aprobado.\n");
+	} else {
+		printf("El alumno ha suspendido.\n");
+		printf("Las pruebas no han superado la nota mínima.\n");
+	}
+		
+	printf("La nota final es %f\n", notaFinal);
 }
