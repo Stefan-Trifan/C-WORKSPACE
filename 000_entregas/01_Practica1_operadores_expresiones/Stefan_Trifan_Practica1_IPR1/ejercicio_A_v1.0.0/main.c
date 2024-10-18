@@ -61,7 +61,7 @@ int main(){
 
 	scanf("%5s", clave);
 	limpiar();
-	printf("Tu clave es: %s.\n", clave);
+	printf("Tu clave es: %s\n", clave);
 
 	// Comrpobamos si la clave es correcta o no
 
