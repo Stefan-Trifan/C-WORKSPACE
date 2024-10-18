@@ -11,6 +11,7 @@
 		limpiar()
 
 *	Enunciado
+
 		* Ejercicio D - Operaciones aritméticas, lógicas y relacionales
 
 		Escriba un programa en **C** que solicite al usuario que ingrese dos números enteros. Luego, el programa debe usar operadores relacionales y lógicos para realizar lo siguiente:

@@ -11,6 +11,7 @@
 		limpiar()
 
 *	Enunciado
+
 		* Ejercicio C - Entero de tres cifras
 
 		Desarrolla un programa que pida al usuario un número entero positivo de tres cifras. El programa debe clasificar el número en función de sus dígitos.

@@ -11,6 +11,7 @@
 		limpiar()
 
 *	Enunciado
+
 		* Ejercicio B - Calificaciones alumnos
 
 		- Realiza un programa que determine si un estudiante aprueba o suspende una asignatura 

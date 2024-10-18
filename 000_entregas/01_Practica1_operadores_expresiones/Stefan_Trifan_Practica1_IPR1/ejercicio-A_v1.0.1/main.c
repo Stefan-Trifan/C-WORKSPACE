@@ -12,6 +12,7 @@
 		limpiar()
 
 *	Enunciado
+
 	*	Ejercicio A. Clave de tres caracteres
 
 		El programa deberá pedir una clave de 3 caracteres separados por guiones al usuario.  
