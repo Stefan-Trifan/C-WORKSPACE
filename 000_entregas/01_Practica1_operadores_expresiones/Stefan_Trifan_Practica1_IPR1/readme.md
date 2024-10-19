@@ -162,7 +162,9 @@ Los dos números son pares: No
 
 # Ejercicio E - Descomposición de un Número Entero de 32 Bits en Partes de 8 Bits
 
-Escribe un programa en **C** que solicite al usuario un número entero de 32 bits y luego imprima las cuatro partes de 8 bits de ese número. El programa debe utilizar desplazamientos de bits y operaciones AND para extraer y mostrar cada parte de 8 bits por separado. Usa la función printBinary proporcionada para imprimir cada parte en binario.
+- Escribe un programa en **C** que solicite al usuario un número entero de 32 bits y luego imprima las cuatro partes de 8 bits de ese número. 
+- El programa debe utilizar desplazamientos de bits y operaciones AND para extraer y mostrar cada parte de 8 bits por separado. 
+- Usa la función printBinary proporcionada para imprimir cada parte en binario.
 
 ### Requisitos:
 1. Solicitar al usuario que ingrese un número entero de 32 bits.
@@ -172,12 +174,12 @@ Escribe un programa en **C** que solicite al usuario un número entero de 32 bit
 ### Función Proporcionada:
 ```c
 /*
- Asignar 8 al parámetro positions, si se desean mostrar los 8
- bits menos significativos. Asignar 32 si se desea ver el número
- de 32 bits completo.
+    Asignar 8 al parámetro positions, si se desean mostrar los 8
+    bits menos significativos (primeros). Asignar 32 si se desea ver el número
+    de 32 bits completo.
 */
 void printBinary(int number, int positions) {
-    // Asumiendo un entero de 32 bits
+    // Assuming a 32-bit integer
     unsigned int mask = 1 << (positions - 1); // Start with the leftmost bit
     int i = 0;
     while (i < positions) {
