@@ -59,7 +59,6 @@ int main(){
 	limpiar();
 
 	// Convertimos el número a binario
-	miBinario = printBinary(miEntero, 8);
 
 	// Descomponemos el número en 4 partes de 8 números
 
