@@ -46,8 +46,6 @@ int main(){
 
 	// Declaramos las variables del programa
 	unsigned int miEntero  = 0;
-	unsigned int miBinario = 0;
-
 	unsigned int parte4 = 0;
 	unsigned int parte3 = 0;
 	unsigned int parte2 = 0;
@@ -58,9 +56,7 @@ int main(){
 	scanf("%u", &miEntero);
 	limpiar();
 
-	// Convertimos el número a binario
-
-	// Descomponemos el número en 4 partes de 8 números
+	// Descomponemos el número en 4 partes de 8 bits
 
 	// Imprimos cada parte en binario
 	printf("Parte 4 (bits 31-24): %u\n", parte4);
