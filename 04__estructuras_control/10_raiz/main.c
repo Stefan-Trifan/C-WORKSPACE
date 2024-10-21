@@ -11,11 +11,10 @@
 		limpiar()
 
 *	Enunciado
-		Calcular las raíces reales de un polinomio de grado 2, 
-		Expresado por el producto de tres térmimos 
-		cada uno integrado:
-			producto de un coeficiente y las potencias de x elevadas a 2, 1 y 0.
-			a x^2 + b x + c = 0
+		Calcular las raíces reales de un polinomio de grado 2, expresado por el producto de tres térmimos cada uno integrado
+		por un el producto de un coeficiente y las potencias de x elevadas a 2, 1 y 0.
+		
+		a x^2 + b x + c = 0
 
 		Usar la función sqrt de la librería math.h cuyo prototipo es double sqrt(double x); Returns the square root of x
 */
@@ -55,11 +54,16 @@ int main(){
 
 	radicando = b * b - 4 * a * c;
 
-	if (radicando >= 0){
+	if (radicando > 0){
 
 		resultado1 = (-b + sqrt(radicando)) / (2 * a);
 		resultado2 = (-b - sqrt(radicando)) / (2 * a);
-		printf("Los resutlados son %lf y %lf", resultado1, resultado2);
+		printf("Los resutlados son %lf y %lf\n", resultado1, resultado2);
+
+	} else if (radicando == 0) {
+		
+		resultado1 = (-b + sqrt(radicando)) / (2 * a);
+		printf("El único resultado es %lf\n", resultado1);
 
 	} else {
 
