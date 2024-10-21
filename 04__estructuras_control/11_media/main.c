@@ -30,7 +30,7 @@ int main(){
 	int numero = 0;
 
 	int num_grande = 0;
-	int num_chiqui = 0;
+	int num_chiqui;
 	int suma       = 0;
 	int media      = 0;
 
@@ -46,6 +46,16 @@ int main(){
 			scanf("%i", &numero);
 			printf("Numero es %i\n", numero);
 
+			// Buscamos el más pequeño
+			if(num_chiqui < numero){
+				num_chiqui = numero;
+			}
+
+			// Buscamos el número más pequeño
+			if(i == 1 || num_chiqui > numero){
+				num_chiqui = numero;
+			}
+
 			// Aumentamos la suma por cada iteración
 			suma = suma + numero;
 
@@ -54,20 +64,13 @@ int main(){
 				num_grande = numero;
 			}
 
-			// Buscamos el más pequeño
-			if(i == 1)
-
-			// Buscamos el más pequeño
-			// if (i == 1 || numero < num_chiqui){
-			// 	num_chiqui = numero;
-			// }
-
 		}
 
 	} else {
 		printf("El número de números debe ser mayor a 0");
 	}
 
+	// 	Calculamos la media
 	media = suma / n;
 
 	printf("La media es:                     %i\n", media);
