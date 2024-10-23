@@ -23,4 +23,7 @@ void limpiar(){
 
 int main(){
 
+	int x = 45;
+	printf("%i\n", x);
+
 }
