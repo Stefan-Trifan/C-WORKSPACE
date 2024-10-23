@@ -46,22 +46,41 @@ int main(){
 
 	// Declaramos las variables del programa
 	unsigned int miEntero  = 0;
-	unsigned int parte4 = 0;
-	unsigned int parte3 = 0;
-	unsigned int parte2 = 0;
-	unsigned int parte1 = 0;
+	unsigned int miNumero  = 0;
+	unsigned int parte4 = 0,  parte3 = 0, parte2 = 0, parte1 = 0;
 
 	// Pedimos el número de 32 bits al usuario
-	printf("Ingrese un número entero de 32 bits: ");
+	printf("Ingrese un número entero menor o igual a 4 294 967 295: ");
 	scanf("%u", &miEntero);
 	limpiar();
 
+	// Pasamos el número de decimal a binario
+	printf("El numero binario tuyo es: ");
+	printBinary(miEntero, 32);
+
 	// Descomponemos el número en 4 partes de 8 bits
+	parte4 = miEntero;
+	parte3 = miEntero;
+	parte2 = miEntero;
+	parte1 = miEntero;
+	
+	/*
+
+		MSB			   LSB
+			76543210
+
+			10011100 156 
+			01100011 NOT 99 ~
+
+	*/
+
 
 	// Imprimos cada parte en binario
 	printf("Parte 4 (bits 31-24): %u\n", parte4);
 	printf("Parte 3 (bits 23-16): %u\n", parte3);
 	printf("Parte 2 (bits 15-08): %u\n", parte2);
 	printf("Parte 1 (bits 07-00): %u\n", parte1);
+
+
 		
 }
