@@ -44,36 +44,43 @@ void printBinary(int number, int positions) {
 
 int main(){
 
-	// Declaramos las variables del programa
-	unsigned int miEntero  = 0;
-	unsigned int parte4 = 0,  parte3 = 0, parte2 = 0, parte1 = 0;
+	// Declaramos las variables que utilizaremos
+	unsigned int miNumero = 0;
+	unsigned int parte1 = 0;
+	unsigned int parte2 = 0;
+	unsigned int parte3 = 0;
+	unsigned int parte4 = 0;
 
-	// Pedimos el número de 32 bits al usuario
-	printf("Ingrese un número entero menor o igual a 4 294 967 295: ");
-	scanf("%u", &miEntero);
 
-	// Pasamos el número de decimal a binario
-	printf("El numero binario tuyo es: ");
-	printBinary(miEntero, 32);
+	// Pedmos el número que vamos a transformar
+	printf("Introduce el número: ");
+	scanf("%u", &miNumero);
+	printf("Mi numero es: %u\n", miNumero);
 
-	// Descomponemos el número en 4 partes de 8 bits
-	parte4 = (miEntero >> 24) & 0xFF;  // Bits 31-24
-	parte3 = (miEntero >> 16) & 0xFF;  // Bits 23-16
-	parte2 = (miEntero >> 8) & 0xFF;   // Bits 15-08
-	parte1 = miEntero & 0xFF;          // Bits 07-00
+	// Transofrmamos el número a binario
+	printf("Mi número en binario es: ");
+	printBinary(miNumero, 32);
+
+	// Definimos las 4 partes del número
+	parte4 = (miNumero >> 24 ) & 11111111;
+	parte3 = (miNumero >> 16 ) & 11111111;
+	parte2 = (miNumero >> 8 ) & 11111111;
+	parte1 = miNumero & 11111111;
 	
-
-	// Imprimos cada parte en binario
-	printf("Parte 4 (bits 31-24): ");
+	// Imprimimos las 4 partes por consola
+	printf("La parte 4 es: ");
 	printBinary(parte4, 8);
 
-	printf("Parte 3 (bits 23-16): ");
+	printf("La parte 3 es: ");
 	printBinary(parte3, 8);
 
-	printf("Parte 2 (bits 15-08): ");
+	printf("La parte 2 es: ");
 	printBinary(parte2, 8);
-	
-	printf("Parte 1 (bits 07-00): ");
+
+	printf("La parte 1 es: ");
 	printBinary(parte1, 8);
+	
+	
+	
 
 }
