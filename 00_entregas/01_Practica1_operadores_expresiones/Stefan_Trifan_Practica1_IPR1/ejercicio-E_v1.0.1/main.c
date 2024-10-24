@@ -62,10 +62,10 @@ int main(){
 	printBinary(miNumero, 32);
 
 	// Definimos las 4 partes del número
-	parte4 = (miNumero >> 24 ) & 11111111;
-	parte3 = (miNumero >> 16 ) & 11111111;
-	parte2 = (miNumero >> 8 ) & 11111111;
-	parte1 = miNumero & 11111111;
+	parte4 = miNumero >> 24;
+	parte3 = miNumero >> 16;
+	parte2 = miNumero >> 8;
+	parte1 = miNumero;
 	
 	// Imprimimos las 4 partes por consola
 	printf("La parte 4 es: ");
