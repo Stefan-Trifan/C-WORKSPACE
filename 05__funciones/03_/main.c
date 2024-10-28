@@ -10,8 +10,11 @@
 *	Introducir después de scanf
 		limpiar()
 
-*	Enunciado
-		LoremIpsumDummyText
+*	Enunciado 22
+		- Codificar un programa en C que, con dos números complejos solicitados al
+		usuario, realice la suma, resta y multiplicación de los mismos.
+		- Para ello es necesario generar un menú que incluya una entrada para cada
+		operación y que las operaciones estén codificadas en funciones.
  */
 
 #include <stdio.h>
@@ -22,5 +25,7 @@ void limpiar(){
 }
 
 int main(){
+
+	
 
 }
