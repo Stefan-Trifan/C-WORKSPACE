@@ -24,6 +24,7 @@ void limpiar(){
 int main(){
 	/*  
 		Los datos enteros (int) 
+		- Si quiero almacenar un número mayor que 2,147,483,647 tengo que declarar otro tipo de dato
 
 		* Ejemplos: 
 			..., -2, -1, 0, 1, 2, 3, 4, 5, ...
@@ -37,6 +38,7 @@ int main(){
 	*/
 
 	// Declaramos un int
+	// num es el identificador
 	int num = 5;
 
 	return 0;

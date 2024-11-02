@@ -26,7 +26,7 @@ int main(){
 	/*  
 		Los datos Booleano (bool)
 		- Representa valores de verdad: verdadero o falso.
-		- Disponible desde C99 mediante el uso de `stdbool.h`.
+		- Disponible desde C99 mediante el uso de <stdbool.h>.
 
 		* Ejemplos:
 			true, false
@@ -41,6 +41,7 @@ int main(){
 
 	// Declaramos un booleano
 	bool esVerdad = 1;
+	bool aprobado = 0;
 
 	return 0;
 }

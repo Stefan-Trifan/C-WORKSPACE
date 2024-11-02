@@ -30,10 +30,11 @@ int main(){
 			'A', 'b', '1', '@', '\n' (nueva línea)
 
 		* Tamaño:
-			- Por defecto: 8 bits (1 byte)
+			- Por defecto: 8 bits (1 byte) 
 
 		* Rango por defecto:
 			- signed char: -128 a 127
+			- unsigned char: 0 a 255
 	*/
 
 
@@ -43,6 +44,9 @@ int main(){
 
 	char letra = 'c';
 	printf("%c\n", letra);
+
+	unsigned char myChar = 255; // Declaración de char sin signo
+    printf("El valor de myChar es: %u\n", myChar); // %u para imprimir sin signo
 
 	return 0;
 }
