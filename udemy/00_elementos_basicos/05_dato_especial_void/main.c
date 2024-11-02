@@ -29,7 +29,10 @@ int main(){
 		- Es un tipo e dato especial (vacío)
 		- Representa la ausencia de tipo
 		- Se utiliza en funciones apra especificar que no devuelven ningun valor
-	 */
+
+		* Pseudocodigo para declarar void:
+			void function(void);
+	*/
 
 	return 0;
 }
