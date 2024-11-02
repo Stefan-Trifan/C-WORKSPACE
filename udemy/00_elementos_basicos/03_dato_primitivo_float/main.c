@@ -22,6 +22,22 @@ void limpiar(){
 }
 
 int main(){
+	/*  
+		Los datos Punto Flotante Precisión Simple (float)
+
+		* Ejemplos: 
+			2.30, 
+		* Tamaño: 
+			Mínimo  : 
+			Habitual: 
+		* Rango Mínimo:
+			
+		* Rango Habitual 32 bits:
+			
+	*/
+
+	// Declaramos un float
+	float num;
 
 	return 0;
 }

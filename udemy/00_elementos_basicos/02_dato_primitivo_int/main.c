@@ -22,6 +22,22 @@ void limpiar(){
 }
 
 int main(){
+	/*  
+		Los datos enteros (int) 
+
+		* Ejemplos: 
+			..., -2, -1, 0, 1, 2, 3, 4, 5, ...
+		* Tamaño: 
+			Mínimo  : 16 bits (2 bytes)
+			Habitual: 32 bits (4 bytes)
+		* Rango Mínimo 16 bits:
+			−32,768 a 32,767
+		* Rango Habitual 32 bits:
+			−2,147,483,648 a 2,147,483,647
+	*/
+
+	// Declaramos un int
+	int num = 5;
 
 	return 0;
 }

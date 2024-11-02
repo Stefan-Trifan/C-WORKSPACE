@@ -22,6 +22,22 @@ void limpiar(){
 }
 
 int main(){
+	/*  
+		Los datos Punto Flotante Precisión Doble (double)
+
+		* Ejemplos: 
+			2.30, 
+		* Tamaño: 
+			Mínimo  : 
+			Habitual: 
+		* Rango Mínimo 16 bits:
+			
+		* Rango Habitual 32 bits:
+			
+	*/
+
+	// Declaramos un double
+	double num;
 
 	return 0;
 }
