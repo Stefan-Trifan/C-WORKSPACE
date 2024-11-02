@@ -29,10 +29,10 @@ int main(){
 			..., -2, -1, 0, 1, 2, 3, 4, 5, ...
 		* Tamaño: 
 			Mínimo  : 16 bits (2 bytes)
-			Habitual: 32 bits (4 bytes)
-		* Rango Mínimo 16 bits:
+			Defecto : 32 bits (4 bytes)
+		* Rango Mínimo (16 bits):
 			−32,768 a 32,767
-		* Rango Habitual 32 bits:
+		* Rango por defecto (32 bits):
 			−2,147,483,648 a 2,147,483,647
 	*/
 

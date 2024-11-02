@@ -24,16 +24,16 @@ void limpiar(){
 int main(){
 	/*  
 		Los datos Punto Flotante Precisión Doble (double)
+		- Ocupa más memoria
+		- Un double puede representar aproximadamente 15 a 17 dígitos decimales de precisión.
 
 		* Ejemplos: 
-			2.30, 
+			234343.3043
 		* Tamaño: 
-			Mínimo  : 
-			Habitual: 
-		* Rango Mínimo 16 bits:
-			
-		* Rango Habitual 32 bits:
-			
+			- Por defecto : 64 bits (8 bytes)
+		* Rango por Defecto: 
+			- Positivos : 2.225074e-308 a 1.797693e+308
+			- Negativos : -1.797693e+308 a -2.225074e-308
 	*/
 
 	// Declaramos un double
