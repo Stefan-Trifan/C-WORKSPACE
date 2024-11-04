@@ -40,18 +40,18 @@ int fibonacci(int n);
 int main(){
 
 	// Declaramos las variables
-	int n   = 0;
+	long long int n = 0;
 
 	// Pedimos n
 	printf("Introduce n: ");
-	scanf("%d", &n);
-	printf("n es %i\n", n);
+	scanf("%lld", &n);
+	printf("n es %lld\n", n);
 
 	if (n < 0){
 		printf("Numero no válido");
 	} else {
-		int res = fibonacci(n);
-		printf("El número de fibonacci en %d es %d\n", n, res);
+		long long int res = fibonacci(n);
+		printf("El número de fibonacci en %lld es %lld\n", n, res);
 	}
 
 	return 0;
