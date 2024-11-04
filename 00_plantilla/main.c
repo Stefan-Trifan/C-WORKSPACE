@@ -13,10 +13,11 @@
 	* 	Enunciado X
 		LoremIpsumDummyText
 
-	* 	 	Comentarios Resaltados
-	! 	 	Advertencias
-	? 	 	Preguntas
-	todo	Pendiente
+	* Comentarios Resaltados
+	! Advertencias
+	? Preguntas
+	todo Pendiente
+	Comentario
  */
 
 #include <stdio.h>
