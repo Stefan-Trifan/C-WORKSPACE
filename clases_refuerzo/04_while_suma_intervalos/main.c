@@ -11,7 +11,9 @@
 		limpiar()
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		Este código pide al usuario un intervalo de números y un paso de incremento, 
+		luego calcula y muestra la suma acumulativa de los números en ese intervalo, 
+		actualizando el resultado con cada incremento.
 
  */
 
