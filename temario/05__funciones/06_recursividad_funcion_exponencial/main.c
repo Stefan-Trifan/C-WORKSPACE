@@ -41,7 +41,6 @@ int main(){
 
 }
 
-// x = 2 y = 3
 // Función recursiva para calular x^y
 int funcionExponencial(int x, int y){
 
