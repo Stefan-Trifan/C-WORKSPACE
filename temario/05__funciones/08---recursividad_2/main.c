@@ -28,6 +28,27 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
+void calculos(int *max, int *min, int *media); // bien
+
 int main(){
+
+	int max, min, media; // bien
+	// printf("El contenido de una variable normal es: %d", max)
+	// calculos(&max, &min, &media);
+	// printf("%d,%d,%d", max, min, media);
+
+}
+
+// bien
+void calculos(int *max, int *min, int *media){ 
+
+/* 	
+	&max == Acceder a la direccion de memoria del puntero
+	max  == Accediento a la direccion que apunta el puntero
+/	*max == Accediendo al contenido 
+
+/   *max=numUser;
+	Codigo del otro día
+*/
 
 }
