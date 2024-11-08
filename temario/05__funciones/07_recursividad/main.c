@@ -10,7 +10,7 @@
 *	Introducir después de scanf
 		limpiar()
 
-*	Enunciado
+*	Enunciado 62
 		LoremIpsumDummyText
  */
 
