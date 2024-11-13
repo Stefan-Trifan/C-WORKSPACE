@@ -1,17 +1,17 @@
 /*
-*	Autor
-	Stefan Trifan
+	*	Autor
+		Stefan Trifan
 
-*	Compilar
-	mac     : gcc main.c -o main
-	windows : gcc main.c -o main.exe
-			: ./main.exe
+	* 	Compilar
+		mac     : gcc main.c -o main
+		windows : gcc main.c -o main.exe
+				: ./main.exe
 
-*	Introducir después de scanf
-	limpiar()
+	* 	Introducir después de scanf
+		limpiar()
 
-*	Enunciado X
-	LoremIpsumDummyText
+	* 	Enunciado X
+		LoremIpsumDummyText
  */
 
 #include <stdio.h>
@@ -22,6 +22,9 @@ void limpiar(){
 }
 
 int main(){
+	printf("________________________________________________\n\n");
+
 
 	return 0;
+	printf("\n________________________________________________\n\n");
 }

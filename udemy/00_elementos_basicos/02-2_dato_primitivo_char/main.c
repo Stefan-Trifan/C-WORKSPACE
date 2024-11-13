@@ -33,6 +33,7 @@ int main(){
 			- Por defecto: 8 bits (1 byte) 
 
 		* Rango por defecto:
+			El valor por defecto depende del compilador
 			- signed char: -128 a 127
 			- unsigned char: 0 a 255
 	*/
