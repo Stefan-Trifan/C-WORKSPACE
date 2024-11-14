@@ -16,7 +16,7 @@
 		- HH señala las horas desde 0 hasta 24
 		- MM los minutos desde 0 hasta 60
 		- SS los segundos desde 0 hasta 60
- */
+*/
 
 #include <stdio.h>
 

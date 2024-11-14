@@ -12,7 +12,7 @@
 
 *	Enunciado
 		Pide un número por pantalla, cuenta los caracteres que tiene y devuelve el resultado
- */
+*/
 
 #include <stdio.h>
 

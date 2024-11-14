@@ -14,7 +14,7 @@
 		Pide un número entero por teclado de tres cifras. Comprueba si la cifra de sus centenas es 1, 2 , 3 o 5 escribiendo por pantalla que la centena del número es 1, 2, 3 o 5. 
 		Si no es así, el programa deberá escribir que la centena no es 1, 2, 3 o 5. 
 		Realizar el ejemplo mediante un switch-case.
- */
+*/
 
 #include <stdio.h>
 

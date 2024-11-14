@@ -14,7 +14,7 @@
 		Pide un número entero de tres cifras por teclado. 
 		Comprueba si la tercera cifra (centena) del número es 1, 2 , 3 o 5 escribiendo por pantalla que la centena del número es 1, 2, 3 o 5. 
 		Si no es así, el programa deberá escribir que la centena no es 1, 2, 3 o 5.
- */
+*/
 
 #include <stdio.h>
 

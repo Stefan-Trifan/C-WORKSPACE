@@ -39,7 +39,7 @@
 		TRUCO: 
 		Redomendado: Se puede hacer con getchar
 		Fácil:		 Se puede hacer con cadena de caracteres
- */
+*/
 
 #include <stdio.h>
 

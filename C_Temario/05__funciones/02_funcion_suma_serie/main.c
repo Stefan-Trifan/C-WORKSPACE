@@ -20,7 +20,7 @@
 
 		- La función devolverá como resultado un número entero que será la suma de los
 		términos de la serie comprendidos entre a y b (incluyendo dichos números).
- */
+*/
 
 #include <stdio.h>
 

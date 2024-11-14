@@ -12,7 +12,7 @@
 
 *	Enunciado
 		Pide al usuario que introduzca su edad e imprímela por pantalla. ¿Qué ocurre si introducimos un carácter?
- */
+*/
 
 #include <stdio.h>
 

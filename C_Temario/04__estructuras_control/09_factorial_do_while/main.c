@@ -15,7 +15,7 @@
 		▪ Pide al usuario que introduzca número entero positivo por teclado.
 		▪ Utiliza un bucle de tipo do-while para asegurar que el número no es negativo
 		▪ Calcula el factorial del número introducido e imprímelo por pantalla.	
- */
+*/
 
 #include <stdio.h>
 

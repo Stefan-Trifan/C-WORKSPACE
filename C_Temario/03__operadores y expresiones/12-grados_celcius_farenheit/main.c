@@ -12,7 +12,7 @@
 
 *	Enunciado
 		Convertir grados Celsuiss a Farenhait 
- */
+*/
 
 #include <stdio.h>
 

@@ -14,7 +14,7 @@
 		Solicito 3 valores enteros (lados del programa)
 		Determinamos si es posible formar el triangulo
 		La suma de longitudes de 2 lados cualesquiera tiene que ser mayor que el tercero
- */
+*/
 
 #include <stdio.h>
 

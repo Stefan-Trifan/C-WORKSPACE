@@ -12,7 +12,7 @@
 
 *	Enunciado
 		Crear un programa que pida un dato en formato coma flotante, y muestre el resultado de convertirlo a flotante.
- */
+*/
 
 #include <stdio.h>
 

@@ -12,7 +12,7 @@
 
 *	Enunciado
 		Escribir un código que muestre si el tercer bit (contando desde la derecha) de un número entero de 8 bits sin signo leído por terminal, es un 1 o un 0.
- */
+*/
 
 #include <stdio.h>
 

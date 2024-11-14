@@ -20,7 +20,7 @@
 		Debes generar un menú que incluya una entrada para cada operación
 		Debes codificar las operaciones en funciones
 
- */
+*/
 
 #include <stdio.h>
 

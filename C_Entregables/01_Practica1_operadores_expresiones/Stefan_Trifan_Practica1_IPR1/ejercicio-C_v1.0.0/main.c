@@ -37,7 +37,7 @@
 		$ ./digits.exe
 		Introduce un número entero positivo de 3 dígitos: 123
 		El número tiene tres dígitos únicos.
- */
+*/
 
 #include <stdio.h>
 

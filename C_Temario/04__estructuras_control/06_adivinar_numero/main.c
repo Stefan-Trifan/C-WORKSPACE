@@ -19,7 +19,7 @@
 		- Comprueba si el número introducido coincide con el generado.
 
 		- A la salida imprime el número de intentos para adivinarlo.
- */
+*/
 
 #include <stdio.h>
 #include <stdlib.h>  // Para rand() y srand()

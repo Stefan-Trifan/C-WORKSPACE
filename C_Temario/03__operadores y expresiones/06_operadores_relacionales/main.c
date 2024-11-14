@@ -14,7 +14,7 @@
 		* Generar un programa que pida un carácter por pantalla, y que compruebe si es una letra tanto mayúscula como minúscula. 
 		* Almacenará el resultado en una variable entera y lo mostrará por pantalla. 
 		* No se usarán operadores "if/then", sólo se almacena el resultado de la comprobación.
- */
+*/
 
 #include <stdio.h>
 

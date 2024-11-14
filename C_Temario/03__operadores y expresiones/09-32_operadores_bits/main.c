@@ -13,7 +13,7 @@
 *	Enunciado
 		Define una variable tipo carácter, entera y float. 
 		Asígnales un valor y escribe su valor y la dirección de memoria que ocupan.
- */
+*/
 
 #include <stdio.h>
 

@@ -12,7 +12,7 @@
 
 	* 	Enunciado - Suma recursiva de los dígitos impares
 		LoremIpsumDummyText
- */
+*/
 
 #include <stdio.h>
 

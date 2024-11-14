@@ -15,7 +15,7 @@
 		* El número y el exponente deberán pedirse al usuario mediante scanf. 
 		* El exponente debe ser mayor que cero. 
 		* No se puede usar el operador "*" (multiplicar).
- */
+*/
 
 #include <stdio.h>
 

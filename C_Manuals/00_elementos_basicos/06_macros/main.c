@@ -12,7 +12,7 @@
 
 *	Enunciado X
 	LoremIpsumDummyText
- */
+*/
 
 
 // Ejemplos de librerías

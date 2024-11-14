@@ -60,7 +60,7 @@
 		Nota de asistencia: 0.9
 		El alumno ha aprobado.
 
- */
+*/
 
 #include <stdio.h>
 

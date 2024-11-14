@@ -12,7 +12,7 @@
 
 	* 	Enunciado X
 		
- */
+*/
 
 #include <stdio.h>
 

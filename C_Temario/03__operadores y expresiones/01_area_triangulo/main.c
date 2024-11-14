@@ -7,7 +7,7 @@
  *		"Introducir después de scanf": "limpiar()",
  *		"Enunciado": "Calcular el área de un triágulo" // (Base*altura)/2
  *	}
- */
+*/
 
 #include <stdio.h>
 

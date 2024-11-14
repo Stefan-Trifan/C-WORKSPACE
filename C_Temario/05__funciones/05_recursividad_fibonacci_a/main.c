@@ -31,7 +31,7 @@
 
 		Se pide implementar una función que sea la que calcule la serie. El programa principal pedirá al usuario el número n,
 		calculará la serie llamand
- */
+*/
 
 #include <stdio.h>
 

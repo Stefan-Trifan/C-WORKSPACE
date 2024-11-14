@@ -18,7 +18,7 @@
 
 		El programa pediria al usuario el numero (que debe der mayor o igual a ceri) y lo pasará
 		a la función "por valor". La función devolverá el resultado de la suma de todos los dígitos
- */
+*/
 
 #include <stdio.h>
 

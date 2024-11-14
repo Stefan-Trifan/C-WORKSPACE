@@ -15,7 +15,7 @@
 
 		Con estos 2 numeros enteros vamos a llamar a una funcion para que realice tanto la suma como la resta.
 		La funcion tiene que devolver al main los valores resultantes de las operaciones. (Solo 1 función)
- */
+*/
 
 #include <stdio.h>
 
@@ -60,7 +60,7 @@ void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta)
 		Para acceder a la direccion de memoria que guarda (sin nada) -> resultadoSuma
 
 
-	 */
+	*/
 
 	*resultadoSuma = numero1 + numero2;
 	*resultadoResta = numero1 - numero2;

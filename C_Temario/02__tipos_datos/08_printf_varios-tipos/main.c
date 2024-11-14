@@ -26,11 +26,11 @@ void main(){
         La variable float es: 5.5
         la variable int es: 10 
         la primera letra es S
-    */
+   */
    printf("La variable float es: %i  \n la variable int es: %i \n la primera letra es %c", variableFloat, variableNum, letraNombre);
    /*
         La variable float es: 0  
         la variable int es: 10 
         la primera letra es S
-   */
+  */
 }

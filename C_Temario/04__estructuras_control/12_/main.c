@@ -12,7 +12,7 @@
 
 *	Enunciado
 		LoremIpsumDummyText
- */
+*/
 
 #include <stdio.h>
 

@@ -8,9 +8,7 @@
  *		"Introducir después de scanf": "limpiar()",
  *		"Enunciado": "Numero par o impar"
  *	}
-
-	
- */
+*/
 
 #include <stdio.h>
 

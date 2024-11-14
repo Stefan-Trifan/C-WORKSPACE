@@ -12,7 +12,7 @@
 
 *	Enunciado
 		Convertir un numero entero introducido por teclado a carácter e imprimirlo por pantalla
- */
+*/
 
 #include <stdio.h>
 

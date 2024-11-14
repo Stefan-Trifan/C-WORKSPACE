@@ -19,7 +19,7 @@
 			la media será entregada como resultado de la funcion 
 			mientras que el minimo y el maximo de los valores se devolveran en los parametros de la funcion 
 			por lo que seran pasados por referencia
- */
+*/
 
 #include <stdio.h>
 

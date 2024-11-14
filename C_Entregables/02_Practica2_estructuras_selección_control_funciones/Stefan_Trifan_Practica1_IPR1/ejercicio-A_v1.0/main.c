@@ -40,7 +40,7 @@
 			devuelve 0 si el usuario no ha acertado,
 			uno si todo va bien
 		}
- */
+*/
 /* 
 		# Ejemplo de ejecución
 
@@ -58,7 +58,7 @@
 			
 				Game Over
 				4 puntos
- */
+*/
 
 #include <stdio.h>
 

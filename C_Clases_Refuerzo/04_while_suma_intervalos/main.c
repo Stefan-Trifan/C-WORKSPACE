@@ -15,7 +15,7 @@
 		luego calcula y muestra la suma acumulativa de los números en ese intervalo, 
 		actualizando el resultado con cada incremento.
 
- */
+*/
 
 #include <stdio.h>
 

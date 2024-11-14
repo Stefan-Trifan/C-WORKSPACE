@@ -13,7 +13,7 @@
  *				primero es mayor que el cuarto
  *			▪ Si la división entre el segundo y el cuarto "no es" distinta al primero"
  *	}
- */
+*/
 
 #include <stdio.h>
 

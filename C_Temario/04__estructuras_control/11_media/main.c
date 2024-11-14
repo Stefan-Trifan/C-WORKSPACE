@@ -13,7 +13,7 @@
 *	Enunciado
 		Escribir un programa que calcule y visualice el más grande, el más pequeño y la media de n números (n >0). 
 		El valor de n se solicitará al principio del programa y los números serán introducidos por el usuario.
- */
+*/
 
 #include <stdio.h>
 

@@ -13,7 +13,7 @@
 *	Enunciado
 		- La función exponencial, xy siendo x e y números enteros, puede implementarse de forma recursiva, dado que x^y = x * x^y-1
 		- Implementa una función recursiva que calcule la función exponencial.
- */
+*/
 
 #include <stdio.h>
 

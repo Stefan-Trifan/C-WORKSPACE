@@ -22,7 +22,7 @@
 		Implementa otra función recursiva que calcule la exponencial con este método y
 		añade un contador de llamadas recursivas para comprobar el número de
 		multiplicaciones ahorradas por este método.
- */
+*/
 
 #include <stdio.h>
 

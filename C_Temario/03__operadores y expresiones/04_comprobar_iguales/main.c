@@ -7,7 +7,7 @@
  *		"Introducir después de scanf": "limpiar()",
  *		"Enunciado": "Generar un programa que pida dos números enteros por pantalla, y que compruebe si son iguales. Almacenará el resultado en una variable entera y lo mostrará por pantalla. No se usarán operadores "if/then", sólo se almacena el resultado de la comprobación."
  *	}
- */
+*/
 
 #include <stdio.h>
 

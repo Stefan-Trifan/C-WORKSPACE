@@ -13,7 +13,7 @@
 *	Enunciado
 		18 Implementa una función que multiplique dos enteros solicitados desde la
 		función principal
- */
+*/
 
 #include <stdio.h>
 

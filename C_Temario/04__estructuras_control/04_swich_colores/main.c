@@ -12,7 +12,7 @@
 
 *	Enunciado
 		Pide un carácter b, r, n, v y devuelve un color que empieza por ese carácter o un mensaje indicando que no hay ningún color asignado. Realizar el ejemplo mediante un switch-case.
- */
+*/
 
 #include <stdio.h>
 

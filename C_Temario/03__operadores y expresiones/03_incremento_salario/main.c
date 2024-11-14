@@ -7,7 +7,7 @@
  *		"Introducir después de scanf": "limpiar()",
  *		"Enunciado": "Realizad un programa que calcule el incremento de un salario de un empleado por un porcentaje especificado. Tanto salario como porcentaje se piden al usuario."
  *	}
- */
+*/
 
 #include <stdio.h>
 

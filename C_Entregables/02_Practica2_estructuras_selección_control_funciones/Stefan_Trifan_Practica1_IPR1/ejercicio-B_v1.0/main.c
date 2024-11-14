@@ -39,7 +39,7 @@
 		int realizarOperacion(int numero, int opcion){
 			Debe realizar la operación elegida y devolver su resultado)
 		}
- */
+*/
 /* 
 	# Ejemplo de ejecución
 		Debes alcanzar exactamente el valor 100 desde el valor inicial de 1.
@@ -75,7 +75,7 @@
 		3. Multiplicar por 2
 		Elige tu movimiento (1, 2, o 3): 2
 		Te has pasado de 100. Has perdido el juego.
- */
+*/
 
 #include <stdio.h>
 

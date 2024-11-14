@@ -39,7 +39,7 @@
 		2. Valida si el exponente es positivo. Devuelve un 1 si el cálculo
 		se realiza correctamente o un 0 si el exponente no es positivo
 		int calcular_potencia(int base, int exponente, int *resultado)
- */
+*/
 
 #include <stdio.h>
 

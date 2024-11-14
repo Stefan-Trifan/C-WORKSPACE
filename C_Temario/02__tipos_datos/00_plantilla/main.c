@@ -7,7 +7,7 @@
  *		"Introducir después de scanf": "limpiar()",
  *		"Enunciado": "LoremIpsumDummyText"
  *	}
- */
+*/
 
 #include <stdio.h>
 

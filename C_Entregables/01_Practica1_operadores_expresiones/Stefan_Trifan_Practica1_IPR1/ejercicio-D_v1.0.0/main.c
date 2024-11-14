@@ -37,7 +37,7 @@
 		Uno de los números es 0 o ambos son pares: No
 		Los dos números son diferentes: Sí
 		Los dos números son pares: No
- */
+*/
 
 #include <stdio.h>
 
