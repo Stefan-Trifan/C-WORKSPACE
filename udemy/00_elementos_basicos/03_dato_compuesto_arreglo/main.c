@@ -35,7 +35,10 @@ int main(){
 	*/
 
 	// Declaramos un arreglo
-	int a[10];
+	char a[30];
+	printf("Escribe tu nombre sin espacios: ");
+	scanf("%s", a);
+	printf("Tu nombre es: %s\n", a);
 
 	return 0;
 }
