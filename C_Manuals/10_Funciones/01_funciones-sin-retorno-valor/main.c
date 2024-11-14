@@ -21,11 +21,18 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
+// Declaramos/inicializamos la funcion
+void Mundo();
+
 int main(){
 	printf("________________________________________________\n\n");
 
-
+	Mundo();
 	
-	printf("\n________________________________________________\n\n");
+	printf("________________________________________________\n\n");
 	return 0;
+}
+
+void Mundo(){
+	printf("Hola Mundo\n");
 }
