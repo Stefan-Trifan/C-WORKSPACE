@@ -27,18 +27,28 @@
 			valor retornado por calcular_potencia.
 
 		Condiciones:
-			1. Si el cálculo se realiza correctamente, el programa debe mostrar el resultado de la
-			potencia.
+			1. Si el cálculo se realiza correctamente, el programa debe mostrar el resultado de la potencia.
 			2. Si el exponente es menor o igual a 0, el programa debe mostrar un mensaje de error:
-			"Error: el exponente debe ser positivo”.
+				"Error: el exponente debe ser positivo”.
 
 		Se tiene que implementar la siguiente función:
-		Esta función:
-		1. Calcula la potencia de la base elevada al exponente usando un
-		bucle y asigna el resultado a la variable resultado.
-		2. Valida si el exponente es positivo. Devuelve un 1 si el cálculo
-		se realiza correctamente o un 0 si el exponente no es positivo
-		int calcular_potencia(int base, int exponente, int *resultado)
+			int calcular_potencia(int base, int exponente, int *resultado){
+				1. Calcula la potencia de la base elevada al exponente usando un bucle y asigna el resultado a la variable resultado.
+				2. Valida si el exponente es positivo. Devuelve un 1 si el cálculo se realiza correctamente o un 0 si el exponente no es positivo
+			}
+*/
+/* 
+	# Ejemplo de ejecución
+
+	Caso correcto:
+		Ingrese la base: 3
+		Ingrese el exponente: 4
+		Resultado: 81
+
+	Caso incorrecto:
+		Ingrese la base: 3
+		Ingrese el exponente: -2
+		Error: el exponente debe debe ser positivo
 */
 
 #include <stdio.h>
