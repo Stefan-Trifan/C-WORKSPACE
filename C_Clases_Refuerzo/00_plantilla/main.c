@@ -17,14 +17,16 @@
 #include <stdio.h>
 
 // Llamamos con limpiar()
-void limpiar(){
-	while(getchar() != '\n');
+void limpiar()
+{
+	while (getchar() != '\n')
+		;
 }
 
-int main(){
+int main()
+{
 	printf("________________________________________________\n\n");
 
-
-	return 0;
 	printf("\n________________________________________________\n\n");
+	return 0;
 }
