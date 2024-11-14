@@ -12,12 +12,6 @@
 
 	* 	Enunciado X
 		LoremIpsumDummyText
-
-	* Comentarios Resaltados
-	! Advertencias
-	? Preguntas
-	todo Pendiente
-	Comentario
  */
 
 #include <stdio.h>
@@ -28,6 +22,9 @@ void limpiar(){
 }
 
 int main(){
+	printf("________________________________________________\n\n");
+
 
 	return 0;
+	printf("\n________________________________________________\n\n");
 }
