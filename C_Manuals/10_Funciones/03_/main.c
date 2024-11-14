@@ -19,8 +19,7 @@
 // Llamamos con limpiar()
 void limpiar()
 {
-	while (getchar() != '\n')
-		;
+	while (getchar() != '\n');
 }
 
 int main()

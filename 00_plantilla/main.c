@@ -17,11 +17,7 @@
 #include <stdio.h>
 
 // Llamamos con limpiar()
-void limpiar()
-{
-	while (getchar() != '\n')
-		;
-}
+void limpiar(){while (getchar() != '\n');}
 
 int main()
 {
