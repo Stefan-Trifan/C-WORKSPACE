@@ -22,7 +22,7 @@
 			La llamada recursiva se debe hacer descartando los dígitos pares
 		}	
 */
-/* 
+/*  
 	# Ejemplo de ejecución
 	
 	Número positivo
