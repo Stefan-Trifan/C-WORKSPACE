@@ -27,12 +27,14 @@ void Mundo();
 int main(){
 	printf("________________________________________________\n\n");
 
+	// Llamamos la función
 	Mundo();
 	
 	printf("________________________________________________\n\n");
 	return 0;
 }
 
+// Función
 void Mundo(){
 	printf("Hola Mundo\n");
 }
