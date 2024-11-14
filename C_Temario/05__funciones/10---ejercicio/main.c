@@ -5,7 +5,7 @@
 *	Compilar
 		mac     : gcc main.c -o main
 		windows : gcc main.c -o main.exe
-			    : ./main.exe
+				: ./main.exe
 
 *	Introducir después de scanf
 		limpiar()
@@ -20,21 +20,23 @@
 #include <stdio.h>
 
 // Llamamos con limpiar()
-void limpiar(){
-	while(getchar() != '\n');
+void limpiar()
+{
+	while (getchar() != '\n')
+		;
 }
 
 void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta);
 
-int main(){
-	printf("________________________________________________\n\n");
+int main()
+{
+	printf("\n________________________________________________\n\n");
 
 	// Declaramos variables
 	int num1 = 0;
 	int num2 = 0;
-	int resSuma  = 0;
+	int resSuma = 0;
 	int resResta = 0;
-
 
 	// Pedimos nums
 	printf("Introduce el primer numero:  ");
@@ -44,27 +46,26 @@ int main(){
 	scanf("%i", &num2);
 
 	calculos(num1, num2, &resSuma, &resResta);
-	
+
 	printf("El resultado de la suma es : %i\n", resSuma);
 	printf("El resultado de la resta es: %i", resResta);
 
 	printf("\n________________________________________________\n\n");
 }
 
-void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta){
+void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta)
+{
 
-	/* 
+	/*
 		Si trabajamos con una variable puntero;
 
 		Para acceder al contenido * -> *resultadoSuma
 		Para acceder a la direccion de memoria & -> &resultadoSuma
 		Para acceder a la direccion de memoria que guarda (sin nada) -> resultadoSuma
 
-	
+
 	 */
 
 	*resultadoSuma = numero1 + numero2;
 	*resultadoResta = numero1 - numero2;
-
 }
-

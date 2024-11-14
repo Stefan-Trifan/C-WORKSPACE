@@ -17,24 +17,28 @@
 #include <stdio.h>
 
 // Llamamos con limpiar()
-void limpiar(){
-	while(getchar() != '\n');
+void limpiar()
+{
+	while (getchar() != '\n')
+		;
 }
 
 // Declaramos/inicializamos la funcion
 void Mundo();
 
-int main(){
-	printf("________________________________________________\n\n");
+int main()
+{
+	printf("\n________________________________________________\n\n");
 
 	// Llamamos la función
 	Mundo();
-	
-	printf("________________________________________________\n\n");
+
+	printf("\n________________________________________________\n\n");
 	return 0;
 }
 
 // Función
-void Mundo(){
+void Mundo()
+{
 	printf("Hola Mundo\n");
 }
