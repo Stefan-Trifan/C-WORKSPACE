@@ -22,8 +22,7 @@ void limpiar(){while (getchar() != '\n');}
 // Declaramos/inicializamos la funcion
 void Mundo();
 
-int main()
-{
+int main(){
 	printf("\n________________________________________________\n\n");
 
 	// Llamamos la función

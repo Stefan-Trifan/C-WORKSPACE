@@ -20,16 +20,13 @@
 #include <stdio.h>
 
 // Llamamos con limpiar()
-void limpiar()
-{
-	while (getchar() != '\n')
-		;
+void limpiar(){
+	while (getchar() != '\n');
 }
 
 void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta);
 
-int main()
-{
+int main(){
 	printf("\n________________________________________________\n\n");
 
 	// Declaramos variables
@@ -53,8 +50,7 @@ int main()
 	printf("\n________________________________________________\n\n");
 }
 
-void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta)
-{
+void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta){
 
 	/*
 		Si trabajamos con una variable puntero;

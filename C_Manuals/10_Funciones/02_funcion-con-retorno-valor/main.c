@@ -17,16 +17,14 @@
 #include <stdio.h>
 
 // Llamamos con limpiar()
-void limpiar()
-{
+void limpiar(){
 	while (getchar() != '\n');
 }
 
 // Declaramos/inicializamos la funcion
 int sumar(int a, int b);
 
-int main()
-{
+int main(){
 	printf("\n________________________________________________\n\n");
 
 	int a = 5;

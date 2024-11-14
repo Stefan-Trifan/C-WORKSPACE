@@ -17,14 +17,11 @@
 #include <stdio.h>
 
 // Llamamos con limpiar()
-void limpiar()
-{
-	while (getchar() != '\n')
-		;
+void limpiar(){
+	while (getchar() != '\n');
 }
 
-int main()
-{
+int main(){
 	printf("\n________________________________________________\n\n");
 
 	char a = 'A';	   // 1 byte   | Rango desde 0 -> 255 (si es unsigned char)
