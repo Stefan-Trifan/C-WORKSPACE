@@ -21,7 +21,7 @@
 			• El juego termina cuando se acaban las 10 rondas o cuando pierde todas las vidas.
 			• Al final de la partida deberá indicar cuantos puntos ha conseguido.
 
-		# Se deberán implementar las siguientes funciones:
+		Se deberán implementar las siguientes funciones:
 			int obtenerMaximo(){
 				Pide el maximo numero a multiplicar al usuario,
 				repite la operacion hasta que el usuario indique un
@@ -43,14 +43,14 @@
 			Introduce el maximo: 12
 			4 * 2  = 8
 			4 * 7  = 34
-			... Resultado incorrecto, vidas: 2
+				... Resultado incorrecto, vidas: 2
 			12 * 8 = 96
 			2 * 5  = 10
 			9 * 11 = 99
 			9 * 8  = 76
-			... Resultado incorrecto, vidas:  1
+				... Resultado incorrecto, vidas:  1
 			5 * 6  = 98
-			... Resultado incorrecto, vidas:  0
+				... Resultado incorrecto, vidas:  0
 			
 				Game Over
 				4 puntos
@@ -72,7 +72,9 @@ int main(){
 	printf("\n________________________________________________\n\n");
 	
 	int maximo = obtenerMaximo();
-	printf("%i", maximo);
+	int ope1   = 0;
+	int ope2   = 0;
+	int vidas  = 3;
 	
 	printf("\n________________________________________________\n\n");
 	return 0;
