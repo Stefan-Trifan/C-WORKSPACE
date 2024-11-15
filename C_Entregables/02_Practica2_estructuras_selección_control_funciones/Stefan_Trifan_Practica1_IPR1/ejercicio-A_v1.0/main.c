@@ -81,13 +81,10 @@ int main(){
 	printf("\n________________________________________________START\n\n");
 	
 	// Declaración de variables
-	int maximo  = 0;
+	int maximo  = obtenerMaximo(); // Pedimos el numero maximo de los operadores
 	int vidas   = 3;
 	int rondas  = 10;
 	int puntos  = 0;
-
-	// Pedimos el numero maximo de los operadokres
-	maximo = obtenerMaximo();
 
 	// Inicializamos la semilla de los numeros aleatorios
 	srand(getpid());
@@ -96,14 +93,17 @@ int main(){
 	while (rondas > 0 && vidas >0){
 
 		if(rondaCorrecta(maximo) == 0){
-			vidas--;
+			// Si el usuario se equivoca:
+			vidas--; 
 			printf("... Resultado incorrecto, vidas: %i\n", vidas);
 		} else{
+			// Si el usuario responde bien:
 			puntos++;
 		}
-		rondas--;
+		rondas--; 
 	}
 
+	// El programa finaliza cuando las rondas = 0, o bien vidas = 0
 	if(rondas == 0){
 		printf("\n¡FELICIDADES! Te las sabes todas.");
 	}
@@ -126,7 +126,7 @@ int obtenerMaximo(){
 	int maximo = 0;
 	// Seguimos pidiendo el num maximo hasta que sea mayor o igual a 2
 	do{
-		printf("introduce el máximo: ");
+		printf("introduce el máximo (mayor que 2): ");
 		scanf("%d", &maximo);
 	} while (maximo <= 2);
 	return maximo;
@@ -143,13 +143,19 @@ void obtenNumeros(int maximo, int *ope1, int *ope2){
 }
 
 // Genera una ronda
-// Devuelve 0 si el usuario no ha acertado, 1 si todo va bien
 int rondaCorrecta(int maximo){
 
+	// Declaramos las variables locales
 	int ope1 = 0, ope2 = 0, resultadoUsuario = 0;
+
+	// Obtenemos nuevos numeros aleatorios por cada ronda
 	obtenNumeros(maximo, &ope1, &ope2);
+
+	// Pedimos al usuario calcular
 	printf("%d * %d: ", ope1, ope2);
 	scanf("%d", &resultadoUsuario);
+
+	// Devuelve 0 si el usuario no ha acertado, 1 si todo va bien
 	if(resultadoUsuario == ope1 * ope2){
 		return 1;
 	} else {

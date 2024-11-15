@@ -11,9 +11,8 @@
 		limpiar()
 
 	* 	Enunciado - Incrementa hasta 100
-		Se pretende realizar un juego en el que el usuario, empezando desde el 1, debe llegar
-		exactamente al número 100 siguiendo ciertas normas. Para ello el programa debe guiar al
-		usuario y mostrar el progreso en cada paso.
+		Se pretende realizar un juego en el que el usuario, empezando desde el 1, debe llegar exactamente al número 100 siguiendo normas. 
+		Para ello el programa debe guiar al usuario y mostrar el progreso en cada paso.
 
 		Normas:
 			• En cada turno el usuario puede incrementar su número en 5 ó 3 unidades o puede multiplicarlo por 2.
