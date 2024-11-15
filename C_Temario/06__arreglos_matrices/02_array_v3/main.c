@@ -29,6 +29,8 @@ int generaNumero0a30();
 int main(){
 	printf("\n________________________________________________\n\n");
 
+	// srand(unsigned int seed): Inicializa la semilla para el generador de números pseudoaleatorios.
+	// getpid(): Obtiene el identificador de proceso único del programa que se está ejecutando.
 	srand(getpid());
 
 	int array[TAM_ARRAY];
@@ -69,5 +71,6 @@ int main(){
 }
 
 int generaNumero0a30(){
+	// rand(): Genera números pseudoaleatorios.
 	return((int)rand() % 31);
 }

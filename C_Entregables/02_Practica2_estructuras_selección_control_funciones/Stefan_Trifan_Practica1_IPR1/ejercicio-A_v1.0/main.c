@@ -57,6 +57,8 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 // Llamamos con limpiar()
 void limpiar(){
@@ -69,42 +71,62 @@ void obtenNumeros(int maximo, int *ope1, int *ope2);
 int rondaCorrecta(int maximo);
 
 int main(){
+
 	printf("\n________________________________________________\n\n");
 	
-	int maximo = obtenerMaximo();
-	int ope1   = 0;
-	int ope2   = 0;
-	int vidas  = 3;
+	// Declaración de variables
+	int maximo  = 0;
+	int vidas   = 3;
+	int rondas  = 10;
+
+	// Pedimos el numero maximo de los operadokres
+	maximo = obtenerMaximo();
+
+	// Inicializamos la semilla de los numeros aleatorios
+	srand(getpid());
+
+	// Seguimos ejecutando el programa mientras haya vidas y rondas
+	while (rondas > 0 && vidas >0){
+
+		if(rondaCorrecta(maximo) == 0){
+			vidas--;
+		}
+		rondas--;
+	}
 	
 	printf("\n________________________________________________\n\n");
 	return 0;
+
 }
 
-// Pide el número máximo
+// Pide el número máximo de los operandos
 int obtenerMaximo(){
+
 	int maximo = 0;
 	// Seguimos pidiendo el num maximo hasta que sea mayor o igual a 2
-	do 
-	{
+	do{
 		printf("introduce el máximo: ");
 		scanf("%i", &maximo);
 	} while (maximo <= 2);
 	return maximo;
-}
 
+}
+	
+// Obtiene dos numeros aleatorios entre 2 y el maximo incluido
+// Los devuelve como parametros por referencia
 void obtenNumeros(int maximo, int *ope1, int *ope2){
-	/*  
-		obtiene dos numeros aleatorios entre 2 y el maximo incluido
-		y los devuelve como parametros por referencia
-	*/
+
+	*ope1 = (rand() % (maximo - 2)) + 3;
+	*ope2 = (rand() % (maximo - 2)) + 3;
+
 }
 
-
+// Genera una ronda
+// Devuelve 0 si el usuario no ha acertado, 1 si todo va bien
 int rondaCorrecta(int maximo){
-	/* 
-		genera una ronda, 
-		devuelve 0 si el usuario no ha acertado,
-		uno si todo va bien
-	*/
+
+	int ope1 = 0, ope2 = 0;
+	obtenNumeros(maximo, &ope1, &ope2);
+	
 	return 0;
 }
