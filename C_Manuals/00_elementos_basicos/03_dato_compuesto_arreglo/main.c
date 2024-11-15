@@ -26,7 +26,7 @@ int main(){
 		Los datos compuestos: arreglos
 		- Coleccion de elemntos del mismo tipo que se almacenan en una unica variable
 		- Existen arreglos de caracteres, de enteros, etc
-		- Podemos utilizar tipsod e datos primitivos
+		- Podemos utilizar tipsos e datos primitivos
 
 		* Tamaño:
 		Ejemplo: si un int ocupa 4 bytes y almacenamos 10 enteros en una array
@@ -34,7 +34,7 @@ int main(){
 
 	*/
 
-	// Declaramos un arreglo
+	// Declaramos un arreglo de caracteres
 	char a[30];
 	printf("Escribe tu nombre sin espacios: ");
 	scanf("%s", a);
