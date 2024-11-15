@@ -26,7 +26,7 @@ void limpiar(){
 int sumar(int a, int b);
 
 int main(){
-	printf("\n_________________________________________\n\n");
+	printf("\n________________________________________________\n\n");
 
 	int a = 5;
 	int b = 10;
@@ -34,7 +34,7 @@ int main(){
 	// Llamamos la función
 	printf("Resultado es: %d", sumar(a, b));
 
-	printf("\n_________________________________________\n\n");
+	printf("\n________________________________________________\n\n");
 	return 0;
 }
 

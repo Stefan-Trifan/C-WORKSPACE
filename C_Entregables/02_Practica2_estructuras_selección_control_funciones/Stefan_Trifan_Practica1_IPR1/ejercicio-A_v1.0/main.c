@@ -78,7 +78,7 @@ int rondaCorrecta(int maximo);
 
 int main(){
 
-	printf("\n_________________________________________START\n\n");
+	printf("\n________________________________________________START\n\n");
 	
 	// Declaración de variables
 	int maximo  = obtenerMaximo(); // Pedimos el numero maximo de los operadores
@@ -112,7 +112,7 @@ int main(){
 		printf("\nGame Over. Haber estudiado.\n%i puntos", puntos);
 	}
 	
-	printf("\n_________________________________________END\n\n");
+	printf("\n________________________________________________END\n\n");
 	return 0;
 
 }

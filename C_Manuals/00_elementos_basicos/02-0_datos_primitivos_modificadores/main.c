@@ -22,7 +22,7 @@ void limpiar(){
 }
 
 int main(){
-	printf("\n_________________________________________\n\n");
+	printf("\n________________________________________________\n\n");
 
 	char a = 'A';	   // 1 byte   | Rango desde 0 -> 255 (si es unsigned char)
 	short c = 21000;   // 2 bytes  | Rango desde -32768 -> 32767 (cuando es signed short)
@@ -46,6 +46,6 @@ int main(){
 	printf("El valor del unsigned int es: %u  \n", g);
 	printf("El valor del long double es:  %Lf \n", h);
 
-	printf("\n_________________________________________\n\n");
+	printf("\n________________________________________________\n\n");
 	return 0;
 }

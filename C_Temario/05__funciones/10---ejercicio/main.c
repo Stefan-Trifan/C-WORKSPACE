@@ -27,7 +27,7 @@ void limpiar(){
 void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta);
 
 int main(){
-	printf("\n_________________________________________\n\n");
+	printf("\n________________________________________________\n\n");
 
 	// Declaramos variables
 	int num1 = 0;
@@ -47,7 +47,7 @@ int main(){
 	printf("El resultado de la suma es : %i\n", resSuma);
 	printf("El resultado de la resta es: %i", resResta);
 
-	printf("\n_________________________________________\n\n");
+	printf("\n________________________________________________\n\n");
 }
 
 void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta){
