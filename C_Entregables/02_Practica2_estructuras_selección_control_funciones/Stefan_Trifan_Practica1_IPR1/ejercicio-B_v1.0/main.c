@@ -11,7 +11,6 @@
 		limpiar()
 
 	* 	Enunciado - Incrementa hasta 100
-		
 		Se pretende realizar un juego en el que el usuario, empezando desde el 1, debe llegar
 		exactamente al número 100 siguiendo ciertas normas. Para ello el programa debe guiar al
 		usuario y mostrar el progreso en cada paso.

@@ -11,7 +11,6 @@
 		limpiar()
 
 	* 	Enunciado - Calculadora de Potencia con Validación de Exponente
-		
 		El objetivo de este ejercicio es crear un programa que calcule la potencia de un número entero
 		elevado a un exponente entero positivo. El programa debe solicitar al usuario un número base
 		y un exponente, y mostrar el resultado solo si el exponente es positivo.

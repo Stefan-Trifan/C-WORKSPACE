@@ -11,7 +11,6 @@
 		limpiar()
 
 	* 	Enunciado - Práctica las tablas de multiplicar
-
 		El siguiente ejercicio pretende crear un programa para practicar las tablas de multiplicar. 
 		Las instrucciones del juego son las siguientes:
 			• El programa solicita al usuario la tabla mayor incluida (mínimo 2)
