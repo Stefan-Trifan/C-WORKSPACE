@@ -72,6 +72,9 @@
 		Te has pasado de 100. Has perdido el juego.
 */
 
+/* _________________________________________
+   Inicio cabecera del programa */
+
 #include <stdio.h>
 
 // Llamamos con limpiar()
@@ -79,11 +82,17 @@ void limpiar(){
 	while (getchar() != '\n');
 }
 
+/* _________________________________________
+   Inicio main() */
+
 int main(){
-	printf("\n________________________________________________\n\n");
-	
-	
-	
-	printf("\n________________________________________________\n\n");
+	printf("\n________________________________________________START\n\n");
+
+
+
+	printf("\n________________________________________________END\n\n");
 	return 0;
 }
+
+/* _________________________________________
+   Inicio definición de funciones */
