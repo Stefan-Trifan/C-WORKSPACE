@@ -20,24 +20,20 @@
 			• Existe un límite de 8 operaciones para alcanzar el número 100.
 
 		Condiciones de finalización del juego:
-			• Si el usuario alcanza exactamente el 100 
-			el programa debe mostrar un mensaje de éxito y acabar.
-			• Si el usuario supera el 100 o utiliza más de las operaciones permitidas 
-			el programa debe mostrar un mensaje de derrota y terminar.
-			• Debe mostrarse al usuario una sugerencia cuando su número sea superior a 50 
-			para que use la opción sumar y evitar superar el 100.
+			• Si el usuario alcanza exactamente el 100 el programa debe mostrar un mensaje de éxito y acabar.
+			• Si el usuario supera el 100 o utiliza más de las operaciones permitidas  el programa debe mostrar un mensaje de derrota y terminar.
+			• Debe mostrarse al usuario una sugerencia cuando su número sea superior a 50 para que use la opción sumar y evitar superar el 100.
 
-		void mostrarInstruccionesIniciales(){
-			Debe mostrar las instrucciones del juego al principio de la partida
-		}
-		
-		void mostrarMenu(int numero, int operaciones){
-			Debe mostrar el menú de elección de operación	
-		}
-
-		int realizarOperacion(int numero, int opcion){
-			Debe realizar la operación elegida y devolver su resultado)
-		}
+		Se tienen que implementar las siguientes funciones:
+			void mostrarInstruccionesIniciales(){
+				Debe mostrar las instrucciones del juego al principio de la partida
+			}
+			void mostrarMenu(int numero, int operaciones){
+				Debe mostrar el menú de elección de operación	
+			}
+			int realizarOperacion(int numero, int opcion){
+				Debe realizar la operación elegida y devolver su resultado)
+			}
 */
 /* 
 	# Ejemplo de ejecución

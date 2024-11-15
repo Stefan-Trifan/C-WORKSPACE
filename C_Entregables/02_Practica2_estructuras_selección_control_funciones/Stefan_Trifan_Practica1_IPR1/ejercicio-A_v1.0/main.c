@@ -22,23 +22,20 @@
 			• Al final de la partida deberá indicar cuantos puntos ha conseguido.
 
 		# Se deberán implementar las siguientes funciones:
-
-		int obtenerMaximo(){
-			Pide el maximo numero a multiplicar al usuario,
-			repite la operacion hasta que el usuario indique un
-			numero valido. El numero debe ser mayor que 1.
-		}
-		
-		void obtenNumeros(int maximo, int *ope1, int *ope2){
-			obtiene dos numeros aleatorios entre 2 y el maximo incluido
-			y los devuelve como parametros por referencia
-		}
-
-		int rondaCorrecta(int maximo){
-			genera una ronda, 
-			devuelve 0 si el usuario no ha acertado,
-			uno si todo va bien
-		}
+			int obtenerMaximo(){
+				Pide el maximo numero a multiplicar al usuario,
+				repite la operacion hasta que el usuario indique un
+				numero valido. El numero debe ser mayor que 1.
+			}
+			void obtenNumeros(int maximo, int *ope1, int *ope2){
+				obtiene dos numeros aleatorios entre 2 y el maximo incluido
+				y los devuelve como parametros por referencia
+			}
+			int rondaCorrecta(int maximo){
+				genera una ronda, 
+				devuelve 0 si el usuario no ha acertado,
+				uno si todo va bien
+			}
 */
 /* 
 		# Ejemplo de ejecución

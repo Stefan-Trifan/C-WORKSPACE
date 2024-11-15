@@ -16,11 +16,11 @@
 		El programa debe funcionar tanto para números positivos como negativos.
 
 		Se tiene que implementar la siguiente función:
-		int sumaDigitosImpares(int num){
-			Función que de manera recursiva calcula la suma
-			Como condición base si el número es igual a 0 la suma es 0
-			La llamada recursiva se debe hacer descartando los dígitos pares
-		}	
+			int sumaDigitosImpares(int num){
+				Función que de manera recursiva calcula la suma
+				Como condición base si el número es igual a 0 la suma es 0
+				La llamada recursiva se debe hacer descartando los dígitos pares
+			}	
 */
 /*  
 	# Ejemplo de ejecución

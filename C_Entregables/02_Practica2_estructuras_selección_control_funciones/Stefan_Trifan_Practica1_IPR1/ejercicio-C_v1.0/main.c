@@ -14,7 +14,7 @@
 		El objetivo de este ejercicio es crear un programa que calcule la potencia de un número entero
 		elevado a un exponente entero positivo. El programa debe solicitar al usuario un número base
 		y un exponente, y mostrar el resultado solo si el exponente es positivo.
-
+		
 		Normas:
 			1. La función calcular_potencia debe realizar la validación del exponente para
 			asegurarse de que sea positivo.
@@ -27,8 +27,7 @@
 
 		Condiciones:
 			1. Si el cálculo se realiza correctamente, el programa debe mostrar el resultado de la potencia.
-			2. Si el exponente es menor o igual a 0, el programa debe mostrar un mensaje de error:
-				"Error: el exponente debe ser positivo”.
+			2. Si el exponente es menor o igual a 0, el programa debe mostrar un mensaje de error: "Error: el exponente debe ser positivo”.
 
 		Se tiene que implementar la siguiente función:
 			int calcular_potencia(int base, int exponente, int *resultado){
