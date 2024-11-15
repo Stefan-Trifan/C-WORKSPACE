@@ -56,6 +56,9 @@
 				4 puntos
 */
 
+/* _________________________________________
+   Inicio cabecera del programa */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -70,14 +73,18 @@ int obtenerMaximo();
 void obtenNumeros(int maximo, int *ope1, int *ope2);
 int rondaCorrecta(int maximo);
 
+/* _________________________________________
+   Inicio main() */
+
 int main(){
 
-	printf("\n________________________________________________\n\n");
+	printf("\n________________________________________________START\n\n");
 	
 	// Declaración de variables
 	int maximo  = 0;
 	int vidas   = 3;
 	int rondas  = 10;
+	int puntos  = 0;
 
 	// Pedimos el numero maximo de los operadokres
 	maximo = obtenerMaximo();
@@ -90,23 +97,37 @@ int main(){
 
 		if(rondaCorrecta(maximo) == 0){
 			vidas--;
+			printf("... Resultado incorrecto, vidas: %i\n", vidas);
+		} else{
+			puntos++;
 		}
 		rondas--;
 	}
+
+	if(rondas == 0){
+		printf("\n¡FELICIDADES! Te las sabes todas.");
+	}
+
+	if(vidas == 0){
+		printf("\nGame Over. Haber estudiado.\n%i puntos", puntos);
+	}
 	
-	printf("\n________________________________________________\n\n");
+	printf("\n________________________________________________END\n\n");
 	return 0;
 
 }
 
-// Pide el número máximo de los operandos
+/* _________________________________________
+   Inicio definición de funciones */
+
+// Pide el número máximo que tendran operandos
 int obtenerMaximo(){
 
 	int maximo = 0;
 	// Seguimos pidiendo el num maximo hasta que sea mayor o igual a 2
 	do{
 		printf("introduce el máximo: ");
-		scanf("%i", &maximo);
+		scanf("%d", &maximo);
 	} while (maximo <= 2);
 	return maximo;
 
@@ -116,8 +137,8 @@ int obtenerMaximo(){
 // Los devuelve como parametros por referencia
 void obtenNumeros(int maximo, int *ope1, int *ope2){
 
-	*ope1 = (rand() % (maximo - 2)) + 3;
-	*ope2 = (rand() % (maximo - 2)) + 3;
+	*ope1 = (rand() % (maximo - 1)) + 2;
+	*ope2 = (rand() % (maximo - 1)) + 2;
 
 }
 
@@ -125,8 +146,14 @@ void obtenNumeros(int maximo, int *ope1, int *ope2){
 // Devuelve 0 si el usuario no ha acertado, 1 si todo va bien
 int rondaCorrecta(int maximo){
 
-	int ope1 = 0, ope2 = 0;
+	int ope1 = 0, ope2 = 0, resultadoUsuario = 0;
 	obtenNumeros(maximo, &ope1, &ope2);
-	
-	return 0;
+	printf("%d * %d: ", ope1, ope2);
+	scanf("%d", &resultadoUsuario);
+	if(resultadoUsuario == ope1 * ope2){
+		return 1;
+	} else {
+		return 0;
+	}
+
 }
