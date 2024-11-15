@@ -66,10 +66,29 @@ void limpiar(){
 	while (getchar() != '\n');
 }
 
+// Inicializamos las funciones
+int  obtenerMaximo();
+void obtenNumeros(int maximo, int *ope1, int *ope2);
+int  rondaCorrecta(int maximo);
+
 int main(){
 	printf("\n________________________________________________\n\n");
 	
 
+	
 	printf("\n________________________________________________\n\n");
+	return 0;
+}
+
+// Definimos las funciones
+int obtenerMaximo(){
+	return 0;
+}
+
+void obtenNumeros(int maximo, int *ope1, int *ope2){
+
+}
+
+int rondaCorrecta(int maximo){
 	return 0;
 }
