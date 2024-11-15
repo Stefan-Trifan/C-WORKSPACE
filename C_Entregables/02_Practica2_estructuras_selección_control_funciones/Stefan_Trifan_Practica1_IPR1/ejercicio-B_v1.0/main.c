@@ -74,8 +74,8 @@
 #include <stdio.h>
 
 void mostrarInstruccionesIniciales();
-void mostrarMenu(int numero, int operaciones);
-int  realizarOperacion(int numero, int opcion);
+void mostrarMenu(int numeroActual, int numeroOperaciones);
+int  realizarOperacion(int numeroActual, int tipoOperacion);
 void limpiarBuffer();
 
 /* _________________________________________
@@ -83,10 +83,43 @@ void limpiarBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	// Declaramos las variables
+	int numeroOperaciones = 1;
+	int numeroActual = 1;
+	int tipoOperacion = 0;
+	
     
 	mostrarInstruccionesIniciales();
+
+	for(; numeroOperaciones <= 8; numeroOperaciones++){
+
+		mostrarMenu(numeroActual, numeroOperaciones);
+
+		do{
+			printf("Elige tu movimiento (1, 2 o 3): ");
+			scanf("%i", &tipoOperacion);
+		} while(tipoOperacion < 1 || tipoOperacion > 3);
+
+		numeroActual = realizarOperacion( numeroActual, tipoOperacion);
+
+		if(numeroActual > 100){
+			printf("Tu numero es: %i\n", numeroActual);
+			printf("Te has pasado de 100. Has perdido el juego\n");
+			break;
+		} else if (numeroActual == 100){
+			printf("Tu numero es: %i\n", numeroActual);
+			printf("Felicidades! Has ganado el juego\n");
+			break;
+		}
+	}
+
+	if(numeroActual < 100){
+		printf("Tu numero es: %i\n", numeroActual);
+		printf("No has llegado a 100. Has perdido el juego\n");
+	}
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n_________________________________________END  \n\n");
 	return 0;
 }
 
@@ -95,21 +128,46 @@ int main(){
 
 // Muestra las instrucciones del juego al principio de la partida
 void mostrarInstruccionesIniciales(){
-		printf("Debes alcanzar exactamente el valor 100 desde el valor inicial de 1.\n"
-		"Puedes sumar 5, sumar 3 o multiplicar por 2 en cada movimiento.\n"
-		"Tienes un maximo de 20 movimientos. Buena suerte!\n");
+
+	printf("Debes alcanzar exactamente el valor 100 desde el valor inicial de 1.\n"
+	"Puedes sumar 5, sumar 3 o multiplicar por 2 en cada movimiento.\n"
+	"Tienes un maximo de 20 movimientos. Buena suerte!\n\n");
+
 }
 
 // Muestra el menú de elección de operación	
-void mostrarMenu(int numero, int operaciones){
+void mostrarMenu(int numeroActual, int numeroOperaciones){
+
+	printf(
+	"Numero actual: %i\n"
+	"Operación %i:\n"
+	"1. Sumar 5\n"
+	"2. Sumar 3\n"
+	"3. Multiplicar por 2\n", numeroActual, numeroOperaciones);
 
 }
 
 // Realiza la operación elegida y devuelve su resultado
-int realizarOperacion(int numero, int opcion){
-	return 0;
+int realizarOperacion(int numeroActual, int tipoOperacion){
+	
+	switch (tipoOperacion) {
+		case 1:
+			numeroActual += 5;
+			break;
+		case 2:
+			numeroActual += 3;
+			break;
+		case 3:
+			numeroActual *= 2;
+			break;
+	}
+
+	return numeroActual;
 }
 
 void limpiarBuffer(){
 	while (getchar() != '\n');
 }
+
+// todo: Cambiar el nombre de las variables y ponerlas como pide el enunciado
+// todo: Comentar el código
