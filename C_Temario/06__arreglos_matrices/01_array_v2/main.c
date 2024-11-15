@@ -27,7 +27,7 @@ void limpiar(){
 int generaNumero0a30();
 
 int main(){
-	printf("\n________________________________________________\n\n");
+	printf("\n_________________________________________\n\n");
 
 	srand(getpid());
 
@@ -64,7 +64,7 @@ int main(){
 		printf("El número no está en el array");
 	}
 
-	printf("\n________________________________________________\n\n");
+	printf("\n_________________________________________\n\n");
 	return 0;
 }
 

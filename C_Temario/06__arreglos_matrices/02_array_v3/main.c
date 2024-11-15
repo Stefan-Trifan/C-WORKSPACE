@@ -27,7 +27,7 @@ void limpiar(){
 int generaNumero0a30();
 
 int main(){
-	printf("\n________________________________________________\n\n");
+	printf("\n_________________________________________\n\n");
 
 	// srand(unsigned int seed): Inicializa la semilla para el generador de números pseudoaleatorios.
 	// getpid(): Obtiene el identificador de proceso único del programa que se está ejecutando.
@@ -66,7 +66,7 @@ int main(){
 		printf("El número no está en el array");
 	}
 
-	printf("\n________________________________________________\n\n");
+	printf("\n_________________________________________\n\n");
 	return 0;
 }
 
