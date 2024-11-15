@@ -71,20 +71,23 @@ int rondaCorrecta(int maximo);
 int main(){
 	printf("\n________________________________________________\n\n");
 	
-	
+	int maximo = obtenerMaximo();
+	printf("%i", maximo);
 	
 	printf("\n________________________________________________\n\n");
 	return 0;
 }
 
-// Definimos las funciones
+// Pide el número máximo
 int obtenerMaximo(){
-	/*  
-		Pide el maximo numero a multiplicar al usuario,
-		repite la operacion hasta que el usuario indique un
-		numero valido. El numero debe ser mayor que 1.
-	*/
-	return 0;
+	int maximo = 0;
+	// Seguimos pidiendo el num maximo hasta que sea mayor o igual a 2
+	do 
+	{
+		printf("introduce el máximo: ");
+		scanf("%i", &maximo);
+	} while (maximo <= 2);
+	return maximo;
 }
 
 void obtenNumeros(int maximo, int *ope1, int *ope2){
@@ -93,6 +96,7 @@ void obtenNumeros(int maximo, int *ope1, int *ope2){
 		y los devuelve como parametros por referencia
 	*/
 }
+
 
 int rondaCorrecta(int maximo){
 	/* 
