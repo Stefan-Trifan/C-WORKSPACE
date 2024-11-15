@@ -33,7 +33,7 @@ int main(){
 
 	int array[TAM_ARRAY];
 	int numUser  = 0;
-	int contador = 0;
+	int contNumDiferentes = 0;
 
 	// Generamos el array con numeros aleatorios
 	for(int i = 0; i < TAM_ARRAY; i++){
@@ -57,12 +57,12 @@ int main(){
 		}
 
 		if(array[i] != numUser){
-			contador++;
+			contNumDiferentes++;
 		}
 
 	}
 
-	if(contador == TAM_ARRAY){
+	if(contNumDiferentes == TAM_ARRAY){
 		printf("El número no está en el array");
 	}
 
