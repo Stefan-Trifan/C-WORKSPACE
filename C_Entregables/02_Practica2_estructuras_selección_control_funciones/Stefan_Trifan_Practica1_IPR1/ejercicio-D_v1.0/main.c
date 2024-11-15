@@ -7,9 +7,6 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
-		limpiar()
-
 	* 	Enunciado - Suma recursiva de los dígitos impares
 		Realiza un programa que utilice una función recursiva para sumar los dígitos de posición impar
 		(contando como posición 1 el dígito menos significativo) de un número entero.
@@ -35,26 +32,27 @@
 */
 
 /* _________________________________________
-   Inicio cabecera del programa */
+   Inicio cabecera */
 
 #include <stdio.h>
 
-// Llamamos con limpiar()
-void limpiar(){
-	while (getchar() != '\n');
-}
+void limpiarBuffer();
 
 /* _________________________________________
    Inicio main() */
 
 int main(){
 	printf("\n________________________________________________START\n\n");
-
-
-
+    
+    
+    
 	printf("\n________________________________________________END\n\n");
 	return 0;
 }
 
 /* _________________________________________
    Inicio definición de funciones */
+
+void limpiarBuffer(){
+	while (getchar() != '\n');
+}

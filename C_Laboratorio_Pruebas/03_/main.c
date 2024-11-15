@@ -4,37 +4,36 @@
 
 	* 	Compilar
 		mac     : gcc main.c -o main
+				  ./main
 		windows : gcc main.c -o main.exe
 				: ./main.exe
-
-	* 	Introducir después de scanf
-		limpiar()
 
 	* 	Enunciado X
 		LoremIpsumDummyText
 */
 
 /* _________________________________________
-   Inicio cabecera del programa */
+   Inicio cabecera */
 
 #include <stdio.h>
 
-// Llamamos con limpiar()
-void limpiar(){
-	while (getchar() != '\n');
-}
+void limpiarBuffer();
 
 /* _________________________________________
    Inicio main() */
 
 int main(){
 	printf("\n________________________________________________START\n\n");
-
-
-
+    
+    
+    
 	printf("\n________________________________________________END\n\n");
 	return 0;
 }
 
 /* _________________________________________
    Inicio definición de funciones */
+
+void limpiarBuffer(){
+	while (getchar() != '\n');
+}

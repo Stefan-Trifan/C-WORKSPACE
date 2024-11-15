@@ -7,9 +7,6 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
-		limpiar()
-
 	* 	Enunciado - Calculadora de Potencia con Validación de Exponente
 		El objetivo de este ejercicio es crear un programa que calcule la potencia de un número entero
 		elevado a un exponente entero positivo. El programa debe solicitar al usuario un número base
@@ -50,26 +47,27 @@
 */
 
 /* _________________________________________
-   Inicio cabecera del programa */
+   Inicio cabecera */
 
 #include <stdio.h>
 
-// Llamamos con limpiar()
-void limpiar(){
-	while (getchar() != '\n');
-}
+void limpiarBuffer();
 
 /* _________________________________________
    Inicio main() */
 
 int main(){
 	printf("\n________________________________________________START\n\n");
-
-
-
+    
+    
+    
 	printf("\n________________________________________________END\n\n");
 	return 0;
 }
 
 /* _________________________________________
    Inicio definición de funciones */
+
+void limpiarBuffer(){
+	while (getchar() != '\n');
+}

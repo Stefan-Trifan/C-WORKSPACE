@@ -7,9 +7,6 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
-		limpiar()
-
 	* 	Enunciado - Incrementa hasta 100
 		Se pretende realizar un juego en el que el usuario, empezando desde el 1, debe llegar exactamente al número 100 siguiendo normas. 
 		Para ello el programa debe guiar al usuario y mostrar el progreso en cada paso.
@@ -72,26 +69,27 @@
 */
 
 /* _________________________________________
-   Inicio cabecera del programa */
+   Inicio cabecera */
 
 #include <stdio.h>
 
-// Llamamos con limpiar()
-void limpiar(){
-	while (getchar() != '\n');
-}
+void limpiarBuffer();
 
 /* _________________________________________
    Inicio main() */
 
 int main(){
 	printf("\n________________________________________________START\n\n");
-
-
-
+    
+    
+    
 	printf("\n________________________________________________END\n\n");
 	return 0;
 }
 
 /* _________________________________________
    Inicio definición de funciones */
+
+void limpiarBuffer(){
+	while (getchar() != '\n');
+}
