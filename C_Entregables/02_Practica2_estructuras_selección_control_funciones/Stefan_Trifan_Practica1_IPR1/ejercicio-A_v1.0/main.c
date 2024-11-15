@@ -69,16 +69,16 @@ void limpiar(){
 }
 
 // Inicializamos las funciones
-int obtenerMaximo();
+int  obtenerMaximo();
 void obtenNumeros(int maximo, int *ope1, int *ope2);
-int rondaCorrecta(int maximo);
+int  rondaCorrecta(int maximo);
 
 /* _________________________________________
    Inicio main() */
 
 int main(){
 
-	printf("\n________________________________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 	
 	// Declaración de variables
 	int maximo  = obtenerMaximo(); // Pedimos el numero maximo de los operadores
@@ -112,7 +112,7 @@ int main(){
 		printf("\nGame Over. Haber estudiado.\n%i puntos", puntos);
 	}
 	
-	printf("\n________________________________________________END\n\n");
+	printf("\n_________________________________________END\n\n");
 	return 0;
 
 }

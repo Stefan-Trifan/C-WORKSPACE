@@ -73,22 +73,42 @@
 
 #include <stdio.h>
 
+void mostrarInstruccionesIniciales();
+void mostrarMenu(int numero, int operaciones);
+int  realizarOperacion(int numero, int opcion);
 void limpiarBuffer();
 
 /* _________________________________________
    Inicio main() */
 
 int main(){
-	printf("\n________________________________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
+	mostrarInstruccionesIniciales();
     
-    
-	printf("\n________________________________________________END\n\n");
+	printf("\n_________________________________________END\n\n");
 	return 0;
 }
 
 /* _________________________________________
    Inicio definición de funciones */
+
+// Muestra las instrucciones del juego al principio de la partida
+void mostrarInstruccionesIniciales(){
+		printf("Debes alcanzar exactamente el valor 100 desde el valor inicial de 1.\n"
+		"Puedes sumar 5, sumar 3 o multiplicar por 2 en cada movimiento.\n"
+		"Tienes un maximo de 20 movimientos. Buena suerte!\n");
+}
+
+// Muestra el menú de elección de operación	
+void mostrarMenu(int numero, int operaciones){
+
+}
+
+// Realiza la operación elegida y devuelve su resultado
+int realizarOperacion(int numero, int opcion){
+	return 0;
+}
 
 void limpiarBuffer(){
 	while (getchar() != '\n');
