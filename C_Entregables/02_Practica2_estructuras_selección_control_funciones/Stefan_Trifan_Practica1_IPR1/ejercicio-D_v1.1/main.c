@@ -69,7 +69,7 @@ int main(){
 // Calculamos la suma de manera recursiva 
 int sumaDigitosImpares(int num){
 	
-	int resultadoSuma;
+	int resultadoSuma = 0;
 
 	// Nos aseguramos que el num está siempre en positivo
 	num = abs(num);
@@ -85,17 +85,14 @@ int sumaDigitosImpares(int num){
 	if(ultimoDigito % 2 == 1){ // Si el ultimo digito es impar
 
 		resultadoSuma += ultimoDigito; // Sumamos ultimo digito
-		sumaDigitosImpares(num / 10);
+		return ultimoDigito + sumaDigitosImpares(num / 10);
 
-	}
-	// La llamada recursiva se debe hacer descartando los dígitos pares
-	if(ultimoDigito % 2 == 0){
+	} else { // La llamada recursiva se debe hacer descartando los dígitos pares
 		
-		sumaDigitosImpares(num / 10);
+		return sumaDigitosImpares(num / 10);
 
 	}
 
-	return resultadoSuma;
 }	
 
 
