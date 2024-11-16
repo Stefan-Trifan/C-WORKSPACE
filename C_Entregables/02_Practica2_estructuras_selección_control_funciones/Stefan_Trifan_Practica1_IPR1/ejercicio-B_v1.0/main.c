@@ -68,6 +68,9 @@
 		Te has pasado de 100. Has perdido el juego.
 */
 
+// todo: Cambiar el nombre de las variables y ponerlas como pide el enunciado
+// todo: Comentar el código
+
 /* _________________________________________
    Inicio cabecera */
 
@@ -168,6 +171,3 @@ int realizarOperacion(int numeroActual, int tipoOperacion){
 void limpiarBuffer(){
 	while (getchar() != '\n');
 }
-
-// todo: Cambiar el nombre de las variables y ponerlas como pide el enunciado
-// todo: Comentar el código

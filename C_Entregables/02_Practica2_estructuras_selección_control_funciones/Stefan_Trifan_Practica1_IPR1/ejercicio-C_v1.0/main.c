@@ -51,6 +51,8 @@
 
 #include <stdio.h>
 
+int calcular_potencia(int base, int exponente, int *resultado);
+
 void limpiarBuffer();
 
 /* _________________________________________
@@ -68,6 +70,12 @@ int main(){
 /* _________________________________________
    Inicio definición de funciones */
 
+// 1. Calcula la potencia de la base elevada al exponente usando un bucle y asigna el resultado a la variable resultado.
+// 2. Valida si el exponente es positivo. Devuelve un 1 si el cálculo se realiza correctamente o un 0 si el exponente no es positivo
+int calcular_potencia(int base, int exponente, int *resultado){
+	
+}
+   
 void limpiarBuffer(){
 	while (getchar() != '\n');
 }

@@ -53,6 +53,13 @@ int main(){
 /* _________________________________________
    Inicio definición de funciones */
 
+// Calculamos la suma de manera recursiva 
+
+int sumaDigitosImpares(int num){
+	// Como condición base si el número es igual a 0 la suma es 0
+	// La llamada recursiva se debe hacer descartando los dígitos pares
+}	
+
 void limpiarBuffer(){
 	while (getchar() != '\n');
 }
