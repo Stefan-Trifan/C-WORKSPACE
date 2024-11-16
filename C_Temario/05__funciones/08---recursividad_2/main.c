@@ -7,16 +7,16 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Hacer un programa que calcule el mínimo, el máximo y la media 
-		de tres números enteros que deban ser leídos de la entrada estandar
+		Hacer un programa que calcule el minimo, el maximo y la media 
+		de tres numeros enteros que deban ser leidos de la entrada estandar
 
-		La funcionalidad debe ser realizada mediante una función denominada calculos()
-		que reciba como parámetros los 3 números y devuelva los 3 resultados del siguiente modo:
-			la media será entregada como resultado de la funcion 
+		La funcionalidad debe ser realizada mediante una funcion denominada calculos()
+		que reciba como parametros los 3 numeros y devuelva los 3 resultados del siguiente modo:
+			la media sera entregada como resultado de la funcion 
 			mientras que el minimo y el maximo de los valores se devolveran en los parametros de la funcion 
 			por lo que seran pasados por referencia
 */
@@ -48,7 +48,7 @@ void calculos(int *max, int *min, int *media){
 /	*max == Accediendo al contenido 
 
 /   *max=numUser;
-	Codigo del otro día
+	Codigo del otro dia
 */
 
 }

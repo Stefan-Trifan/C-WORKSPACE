@@ -13,18 +13,18 @@ int main(){
 	
 	int numeroEntero, result;
 
-	printf("Introduce un número entero: ");
+	printf("Introduce un numero entero: ");
 	// El & solo lo usamos en el scanf
 	// scanf devuelve un 1 (si es true) o un 0 (si es false)
 	// Guardamos el 0 o el 1 dentro de result
 	result = scanf("%i", &numeroEntero);
 	// Sacamos por pantalla
-	printf("Tu número es %i", numeroEntero);
+	printf("Tu numero es %i", numeroEntero);
 
-	// Comprobamos si el número introducido por el usuario es entero o no
+	// Comprobamos si el numero introducido por el usuario es entero o no
 	if (result != 1)
-		printf("\n No es un número entero. Adios");
+		printf("\n No es un numero entero. Adios");
 	else	
-		printf("\n Felicidades!! Has introducido un número entero");
+		printf("\n Felicidades!! Has introducido un numero entero");
 	return 0;
 }

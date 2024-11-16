@@ -8,7 +8,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
+	* 	Introducir despues de scanf
 		limpiar()
 
 	* 	Enunciado X
@@ -27,13 +27,13 @@ int main(){
 	// Declaramos las variables
 	int opcion = 0;
 
-	// Comprobamos si el usuario ha introducido una opcion válida
+	// Comprobamos si el usuario ha introducido una opcion valida
 	// Seguimos ejecutando hasta que el usuario introduzca una opcion valida
 	do{
 
 		printf("Introduce una opcion: \n"
-		"1. Verificar si un número es par o impar\n"
-		"2. Calcular la suma de los números desde 0 hasta un valor dado.\n"
+		"1. Verificar si un numero es par o impar\n"
+		"2. Calcular la suma de los numeros desde 0 hasta un valor dado.\n"
 		"3. Realizar una cuenta regresiva.\n"
 		"4. Salir\n");
 

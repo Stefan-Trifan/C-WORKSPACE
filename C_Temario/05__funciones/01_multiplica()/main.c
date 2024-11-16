@@ -7,12 +7,12 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		18 Implementa una función que multiplique dos enteros solicitados desde la
-		función principal
+		18 Implementa una funcion que multiplique dos enteros solicitados desde la
+		funcion principal
 */
 
 #include <stdio.h>
@@ -30,14 +30,14 @@ int main(){
 	int num2 = 0;
 	
 
-	printf("Introduce el primer número: ");
+	printf("Introduce el primer numero: ");
 	scanf("%i", &num1);
 
-	printf("Introduce el segundo número: ");
+	printf("Introduce el segundo numero: ");
 	scanf("%i", &num2);
 
 	int resultado = multiplica(num1, num2);
-	printf("El resultado de la multiplicación es: %i\n", resultado);
+	printf("El resultado de la multiplicacion es: %i\n", resultado);
 
 }
 

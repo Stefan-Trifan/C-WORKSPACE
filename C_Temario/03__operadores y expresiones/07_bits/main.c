@@ -7,11 +7,11 @@
 		windows: gcc main.c -o main.exe
 			   : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Escribir un código que muestre si el tercer bit (contando desde la derecha) de un número entero de 8 bits sin signo leído por terminal, es un 1 o un 0.
+		Escribir un codigo que muestre si el tercer bit (contando desde la derecha) de un numero entero de 8 bits sin signo leido por terminal, es un 1 o un 0.
 */
 
 #include <stdio.h>
@@ -26,11 +26,11 @@ int main(){
 	unsigned char tercerBit  = 0;
 	unsigned int  esUno      = 0;
 
-	printf("Introduzca un número entero de 8 bits válido\n");
+	printf("Introduzca un numero entero de 8 bits valido\n");
 	scanf("%c",&dato);
 
 	tercerBit = 1 << 2;  /* desplazar 2 posiciones el 00000001 */
-						/* en tercerBit quedaría el 00000100 */
+						/* en tercerBit quedaria el 00000100 */
 
 	esUno = tercerBit & dato; // hacemos un "and" bit a bit
 	esUno = esUno >> 2;

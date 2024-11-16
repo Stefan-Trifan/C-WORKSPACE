@@ -9,30 +9,30 @@
 				: ./main.exe
 
 	* 	Enunciado - Incrementa hasta 100
-		Se pretende realizar un juego en el que el usuario, empezando desde el 1, debe llegar exactamente al número 100 siguiendo normas. 
+		Se pretende realizar un juego en el que el usuario, empezando desde el 1, debe llegar exactamente al numero 100 siguiendo normas. 
 		Para ello el programa debe guiar al usuario y mostrar el progreso en cada paso.
 
 		Normas:
-			• En cada turno el usuario puede incrementar su número en 5 ó 3 unidades o puede multiplicarlo por 2.
-			• Existe un límite de 8 operaciones para alcanzar el número 100.
+			• En cada turno el usuario puede incrementar su numero en 5 o 3 unidades o puede multiplicarlo por 2.
+			• Existe un limite de 8 operaciones para alcanzar el numero 100.
 
-		Condiciones de finalización del juego:
-			• Si el usuario alcanza exactamente el 100 el programa debe mostrar un mensaje de éxito y acabar.
-			• Si el usuario supera el 100 o utiliza más de las operaciones permitidas  el programa debe mostrar un mensaje de derrota y terminar.
-			• Debe mostrarse al usuario una sugerencia cuando su número sea superior a 50 para que use la opción sumar y evitar superar el 100.
+		Condiciones de finalizacion del juego:
+			• Si el usuario alcanza exactamente el 100 el programa debe mostrar un mensaje de exito y acabar.
+			• Si el usuario supera el 100 o utiliza mas de las operaciones permitidas  el programa debe mostrar un mensaje de derrota y terminar.
+			• Debe mostrarse al usuario una sugerencia cuando su numero sea superior a 50 para que use la opcion sumar y evitar superar el 100.
 
 		Se tienen que implementar las siguientes funciones:
 			void mostrarInstruccionesIniciales(){
 				Debe mostrar las instrucciones del juego al principio de la partida
 			}
 			void mostrarMenu(int numero, int operaciones){
-				Debe mostrar el menú de elección de operación	
+				Debe mostrar el menu de eleccion de operacion	
 			}
 			int realizarOperacion(int numero, int opcion){
-				Debe realizar la operación elegida y devolver su resultado)
+				Debe realizar la operacion elegida y devolver su resultado)
 			}
 
-	*   Ejemplo de ejecución
+	*   Ejemplo de ejecucion
 		Debes alcanzar exactamente el valor 100 desde el valor inicial de 1.
 		Puedes sumar 5, sumar 3 o multiplicar por 2 en cada movimiento.
 		Tienes un maximo de 20 movimientos. Buena suerte!
@@ -68,7 +68,7 @@
 		Te has pasado de 100. Has perdido el juego.
 */
 
-// todo: Comentar el código
+// todo: Comentar el codigo
 
 /* _________________________________________
    Inicio cabecera */
@@ -126,7 +126,7 @@ int main(){
 }
 
 /* _________________________________________
-   Inicio definición de funciones */
+   Inicio definicion de funciones */
 
 // Muestra las instrucciones del juego al principio de la partida
 void mostrarInstruccionesIniciales(){
@@ -137,19 +137,19 @@ void mostrarInstruccionesIniciales(){
 
 }
 
-// Muestra el menú de elección de operación	
+// Muestra el menu de eleccion de operacion	
 void mostrarMenu(int numero, int operaciones){
 
 	printf(
 	"Numero actual: %i\n"
-	"Operación %i:\n"
+	"Operacion %i:\n"
 	"1. Sumar 5\n"
 	"2. Sumar 3\n"
 	"3. Multiplicar por 2\n", numero, operaciones);
 
 }
 
-// Realiza la operación elegida y devuelve su resultado
+// Realiza la operacion elegida y devuelve su resultado
 int realizarOperacion(int numero, int opcion){
 	
 	switch (opcion) {

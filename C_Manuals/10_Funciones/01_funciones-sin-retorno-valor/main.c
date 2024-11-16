@@ -8,7 +8,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
+	* 	Introducir despues de scanf
 		limpiar()
 
 	* 	Enunciado X
@@ -26,14 +26,14 @@ void Mundo();
 int main(){
 	printf("\n________________________________________________\n\n");
 
-	// Llamamos la función
+	// Llamamos la funcion
 	Mundo();
 
 	printf("\n________________________________________________\n\n");
 	return 0;
 }
 
-// Función
+// Funcion
 void Mundo()
 {
 	printf("Hola Mundo\n");

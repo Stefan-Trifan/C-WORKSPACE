@@ -7,17 +7,17 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado 22
 
 		Codificar un programa en C que:
 
-		Solicite dos números complejos al usuario, 
-		Realice la suma, resta y multiplicación de los mismos.
+		Solicite dos numeros complejos al usuario, 
+		Realice la suma, resta y multiplicacion de los mismos.
 		
-		Debes generar un menú que incluya una entrada para cada operación
+		Debes generar un menu que incluya una entrada para cada operacion
 		Debes codificar las operaciones en funciones
 
 */
@@ -47,28 +47,28 @@ int main(){
 	int ci = 0;
 
 	// Pedimos primer num
-	printf("Introduce la parte natural del primer número:     ");
+	printf("Introduce la parte natural del primer numero:     ");
 	scanf("%i", &a);
 
-	printf("Introduce la parte imaginaria del segundo número: ");
+	printf("Introduce la parte imaginaria del segundo numero: ");
 	scanf("%i", &ai);
-	printf("Tu primer número imaginario es:                   %i + %ii\n", a, ai);
+	printf("Tu primer numero imaginario es:                   %i + %ii\n", a, ai);
 
 	// Pedimos segundo num
-	printf("Introduce la parte natural del segundo número:    ");
+	printf("Introduce la parte natural del segundo numero:    ");
 	scanf("%i", &b);
 
-	printf("Introduce la parte imaginaria del segundo número: ");
+	printf("Introduce la parte imaginaria del segundo numero: ");
 	scanf("%i", &bi);
-	printf("Tu segundo número imaginario es:                  %i + %ii\n", b, bi);
+	printf("Tu segundo numero imaginario es:                  %i + %ii\n", b, bi);
 
-	// Preguntamos que operación deseamos realizar
+	// Preguntamos que operacion deseamos realizar
 	printf(
-		"Introduce el tipo de operación que deseas realizar: \n"
+		"Introduce el tipo de operacion que deseas realizar: \n"
 		"1: suma \n"
 		"2: resta \n"
 		"3: multiplicacion \n"
-		"Tipo operación: ");
+		"Tipo operacion: ");
 	scanf("%i", &operacion);
 
 	switch(operacion){

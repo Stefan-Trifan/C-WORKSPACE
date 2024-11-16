@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado X
@@ -23,11 +23,11 @@ void limpiar(){
 
 int main(){
 	/*  
-		Los datos carácter (char)
-		- Su tamaño y rango varían ligeramente según si es con signo o sin signo.
+		Los datos caracter (char)
+		- Su tamaño y rango varian ligeramente segun si es con signo o sin signo.
 
 		* Ejemplos:
-			'A', 'b', '1', '@', '\n' (nueva línea)
+			'A', 'b', '1', '@', '\n' (nueva linea)
 
 		* Tamaño:
 			- Por defecto: 8 bits (1 byte) 
@@ -46,7 +46,7 @@ int main(){
 	char letra = 'c';
 	printf("%c\n", letra);
 
-	unsigned char myChar = 255; // Declaración de char sin signo
+	unsigned char myChar = 255; // Declaracion de char sin signo
     printf("El valor de myChar es: %u\n", myChar); // %u para imprimir sin signo
 
 	return 0;

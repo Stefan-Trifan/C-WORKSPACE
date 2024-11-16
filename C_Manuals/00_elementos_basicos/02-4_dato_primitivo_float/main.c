@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado X
@@ -23,10 +23,10 @@ void limpiar(){
 
 int main(){
 	/*  
-		Los datos de Punto Flotante de Precisión Simple (float)
+		Los datos de Punto Flotante de Precision Simple (float)
 		- Ocupa menos memoria que double.
-		- Un float puede representar aproximadamente 6 a 7 dígitos decimales de precisión.
-		- Con números decimales grandes, como a partir del 16,777,217, pierde precisión
+		- Un float puede representar aproximadamente 6 a 7 digitos decimales de precision.
+		- Con numeros decimales grandes, como a partir del 16,777,217, pierde precision
 
 		* Ejemplos: 
 			2.30, 3.5, -0.25

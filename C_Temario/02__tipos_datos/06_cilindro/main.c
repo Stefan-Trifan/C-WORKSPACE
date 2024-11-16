@@ -3,7 +3,7 @@
 
 /* 
 
-Codificar un programa que calcule el área de un la base de un cilindro y su volumen, pidiéndole al usuario el radio y la
+Codificar un programa que calcule el area de un la base de un cilindro y su volumen, pidiendole al usuario el radio y la
 altura y utilizando un float para el radio y un double para la altura
 
 */ 
@@ -19,16 +19,16 @@ double volumen_cilindro = 0.0;
 void main(){
 
     
-    printf("Ingrese el radio del círculo: ");
+    printf("Ingrese el radio del circulo: ");
     scanf("%f", &radio);
 
     printf("Ingrese la altura del cilindro: ");
     scanf("%lf", &altura);
 
 
-    // Calculamos el área de la base
+    // Calculamos el area de la base
     area_base = PI * radio * radio;
-    printf("El área de la base del cilindro es %f\n", area_base);
+    printf("El area de la base del cilindro es %f\n", area_base);
 
     // Calculamos el volumen del cilindro
     volumen_cilindro = area_base * altura;

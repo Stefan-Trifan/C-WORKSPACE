@@ -8,21 +8,21 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
+	* 	Introducir despues de scanf
 		limpiar()
 
-	* 	Enunciado - Práctica las tablas de multiplicar
+	* 	Enunciado - Practica las tablas de multiplicar
 		El siguiente ejercicio pretende crear un programa para practicar las tablas de multiplicar. 
 		Las instrucciones del juego son las siguientes:
-			• El programa solicita al usuario la tabla mayor incluida (mínimo 2)
-			• Habrá 10 rondas de preguntas con operandos elegidos al azar entre el 2 y el máximo solicitado anteriormente.
+			• El programa solicita al usuario la tabla mayor incluida (minimo 2)
+			• Habra 10 rondas de preguntas con operandos elegidos al azar entre el 2 y el maximo solicitado anteriormente.
 			• El usuario tiene 3 vidas
 			• Si no introduce el resultado correcto resta una vida
 			• Si introduce el resultado correcto gana un punto
 			• El juego termina cuando se acaban las 10 rondas o cuando pierde todas las vidas.
-			• Al final de la partida deberá indicar cuantos puntos ha conseguido.
+			• Al final de la partida debera indicar cuantos puntos ha conseguido.
 
-		Se deberán implementar las siguientes funciones:
+		Se deberan implementar las siguientes funciones:
 			int obtenerMaximo(){
 				Pide el maximo numero a multiplicar al usuario,
 				repite la operacion hasta que el usuario indique un
@@ -38,7 +38,7 @@
 				uno si todo va bien
 			}
 
-	* 	Ejemplo de ejecución
+	* 	Ejemplo de ejecucion
 
 		Introduce el maximo: 12
 		4 * 2  = 8
@@ -80,7 +80,7 @@ int main(){
 
 	printf("\n_________________________________________START\n\n");
 	
-	// Declaración de variables
+	// Declaracion de variables
 	int maximo  = obtenerMaximo(); // Pedimos el numero maximo de los operadores
 	int vidas   = 3;
 	int rondas  = 10;
@@ -118,15 +118,15 @@ int main(){
 }
 
 /* _________________________________________
-   Inicio definición de funciones */
+   Inicio definicion de funciones */
 
-// Pide el número máximo que tendran operandos
+// Pide el numero maximo que tendran operandos
 int obtenerMaximo(){
 
 	int maximo = 0;
 	// Seguimos pidiendo el num maximo hasta que sea mayor o igual a 2
 	do{
-		printf("introduce el máximo (mayor que 2): ");
+		printf("introduce el maximo (mayor que 2): ");
 		scanf("%d", &maximo);
 	} while (maximo <= 2);
 	return maximo;

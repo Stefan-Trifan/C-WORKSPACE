@@ -7,36 +7,36 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
 
-		* Ejercicio D - Operaciones aritméticas, lógicas y relacionales
+		* Ejercicio D - Operaciones aritmeticas, logicas y relacionales
 
-		Escriba un programa en C que solicite al usuario que ingrese dos números enteros. 
-		Luego, el programa debe usar operadores relacionales y lógicos para realizar lo siguiente:
+		Escriba un programa en C que solicite al usuario que ingrese dos numeros enteros. 
+		Luego, el programa debe usar operadores relacionales y logicos para realizar lo siguiente:
 
-		1. Verificar e imprimir si el primer número es mayor o igual que el segundo número.
-		2. Verificar e imprimir si el primer número es menor que 100 y el segundo número es mayor que 50.
-		3. Verificar e imprimir si alguno de los números es igual a 0 o si ambos números son pares.
-		4. Verificar e imprimir si los dos números no son iguales.
-		5. Verificar e imprimir si los dos números son pares.
+		1. Verificar e imprimir si el primer numero es mayor o igual que el segundo numero.
+		2. Verificar e imprimir si el primer numero es menor que 100 y el segundo numero es mayor que 50.
+		3. Verificar e imprimir si alguno de los numeros es igual a 0 o si ambos numeros son pares.
+		4. Verificar e imprimir si los dos numeros no son iguales.
+		5. Verificar e imprimir si los dos numeros son pares.
 
-		* Ejemplo de ejecución:
+		* Ejemplo de ejecucion:
 
 		* Entrada:
 		
-		Introduce el primer número: 75
-		Introduce el segundo número: 60
+		Introduce el primer numero: 75
+		Introduce el segundo numero: 60
 
 		* Salida:
 
-		El primer número es mayor o igual que el segundo número: Sí
-		El primer número es menor que 100 y el segundo número es mayor que 50: Sí
-		Uno de los números es 0 o ambos son pares: No
-		Los dos números son diferentes: Sí
-		Los dos números son pares: No
+		El primer numero es mayor o igual que el segundo numero: Si
+		El primer numero es menor que 100 y el segundo numero es mayor que 50: Si
+		Uno de los numeros es 0 o ambos son pares: No
+		Los dos numeros son diferentes: Si
+		Los dos numeros son pares: No
 */
 
 #include <stdio.h>
@@ -52,41 +52,41 @@ int main(){
 	int num1 = 0;
 	int num2 = 0;
 
-	// Pedimos 2 números enteros
-	printf("Introduce el primer número: ");
+	// Pedimos 2 numeros enteros
+	printf("Introduce el primer numero: ");
 	scanf("%i", &num1);
 	
-	printf("Introduce el segundo número: ");
+	printf("Introduce el segundo numero: ");
 	scanf("%i", &num2);
 
-	// Verificamos e imprimimos si el primer número es mayor o igual que el segundo número.
+	// Verificamos e imprimimos si el primer numero es mayor o igual que el segundo numero.
 	if(num1 >= num2)
-		printf("El primer número es mayor o igual que el segundo número: Sí\n");
+		printf("El primer numero es mayor o igual que el segundo numero: Si\n");
 	else
-		printf("El primer número es mayor o igual que el segundo número: No\n");
+		printf("El primer numero es mayor o igual que el segundo numero: No\n");
 
-	// Verificamos e imprimimos si el primer número es menor que 100 y el segundo número es mayor que 50.
+	// Verificamos e imprimimos si el primer numero es menor que 100 y el segundo numero es mayor que 50.
 	if((num1 < 100) && (num2 > 50))
-		printf("El primer número es menor que 100 y el segundo número es mayor que 50: Sí\n");
+		printf("El primer numero es menor que 100 y el segundo numero es mayor que 50: Si\n");
 	else
-		printf("El primer número es menor que 100 y el segundo número es mayor que 50: No\n");
+		printf("El primer numero es menor que 100 y el segundo numero es mayor que 50: No\n");
 
-	// Verificamos e imprimimos si alguno de los números es igual a 0 o si ambos números son pares.
+	// Verificamos e imprimimos si alguno de los numeros es igual a 0 o si ambos numeros son pares.
 	if(((num1 == 0) || (num2 == 0)) || (( num1 % 2 == 0) && (num2 % 2 == 0)))
-		printf("Uno de los números es 0 o ambos son pares: Si\n");
+		printf("Uno de los numeros es 0 o ambos son pares: Si\n");
 	else
-		printf("Uno de los números es 0 o ambos son pares: No\n");
+		printf("Uno de los numeros es 0 o ambos son pares: No\n");
 
-	// Verificamos e imprimimos si los dos números no son iguales.
+	// Verificamos e imprimimos si los dos numeros no son iguales.
 	if(num1 != num2)
-		printf("Los dos números son diferentes: Sí\n");
+		printf("Los dos numeros son diferentes: Si\n");
 	else
-		printf("Los dos números son diferentes: No\n");
+		printf("Los dos numeros son diferentes: No\n");
 
-	// Verificamos e imprimimos si los dos números son pares.
+	// Verificamos e imprimimos si los dos numeros son pares.
 	if(( num1 % 2 == 0) && (num2 % 2 == 0))
-		printf("Los dos números son pares: Si\n");
+		printf("Los dos numeros son pares: Si\n");
 	else
-		printf("Los dos números son pares: No\n");
+		printf("Los dos numeros son pares: No\n");
 
 }

@@ -3,8 +3,8 @@
 
 /* 
 
-Mostrar utilizando un programa de C la representación en hexadecimal de dos números enteros tanto positivos como negativos. 
-(%x es el especificador del printf que permite presentar los 1 y 0 de una posición de memoria en
+Mostrar utilizando un programa de C la representacion en hexadecimal de dos numeros enteros tanto positivos como negativos. 
+(%x es el especificador del printf que permite presentar los 1 y 0 de una posicion de memoria en
 hexadecimal).
 
 */ 
@@ -16,8 +16,8 @@ void main(){
     int num_positivo = 12;
     int num_negativo = -12;
 
-    printf("El número hexadecimal positivo de 12 es: %x\n", num_positivo);
+    printf("El numero hexadecimal positivo de 12 es: %x\n", num_positivo);
 
-    printf("El número hexadecimal negativo de 12 es: %x\n", num_negativo);
+    printf("El numero hexadecimal negativo de 12 es: %x\n", num_negativo);
 
 }

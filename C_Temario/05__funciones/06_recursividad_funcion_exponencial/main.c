@@ -7,12 +7,12 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		- La función exponencial, xy siendo x e y números enteros, puede implementarse de forma recursiva, dado que x^y = x * x^y-1
-		- Implementa una función recursiva que calcule la función exponencial.
+		- La funcion exponencial, xy siendo x e y numeros enteros, puede implementarse de forma recursiva, dado que x^y = x * x^y-1
+		- Implementa una funcion recursiva que calcule la funcion exponencial.
 */
 
 #include <stdio.h>
@@ -30,9 +30,9 @@ int main(){
 	int y         = 0;
 	int resultado = 0;
 
-	printf("Introduce el primer número:  ");
+	printf("Introduce el primer numero:  ");
 	scanf("%i", &x);
-	printf("Introduce el segundo número: ");
+	printf("Introduce el segundo numero: ");
 	scanf("%i", &y);
 
 	resultado = funcionExponencial(x, y);
@@ -41,7 +41,7 @@ int main(){
 
 }
 
-// Función recursiva para calular x^y
+// Funcion recursiva para calular x^y
 int funcionExponencial(int x, int y){
 
 	if( y == 0 ){

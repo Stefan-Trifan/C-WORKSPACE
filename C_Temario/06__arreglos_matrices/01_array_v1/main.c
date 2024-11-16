@@ -8,7 +8,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
+	* 	Introducir despues de scanf
 		limpiar()
 
 	* 	Enunciado 8
@@ -53,7 +53,7 @@ int main(){
 	for(int i = 0; i < TAM_ARRAY; i++){
 
 		if(array[i] == numUser){
-			printf("El número está en el array\n");
+			printf("El numero esta en el array\n");
 		}
 
 	}

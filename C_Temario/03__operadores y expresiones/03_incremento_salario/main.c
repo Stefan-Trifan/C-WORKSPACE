@@ -4,7 +4,7 @@
  *			"mac": "gcc main.c -o main;",
  *			"windows": "gcc main.c -o main.exe;"
  *		},
- *		"Introducir después de scanf": "limpiar()",
+ *		"Introducir despues de scanf": "limpiar()",
  *		"Enunciado": "Realizad un programa que calcule el incremento de un salario de un empleado por un porcentaje especificado. Tanto salario como porcentaje se piden al usuario."
  *	}
 */
@@ -28,11 +28,11 @@ int main(){
 	scanf("%f", &salario);
 
 	// Pedimos el porcentaje del incremento
-	printf("Introduce el incremento (Solo número del 0 al 100) \n");
+	printf("Introduce el incremento (Solo numero del 0 al 100) \n");
 	scanf("%f", &incremento);
 
 	// Calculamos el icnremento
 	salario_nuevo = salario + (salario * (incremento/100));
-	printf("El salario nuevo que recibirías es %f\n", salario_nuevo);
+	printf("El salario nuevo que recibirias es %f\n", salario_nuevo);
 
 }

@@ -8,12 +8,12 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
+	* 	Introducir despues de scanf
 		limpiar()
 
 	* 	Enunciado X
-		Este código pide al usuario un intervalo de números y un paso de incremento, 
-		luego calcula y muestra la suma acumulativa de los números en ese intervalo, 
+		Este codigo pide al usuario un intervalo de numeros y un paso de incremento, 
+		luego calcula y muestra la suma acumulativa de los numeros en ese intervalo, 
 		actualizando el resultado con cada incremento.
 
 */
@@ -34,23 +34,23 @@ int main(){
 	int contador      = 0;
 	int resultado     = 0;
 
-	// Pedmos los números
-	printf("Introduce el número en el que comienza el intervalo:    ");
+	// Pedmos los numeros
+	printf("Introduce el numero en el que comienza el intervalo:    ");
 	scanf("%i", &numMin);
 
-	printf("Introduce el último número dónde finaliza el intervalo: ");
+	printf("Introduce el ultimo numero donde finaliza el intervalo: ");
 	scanf("%i", &numMax);
 
-	printf("Introduce el número de intervalos entre cada suma:      ");
+	printf("Introduce el numero de intervalos entre cada suma:      ");
 	scanf("%i", &numIntervalos);
 
 	// Declaramos las condiciones
 	if (numMin > numMax){
-		printf("El número en el que comienza el intervalo tiene que ser menor que el número dónde finaliza el intervalo");
+		printf("El numero en el que comienza el intervalo tiene que ser menor que el numero donde finaliza el intervalo");
 	}
 
 	if (numIntervalos > (numMax - numMin)){
-		printf("El el número de intervalos entre cada suma no es posible\n");
+		printf("El el numero de intervalos entre cada suma no es posible\n");
 	}
 
 	// Hacemos la suma

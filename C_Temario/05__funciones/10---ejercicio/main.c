@@ -7,14 +7,14 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
 		Vamos a realizar un programa que le pida al usuario 2 num enteros
 
 		Con estos 2 numeros enteros vamos a llamar a una funcion para que realice tanto la suma como la resta.
-		La funcion tiene que devolver al main los valores resultantes de las operaciones. (Solo 1 función)
+		La funcion tiene que devolver al main los valores resultantes de las operaciones. (Solo 1 funcion)
 */
 
 #include <stdio.h>

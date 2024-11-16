@@ -32,7 +32,7 @@ int main(){
 }
 
 /* _________________________________________
-   Inicio definición de funciones */
+   Inicio definicion de funciones */
 
 void limpiarBuffer(){
 	while (getchar() != '\n');

@@ -8,29 +8,29 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Enunciado - Calculadora de Potencia con Validación de Exponente
-		El objetivo de este ejercicio es crear un programa que calcule la potencia de un número entero elevado a un exponente entero positivo. 
-		El programa debe solicitar al usuario un número base y un exponente, 
+	* 	Enunciado - Calculadora de Potencia con Validacion de Exponente
+		El objetivo de este ejercicio es crear un programa que calcule la potencia de un numero entero elevado a un exponente entero positivo. 
+		El programa debe solicitar al usuario un numero base y un exponente, 
 		y mostrar el resultado solo si el exponente es positivo.
 		
 		Normas:
-			1. La función calcular_potencia debe realizar la validación del exponente para asegurarse de que sea positivo.
-			2. Si el exponente es positivo, calcular_potencia realiza el cálculo de la potencia y retornar 1 para indicar que la operación fue exitosa. 
+			1. La funcion calcular_potencia debe realizar la validacion del exponente para asegurarse de que sea positivo.
+			2. Si el exponente es positivo, calcular_potencia realiza el calculo de la potencia y retornar 1 para indicar que la operacion fue exitosa. 
 				El resultado debe almacenarse en el puntero *resultado.
 			3. Si el exponente no es positivo, calcular_potencia debe retornar 0.
-			4. La función principal deberá mostrar el resultado o un mensaje de error en función del valor retornado por calcular_potencia.
+			4. La funcion principal debera mostrar el resultado o un mensaje de error en funcion del valor retornado por calcular_potencia.
 
 		Condiciones:
-			1. Si el cálculo se realiza correctamente, el programa debe mostrar el resultado de la potencia.
+			1. Si el calculo se realiza correctamente, el programa debe mostrar el resultado de la potencia.
 			2. Si el exponente es menor o igual a 0, el programa debe mostrar un mensaje de error: "Error: el exponente debe ser positivo”.
 
-		Se tiene que implementar la siguiente función:
+		Se tiene que implementar la siguiente funcion:
 			int calcular_potencia(int base, int exponente, int *resultado){
 				1. Calcula la potencia de la base elevada al exponente usando un bucle y asigna el resultado a la variable resultado.
-				2. Valida si el exponente es positivo. Devuelve un 1 si el cálculo se realiza correctamente o un 0 si el exponente no es positivo
+				2. Valida si el exponente es positivo. Devuelve un 1 si el calculo se realiza correctamente o un 0 si el exponente no es positivo
 			}
 
-	*   Ejemplo de ejecución
+	*   Ejemplo de ejecucion
 
 		Caso correcto:
 			Ingrese la base: 3
@@ -58,7 +58,7 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
 
-	// Declaración de variables
+	// Declaracion de variables
 	int      base = 0;
 	int exponente = 0;
 	int resultado = 0;
@@ -88,11 +88,11 @@ int main(){
 }
 
 /* _________________________________________
-   Inicio definición de funciones */
+   Inicio definicion de funciones */
 
 // Calcula la potencia de la base elevada al exponente usando un bucle y asigna el resultado a la variable resultado.
 int calcular_potencia(int base, int exponente, int *resultado){
-	// Valida si el exponente es positivo. Devuelve un 1 si el cálculo se realiza correctamente o un 0 si el exponente no es positivo
+	// Valida si el exponente es positivo. Devuelve un 1 si el calculo se realiza correctamente o un 0 si el exponente no es positivo
 	if(exponente >= 0){
 		for(; exponente > 1; exponente--){
 			*resultado = *resultado * base;

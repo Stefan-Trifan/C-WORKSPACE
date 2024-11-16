@@ -7,11 +7,11 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Pide al usuario que introduzca su edad e imprímela por pantalla. ¿Qué ocurre si introducimos un carácter?
+		Pide al usuario que introduzca su edad e imprimela por pantalla. ¿Que ocurre si introducimos un caracter?
 */
 
 #include <stdio.h>
@@ -34,7 +34,7 @@ int main(){
 		printf("El resultado de scanf es: %i\n", resultadoScanf);
 
 		if (resultadoScanf == 0){
-			printf("No has introducido un número. Introduce un número\n");
+			printf("No has introducido un numero. Introduce un numero\n");
 			while(getchar() != '\n');
 		} else {
 			printf("Tienes %i anos\n", edad);

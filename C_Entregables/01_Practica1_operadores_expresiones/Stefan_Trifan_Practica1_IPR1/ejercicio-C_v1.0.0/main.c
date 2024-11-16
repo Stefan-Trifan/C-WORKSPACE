@@ -7,36 +7,36 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
 
 		* Ejercicio C - Entero de tres cifras
 
-		Desarrolla un programa que pida al usuario un número entero positivo de tres cifras. 
-		El programa debe clasificar el número en función de sus dígitos.
+		Desarrolla un programa que pida al usuario un numero entero positivo de tres cifras. 
+		El programa debe clasificar el numero en funcion de sus digitos.
 
 		* Reglas:
 
-		- Si el número tiene tres dígitos diferentes, debe mostrar:  
-			"El número tiene tres dígitos únicos."
+		- Si el numero tiene tres digitos diferentes, debe mostrar:  
+			"El numero tiene tres digitos unicos."
 
-		- Si el número tiene dos dígitos iguales, debe mostrar:  
-			"El número tiene dos dígitos iguales."
+		- Si el numero tiene dos digitos iguales, debe mostrar:  
+			"El numero tiene dos digitos iguales."
 
-		- Si los tres dígitos son iguales, debe mostrar:  
-			"El número tiene tres dígitos iguales."
+		- Si los tres digitos son iguales, debe mostrar:  
+			"El numero tiene tres digitos iguales."
 
-		* Ejemplo de ejecución:
-
-		$ ./digits.exe
-		Introduce un número entero positivo de 3 dígitos: 100
-		El número tiene dos dígitos iguales.
+		* Ejemplo de ejecucion:
 
 		$ ./digits.exe
-		Introduce un número entero positivo de 3 dígitos: 123
-		El número tiene tres dígitos únicos.
+		Introduce un numero entero positivo de 3 digitos: 100
+		El numero tiene dos digitos iguales.
+
+		$ ./digits.exe
+		Introduce un numero entero positivo de 3 digitos: 123
+		El numero tiene tres digitos unicos.
 */
 
 #include <stdio.h>
@@ -54,27 +54,27 @@ int main(){
 	int digito2 = 0;
 	int digito3 = 0;
 
-	// Pedimos el número entero de 3 cifras
-	printf("Introduce un número entero positivo de 3 dígitos: ");
+	// Pedimos el numero entero de 3 cifras
+	printf("Introduce un numero entero positivo de 3 digitos: ");
 	scanf("%i", &numero);
 	limpiar();
 
-	// Extraemos los 3 dígitos del número
+	// Extraemos los 3 digitos del numero
 	digito1 = numero / 100;
 	digito2 = (numero / 10) % 10;
 	digito3 = numero % 10;
 
-	// Comprobamos si no hay dígitos que se repiten
+	// Comprobamos si no hay digitos que se repiten
 	if( (digito1 != digito2) && (digito1 != digito3) && (digito2 != digito3) )
-		printf("El número tiene tres dígitos únicos.\n");
+		printf("El numero tiene tres digitos unicos.\n");
 
-	// Comprobamos si hay 2 dígitos iguales pero hay 2 dígitos diferentes
+	// Comprobamos si hay 2 digitos iguales pero hay 2 digitos diferentes
 	if( ((digito1 == digito2) || (digito1 == digito3) || (digito2 == digito3)) && ((digito1 != digito2) || (digito1 != digito3) || (digito2 != digito3)))
-		printf("El número tiene dos dígitos iguales.\n");
+		printf("El numero tiene dos digitos iguales.\n");
 
-	// Comprobamos si hay 3 dígitos iguales
+	// Comprobamos si hay 3 digitos iguales
 	if( (digito1 == digito2) && (digito1 == digito3) && (digito2 == digito3) )
-		printf("El número tiene tres dígitos iguales.\n");
+		printf("El numero tiene tres digitos iguales.\n");
 
 	return 0;
 }

@@ -5,9 +5,9 @@
     |----------|------------|---------------------|
     | +        | Aditivo    | Suma                |
     | -        | Inverso    | Resta               |
-    | *        | Producto   | Multiplicación      |
-    | /        | Cociente   | División            |
-    | %        | Módulo     | Residuo de división |
+    | *        | Producto   | Multiplicacion      |
+    | /        | Cociente   | Division            |
+    | %        | Modulo     | Residuo de division |
     | ++       | Incremento | Sumar 1             |
     | --       | Decremento | Restar 1            |
 
@@ -27,19 +27,19 @@
 
     | OPERADOR | NOMBRE | SIGNIFICADO                |
     |----------|--------|----------------------------|
-    | !        | NOT    | Negación                   |
-    | &&       | AND    | "Y también" (intersección) |
-    | ||       | OR     | "Ó" (unión)                |
+    | !        | NOT    | Negacion                   |
+    | &&       | AND    | "Y tambien" (interseccion) |
+    | ||       | OR     | "o" (union)                |
 
 
     # OPERADORES DE ASIGNACION
 
     | OPERADOR | SIGNIFICADO                 |
     |----------|-----------------------------|
-    | =        | Asignación                  |
-    | +=       | Suma y asignación           |
-    | -=       | Resta y asignación          |
-    | *=       | Multiplicación y asignación |
-    | /=       | División y asignación       |
-    | %=       | Módulo y asignación         |
+    | =        | Asignacion                  |
+    | +=       | Suma y asignacion           |
+    | -=       | Resta y asignacion          |
+    | *=       | Multiplicacion y asignacion |
+    | /=       | Division y asignacion       |
+    | %=       | Modulo y asignacion         |
 */

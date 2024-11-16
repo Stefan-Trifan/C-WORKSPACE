@@ -7,12 +7,12 @@
 		windows: gcc main.c -o main.exe
 			   : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		* Crear un programa que calcule el resultado de multiplicar un número 2 elevado a un exponente, y que lo devuelva como resultado. 
-		* El número y el exponente deberán pedirse al usuario mediante scanf. 
+		* Crear un programa que calcule el resultado de multiplicar un numero 2 elevado a un exponente, y que lo devuelva como resultado. 
+		* El numero y el exponente deberan pedirse al usuario mediante scanf. 
 		* El exponente debe ser mayor que cero. 
 		* No se puede usar el operador "*" (multiplicar).
 */

@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado X
@@ -17,10 +17,10 @@
 /* 	
 	#include <stdio.h>
 
-	- El símbolo # significa que vamos a importar una librería
+	- El simbolo # significa que vamos a importar una libreria
 	- Las siglas vienen de Standard Imput Output
 	- .h es el tipo de archivo
-	- También incluye funciones como la suma (1+1)
+	- Tambien incluye funciones como la suma (1+1)
 */
 
 #include <stdio.h>
@@ -30,7 +30,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-// Función principal
+// Funcion principal
 
 int main(){
 

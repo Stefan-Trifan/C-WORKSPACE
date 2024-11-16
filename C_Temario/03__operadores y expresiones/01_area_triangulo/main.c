@@ -4,8 +4,8 @@
  *			"mac": "gcc main.c -o main;",
  *			"windows": "gcc main.c -o main.exe;"
  *		},
- *		"Introducir después de scanf": "limpiar()",
- *		"Enunciado": "Calcular el área de un triágulo" // (Base*altura)/2
+ *		"Introducir despues de scanf": "limpiar()",
+ *		"Enunciado": "Calcular el area de un triagulo" // (Base*altura)/2
  *	}
 */
 
@@ -33,5 +33,5 @@ int main(){
 
 	// Caluclamos y mostramos ela rea x pantalla
 	area = (base*altura)/2;
-	printf("El área del triangulo es %f", area);
+	printf("El area del triangulo es %f", area);
 }

@@ -8,7 +8,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
+	* 	Introducir despues de scanf
 		limpiar()
 
 	* 	Enunciado X
@@ -32,14 +32,14 @@ int main(){
 	int a = 5;
 	int b = 10;
 
-	// Llamamos la función
+	// Llamamos la funcion
 	printf("Resultado es: %d", sumar(a, b));
 
 	printf("\n________________________________________________\n\n");
 	return 0;
 }
 
-// Función
+// Funcion
 int sumar(int a, int b)
 {
 	int resultado = 0;

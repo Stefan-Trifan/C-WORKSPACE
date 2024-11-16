@@ -5,7 +5,7 @@ Stefan Trifan
 Compilar (dentro de la carpeta)
 gcc main.c -o main
 
-Introducir después de scanf
+Introducir despues de scanf
 while(getchar() != '\n');
 
 Enunciado: 
@@ -27,15 +27,15 @@ int main(){
 	char operacion = ' ';
 	float resultado = 0;
 
-	printf("Introdcue el primer número\n");
+	printf("Introdcue el primer numero\n");
 	scanf("%f", &num1);
 	limpiar();
 
-	printf("Introdcue el segundo número\n");
+	printf("Introdcue el segundo numero\n");
 	scanf("%f", &num2);
 	limpiar();
 
-	printf("Introdcue el tipo de operación que desees realizar: +, -, *, /\n");
+	printf("Introdcue el tipo de operacion que desees realizar: +, -, *, /\n");
 	scanf("%c", &operacion);
 	limpiar();
 
@@ -52,6 +52,6 @@ int main(){
 		resultado = num1 / num2;
 		printf("El resultado es %f", resultado);
 	} else {
-		printf("Tenías que haber introducido '+' o '-'");
+		printf("Tenias que haber introducido '+' o '-'");
 	}
 }

@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
@@ -15,8 +15,8 @@
 		* Ejercicio B - Calificaciones alumnos
 
 		- Realiza un programa que determine si un estudiante aprueba o suspende una asignatura 
-		en función de sus calificaciones en tres pruebas, su examen y su asistencia a clase. 
-		- Si se suspende algún apartado, se debe informar al usuario mediante la consola.
+		en funcion de sus calificaciones en tres pruebas, su examen y su asistencia a clase. 
+		- Si se suspende algun apartado, se debe informar al usuario mediante la consola.
 
 		* El programa debe solicitar:
 
@@ -26,7 +26,7 @@
 		- Nota examen final (0-10)
 		- Asistencia a clase (0%-100%)
 
-		* Cálculo de la nota final:
+		* Calculo de la nota final:
 
 		- Pruebas (40% del total):
 			- Prueba 1 (20%)
@@ -41,7 +41,7 @@
 		- Nota final superior o igual a 5
 		- Asistencia mayor al 80%
 
-		* Ejemplos de ejecución:
+		* Ejemplos de ejecucion:
 
 		$ ./notas.exe
 		Nota de la primera prueba: 4.5
@@ -50,7 +50,7 @@
 		Nota del examen final: 5.0
 		Nota de asistencia: 0.9
 		El alumno ha suspendido.
-		Las pruebas no han superado la nota mínima.
+		Las pruebas no han superado la nota minima.
 
 		$ ./grades.exe
 		Nota de la primera prueba: 7.0
@@ -112,7 +112,7 @@ int main(){
 		printf("El alumno ha aprobado.\n");
 	} else {
 		printf("El alumno ha suspendido.\n");
-		printf("Las pruebas no han superado la nota mínima.\n");
+		printf("Las pruebas no han superado la nota minima.\n");
 	}
 		
 	printf("La nota final es %f\n", notaFinal);

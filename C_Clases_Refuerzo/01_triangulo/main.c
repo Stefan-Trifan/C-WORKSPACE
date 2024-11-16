@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado (Ejercicio clases de refuerzo)
@@ -30,7 +30,7 @@ int main(){
 	int ladoB = 0;
 	int ladoC = 0;
 
-	// Pedimos los lados del triángulo
+	// Pedimos los lados del triangulo
 	printf("Introduce el primer lado: ");
 	scanf("%i", &ladoA);
 

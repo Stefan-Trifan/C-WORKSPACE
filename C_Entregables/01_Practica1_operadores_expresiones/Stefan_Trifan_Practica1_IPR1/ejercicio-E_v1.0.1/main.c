@@ -7,12 +7,12 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
 
-		* Ejercicio E - Descomposición de un Número Entero de 32 Bits en Partes de 8 Bits -> ver en README.md
+		* Ejercicio E - Descomposicion de un Numero Entero de 32 Bits en Partes de 8 Bits -> ver en README.md
 
 */
 
@@ -23,7 +23,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-// Transformamos el número a binario
+// Transformamos el numero a binario
 void printBinary(int number, int positions) {
 	// Assuming a 32-bit integer
 	unsigned int mask = 1 << (positions - 1); // Start with the leftmost bit
@@ -52,16 +52,16 @@ int main(){
 	unsigned int parte4 = 0;
 
 
-	// Pedmos el número que vamos a transformar
-	printf("Introduce el número: ");
+	// Pedmos el numero que vamos a transformar
+	printf("Introduce el numero: ");
 	scanf("%u", &miNumero);
 	printf("Mi numero es: %u\n", miNumero);
 
-	// Transofrmamos el número a binario
-	printf("Mi número en binario es: ");
+	// Transofrmamos el numero a binario
+	printf("Mi numero en binario es: ");
 	printBinary(miNumero, 32);
 
-	// Definimos las 4 partes del número
+	// Definimos las 4 partes del numero
 	parte4 = miNumero >> 24;
 	parte3 = miNumero >> 16;
 	parte2 = miNumero >> 8;

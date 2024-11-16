@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado X
@@ -24,14 +24,14 @@ void limpiar(){
 int main(){
 	/*  
 		Los datos enteros (int) 
-		- Si quiero almacenar un número mayor que 2,147,483,647 tengo que declarar otro tipo de dato
+		- Si quiero almacenar un numero mayor que 2,147,483,647 tengo que declarar otro tipo de dato
 
 		* Ejemplos: 
 			..., -2, -1, 0, 1, 2, 3, 4, 5, ...
 		* Tamaño: 
-			Mínimo  : 16 bits (2 bytes)
+			Minimo  : 16 bits (2 bytes)
 			Defecto : 32 bits (4 bytes)
-		* Rango Mínimo (16 bits):
+		* Rango Minimo (16 bits):
 			−32,768 a 32,767
 		* Rango por defecto (32 bits):
 			−2,147,483,648 a 2,147,483,647

@@ -7,13 +7,13 @@
 		windows: gcc main.c -o main.exe
 			   : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		* Generar un programa que pida un carácter por pantalla, y que compruebe si es una letra tanto mayúscula como minúscula. 
-		* Almacenará el resultado en una variable entera y lo mostrará por pantalla. 
-		* No se usarán operadores "if/then", sólo se almacena el resultado de la comprobación.
+		* Generar un programa que pida un caracter por pantalla, y que compruebe si es una letra tanto mayuscula como minuscula. 
+		* Almacenara el resultado en una variable entera y lo mostrara por pantalla. 
+		* No se usaran operadores "if/then", solo se almacena el resultado de la comprobacion.
 */
 
 #include <stdio.h>
@@ -39,6 +39,6 @@ int main(){
 	
 	// Devolvemos el resultado
 	printf(
-	"\tLa letra es minúscula: %i\n"
-	"\tLa letra es mayúscula: %i\n", esMinuscula, esMayuscula);
+	"\tLa letra es minuscula: %i\n"
+	"\tLa letra es mayuscula: %i\n", esMinuscula, esMayuscula);
 }

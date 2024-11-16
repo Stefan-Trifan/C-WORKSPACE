@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
@@ -26,7 +26,7 @@ int main(){
 	int num = 0;
 	unsigned long long int resultado = 1;
 
-	printf("Introduce un número del 0 al 65\n");
+	printf("Introduce un numero del 0 al 65\n");
 	scanf("%i", &num);
 
 	for(int i = 1; i <= num; i++){

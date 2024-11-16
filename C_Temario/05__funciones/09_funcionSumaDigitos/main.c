@@ -7,17 +7,17 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Crear una funcion que reciba un número entero positivo y que devuelva como resultado 
-		otro entero que sea la suma de sus dígitos. 
+		Crear una funcion que reciba un numero entero positivo y que devuelva como resultado 
+		otro entero que sea la suma de sus digitos. 
 
-		Por ejemplo, si el número fuera 123 la suma seria 6
+		Por ejemplo, si el numero fuera 123 la suma seria 6
 
-		El programa pediria al usuario el numero (que debe der mayor o igual a ceri) y lo pasará
-		a la función "por valor". La función devolverá el resultado de la suma de todos los dígitos
+		El programa pediria al usuario el numero (que debe der mayor o igual a ceri) y lo pasara
+		a la funcion "por valor". La funcion devolvera el resultado de la suma de todos los digitos
 */
 
 #include <stdio.h>
@@ -36,7 +36,7 @@ int main(){
 	int resultado = 0;
 
 	// Pedimos el numero
-	printf("Introduce un número: ");
+	printf("Introduce un numero: ");
 	scanf("%i", &numero);
 	printf("Tu numero es:        %i\n", numero);	
 
@@ -59,10 +59,10 @@ int sumaDigitos(int numero){
 		// Sacamos el ultimo digito
 		ultimoDigito = (numero % 10);
 
-		// Sumamos el último dígito al resultado
+		// Sumamos el ultimo digito al resultado
 		resultado    = resultado + ultimoDigito;
 
-		// Reducimos el tamaño al número con cada iteración
+		// Reducimos el tamaño al numero con cada iteracion
 		numero = (numero - ultimoDigito) / 10;
 
 		// ? Debug

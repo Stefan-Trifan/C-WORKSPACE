@@ -5,7 +5,7 @@
  *			"windows": "gcc main.c -o main.exe;"
  *		},
  *		"Ejecutar en windows": "./main.exe",
- *		"Introducir después de scanf": "limpiar()",
+ *		"Introducir despues de scanf": "limpiar()",
  *		"Enunciado": "Numero par o impar"
  *	}
 */
@@ -23,12 +23,12 @@ int main(){
 	int num1 = 0;
 
 	// Pedimos el num por pantalla
-	printf("Introduce el número\n");
+	printf("Introduce el numero\n");
 	scanf("%i", &num1);
 
 	// Comprobamos si es par o impar
 	if ( num1 % 2 == 0){
-		printf("El número %i es par", num1);
+		printf("El numero %i es par", num1);
 	} else {
 		printf("El numero %i es impar", num1);
 	}

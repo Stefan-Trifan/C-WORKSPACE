@@ -7,11 +7,11 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Convertir un numero entero introducido por teclado a carácter e imprimirlo por pantalla
+		Convertir un numero entero introducido por teclado a caracter e imprimirlo por pantalla
 */
 
 #include <stdio.h>
@@ -26,7 +26,7 @@ int main(){
 	int entero   = 0;
 	char caracter = ' ';
 
-	printf("Introduce un número entero \n");
+	printf("Introduce un numero entero \n");
 	scanf("%d", &entero);
 
 	caracter = (char)entero;

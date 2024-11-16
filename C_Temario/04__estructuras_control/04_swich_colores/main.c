@@ -7,11 +7,11 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Pide un carácter b, r, n, v y devuelve un color que empieza por ese carácter o un mensaje indicando que no hay ningún color asignado. Realizar el ejemplo mediante un switch-case.
+		Pide un caracter b, r, n, v y devuelve un color que empieza por ese caracter o un mensaje indicando que no hay ningun color asignado. Realizar el ejemplo mediante un switch-case.
 */
 
 #include <stdio.h>
@@ -43,9 +43,9 @@ int main(){
 				break;
 		case 'N': printf("Tu color es Niligo");
 				break;
-		case 'v': printf("Tu color es Varrón");
+		case 'v': printf("Tu color es Varron");
 				break;
-		case 'V': printf("Tu color es Varrón");
+		case 'V': printf("Tu color es Varron");
 				break;
 	}
 }

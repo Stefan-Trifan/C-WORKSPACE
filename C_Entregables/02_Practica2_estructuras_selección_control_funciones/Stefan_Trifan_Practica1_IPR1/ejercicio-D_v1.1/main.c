@@ -8,25 +8,25 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Enunciado - Suma recursiva de los dígitos impares
-		Realiza un programa que utilice una función recursiva para sumar los dígitos de posición impar
-		(contando como posición 1 el dígito menos significativo) de un número entero.
-		El programa debe funcionar tanto para números positivos como negativos.
+	* 	Enunciado - Suma recursiva de los digitos impares
+		Realiza un programa que utilice una funcion recursiva para sumar los digitos de posicion impar
+		(contando como posicion 1 el digito menos significativo) de un numero entero.
+		El programa debe funcionar tanto para numeros positivos como negativos.
 
-		Se tiene que implementar la siguiente función:
+		Se tiene que implementar la siguiente funcion:
 			int sumaDigitosImpares(int num){
-				Función que de manera recursiva calcula la suma
-				Como condición base si el número es igual a 0 la suma es 0
-				La llamada recursiva se debe hacer descartando los dígitos pares
+				Funcion que de manera recursiva calcula la suma
+				Como condicion base si el numero es igual a 0 la suma es 0
+				La llamada recursiva se debe hacer descartando los digitos pares
 			}	
 
-	*   Ejemplo de ejecución
+	*   Ejemplo de ejecucion
 		
-		Número positivo
+		Numero positivo
 		Introduce un numero: 12345
 		La suma es 9
 
-		Número negativo
+		Numero negativo
 		Introduce un numero: 12345
 		La suma es 9
 */
@@ -49,7 +49,7 @@ int main(){
 	int num = 0;    
 	int resultadoSuma = 0;
 
-	// Pedimos el número al usuario
+	// Pedimos el numero al usuario
 	printf("Introduce un numero: ");
 	scanf("%i", &num);
 
@@ -64,13 +64,13 @@ int main(){
 
 
 /* _________________________________________
-   Inicio definición de funciones */
+   Inicio definicion de funciones */
 
 // Calculamos la suma de manera recursiva 
 int sumaDigitosImpares(int num){
 	
 
-	// Nos aseguramos que el num está siempre en positivo
+	// Nos aseguramos que el num esta siempre en positivo
 	num = abs(num);
 
 	if(num == 0){ // Si el numero es 0
@@ -84,7 +84,7 @@ int sumaDigitosImpares(int num){
 
 		return ultimoDigito + sumaDigitosImpares(num / 10);
 
-	} else { // La llamada recursiva se debe hacer descartando los dígitos pares
+	} else { // La llamada recursiva se debe hacer descartando los digitos pares
 		
 		return sumaDigitosImpares(num / 10);
 

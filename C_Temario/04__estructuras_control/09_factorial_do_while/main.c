@@ -7,14 +7,14 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Calcular el factorial de un número 
-		▪ Pide al usuario que introduzca número entero positivo por teclado.
-		▪ Utiliza un bucle de tipo do-while para asegurar que el número no es negativo
-		▪ Calcula el factorial del número introducido e imprímelo por pantalla.	
+		Calcular el factorial de un numero 
+		▪ Pide al usuario que introduzca numero entero positivo por teclado.
+		▪ Utiliza un bucle de tipo do-while para asegurar que el numero no es negativo
+		▪ Calcula el factorial del numero introducido e imprimelo por pantalla.	
 */
 
 #include <stdio.h>
@@ -30,8 +30,8 @@ int main(){
 	unsigned long long int resultado = 1;
 	
 	do {
-		// Pedimos el número
-		printf("Introduce un número positivo: ");
+		// Pedimos el numero
+		printf("Introduce un numero positivo: ");
 		scanf("%i", &numero);
 	} while (numero < 0);
 

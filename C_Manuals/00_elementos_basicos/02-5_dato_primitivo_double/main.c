@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado X
@@ -23,9 +23,9 @@ void limpiar(){
 
 int main(){
 	/*  
-		Los datos Punto Flotante Precisión Doble (double)
-		- Ocupa más memoria
-		- Un double puede representar aproximadamente 15 a 17 dígitos decimales de precisión.
+		Los datos Punto Flotante Precision Doble (double)
+		- Ocupa mas memoria
+		- Un double puede representar aproximadamente 15 a 17 digitos decimales de precision.
 
 		* Ejemplos: 
 			234343.3043

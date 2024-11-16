@@ -7,7 +7,7 @@
 	windows : gcc main.c -o main.exe
 			: ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 	limpiar()
 
 *	Enunciado X
@@ -15,13 +15,13 @@
 */
 
 
-// Ejemplos de librerías
-#include <stdio.h> // Esta librería sirve para pedir y devolver datos por pantalla
+// Ejemplos de librerias
+#include <stdio.h> // Esta libreria sirve para pedir y devolver datos por pantalla
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
 
-// También podemos definir macros (parecido a constantes)
+// Tambien podemos definir macros (parecido a constantes)
 #define PI 3.1414
 
 int y = 5; // Variable Global

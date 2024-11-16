@@ -7,12 +7,12 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
-		Define una variable tipo carácter, entera y float. 
-		Asígnales un valor y escribe su valor y la dirección de memoria que ocupan.
+		Define una variable tipo caracter, entera y float. 
+		Asignales un valor y escribe su valor y la direccion de memoria que ocupan.
 */
 
 #include <stdio.h>
@@ -27,7 +27,7 @@ int main(){
 	int Entero     = 0;
 	float Racional = 0.0;
 
-	printf ("Caracter vale %c y ocupa la dirección %p \n", Caracter, &Caracter);
-	printf ("Entero vale %d y ocupa la dirección %p \n", Entero, &Entero);
-	printf ("Racional vale %f y ocupa la dirección %p \n", Racional, &Racional);
+	printf ("Caracter vale %c y ocupa la direccion %p \n", Caracter, &Caracter);
+	printf ("Entero vale %d y ocupa la direccion %p \n", Entero, &Entero);
+	printf ("Racional vale %f y ocupa la direccion %p \n", Racional, &Racional);
 }

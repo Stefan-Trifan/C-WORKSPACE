@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
@@ -26,7 +26,7 @@ int main(){
 	float flotante   = 0;
 	int entero     = ' ';
 
-	printf("Introduce un número flotante \n");
+	printf("Introduce un numero flotante \n");
 	scanf("%f", &flotante);
 
 	entero = (int)flotante;

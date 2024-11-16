@@ -4,7 +4,7 @@
  *			"mac": "gcc main.c -o main;",
  *			"windows": "gcc main.c -o main.exe;"
  *		},
- *		"Introducir después de scanf": "limpiar()",
+ *		"Introducir despues de scanf": "limpiar()",
  *		"Enunciado": "LoremIpsumDummyText"
  *	}
 */

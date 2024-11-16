@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 int main(){
-	// Declaramos char como variables vacíos
+	// Declaramos char como variables vacios
 	char caracter1 = ' ';
 	char caracter2 = ' ';
 	char caracter3 = ' ';

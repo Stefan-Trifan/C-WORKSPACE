@@ -7,7 +7,7 @@
 		windows : gcc main.c -o main.exe
 			    : ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 		limpiar()
 
 *	Enunciado
@@ -34,7 +34,7 @@ int main(){
 	scanf("%f", &grados);
 	limpiar();
 
-	printf("Introduce el tipo conversión que deseas realizar:\n" 
+	printf("Introduce el tipo conversion que deseas realizar:\n" 
 	"Introdcue 1 si quieres convertir grados celsius a grados fahrenheit \n"
 	"Introduce 2 si quieres convertir grados fahrenheit a grados celsius\n");
 	scanf("%i", &tipoConversion);
@@ -54,7 +54,7 @@ int main(){
 
 	} else {
 
-		printf("Dato no válido");
+		printf("Dato no valido");
 
 	}
 

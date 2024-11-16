@@ -7,7 +7,7 @@
 	windows : gcc main.c -o main.exe
 			: ./main.exe
 
-*	Introducir después de scanf
+*	Introducir despues de scanf
 	limpiar()
 
 *	Enunciado X

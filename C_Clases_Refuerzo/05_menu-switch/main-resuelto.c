@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-// Función para verificar si un número es primo
+// Funcion para verificar si un numero es primo
 int esPrimo(int num) {
     if (num <= 1) {
-        return 0; // Los números menores o iguales a 1 no son primos
+        return 0; // Los numeros menores o iguales a 1 no son primos
     }
     
     for (int i = 2; i < num; i++) {
         if (num % i == 0) {
-            return 0; // Si tiene un divisor distinto de 1 y el mismo número, no es primo
+            return 0; // Si tiene un divisor distinto de 1 y el mismo numero, no es primo
         }
     }
     return 1; 
@@ -18,44 +18,44 @@ int main() {
     int opcion, num, sum = 0;
 
     do {
-        // Menú de opciones
+        // Menu de opciones
         printf("\nElige un modo:\n");
-        printf("1. Verificar si un número es par o impar (if-else)\n");
-        printf("2. Calcular la suma de los números hasta un valor dado (for)\n");
+        printf("1. Verificar si un numero es par o impar (if-else)\n");
+        printf("2. Calcular la suma de los numeros hasta un valor dado (for)\n");
         printf("3. Cuenta regresiva (while)\n");
-        printf("4. Verificar si un número es primo (función(si quereís))\n");
+        printf("4. Verificar si un numero es primo (funcion(si quereis))\n");
         printf("5. Salir\n");
-        printf("Ingresa el número de la opción deseada: ");
+        printf("Ingresa el numero de la opcion deseada: ");
         scanf("%d", &opcion);
 
         switch(opcion) {
             case 1:
                 // Modo 1: Verificar par o impar usando if-else
-                printf("Ingresa un número entero: ");
+                printf("Ingresa un numero entero: ");
                 scanf("%d", &num);
 
                 if (num % 2 == 0) {
-                    printf("El número es par.\n");
+                    printf("El numero es par.\n");
                 } else {
-                    printf("El número es impar.\n");
+                    printf("El numero es impar.\n");
                 }
                 break;
 
             case 2:
-                // Modo 2: Sumar números hasta el valor dado usando for
-                printf("Ingresa un número entero positivo: ");
+                // Modo 2: Sumar numeros hasta el valor dado usando for
+                printf("Ingresa un numero entero positivo: ");
                 scanf("%d", &num);
                 sum = 0;
 
                 for (int i = 1; i <= num; i++) {
                     sum += i;
                 }
-                printf("La suma de los números de 1 a %d es: %d\n", num, sum);
+                printf("La suma de los numeros de 1 a %d es: %d\n", num, sum);
                 break;
 
             case 3:
                 // Modo 3: Cuenta regresiva usando while
-                printf("Ingresa un número entero positivo para la cuenta regresiva: ");
+                printf("Ingresa un numero entero positivo para la cuenta regresiva: ");
                 scanf("%d", &num);
                 
                 printf("Cuenta regresiva desde %d:\n", num);
@@ -66,14 +66,14 @@ int main() {
                 break;
 
             case 4:
-                // Modo 5: Verificar si un número es primo usando la función esPrimo
-                printf("Ingresa un número entero positivo: ");
+                // Modo 5: Verificar si un numero es primo usando la funcion esPrimo
+                printf("Ingresa un numero entero positivo: ");
                 scanf("%d", &num);
 
                 if (esPrimo(num)) {
-                    printf("El número %d es primo.\n", num);
+                    printf("El numero %d es primo.\n", num);
                 } else {
-                    printf("El número %d no es primo.\n", num);
+                    printf("El numero %d no es primo.\n", num);
                 }
                 break;
                 
@@ -81,7 +81,7 @@ int main() {
                 printf("Saliendo");
 
             default:
-                printf("Opción no válida. Intenta de nuevo.\n");
+                printf("Opcion no valida. Intenta de nuevo.\n");
         }
     } while (opcion != 5 );
 

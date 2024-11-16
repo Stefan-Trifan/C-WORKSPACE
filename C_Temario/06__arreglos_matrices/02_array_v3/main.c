@@ -8,7 +8,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir después de scanf
+	* 	Introducir despues de scanf
 		limpiar()
 
 	* 	Enunciado 8
@@ -30,8 +30,8 @@ int generaNumero0a30();
 int main(){
 	printf("\n________________________________________________\n\n");
 
-	// srand(unsigned int seed): Inicializa la semilla para el generador de números pseudoaleatorios.
-	// getpid(): Obtiene el identificador de proceso único del programa que se está ejecutando.
+	// srand(unsigned int seed): Inicializa la semilla para el generador de numeros pseudoaleatorios.
+	// getpid(): Obtiene el identificador de proceso unico del programa que se esta ejecutando.
 	srand(getpid());
 
 	int array[TAM_ARRAY];
@@ -56,7 +56,7 @@ int main(){
 	for(int i = 0; i < TAM_ARRAY; i++){
 
 		if(array[i] == numUser){
-			printf("El número está en el array\n");
+			printf("El numero esta en el array\n");
 			encontrado = 1;
 			break;
 		}
@@ -64,7 +64,7 @@ int main(){
 	}
 
 	if(encontrado == 0){
-		printf("El número no está en el array");
+		printf("El numero no esta en el array");
 	}
 
 	printf("\n________________________________________________\n\n");
@@ -72,6 +72,6 @@ int main(){
 }
 
 int generaNumero0a30(){
-	// rand(): Genera números pseudoaleatorios.
+	// rand(): Genera numeros pseudoaleatorios.
 	return((int)rand() % 31);
 }

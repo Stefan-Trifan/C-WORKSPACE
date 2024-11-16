@@ -1,8 +1,8 @@
 /*Stefan Trifan*/
 
 
-/* Mostrar utilizando un programa de C la representación interna del carácter ‘A’.
-Transformar el carácter ‘A’ (mayúscula) al carácter ‘a’ (minúscula) sin usar funciones
+/* Mostrar utilizando un programa de C la representacion interna del caracter ‘A’.
+Transformar el caracter ‘A’ (mayuscula) al caracter ‘a’ (minuscula) sin usar funciones
 externas.
 */ 
 

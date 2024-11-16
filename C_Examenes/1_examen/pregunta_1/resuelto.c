@@ -6,16 +6,16 @@
             Problema: 
                 Desplazamiento de Bits a la Izquierda
 
-            Descripción:
-                Escribe un programa en C que solicite al usuario un número entero y un número de posiciones para desplazar los bits de ese número a la izquierda. 
-                El programa debe usar la función printBinary proporcionada para imprimir el valor inicial y el resultado en binario.
+            Descripcion:
+                Escribe un programa en C que solicite al usuario un numero entero y un numero de posiciones para desplazar los bits de ese numero a la izquierda. 
+                El programa debe usar la funcion printBinary proporcionada para imprimir el valor inicial y el resultado en binario.
 
             Requisitos:
-                Solicitar al usuario que ingrese un número entero.
-                Solicitar al usuario que ingrese el número de posiciones para desplazar los bits a la izquierda.
-                Usar la función printBinary para imprimir el valor inicial y el resultado en binario.
+                Solicitar al usuario que ingrese un numero entero.
+                Solicitar al usuario que ingrese el numero de posiciones para desplazar los bits a la izquierda.
+                Usar la funcion printBinary para imprimir el valor inicial y el resultado en binario.
 
-            Función Proporcionada:
+            Funcion Proporcionada:
             void printBinary(int number) {
                 /// Assuming a 32-bit integer
                 unsigned int mask = 1 << (32-1); // Start with the leftmost bit
@@ -34,16 +34,16 @@
                 printf("\n");
             }
 
-            Ejemplo de Ejecución:
-                Ingrese un número: 5
-                Ingrese el número de posiciones para desplazar: 3
+            Ejemplo de Ejecucion:
+                Ingrese un numero: 5
+                Ingrese el numero de posiciones para desplazar: 3
                 Valor inicial en binario: 00000000000000000000000000000101
                 Resultado en binario: 00000000000000000000000000101000
 */
 
 #include <stdio.h>
 
-// Inicializas la función
+// Inicializas la funcion
 void printBinary(int numberUser);
 
 int main() {
@@ -52,21 +52,21 @@ int main() {
     unsigned int miEntero = 0, posicionesDesplazadas = 0, resultado = 0;
 
     // Pedimos los datos por pantalla
-    printf("Ingrese un número:                              ");
+    printf("Ingrese un numero:                              ");
     scanf("%u", &miEntero); 
 
-    // Guardamos dentro de posicionesDesplazadas el número de posiciones que desplazamos los bits a la izquierda
-    printf("Ingrese el número de posiciones para desplazar: ");
+    // Guardamos dentro de posicionesDesplazadas el numero de posiciones que desplazamos los bits a la izquierda
+    printf("Ingrese el numero de posiciones para desplazar: ");
     scanf("%u", &posicionesDesplazadas);
 
     // Imprimimos el valor inicial en binario 
     printf("Valor inicial en binario:                       "); 
     printBinary(miEntero);
 
-    // Desplazamos los bits a la izquierda el número de veces que nos indique el usuario
+    // Desplazamos los bits a la izquierda el numero de veces que nos indique el usuario
     resultado = miEntero << posicionesDesplazadas;
 
-    // Imprimomos el número en binario
+    // Imprimomos el numero en binario
     printf("Resultado en binario:                           "); 
     printBinary(resultado);
 
