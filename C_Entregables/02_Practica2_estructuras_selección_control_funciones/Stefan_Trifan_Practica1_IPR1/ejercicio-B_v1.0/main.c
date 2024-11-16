@@ -3,7 +3,8 @@
 		Stefan Trifan
 
 	* 	Compilar
-		mac     : gcc main.c -o main
+		mac     : comp
+				  run
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
@@ -30,9 +31,8 @@
 			int realizarOperacion(int numero, int opcion){
 				Debe realizar la operación elegida y devolver su resultado)
 			}
-*/
-/* 
-	# Ejemplo de ejecución
+
+	*   Ejemplo de ejecución
 		Debes alcanzar exactamente el valor 100 desde el valor inicial de 1.
 		Puedes sumar 5, sumar 3 o multiplicar por 2 en cada movimiento.
 		Tienes un maximo de 20 movimientos. Buena suerte!

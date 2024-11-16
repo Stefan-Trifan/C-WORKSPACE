@@ -3,8 +3,8 @@
 		Stefan Trifan
 
 	* 	Compilar
-		mac     : gcc main.c -o main
-				  ./main
+		mac     : comp
+				  run
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 

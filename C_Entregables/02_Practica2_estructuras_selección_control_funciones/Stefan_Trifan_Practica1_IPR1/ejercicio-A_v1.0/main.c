@@ -3,7 +3,8 @@
 		Stefan Trifan
 
 	* 	Compilar
-		mac     : gcc main.c -o main
+		mac     : comp
+				  run
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
@@ -36,24 +37,23 @@
 				devuelve 0 si el usuario no ha acertado,
 				uno si todo va bien
 			}
-*/
-/* 
-		# Ejemplo de ejecución
 
-			Introduce el maximo: 12
-			4 * 2  = 8
-			4 * 7  = 34
-				... Resultado incorrecto, vidas: 2
-			12 * 8 = 96
-			2 * 5  = 10
-			9 * 11 = 99
-			9 * 8  = 76
-				... Resultado incorrecto, vidas:  1
-			5 * 6  = 98
-				... Resultado incorrecto, vidas:  0
-			
-				Game Over
-				4 puntos
+	* 	Ejemplo de ejecución
+
+		Introduce el maximo: 12
+		4 * 2  = 8
+		4 * 7  = 34
+			... Resultado incorrecto, vidas: 2
+		12 * 8 = 96
+		2 * 5  = 10
+		9 * 11 = 99
+		9 * 8  = 76
+			... Resultado incorrecto, vidas:  1
+		5 * 6  = 98
+			... Resultado incorrecto, vidas:  0
+		
+			Game Over
+			4 puntos
 */
 
 /* _________________________________________

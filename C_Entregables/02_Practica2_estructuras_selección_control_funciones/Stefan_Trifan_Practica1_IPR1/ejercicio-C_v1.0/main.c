@@ -3,7 +3,8 @@
 		Stefan Trifan
 
 	* 	Compilar
-		mac     : gcc main.c -o main
+		mac     : comp
+				  run
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
@@ -28,19 +29,18 @@
 				1. Calcula la potencia de la base elevada al exponente usando un bucle y asigna el resultado a la variable resultado.
 				2. Valida si el exponente es positivo. Devuelve un 1 si el cálculo se realiza correctamente o un 0 si el exponente no es positivo
 			}
-*/
-/* 
-	# Ejemplo de ejecución
 
-	Caso correcto:
-		Ingrese la base: 3
-		Ingrese el exponente: 4
-		Resultado: 81
+	*   Ejemplo de ejecución
 
-	Caso incorrecto:
-		Ingrese la base: 3
-		Ingrese el exponente: -2
-		Error: el exponente debe debe ser positivo
+		Caso correcto:
+			Ingrese la base: 3
+			Ingrese el exponente: 4
+			Resultado: 81
+
+		Caso incorrecto:
+			Ingrese la base: 3
+			Ingrese el exponente: -2
+			Error: el exponente debe debe ser positivo
 */
 
 /* _________________________________________
@@ -74,6 +74,9 @@ int main(){
 	resultado = base;
 	operacionCorrecta = calcular_potencia(base, exponente, &resultado);
 
+	// Comprobamos si el retorno es 1 o 0
+	// Si es 1, imprimimos el resultado
+	// Si es 0, imprimimos el error
 	if(operacionCorrecta){
 		printf("Resultado:            %i\n", resultado);
 	} else {

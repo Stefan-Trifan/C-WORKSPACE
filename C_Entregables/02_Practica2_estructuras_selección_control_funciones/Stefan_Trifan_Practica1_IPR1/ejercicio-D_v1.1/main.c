@@ -66,31 +66,34 @@ int main(){
 /* _________________________________________
    Inicio definición de funciones */
 
-// 12345
 // Calculamos la suma de manera recursiva 
 int sumaDigitosImpares(int num){
-
 	
-	int numPositivo   = 0;
-	int resultadoSuma = 0;
+	int resultadoSuma;
 
 	// Nos aseguramos que el num está siempre en positivo
-	numPositivo = abs(num);
+	num = abs(num);
+	printf("---DEBUG: El numero es: %i\n", num);
 
-	// Si el número es igual a 0 la suma es 0
-	if(numPositivo == 0){
-		return 0;
-	}  
+	if(num == 0){ // Si el numero es 0
+		return resultadoSuma;
+	} 
 
-	// La llamada recursiva se debe hacer descartando los dígitos pares
-	for(; numPositivo > 0; numPositivo /= 10){
+	// Extraemos el ultimo digito
+	int ultimoDigito = num % 10;
 
-		if(numPositivo % 2 == 1){
-			resultadoSuma += num % 10;
-		}
+	if(ultimoDigito % 2 == 1){ // Si el ultimo digito es impar
+
+		resultadoSuma += ultimoDigito; // Sumamos ultimo digito
+		sumaDigitosImpares(num / 10);
 
 	}
+	// La llamada recursiva se debe hacer descartando los dígitos pares
+	if(ultimoDigito % 2 == 0){
+		
+		sumaDigitosImpares(num / 10);
 
+	}
 
 	return resultadoSuma;
 }	
