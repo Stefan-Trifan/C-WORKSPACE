@@ -59,19 +59,27 @@ int main(){
 	printf("\n_________________________________________START\n\n");
 
 	// Declaración de variables
-	int base = 0;
+	int      base = 0;
 	int exponente = 0;
 	int resultado = 0;
+	int operacionCorrecta = 0;
 
 	// Pedimos la base y el exponente al usuario
-	printf("     Ingrese la base: ");
+	printf("Ingrese la base:      ");
 	scanf("%d", &base);
 	printf("Ingrese el exponente: ");
 	scanf("%d", &exponente);
     
 	// Calculamos la potencia
-	calcular_potencia(base, exponente, &resultado);
-    
+	resultado = base;
+	operacionCorrecta = calcular_potencia(base, exponente, &resultado);
+
+	if(operacionCorrecta){
+		printf("Resultado:            %i\n", resultado);
+	} else {
+		printf("Error: el exponente debe ser positivo\n");
+	}
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
@@ -79,13 +87,18 @@ int main(){
 /* _________________________________________
    Inicio definición de funciones */
 
-// 1. Calcula la potencia de la base elevada al exponente usando un bucle y asigna el resultado a la variable resultado.
-// 2. Valida si el exponente es positivo. Devuelve un 1 si el cálculo se realiza correctamente o un 0 si el exponente no es positivo
+// Calcula la potencia de la base elevada al exponente usando un bucle y asigna el resultado a la variable resultado.
 int calcular_potencia(int base, int exponente, int *resultado){
+	// Valida si el exponente es positivo. Devuelve un 1 si el cálculo se realiza correctamente o un 0 si el exponente no es positivo
+	if(exponente >= 0){
+		for(; exponente > 1; exponente--){
+			*resultado = *resultado * base;
+		}
+	} else {
+		return 0;
+	}
 
-
-	return 0;
-
+	return 1;
 }
    
 void limpiarBuffer(){
