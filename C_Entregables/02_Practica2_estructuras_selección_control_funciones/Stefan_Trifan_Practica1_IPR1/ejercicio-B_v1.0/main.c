@@ -68,8 +68,6 @@
 		Te has pasado de 100. Has perdido el juego.
 */
 
-// todo: Comentar el codigo
-
 /* _________________________________________
    Inicio cabecera */
 
@@ -94,6 +92,7 @@ int main(){
     
 	mostrarInstruccionesIniciales();
 
+	// Repetimos 8 veces
 	for(; operaciones <= 8; operaciones++){
 
 		mostrarMenu(numero, operaciones);
