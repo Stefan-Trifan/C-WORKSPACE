@@ -69,14 +69,12 @@ int main(){
 // Calculamos la suma de manera recursiva 
 int sumaDigitosImpares(int num){
 	
-	int resultadoSuma = 0;
 
 	// Nos aseguramos que el num está siempre en positivo
 	num = abs(num);
-	printf("---DEBUG: El numero es: %i\n", num);
 
 	if(num == 0){ // Si el numero es 0
-		return resultadoSuma;
+		return 0;
 	} 
 
 	// Extraemos el ultimo digito
@@ -84,7 +82,6 @@ int sumaDigitosImpares(int num){
 
 	if(ultimoDigito % 2 == 1){ // Si el ultimo digito es impar
 
-		resultadoSuma += ultimoDigito; // Sumamos ultimo digito
 		return ultimoDigito + sumaDigitosImpares(num / 10);
 
 	} else { // La llamada recursiva se debe hacer descartando los dígitos pares
@@ -92,6 +89,7 @@ int sumaDigitosImpares(int num){
 		return sumaDigitosImpares(num / 10);
 
 	}
+	
 
 }	
 
