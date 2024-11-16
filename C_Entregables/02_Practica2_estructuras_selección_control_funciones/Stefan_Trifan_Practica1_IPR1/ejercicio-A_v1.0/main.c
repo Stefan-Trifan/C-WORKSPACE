@@ -104,7 +104,7 @@ int main(){
 	}
 
 	// El programa finaliza cuando las rondas = 0, o bien vidas = 0
-	if(rondas == 0){
+	if(rondas == 0 && vidas >0){
 		printf("\n¡FELICIDADES! Te las sabes todas.");
 	}
 
