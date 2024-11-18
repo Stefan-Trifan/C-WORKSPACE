@@ -28,6 +28,15 @@ int main(){
     
 	char nombre[TAM];
 	char apellido[TAM];
+
+	printf("Ingrese su nombre: ");
+	scanf("%s", nombre);
+	printf("Su nombre es: %s\n", nombre);
+
+	printf("Introduce su apellido: ");
+	scanf("%s", apellido);
+	printf("Su apellido es: %s\n", apellido);
+
     
     
 	printf("\n_________________________________________END\n\n");
