@@ -16,6 +16,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#define TAM 20
 
 void limpiarBuffer();
 
@@ -25,6 +26,8 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
+	char nombre[TAM];
+	char apellido[TAM];
     
     
 	printf("\n_________________________________________END\n\n");

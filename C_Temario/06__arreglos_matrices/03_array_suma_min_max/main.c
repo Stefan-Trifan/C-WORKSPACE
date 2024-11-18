@@ -30,7 +30,7 @@ int main(){
 	// Declaramos variables
     int array[TAM_ARRAY];
 	int max=0,min=0,suma=0;
-
+	
 	// Pedimos los 5 numeros
 	for(int i = 0; i < TAM_ARRAY; i++){
 
