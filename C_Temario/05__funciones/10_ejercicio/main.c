@@ -10,6 +10,8 @@
 *	Introducir despues de scanf
 		limpiar()
 
+*   Estado: doing
+
 *	Enunciado
 		Vamos a realizar un programa que le pida al usuario 2 num enteros
 

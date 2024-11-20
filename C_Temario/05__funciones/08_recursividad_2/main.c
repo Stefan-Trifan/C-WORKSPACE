@@ -10,6 +10,8 @@
 *	Introducir despues de scanf
 		limpiar()
 
+*   Estado: doing
+
 *	Enunciado
 		Hacer un programa que calcule el minimo, el maximo y la media 
 		de tres numeros enteros que deban ser leidos de la entrada estandar

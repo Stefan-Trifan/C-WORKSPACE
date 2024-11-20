@@ -10,6 +10,8 @@
 *	Introducir despues de scanf
 		limpiar()
 
+*   Estado: doing
+
 *	Enunciado 62
 		Mediante la estrategia conocida como "divide y venceras" nos podemos ahorrar
 		un numero de multiplicaciones considerable para calcular la potencia de un
