@@ -9,10 +9,11 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	*   Estado: todo
+	*   Estado: doing
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		Desarrolla un programa que muestre un menu con las siguientes opciones
+		El programa debe repetir el menu hasta que el usuario eliga una opcion valuida
 */
 
 /* _________________________________________
