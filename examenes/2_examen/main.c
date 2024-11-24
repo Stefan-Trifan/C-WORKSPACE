@@ -83,6 +83,10 @@
 
 #include <stdio.h>
 
+int generaPassword();
+int esNumero7cifras (int numero);
+int esNumero3pares (int numero);
+int sonNumerosIguales (int numero1, int numero2);
 void limpiarBuffer();
 
 /* _________________________________________
@@ -99,6 +103,29 @@ int main(){
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+// Función que no se le pasa ningún parámetro y devuelve un entero con una passwod correcta
+int generaPassword(){
+
+	
+
+	return 0;
+}
+
+// Función que se le pasa como parámetro un entero y devuelve verdadero si tiene 7 cifras y falso si no
+int esNumero7cifras (int numero){
+	return 0;
+}
+
+// Función que se le pasa como parámetro un entero y devuelve verdadero si tiene al menos 3 cifras son pares y falso si no
+int esNumero3pares (int numero){
+	return 0;
+}
+
+// Función que se le pasa como parámetros dos enteros y devuelve verdadero si son iguales y falso si no lo son
+int sonNumerosIguales (int numero1, int numero2){
+	return 0;
+}
 
 void limpiarBuffer(){
 	while (getchar() != '\n');

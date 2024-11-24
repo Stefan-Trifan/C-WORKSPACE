@@ -8,31 +8,31 @@ int sonIguales(int numero1, int numero2);
 
 int main() {
     int opcion;
-    int passwordAlmacenada = 0;  // 0 indica que no se ha generado una contraseÃ±a vÃ¡lida
+    int passwordAlmacenada = 0;  // 0 indica que no se ha generado una contraseÃ±a válida
     int passwordIngresada;
 	int salir = 0;
 
     do {
         // Mostrar menÃº dependiendo si la password estÃ¡ generada o no
         if (passwordAlmacenada == 0) {
-            printf("\nMenÃº:\n");
+            printf("\nMenu:\n");
             printf("1. Genera password\n");
             printf("2. Introducir password\n");
             printf("3. Salir\n");
         } else {
-            printf("\nMenÃº:\n");
+            printf("\nMenu:\n");
             printf("1. Cambia password\n");
             printf("2. Introducir password\n");
             printf("3. Salir\n");
         }
 
-        printf("Seleccione una opciÃ³n: ");
+        printf("Seleccione una Opcion: ");
         scanf("%d", &opcion);
-		while (getchar()!='\n');
+		
 
         switch (opcion) {
             case 1:
-				// OpciÃ³n para generar o cambiar la password
+				// Opcion para generar o cambiar la password
 				printf ("la pss es %d\n",passwordAlmacenada);
                 if (passwordAlmacenada == 0) {
 					passwordAlmacenada = generaPassword();
@@ -45,7 +45,7 @@ int main() {
 			break;
 
             case 2:
-                // OpciÃ³n para introducir la password y verificarla
+                // Opcion para introducir la password y verificarla
                 printf("Introduce la password: ");
                 scanf("%d", &passwordIngresada);
                 if (sonIguales(passwordAlmacenada, passwordIngresada)) {
@@ -56,18 +56,18 @@ int main() {
 			break;
 
             case 3:
-                // OpciÃ³n para salir
+                // Opcion para salir
 				salir = 1;
                 printf("Saliendo del programa.\n");
               
             break;
 			default:
-                printf("OpciÃ³n no vÃ¡lida. Intente de nuevo.\n");
+                printf("Opcion no válida. Intente de nuevo.\n");
         }
     }while (!salir);
 }
 
-// FunciÃ³n para generar una nueva password
+// Funcion para generar una nueva password
 int generaPassword() {
     int nuevaPassword;
     do {
@@ -84,12 +84,12 @@ int generaPassword() {
     return nuevaPassword;
 }
 
-// FunciÃ³n que verifica si un nÃºmero tiene 7 cifras
+// Funcion que verifica si un nÃºmero tiene 7 cifras
 int esNumero7cifras(int numero) {
     return numero >= 1000000 && numero <= 9999999;
 }
 
-// FunciÃ³n que verifica si un nÃºmero tiene al menos 3 cifras pares
+// Funcion que verifica si un nÃºmero tiene al menos 3 cifras pares
 int esNumero3pares(int numero) {
     int Resultado = 0;
 	int pares = 0;
@@ -105,7 +105,7 @@ int esNumero3pares(int numero) {
     return Resultado;
 }
 
-// FunciÃ³n que compara si dos nÃºmeros son iguales
+// Funcion que compara si dos nÃºmeros son iguales
 int sonIguales(int numero1, int numero2) {
     return numero1 == numero2;
 }
