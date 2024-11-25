@@ -1,6 +1,7 @@
 # Enunciado Password Numérica
 
-Crea un programa en el que el usuario generará o cambiará una password numérica con unas condiciones determinadas y una vez generada introducirá una password y comprobará que sea correcta.
+Crea un programa en el que el usuario generará o cambiará una password numérica con unas condiciones determinadas  
+Una vez generada introducirá una password y comprobará que sea correcta.
 
 ### Para ello el programa debe:
 
@@ -13,7 +14,7 @@ Presentar un menú que se repetirá hasta que no se le indique que se desea sali
 
 ### Si se ha generado una clave correcta el menú será:
     1.⁠ ⁠Cambia password  
-    2.⁠ ⁠Introducir passwork  
+    2.⁠ ⁠Introducir password  
     3.⁠ ⁠Salir  
 
 ### Las condiciones de password correcta son:

@@ -95,7 +95,10 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+	printf(
+		"1. Generar password\n"
+		"2. Introducir password\n"
+		"3. Salir");
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
