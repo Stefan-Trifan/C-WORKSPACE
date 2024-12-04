@@ -1,3 +1,6 @@
+/* _________________________________________
+   Inicio cabecera */
+
 /*
 	*	Autor
 		Stefan Trifan
@@ -20,7 +23,7 @@
 		▪ Repetir hasta que se tengan todas las palabras introducidas correctamente.
 		▪ Mostrar las palabras en orden inverso de introducción, separadas por comas.
 
-		Ejemplo:
+		Ejemplo
 		▪ Usuario introduce la línea : perro,gato,oso
 		▪ El programa muestra la línea: oso,gato,perro
 */
@@ -38,8 +41,7 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    char cadenaUser[50];
-	char matrizCadena[5][11];
+    
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
