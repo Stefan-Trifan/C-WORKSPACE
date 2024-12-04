@@ -28,7 +28,10 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int num = 3;
+	int lista[5] = {1,2,3,4,5};
+
+	printf("%i", lista);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
