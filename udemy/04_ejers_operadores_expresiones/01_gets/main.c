@@ -29,14 +29,19 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
 
+	// Declara una cadena de caracteres para el nombre
 	char nombre[40];
-	int salario;
-    
-    printf("Introduce tu nombre: \n");
+	
+	// Solicita al usuario que introduzca su nombre
+	printf("Introduce tu nombre: \n");
+	
+	// Lee el nombre introducido por el usuario
 	gets(nombre);
+	
+	// Imprime el nombre introducido por el usuario
 	printf("Tu nombre es: %s", nombre);
-    
-	printf("\n_________________________________________END\n\n");
+	
+	// Retorna 0 indicando que el programa terminó correctamente
 	return 0;
 }
 
