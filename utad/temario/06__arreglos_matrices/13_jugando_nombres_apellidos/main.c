@@ -27,13 +27,28 @@ void limpiarBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
-    
-    // Pedimos el nombre
+
 	char first_name[25];
-	
+	char newChar;
+	char cadena[25];
+	int pos = 0;
+    
+	// Pedimos el nombre
+	printf("Introduce tu nombre: ");
+	while((newChar = getchar()) != '\n'){
+		cadena[pos] = newChar;
+		pos++;
+	}
+	cadena[pos] = '\0';
 
 	// Pedimos el apellido
 	char last_name[25];
+	printf("Introduce tu apellido: ");
+	while((newChar = getchar()) != '\n'){
+		cadena[pos] = newChar;
+		pos++;
+	}
+	cadena[pos] = '\0';
 
 	// Hacemos la concatenacion
 	char full_name[50];
