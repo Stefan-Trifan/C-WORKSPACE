@@ -12,7 +12,7 @@
 	*   Estado: todo
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		Crear función que lea 
 */
 
 /* _________________________________________
@@ -20,6 +20,8 @@
 
 #include <stdio.h>
 
+int leerCadena(char cadena[], int maxTam);
+// int leerCadena(char *cadena, int maxTam);
 void limpiarBuffer();
 
 /* _________________________________________
@@ -28,7 +30,13 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    char cadena[20];
+	int tam = 0;
+	printf("Introduce una cadena: ");
+	tam = leerCadena(cadena, 20);
+	
+
+	printf("");
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -36,6 +44,10 @@ int main(){
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+int leerCadena(char cadena[], int maxTam){
+
+}
 
 void limpiarBuffer(){
 	while (getchar() != '\n');
