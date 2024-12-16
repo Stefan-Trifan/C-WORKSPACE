@@ -35,7 +35,20 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    char cadena1[100];
+	char cadena2[100];
+
+	printf("Introduce la primera cadena: ");
+	leerCadena(cadena1, 100);
+
+	printf("Introduce la segunda cadena: ");
+	leerCadena(cadena2, 100);
+
+	if(comparaCadena(cadena1, cadena2)){
+		printf("Las cadenas son iguales.\n");
+	} else {
+		printf("Las cadenas son diferentes.\n");
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -43,14 +56,31 @@ int main(){
 
 /* _________________________________________
    Inicio definicion de funciones */
-int leerCadena(char cadena[], int maxTam){
-	return 0;
+int leerCadena(char cadena[], int maxTam) {
+    if (fgets(cadena, maxTam, stdin) != NULL) {
+        int i = 0;
+        while (cadena[i] != '\0') i++;
+        if (i > 0 && cadena[i - 1] == '\n') {
+            cadena[i - 1] = '\0'; // Eliminar el salto de línea
+        }
+        return 1; // Éxito
+    }
+    return 0; // Error
 }
 
-int comparaCadena(char cadena1[], char *cadena2){
 
-	return 0;
+int comparaCadena(char cadena1[], char *cadena2) {
+    int i = 0;
+    while (cadena1[i] != '\0' && cadena2[i] != '\0') {
+        if (cadena1[i] != cadena2[i]) {
+            return 0; // Diferentes
+        }
+        i++;
+    }
+    // Si ambas cadenas terminan al mismo tiempo, son iguales
+    return cadena1[i] == '\0' && cadena2[i] == '\0';
 }
+
 void limpiarBuffer(){
 	while (getchar() != '\n');
 }
