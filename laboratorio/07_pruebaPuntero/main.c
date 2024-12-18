@@ -28,7 +28,9 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+	char* pNombre;
+	char Nombre[7];
+
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
