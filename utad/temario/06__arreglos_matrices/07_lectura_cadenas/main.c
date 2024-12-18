@@ -38,9 +38,9 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-int comprobar_longitud(char cadena1[]{
+int comprobar_longitud(char cadena1[]){
 	
-})
+}
 
 int cadenas_iguales(char cadena1[], char cadena2[]){
 
