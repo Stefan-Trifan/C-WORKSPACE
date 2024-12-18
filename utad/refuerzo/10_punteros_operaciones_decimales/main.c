@@ -19,6 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
+int operacionesDecimales(primerOP, segundoOP);
 
 void limpiarBuffer();
 
@@ -36,6 +37,10 @@ int main(){
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+int operacionesDecimales(primerOP, segundoOP){
+	
+}
 
 void limpiarBuffer(){
 	while (getchar() != '\n');
