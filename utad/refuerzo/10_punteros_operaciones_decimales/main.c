@@ -9,7 +9,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	*   Estado: todo
+	*   Estado: doing
 
 	* 	Enunciado X
 		LoremIpsumDummyText
