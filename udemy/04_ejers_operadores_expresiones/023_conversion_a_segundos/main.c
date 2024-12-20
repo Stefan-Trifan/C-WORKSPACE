@@ -27,8 +27,11 @@ void limpiarBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int horas = 0, minutos = 0, segundos = 0;
     
-    
+    printf("Intrudce horas, minutos y segundos en formato: HH:MM:SS: ");
+	scanf("%i:%i:%i", horas, minutos, segundos);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
