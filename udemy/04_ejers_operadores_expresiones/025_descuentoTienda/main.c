@@ -28,8 +28,16 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
-    
+    float precioInicial = 0, precioFinal = 0;
+
+	printf("Introduce el precio Inicial: ");
+	scanf("%f", &precioInicial);
+
+	precioFinal = precioInicial - 0.15*precioInicial;
+
+	printf("Precio Final es: %f", precioFinal);
+
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }

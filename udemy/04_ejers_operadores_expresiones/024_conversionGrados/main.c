@@ -28,7 +28,14 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    float gradosC = 0, gradosF = 0;
+
+	printf("Introduce los gradoos Celsius: ");
+	scanf("%f", &gradosC);
+
+	gradosF = gradosC * 1.8 + 32;
+
+	printf("Grados Farenheit: %f", gradosF);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
