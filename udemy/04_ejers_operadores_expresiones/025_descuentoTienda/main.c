@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 
+// Declaración de la función para limpiar el buffer de entrada
 void limpiarBuffer();
 
 /* _________________________________________
@@ -27,16 +28,19 @@ void limpiarBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
-    
-    float precioInicial = 0, precioFinal = 0;
+	
+	// Declaración de variables para el precio inicial y final
+	float precioInicial = 0, precioFinal = 0;
 
+	// Solicita al usuario que introduzca el precio inicial
 	printf("Introduce el precio Inicial: ");
 	scanf("%f", &precioInicial);
 
+	// Calcula el precio final aplicando un descuento del 15%
 	precioFinal = precioInicial - 0.15*precioInicial;
 
+	// Muestra el precio final
 	printf("Precio Final es: %f", precioFinal);
-
 
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -45,6 +49,7 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
+// Definición de la función para limpiar el buffer de entrada
 void limpiarBuffer(){
 	while (getchar() != '\n');
 }

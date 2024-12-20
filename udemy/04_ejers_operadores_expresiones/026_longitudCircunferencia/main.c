@@ -19,7 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
-#define PI 3.1416;
+#define PI 3.1416
 
 void limpiarBuffer();
 
@@ -29,13 +29,17 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    float radio = 0, circunferencia = 0;
+	// Declaración de variables
+	float radio = 0, circunferencia = 0;
 
+	// Solicitar al usuario que introduzca el radio
 	printf("Introduce el radio: ");
 	scanf("%f", &radio);
 
-	circunferencia = 2* PI *radio;
+	// Calcular la circunferencia
+	circunferencia = 2 * PI * radio;
 
+	// Mostrar el resultado
 	printf("Circunferencia es: %f", circunferencia);
     
 	printf("\n_________________________________________END\n\n");
