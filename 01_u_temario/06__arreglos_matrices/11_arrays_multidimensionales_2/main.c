@@ -3,9 +3,9 @@
 		Stefan Trifan
 
 	* 	Compilar
-		mac     : comp
-				  run
-				  brun
+		mac     : comp (compilar)
+				  run  (ejecutar)
+				  brun (compilar y ejecutar)
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
