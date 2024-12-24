@@ -27,8 +27,23 @@ void limpiarBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int a, b, c;
+
+	printf("Digite el primer numero: ");
+	scanf("%i", &a);
+	printf("Digite el segundo numero: ");
+	scanf("%i", &b);
+
+	printf("Digite la suma de los 2 numeros: ");
+	scanf("%i", &c);
     
-    
+	if(a + b == c){
+		printf("Sabes sumar");
+	} 
+	if(a + b != c) {
+		printf("No sabes sumar");
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
