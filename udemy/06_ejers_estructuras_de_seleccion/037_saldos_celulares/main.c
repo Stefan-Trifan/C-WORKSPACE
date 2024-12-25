@@ -36,27 +36,26 @@ int main(){
     
 	do{
 		printf("Cuanto estás dispuesto a pagar: ");
-
 		esFlotante = scanf("%f", &presupuesto); // Comprobamos si introduce un numero valido
-
 		// Si no introdice un numero valido, limpiamos buffer
+
 		if(!esFlotante){
 			printf("Entrada no válida. Por favor, introduce un número.\n");
 			clearBuffer();
 			presupuesto = 0;
 		}
 
-		if(presupuesto >= 1000 && presupuesto <= 1500){
-			printf("Has elegido la tarifa %s", TARIFA1);
-		}
-		if(presupuesto >= 500 && presupuesto <= 999){
-			printf("Has elegido la tarifa %s", TARIFA2);
-		}
-		if(presupuesto >= 100 && presupuesto <= 499){
-			printf("Has elegido la tarifa %s", TARIFA3);
-		}
-
 	} while ( presupuesto < 100 || presupuesto > 1500);
+
+	if(presupuesto >= 1000 && presupuesto <= 1500){
+		printf("Has elegido la tarifa %s", TARIFA1);
+	}
+	if(presupuesto >= 500 && presupuesto <= 999){
+		printf("Has elegido la tarifa %s", TARIFA2);
+	}
+	if(presupuesto >= 100 && presupuesto <= 499){
+		printf("Has elegido la tarifa %s", TARIFA3);
+	}
 
     
 	printf("\n_________________________________________END\n\n");
