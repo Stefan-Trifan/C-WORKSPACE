@@ -27,9 +27,9 @@ void limpiarBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
-    
-    
-    
+
+
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }

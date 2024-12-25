@@ -28,7 +28,12 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int num_materias_suspendidas = 0;
+
+	printf("Cuantas materias has suspendido: ");
+	scanf("%i", &num_materias_suspendidas);
+
+	(num_materias_suspendidas > 3) ? printf("Suspendes") : printf("Apruebas"); 
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
