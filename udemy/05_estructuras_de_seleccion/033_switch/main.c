@@ -35,21 +35,38 @@ int main(){
 	scanf("%i", &dia);
 
 	switch (dia){
-	case 1: printf("Seleccionaste el Lunes");
+	case 1: 
+		printf("Seleccionaste el Lunes");
 		break;
-	case 2: printf("Seleccionaste el Martes");
+	case 2: 
+		printf("Seleccionaste el Martes");
 		break;
-	case 3: printf("Seleccionaste el Miercoles");
+	case 3: 
+		printf("Seleccionaste el Miercoles");
 		break;
-	case 4: printf("Seleccionaste el Jueves");
+	case 4: 
+		printf("Seleccionaste el Jueves");
 		break;
-	case 5: printf("Seleccionaste el Viernes");
+	case 5: 
+		printf("Seleccionaste el Viernes");
 		break;
-	case 6: printf("Seleccionaste el Sabado");
+	case 6: 
+		printf("Seleccionaste el Sabado");
 		break;
-	case 7: printf("Seleccionaste el Domingo");
+	case 7: 
+		printf("Seleccionaste el Domingo");
 		break;
-	default: printf("Esta opcion no es valida");
+	default: 
+		printf("Esta opcion no es valida");
+		break;
+	}
+
+	switch (dia){
+	case 1:
+		/* code */
+		break;
+	
+	default:
 		break;
 	}
     

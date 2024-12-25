@@ -28,7 +28,13 @@ void limpiarBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int numero;
+
+	printf("Introduce un numero: ");
+	scanf("%i", &numero);
+
+	// Utiliza el operador ternario para determinar si el número es par o impar
+	(numero % 2 == 0) ? printf("Numero es par") : printf("Numero es impar");
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
