@@ -21,7 +21,7 @@
 
 #include <stdio.h>
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -79,6 +79,6 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

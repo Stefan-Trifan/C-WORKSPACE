@@ -24,7 +24,7 @@
 #define MAX_ROW_3 3
 #define MAX_COL_2 2
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -73,6 +73,6 @@ int main() {
 /* _________________________________________
    Inicio definicion de funciones */
 
-void limpiarBuffer() {
+void clearBuffer() {
     while (getchar() != '\n');
 }

@@ -22,7 +22,7 @@
 
 #include <stdio.h>
 int cadenas_iguales(char cadena1[], char cadena2[]);
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -75,6 +75,6 @@ int cadenas_iguales(char cadena1[], char cadena2[]) {
     return cadena1[i] == '\0' && cadena2[i] == '\0';
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

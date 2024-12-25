@@ -23,7 +23,7 @@
 #define NUMFILAS 2
 #define NUMCOL 3
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -48,6 +48,6 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

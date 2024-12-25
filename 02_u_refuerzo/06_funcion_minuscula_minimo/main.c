@@ -21,7 +21,7 @@
 int esMinuscula(char caracter);
 int esNumero(char caracter);
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -75,6 +75,6 @@ int esNumero(char caracter){
 
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

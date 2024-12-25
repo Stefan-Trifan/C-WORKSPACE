@@ -23,7 +23,7 @@
 
 int sumarDosNumPequenos(int Array[], int tam);
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -67,6 +67,6 @@ int sumarDosNumPequenos(int Array[], int tam){
 }
 
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

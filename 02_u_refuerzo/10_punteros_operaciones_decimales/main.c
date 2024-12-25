@@ -21,7 +21,7 @@
 #include <stdio.h>
 int operacionesDecimales(primerOP, segundoOP);
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -42,6 +42,6 @@ int operacionesDecimales(primerOP, segundoOP){
 	
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

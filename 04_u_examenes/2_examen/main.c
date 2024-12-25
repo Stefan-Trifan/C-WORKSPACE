@@ -87,7 +87,7 @@ int generaPassword();
 int esNumero7cifras (int numero);
 int esNumero3pares (int numero);
 int sonNumerosIguales (int numero1, int numero2);
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -130,6 +130,6 @@ int sonNumerosIguales (int numero1, int numero2){
 	return 0;
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

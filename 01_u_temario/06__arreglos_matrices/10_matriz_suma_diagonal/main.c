@@ -23,7 +23,7 @@
 #include <stdio.h>
 
 int sumaDiagonal(int matriz[3][3]);
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -69,6 +69,6 @@ int sumaDiagonal(int matriz[3][3]){
 	return suma;
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

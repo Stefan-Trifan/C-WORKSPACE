@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 
-void limpiarBuffer();
+void clearBuffer();
 
 int contarCaracteres(const char *cadena);
 
@@ -51,6 +51,6 @@ int contarCaracteres(const char *cadena){
 	
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

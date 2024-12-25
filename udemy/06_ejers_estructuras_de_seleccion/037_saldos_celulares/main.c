@@ -23,7 +23,7 @@
 #define TARIFA2 "Intermedia" // De 500 a 999
 #define TARIFA3 "Basica"     // De 100 a 499
  
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -32,10 +32,20 @@ int main(){
 	printf("\n_________________________________________START\n\n");
 
 	float presupuesto = 0, plan = 0;
+
+	int esFlotante = 0;
     
 	do{
 		printf("Cuanto estás dispuesto a pagar: ");
-		scanf("%f", &presupuesto);
+
+		esFlotante = scanf("%f", &presupuesto); // Comprobamos si introduce un numero valido
+
+		// Si no introdice un numero valido, limpiamos buffer
+		if(!esFlotante){
+			printf("Entrada no válida. Por favor, introduce un número.\n");
+			clearBuffer();
+			presupuesto = 0;
+		}
 
 		if(presupuesto >= 1000 && presupuesto <= 1500){
 			printf("Has elegido la tarifa %s", TARIFA1);
@@ -47,8 +57,6 @@ int main(){
 			printf("Has elegido la tarifa %s", TARIFA3);
 		}
 
-		
-
 	} while ( presupuesto < 100 || presupuesto > 1500);
 
     
@@ -59,6 +67,6 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

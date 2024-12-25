@@ -21,7 +21,7 @@
 #include <stdio.h>
 
 // Declaración de la función para limpiar el buffer de entrada
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -50,6 +50,6 @@ int main(){
    Inicio definicion de funciones */
 
 // Definición de la función para limpiar el buffer de entrada
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

@@ -51,7 +51,7 @@
 
 int calcular_potencia(int base, int exponente, int *resultado);
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -105,6 +105,6 @@ int calcular_potencia(int base, int exponente, int *resultado){
 	return 1;
 }
    
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

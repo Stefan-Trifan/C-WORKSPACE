@@ -21,7 +21,7 @@
 #include <stdio.h>
 #define PI 3.1416
 
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -49,6 +49,6 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

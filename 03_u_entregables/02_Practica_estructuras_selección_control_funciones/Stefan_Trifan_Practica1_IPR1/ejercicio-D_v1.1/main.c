@@ -39,7 +39,7 @@
 #include <stdlib.h> // Nos permite trabajar con valor absoluto
 
 int sumaDigitosImpares(int num);
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -96,7 +96,7 @@ int sumaDigitosImpares(int num){
 
 
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }
 

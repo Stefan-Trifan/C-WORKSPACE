@@ -77,7 +77,7 @@
 void mostrarInstruccionesIniciales();
 void mostrarMenu(int numero, int operaciones);
 int  realizarOperacion(int numero, int opcion);
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -167,6 +167,6 @@ int realizarOperacion(int numero, int opcion){
 	return numero;
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }

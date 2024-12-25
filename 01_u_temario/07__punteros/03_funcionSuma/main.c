@@ -22,7 +22,7 @@
 
 int leerCadena(char cadena[], int maxTam);
 // int leerCadena(char *cadena, int maxTam);
-void limpiarBuffer();
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -49,6 +49,6 @@ int leerCadena(char cadena[], int maxTam){
 
 }
 
-void limpiarBuffer(){
+void clearBuffer(){
 	while (getchar() != '\n');
 }
