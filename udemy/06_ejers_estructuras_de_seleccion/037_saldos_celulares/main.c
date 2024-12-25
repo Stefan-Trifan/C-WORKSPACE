@@ -31,8 +31,7 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
 
-	float presupuesto = 0, plan = 0;
-
+	float presupuesto = 0;
 	int esFlotante = 0;
     
 	do{

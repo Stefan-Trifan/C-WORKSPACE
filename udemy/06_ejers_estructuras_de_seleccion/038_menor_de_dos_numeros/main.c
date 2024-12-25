@@ -27,8 +27,16 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	float numero1, numero2;
     
-    
+	printf("Introduce el primer numero: ");
+	scanf("%f", &numero1);
+
+	printf("Introduce el segundo numero: ");
+	scanf("%f", &numero2);
+	
+	(numero1 > numero2) ? printf("El primer numero (%f) es mayor", numero1) : printf("El segundo numero (%f) es mayor", numero2);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
