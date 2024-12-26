@@ -27,8 +27,15 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int numMax = 0;
     
-    
+    printf("Hasta que numero quieres multiplos de 5: ");
+	scanf("%i", &numMax);
+
+	for(int i = 0; i < numMax; i += 5){
+		printf("\n%i", i);
+	};
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
