@@ -33,7 +33,7 @@ int main(){
     printf("Hasta que numero quieres multiplos de 5: ");
 	scanf("%i", &numMax);
 
-	for(int i = 0; i < numMax; i += 5){
+	for(int i = 0; i <= numMax; i += 5){
 		printf("\n%i", i);
 	};
     

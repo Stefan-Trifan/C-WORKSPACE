@@ -27,8 +27,23 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int numMax = 0, resultado = 0;
     
-    
+    printf("Hasta que numero quieres operar: ");
+	scanf("%i", &numMax);
+
+	for(int i = 0; i <= numMax; i++){
+		
+		if( i % 2 == 0){
+			resultado -= i; // Pares
+		}
+		else {
+			resultado += i; // Impares
+		};
+	};
+
+	printf("%i", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
