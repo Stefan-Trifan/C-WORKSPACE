@@ -40,7 +40,6 @@ int main(){
 		if(!esEntero) {
 			printf("Entrada no válida. Por favor, introduce un número.\n");
 			clearBuffer();
-			nota = 0;
 		}
 
 
