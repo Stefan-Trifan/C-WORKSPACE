@@ -29,10 +29,10 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
 
-	char marca[10] = " ";
+	char marca[25] = " ";
     
     printf("Introduce la marca del coche: ");
-	fgets(marca, 10, stdin);
+	fgets(marca, 25, stdin);
 	strtok(marca, "\n");
 	printf("marca es: %s\n", marca); // debug
 
