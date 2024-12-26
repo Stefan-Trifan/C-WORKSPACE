@@ -28,20 +28,18 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
 
-	int num = 0, cont = 0;
+	int numMax = 0, resultado = 0;
     
-    printf("Introduce un num para ver si es primo: ");
-	scanf("%i", &num);
+    printf("Cuantos num quieres sumar: ");
+	scanf("%i", &numMax);
 
-	for(int i = 1; i <= num; i++)
+	for(int i = 2; i <= numMax; i += 2)
 	{
-		if(num % i == 0)
-		{
-			cont++;
-		};
-	};
+		resultado += i;
+		printf("%i\n", resultado);
+	}
 
-	(cont == 2) ? printf("El numero es primo") : printf("El numero no es primo");
+	printf("Resultado es: %i", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -53,6 +51,3 @@ int main(){
 void clearBuffer(){
 	while (getchar() != '\n');
 }
-
-
-
