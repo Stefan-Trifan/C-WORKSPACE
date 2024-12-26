@@ -70,7 +70,7 @@ int main(){
 				salir = 1; 
 				break;
 		}
-	} while (salir == 0);
+	} while (!salir);
 
 
 	

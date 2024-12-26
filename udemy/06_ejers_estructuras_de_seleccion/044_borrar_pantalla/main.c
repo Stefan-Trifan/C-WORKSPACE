@@ -19,6 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void clearBuffer();
 
@@ -28,7 +29,17 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int numero;
+
+	do {
+		printf("Escribe el numero 1: ");
+		scanf("%i", &numero);
+	} while (numero != 1);
+
+	if(numero == 1){
+		system("clear");
+		printf("Has borrado la pantalla");
+	} 
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

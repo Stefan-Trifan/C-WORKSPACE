@@ -27,8 +27,32 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
-    
-    
+
+	char nota = ' ';
+
+	do {
+		printf("Introduce la calificacion (A, B, C, D, F): ");
+		scanf(" %c", &nota);
+	} while (nota < 'A' || nota > 'F');
+	
+	switch (nota) {
+		case 'A': 
+			printf("Excelente");
+			break;
+		case 'B': 
+			printf("Notable");
+			break;
+		case 'C': 
+			printf("Aprobado");
+			break;
+		case 'D': 
+		case 'F': 
+			printf("Reprobado");
+			break;
+		default: 
+			printf("Nota no válida");
+			break;
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
