@@ -19,6 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h>
 
 void clearBuffer();
 
@@ -27,8 +28,30 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	char marca[10] = " ";
     
-    
+    printf("Introduce la marca del coche: ");
+	fgets(marca, 10, stdin);
+	strtok(marca, "\n");
+	printf("marca es: %s\n", marca); // debug
+
+	if(strcmp(marca, "honda") == 0 || strcmp(marca, "Honda") == 0 || strcmp(marca, "HONDA") == 0){
+		printf("Tu descuento es: 5%%");
+	} 
+	else if (strcmp(marca, "yamaha") == 0 || strcmp(marca, "Yamaha") == 0 || strcmp(marca, "YAMAHA") == 0){
+		printf("Tu descuento es: 8%%");
+	} 
+	else if (strcmp(marca, "suzuki") == 0 || strcmp(marca, "Suzuki") == 0 || strcmp(marca, "SUZUKI") == 0){
+		printf("Tu descuento es: 10%%");
+	} 
+	else{
+		printf("Tu descuento es: 2%%");
+	}
+
+	
+	
+	
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
