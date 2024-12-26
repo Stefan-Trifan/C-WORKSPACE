@@ -28,7 +28,9 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+	for(int i = 0; i < 10; i += 1){
+		printf("%i\n", i);
+	};
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

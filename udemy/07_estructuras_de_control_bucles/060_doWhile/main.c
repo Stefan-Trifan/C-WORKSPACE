@@ -27,8 +27,13 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int i = 0;
     
-	
+    do {
+		printf("%i\n", i);
+		i++;
+	} while (i <= 20);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
