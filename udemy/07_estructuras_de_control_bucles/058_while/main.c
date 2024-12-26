@@ -28,7 +28,12 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int i = 0;
+
+	while(i <= 100){
+		printf("El valor de i es: %i\n", i);
+		i++;
+	};
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
