@@ -5,13 +5,14 @@
 
 int main() {
 
-		
-    //* El ciclo esta definido hasta 99
+    int num = 0;
+
+	printf("En que numero desea usted que se detenga el ciclo (0-100): ");
+    scanf("%i", &num);
+
     for (int i = 0; i < 100; i++){
-        if (i == 5)
-        break;
         printf("\n%i",i);
-        
+        if (i == num) break;
     }
 
     printf("\n\n");
