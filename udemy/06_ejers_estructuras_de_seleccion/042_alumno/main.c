@@ -27,8 +27,15 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	float nota = 0;
+
+	do {
+		printf("Introduce tu nota: ");
+		scanf("%f", &nota);
+	} while (nota < 0 || nota > 10);
     
-    
+	(nota > 5.5) ? printf("Has aprobado") : printf("No has aprobado");
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

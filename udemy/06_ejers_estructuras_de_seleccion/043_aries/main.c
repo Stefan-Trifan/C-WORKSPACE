@@ -27,8 +27,17 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	char nombre[50] = "";
+	char signo[20] = "";
     
-    
+    printf("Introduce tu nombre");
+	scanf("%s", &nombre);
+
+	printf("Introduce tu signo");
+	scanf("%s", &signo);
+
+	ç
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

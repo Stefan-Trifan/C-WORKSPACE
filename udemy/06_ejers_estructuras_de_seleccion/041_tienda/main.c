@@ -53,7 +53,7 @@ int main(){
 				printf("\nCuanto dinero quieres retirar: "); 
 				scanf("%f", &retirar);
 				if(retirar > saldo){
-					printf("No puedes retirar tanto dinero.");
+					printf("\nNo puedes retirar tanto dinero.");
 				} else {
 					saldo = saldo - retirar;
 				};
