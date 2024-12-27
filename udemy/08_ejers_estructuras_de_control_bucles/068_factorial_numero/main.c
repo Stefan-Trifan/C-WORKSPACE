@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		1 * 2 * 3
 */
 
 /* _________________________________________
@@ -28,7 +28,18 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int numVueltasMax = 0, resultado = 1;
+
+	printf("Introduce un numero: ");
+	scanf("%i", &numVueltasMax);
+
+	for(int i = 1; i <= numVueltasMax; i++)
+	{
+		resultado = resultado * i;
+		printf("i = %i: %i\n", i, resultado);
+	}
+
+	printf("Resultado Final es: %i", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

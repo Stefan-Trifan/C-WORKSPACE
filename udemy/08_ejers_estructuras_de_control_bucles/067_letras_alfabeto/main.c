@@ -28,8 +28,12 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
-    
+    char letra =  'a';
+
+	do {
+		printf("%c\n", letra);
+		letra++;
+	} while (letra <= 'z');
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
