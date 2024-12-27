@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		0 + 2 + 4 + 6 + 8 + 10 ...
 */
 
 /* _________________________________________
@@ -28,18 +28,19 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
 
-	int numMax = 0, resultado = 0;
+	int numMax = 0, resultado = 0, multiplicador = 0;
     
     printf("Cuantos num quieres sumar: ");
 	scanf("%i", &numMax);
 
-	for(int i = 2; i <= numMax; i += 2)
+	for(int i = 1; i <= numMax; i++)
 	{
-		resultado += i;
-		printf("%i\n", resultado);
+		resultado += multiplicador;
+		printf("Calculando:      +%i\n", multiplicador);
+		multiplicador += 2;
 	}
 
-	printf("Resultado es: %i", resultado);
+	printf("Resultado es:     %i", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
