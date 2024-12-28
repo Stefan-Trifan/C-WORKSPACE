@@ -37,13 +37,18 @@ int main(){
     printf("Cuantas filas de asteriscos quieres: ");
 	scanf("%i", &numFilas);
 
-	for(int i = 0; i <= numFilas; i++)
+	// Bucle que se encarga de crear las filas de una en una
+	for(int filaActual = 0; filaActual <= numFilas; filaActual++)
 	{
-		while(numEstrellasFila < i)
+		
+		// Bucle que se encarga de imprimir las estrellas en la fila actual
+		while(numEstrellasFila < filaActual)
 		{
 			printf("*");
 			numEstrellasFila++;
 		}
+
+		// Al final de cada fila, insertamos salto de línea y reseteamos las estrellas
 		numEstrellasFila = 0;
 		printf("\n");
 	}
