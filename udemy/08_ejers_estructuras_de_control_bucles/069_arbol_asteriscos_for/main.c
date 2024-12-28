@@ -40,6 +40,7 @@ int main(){
 	// Bucle que se encarga de crear las filas de una en una
 	for(int filaActual = 0; filaActual <= numFilas; filaActual++)
 	{
+		// Bucle que se encarga de imprimir las estrellas en la fila actual
 		for(int numEstrellasFila = 0; numEstrellasFila < filaActual; numEstrellasFila++)
 		{
 			printf("*");
