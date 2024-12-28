@@ -12,7 +12,11 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		*
+		**
+		***
+		****
+		*****
 */
 
 /* _________________________________________
@@ -27,8 +31,22 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int numMax = 0, stars = 0;
     
-    
+    printf("Cuantas filas de asteriscos quieres: ");
+	scanf("%i", &numMax);
+
+	for(int i = 0; i <= numMax; i++)
+	{
+		while(stars < i)
+		{
+			printf("*");
+			stars++;
+		}
+		stars = 0;
+		printf("\n");
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
