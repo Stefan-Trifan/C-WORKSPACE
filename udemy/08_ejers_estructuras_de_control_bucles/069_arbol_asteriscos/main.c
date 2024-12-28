@@ -32,19 +32,19 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
 
-	int numMax = 0, stars = 0;
+	int numFilas = 0, numEstrellasFila = 0;
     
     printf("Cuantas filas de asteriscos quieres: ");
-	scanf("%i", &numMax);
+	scanf("%i", &numFilas);
 
-	for(int i = 0; i <= numMax; i++)
+	for(int i = 0; i <= numFilas; i++)
 	{
-		while(stars < i)
+		while(numEstrellasFila < i)
 		{
 			printf("*");
-			stars++;
+			numEstrellasFila++;
 		}
-		stars = 0;
+		numEstrellasFila = 0;
 		printf("\n");
 	}
     
