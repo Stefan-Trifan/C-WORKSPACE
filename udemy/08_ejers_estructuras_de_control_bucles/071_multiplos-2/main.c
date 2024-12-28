@@ -28,7 +28,21 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int numMax = 0, base = 0;
+
+	printf("De que numero quieres sacar múltiplos (base): ");
+	scanf("%i", &base);
+
+	printf("Hasta que numero quieres multiplos: ");
+	scanf("%i", &numMax);
+
+	for(int i = 0; i <= numMax; i++)
+	{
+		if(i % base == 0)
+		{
+			printf("Multiplo: %i\n", i);
+		}
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
