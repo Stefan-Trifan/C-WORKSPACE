@@ -28,7 +28,19 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    int num = 0, cont = 0;
+
+	printf("Introduce un numero para ver si es primo: ");
+	scanf("%i", &num);
+
+	for(int i = 1; i < num; i++)
+		if(num % i == 0)
+			cont++;
+
+	if(cont >= 2)
+		printf("El numero no es primo");	
+	else
+		printf("El numero es primo");
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

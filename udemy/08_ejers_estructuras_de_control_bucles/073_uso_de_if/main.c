@@ -27,8 +27,30 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int num = 0;
+	long long resultado = 0;
     
-    
+    printf("Introduce un numero: ");
+	scanf("%i", &num);
+
+	if(num > 10)
+	{
+		resultado = 1;
+		for(int i = 1; i <= 10; i++)
+		{
+			resultado *= i;
+		}
+	}
+	else
+	{
+		for(int i = 0; i <= num; i++)
+		{
+			resultado += i;
+		}
+	}
+
+	printf("Resultado: %lld", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

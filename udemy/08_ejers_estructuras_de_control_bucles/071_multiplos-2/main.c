@@ -33,14 +33,14 @@ int main(){
 	printf("De que numero quieres sacar múltiplos (base): ");
 	scanf("%i", &base);
 
-	printf("Hasta que numero quieres multiplos: ");
+	printf("Hasta que numero quieres sacar multiplos: ");
 	scanf("%i", &numMax);
 
 	for(int i = 0; i <= numMax; i++)
 	{
 		if(i % base == 0)
 		{
-			printf("Multiplo: %i\n", i);
+			printf("%i\n", i);
 		}
 	}
     
