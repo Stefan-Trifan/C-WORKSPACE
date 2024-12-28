@@ -27,8 +27,23 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	int numLimite = 0, resultado = 0, contNumero = 0;
     
-    
+    printf("Suma de numeros pares hasta el numero: ");
+	scanf("%i", &numLimite);
+
+	for(int i = 0; i <= numLimite; i++)
+	{
+		if(i % 2 == 0)
+		{
+			printf("+%i\n", i);
+			resultado += i;
+			contNumero++;
+		}
+	}
+
+	printf("Resultado final es %i y hay %i numeros\n", resultado, contNumero);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
