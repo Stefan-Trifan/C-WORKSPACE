@@ -1,27 +1,42 @@
 /*
-*	Autor
+	*	Autor
 		Stefan Trifan
 
-*	Compilar
-		mac     : gcc main.c -o main
+	* 	Compilar
+		mac     : comp (compilar)
+				  run  (ejecutar)
+				  brun (compilar y ejecutar)
 		windows : gcc main.c -o main.exe
-			    : ./main.exe
+				: ./main.exe
 
-*	Introducir despues de scanf
-		limpiar()
+	*   Estado: 
 
-*	Enunciado
+	* 	Enunciado X
 		LoremIpsumDummyText
 */
 
+/* _________________________________________
+   Inicio cabecera */
+
 #include <stdio.h>
 
-// Llamamos con limpiar()
-void limpiar(){
-	while(getchar() != '\n');
-}
+void clearBuffer();
+
+/* _________________________________________
+   Inicio main() */
 
 int main(){
-
+	printf("\n_________________________________________START\n\n");
+    
+    
+    
+	printf("\n_________________________________________END\n\n");
 	return 0;
+}
+
+/* _________________________________________
+   Inicio definicion de funciones */
+
+void clearBuffer(){
+	while (getchar() != '\n');
 }
