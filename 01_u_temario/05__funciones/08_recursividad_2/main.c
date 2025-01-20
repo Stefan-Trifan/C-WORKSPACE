@@ -18,9 +18,9 @@
 
 		La funcionalidad debe ser realizada mediante una funcion denominada calculos()
 		que reciba como parametros los 3 numeros y devuelva los 3 resultados del siguiente modo:
-			la media sera entregada como resultado de la funcion 
-			mientras que el minimo y el maximo de los valores se devolveran en los parametros de la funcion 
-			por lo que seran pasados por referencia
+			La media sera entregada como resultado de la funcion 
+			Mientras que el minimo y el maximo de los valores se devolveran en los parametros de la funcion 
+			Por lo que seran pasados por referencia
 */
 
 #include <stdio.h>
