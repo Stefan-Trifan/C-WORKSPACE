@@ -35,15 +35,17 @@ int main(){
 	printf("\n_________________________________________START\n\n");
     
 	char arrayOrigen[20]  = "Cadena de origen";
-	char arrayDestino[20] = ""; // creamos el array destino de la misma dimension
+	char arrayDestino[20] = ""; 
+
+	// Ejemplo 1: Copiamos el contenido de una variable a otra
 
 	strcpy(arrayDestino, arrayOrigen); // copiamos el contenido de la variable origen a la variable destino
+	printf("%s\n", arrayDestino); // Devuelve "Cadena de origen"
 
-	printf("%s\n", arrayDestino);
+	// Ejemplo 2: Copiamos el contenido una cadena a una variable
 
 	strcpy(arrayDestino, "Hola Hola Hola"); // copiamos el contenido "Hola Hola Hola" a la variable destino
-
-	printf("%s\n", arrayDestino);
+	printf("%s\n", arrayDestino);  // Devuelve "Hola Hola Hola
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

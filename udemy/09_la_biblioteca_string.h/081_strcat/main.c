@@ -37,8 +37,12 @@ int main(){
 	     cadena2[] = "Trifan";
 	char final[50];
 
+	
 	// Concatenamos
-	strcat()
+    strcat(final,cadena1);
+    strcat(final,"-");
+    strcat(final,cadena2);
+    printf("%s",final); // Imprime Stefan-Trifan
 
     
 	printf("\n_________________________________________END\n\n");
