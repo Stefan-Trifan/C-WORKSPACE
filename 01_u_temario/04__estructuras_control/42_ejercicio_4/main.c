@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		Comprobar si un número entero es primo, teniendo en cuenta que un primo solo tiene 2 divisores.
 */
 
 /* _________________________________________
@@ -28,8 +28,30 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
-    
+    int num = 0;
+	int contador = 0;
+
+	printf("Introduce un numero: ");
+	scanf("%i", &num);
+
+	for(int i = 1; i <= num; i++)
+	{
+		if(num % i == 0)
+		{
+			contador++;
+		}
+	}
+
+	if(contador == 2 || num == 1)
+	{
+		printf("El numero es primo\n");
+	} 
+	else
+	{
+		printf("El numero no es primo");
+	}
+
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
