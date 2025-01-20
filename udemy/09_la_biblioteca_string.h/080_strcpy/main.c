@@ -15,10 +15,16 @@
 		LoremIpsumDummyText
 */
 
+//* strcpy(Destino, Fuente)
+//* Permite copiar una cadena de texto en otra. Debes considerar que la dimensión del array
+//* destino debe ser igual o mayor que el array origen y que además sobrescribe el contenido del
+//* destino (de existir).
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h> // Nueva biblioteca
 
 void clearBuffer();
 
@@ -28,7 +34,16 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+	char arrayOrigen[20]  = "Cadena de origen";
+	char arrayDestino[20] = ""; // creamos el array destino de la misma dimension
+
+	strcpy(arrayDestino, arrayOrigen); // copiamos el contenido de la variable origen a la variable destino
+
+	printf("%s\n", arrayDestino);
+
+	strcpy(arrayDestino, "Hola Hola Hola"); // copiamos el contenido "Hola Hola Hola" a la variable destino
+
+	printf("%s\n", arrayDestino);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
