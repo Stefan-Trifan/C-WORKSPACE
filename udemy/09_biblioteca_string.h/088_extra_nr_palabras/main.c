@@ -26,7 +26,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
 	FILE* archivo = fopen("Prueba.txt","r"); // Declaramos un apuntador a archivo
@@ -62,6 +63,7 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

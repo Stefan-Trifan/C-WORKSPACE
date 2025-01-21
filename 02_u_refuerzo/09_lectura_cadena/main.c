@@ -27,7 +27,8 @@ int contarCaracteres(const char *cadena);
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     char cadena[] = {"Texto de ejemplo"};
@@ -51,6 +52,7 @@ int contarCaracteres(const char *cadena){
 	
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

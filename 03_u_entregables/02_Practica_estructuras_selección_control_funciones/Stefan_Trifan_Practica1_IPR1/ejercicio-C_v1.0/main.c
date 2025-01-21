@@ -56,7 +56,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
 
 	// Declaracion de variables
@@ -105,6 +106,7 @@ int calcular_potencia(int base, int exponente, int *resultado){
 	return 1;
 }
    
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

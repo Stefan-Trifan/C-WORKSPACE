@@ -27,7 +27,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     char cadena[20];
@@ -49,6 +50,7 @@ int leerCadena(char cadena[], int maxTam){
 
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

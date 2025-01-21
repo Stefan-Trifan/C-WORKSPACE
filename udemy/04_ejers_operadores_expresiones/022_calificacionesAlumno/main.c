@@ -25,7 +25,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     float nota_parcial_1 = 0, nota_parcial_2 = 0, nota_parcial_3 = 0, nota_examen_final = 0, nota_trabajo_final = 0, nota_final = 0;
@@ -51,6 +52,7 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

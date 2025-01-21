@@ -28,7 +28,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
 	//Declaramos la matriz de 3x3
@@ -69,6 +70,7 @@ int sumaDiagonal(int matriz[3][3]){
 	return suma;
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

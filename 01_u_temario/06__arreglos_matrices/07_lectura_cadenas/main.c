@@ -26,7 +26,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     
@@ -46,6 +47,7 @@ int cadenas_iguales(char cadena1[], char cadena2[]){
 
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

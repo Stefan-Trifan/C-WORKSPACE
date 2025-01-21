@@ -25,7 +25,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
 
 	// Solicitar al usuario que seleccione un día de la semana
@@ -77,6 +78,7 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

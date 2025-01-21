@@ -26,7 +26,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
 
 	char caracter = ' ';
@@ -75,6 +76,7 @@ int esNumero(char caracter){
 
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

@@ -30,7 +30,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     char texto[100];
@@ -50,6 +51,7 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

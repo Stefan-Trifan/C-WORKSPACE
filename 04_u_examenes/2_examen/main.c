@@ -92,7 +92,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
 	printf(
@@ -130,6 +131,7 @@ int sonNumerosIguales (int numero1, int numero2){
 	return 0;
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

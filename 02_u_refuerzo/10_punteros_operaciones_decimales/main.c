@@ -26,7 +26,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     
@@ -42,6 +43,7 @@ int operacionesDecimales(primerOP, segundoOP){
 	
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

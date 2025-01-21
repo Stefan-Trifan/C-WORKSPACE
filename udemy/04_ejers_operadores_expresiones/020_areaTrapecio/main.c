@@ -25,7 +25,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     float base_mayor, base_menor, altura, area;
@@ -47,6 +48,7 @@ int main(){
 /* _________________________________________
    Inicio definicion de funciones */
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

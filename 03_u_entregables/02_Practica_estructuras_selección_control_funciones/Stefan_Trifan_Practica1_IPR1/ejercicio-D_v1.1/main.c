@@ -44,7 +44,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
 
 	int num = 0;    
@@ -96,7 +97,8 @@ int sumaDigitosImpares(int num){
 
 
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }
 

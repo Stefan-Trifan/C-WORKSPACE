@@ -28,7 +28,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
 	int Array[TAM_ARRAY] = {1,2,3,4,5,6,7,3,9,10}; 
@@ -67,6 +68,7 @@ int sumarDosNumPequenos(int Array[], int tam){
 }
 
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

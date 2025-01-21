@@ -32,7 +32,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
     
     char cadena1[100];
@@ -81,6 +82,7 @@ int comparaCadena(char cadena1[], char *cadena2) {
     return cadena1[i] == '\0' && cadena2[i] == '\0';
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

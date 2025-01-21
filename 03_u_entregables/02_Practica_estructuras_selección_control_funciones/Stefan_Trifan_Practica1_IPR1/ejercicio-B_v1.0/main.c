@@ -82,7 +82,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
 
 	// Declaramos las variables
@@ -167,6 +168,7 @@ int realizarOperacion(int numero, int opcion){
 	return numero;
 }
 
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

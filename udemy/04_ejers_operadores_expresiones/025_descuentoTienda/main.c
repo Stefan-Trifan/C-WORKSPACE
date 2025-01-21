@@ -26,7 +26,8 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main()
+{
 	printf("\n_________________________________________START\n\n");
 	
 	// Declaración de variables para el precio inicial y final
@@ -50,6 +51,7 @@ int main(){
    Inicio definicion de funciones */
 
 // Definición de la función para limpiar el buffer de entrada
-void clearBuffer(){
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }
