@@ -17,6 +17,7 @@
 
 // strupr(Cadena)
 // Contrario a strlwr, esta función convierte a mayúsculas las letras de una cadena.
+//! En Linux no funciona
 
 /* _________________________________________
    Inicio cabecera */

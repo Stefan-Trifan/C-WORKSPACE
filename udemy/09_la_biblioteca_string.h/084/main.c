@@ -17,6 +17,7 @@
 
 // strlwr(Cadena)
 // Convierte a minúsculas todas las letras de una cadena de texto. 
+//! En Linux no funciona
 
 /* _________________________________________
    Inicio cabecera */
