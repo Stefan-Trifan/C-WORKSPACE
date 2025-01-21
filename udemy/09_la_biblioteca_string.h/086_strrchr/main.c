@@ -15,10 +15,14 @@
 		LoremIpsumDummyText
 */
 
+// strrchr(Cadena, Caracter)
+// Regresa el restante de la cadena a partir de la primera aparición del carácter indicado.
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h>
 
 void clearBuffer();
 
@@ -27,8 +31,15 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
+
+	char abecedario[] = "abcdefghijklmnopqrstuvwxyz";
+	char letraCorte   = ' ';
+
+	printf("Introduce la letra en la que quieres que se corte el abecedario: ");
+	scanf("%c", &letraCorte);
+	clearBuffer();
     
-    
+	printf("%s", strrchr(abecedario, letraCorte));
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
