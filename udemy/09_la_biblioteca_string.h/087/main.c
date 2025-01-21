@@ -15,10 +15,13 @@
 		LoremIpsumDummyText
 */
 
+// Invertir una cadena con la funcion strrev().
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h>
 
 void clearBuffer();
 
@@ -27,7 +30,13 @@ void clearBuffer();
 
 int main(){
 	printf("\n_________________________________________START\n\n");
-    
+
+	char cadena[] = "Steve";
+	
+	strrev(cadena); //Invertimos la cadena con la funcion strrev
+	
+	printf("Cadena Invertida: %s",cadena); 
+	//mostramos la cadena invertida
     
     
 	printf("\n_________________________________________END\n\n");
