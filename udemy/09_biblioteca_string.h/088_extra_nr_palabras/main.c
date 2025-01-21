@@ -19,6 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h>
 
 void clearBuffer();
 
@@ -28,7 +29,31 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+	FILE* archivo = fopen("Prueba.txt","r"); // Declaramos un apuntador a archivo
+    int apariciones = 0; // Es el contador
+
+
+    if (archivo == NULL)
+	{
+		printf("\nError al intentar acceder al archivo");
+	}
+    else
+	{
+        char TextoRecibido[1000];
+        char palabraBuscada[] = "a"; // Se sustituye por las palabras que elegiste
+
+        while (fscanf(archivo,"%s",TextoRecibido) != EOF)
+		{
+			if (strcmp(TextoRecibido,palabraBuscada) == 0)
+			{
+				apariciones++;
+			}
+            
+    	}
+    }
+
+    fclose(archivo);
+    printf("\nApariciones de la palabra: %d",apariciones);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
