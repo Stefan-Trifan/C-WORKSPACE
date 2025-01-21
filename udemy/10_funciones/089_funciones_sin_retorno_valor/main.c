@@ -9,33 +9,43 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Introducir despues de scanf
-		limpiar()
+	*   Estado: 
 
 	* 	Enunciado X
 		LoremIpsumDummyText
 */
 
+/* _________________________________________
+   Inicio cabecera */
+
 #include <stdio.h>
 
-// Llamamos con limpiar()
-void limpiar(){while (getchar() != '\n');}
+void saludar();
+void clearBuffer();
 
-// Declaramos/inicializamos la funcion
-void Mundo();
+/* _________________________________________
+   Inicio main() */
 
-int main(){
-	printf("\n________________________________________________\n\n");
-
-	// Llamamos la funcion
-	Mundo();
-
-	printf("\n________________________________________________\n\n");
+int main()
+{
+	printf("\n_________________________________________START\n\n");
+    
+    // Llamamos la funcion
+	saludar();
+    
+	printf("\n_________________________________________END\n\n");
 	return 0;
 }
 
-// Funcion
-void Mundo()
+/* _________________________________________
+   Inicio definicion de funciones */
+
+void saludar()
 {
 	printf("Hola Mundo\n");
+}
+
+void clearBuffer()
+{
+	while (getchar() != '\n');
 }

@@ -19,15 +19,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
-// Llamamos con limpiar()
-void limpiar(){
-	while (getchar() != '\n');
-}
-
 // Declaramos/inicializamos la funcion
 int sumar(int a, int b);
 
-int main(){
+int main()
+{
 	printf("\n________________________________________________\n\n");
 
 	int a = 5;
@@ -46,4 +42,10 @@ int sumar(int a, int b)
 	int resultado = 0;
 	resultado = a + b;
 	return resultado;
+}
+
+// Llamamos con limpiar()
+void limpiar()
+{
+	while (getchar() != '\n');
 }
