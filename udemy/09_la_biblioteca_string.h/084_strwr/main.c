@@ -15,10 +15,14 @@
 		LoremIpsumDummyText
 */
 
+// strlwr(Cadena)
+// Convierte a minúsculas todas las letras de una cadena de texto. 
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h>
 
 void clearBuffer();
 
@@ -28,7 +32,15 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    char texto[100];
+
+	printf("Introduce la cadena para convertir a minusculas: ");
+	scanf("%s", texto);
+
+	strlwr(texto);
+
+	printf("El nuevo en minusculas es el siguiente: %s", texto);
+
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

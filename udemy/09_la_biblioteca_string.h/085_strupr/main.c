@@ -15,10 +15,14 @@
 		LoremIpsumDummyText
 */
 
+// strupr(Cadena)
+// Contrario a strlwr, esta función convierte a mayúsculas las letras de una cadena.
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h>
 
 void clearBuffer();
 
@@ -28,7 +32,15 @@ void clearBuffer();
 int main(){
 	printf("\n_________________________________________START\n\n");
     
-    
+    char texto[100];
+
+	printf("Introduce la cadena para convertir a mayusculas: ");
+	scanf("%s", texto);
+
+	strupr(texto);
+
+	printf("El nuevo en mayusculas es el siguiente: %s", texto);
+
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
