@@ -15,11 +15,23 @@
 		LoremIpsumDummyText
 */
 
+//Recursividad Capacidad de llamarse a si misma
+/*
+Ejemplo de Factorial de Un Numero
+5! = 5*4*3*2*1 ó 5*4! = 120
+4! = 4*3*2*1 ó 4*3! = 24
+3! = 3*2*1 ó 3*2! = 6
+2! = 2*1 ó 2*1! = 2
+1! = 1 
+0! = 1  
+*/
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
 
+long factorial(int n);
 void clearBuffer();
 
 /* _________________________________________
@@ -28,8 +40,16 @@ void clearBuffer();
 int main()
 {
 	printf("\n_________________________________________START\n\n");
-    
-    
+
+	int num = 0;
+
+	printf("Introduce un numero: ");
+	scanf("%i", &num);
+
+	for(int i = 1; i <= num; i++)
+	{
+		printf("Vuelta %i: %li\n", i, factorial(i));
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -37,6 +57,26 @@ int main()
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+long factorial(int num)
+{
+	if(num <= 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return num * factorial(num - 1);
+	}
+}
+
+/*  factorial(4)
+	return 4 * factorial(3)
+		3 * factorial(2)
+			2 * factorial(1)
+				    1            1
+
+ */
 
 void clearBuffer()
 {

@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 
+long factorial(int n);
 void clearBuffer();
 
 /* _________________________________________
@@ -28,8 +29,15 @@ void clearBuffer();
 int main()
 {
 	printf("\n_________________________________________START\n\n");
+
+	int num = 0;
+
+	printf("Introduce un numero: ");
+	scanf("%i", &num);
     
-    
+	printf("El factorial es: %ld", factorial(num)); 
+
+	
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -37,6 +45,26 @@ int main()
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+long factorial(int num)
+{
+	if(num <= 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return num * factorial(num - 1);
+	}
+}
+
+/*  factorial(4)
+	return 4 * factorial(3)
+		3 * factorial(2)
+			2 * factorial(1)
+				    1            1
+
+ */
 
 void clearBuffer()
 {
