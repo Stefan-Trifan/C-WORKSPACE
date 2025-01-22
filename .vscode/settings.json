@@ -2,6 +2,7 @@
     "files.associations": {
         "stdio.h": "c",
         "bitset": "c",
-        "ratio": "c"
+        "ratio": "c",
+        "time.h": "c"
     }
 }
