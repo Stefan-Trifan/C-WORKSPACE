@@ -41,35 +41,32 @@ int main()
 
     do
 	{
-		// Pedimos grados Celsius
 		printf("Este programa convierte grados Celsius a grados Fahrenheit y a grados Kelvin.\n");
 		printf("Introduce el valor de los grados Celsius a continuación: ");
 		if(scanf("%f", &gradosCelsius) != 1)
-		// Nos cercionamos de que el tipo de dato introducido por el usuario es válido
 		{
 			printf("Entrada no válida. Por favor, introduce un número.\n\n");
 			clearBuffer();
 			gradosCelsius = 0;
 			continue;
-		} 
+		}
+		
 		printf("\n");
 
-		// Pedmos la opcion a realizar
 		printf(
 			"Que deseas hacer?\n"
 			"1) Conversion a Kelvin\n"
 			"2) Conversion a Fahrenheit\n"
-			"3) Salir\n");
-		// Nos cercionamos de que el tipo de dato introducido por el usuario es válido
-		do
+			"3) Salir\n"
+			"-> ");
+			
+		if(scanf("%i", &opcion) != 1)
 		{
-			printf("-> ");
-			scanf("%i", &opcion);
+			printf("Entrada inválida. Por favor introduce un número.\n\n");
 			clearBuffer();
-		} 
-		while (opcion < 1 || opcion > 3); 
+			continue;
+		}
 
-		// Ejecitamos lo que pide el usuario
 		switch (opcion)
 		{
 			case 1: 
