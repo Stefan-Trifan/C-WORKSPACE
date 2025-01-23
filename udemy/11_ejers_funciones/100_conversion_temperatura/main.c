@@ -19,9 +19,8 @@
    Inicio cabecera */
 
 #include <stdio.h>
-
-int convertirCelsiusAKelvin(int gradosCelsius);
-int convertirCelsiusAFahrenheit(int gradosCelsius);
+float convertirCelsiusAKelvin(float gradosCelsius);
+float convertirCelsiusAFahrenheit(float gradosCelsius);
 
 void clearBuffer();
 
@@ -93,12 +92,12 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
-int convertirCelsiusAKelvin(int gradosCelsius)
+float convertirCelsiusAKelvin(float gradosCelsius)
 {
 	return gradosCelsius + 273.15;
 }
 
-int convertirCelsiusAFahrenheit(int gradosCelsius)
+float convertirCelsiusAFahrenheit(float gradosCelsius)
 {
 	return gradosCelsius * (9 / 5) + 32;
 }
