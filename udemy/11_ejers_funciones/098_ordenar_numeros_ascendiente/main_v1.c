@@ -32,14 +32,14 @@ int main()
 
 	int num1 = 0, num2 = 0, num3 = 0;
     
-    printf("Introduce el primer numero: ");
+    printf("Introduce el num1: ");
 	scanf("%i", &num1);
-	printf("Introduce el segundo numero: ");
+	printf("Introduce el num2: ");
 	scanf("%i", &num2);
-	printf("Introduce el tercer numero: ");
+	printf("Introduce el num3: ");
 	scanf("%i", &num3);
 
-
+	ordenarNumeros(num1, num2, num3);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -50,8 +50,30 @@ int main()
 
 void ordenarNumeros(int num1, int num2, int num3)
 {
-	int numMax = 0;
+	int numMin = 0, numMedio = 0, numMax = 0;
 
+	if(num1 <= num2 && num1 <= num3)
+		numMin = num1;
+	if(num2 <= num1 && num2 <= num3)
+		numMin = num2;
+	if(num3 <= num1 && num3 <= num2)
+		numMin = num3;
+	
+	if(num1 >= num2 && num1 <= num3)
+		numMedio = num1;
+	if(num2 >= num1 && num2 <= num3)
+		numMedio = num2;
+	if(num3 >= num1 && num3 <= num2)
+		numMedio = num3;
+
+	if(num1 >= num2 && num1 >= num3)
+		numMax = num1;
+	if(num2 >= num1 && num2 >= num3)
+		numMax = num2;
+	if(num3 >= num1 && num3 >= num2)
+		numMax = num3;
+
+	printf("Numeros ordenados: %i %i %i\n", numMin, numMedio, numMax);
 
 }
 

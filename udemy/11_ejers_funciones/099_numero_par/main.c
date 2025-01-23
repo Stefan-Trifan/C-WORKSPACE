@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 
+int esPar(int num);
 void clearBuffer();
 
 /* _________________________________________
@@ -29,7 +30,19 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
     
-    
+    int num = 0, resultado = 0;
+
+	printf("Introduce un nr: ");
+	scanf("%i", &num);
+
+	if(esPar(num))
+	{
+		printf("Es par");
+	}
+	else
+	{
+		printf("No es par");
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -37,6 +50,14 @@ int main()
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+int esPar(int num)
+{
+	if(num % 2 == 0)
+		return 1;
+	else
+		return 0;
+}
 
 void clearBuffer()
 {
