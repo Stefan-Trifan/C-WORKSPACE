@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 
-int fibonacci(int numElementos);
+int fibonacci(int numero);
 void clearBuffer();
 
 /* _________________________________________
@@ -30,8 +30,9 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
     
-    int numElementos = 0, esValido = 1;
+    int numMax = 0, esValido = 1;
 
+	// Pedimos el numero de elementos. Nos aseguramos de que recibimos los datos en formato válido
 	printf("Cuantos elementos quieres: ");
 	do
 	{
@@ -39,12 +40,16 @@ int main()
 		{
 			printf("\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo: \033[0m");
 		}
-		esValido = scanf("%i", &numElementos);
+		esValido = scanf("%i", &numMax);
+		if(numMax < 0)
+		{
+			esValido = 0;
+		}
 		clearBuffer();
 	} 
 	while (esValido != 1);
 
-	for(int i = 0; i <= numElementos; i++)
+	for(int i = 0; i <= numMax; i++)
 	{
 		printf("%i ", fibonacci(i));
 	}
@@ -56,16 +61,25 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
+/**
+ * @brief Calcula el numero Fibonacci en un aposicion dada
+ * 
+ * Esta función utiliza un enfoque recursivo para calcular el número
+ * de Fibonacci en la posición especificada.
+ * 
+ * @param numero Rrepresenta la psoicion del numero a calcular
+ * 				 Debe ser in numero entero no negativo
 
-
-int fibonacci(int numElementos)
+ * @return El numero Fibonacci correspondiente a la posición indicada
+ */
+int fibonacci(int numero)
 {
-	if(numElementos == 0 || numElementos == 1)
+	if(numero == 0 || numero == 1)
 	{
-		return numElementos;
+		return numero;
 	}
 	
-	return fibonacci(numElementos - 1) + fibonacci(numElementos - 2);
+	return fibonacci(numero - 1) + fibonacci(numero - 2);
 }
 
 
