@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 
-int fibona(int numElementos);
+int fibonacci(int numElementos);
 void clearBuffer();
 
 /* _________________________________________
@@ -46,7 +46,7 @@ int main()
 
 	for(int i = 0; i <= numElementos; i++)
 	{
-		printf("%i ", fibona(i));
+		printf("%i ", fibonacci(i));
 	}
     
 	printf("\n_________________________________________END\n\n");
@@ -56,21 +56,29 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
-/* 
-	0 1 1 2 3 4 8
-	a_n = a_{n - 1} + a_{n - 2}
-	fibona(n) = fibona(n - 1) + fibona(n - 2)
-*/
 
-int fibona(int numElementos)
+
+int fibonacci(int numElementos)
 {
 	if(numElementos == 0 || numElementos == 1)
 	{
 		return numElementos;
 	}
 	
-	return fibona(numElementos - 1) + fibona(numElementos - 2);
+	return fibonacci(numElementos - 1) + fibonacci(numElementos - 2);
 }
+
+
+void clearBuffer()
+{
+	while (getchar() != '\n');
+}
+
+/* 
+	0 1 1 2 3 4 8
+	a_n = a_{n - 1} + a_{n - 2}
+	fibona(n) = fibona(n - 1) + fibona(n - 2)
+*/
 
 /*  
 	fib(0): 
@@ -81,7 +89,7 @@ int fibona(int numElementos)
 
 	fib(2): 
 		-> fib(1) + fib(0) 
-		
+
 		-> 1 + 0 -> 1  
 
 	fib(3): 
@@ -113,9 +121,3 @@ int fibona(int numElementos)
 
 		-> (((1 + 0) + 1) + (1 + 0)) + ((1 + 0) + 1) -> 5 + 3 -> 8
 */
-
-
-void clearBuffer()
-{
-	while (getchar() != '\n');
-}
