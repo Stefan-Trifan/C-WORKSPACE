@@ -63,13 +63,7 @@ int main()
 
 /**
  * @brief Calcula el numero Fibonacci en un aposicion dada
- * 
- * Esta función utiliza un enfoque recursivo para calcular el número
- * de Fibonacci en la posición especificada.
- * 
  * @param numero Rrepresenta la psoicion del numero a calcular
- * 				 Debe ser in numero entero no negativo
-
  * @return El numero Fibonacci correspondiente a la posición indicada
  */
 int fibonacci(int numero)
