@@ -19,9 +19,9 @@
    Inicio cabecera */
 
 #include <stdio.h>
-void clearBuffer();
 
-int solicitarEntero();
+float pedirFloat();
+void  clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -30,12 +30,12 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
 
-	int num = 0;
+	float num = 0;
 
-    printf("Introduce un numero entero \n");
-    num = solicitarEntero();
+	printf("Introduce un numero: \n");
+	num = pedirFloat();
 
-    printf("Numero es: %i", num);
+	printf("Numero es: %f", num);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -44,21 +44,23 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
-int solicitarEntero()
+float pedirFloat()
 {
-	int num = 0, esValido = 1;
+	float num = 0;
+	int esValido = 1;
 	printf("-> ");
 	do
 	{	
-		if(esValido == 0)
+		esValido = scanf("%f", &num);
+		clearBuffer();
+		if(esValido == 0) // Aqui se pueden añadir mas condiciones
 		{
 			printf(
 				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
 				"\033[1;31m-> \033[0m"
 			);
+			esValido == 0; // Util cuando hay mas de una condicion
 		}
-		esValido = scanf("%i", &num);
-		clearBuffer();
 	} 
 	while (esValido != 1);
 	return num;
