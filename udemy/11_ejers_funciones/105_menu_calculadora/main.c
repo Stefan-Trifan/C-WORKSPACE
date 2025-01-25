@@ -117,8 +117,10 @@ void menuCalculadora()
 				dividir();
 				break;
 			case 5: 
+				printf("Hasta luego!");
 				break;
 			default: 
+				printf("Opción invalida, introduce un numero del 1 al 5.\n\n");
 				break;
 		}
 	} 
