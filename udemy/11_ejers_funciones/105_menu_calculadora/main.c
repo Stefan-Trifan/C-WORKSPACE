@@ -21,7 +21,7 @@
 #include <stdio.h>
 
 float solicitarFloat();
-int   solicitarInt();
+int   solicitarEntero();
 void  menuCalculadora();
 void  sumar();
 void  restar();
@@ -66,7 +66,7 @@ float solicitarFloat()
 	return num;
 }
 
-int solicitarInt()
+int solicitarEntero()
 {
 	int num = 0, esValido = 1;
 	printf("-> ");
@@ -100,7 +100,7 @@ void menuCalculadora()
 			"3. Multiplicar\n"
 			"4. Dividir\n"
 			"5. Salir\n");
-		opcion = solicitarInt();
+		opcion = solicitarEntero();
 
 		switch (opcion)
 		{
