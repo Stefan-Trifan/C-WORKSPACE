@@ -15,10 +15,21 @@
 		LoremIpsumDummyText
 */
 
+/* 
+	Funcion Aleatoria: 
+
+	srand(time(NULL));
+	variable  = limite_inferior + rand() % ((limite_superior + 1 ) - limite_inferior);
+*/
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
+#include <stdlib.h> // Para rand() y srand()
+#include <time.h>
+#define limite_inferior 1
+#define limite_superior 100000
 
 void clearBuffer();
 
@@ -28,9 +39,14 @@ void clearBuffer();
 int main()
 {
 	printf("\n_________________________________________START\n\n");
+
+	int resultado = 0;
     
-    
-    
+    srand(time(NULL));
+	resultado  = limite_inferior + rand() % ((limite_superior + 1 ) - limite_inferior);
+	
+	printf("%i\n", resultado);
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
