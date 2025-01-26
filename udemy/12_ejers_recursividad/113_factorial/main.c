@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 int pedirEntero();
-void cuentaRegresiva(int num);
+int factorial(int num);
 void clearBuffer();
 
 /* _________________________________________
@@ -29,13 +29,15 @@ void clearBuffer();
 int main()
 {
 	printf("\n_________________________________________START\n\n");
-    
-    int numMax = 0;
 
-	printf("Introduce un numero \n");
-	numMax = pedirEntero();
+	int num = 0, resultado = 0;
     
-	cuentaRegresiva(numMax);
+	printf("Introduce un numero \n");
+	num = pedirEntero();
+
+	resultado = factorial(num);
+
+	printf("%i\n", resultado);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -43,6 +45,30 @@ int main()
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+int factorial(int num)
+{
+	if(num == 0)
+	{
+		printf("= ");
+		return 1;
+	}
+	else
+	{	
+		if(num > 1)
+		{
+			printf("%i * ", num);
+			return num * factorial(num - 1);
+		}
+		else
+		{
+			printf("%i ", num);
+			return num * factorial(num - 1);
+		}
+
+	}
+		
+}
 
 int pedirEntero()
 {
@@ -52,7 +78,7 @@ int pedirEntero()
 	{
 		esValido = scanf("%i", &num);
 		clearBuffer();
-		if (esValido == 0)
+		if (esValido == 0 || num < 0)
 		{
 			printf(
 				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
@@ -63,20 +89,6 @@ int pedirEntero()
 	}
 	while (esValido != 1);
 	return num;
-}
-
-void cuentaRegresiva(int num)
-{
-	if(num == 0)
-	{
-		printf("0");
-	}
-	else
-	{
-		printf("%i\n", num);
-		cuentaRegresiva(num - 1);
-	}
-
 }
 
 void clearBuffer()
