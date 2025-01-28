@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 
+float pedirFloat();
 void clearBuffer();
 
 /* _________________________________________
@@ -28,15 +29,25 @@ void clearBuffer();
 int main()
 {
 	printf("\n_________________________________________START\n\n");
-    
-    
-    
+
+	int   cifra = 100;
+	int *pcifra = &cifra;
+
+	printf("%i\n",  cifra ); // 100
+	printf("%i\n", *pcifra); // 100
+
+	printf("%p\n", &cifra ); // 0x16f15b338 Direccion de memoria de cifra
+	printf("%p\n",  pcifra); // 0x16f15b338 Direccion de memoria a la que apunta pcifra
+	printf("%p\n", &pcifra); // 0x16f15b330 Direccion de memoria de pcifra
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
 
 /* _________________________________________
    Inicio definicion de funciones */
+
+
 
 void clearBuffer()
 {
