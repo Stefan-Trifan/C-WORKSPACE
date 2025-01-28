@@ -26,8 +26,8 @@
 #define PI 3.14
 
 float calculoAreaValor(int radio);
-float calculoAreaReferencia(int* radio);
-float calculoAreaYCircunferencia(int radio);
+float calculoAreaRef(int* radio);
+void calculoAreaYCircunferencia(int radio, float* area, float* longitud);
 
 void clearBuffer();
 int pedirEntero();
@@ -41,10 +41,16 @@ int main()
     
     int radio = 0, area = 0, circunferencia = 0;
 
+	// Pedimos el radio
 	radio = pedirEntero();
 
+	// Paso por valor
 	area = calculoAreaValor(radio);
-	area = calculoAreaValor(radio);
+
+	// Paso por referencia
+	area = calculoAreaRef(radio);
+
+	// Calculo area y longitud circunferencia
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -55,16 +61,23 @@ int main()
 
 float calculoAreaValor(int radio)
 {
+	return PI * radio * radio;
+}
+
+float calculoAreaRef(int* radio)
+{
+	
 	return 0;
 }
 
-float calculoAreaReferencia(int* radio)
+void calculoAreaYCircunferencia(int radio, float* area, float* longitud)
 {
-	return 0;
-}
+	int area = 0, circunferencia = 0;
+	// area           = PI * radio * radio;
+	circunferencia = 2 * PI * radio;
 
-float calculoAreaYCircunferencia(int radio)
-{
+	printf("El area es:           %i\n", area);
+	printf("La circunferencia es: %i\n", circunferencia);
 	return 0;
 }
 
@@ -83,7 +96,7 @@ int pedirEntero()
 	{
 		esValido = scanf("%i", &num);
 		clearBuffer();
-		if (esValido == 0)
+		if (esValido == 0 || num < 0)
 		{
 			printf(
 				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
