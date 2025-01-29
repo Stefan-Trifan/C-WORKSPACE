@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 #define MAX_SIZE 20
-void leeLinea(char texto[], int Tamanio);
+void leeLinea(char texto[], int tam);
 void clearBuffer();
 
 /* _________________________________________
@@ -31,23 +31,22 @@ int main()
     printf("\n_________________________________________START\n\n");
 
     char text1[MAX_SIZE], text2[MAX_SIZE];
-    char *str1 = text1; // cadena origen
-    char *str2 = text2; // cadena destino
-    int i = 0;
+    char *str1 = text1;  // cadena origen
+    char *str2 = text2;  // cadena destino
+    int  i     = 0;
 
     // Entrada de la cadena
     printf("Introduce la cadena:\n");
     leeLinea(str1, MAX_SIZE);
 
     /* Copy text1 to text2 character by character */
-    // while(*(str2++) = *(str1++));
     while (*(str1 + i) != '\0')
     {
         *(str2 + i) = *(str1 + i);
         i++;
     }
 	
-    printf("Cadena origen = %s\n", text1);
+    printf("Cadena origen  = %s\n", text1);
     printf("Cadena destino = %s\n", text2);
 
     printf("\n_________________________________________END\n\n");
@@ -57,17 +56,17 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
-void leeLinea(char texto[], int Tamanio)
+void leeLinea(char texto[], int tam)
 {
     char newChar;
     int i = 0;
 
-    while (((newChar = getchar()) != '\n') && (i < Tamanio))
+    while (((newChar = getchar()) != '\n') && (i < tam))
     {
         texto[i] = newChar; // cada caracter que ha leido se asigna a las
                             // posiciones de la cadena
         i++;
-        if (i == Tamanio)
+        if (i == tam)
         {
             printf("Has superado el tamanio\nVuelve a introducir la cadena\n");
             clearBuffer(); // limpia Buffer

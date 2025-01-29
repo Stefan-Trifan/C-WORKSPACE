@@ -24,6 +24,7 @@
 float calculoAreaValor(float Radio);
 float calculoAreaReferencia(float *Radio);
 void calculoAreaLongCirc(float Radio, float *Area, float *LongCirc);
+
 void clearBuffer();
 float pedirFloat();
 
@@ -34,21 +35,27 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
     
-    float MiRadio = 0;
-    float MiArea = 0;
-    float MiAreaRef = 0, MiAreaValor = 0;
-    float MiLongCirc = 0;
-    int ResultScanf = 0;
+    float MiRadio     = 0;
+    float MiArea      = 0;
+    float MiAreaRef   = 0, MiAreaValor = 0;
+    float MiLongCirc  = 0;
+    int   ResultScanf = 0;
 
-    // Entrada de radio
+    // Pedimos el radio
     MiRadio = pedirFloat();
 
+	// Paso por valor
     MiAreaValor = calculoAreaValor(MiRadio);
+	
+	// Paso por referencia
     MiAreaRef = calculoAreaReferencia(&MiRadio);
+
+	// Calculamos la longitud de la circunferencia
     calculoAreaLongCirc(MiRadio, &MiArea, &MiLongCirc);
-    printf("Area por Valor de un circulo de radio %.2f es %.2f\n", MiRadio, MiAreaValor);
-    printf("Area por Referencia de un circulo de radio %.2f es %.2f\n", MiRadio, MiAreaRef);
-    printf("El area y la longitud de la circunferenicia de un circulo de radio %.2f son %.2f y %.2f\n ", MiRadio, MiAreaRef, MiLongCirc);
+
+    printf("Area por Valor de un circulo es %.2f\n", MiAreaValor);
+    printf("Area por Referencia de un circulo es %.2f\n", MiAreaRef);
+    printf("El area y la long de la circunferenicia de un circulo es %.2f\n ", MiAreaRef, MiLongCirc);
 
     printf("\n_________________________________________END\n\n");
     return 0;

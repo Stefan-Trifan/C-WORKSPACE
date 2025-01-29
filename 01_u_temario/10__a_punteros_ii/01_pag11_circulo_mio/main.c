@@ -25,12 +25,12 @@
 #include <stdio.h>
 #define PI 3.14
 
-float calculoAreaValor(int radio);
-float calculoAreaRef(int* radio);
-void calculoAreaYCircunferencia(int radio, float* area, float* longitud);
+float calculoAreaValor(float radio);
+float calculoAreaRef(float* radio);
+void calculoAreaYCircunferencia(float radio, float* area, float* longitud);
 
+float pedirFloat();
 void clearBuffer();
-int pedirEntero();
 
 /* _________________________________________
    Inicio main() */
@@ -39,18 +39,29 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
     
-    int radio = 0, area = 0, circunferencia = 0;
+	float miRadio     = 0,
+	      miArea      = 0,
+	      MiAreaRef   = 0,
+	      MiAreaValor = 0,
+	      MiLongCirc  = 0;
 
-	// Pedimos el radio
-	radio = pedirEntero();
+	// Pedimos el miRadio
+	miRadio = pedirFloat();
 
 	// Paso por valor
-	area = calculoAreaValor(radio);
+	MiAreaValor = calculoAreaValor(miRadio);
+	printf("MiAreaValor: %i\n", MiAreaValor);
 
 	// Paso por referencia
-	area = calculoAreaRef(radio);
+	MiAreaRef = calculoAreaRef(&miRadio);
+	printf("MiAreaRef: %i\n", MiAreaRef);
 
-	// Calculo area y longitud circunferencia
+	// Calculamos la longitud de la MiLongCirc
+	calculoAreaYCircunferencia(miRadio, &miArea, &MiLongCirc);
+
+	printf("Area por Valor de un circulo es %.2f\n", MiAreaValor);
+    printf("Area por Referencia de un circulo es %.2f\n", MiAreaRef);
+    printf("El area y la long de la circunferenicia de un circulo es %.2f\n ", MiAreaRef, MiLongCirc);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -59,25 +70,20 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
-float calculoAreaValor(int radio)
+float calculoAreaValor(float radio)
 {
 	return PI * radio * radio;
 }
 
-float calculoAreaRef(int* radio)
+float calculoAreaRef(float* radio)
 {
 	
 	return 0;
 }
 
-void calculoAreaYCircunferencia(int radio, float* area, float* longitud)
+void calculoAreaYCircunferencia(float radio, float* area, float* longitud)
 {
-	int area = 0, circunferencia = 0;
-	// area           = PI * radio * radio;
-	circunferencia = 2 * PI * radio;
-
-	printf("El area es:           %i\n", area);
-	printf("La circunferencia es: %i\n", circunferencia);
+	
 	return 0;
 }
 
@@ -87,16 +93,17 @@ void clearBuffer()
 	while (getchar() != '\n');
 }
 
-int pedirEntero()
+float pedirFloat()
 {
-	int num = 0, esValido = 1;
-	printf("Introduce el radio: \n");
+	float num = 0;
+	int esValido = 1;
+	printf("Introduce un numero flotante \n");
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%f", &num);
 		clearBuffer();
-		if (esValido == 0 || num < 0)
+		if (esValido == 0)
 		{
 			printf(
 				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
