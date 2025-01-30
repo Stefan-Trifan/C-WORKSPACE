@@ -32,16 +32,16 @@ int main()
 	int numMax = 0, resultado = 0, multiplicador = 0;
     
     printf("Cuantos num quieres sumar: ");
-	scanf("%i", &numMax);
+	scanf("%d", &numMax);
 
 	for(int i = 1; i <= numMax; i++)
 	{
 		resultado += multiplicador;
-		printf("Calculando:      +%i\n", multiplicador);
+		printf("Calculando:      +%d\n", multiplicador);
 		multiplicador += 2;
 	}
 
-	printf("Resultado es:     %i", resultado);
+	printf("Resultado es:     %d", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

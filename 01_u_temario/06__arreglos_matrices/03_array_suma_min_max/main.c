@@ -37,7 +37,7 @@ int main()
 	for(int i = 0; i < TAM_ARRAY; i++){
 
 		printf("Introduce un numero: ");
-		scanf("%i", &array[i]);
+		scanf("%d", &array[i]);
 
 	}
 	
@@ -60,9 +60,9 @@ int main()
 
 	}
 
-	printf("Min es: %i\n", min);
-	printf("Max es: %i\n", max);
-	printf("Suma es: %i\n", suma);
+	printf("Min es: %d\n", min);
+	printf("Max es: %d\n", max);
+	printf("Suma es: %d\n", suma);
 	
 
 	// Imprimimos los resultados

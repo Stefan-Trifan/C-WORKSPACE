@@ -60,7 +60,7 @@ int main()
 			"3) Salir\n"
 			"-> ");
 			
-		if(scanf("%i", &opcion) != 1)
+		if(scanf("%d", &opcion) != 1)
 		{
 			printf("Entrada inválida. Por favor introduce un número.\n\n");
 			clearBuffer();

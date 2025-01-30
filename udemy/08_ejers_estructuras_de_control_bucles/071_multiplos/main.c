@@ -32,13 +32,13 @@ int main()
     int numMax = 0;
 
 	printf("Hasta que numero quieres multiplos de 2, 3, 5 y 7: ");
-	scanf("%i", &numMax);
+	scanf("%d", &numMax);
 
 	for(int i = 0; i < numMax; i++)
 	{
 		if((i % 2 == 0) || (i % 3 == 0) || (i % 5 == 0) || (i % 7 == 0))
 		{
-			printf("%i\n", i);
+			printf("%d\n", i);
 		}
 	}
     

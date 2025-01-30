@@ -33,7 +33,7 @@ int main()
 	int num = 0;
 
 	printf("Introduce un numero: ");
-	scanf("%i", &num);
+	scanf("%d", &num);
     
 	printf("El factorial es: %ld", factorial(num)); 
 

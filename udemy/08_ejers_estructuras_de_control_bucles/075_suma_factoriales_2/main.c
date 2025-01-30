@@ -37,7 +37,7 @@ int main()
     resultadoFinal      = 0; // Almacena el resultado final de la suma de los factoriales.    
 
     printf("Cuantos factoriales quieres sumar: ");
-	scanf("%i", &limiteFactoriales);
+	scanf("%d", &limiteFactoriales);
 
 	for(int i = 0; i <= limiteFactoriales; i++)
 	{
@@ -50,7 +50,7 @@ int main()
 		resultadoFinal += acumuladorFactorial;
 	}
     
-	printf("Resultado Final es: %i", resultadoFinal);
+	printf("Resultado Final es: %d", resultadoFinal);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;

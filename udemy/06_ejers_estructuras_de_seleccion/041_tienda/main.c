@@ -38,7 +38,7 @@ int main(){
 		"\n 2) Retirar Dinero"
 		"\n 3) Salir del Cajero"
 		"\n\n Opcion: ");
-		scanf("%i", &opcion);
+		scanf("%d", &opcion);
 
 		switch (opcion) {
 

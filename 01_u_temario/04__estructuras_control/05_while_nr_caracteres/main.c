@@ -29,12 +29,12 @@ int main(){
 
 	// Pedimos el numero
 	printf("Introduce un numero del 0 al 999999999\n");
-	scanf("%i", &numero);
+	scanf("%d", &numero);
 
 	while( numero > 0 ){
 		numero = numero / 10;
 		caracteres = caracteres + 1;
 	}
 
-	printf("El numero de caracteres es %i", caracteres);
+	printf("El numero de caracteres es %d", caracteres);
 }

@@ -24,12 +24,12 @@ int main(){
 
 	// Pedimos el num por pantalla
 	printf("Introduce el numero\n");
-	scanf("%i", &num1);
+	scanf("%d", &num1);
 
 	// Comprobamos si es par o impar
 	if ( num1 % 2 == 0){
-		printf("El numero %i es par", num1);
+		printf("El numero %d es par", num1);
 	} else {
-		printf("El numero %i es impar", num1);
+		printf("El numero %d es impar", num1);
 	}
 }

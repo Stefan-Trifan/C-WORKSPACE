@@ -33,11 +33,11 @@ int main()
 	int num1 = 0, num2 = 0, num3 = 0;
     
     printf("Introduce el num1: ");
-	scanf("%i", &num1);
+	scanf("%d", &num1);
 	printf("Introduce el num2: ");
-	scanf("%i", &num2);
+	scanf("%d", &num2);
 	printf("Introduce el num3: ");
-	scanf("%i", &num3);
+	scanf("%d", &num3);
 
 	ordenarNumeros(num1, num2, num3);
     
@@ -95,7 +95,7 @@ void ordenarNumeros(int num1, int num2, int num3)
 		}
 	}
 
-	printf("Numeros ordenados: %i %i %i\n", numMin, numMedio, numMax);
+	printf("Numeros ordenados: %d %d %d\n", numMin, numMedio, numMax);
 
 }
 

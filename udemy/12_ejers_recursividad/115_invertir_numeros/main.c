@@ -47,7 +47,7 @@ void invertir(int num)
 {
 	if(num > 1)
 	{
-		printf("%i", num % 10);
+		printf("%d", num % 10);
 		invertir(num / 10);
 	}
 
@@ -59,7 +59,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0 || num < 0)
 		{

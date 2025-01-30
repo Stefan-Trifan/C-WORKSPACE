@@ -33,7 +33,7 @@ int main()
 	long long resultado = 0;
     
     printf("Introduce un numero: ");
-	scanf("%i", &num);
+	scanf("%d", &num);
 
 	if(num > 10)
 	{

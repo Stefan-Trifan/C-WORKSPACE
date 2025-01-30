@@ -222,7 +222,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{

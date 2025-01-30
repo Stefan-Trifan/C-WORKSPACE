@@ -32,7 +32,7 @@ int main()
 	// Primer puntero
     int var1 = 3;
 	int *pvar1 = &var1;
-	printf("%i\n", var1);
+	printf("%d\n", var1);
 
 	// Segundo puntero
 	int casa = 0;
@@ -42,9 +42,9 @@ int main()
 	int* direccion2;
 	direccion2 = direccion;
 
-	printf("Casa: %i direccion: %i direccion2: %i\n", casa, *direccion, *direccion2);
+	printf("Casa: %d direccion: %d direccion2: %d\n", casa, *direccion, *direccion2);
 	casa = 1;
-	printf("Casa: %i direccion: %i direccion2: %i\n", casa, *direccion, *direccion2);
+	printf("Casa: %d direccion: %d direccion2: %d\n", casa, *direccion, *direccion2);
 
 	
 	int var3, var4;
@@ -54,7 +54,7 @@ int main()
 	p = &var3;
 	var4 = *p;
 	*p =10;
-	printf("%i", var3);
+	printf("%d", var3);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

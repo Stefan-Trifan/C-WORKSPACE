@@ -39,9 +39,9 @@ int main()
 	{
 		resultado = fibonacci(i);
 		if(i == num)
-			printf("%i", resultado);
+			printf("%d", resultado);
 		else
-			printf("%i, ", resultado);
+			printf("%d, ", resultado);
 		
 	}
 
@@ -68,7 +68,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{

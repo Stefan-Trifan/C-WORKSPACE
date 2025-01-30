@@ -101,24 +101,24 @@ int main()
 
 		do{
 			printf("Elige tu movimiento (1, 2 o 3): ");
-			scanf("%i", &opcion);
+			scanf("%d", &opcion);
 		} while(opcion < 1 || opcion > 3);
 
 		numero = realizarOperacion( numero, opcion);
 
 		if(numero > 100){
-			printf("Tu numero es: %i\n", numero);
+			printf("Tu numero es: %d\n", numero);
 			printf("Te has pasado de 100. Has perdido el juego\n");
 			break;
 		} else if (numero == 100){
-			printf("Tu numero es: %i\n", numero);
+			printf("Tu numero es: %d\n", numero);
 			printf("Felicidades! Has ganado el juego\n");
 			break;
 		}
 	}
 
 	if(numero < 100){
-		printf("Tu numero es: %i\n", numero);
+		printf("Tu numero es: %d\n", numero);
 		printf("No has llegado a 100. Has perdido el juego\n");
 	}
     
@@ -142,8 +142,8 @@ void mostrarInstruccionesIniciales(){
 void mostrarMenu(int numero, int operaciones){
 
 	printf(
-	"Numero actual: %i\n"
-	"Operacion %i:\n"
+	"Numero actual: %d\n"
+	"Operacion %d:\n"
 	"1. Sumar 5\n"
 	"2. Sumar 3\n"
 	"3. Multiplicar por 2\n", numero, operaciones);

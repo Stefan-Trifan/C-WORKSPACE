@@ -32,16 +32,16 @@ int main()
     int numMax = 0, base = 0;
 
 	printf("De que numero quieres sacar múltiplos (base): ");
-	scanf("%i", &base);
+	scanf("%d", &base);
 
 	printf("Hasta que numero quieres sacar multiplos: ");
-	scanf("%i", &numMax);
+	scanf("%d", &numMax);
 
 	for(int i = 0; i <= numMax; i++)
 	{
 		if(i % base == 0)
 		{
-			printf("%i\n", i);
+			printf("%d\n", i);
 		}
 	}
     

@@ -39,7 +39,7 @@ int main(){
 		"4. Salir\n");
 
 		printf("Opcion: ");
-		scanf("%i", &opcion);
+		scanf("%d", &opcion);
 
 		if(opcion >= 1 && opcion <= 4){
 			printf("Has introducido una opcion valida\n");

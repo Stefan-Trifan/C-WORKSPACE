@@ -30,22 +30,22 @@ int main(){
 
 	// Pedimos el numero por pantalla
 	printf("Introduce un numero de 3 cifras\n");
-	scanf("%i", &numero);
+	scanf("%d", &numero);
 
 	// Extraemos el 3 numero
 	centena = numero / 100;
 
 	// Comprobamos con if
 	if(centena == 1)
-		printf("La centena es el numero %i\n", centena);
+		printf("La centena es el numero %d\n", centena);
 	else if(centena == 2)
-		printf("La centena es el numero %i\n", centena);
+		printf("La centena es el numero %d\n", centena);
 	else if(centena == 3)
-		printf("La centena es el numero %i\n", centena);
+		printf("La centena es el numero %d\n", centena);
 	else if(centena == 4)
-		printf("La centena es el numero %i\n", centena);
+		printf("La centena es el numero %d\n", centena);
 	else if(centena == 5)
-		printf("La centena es el numero %i\n", centena);
+		printf("La centena es el numero %d\n", centena);
 	else 
 		printf("La centena no es 1, 2, 3, 4, 5");
 

@@ -32,7 +32,7 @@ int main()
     int num = 0, cont = 0;
 
 	printf("Introduce un numero para ver si es primo: ");
-	scanf("%i", &num);
+	scanf("%d", &num);
 
 	for(int i = 1; i < num; i++)
 		if(num % i == 0)

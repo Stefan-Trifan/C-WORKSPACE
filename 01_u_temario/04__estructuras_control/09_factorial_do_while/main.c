@@ -32,13 +32,13 @@ int main(){
 	do {
 		// Pedimos el numero
 		printf("Introduce un numero positivo: ");
-		scanf("%i", &numero);
+		scanf("%d", &numero);
 	} while (numero < 0);
 
 	for(int i = 1; i <= numero; i++){
 		resultado = resultado*i;
 	}
 
-	printf("El factorial de %i es: %llu\n", numero, resultado);
+	printf("El factorial de %d es: %llu\n", numero, resultado);
 
 }

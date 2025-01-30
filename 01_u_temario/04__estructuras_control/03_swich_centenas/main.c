@@ -30,22 +30,22 @@ int main(){
 
 	// Pedimos el numero por pantalla
 	printf("Introduce un numero de 3 cifras\n");
-	scanf("%i", &numero);
+	scanf("%d", &numero);
 
 	// Extraemos el 3 numero
 	centena = numero / 100;
 
 	// Comprobamos con un swich
 	switch (centena){
-		case 1: printf("La centena es %i", centena);
+		case 1: printf("La centena es %d", centena);
 				break;
-		case 2: printf("La centena es %i", centena);
+		case 2: printf("La centena es %d", centena);
 				break;
-		case 3: printf("La centena es %i", centena);
+		case 3: printf("La centena es %d", centena);
 				break;
-		case 4: printf("La centena es %i", centena);
+		case 4: printf("La centena es %d", centena);
 				break;
-		case 5: printf("La centena es %i", centena);
+		case 5: printf("La centena es %d", centena);
 				break;
 	}
 

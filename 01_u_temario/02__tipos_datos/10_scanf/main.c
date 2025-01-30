@@ -17,9 +17,9 @@ int main(){
 	// El & solo lo usamos en el scanf
 	// scanf devuelve un 1 (si es true) o un 0 (si es false)
 	// Guardamos el 0 o el 1 dentro de result
-	result = scanf("%i", &numeroEntero);
+	result = scanf("%d", &numeroEntero);
 	// Sacamos por pantalla
-	printf("Tu numero es %i", numeroEntero);
+	printf("Tu numero es %d", numeroEntero);
 
 	// Comprobamos si el numero introducido por el usuario es entero o no
 	if (result != 1)

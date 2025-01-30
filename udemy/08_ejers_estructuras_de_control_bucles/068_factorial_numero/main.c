@@ -32,15 +32,15 @@ int main()
     int numVueltasMax = 0, resultado = 1;
 
 	printf("Introduce un numero: ");
-	scanf("%i", &numVueltasMax);
+	scanf("%d", &numVueltasMax);
 
 	for(int i = 1; i <= numVueltasMax; i++)
 	{
 		resultado = resultado * i;
-		printf("i = %i: %i\n", i, resultado);
+		printf("i = %d: %d\n", i, resultado);
 	}
 
-	printf("Resultado Final es: %i", resultado);
+	printf("Resultado Final es: %d", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

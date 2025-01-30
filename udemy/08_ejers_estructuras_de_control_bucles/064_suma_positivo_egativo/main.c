@@ -32,7 +32,7 @@ int main()
 	int numMax = 0, resultado = 0;
     
     printf("Hasta que numero quieres operar: ");
-	scanf("%i", &numMax);
+	scanf("%d", &numMax);
 
 	for(int i = 0; i <= numMax; i++){
 		
@@ -44,7 +44,7 @@ int main()
 		};
 	};
 
-	printf("%i", resultado);
+	printf("%d", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

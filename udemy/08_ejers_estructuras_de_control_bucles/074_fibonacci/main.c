@@ -33,7 +33,7 @@ int main()
 	int num2 = 0, num1 = 1, numActual;
     
     printf("Cuantos numeros de la sucesion de fibonacci quieres calcular: ");
-	scanf("%i", &totalNumbers);
+	scanf("%d", &totalNumbers);
 
 	printf("0\n"); // Caso Base
 	printf("1\n"); // Caso Base
@@ -41,7 +41,7 @@ int main()
 	for(int i = 0; i < totalNumbers; i++)
 	{
 		numActual = num1 + num2;   // numActual = 1, numActual = 2, numActual = 3, numActual = 5 ...
-		printf("%i\n", numActual); 
+		printf("%d\n", numActual); 
 		num2 = num1;               //      num1 = 1,      num1 = 1,      num1 = 2,      num1 = 3 ...
 		num1 = numActual;          //      num2 = 1,      num2 = 2,      num2 = 3,      num2 = 5 ...
 	}

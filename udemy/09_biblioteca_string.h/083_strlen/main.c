@@ -41,7 +41,7 @@ int main()
 	scanf("%s", array);
 
 	longitudCadena = strlen(array);
-	printf("La longitud de tu cadena es de %i\n", longitudCadena);
+	printf("La longitud de tu cadena es de %d\n", longitudCadena);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

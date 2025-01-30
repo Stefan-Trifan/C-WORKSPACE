@@ -32,7 +32,7 @@ int main()
     int num_materias_suspendidas = 0;
 
 	printf("Cuantas materias has suspendido: ");
-	scanf("%i", &num_materias_suspendidas);
+	scanf("%d", &num_materias_suspendidas);
 
 	(num_materias_suspendidas > 3) ? printf("Suspendes") : printf("Apruebas"); 
     

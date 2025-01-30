@@ -79,7 +79,7 @@ int solicitarEntero()
 				"\033[1;31m-> \033[0m"
 			);
 		}
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 	} 
 	while (esValido != 1);

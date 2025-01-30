@@ -48,7 +48,7 @@ void convertirBinario(int num)
 	if(num > 0)
 	{
 		convertirBinario(num / 2);
-		printf("%i", num % 2);
+		printf("%d", num % 2);
 	}
 
 }
@@ -59,7 +59,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{

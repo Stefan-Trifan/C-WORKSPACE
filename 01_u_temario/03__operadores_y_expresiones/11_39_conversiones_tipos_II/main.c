@@ -30,6 +30,6 @@ int main(){
 	scanf("%f", &flotante);
 
 	entero = (int)flotante;
-	printf("%i\n", entero);
+	printf("%d\n", entero);
 
 }

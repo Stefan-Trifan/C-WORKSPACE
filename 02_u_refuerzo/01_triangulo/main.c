@@ -32,13 +32,13 @@ int main(){
 
 	// Pedimos los lados del triangulo
 	printf("Introduce el primer lado: ");
-	scanf("%i", &ladoA);
+	scanf("%d", &ladoA);
 
 	printf("Introduce el segundo lado: ");
-	scanf("%i", &ladoB);
+	scanf("%d", &ladoB);
 
 	printf("Introduce el tercer lado: ");
-	scanf("%i", &ladoC);
+	scanf("%d", &ladoC);
 
 	// Comprobamos si 2 lados cualesqiera tiene que ser mayor que el tercero
 	if ( ((ladoA + ladoB) > ladoC) && ((ladoA + ladoC) > ladoB) && ((ladoB + ladoC) > ladoA) ){

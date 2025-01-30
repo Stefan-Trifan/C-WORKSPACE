@@ -37,7 +37,7 @@ int main()
 
 	resultado = factorial(num);
 
-	printf("%i\n", resultado);
+	printf("%d\n", resultado);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -57,12 +57,12 @@ int factorial(int num)
 	{	
 		if(num > 1)
 		{
-			printf("%i * ", num);
+			printf("%d * ", num);
 			return num * factorial(num - 1);
 		}
 		else
 		{
-			printf("%i ", num);
+			printf("%d ", num);
 			return num * factorial(num - 1);
 		}
 
@@ -76,7 +76,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0 || num < 0)
 		{

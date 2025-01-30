@@ -50,7 +50,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{
@@ -73,7 +73,7 @@ void cuentaRegresiva(int num)
 	}
 	else
 	{
-		printf("%i\n", num);
+		printf("%d\n", num);
 		cuentaRegresiva(num - 1);
 	}
 

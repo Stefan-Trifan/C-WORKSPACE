@@ -32,19 +32,19 @@ int main()
 	int numLimite = 0, resultado = 0, contNumero = 0;
     
     printf("Suma de numeros pares hasta el numero: ");
-	scanf("%i", &numLimite);
+	scanf("%d", &numLimite);
 
 	for(int i = 0; i <= numLimite; i++)
 	{
 		if(i % 2 == 0)
 		{
-			printf("+%i\n", i);
+			printf("+%d\n", i);
 			resultado += i;
 			contNumero++;
 		}
 	}
 
-	printf("Resultado final es %i y hay %i numeros\n", resultado, contNumero);
+	printf("Resultado final es %d y hay %d numeros\n", resultado, contNumero);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

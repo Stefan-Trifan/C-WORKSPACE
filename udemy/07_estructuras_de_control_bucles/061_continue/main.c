@@ -7,12 +7,12 @@ int main() {
 
     int numero,i;
     printf("Escribe el numero que sera ignorado (0-10): ");
-    scanf("%i",&numero);
+    scanf("%d",&numero);
 
     for (i = 0; i < 10; i++){
         if (i == numero)
             continue;
-            printf("\n%i",i);
+            printf("\n%d",i);
     }
 
     printf("\n\n");

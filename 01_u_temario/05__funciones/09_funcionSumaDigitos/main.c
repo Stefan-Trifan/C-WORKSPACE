@@ -37,14 +37,14 @@ int main(){
 
 	// Pedimos el numero
 	printf("Introduce un numero: ");
-	scanf("%i", &numero);
-	printf("Tu numero es:        %i\n", numero);	
+	scanf("%d", &numero);
+	printf("Tu numero es:        %d\n", numero);	
 
 	// Llamamos a la funcion que suma los digitos
 	resultado = sumaDigitos(numero);
 
 	// Imprimimos el resultado
-	printf("La suma de los digitos es: %i\n", resultado);
+	printf("La suma de los digitos es: %d\n", resultado);
 
 }
 
@@ -66,7 +66,7 @@ int sumaDigitos(int numero){
 		numero = (numero - ultimoDigito) / 10;
 
 		// ? Debug
-		printf("%i", resultado);
+		printf("%d", resultado);
 
 	}
 

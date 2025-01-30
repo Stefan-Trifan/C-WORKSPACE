@@ -36,15 +36,15 @@ int main(){
 
 	// Pedimos por pantalla el numero de numeros
 	printf("Dime cuantos numeros vas a introducir: ");
-	scanf("%i", &n);
+	scanf("%d", &n);
 
 	if (n > 0){
 		for(int i = 1; i <= n; i++){
 
 			// Pedimos numero por cada iteracion
 			printf("Introduce numero: ");
-			scanf("%i", &numero);
-			printf("Numero es %i\n", numero);
+			scanf("%d", &numero);
+			printf("Numero es %d\n", numero);
 
 			// Buscamos el mas pequeño
 			if(num_chiqui < numero){
@@ -73,9 +73,9 @@ int main(){
 	// 	Calculamos la media
 	media = suma / n;
 
-	printf("La media es:                     %i\n", media);
-	printf("El numero mas pequeño es:        %i\n", num_chiqui);
-	printf("El numero mas grande es:         %i\n", num_grande);
-	printf("La suma de todos los numeros es: %i\n", suma);
+	printf("La media es:                     %d\n", media);
+	printf("El numero mas pequeño es:        %d\n", num_chiqui);
+	printf("El numero mas grande es:         %d\n", num_grande);
+	printf("La suma de todos los numeros es: %d\n", suma);
 
 }

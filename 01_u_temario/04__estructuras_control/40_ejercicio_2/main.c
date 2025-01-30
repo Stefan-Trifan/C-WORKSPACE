@@ -39,13 +39,13 @@ int main()
     
 	do {
 		printf("Primer numero  : ");
-		esEntero = scanf("%i", &num1);
+		esEntero = scanf("%d", &num1);
 		clearBuffer();
 	} while (esEntero == 0);
 
 	do {
 		printf("Segundo numero : ");
-		esEntero = scanf("%i", &num2);
+		esEntero = scanf("%d", &num2);
 		clearBuffer();
 	} while (esEntero == 0);
 
@@ -90,7 +90,7 @@ int main()
 		}
 	}
 
-	printf("m.c.d es       : %i\n", m_c_d);
+	printf("m.c.d es       : %d\n", m_c_d);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -107,4 +107,4 @@ void clearBuffer()
 /* _________________________________________
    Herramientas de depuración */
 
-// printf("DEBUG nombreVariable: %i\n", variable);
+// printf("DEBUG nombreVariable: %d\n", variable);

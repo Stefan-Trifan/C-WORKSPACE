@@ -53,14 +53,14 @@ int main()
 
 	for(int i = 0; i < MAX_TAM; i++)
 	{	
-		printf("Introduce el elemento %i del array \n", i);
+		printf("Introduce el elemento %d del array \n", i);
 		array[i] = pedirEntero();
 		printf("\n");
 	}
 
 	for(int i = 0; i < MAX_TAM; i++)
 	{
-		printf("%i ", array[i]);
+		printf("%d ", array[i]);
 	}
     
 	printf("\n_________________________________________END\n\n");
@@ -81,7 +81,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{

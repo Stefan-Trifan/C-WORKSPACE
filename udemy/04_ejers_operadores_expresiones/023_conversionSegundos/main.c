@@ -32,11 +32,11 @@ int main()
 	int horas = 0, minutos = 0, segundos = 0, segundos_totales = 0;
     
     printf("Intrudce horas, minutos y segundos en formato: HH:MM:SS: ");
-	scanf("%i:%i:%i", &horas, &minutos, &segundos);
+	scanf("%d:%d:%d", &horas, &minutos, &segundos);
 
 	segundos_totales = horas*3600 + minutos*60 + segundos;
 
-	printf("Los segundos totales son: %i", segundos_totales);
+	printf("Los segundos totales son: %d", segundos_totales);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

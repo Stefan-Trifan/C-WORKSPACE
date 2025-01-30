@@ -50,11 +50,11 @@ int main()
 
 	// Paso por valor
 	MiAreaValor = calculoAreaValor(miRadio);
-	printf("MiAreaValor: %i\n", MiAreaValor);
+	printf("MiAreaValor: %d\n", MiAreaValor);
 
 	// Paso por referencia
 	MiAreaRef = calculoAreaRef(&miRadio);
-	printf("MiAreaRef: %i\n", MiAreaRef);
+	printf("MiAreaRef: %d\n", MiAreaRef);
 
 	// Calculamos la longitud de la MiLongCirc
 	calculoAreaYCircunferencia(miRadio, &miArea, &MiLongCirc);

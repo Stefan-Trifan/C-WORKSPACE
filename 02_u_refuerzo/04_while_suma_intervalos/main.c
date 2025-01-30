@@ -37,13 +37,13 @@ int main(){
 
 	// Pedmos los numeros
 	printf("Introduce el numero en el que comienza el intervalo:    ");
-	scanf("%i", &numMin);
+	scanf("%d", &numMin);
 
 	printf("Introduce el ultimo numero donde finaliza el intervalo: ");
-	scanf("%i", &numMax);
+	scanf("%d", &numMax);
 
 	printf("Introduce el numero de intervalos entre cada suma:      ");
-	scanf("%i", &numIntervalos);
+	scanf("%d", &numIntervalos);
 
 	// Declaramos las condiciones
 	if (numMin > numMax){
@@ -62,15 +62,15 @@ int main(){
 
 		printf("__________\n");
 		
-		printf("El contador es: %i\n", contador);
+		printf("El contador es: %d\n", contador);
 		contador = contador + numIntervalos;
 		
-		printf("El resultado es: %i\n", resultado);
+		printf("El resultado es: %d\n", resultado);
 		resultado = resultado + contador;
 	}
 
 	printf("__________\n");
-	printf("El resultado FINAL es: %i\n", resultado);
+	printf("El resultado FINAL es: %d\n", resultado);
 
 	return 0;
 }

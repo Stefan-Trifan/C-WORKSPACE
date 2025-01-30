@@ -80,7 +80,7 @@ int main()
 	// Si es 1, imprimimos el resultado
 	// Si es 0, imprimimos el error
 	if(operacionCorrecta){
-		printf("Resultado:            %i\n", resultado);
+		printf("Resultado:            %d\n", resultado);
 	} else {
 		printf("Error: el exponente debe ser positivo\n");
 	}

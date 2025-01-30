@@ -15,6 +15,8 @@
 		LoremIpsumDummyText
 */
 
+// TipoDeDato NombreDelArray[tamaño] = {valor1, valor2, ..., valorN};
+
 /* _________________________________________
    Inicio cabecera */
 
@@ -29,7 +31,16 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
     
-    
+    int array[3] = {24,5,26};
+
+	printf("Posicion 0: %d\n", array[0]);
+	printf("Posicion 1: %d\n", array[1]);
+	printf("Posicion 2: %d\n", array[2]);
+
+	array[0] = 4;
+	array[2] = 6;
+
+	printf("Los nuevos valores son: %d %d %d", array[0], array[1], array[2]);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

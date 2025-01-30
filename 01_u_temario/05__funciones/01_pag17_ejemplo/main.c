@@ -31,13 +31,13 @@ int main(){
 	
 
 	printf("Introduce el primer numero: ");
-	scanf("%i", &num1);
+	scanf("%d", &num1);
 
 	printf("Introduce el segundo numero: ");
-	scanf("%i", &num2);
+	scanf("%d", &num2);
 
 	int resultado = multiplica(num1, num2);
-	printf("El resultado de la multiplicacion es: %i\n", resultado);
+	printf("El resultado de la multiplicacion es: %d\n", resultado);
 
 }
 

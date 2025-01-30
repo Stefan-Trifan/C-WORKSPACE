@@ -8,10 +8,10 @@ int main() {
     int num = 0;
 
 	printf("En que numero desea usted que se detenga el ciclo (0-100): ");
-    scanf("%i", &num);
+    scanf("%d", &num);
 
     for (int i = 0; i < 100; i++){
-        printf("\n%i",i);
+        printf("\n%d",i);
         if (i == num) break;
     }
 

@@ -34,8 +34,8 @@ int main()
 
 	// printf("Introduce un caracter: ");
 	// scanf(" %c", &caracter);
-	// printf("%i", esMinuscula(caracter));
-	// printf("%i", esNumero(caracter));
+	// printf("%d", esMinuscula(caracter));
+	// printf("%d", esNumero(caracter));
 
     
 	do{

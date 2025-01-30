@@ -63,7 +63,7 @@ int main()
 				printf("Lo siento, te quedaste sin mas intentos");
 				break;
 			}
-			printf("Clave erronea. %i intentos restantes\n", intentosRestantes);
+			printf("Clave erronea. %d intentos restantes\n", intentosRestantes);
 		}
 
 	} while (intentosRestantes > 0);

@@ -32,14 +32,14 @@ int main()
 	int limite = 0, resultado = 0;
     
     printf("De cauntos numeros quieres realizar la suma: ");
-	scanf("%i", &limite);
+	scanf("%d", &limite);
 
 	for(int i = 0; i <= limite; i++)
 	{
 		resultado += i;
 	}
 
-	printf("Resultado es: %i\n", resultado);
+	printf("Resultado es: %d\n", resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

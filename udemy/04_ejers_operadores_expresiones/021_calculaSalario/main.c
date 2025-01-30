@@ -32,13 +32,13 @@ int main()
     int horas = 0, salario_hora = 0, salario_total = 0;
 
 	printf("Introduce las horas:       ");
-	scanf("%i", &horas);
+	scanf("%d", &horas);
 	printf("Introduce tu salario hora: ");
-	scanf("%i", &salario_hora);
+	scanf("%d", &salario_hora);
 
 	salario_total = horas * salario_hora;
 
-	printf("Tu salario total es: %i", salario_total);
+	printf("Tu salario total es: %d", salario_total);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;

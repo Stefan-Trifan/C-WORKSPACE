@@ -44,12 +44,12 @@ int main(){
 
 	// Imprimimos el array
 	for(int i = 0; i < TAM_ARRAY; i++){
-		printf("%i\n", array[i]);
+		printf("%d\n", array[i]);
 	}
 
 	// Pedimos un numero entre 0 al 30
 	printf("Introduce un numero del 0 al 30: ");
-	scanf("%i", &numUser);
+	scanf("%d", &numUser);
 
 	// Comprobamos si esta en el array
 	for(int i = 0; i < TAM_ARRAY; i++){

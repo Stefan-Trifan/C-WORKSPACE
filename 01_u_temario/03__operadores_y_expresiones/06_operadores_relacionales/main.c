@@ -39,6 +39,6 @@ int main(){
 	
 	// Devolvemos el resultado
 	printf(
-	"\tLa letra es minuscula: %i\n"
-	"\tLa letra es mayuscula: %i\n", esMinuscula, esMayuscula);
+	"\tLa letra es minuscula: %d\n"
+	"\tLa letra es mayuscula: %d\n", esMinuscula, esMayuscula);
 }

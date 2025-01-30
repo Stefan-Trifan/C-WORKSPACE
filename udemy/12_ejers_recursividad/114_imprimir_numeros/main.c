@@ -52,7 +52,7 @@ int imprimirRecursiva(int num)
 	}
 	else
 	{
-		printf("%i ", num);
+		printf("%d ", num);
 		return imprimirRecursiva(num - 1);
 	}	
 }
@@ -63,7 +63,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{

@@ -56,13 +56,13 @@ int main() {
 
     // Pedimos por pantalla los datos del inicio del desplazamiento en formato HH:MM:SS
     printf("Ingrese el instante de comienzo del desplazamiento en formato (HH:MM:SS): ");
-    scanf("%i:%i:%i", &horInicio, &minInicio, &segInicio);
-    printf("Iniciaste el desplazamiento en %i:%i:%i\n", horInicio, minInicio, segInicio);
+    scanf("%d:%d:%d", &horInicio, &minInicio, &segInicio);
+    printf("Iniciaste el desplazamiento en %d:%d:%d\n", horInicio, minInicio, segInicio);
 
     // Pedimos por pantalla los datos del inicio del final en formato HH:MM:SS
     printf("Ingrese el instante de finalizacion del desplazamiento en formato (HH:MM:SS): ");
-    scanf("%i:%i:%i", &horFinal, &minFinal, &segFinal);
-    printf("Finalizaste el desplazamiento en %i:%i:%i\n", horFinal, minFinal, segFinal);
+    scanf("%d:%d:%d", &horFinal, &minFinal, &segFinal);
+    printf("Finalizaste el desplazamiento en %d:%d:%d\n", horFinal, minFinal, segFinal);
 
     // Comprobamos que los datos introducidos estan en el formato correcto.
     if(( horInicio >= 0 && horInicio <= 23 ) && ( minInicio >= 0 && minInicio <= 59 ) && ( segInicio >= 0 && segInicio <= 59 )
@@ -73,7 +73,7 @@ int main() {
         minTotal = minFinal - minInicio;
         segTotal = segFinal - segInicio;
 
-        printf("El tiempo empleado en el desplazamiento es: %i hora(s), %i minuto(s) y %i segundo(s).", horTotal, minTotal, segTotal);
+        printf("El tiempo empleado en el desplazamiento es: %d hora(s), %d minuto(s) y %d segundo(s).", horTotal, minTotal, segTotal);
 
     } else {
         printf("No has introducido los datos correctamente.");

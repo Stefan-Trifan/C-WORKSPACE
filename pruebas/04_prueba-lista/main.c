@@ -32,7 +32,7 @@ int main()
     int num = 3;
 	int lista[5] = {1,2,3,4,5};
 
-	printf("%i", lista);
+	printf("%d", lista);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

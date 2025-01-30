@@ -63,7 +63,7 @@ int main()
 		do
 		{
 			printf("-> ");
-			scanf("%i", &opcion);
+			scanf("%d", &opcion);
 			clearBuffer();
 		} 
 		while (opcion < 1 || opcion > 3); 

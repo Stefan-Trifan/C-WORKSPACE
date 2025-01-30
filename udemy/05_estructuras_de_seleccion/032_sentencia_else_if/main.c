@@ -32,12 +32,12 @@ int main()
 	int a, b, c;
 
 	printf("Digite el primer numero: ");
-	scanf("%i", &a);
+	scanf("%d", &a);
 	printf("Digite el segundo numero: ");
-	scanf("%i", &b);
+	scanf("%d", &b);
 
 	printf("Digite la suma de los 2 numeros: ");
-	scanf("%i", &c);
+	scanf("%d", &c);
     
 	// Verifica si la suma de a y b es igual a c
 	if(a + b == c){

@@ -57,7 +57,7 @@ void menu()
 			"4. Dividir\n"
             "5. Salir\n"
 			"-> ");
-		scanf("%i", &opcion);
+		scanf("%d", &opcion);
 		printf("\n");
 
         switch (opcion)

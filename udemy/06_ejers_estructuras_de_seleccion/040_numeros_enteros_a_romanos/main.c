@@ -39,7 +39,7 @@ int main()
 	
 	do {
 		printf("Digita un numero del 0 al 3999: ");
-		esNumValido = scanf("%i", &numero); 
+		esNumValido = scanf("%d", &numero); 
 		clearBuffer();
 	} while (!esNumValido || numero <= 0 || numero > 3999);
 
@@ -54,10 +54,10 @@ int main()
 
 	unidades = numero;
 
-	printf("miles:    %i\n", miles);
-	printf("centenas: %i\n", centenas);
-	printf("decenas:  %i\n", decenas);
-	printf("unidades: %i\n", unidades);
+	printf("miles:    %d\n", miles);
+	printf("centenas: %d\n", centenas);
+	printf("decenas:  %d\n", decenas);
+	printf("unidades: %d\n", unidades);
 
 	printf("Numero romano: ");
 

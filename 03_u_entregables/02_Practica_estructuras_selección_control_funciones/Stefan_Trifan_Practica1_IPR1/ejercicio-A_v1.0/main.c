@@ -96,7 +96,7 @@ int main(){
 		if(rondaCorrecta(maximo) == 0){
 			// Si el usuario se equivoca:
 			vidas--; 
-			printf("... Resultado incorrecto, vidas: %i\n", vidas);
+			printf("... Resultado incorrecto, vidas: %d\n", vidas);
 		} else{
 			// Si el usuario responde bien:
 			puntos++;
@@ -110,7 +110,7 @@ int main(){
 	}
 
 	if(vidas == 0){
-		printf("\nGame Over. Haber estudiado.\n%i puntos", puntos);
+		printf("\nGame Over. Haber estudiado.\n%d puntos", puntos);
 	}
 	
 	printf("\n_________________________________________END\n\n");

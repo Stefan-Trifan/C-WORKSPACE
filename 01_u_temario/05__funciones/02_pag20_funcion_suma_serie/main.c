@@ -41,16 +41,16 @@ int main(){
 
 	// Pedimos los 2 numeros
 	printf("Introduce el primer numero: ");
-	scanf("%i", &a);
-	printf("El primer numero es %i\n", a);
+	scanf("%d", &a);
+	printf("El primer numero es %d\n", a);
 
 	printf("Introduce el segundo numero: ");
-	scanf("%i", &b);
-	printf("El segundo numero es %i\n", b);
+	scanf("%d", &b);
+	printf("El segundo numero es %d\n", b);
 
 	// Imprimimos el resultado
 	resultado = sumaNumComprendidos(a, b);
-	printf("Resultado es: %i\n", resultado);
+	printf("Resultado es: %d\n", resultado);
 }
 
 // Declaramos la funcion
@@ -63,7 +63,7 @@ int sumaNumComprendidos(int a, int b){
 	// Buscamos cuantos numeros hay comprendidos
 	if ( a < b ){
 		numVueltas = b - a;
-		printf("Hay %i numeros comprendidos\n", numVueltas);
+		printf("Hay %d numeros comprendidos\n", numVueltas);
 
 		// Hacemos la suma de los numeros comprendidos
 		for(int i = a; i <= b; i++){
@@ -74,7 +74,7 @@ int sumaNumComprendidos(int a, int b){
 
 	if ( a > b ){
 		numVueltas = a - b;
-		printf("Hay %i numeros comprendidos\n", numVueltas);
+		printf("Hay %d numeros comprendidos\n", numVueltas);
 
 		// Hacemos la suma de los numeros comprendidos
 		for(int i = b; i <= a; i++){

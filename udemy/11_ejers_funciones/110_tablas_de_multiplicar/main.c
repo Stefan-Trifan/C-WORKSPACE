@@ -51,7 +51,7 @@ int solicitarEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if(esValido != 1)
 		{
@@ -70,7 +70,7 @@ void verTabla(int num)
 {
 	for(int i = 0; i <= 20; i++)
 	{
-		printf("%i x %i = %i\n", num, i, num*i);
+		printf("%d x %d = %d\n", num, i, num*i);
 	}
 }
 

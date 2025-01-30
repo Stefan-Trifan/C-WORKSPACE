@@ -32,24 +32,24 @@ int main()
 	int primerNum = 0, ultimoNum = 0, resultado = 0, contNumero = 0;
 
 	printf("Suma de numeros pares desde que numero: ");
-	scanf("%i", &primerNum);
+	scanf("%d", &primerNum);
 	
 	do {
 		printf("Suma de numeros pares hasta el numero:  ");
-		scanf("%i", &ultimoNum);
+		scanf("%d", &ultimoNum);
 	} while (primerNum > ultimoNum);
 
 	for(int i = primerNum; i <= ultimoNum; i++)
 	{
 		if(i % 2 == 0)
 		{
-			printf("+%i\n", i);
+			printf("+%d\n", i);
 			resultado += i;
 			contNumero++;
 		}
 	}
 
-	printf("Resultado final es %i y hay %i numeros\n", resultado, contNumero);
+	printf("Resultado final es %d y hay %d numeros\n", resultado, contNumero);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

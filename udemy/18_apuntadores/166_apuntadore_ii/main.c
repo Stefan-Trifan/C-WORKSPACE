@@ -33,8 +33,8 @@ int main()
 	
 	int *p_numero = &numero;
 	printf("Valor de la variable\n");
-	printf("Dato: %i  \n",  numero);   // 50
-	printf("Dato: %i\n\n", *p_numero); // 50
+	printf("Dato: %d  \n",  numero);   // 50
+	printf("Dato: %d\n\n", *p_numero); // 50
 
 	printf("Posicion de la memoria: \n");
 	printf("Posicion: %p\n", &numero);   // 0x16dd0b338

@@ -40,7 +40,7 @@ int main()
 		{
 			printf("\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo: \033[0m");
 		}
-		esValido = scanf("%i", &numMax);
+		esValido = scanf("%d", &numMax);
 		if(numMax < 0)
 		{
 			esValido = 0;
@@ -51,7 +51,7 @@ int main()
 
 	for(int i = 0; i <= numMax; i++)
 	{
-		printf("%i ", fibonacci(i));
+		printf("%d ", fibonacci(i));
 	}
     
 	printf("\n_________________________________________END\n\n");

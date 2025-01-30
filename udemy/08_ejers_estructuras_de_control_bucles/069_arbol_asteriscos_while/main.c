@@ -36,7 +36,7 @@ int main()
 	int numFilas = 0, numEstrellasFila = 0;
     
     printf("Cuantas filas de asteriscos quieres: ");
-	scanf("%i", &numFilas);
+	scanf("%d", &numFilas);
 
 	// Bucle que se encarga de crear las filas de una en una
 	for(int filaActual = 0; filaActual <= numFilas; filaActual++)

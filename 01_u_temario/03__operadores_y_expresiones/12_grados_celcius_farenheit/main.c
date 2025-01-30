@@ -37,7 +37,7 @@ int main(){
 	printf("Introduce el tipo conversion que deseas realizar:\n" 
 	"Introdcue 1 si quieres convertir grados celsius a grados fahrenheit \n"
 	"Introduce 2 si quieres convertir grados fahrenheit a grados celsius\n");
-	scanf("%i", &tipoConversion);
+	scanf("%d", &tipoConversion);
 	limpiar();
 
 	if(tipoConversion == 1){

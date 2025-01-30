@@ -53,11 +53,11 @@ int main()
 
 	// Pedimos el numero al usuario
 	printf("Introduce un numero: ");
-	scanf("%i", &num);
+	scanf("%d", &num);
 
 	resultadoSuma = sumaDigitosImpares(num);
 
-	printf("La suma es %i", resultadoSuma);
+	printf("La suma es %d", resultadoSuma);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

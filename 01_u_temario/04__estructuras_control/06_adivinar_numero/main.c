@@ -46,13 +46,13 @@ int main(){
 	while ( adivinado == 0 ){
 		// Pedimos el numero 
 		printf("Introduce un numero del 1 al 10\n");
-		scanf("%i", &numUser);
+		scanf("%d", &numUser);
 
 		numIntentos++;
 
 		if (numUser == numRandom){
 			// Imprime el numero de intentos
-			printf("Lo has logrado despues de %i intentos", numIntentos);
+			printf("Lo has logrado despues de %d intentos", numIntentos);
 			adivinado = 1;
 		}
 

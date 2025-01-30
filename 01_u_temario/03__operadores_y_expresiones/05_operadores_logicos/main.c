@@ -48,8 +48,8 @@ int main(){
 	resultado4 = num2 / num4 != num1;
 
 	printf("El resultado de las operaciones son:\n"
-	"\t1: %i\n"
-	"\t2: %i\n"
-	"\t3: %i\n"
-	"\t4: %i\n", resultado1, resultado2, resultado3, resultado4);
+	"\t1: %d\n"
+	"\t2: %d\n"
+	"\t3: %d\n"
+	"\t4: %d\n", resultado1, resultado2, resultado3, resultado4);
 }

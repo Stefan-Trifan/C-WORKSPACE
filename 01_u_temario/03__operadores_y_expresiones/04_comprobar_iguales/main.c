@@ -25,11 +25,11 @@ int main(){
 
 	// Pedimos los numeros
 	printf("Introduce el primer numero\n");
-	scanf("%i", &num1);
+	scanf("%d", &num1);
 
 	printf("Introduce el segundo numero\n");
-	scanf("%i", &num2);
+	scanf("%d", &num2);
 
 	resultado = num1 == num2;
-	printf("%i", resultado);
+	printf("%d", resultado);
 }

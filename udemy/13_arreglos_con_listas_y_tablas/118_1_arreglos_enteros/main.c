@@ -50,7 +50,7 @@ int main()
 	
 	for(int i = 0; i <= MAX_TAM; i++)
 	{
-		printf("%i ", array[i]);
+		printf("%d ", array[i]);
 	}
     
 	printf("\n_________________________________________END\n\n");

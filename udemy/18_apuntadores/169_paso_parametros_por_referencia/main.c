@@ -34,11 +34,11 @@ int main()
 	numero = pedirEntero();
 
 	// Valor antes de la funcion
-	printf("Valor 1: %i\n", numero);
+	printf("Valor 1: %d\n", numero);
 
 	agregar(&numero);
 
-	printf("Valor 2: %i\n", numero);
+	printf("Valor 2: %d\n", numero);
 
     
 	printf("\n_________________________________________END\n\n");
@@ -65,7 +65,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{

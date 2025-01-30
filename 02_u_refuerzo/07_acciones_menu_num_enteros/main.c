@@ -37,7 +37,7 @@ int main()
 	"2 Imprimir la suma de los numeros del 1 al n\n"
 	"3 Calcular el n-esimo numero de la sicesion de Fibonacci usando recursion\n"
 	"4 Salir.\n");
-	scanf("%i", &eleccion);
+	scanf("%d", &eleccion);
 
 	if(eleccion == 1){
 	

@@ -39,15 +39,15 @@ int main(){
 
 	// Pedimos nums
 	printf("Introduce el primer numero:  ");
-	scanf("%i", &num1);
+	scanf("%d", &num1);
 
 	printf("Introduce el segundo numero: ");
-	scanf("%i", &num2);
+	scanf("%d", &num2);
 
 	calculos(num1, num2, &resSuma, &resResta);
 
-	printf("El resultado de la suma es : %i\n", resSuma);
-	printf("El resultado de la resta es: %i", resResta);
+	printf("El resultado de la suma es : %d\n", resSuma);
+	printf("El resultado de la resta es: %d", resResta);
 
 	printf("\n________________________________________________\n\n");
 }

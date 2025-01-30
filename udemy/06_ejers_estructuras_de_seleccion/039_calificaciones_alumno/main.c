@@ -36,7 +36,7 @@ int main()
 	do {	
 
 		printf("Introduce tu nota: ");
-		esEntero = scanf("%i", &nota);
+		esEntero = scanf("%d", &nota);
 
 		if(!esEntero) {
 			printf("Entrada no válida. Por favor, introduce un número.\n");

@@ -56,7 +56,7 @@ int main(){
 
 	// Pedimos el numero entero de 3 cifras
 	printf("Introduce un numero entero positivo de 3 digitos: ");
-	scanf("%i", &numero);
+	scanf("%d", &numero);
 	limpiar();
 
 	// Extraemos los 3 digitos del numero

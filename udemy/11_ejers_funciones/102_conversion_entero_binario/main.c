@@ -52,7 +52,7 @@ int main()
 			"\033[1;33m-> \033[0m"
 		);
 
-		esValido = scanf("%i", &numDecimal);
+		esValido = scanf("%d", &numDecimal);
 		clearBuffer();
 		if(numDecimal < 0) esValido = 2;
 	} 
@@ -77,7 +77,7 @@ void convertirDecimalBinario(int numDecimal)
 	if(numDecimal > 1)
 		convertirDecimalBinario(numDecimal / 2);
 
-	printf("%i", numDecimal % 2);
+	printf("%d", numDecimal % 2);
 }
 
 void clearBuffer()

@@ -45,7 +45,7 @@ int main()
     srand(time(NULL));
 	resultado  = limite_inferior + rand() % ((limite_superior + 1 ) - limite_inferior);
 	
-	printf("%i\n", resultado);
+	printf("%d\n", resultado);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;

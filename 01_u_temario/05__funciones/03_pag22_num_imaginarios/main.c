@@ -48,19 +48,19 @@ int main(){
 
 	// Pedimos primer num
 	printf("Introduce la parte natural del primer numero:     ");
-	scanf("%i", &a);
+	scanf("%d", &a);
 
 	printf("Introduce la parte imaginaria del segundo numero: ");
-	scanf("%i", &ai);
-	printf("Tu primer numero imaginario es:                   %i + %ii\n", a, ai);
+	scanf("%d", &ai);
+	printf("Tu primer numero imaginario es:                   %d + %di\n", a, ai);
 
 	// Pedimos segundo num
 	printf("Introduce la parte natural del segundo numero:    ");
-	scanf("%i", &b);
+	scanf("%d", &b);
 
 	printf("Introduce la parte imaginaria del segundo numero: ");
-	scanf("%i", &bi);
-	printf("Tu segundo numero imaginario es:                  %i + %ii\n", b, bi);
+	scanf("%d", &bi);
+	printf("Tu segundo numero imaginario es:                  %d + %di\n", b, bi);
 
 	// Preguntamos que operacion deseamos realizar
 	printf(
@@ -69,7 +69,7 @@ int main(){
 		"2: resta \n"
 		"3: multiplicacion \n"
 		"Tipo operacion: ");
-	scanf("%i", &operacion);
+	scanf("%d", &operacion);
 
 	switch(operacion){
 		case 1: c = suma(a, b);
@@ -83,7 +83,7 @@ int main(){
 			    break;
 	}
 
-	printf("El resultado es: %i + %ii", c, ci);
+	printf("El resultado es: %d + %di", c, ci);
 	
 }
 

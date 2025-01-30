@@ -35,7 +35,7 @@ int main()
     printf("Introduce un numero entero \n");
     num = pedirEntero();
 
-    printf("Numero es: %i", num);
+    printf("Numero es: %d", num);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -50,7 +50,7 @@ int pedirEntero()
 	printf("-> ");
 	do
 	{	
-		esValido = scanf("%i", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if(esValido == 0)
 		{

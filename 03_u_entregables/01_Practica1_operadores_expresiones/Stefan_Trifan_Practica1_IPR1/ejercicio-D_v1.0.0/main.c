@@ -54,10 +54,10 @@ int main(){
 
 	// Pedimos 2 numeros enteros
 	printf("Introduce el primer numero: ");
-	scanf("%i", &num1);
+	scanf("%d", &num1);
 	
 	printf("Introduce el segundo numero: ");
-	scanf("%i", &num2);
+	scanf("%d", &num2);
 
 	// Verificamos e imprimimos si el primer numero es mayor o igual que el segundo numero.
 	if(num1 >= num2)

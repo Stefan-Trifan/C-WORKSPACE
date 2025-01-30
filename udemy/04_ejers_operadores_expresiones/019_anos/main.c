@@ -33,18 +33,18 @@ int main()
 	float semanas = 0;
     
     printf("Digita tu edad\n");
-	scanf("%i", &edad);
+	scanf("%d", &edad);
 
 	meses = edad * 12;
 	semanas = meses * 4.34;
 	dias = semanas * 7;
 	horas = dias * 24;
 
-	printf("edad:    %i\n", edad);
-	printf("meses:   %i\n", meses);
+	printf("edad:    %d\n", edad);
+	printf("meses:   %d\n", meses);
 	printf("semanas: %f\n", semanas);
-	printf("meses:   %i\n", dias);
-	printf("horas:   %i\n", horas);
+	printf("meses:   %d\n", dias);
+	printf("horas:   %d\n", horas);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

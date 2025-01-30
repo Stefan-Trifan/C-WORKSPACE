@@ -32,13 +32,13 @@ int main()
 	int numMax = 0, resultado = 0;
     
     printf("Hasta que numero quieres sumar: ");
-	scanf("%i", &numMax);
+	scanf("%d", &numMax);
 
 	for(int i = 0; i <= numMax; i++){
 		resultado += i;
 	};
 
-	printf("\nLa suma de los digitos hasta el %i es: %i\n", numMax, resultado);
+	printf("\nLa suma de los digitos hasta el %d es: %d\n", numMax, resultado);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;

@@ -34,7 +34,7 @@ int main()
 
 	do {
 		printf("Escribe el numero 1: ");
-		scanf("%i", &numero);
+		scanf("%d", &numero);
 	} while (numero != 1);
 
 	if(numero == 1){

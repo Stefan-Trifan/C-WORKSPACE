@@ -32,7 +32,7 @@ int main()
     int i = 0;
 
 	while(i <= 100){
-		printf("El valor de i es: %i\n", i);
+		printf("El valor de i es: %d\n", i);
 		i++;
 	};
     

@@ -33,7 +33,7 @@ int main()
     int num = 0, resultado = 0;
 
 	printf("Introduce un nr: ");
-	scanf("%i", &num);
+	scanf("%d", &num);
 
 	if(esPar(num))
 	{

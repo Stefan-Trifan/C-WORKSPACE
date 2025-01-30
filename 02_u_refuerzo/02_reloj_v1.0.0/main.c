@@ -34,9 +34,9 @@ int main(){
 
 	// Pedimos por pantalla
 	printf("Introduce las horas: ");
-	scanf("%i:%i:%i", &horas, &minutos, &segundos);
+	scanf("%d:%d:%d", &horas, &minutos, &segundos);
 
-	printf("%i:%i:%i", horas, minutos, segundos);
+	printf("%d:%d:%d", horas, minutos, segundos);
 
 	return 0;
 }

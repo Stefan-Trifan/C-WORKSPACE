@@ -33,7 +33,7 @@ int main()
 	int dia;
 
 	printf("Selecciona el dia de la semana como numero (del 1 al 7): ");
-	scanf("%i", &dia);
+	scanf("%d", &dia);
 
 	switch (dia){
 	case 1: 

@@ -29,9 +29,9 @@ int main(){
 
 	while (resultadoScanf == 0){
 
-		resultadoScanf = scanf("%i", &edad);
+		resultadoScanf = scanf("%d", &edad);
 		while (getchar() != '\n');
-		printf("El resultado de scanf es: %i\n", resultadoScanf);
+		printf("El resultado de scanf es: %d\n", resultadoScanf);
 
 		if (resultadoScanf == 0){
 			printf("No has introducido un numero. Introduce un numero\n");
@@ -39,6 +39,6 @@ int main(){
 
 	}
 
-	printf("Tienes %i anos\n", edad);
+	printf("Tienes %d anos\n", edad);
 	
 }

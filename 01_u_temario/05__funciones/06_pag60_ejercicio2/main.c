@@ -31,13 +31,13 @@ int main(){
 	int resultado = 0;
 
 	printf("Introduce el primer numero:  ");
-	scanf("%i", &x);
+	scanf("%d", &x);
 	printf("Introduce el segundo numero: ");
-	scanf("%i", &y);
+	scanf("%d", &y);
 
 	resultado = funcionExponencial(x, y);
 
-	printf("El resultado de %i y %i es : %i\n", x, y, resultado);
+	printf("El resultado de %d y %d es : %d\n", x, y, resultado);
 
 }
 

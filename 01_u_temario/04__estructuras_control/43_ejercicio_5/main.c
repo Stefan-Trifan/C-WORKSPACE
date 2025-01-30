@@ -35,7 +35,7 @@ int main()
 
 	// Solicita al usuario que introduzca un número
 	printf("Introduce un número para ver si es perfecto: ");
-	scanf("%i", &numMax);
+	scanf("%d", &numMax);
 
 	// Inicializa el bucle para verificar si el número es perfecto
 	do {

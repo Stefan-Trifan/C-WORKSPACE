@@ -33,7 +33,7 @@ int main()
 	int contador = 0;
 
 	printf("Introduce un numero: ");
-	scanf("%i", &num);
+	scanf("%d", &num);
 
 	for(int i = 1; i <= num; i++)
 	{

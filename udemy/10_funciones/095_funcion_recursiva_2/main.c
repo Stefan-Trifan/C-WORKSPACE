@@ -44,11 +44,11 @@ int main()
 	int num = 0;
 
 	printf("Introduce un numero: ");
-	scanf("%i", &num);
+	scanf("%d", &num);
 
 	for(int i = 1; i <= num; i++)
 	{
-		printf("Vuelta %i: %li\n", i, factorial(i));
+		printf("Vuelta %d: %li\n", i, factorial(i));
 	}
     
 	printf("\n_________________________________________END\n\n");

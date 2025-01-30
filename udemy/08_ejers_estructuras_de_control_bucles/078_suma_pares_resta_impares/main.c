@@ -32,7 +32,7 @@ int main()
 	int numLimite = 0, resultado = 0;
     
     printf("Ingresa el numero limite: ");
-	scanf("%i", &numLimite);
+	scanf("%d", &numLimite);
 
 	for(int i = 0; i <= numLimite; i++)
 		if(i % 2 == 0)
@@ -40,7 +40,7 @@ int main()
 		else
 			resultado -= i;
 
-	printf("Resultado final es: %i\n", resultado);
+	printf("Resultado final es: %d\n", resultado);
 
     
 	printf("\n_________________________________________END\n\n");

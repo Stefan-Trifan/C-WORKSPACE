@@ -32,9 +32,9 @@ int main()
 	int num1 = 0, num2 = 0, num3 = 0;
     
     printf("Introduce los 3 numeros: ");
-	scanf("%i %i %i", &num1, &num2, &num3);
+	scanf("%d %d %d", &num1, &num2, &num3);
 
-	printf("Los numeros son %i %i %i", num1, num2, num3);
+	printf("Los numeros son %d %d %d", num1, num2, num3);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
