@@ -98,20 +98,77 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
 
-	int opcion = 0;
+	int opcion = 0, userPassword = 0, tempPassword = 0, sonIguales = 0;
 	
 	do
 	{
-		printf("MENU\n"
-			   "1. Generar password\n"
-		       "2. Introducir password\n"
-		       "3. Salir\n"
-			   "Introduce un numero entero (si te equivocas no pasa nada) \n");
-		opcion = pedirEntero();
+		if(userPassword == 0)
+		{
+			printf("MENU\n"
+				"1. Generar password\n"
+				"3. Salir\n\n"
+				"Introduce un numero entero \n");
+
+			do
+			{
+				opcion = pedirEntero();
+			} 
+			while (opcion < 1 || opcion > 3);
+			
+
+			switch (opcion)
+			{
+				case 1: 
+					userPassword = generaPassword();
+					break;
+				case 3: 
+					printf("\n\nGracias por utilizar el programa");;
+					break;
+			}
+			printf("\n");
+		}
+		else
+		{
+			printf("MENU\n"
+				"1. Cambiar password\n"
+				"2. Comprobar password\n"
+				"3. Salir\n"
+				"Introduce un numero entero (si te equivocas no pasa nada) \n");
+			
+			do
+			{
+				opcion = pedirEntero();
+			} 
+			while (opcion < 1 || opcion > 3);
+
+			switch (opcion)
+			{
+				case 1: 
+					userPassword = generaPassword();
+					break;
+				case 2: 
+					printf("Introduce la paswword ");
+					tempPassword = pedirEntero();
+					sonIguales = sonNumerosIguales(tempPassword, userPassword);
+					if(sonIguales)
+					{
+						printf("La password es correcta\n");
+					}
+					else
+					{
+						printf("La password no es correcta\n");
+					}
+					break;
+				case 3: 
+					printf("\n\nGracias por utilizar el programa");;
+					break;
+			}
+			printf("\n");
+		}
+
+
 	} 
 	while (opcion != 3);
-    
-	
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -123,8 +180,10 @@ int main()
 // Función que no se le pasa ningún parámetro y devuelve un entero con una passwod correcta
 int generaPassword()
 {
-
-	return 0;
+	int pass = 0;
+	printf("Genera una password de 7 cifras con al menos 3 pares: ");
+	pass = pedirEntero();
+	return pass;
 }
 
 // Función que se le pasa como parámetro un entero y devuelve verdadero si tiene 7 cifras y falso si no
@@ -142,7 +201,14 @@ int esNumero3pares (int numero)
 // Función que se le pasa como parámetros dos enteros y devuelve verdadero si son iguales y falso si no lo son
 int sonNumerosIguales (int numero1, int numero2)
 {
-	return 0;
+	if(numero1 == numero2)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
 
 void clearBuffer()
@@ -158,7 +224,7 @@ int pedirEntero()
 	{
 		esValido = scanf("%i", &num);
 		clearBuffer();
-		if (esValido == 0 || num < 1 || num > 3)
+		if (esValido == 0)
 		{
 			printf(
 				"\033[1;31mERROR: No pasa nada, todos nos equivocamos \n\033[0m"
