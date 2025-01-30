@@ -34,7 +34,7 @@
 
 #include <stdio.h>
 
-#define MAX_TAM 10
+#define MAX_TAM 4
 
 
 int pedirEntero();
@@ -46,20 +46,10 @@ void clearBuffer();
 int main()
 {
 	printf("\n_________________________________________START\n\n");
-    
-    int array[MAX_TAM];
 
-	printf("Introduce los numeros de tu array \n");
-	for(int i = 0; i < MAX_TAM; i++)
-	{
-		array[i] = pedirEntero();
-	}
+	char a[6] = {'j','o','r','g','e','\0'};
+	printf("%s\n", a);
 
-	for(int i = 0; i < MAX_TAM; i++)
-	{
-		printf("%i ", array[i]);
-	}
-    
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
@@ -70,25 +60,4 @@ int main()
 void clearBuffer()
 {
 	while (getchar() != '\n');
-}
-
-int pedirEntero()
-{
-	int num = 0, esValido = 1;
-	printf("-> ");
-	do
-	{
-		esValido = scanf("%i", &num);
-		clearBuffer();
-		if (esValido == 0)
-		{
-			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
-				"\033[1;31m-> \033[0m"
-			);
-			esValido = 0;
-		}
-	}
-	while (esValido != 1);
-	return num;
 }

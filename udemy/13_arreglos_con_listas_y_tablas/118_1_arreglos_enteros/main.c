@@ -47,6 +47,7 @@ int main()
 	printf("\n_________________________________________START\n\n");
     
     int array[MAX_TAM] = {1,2,3,4,5};
+	
 	for(int i = 0; i <= MAX_TAM; i++)
 	{
 		printf("%i ", array[i]);
