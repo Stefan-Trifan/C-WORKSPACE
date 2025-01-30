@@ -73,7 +73,7 @@ int generaPassword() {
     do {
         printf("Genera una password de 7 cifras con al menos 3 pares: ");
         scanf("%d", &nuevaPassword);
-		while (getchar()!='\n');
+		while (getchar() != '\n'){}
 
         if (!esNumero7cifras(nuevaPassword)) {
             printf("La password no tiene 7 cifras.\n");

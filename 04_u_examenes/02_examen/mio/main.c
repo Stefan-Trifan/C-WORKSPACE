@@ -87,6 +87,8 @@ int generaPassword();
 int esNumero7cifras (int numero);
 int esNumero3pares (int numero);
 int sonNumerosIguales (int numero1, int numero2);
+
+int pedirEntero();
 void clearBuffer();
 
 /* _________________________________________
@@ -95,11 +97,21 @@ void clearBuffer();
 int main()
 {
 	printf("\n_________________________________________START\n\n");
+
+	int opcion = 0;
+	
+	do
+	{
+		printf("MENU\n"
+			   "1. Generar password\n"
+		       "2. Introducir password\n"
+		       "3. Salir\n"
+			   "Introduce un numero entero (si te equivocas no pasa nada) \n");
+		opcion = pedirEntero();
+	} 
+	while (opcion != 3);
     
-	printf(
-		"1. Generar password\n"
-		"2. Introducir password\n"
-		"3. Salir");
+	
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -109,29 +121,52 @@ int main()
    Inicio definicion de funciones */
 
 // Función que no se le pasa ningún parámetro y devuelve un entero con una passwod correcta
-int generaPassword(){
-
-	
+int generaPassword()
+{
 
 	return 0;
 }
 
 // Función que se le pasa como parámetro un entero y devuelve verdadero si tiene 7 cifras y falso si no
-int esNumero7cifras (int numero){
+int esNumero7cifras (int numero)
+{
 	return 0;
 }
 
 // Función que se le pasa como parámetro un entero y devuelve verdadero si tiene al menos 3 cifras son pares y falso si no
-int esNumero3pares (int numero){
+int esNumero3pares (int numero)
+{
 	return 0;
 }
 
 // Función que se le pasa como parámetros dos enteros y devuelve verdadero si son iguales y falso si no lo son
-int sonNumerosIguales (int numero1, int numero2){
+int sonNumerosIguales (int numero1, int numero2)
+{
 	return 0;
 }
 
 void clearBuffer()
 {
 	while (getchar() != '\n');
+}
+
+int pedirEntero()
+{
+	int num = 0, esValido = 1;
+	printf("-> ");
+	do
+	{
+		esValido = scanf("%i", &num);
+		clearBuffer();
+		if (esValido == 0 || num < 1 || num > 3)
+		{
+			printf(
+				"\033[1;31mERROR: No pasa nada, todos nos equivocamos \n\033[0m"
+				"\033[1;31m-> \033[0m"
+			);
+			esValido = 0;
+		}
+	}
+	while (esValido != 1);
+	return num;
 }
