@@ -37,7 +37,8 @@ int main()
     
     float MiRadio     = 0;
     float MiArea      = 0;
-    float MiAreaRef   = 0, MiAreaValor = 0;
+    float MiAreaValor = 0;
+	float MiAreaRef   = 0;
     float MiLongCirc  = 0;
     int   ResultScanf = 0;
 

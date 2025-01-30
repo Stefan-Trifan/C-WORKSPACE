@@ -30,17 +30,16 @@ int main()
 	printf("\n_________________________________________START\n\n");
     
     int numero = 40;
-	int *p_numero; 
+	
+	int *p_numero = &numero;
+	printf("Valor de la variable\n");
+	printf("Dato: %i  \n",  numero);   // 50
+	printf("Dato: %i\n\n", *p_numero); // 50
 
-	p_numero = &numero;
-	printf("Calor de la variable\n");
-	printf("Dato: %i\n",  numero);   // 50
-	printf("Dato: %i\n", *p_numero); // 50
-
-	printf("\nPosicion de la memoria: \n");
-	printf("Posicion: %p\n", &numero);   // 00xskjfkjhs
-	printf("Posicion: %p\n",  p_numero); // 00xskjfkjhs
-	printf("Posicion: %p\n", &p_numero); // 0xzciubvfwe
+	printf("Posicion de la memoria: \n");
+	printf("Posicion: %p\n", &numero);   // 0x16dd0b338
+	printf("Posicion: %p\n",  p_numero); // 0x16dd0b338
+	printf("Posicion: %p\n", &p_numero); // 0x16dd0b330 (Diferente)
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
