@@ -33,7 +33,7 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
     
-    int tabla[max_row][max_col] = {{1,2,3},{4,5,6},{7,8,9}};
+    int tabla[max_row][max_col] = {{0,0,0},{0,0,0},{0,0,0}};
 
 	printf("Matriz inicial: \n");
 	for(int row = 0; row < max_row; row++)
@@ -45,12 +45,12 @@ int main()
 		printf("\n");
 	}
 
-	printf("\n\nMatriz Ahora introduce los dats que tu quieras: \n");
+	printf("\n\nAhora introduce los datos que tu deseas tener: \n");
 	for(int row = 0; row < max_row; row++)
 	{
 		for(int col = 0; col < max_col; col++)
 		{
-			printf("-> ");
+			printf("M(%i,%i) = ", row + 1, col + 1);
 			scanf("%i", &tabla[row][col]);
 		}
 	}
