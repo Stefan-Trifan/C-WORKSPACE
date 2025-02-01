@@ -19,8 +19,8 @@
    Inicio cabecera */
 
 #include <stdio.h>
-#define max_row 3
-#define max_col 3
+#define NUM_ROWS 3
+#define NUM_COLS 3
 
 // tipoDeDato nombreDelArray [numFilas][numColumnas]
 
@@ -33,35 +33,43 @@ int main()
 {
 	printf("\n_________________________________________START\n\n");
     
-    int tabla[max_row][max_col] = {{0,0,0},{0,0,0},{0,0,0}};
+    int matriz[NUM_ROWS][NUM_COLS] = 
+	{
+		{0,0,0},
+		{0,0,0},
+		{0,0,0}
+	};
+
+	// Ejemplo de otra manera de inicializar una matriz:
+	int matriz_ejemplo[NUM_ROWS][NUM_COLS] = {0};
 
 	printf("Matriz inicial: \n");
-	for(int row = 0; row < max_row; row++)
+	for(int row = 0; row < NUM_ROWS; row++)
 	{
-		for(int col = 0; col < max_col; col++)
+		for(int col = 0; col < NUM_COLS; col++)
 		{
-			printf("%d  ", tabla[row][col]);
+			printf("%6d ", matriz[row][col]);
 		}
 		printf("\n");
 	}
 
-	printf("\n\nAhora introduce los datos que tu deseas tener: \n");
-	for(int row = 0; row < max_row; row++)
+	printf("\n\nIntroduce los datos que desees (numeros con 6 cifras o menos): \n");
+	for(int row = 0; row < NUM_ROWS; row++)
 	{
-		for(int col = 0; col < max_col; col++)
+		for(int col = 0; col < NUM_COLS; col++)
 		{
 			printf("M(%i,%i) = ", row + 1, col + 1);
-			scanf("%i", &tabla[row][col]);
+			scanf("%i", &matriz[row][col]);
 		}
 	}
 
 
 	printf("\n\nMatriz final: \n");
-	for(int row = 0; row < max_row; row++)
+	for(int row = 0; row < NUM_ROWS; row++)
 	{
-		for(int col = 0; col < max_col; col++)
+		for(int col = 0; col < NUM_COLS; col++)
 		{
-			printf("%d  ", tabla[row][col]);
+			printf("%6d ", matriz[row][col]);
 		}
 		printf("\n");
 	}
