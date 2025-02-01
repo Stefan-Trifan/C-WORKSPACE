@@ -45,23 +45,21 @@ int main()
 	};
 
 	// Pedmimos los elementos
-	// printf("Introduce los elementos para la matriz M(%i,%i,%i) \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
-	// for(int h = 0; h < NUM_DIM3; h++)
-	// {
-	// 	for(int i = 0; i < NUM_ROWS; i++)
-	// 	{
-	// 		for(int j = 0; j < NUM_COLS; j++)
-	// 		{
-	// 			printf("M(%i,%i,%i) = ", h, i, j);
-	// 			arreglo_3D[h][i][j] = pedirEntero();
-	// 		}
-	// 		printf("\n");
-	// 	}
-	// 	printf("\n");
-	// }
+	printf("Introduce los elementos para la matriz M(%i,%i,%i) \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
+	for(int h = 0; h < NUM_DIM3; h++)
+	{
+		for(int i = 0; i < NUM_ROWS; i++)
+		{
+			for(int j = 0; j < NUM_COLS; j++)
+			{
+				printf("M(%i,%i,%i) = ", h, i, j);
+				arreglo_3D[h][i][j] = pedirEntero();
+			}
+		}
+	}
 
 	// Mostramos por pantalla
-	printf("M(%i,%i,%i) \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
+	printf("\n\nM(%i,%i,%i) = \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
 	printf("{\n");
 	for(int h = 0; h < NUM_DIM3; h++)
 	{
@@ -69,7 +67,10 @@ int main()
 		{
 			for(int j = 0; j < NUM_COLS; j++)
 			{
-				printf("%6d ,", arreglo_3D[h][i][j]);
+				if(h < NUM_DIM3 - 1 || i < NUM_ROWS - 1 || j < NUM_COLS - 1)
+					printf("%6d ,", arreglo_3D[h][i][j]);
+				else
+					printf("%6d  ", arreglo_3D[h][i][j]);
 			}
 			printf("\n");
 		}
