@@ -30,19 +30,29 @@ int main(int argc, char * argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	float contNumeros = 0, sumaNumeros = 0, resultadoMedia = 0;
+	float contNumeros = 0, resultadoSumaTotal = 0, resultadoMedia = 0;
 
-	for(int i = 1; i < argc; i++)
+	if(argc == 1)
 	{
-		if(*argv[i] >= '0' && *argv[i] <= '9')
+		printf("Tienes que introducir varios parametros\n");
+		printf("\n_________________________________________END\n\n");
+		return 0;
+	}
+	else
+	{
+		for(int i = 1; i < argc; i++)
 		{
-			float temp =  strtol(argv[i], NULL, 10);
-			sumaNumeros += temp;
-			contNumeros++;
+			if(*argv[i] >= '0' && *argv[i] <= '9')
+			{
+				float temp =  strtol(argv[i], NULL, 10);
+				resultadoSumaTotal += temp;
+				contNumeros++;
+			}
 		}
 	}
 
-	resultadoMedia = sumaNumeros / contNumeros;
+
+	resultadoMedia = resultadoSumaTotal / contNumeros;
 
 	printf("La media es: %.2f\n", resultadoMedia);
 
