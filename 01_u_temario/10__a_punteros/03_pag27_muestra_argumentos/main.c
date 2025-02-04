@@ -25,11 +25,19 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main()
+int main(int argc, char * argv[])
 {
 	printf("\n_________________________________________START\n\n");
+
+	int i = 0;
     
-    
+
+	for(i = 0; i < argc; i++)
+	{
+		 printf("El argumento arv[%d] es: %s\n", i, argv[i]);
+	}
+
+	printf("Has introducido %d argumentos\n", i - 1);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
