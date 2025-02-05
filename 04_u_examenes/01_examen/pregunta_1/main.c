@@ -61,7 +61,7 @@ void printBinary(int number) {
     printf("\n");
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 
     // Declaramos las variables
     unsigned int miEntero = 0, posicionesDesplazadas = 0, resultado = 0;

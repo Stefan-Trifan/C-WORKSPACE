@@ -24,7 +24,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	int numero = 0;
 	unsigned long long int resultado = 1;

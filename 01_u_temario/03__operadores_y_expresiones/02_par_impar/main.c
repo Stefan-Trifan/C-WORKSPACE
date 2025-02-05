@@ -17,7 +17,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 	
 	// Declaramos la variable del numero
 	int num1 = 0;

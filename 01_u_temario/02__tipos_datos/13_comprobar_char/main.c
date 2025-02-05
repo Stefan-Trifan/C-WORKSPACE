@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-int main(){
+int main(int argc, char *argv[]){
 	// Declaramos char como variables vacios
 	char caracter1 = ' ';
 	char caracter2 = ' ';

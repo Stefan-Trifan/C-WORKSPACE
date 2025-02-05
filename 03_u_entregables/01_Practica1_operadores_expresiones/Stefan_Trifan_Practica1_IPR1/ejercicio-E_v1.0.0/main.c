@@ -42,7 +42,7 @@ void printBinary(int number, int positions) {
 	printf("\n");
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Declaramos las variables del programa
 	unsigned int miEntero  = 0;

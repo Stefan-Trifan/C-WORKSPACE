@@ -29,7 +29,7 @@ void limpiar(){
 
 int sumaDigitos(int num);
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Variables
 	int numero = 0;

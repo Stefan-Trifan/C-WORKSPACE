@@ -21,7 +21,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	int edad = 0;
 	int resultadoScanf = 0;

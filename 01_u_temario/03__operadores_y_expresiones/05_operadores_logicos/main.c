@@ -22,7 +22,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Declaramos los float
 	float num1 = 0, num2 = 0, num3 = 0, num4 = 0;

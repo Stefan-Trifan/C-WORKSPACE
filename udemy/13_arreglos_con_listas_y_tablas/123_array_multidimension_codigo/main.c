@@ -27,7 +27,7 @@ int pedirEntero();
 /* _________________________________________
    Inicio main() */
 
-int main()
+int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     

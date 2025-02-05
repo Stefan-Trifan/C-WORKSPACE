@@ -20,7 +20,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 	
 	float num1 = 0;
 	float num2 = 0;

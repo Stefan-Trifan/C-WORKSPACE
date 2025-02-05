@@ -22,7 +22,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 	char Caracter  = 's';
 	int Entero     = 0;
 	float Racional = 0.0;

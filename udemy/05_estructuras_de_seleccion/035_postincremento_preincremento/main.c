@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(int argc, char *argv[]) {
 
     int a = 0;   // a = 1
     int b = ++a; // b = 1

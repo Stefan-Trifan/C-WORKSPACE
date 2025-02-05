@@ -32,7 +32,7 @@ void limpiar(){
 
 void calculos(int *max, int *min, int *media); // bien
 
-int main(){
+int main(int argc, char *argv[]){
 
 	int max, min, media; // bien
 	// printf("El contenido de una variable normal es: %d", max)

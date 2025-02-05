@@ -23,7 +23,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Declaramos las variables del programa
 	int ladoA = 0;

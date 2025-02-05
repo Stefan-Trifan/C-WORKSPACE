@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-int main() {
+int main(int argc, char *argv[]) {
 
     int numero,i;
     printf("Escribe el numero que sera ignorado (0-10): ");

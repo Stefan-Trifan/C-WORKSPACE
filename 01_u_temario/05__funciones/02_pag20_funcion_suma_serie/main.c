@@ -32,7 +32,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Declaramos las variables
 	int a = 0;

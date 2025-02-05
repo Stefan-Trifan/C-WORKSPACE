@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Declaramos 3 numeros
 	int num1=0, num2=0, resultado=0;

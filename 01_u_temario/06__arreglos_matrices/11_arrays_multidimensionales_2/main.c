@@ -45,7 +45,7 @@ bool validar_palabras(char palabras[][MAX_LONGITUD + 1], int cantidad) {
     return true;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     char linea[256];
     char palabras[MAX_PALABRAS][MAX_LONGITUD + 1];
     int cantidad_palabras = 0;

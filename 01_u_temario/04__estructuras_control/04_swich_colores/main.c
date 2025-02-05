@@ -21,7 +21,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Decaramos las variables
 	char letra;

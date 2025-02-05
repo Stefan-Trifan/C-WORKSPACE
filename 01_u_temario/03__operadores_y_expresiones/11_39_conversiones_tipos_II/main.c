@@ -21,7 +21,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 	// Declaramos variables
 	float flotante   = 0;
 	int entero     = ' ';

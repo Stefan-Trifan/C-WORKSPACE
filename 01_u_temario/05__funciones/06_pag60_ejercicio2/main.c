@@ -24,7 +24,7 @@ void limpiar(){
 
 int funcionExponencial(int x, int y);
 
-int main(){
+int main(int argc, char *argv[]){
 
 	int x         = 0;
 	int y         = 0;

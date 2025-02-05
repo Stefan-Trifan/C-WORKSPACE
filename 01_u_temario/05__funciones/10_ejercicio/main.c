@@ -28,7 +28,7 @@ void limpiar(){
 
 void calculos(int numero1, int numero2, int *resultadoSuma, int *resultadoResta);
 
-int main(){
+int main(int argc, char *argv[]){
 	printf("\n________________________________________________\n\n");
 
 	// Declaramos variables

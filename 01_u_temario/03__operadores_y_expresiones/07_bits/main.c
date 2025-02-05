@@ -21,7 +21,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 	unsigned char dato       = 0;
 	unsigned char tercerBit  = 0;
 	unsigned int  esUno      = 0;

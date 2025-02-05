@@ -31,7 +31,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	int numRandom   = 0;
 	int numUser     = 0;

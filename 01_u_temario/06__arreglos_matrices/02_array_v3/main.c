@@ -28,7 +28,7 @@ void limpiar(){
 
 int generaNumero0a30();
 
-int main(){
+int main(int argc, char *argv[]){
 	printf("\n________________________________________________\n\n");
 
 	// srand(unsigned int seed): Inicializa la semilla para el generador de numeros pseudoaleatorios.

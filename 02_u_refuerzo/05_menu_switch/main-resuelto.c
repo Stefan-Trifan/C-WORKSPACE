@@ -14,7 +14,7 @@ int esPrimo(int num) {
     return 1; 
 }
 
-int main() {
+int main(int argc, char *argv[]) {
     int opcion, num, sum = 0;
 
     do {

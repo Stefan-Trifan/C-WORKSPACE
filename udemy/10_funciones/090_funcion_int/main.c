@@ -22,7 +22,7 @@
 // Declaramos/inicializamos la funcion
 int sumar(int a, int b);
 
-int main()
+int main(int argc, char *argv[])
 {
 	printf("\n________________________________________________\n\n");
 

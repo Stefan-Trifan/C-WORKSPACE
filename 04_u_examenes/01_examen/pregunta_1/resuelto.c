@@ -46,7 +46,7 @@
 // Inicializas la funcion
 void printBinary(int numberUser);
 
-int main() {
+int main(int argc, char *argv[]) {
 
     // Declaramos las variables
     unsigned int miEntero = 0, posicionesDesplazadas = 0, resultado = 0;

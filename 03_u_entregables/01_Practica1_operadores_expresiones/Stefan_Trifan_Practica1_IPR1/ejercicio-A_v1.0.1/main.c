@@ -48,7 +48,7 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Declaramos las variables que utilizaremos en el programa
 	char c1, guion1, c2, guion2, c3, c4;

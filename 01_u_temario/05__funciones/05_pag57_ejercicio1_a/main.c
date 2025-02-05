@@ -37,7 +37,7 @@
 
 int fibonacci(int n);
 
-int main(){
+int main(int argc, char *argv[]){
 
 	// Declaramos las variables
 	long long int n = 0;

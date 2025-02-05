@@ -25,7 +25,7 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(){
+int main(int argc, char *argv[]){
 	printf("\n______Este es un Simulador de Tienda o Cajero______\n\n");
     
 	int opcion;

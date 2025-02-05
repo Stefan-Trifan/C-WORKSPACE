@@ -6,7 +6,7 @@ int esNumero7cifras(int numero);
 int esNumero3pares(int numero);
 int sonIguales(int numero1, int numero2);
 
-int main() {
+int main(int argc, char *argv[]) {
     int opcion;
     int passwordAlmacenada = 0;  // 0 indica que no se ha generado una contraseÃ±a válida
     int passwordIngresada;

@@ -21,6 +21,6 @@ void limpiar(){
 	while(getchar() != '\n');
 }
 
-int main(){
+int main(int argc, char *argv[]){
 	printf("%-10d", 42); // Alineado a la izquierda
 }
