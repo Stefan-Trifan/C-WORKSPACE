@@ -12,7 +12,7 @@
 	*   Estado: doing
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		LoremIpsum
 */
 
 /* _________________________________________

@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		LoremIpsum
 */
 
 // strcmp(Cadena1, Cadena2)

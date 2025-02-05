@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		LoremIpsum
 */
 
 // Invertir una cadena con la funcion strrev().

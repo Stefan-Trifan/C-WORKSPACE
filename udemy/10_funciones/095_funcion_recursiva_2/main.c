@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		LoremIpsum
 */
 
 //Recursividad Capacidad de llamarse a si misma

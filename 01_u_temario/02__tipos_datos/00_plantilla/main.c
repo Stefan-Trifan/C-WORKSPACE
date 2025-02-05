@@ -5,7 +5,7 @@
  *			"windows": "gcc main.c -o main.exe;"
  *		},
  *		"Introducir despues de scanf": "limpiar()",
- *		"Enunciado": "LoremIpsumDummyText"
+ *		"Enunciado": "LoremIpsum"
  *	}
 */
 

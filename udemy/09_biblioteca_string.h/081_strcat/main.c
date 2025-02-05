@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		LoremIpsum
 */
 
 //* strcat(Destino, Fuente)

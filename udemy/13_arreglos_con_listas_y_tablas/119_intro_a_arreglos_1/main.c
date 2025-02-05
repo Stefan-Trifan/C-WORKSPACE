@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsumDummyText
+		LoremIpsum
 */
 
 // TipoDeDato NombreDelArray[tamaño] = {valor1, valor2, ..., valorN};

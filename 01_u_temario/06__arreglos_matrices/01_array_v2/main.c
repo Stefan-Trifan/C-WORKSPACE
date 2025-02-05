@@ -13,7 +13,7 @@
 		limpiar()
 
 	* 	Enunciado 8
-		LoremIpsumDummyText
+		LoremIpsum
 */
 
 #include <stdio.h>
