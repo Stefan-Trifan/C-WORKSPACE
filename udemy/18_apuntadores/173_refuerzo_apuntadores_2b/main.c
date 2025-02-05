@@ -12,7 +12,10 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		LoremIpsum
+		 4  8 12 16 ..
+		 6 12 18 24 ..
+		 7 14 21 28 ..
+		 5 10 15 20 ..
 */
 
 /* _________________________________________
@@ -30,31 +33,50 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	int arr1[4][5][2], cont = 0, miPosicion = 0, miNum;
-	int *puntero_a_arr1;
+	int arr1[4][5][2] = {0}, cont = 0, *puntero_a_arr1;
 	puntero_a_arr1 = &arr1[0][0][0];
 	
+	for(int i = 0; i < 40; i++)
+	{
+		if(i < 10)
+		{	
+			if(i == 0) cont = 4;
+			*(puntero_a_arr1 + i) = cont;
+			cont += 4;
+		}
+		if(i >= 10 && i < 20)
+		{
+			if(i == 10) cont = 6;
+			*(puntero_a_arr1 + i) = cont;
+			cont += 6;
+		}
+		if(i >= 20 && i < 30)
+		{
+			if(i == 20) cont = 7;
+			*(puntero_a_arr1 + i) = cont;
+			cont += 7;
+		}
+		if(i >= 30)
+		{
+			if(i == 30) cont = 5;
+			*(puntero_a_arr1 + i) = cont;
+			cont += 5;
+		}
+	}
+	
+	printf("\n\n");
 	for(int i = 0; i < 4; i++)
 	{
-		printf("Matriz %d: \n", i + 1);
 		for(int j = 0; j < 5; j++)
 		{
 			for(int k = 0; k < 2; k++)
 			{
-				arr1[i][j][k] = cont;
-				printf("%2d ", arr1[i][j][k]);
-				cont += 2;
+				printf("[ %2d ]  ", arr1[i][j][k]);
 			}
 			printf("\n");
 		}
-		printf("\n");
+		printf("\n\n");
 	}
-
-	miPosicion = pedirEntero();	
-
-	miNum = *(puntero_a_arr1 + miPosicion);
-
-	printf("El valor de tu posicion es %d\n", miNum);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;
