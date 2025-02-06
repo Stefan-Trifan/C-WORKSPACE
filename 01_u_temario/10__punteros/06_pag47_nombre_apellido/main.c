@@ -29,7 +29,14 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    
+	char nombre[50], apellido1[50], apellido2[50];
+	int  cont = 0;
+
+
+	for(int i = 1; i < 20; i++)
+	{
+		
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

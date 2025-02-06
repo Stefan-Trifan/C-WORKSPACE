@@ -32,21 +32,19 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
+	int numeroDni = 0, resto;
+	char letrasDNI[23] = 
+	{
+		'T','R','W','A','G','M','Y','F','P','D',
+		'X','B','N','J','Z','S','Q','V','H','L',
+		'C','K','E'
+	};
+
 	if(argc != 2)
 	{
 		printf("Ha ocurrido un error. Por favor, inténtelo de nuevo.\n\n\n");
 		return 1;
 	}
-
-	int numeroDni = 0, resto;
-	char letrasDNI[23] = 
-	{
-		'T','R','W','A','G',
-		'M','Y','F','P','D',
-		'X','B','N','J','Z',
-		'S','Q','V','H','L',
-		'C','K','E'
-	};
 
 	numeroDni = strtol(argv[1], NULL, 10);
 	resto = numeroDni % 23;
