@@ -59,7 +59,7 @@ void copiarArray(int *arr1,int *arr2)
 {
 	printf("Copiando el array...\n\n");
 	for(int i = 0; i < TAM_ARR; i++)
-	arr2[i] = arr1[i];
+		arr2[i] = arr1[i];
 }
 
 void clearBuffer()
