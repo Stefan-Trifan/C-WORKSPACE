@@ -29,7 +29,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
-#define TAM_ARRAY 3
+#define TAM_ARRAY 10
 void binarioPuro(int arreglo[]);
 void puntoFijo(int arreglo[]);
 void complementoA2(int arreglo[]);
@@ -91,15 +91,15 @@ int main(int argc, char *argv[])
 		switch (opcion)
 		{
 			case 1: 
-				printf("Seleccionaste Binario Puro");
+				printf("Seleccionaste Binario Puro\n");
 				binarioPuro(arreglo);
 				break;
 			case 2: 
-				printf("Seleccionaste Punto Fijo");
+				printf("Seleccionaste Punto Fijo\n");
 				puntoFijo(arreglo);
 				break;
 			case 3: 
-				printf("Seleccionaste Complemento A2");
+				printf("Seleccionaste Complemento A2\n");
 				complementoA2(arreglo);
 				break;
 			default: 
@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
 				break;
 		}
 	} 
-	while (opcion >= 1 || opcion <= 3);
+	while (opcion >= 1 && opcion <= 3);
 
 	
 	
@@ -121,17 +121,77 @@ int main(int argc, char *argv[])
 
 void binarioPuro(int arreglo[])
 {
-
+	int valor = 512, suma = 0;
+	for(int i = 0; i < 10; i++)
+	{
+		if(arreglo[i] == 1)
+		{
+			suma += valor;
+		}
+		valor /= 2;
+	}
+	printf("El valor en decimal es: %d\n\n", suma);
 }
 
 void puntoFijo(int arreglo[])
 {
-
+	int valor = 32, suma = 0;
+	float sumaDecimal = 0, valorDecimal = 0.5;
+	// Parte entera
+	for(int i = 0; i < 10; i++)
+	{
+		if(arreglo[i] == 1)
+		{
+			suma += valor;
+		}
+		valor /= 2;
+	}
+	//Parte decimal
+	for(int i = 6; i < 10; i++)
+	{
+		if(arreglo[i] == 1)
+		{
+			sumaDecimal += valorDecimal;
+		}
+		valorDecimal /= 2;
+		
+	}
+	printf("El valor del numero en punto fijo es %.4f\n\n", suma + sumaDecimal);
 }
 
 void complementoA2(int arreglo[])
 {
-
+	int posicion = 9; // Inicializar la variable posicion
+	for(int i = 0; i < 10; i++)
+	{
+		if(arreglo[i] == 1)
+		{
+			arreglo[i] = 0;
+		}
+		else
+		{
+			arreglo[i] = 1;
+		}
+	}
+	while(arreglo[posicion] == 1)
+	{
+		arreglo[posicion] = 0;
+		posicion--;
+		if(arreglo[posicion] == 0)
+		{
+			arreglo[posicion] = 1;
+			break;
+		}
+	}
+	if(arreglo[posicion] == 0)
+	{
+		arreglo[posicion] = 1;
+	}
+	for(int i = 0; i < 10; i++)
+	{
+		printf("[%d]\n", arreglo[i]);
+	}
+	printf("\n");
 }
 
 
