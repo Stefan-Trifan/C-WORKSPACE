@@ -19,15 +19,15 @@
    Inicio cabecera */
 
 #include <stdio.h>
-#define TAM_ARRAY 3
+#define TAM_ARRAY 10
 
-void modificar(int *arreglo);
+void crear(int *arreglo);
 void imprimirArray(int *arreglo);
 void sumatorioElementos(int arreglo[]);
 void productorioElementos(int *arreglo);
 void sumatorioMultiplosDeTres(int *arreglo);
 void multiplicarPorTresCadaElemento(int *arreglo);
-int pedirEntero();
+int  pedirEntero();
 void clearBuffer();
 
 /* _________________________________________
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	int arreglo[TAM_ARRAY] = {0},
 	    opcion             = 0;
 
-	modificar(arreglo);
+	crear(arreglo);
 	imprimirArray(arreglo);
 	printf("\n\n");
 
@@ -66,16 +66,20 @@ int main(int argc, char *argv[])
 		switch (opcion)
 		{
 			case 1: 
-				modificar(arreglo);
+				imprimirArray(arreglo);
+				crear(arreglo);
 				imprimirArray(arreglo);
 				break;
 			case 2: 
+				imprimirArray(arreglo);
 				sumatorioElementos(arreglo);
 				break;
 			case 3: 
+				imprimirArray(arreglo);
 				productorioElementos(arreglo);
 				break;
 			case 4: 
+				imprimirArray(arreglo);
 				sumatorioMultiplosDeTres(arreglo);
 				break;
 			case 5: 
@@ -100,21 +104,21 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-void modificar(int *arreglo)
+void crear(int *arreglo)
 {
 	for(int i = 0; i < TAM_ARRAY; i++)
 	{
-		printf("Introduce el elemento %d \n", i + 1);
+		printf("Introduce el elemento %d \n", i);
 		arreglo[i] = pedirEntero();
 	}
 }
 
 void imprimirArray(int *arreglo)
 {
-	printf("Los elementos de tu aray son : ");
+	printf("Los elementos de tu aray son: \n");
 	for(int i = 0; i < TAM_ARRAY; i++)
 	{
-		printf("%d ", arreglo[i]);
+		printf("[%i]: %d \n",i, arreglo[i]);
 	}
 }
 
@@ -162,7 +166,6 @@ void multiplicarPorTresCadaElemento(int *arreglo)
 int pedirEntero()
 {
 	int num = 0, esValido = 1;
-	printf("Introduce un numero entero \n");
 	printf("-> ");
 	do
 	{
