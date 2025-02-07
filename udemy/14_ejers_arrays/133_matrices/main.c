@@ -19,9 +19,11 @@
    Inicio cabecera */
 
 #include <stdio.h>
-// #DEFINE NUM_ROW 2
-// #DEFINE NUM_COL 2
-void crearMatriz(int arreglo[]);
+#define NUM_ROW 2
+#define NUM_COL 2
+void calcularSuma(int matriz1[NUM_ROW][NUM_COL], int matriz2[NUM_ROW][NUM_COL], int mi_matriz_resultado[NUM_ROW][NUM_COL]);
+void imprimirMatriz(int arreglo[NUM_ROW][NUM_COL]); // TODO: Ordenar por nivel de abstraccion
+void crearMatriz(int arreglo[NUM_ROW][NUM_COL]);
 int pedirEntero();
 void clearBuffer();
 
@@ -32,64 +34,25 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    int matriz1[2][2],
-		matriz2[2][2],
-		matriz_resultado[2][2];
+    int mi_matriz_1[NUM_ROW][NUM_COL],
+		mi_matriz_2[NUM_ROW][NUM_COL],
+		mi_matriz_resultado[NUM_ROW][NUM_COL];
 
 	// Creamos las matrices
-	// Posteriormente moverlas a funcion aparte
-	for(int i = 0; i < 2; i++)
-	{
-		for(int j = 0; j < 2; j++)
-		{
-			printf("matriz1[%d][%d] ", i, j);
-			matriz1[i][j] = pedirEntero();
-		}
-	}
-	printf("\n");
-	for(int i = 0; i < 2; i++)
-	{
-		for(int j = 0; j < 2; j++)
-		{
-			printf("matriz2[%d][%d] ", i, j);
-			matriz2[i][j] = pedirEntero();
-		}
-	}
-	printf("\n");
+	printf("mi_matriz_1: \n");
+	crearMatriz(mi_matriz_1);
+	printf("mi_matriz_2: \n");
+	crearMatriz(mi_matriz_2);
 	
 	// Imprimimos las matrices
-	printf("matriz1\n");
-	for(int i = 0; i < 2; i++)
-	{
-		for(int j = 0; j < 2; j++)
-		{
-			printf("[%d] ", matriz1[i][j]);
-		}
-		printf("\n");
-	}
-	printf("\n");
-	printf("matriz2\n");
-	for(int i = 0; i < 2; i++)
-	{
-		for(int j = 0; j < 2; j++)
-		{
-			printf("[%d] ", matriz2[i][j]);
-		}
-		printf("\n");
-	}
-	printf("\n");
+	printf("mi_matriz_1: \n");
+	imprimirMatriz(mi_matriz_1);
+	printf("mi_matriz_2: \n");
+	imprimirMatriz(mi_matriz_2);
 
 	// Calculamos la suma de las matrices
-	printf("matriz1 + matriz2 = \n");
-	for(int i = 0; i < 2; i++)
-	{
-		for(int j = 0; j < 2; j++)
-		{
-			matriz_resultado[i][j] = matriz1[i][j] + matriz2[i][j];
-			printf("[%d] ", matriz_resultado[i][j]);
-		}
-		printf("\n");
-	}
+	printf("mi_matriz_1 + mi_matriz_2 = \n");
+	calcularSuma(mi_matriz_1, mi_matriz_2, mi_matriz_resultado);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -98,9 +61,42 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-void crearMatriz(int arreglo[])
+void calcularSuma(int matriz1[NUM_ROW][NUM_COL], int matriz2[NUM_ROW][NUM_COL], int matriz_resultado[NUM_ROW][NUM_COL])
 {
-	
+	for(int i = 0; i < NUM_ROW; i++)
+	{
+		for(int j = 0; j < NUM_COL; j++)
+		{
+			matriz_resultado[i][j] = matriz1[i][j] + matriz2[i][j];
+		}
+	}
+	imprimirMatriz(matriz_resultado);
+}
+
+void imprimirMatriz(int matriz[NUM_ROW][NUM_COL])
+{
+	for(int i = 0; i < NUM_ROW; i++)
+	{
+		for(int j = 0; j < NUM_COL; j++)
+		{
+			printf("[%4d] ", matriz[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+
+void crearMatriz(int matriz[NUM_ROW][NUM_COL])
+{
+	for(int i = 0; i < NUM_ROW; i++)
+	{
+		for(int j = 0; j < NUM_COL; j++)
+		{
+			printf("matriz[%d][%d] ", i, j);
+			matriz[i][j] = pedirEntero();
+		}
+	}
+	printf("\n");
 }
 
 int pedirEntero()
