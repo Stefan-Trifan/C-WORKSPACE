@@ -21,9 +21,9 @@
 #include <stdio.h>
 #define ROWS 2
 #define COLS 2
-void calcularSuma(int mtx1[50][50], int mtx2[50][50], int mtx_result[50][50], int tam_rows, int tam_cols);
-void imprimirMatriz(int mtx[50][50], int tam_rows, int tam_cols); // TODO: Ordenar por nivel de abstraccion
-void crearMatriz(int mtx[50][50], int tam_rows, int tam_cols);
+void calcularSuma(int mtx1[15][15], int mtx2[15][15], int mtx_result[15][15], int tam_rows, int tam_cols);
+void imprimirMatriz(int mtx[15][15], int tam_rows, int tam_cols); // TODO: Ordenar por nivel de abstraccion
+void crearMatriz(int mtx[15][15], int tam_rows, int tam_cols);
 int pedirEntero();
 void clearBuffer();
 
@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    int my_mtx_1[50][50],
-		my_mtx_2[50][50],
-		my_mtx_result[50][50],
+    int my_mtx_1[15][15],
+		my_mtx_2[15][15],
+		my_mtx_result[15][15],
 		tam_rows = 1,
 		tam_cols = 1;
 
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-void calcularSuma(int mtx1[50][50], int mtx2[50][50], int mtx_result[50][50], int tam_rows, int tam_cols)
+void calcularSuma(int mtx1[15][15], int mtx2[15][15], int mtx_result[15][15], int tam_rows, int tam_cols)
 {
 	for(int i = 0; i < tam_rows; i++)
 	{
@@ -87,7 +87,7 @@ void calcularSuma(int mtx1[50][50], int mtx2[50][50], int mtx_result[50][50], in
 	imprimirMatriz(mtx_result, tam_rows, tam_cols);
 }
 
-void imprimirMatriz(int mtx[50][50], int tam_rows, int tam_cols)
+void imprimirMatriz(int mtx[15][15], int tam_rows, int tam_cols)
 {
 	for(int i = 0; i < tam_rows; i++)
 	{
@@ -99,7 +99,7 @@ void imprimirMatriz(int mtx[50][50], int tam_rows, int tam_cols)
 	}
 }
 
-void crearMatriz(int mtx[50][50], int tam_rows, int tam_cols)
+void crearMatriz(int mtx[15][15], int tam_rows, int tam_cols)
 {
 	for(int i = 0; i < tam_rows; i++)
 	{
