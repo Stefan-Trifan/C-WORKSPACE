@@ -15,71 +15,111 @@
 		LoremIpsum
 */
 
+// Plantillas testing
+// ./main OP1=5 OP2=7 OPE=suma
+// ./main OP1=5 OP2=7 OPE=resta
+// ./main OP1=5 OP2=7 OPE=multiplica
+
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
 	printf("\n_________________________________________START\n\n");
-    
-    float op1 = 0.0, op2 = 0.0;
 
-	int posicon_igual = 0;
-	int letra = 0;
+	long int op1 = 0, op2 = 0; 
+	char *endptr; 
+	char operacion[20]; 
+	int encontrado_op1 = 0, encontrado_op2 = 0, encontrado_ope = 0; 
 
-	char ope[14] = "";
-	char temp = ' ';
-
-	for(int argumento = 1; argumento < argc; argumento++)
+	// Verifica que se pasen exactamente 4 argumentos (incluyendo el nombre del programa)
+	if (argc != 4) 
 	{
-
-		do
+		printf("Uso incorrecto. Ejemplo: ./main OP1=5 OP2=7 OPE=suma\n");
+		return 1;
+	}
+	
+	// Itera sobre los argumentos para encontrar OP1, OP2 y OPE
+	for (int i = 1; i < argc; i++) 
+	{
+		if (argv[i][0] == 'O' && argv[i][1] == 'P' && argv[i][2] == '1' && argv[i][3] == '=') 
 		{
-			printf("%c", argv[argumento][letra]);
-			letra++;
-		} 
-		while (argv[argumento][letra] != '\0');
-
-		letra = 0;
-		printf(" ");
+			op1 = strtol(argv[i] + 4, &endptr, 10); // Convierte OP1 a entero
+			encontrado_op1 = 1;
+		}
+		else if (argv[i][0] == 'O' && argv[i][1] == 'P' && argv[i][2] == '2' && argv[i][3] == '=') 
+		{
+			op2 = strtol(argv[i] + 4, &endptr, 10); // Convierte OP2 a entero
+			encontrado_op2 = 1;
+		}
+		else if (argv[i][0] == 'O' && argv[i][1] == 'P' && argv[i][2] == 'E' && argv[i][3] == '=') 
+		{
+			int j = 4, k = 0;
+			while (argv[i][j] != '\0' && k < 19) 
+			{
+				operacion[k++] = argv[i][j++]; // Copia la operación a la cadena operacion
+			}
+			operacion[k] = '\0'; // Termina la cadena con un carácter nulo
+			encontrado_ope = 1;
+		}
 	}
 
+	// Verifica que se hayan encontrado todos los parámetros necesarios
+	if (!encontrado_op1 || !encontrado_op2 || !encontrado_ope) 
+	{
+		printf(
+			"\033[1;31mERROR: Error en los parámetros. Uso correcto: ./main OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
+		);
+		return 1;
+	}
+	
+	// Realiza la operación correspondiente según el valor de operacion
+	if (
+		operacion[0] == 's' &&
+		operacion[1] == 'u' &&
+		operacion[2] == 'm' &&
+		operacion[3] == 'a') 
+	{
+		printf("Resultado: %ld\n", op1 + op2); // Suma
+	}
+	else if (
+		operacion[0] == 'r' &&
+		operacion[1] == 'e' &&
+		operacion[2] == 's' &&
+		operacion[3] == 't' &&
+		operacion[4] == 'a') 
+	{
+		printf("Resultado: %ld\n", op1 - op2); // Resta
+	}
+	else if (
+		operacion[0]  == 'm' &&
+		operacion[1]  == 'u' &&
+		operacion[2]  == 'l' &&
+		operacion[3]  == 't' &&
+		operacion[4]  == 'i' &&
+		operacion[5]  == 'p' &&
+		operacion[6]  == 'l' &&
+		operacion[7]  == 'i' &&
+		operacion[8]  == 'c' &&
+		operacion[9]  == 'a')
+	{
+        printf("Resultado: %ld\n", op1 * op2);
+    }
+	else 
+	{
+        printf(
+			"\033[1;31mERROR: Error en los parámetros. Uso correcto: ./calculadora OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
+		);
+        return 1;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// TODO Hacer validacion para comprobar que el usuario ha introducido 4 parametros
-
-	// TODO Leer Operando (valido 1 y 2)
-		// TODO Comprobar Inicio
-		// TODO Si Correcto -> Asignar Operando
-
-	// TODO Leer Operación
-		// TODO Comprobar Inicio
-		// TODO Si Correcto -> Asignar Operacion
-
-	// TODO Realizar Operaciónote
-    
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
@@ -87,7 +127,6 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-void clearBuffer()
-{
+void clearBuffer(){
 	while (getchar() != '\n');
 }
