@@ -45,12 +45,9 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	for(int i = 0; i < numLetras; i++)
+	for(int i = 0, j = numLetras - 1; i < numLetras; i++, j--)
 	{
-		for(int j = numLetras; j >= 0; j--)
-		{
-			arr_reves[i] = arr_normal[j];
-		}
+		arr_reves[i] = arr_normal[j];
 	}
 
 	printf("Introduce el array final es: ");
