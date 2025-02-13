@@ -20,6 +20,8 @@
 
 #include <stdio.h>
 #define TAM 30
+void pedirNombre(char *nombre_antigo);
+void copiarArray(char *nombre_nuevo, char *nombre_antigo, int num_letras);
 void clearBuffer();
 
 /* _________________________________________
@@ -33,18 +35,7 @@ int main(int argc, char *argv[])
 	int num_letras = 0;
 
 	// Pedimos el nombre
-	printf("Introduce tu nombre: \n");
-	for(int i = 0; i < TAM; i++)
-	{
-		nombre_antigo[i] = getchar();
-
-		if (nombre_antigo[i] == '\n') // Si el usuario presiona ENTER, termina la lectura
-		{ 
-            nombre_antigo[i] = '\0'; // Reemplaza '\n' por '\0' para que sea una cadena válida
-            break;
-        }
-	}
-	printf("\n");
+	pedirNombre(nombre_antigo);
 
 	// Imprimimos el nombre antigo
 	printf("Gracias, tu nombre en el arr antiguo es: \n");
@@ -53,8 +44,9 @@ int main(int argc, char *argv[])
 		printf("%c", nombre_antigo[i]);	
 		num_letras++;
 	}
+	printf("\n\n");
 
-	// Este bloque imprime el nombre, pero con un while. Es un bloque prescindible e informativo
+	// Este bloque imprime el nombre, pero con un while. Es un bloque prescindible
 	/* 	
 		while(nombre_antigo[num_letras] != '\0')
 		{
@@ -65,12 +57,7 @@ int main(int argc, char *argv[])
 	*/
 
 	// Copiamos el array de antiguo a nuevo
-	printf("Copiando...");
-	for(int i = 0; i < num_letras; i++)
-	{
-		nombre_nuevo[i] = nombre_antigo[i];
-	}
-	printf("\n\n");
+	copiarArray(nombre_nuevo, nombre_antigo, num_letras);
 
 	// Imprimimos el nombre nuevo
 	printf("Tu nombre en el arr nuevo es: \n");
@@ -86,7 +73,36 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
+void pedirNombre(char *nombre_antigo)
+{
+	printf("Introduce tu nombre: \n");
+	for(int i = 0; i < TAM; i++)
+	{
+		nombre_antigo[i] = getchar();
+
+		if (nombre_antigo[i] == '\n') // Si el usuario presiona ENTER, termina la lectura
+		{ 
+            nombre_antigo[i] = '\0'; // Reemplaza '\n' por '\0' para que sea una cadena válida
+            break;
+        }
+	}
+	printf("\n");
+}
+
+void copiarArray(char *nombre_nuevo, char *nombre_antigo, int num_letras)
+{
+	printf("Copiando...");
+	for(int i = 0; i < num_letras; i++)
+	{
+		nombre_nuevo[i] = nombre_antigo[i];
+	}
+	printf("\n\n");
+}
+
 void clearBuffer()
 {
 	while (getchar() != '\n');
 }
+
+
+
