@@ -21,9 +21,8 @@
    Inicio cabecera */
 
 #include <stdio.h>
-#define PALABRAS 5
-#define LETRAS 6
-char pedirCadena();
+#define SEXO 6
+int pedirEntero();
 void clearBuffer();
 
 /* _________________________________________
@@ -33,37 +32,89 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    char alumnos[PALABRAS][LETRAS] = {0};
+	int num_alumnos        = 0,
+	    num_mujeres        = 0,
+	    num_hombres        = 0,
+	    num_indeterminados = 0;
+	char alumnos[50][SEXO] = {0};
+
+	printf("Introduce un numero de alumnos (máximo 50): \n");
+	num_alumnos = pedirEntero();
+	printf("\n");
 
 	// Pedimos el genero de cada alumno
-	for(int i = 0; i < PALABRAS; i++)
+	printf("Introduce el genero para cada alumno (man OR woman)\n");
+	for(int i = 0; i < num_alumnos; i++)
 	{
-		printf("Genero alumno[%d]: ", i);
-		for(int j = 0; j < LETRAS; j++)
+		printf("Genero alumno[%d]: ", i + 1);
+		for(int j = 0; j < SEXO; j++)
 		{
-			while(alumnos[i][j] =! '\n')
+			alumnos[i][j] = getchar();
+			if(alumnos[i][j] == '\n')
 			{
-				alumnos[i][j] = getchar();
-				if(alumnos[i][j] =! '\n')
-				{
-					alumnos[i][j] == '\n';
-					break;
-				}
+				alumnos[i][j] = '\0';
+				break;
 			}
 		}
 	}
+	printf("\n");
 
-    
-	printf("\n_________________________________________END\n\n");
+	// Recorremos el array comprobando elemento por elemento si es hombre o mujer
+	for(int i = 0; i < num_alumnos; i++)
+	{
+		if(
+			alumnos[i][0] == 'w' && 
+			alumnos[i][1] == 'o' && 
+			alumnos[i][2] == 'm' && 
+			alumnos[i][3] == 'a' && 
+			alumnos[i][4] == 'n')
+		{
+			num_mujeres++;
+		}
+		else if(
+			alumnos[i][0] == 'm' && 
+			alumnos[i][1] == 'a' && 
+			alumnos[i][2] == 'n')
+		{
+			num_hombres++;
+		}
+		else
+		{
+			num_indeterminados++;
+		}
+	}
+
+	printf(
+		"Hombres:        %d\n"
+		"Mujeres:        %d\n"
+		"Indeterminados: %d", num_hombres, num_mujeres, num_indeterminados);
+
+    printf("\n_________________________________________END\n\n");
 	return 0;
 }
 
 /* _________________________________________
    Inicio definicion de funciones */
 
-char pedirCadena()
+int pedirEntero()
 {
-
+	int num = 0, esValido = 1;
+	printf("-> ");
+	do
+	{
+		esValido = scanf("%d", &num);
+		clearBuffer();
+		if (esValido == 0 || num <= 0 || num > 50)
+		{
+			printf(
+				"\033[1;31mERROR: El numero debe estar comprendido entre 1 y 50\n\033[0m"
+				"\033[1;31m--> \033[0m"
+			);
+			esValido = 0;
+		}
+	}
+	while (esValido != 1);
+	return num;
 }
 
 void clearBuffer()
