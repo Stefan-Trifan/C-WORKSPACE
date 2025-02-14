@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	{
 		for(int col = 0; col < NUM_COLS; col++)
 		{
-			printf("M(%i,%i) = ", row + 1, col + 1);
+			printf("M(%d,%d) = ", row + 1, col + 1);
 			scanf("%6d", &matriz[row][col]);
 		}
 	}

@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	printf("El array ha quedado de esta forma: ");
 	for(int i = 0; i < 10; i++)
 	{
-		printf("%i", array[i]);
+		printf("%d", array[i]);
 	}
     
 	printf("\n_________________________________________END\n\n");

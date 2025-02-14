@@ -35,12 +35,12 @@ int main(int argc, char *argv[])
     int arreglo[NUM_ROWS][NUM_COLS] = {0};
 
 	// Construimos la matriz
-	printf("Por favor, introduce los elementos uno por uno de la matriz M(%i,%i) \n\n", NUM_ROWS, NUM_COLS);
+	printf("Por favor, introduce los elementos uno por uno de la matriz M(%d,%d) \n\n", NUM_ROWS, NUM_COLS);
 	for(int i = 0; i < NUM_ROWS; i++)
 	{
 		for(int j = 0; j < NUM_COLS; j++)
 		{
-			printf("M(%i,%i) = ", i + 1, j + 1);
+			printf("M(%d,%d) = ", i + 1, j + 1);
 
 			arreglo[i][j] = pedirEntero();
 			
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	}
 
 	// Imprimimos la matriz
-	printf("\nM[%i][%i] = \n", NUM_ROWS, NUM_COLS);
+	printf("\nM[%d][%d] = \n", NUM_ROWS, NUM_COLS);
 	printf("{\n");
 	for(int i = 0; i < NUM_ROWS; i++)
 	{

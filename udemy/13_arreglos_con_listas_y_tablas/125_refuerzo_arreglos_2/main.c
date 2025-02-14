@@ -118,7 +118,7 @@ void imprimirArray(int *arreglo)
 	printf("Los elementos de tu aray son: \n");
 	for(int i = 0; i < TAM_ARRAY; i++)
 	{
-		printf("[%i]: %d \n",i, arreglo[i]);
+		printf("[%d]: %d \n",i, arreglo[i]);
 	}
 }
 

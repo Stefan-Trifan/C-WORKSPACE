@@ -26,11 +26,11 @@ int main() {
     }
 
     for (i = 0; i < 10; i++){
-        printf("%i, ",a[i]);
+        printf("%d, ",a[i]);
     }
 
     printf("\nEscribe un numero: ");
-    scanf("%i",&dato);
+    scanf("%d",&dato);
 
     //Busqueda Binaria
 
@@ -57,7 +57,7 @@ int main() {
     if (band == 'F'){
             printf("El numero no existe\n");
         }else if (band == 'V'){
-            printf("El numero existe en la posicion %i",mitad);
+            printf("El numero existe en la posicion %d",mitad);
         }
     
     return 0;

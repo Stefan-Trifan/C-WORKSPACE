@@ -45,21 +45,21 @@ int main(int argc, char *argv[])
 	};
 
 	// Pedmimos los elementos
-	printf("Introduce los elementos para la matriz M(%i,%i,%i) \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
+	printf("Introduce los elementos para la matriz M(%d,%d,%d) \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
 	for(int h = 0; h < NUM_DIM3; h++)
 	{
 		for(int i = 0; i < NUM_ROWS; i++)
 		{
 			for(int j = 0; j < NUM_COLS; j++)
 			{
-				printf("M(%i,%i,%i) = ", h, i, j);
+				printf("M(%d,%d,%d) = ", h, i, j);
 				arreglo_3D[h][i][j] = pedirEntero();
 			}
 		}
 	}
 
 	// Mostramos por pantalla
-	printf("\n\nM(%i,%i,%i) = \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
+	printf("\n\nM(%d,%d,%d) = \n", NUM_DIM3, NUM_ROWS, NUM_COLS);
 	printf("{\n");
 	for(int h = 0; h < NUM_DIM3; h++)
 	{

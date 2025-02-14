@@ -58,8 +58,8 @@ int main(int argc, char *argv[])
 	{
 		for(int col = 0; col < NUM_COLS; col++)
 		{
-			printf("M(%i,%i) = ", row + 1, col + 1);
-			scanf("%i", &matriz[row][col]);
+			printf("M(%d,%d) = ", row + 1, col + 1);
+			scanf("%d", &matriz[row][col]);
 		}
 	}
 

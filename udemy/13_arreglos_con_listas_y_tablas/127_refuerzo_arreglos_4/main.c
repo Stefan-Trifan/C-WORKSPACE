@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 	);
 
 	// void crearArreglo(arreglo)
-	printf("Primero llena el arreglo de %i elementos\n", TAM_ARRAY);
+	printf("Primero llena el arreglo de %d elementos\n", TAM_ARRAY);
 	for(int i = 0; i < TAM_ARRAY; i++)
 	{
 		printf("Elemento %d ", i);
