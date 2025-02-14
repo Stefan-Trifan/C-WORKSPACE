@@ -35,27 +35,26 @@ int main(int argc, char *argv[])
     
 	// Array de numeros impares
 	int array[10]={2,4,6,8,0,1,3,5,7,9};
-    char numeroEncontrado = 'F';
-	int num = 0, posicion = 0, i;
+    char numeroEncontrado = ' ';
+	int num = 0, posicion = 0;
 
 	printf("Introduce un numero: \n");
 	num = pedirEntero();
 
-	i = 0;
-	while(numeroEncontrado == 'F' && i < 10)
+	for(int i = 0; i < 10; i++)
 	{
+		posicion++;
 		if(array[i] == num)
 		{
 			printf("Numero encontrado!\n");
 			numeroEncontrado = 'V';
 			break;
 		}
-		i++;
 	}
 
 	if(numeroEncontrado == 'V')
 	{
-		printf("El numero %d está en la posicion %d\n", num, i + 1);
+		printf("El numero %d está en la posicion %d\n", num, posicion);
 	}
 	else if(numeroEncontrado == 'F')
 	{
