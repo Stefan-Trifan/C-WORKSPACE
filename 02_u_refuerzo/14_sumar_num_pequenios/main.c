@@ -30,21 +30,46 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    int arr1[TAM] = {0}, num1 = 0, num2 = 0;
+	// todo inicializar el array en 0
+    int array[TAM] = {19,5,42,2,77}, num1 = 0, num2 = 0, resultado;
 
 	// Rellenamos el array
 	printf("Introduce los valores del array: \n");
 	for(int i = 0; i < TAM; i++)
 	{
 		printf("[%d]: ", i);
-		arr1[i] = pedirEntero();
+		array[i] = pedirEntero();
 	}
 
-	// Buscamos el numero mas pequenio
+	if(array[0] <= array[1])
+	{
+		num1 = array[0];
+		num2 = array[1];
+	}
+	else if (array[1] <= array[0])
+	{
+		num2 = array[0];
+		num1 = array[1];
+	}
+	
+	for(int i = 2; i < TAM; i++)
+	{
+		if(array[i] <= num1)
+		{
+			num2 = num1;
+			num1 = array[i];
+		}
+		else if(array[i] < num2)
+		{
+			num2 = array[i];
+		}
+	}
 
-	// Buscamos el segundo numero mas pequeño
+	printf(
+		"num1 = %d\n"
+		"num2 = %d\n"
+		"suma = %d\n", num1, num2, num1 + num2);
 
-	// Devuelve los numeeros mas pequenios
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
