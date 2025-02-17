@@ -35,22 +35,22 @@ struct autor_t
 {
 	char nombre[TAM_AUTOR_NOMBRE];
 	char apellido[TAM_AUTOR_APELLIDO];
-	// test char nacionalidad[TAM_AUTOR_NACIONALIDAD];
+	char nacionalidad[TAM_AUTOR_NACIONALIDAD];
 };
 struct libro_t
 {
 	char titulo [TAM_TITULO];
 	char ISBN[TAM_ISBN];
-	// test int nPags;
-	// test char editorial[TAM_EDITORIAL];
+	int nPags;
+	char editorial[TAM_EDITORIAL];
 	struct autor_t autor;
 };
 
 // Funciones del enunciado
+void imprimirLibro(struct libro_t biblioteca[MAX_LIBROS], int i);
 void introducirLibro(struct libro_t biblioteca[MAX_LIBROS], int *contadorLibros);
 void verLibros(struct libro_t biblioteca[MAX_LIBROS], int *contadorLibros);
 void buscarLibros(struct libro_t biblioteca[MAX_LIBROS], int *contadorLibros);
-void imprimirLibro(int i, struct libro_t biblioteca[MAX_LIBROS]);
 // Funciones auxiliares
 void pedirCadena(char texto[], int tam);
 int pedirEntero();
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 			case 2: 
 				verLibros(biblioteca, &contadorLibros);
 				break;
-			case 3: // TODO : La opción de búsqueda de libros por nombre del autor.
+			case 3:
 				buscarLibros(biblioteca, &contadorLibros);
 				break;
 			default: 
@@ -104,30 +104,37 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
+void imprimirLibro(struct libro_t biblioteca[MAX_LIBROS], int i)
+{
+	printf("LIBRO %d\n\n", i + 1);
+	printf("Titulo libro:       %s\n", biblioteca[i].titulo);;
+	printf("ISBN libro:         %s\n", biblioteca[i].ISBN);
+	printf("Nr. Paginas libro:  %d\n", biblioteca[i].nPags);
+	printf("Editorial libro:    %s\n", biblioteca[i].editorial);
+	printf("Nombre autor:       %s\n", biblioteca[i].autor.nombre);
+	printf("Apellido autor:     %s\n", biblioteca[i].autor.apellido);
+	printf("Nacionalidad autor: %s\n", biblioteca[i].autor.nacionalidad);
+	printf("_________________________________________ \n\n");
+}
+
 void introducirLibro(struct libro_t biblioteca[MAX_LIBROS], int *contadorLibros)
 {
 	printf("Has elegido la opcion \"Introducir libro\"\n\n");
 
 	printf("Titulo libro: \n");
 	pedirCadena(biblioteca[*contadorLibros].titulo, TAM_TITULO);
-
 	printf("ISBN libro: \n");
 	pedirCadena(biblioteca[*contadorLibros].ISBN, TAM_ISBN);
-
-	// test printf("Nr. Paginas libro: \n");
-	// test biblioteca[*contadorLibros].nPags = pedirEntero();
-
-	// test printf("Editorial libro: \n");
-	// test pedirCadena(biblioteca[*contadorLibros].editorial, TAM_EDITORIAL);
-
+	printf("Nr. Paginas libro: \n");
+	biblioteca[*contadorLibros].nPags = pedirEntero();
+	printf("Editorial libro: \n");
+	pedirCadena(biblioteca[*contadorLibros].editorial, TAM_EDITORIAL);
 	printf("Nombre autor: \n");
 	pedirCadena(biblioteca[*contadorLibros].autor.nombre, TAM_AUTOR_NOMBRE);
-
-	// test printf("Apellido autor: \n");
-	// test pedirCadena(biblioteca[*contadorLibros].autor.apellido, TAM_AUTOR_APELLIDO);
-
-	// test printf("Nacionalidad autor: \n");
-	// test pedirCadena(biblioteca[*contadorLibros].autor.nacionalidad, TAM_AUTOR_NACIONALIDAD);
+	printf("Apellido autor: \n");
+	pedirCadena(biblioteca[*contadorLibros].autor.apellido, TAM_AUTOR_APELLIDO);
+	printf("Nacionalidad autor: \n");
+	pedirCadena(biblioteca[*contadorLibros].autor.nacionalidad, TAM_AUTOR_NACIONALIDAD);
 
 	(*contadorLibros)++;
 	printf("Nr. actual de libros en la bilbioteca: %d\n", *contadorLibros);
@@ -141,15 +148,7 @@ void verLibros(struct libro_t biblioteca[MAX_LIBROS], int *contadorLibros)
 	printf("_________________________________________ \n\n");
 	for(int i = 0; i < *contadorLibros; i++)
 	{
-		printf("LIBRO %d\n\n", i);
-		printf("Titulo libro:       %s\n", biblioteca[i].titulo);;
-		printf("ISBN libro:         %s\n", biblioteca[i].ISBN);
-		// test printf("Nr. Paginas libro:  %d\n", biblioteca[i].nPags);
-		// test printf("Editorial libro:    %s\n", biblioteca[i].editorial);
-		printf("Nombre autor:       %s\n", biblioteca[i].autor.nombre);
-		// test printf("Apellido autor:     %s\n", biblioteca[i].autor.apellido);
-		// test printf("Nacionalidad autor: %s\n", biblioteca[i].autor.nacionalidad);
-		printf("_________________________________________ \n\n");
+		imprimirLibro(biblioteca, i);
 	}
 
 	printf("\n\n\n");
@@ -167,21 +166,9 @@ void buscarLibros(struct libro_t biblioteca[MAX_LIBROS], int *contadorLibros)
 	printf("_________________________________________ \n\n");
 	for(int i = 0; i < *contadorLibros; i++)
 	{
-		if(
-			biblioteca[i].autor.nombre[0] == autorUsuario[0] && 
-			biblioteca[i].autor.nombre[1] == autorUsuario[1] &&
-			biblioteca[i].autor.nombre[2] == autorUsuario[2] &&
-			biblioteca[i].autor.nombre[3] == autorUsuario[3])
+		if (strcasestr(biblioteca[i].autor.nombre, autorUsuario) != NULL)
 		{
-			printf("LIBRO %d\n\n", i);
-			printf("Titulo libro:       %s\n", biblioteca[i].titulo);;
-			printf("ISBN libro:         %s\n", biblioteca[i].ISBN);
-			// test printf("Nr. Paginas libro:  %d\n", biblioteca[i].nPags);
-			// test printf("Editorial libro:    %s\n", biblioteca[i].editorial);
-			printf("Nombre autor:       %s\n", biblioteca[i].autor.nombre);
-			// test printf("Apellido autor:     %s\n", biblioteca[i].autor.apellido);
-			// test printf("Nacionalidad autor: %s\n", biblioteca[i].autor.nacionalidad);
-			printf("_________________________________________ \n\n");
+			imprimirLibro(biblioteca, i);
 			encontrado = 1;
 		}
 	}
@@ -194,26 +181,13 @@ void buscarLibros(struct libro_t biblioteca[MAX_LIBROS], int *contadorLibros)
 	printf("\n\n\n");
 }
 
-void imprimirLibro(int i, struct libro_t biblioteca[MAX_LIBROS])
-{
-	printf("LIBRO %d\n\n", i);
-	printf("Titulo libro:       %s\n", biblioteca[i].titulo);;
-	printf("ISBN libro:         %s\n", biblioteca[i].ISBN);
-	// test printf("Nr. Paginas libro:  %d\n", biblioteca[i].nPags);
-	// test printf("Editorial libro:    %s\n", biblioteca[i].editorial);
-	printf("Nombre autor:       %s\n", biblioteca[i].autor.nombre);
-	// test printf("Apellido autor:     %s\n", biblioteca[i].autor.apellido);
-	// test printf("Nacionalidad autor: %s\n", biblioteca[i].autor.nacionalidad);
-	printf("_________________________________________ \n\n");
-}
-
 // Funciones auxiliares
 void pedirCadena(char texto[], int tam)
 {
 	int esValido = 1, i = 0;
 	char newChar;
 
-	printf("(máximo %d caracteres) -> ", tam - 1);
+	printf("(Máx. %d caracteres) -> ", tam - 1);
 
 	do
 	{
