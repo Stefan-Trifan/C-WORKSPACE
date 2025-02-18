@@ -23,7 +23,6 @@
 
 #define MAX_LIBROS 100
 
-
 #define TAM_TITULO 21
 #define TAM_ISBN 14
 #define TAM_EDITORIAL 21
