@@ -1,11 +1,11 @@
 /*
-	*	Autor
-		Stefan Trifan
+    * Autor
+        Stefan Trifan
 
-	*   Estado
+    * Estado
 
-	* 	Enunciado X
-		LoremIpsum
+    * Enunciado X
+        Lorem Ipsum
 */
 
 /* _________________________________________
@@ -21,14 +21,13 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(int argc, char *argv[])
-{
-   printf("\n_________________________________________START\n\n");
-      
-      
-      
-   printf("\n_________________________________________END\n\n");
-   return 0;
+int main(int argc, char *argv[]) {
+    printf("\n_________________________________________START\n\n");
+
+
+
+    printf("\n_________________________________________END\n\n");
+    return 0;
 }
 
 /* _________________________________________
@@ -37,7 +36,6 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-void clearBuffer()
-{
-   while (getchar() != '\n');
+void clearBuffer() {
+    while (getchar() != '\n');
 }
