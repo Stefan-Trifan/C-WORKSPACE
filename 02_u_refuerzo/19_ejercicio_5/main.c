@@ -1,10 +1,10 @@
 /*
-	* Autor
+	*   Autor
 		Stefan Trifan
 
-	* Estado
+	*   Estado
 
-	* Enunciado X
+	*   Enunciado X
 		Lorem Ipsum
 */
 
