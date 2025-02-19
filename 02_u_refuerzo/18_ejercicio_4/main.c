@@ -2,24 +2,20 @@
 	*	Autor
 		Stefan Trifan
 
-	* 	Compilar
-		mac     : comp (compilar)
-				  run  (ejecutar)
-				  brun (compilar y ejecutar)
-		windows : gcc main.c -o main.exe
-				: ./main.exe
-
-	*   Estado: 
+	*   Estado
 
 	* 	Enunciado X
 		LoremIpsum
 */
 
 /* _________________________________________
-   Inicio cabecera */
+Inicio cabecera */
 
 #include <stdio.h>
 
+// Funciones del programa
+
+// Funciones auxiliares
 void clearBuffer();
 
 /* _________________________________________
@@ -27,18 +23,21 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
-    
-    
-    
-	printf("\n_________________________________________END\n\n");
-	return 0;
+   printf("\n_________________________________________START\n\n");
+      
+      
+      
+   printf("\n_________________________________________END\n\n");
+   return 0;
 }
 
 /* _________________________________________
    Inicio definicion de funciones */
 
+// Funciones del programa
+
+// Funciones auxiliares
 void clearBuffer()
 {
-	while (getchar() != '\n');
+   while (getchar() != '\n');
 }

@@ -27,9 +27,10 @@
 	  Inicio main() */
    
    	int main(int argc, char *argv[]){
-	   printf("\n_________________________________________START\n\n");
-   
-		float num1      = 0,
+	    printf("\n_________________________________________START\n\n");
+		
+		float nums[4]   = {0},
+		      num1      = 0,
 		      num2      = 0,
 		      num3      = 0,
 		      num4      = 0,
@@ -39,44 +40,26 @@
 		      temp      = 0,
 		      sumaTotal = 0,
 		      contNum   = 0;
+
 		char *endptr; 
 
 		contNum = argc;
    
-		if(contNum <= 2 || contNum >= 8)
+		if(contNum < 3 || contNum > 6)
 		{
 			printf("Uso %s num1 num2 num3\n", argv[0]);
 			printf("\n_________________________________________END\n\n");
 			return 1;
 		}
 
-		// Guardamos en las variables los parametros
-		if(argc >= 3)
-			num1 = strtof(argv[1], &endptr);
-			num2 = strtof(argv[2], &endptr);
-		if(argc >= 4)
-			num3 = strtof(argv[3], &endptr);
-		if(argc >= 5)
-			num4 = strtof(argv[4], &endptr);
-		if(argc >= 6)
-			num5 = strtof(argv[5], &endptr);
+		// Fijamos maximo y minimo el primer elemento
+		numMax = strtof(argv[1], &endptr);
+		numMin = strtof(argv[1], &endptr);
 
-		// Buscamos el maximo y el minimoe ntre los 2 primeros
-		if(num1 >= num2)
-		{
-			numMax = num1;
-			numMin = num2;
-		}
-		if(num2 >= num1)
-		{
-			numMax = num2;
-			numMin = num1;
-		}	
-
-		// Recorremos
 		for(int i = 1; i < contNum; i++)
 		{
-			sumaTotal += strtof(argv[i], &endptr);
+			nums[i - 1] = strtof(argv[i], &endptr);
+			sumaTotal += nums[i - 1];
 
 			temp = strtof(argv[i], &endptr);
 			if(temp <= numMin)
@@ -85,9 +68,10 @@
 				numMax = temp;
 		}
 	
-		printf("El numero minimo es:    %f\n", numMin);
-		printf("El numero máximo es:    %f\n", numMax);
-		printf("La media de los num es: %f\n", sumaTotal / contNum);
+		printf("El numero minimo es:              %f\n", numMin);
+		printf("El numero máximo es:              %f\n", numMax);
+		printf("La media de los num es:           %f\n", sumaTotal / contNum);
+		printf("Elemento que no se pudo converir: %c\n", *endptr);
 
 	
 		printf("\n_________________________________________END\n\n");
