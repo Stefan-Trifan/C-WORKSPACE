@@ -33,8 +33,12 @@ int main(int argc, char *argv[])
 	int num = 0;
 
     printf("Introduce un numero entero \n");
-    num = pedirEntero();
-
+	do
+	{
+		num = pedirEntero();
+	} 
+	while (num < 0); // Condiciones específicas de cada ejercicio en particular
+    
     printf("Numero es: %d", num);
     
 	printf("\n_________________________________________END\n\n");
@@ -49,18 +53,19 @@ int pedirEntero()
 	int num = 0, esValido = 1;
 	printf("-> ");
 	do
-	{	
+	{
 		esValido = scanf("%d", &num);
 		clearBuffer();
-		if(esValido == 0)
+		if (esValido == 0) // Aquí se pueden añadir mas condiciones
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
+				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
+				"Por favor, inténtelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;
 		}
-	} 
+	}
 	while (esValido != 1);
 	return num;
 }

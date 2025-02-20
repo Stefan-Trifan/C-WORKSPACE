@@ -33,9 +33,13 @@ int main(int argc, char *argv[])
 	float num = 0;
 
 	printf("Introduce un numero: \n");
-	num = pedirFloat();
+	do
+	{
+		num = pedirFloat();
+	} 
+	while (num < 0); // Condiciones específicas de cada ejercicio en particular
 
-	printf("Numero es: %f", num);
+	printf("Numero es: %2f", num);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -50,18 +54,19 @@ float pedirFloat()
 	int esValido = 1;
 	printf("-> ");
 	do
-	{	
+	{
 		esValido = scanf("%f", &num);
 		clearBuffer();
-		if(esValido == 0) // Aqui se pueden añadir mas condiciones
+		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
+				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
+				"Por favor, inténtelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
-			esValido == 0; // Util cuando hay mas de una condicion
+			esValido = 0;
 		}
-	} 
+	}
 	while (esValido != 1);
 	return num;
 }
