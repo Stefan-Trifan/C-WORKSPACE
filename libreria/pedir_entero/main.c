@@ -32,10 +32,18 @@ int main(int argc, char *argv[])
 
 	int num = 0;
 
-    printf("Introduce un numero entero \n");
+    printf("Introduce un numero entero \n-> ");
 	do
 	{
 		num = pedirEntero();
+		if(num < 0)
+		{
+			printf(
+				"\033[1;31mERROR: El numero tiene que ser positivo. \n"
+				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31m-> \033[0m"
+			);
+		}
 	} 
 	while (num < 0); // Condiciones específicas de cada ejercicio en particular
     
@@ -50,13 +58,12 @@ int main(int argc, char *argv[])
 
 int pedirEntero()
 {
-	int num = 0, esValido = 1;
-	printf("-> ");
+	int num = 0, esValido = 0;
 	do
 	{
 		esValido = scanf("%d", &num);
 		clearBuffer();
-		if (esValido == 0) // Aquí se pueden añadir mas condiciones
+		if (esValido == 0)
 		{
 			printf(
 				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"

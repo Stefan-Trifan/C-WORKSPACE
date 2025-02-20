@@ -19,8 +19,9 @@
    Inicio cabecera */
 
 #include <stdio.h>
-float pedirFloat();
-void  clearBuffer();
+void clearBuffer();
+
+int pedirEntero();
 
 /* _________________________________________
    Inicio main() */
@@ -29,26 +30,15 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	float num = 0;
+	int num = 0;
 
-	printf("Introduce un numero: \n-> ");
+    printf("Introduce un numero entero \n-> ");
 
-	do
-	{
-		num = pedirFloat();
-		if(num < 0)
-		{
-			printf(
-				"\033[1;31mERROR: El numero tiene que ser mayor o igual a 0. \n"
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
-				"\033[1;31m-> \033[0m"
-			);
-		}
-	} 
-	while (num < 0); // Aqui se pueden añadir otras validaciones adicionales
-	
+	num = pedirEntero();
 
-	printf("Numero es: %2f", num);
+
+    
+    printf("Numero es: %d", num);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -57,18 +47,26 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-float pedirFloat()
+int pedirEntero()
 {
-	float num = 0;
-	int esValido = 0;
+	int num = 0, esValido = 0;
 	do
 	{
-		esValido = scanf("%f", &num);
+		esValido = scanf("%d", &num);
 		clearBuffer();
 		if (esValido == 0)
 		{
 			printf(
 				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
+				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31m-> \033[0m"
+			);
+			esValido = 0;
+		}
+		else if(num < 0)
+		{
+			printf(
+				"\033[1;31mERROR: El numero tiene que ser positivo. \n"
 				"Por favor, inténtelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);

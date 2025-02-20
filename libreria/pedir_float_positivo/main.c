@@ -19,7 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
-float pedirFloat();
+float pedirFloarPositivo();
 void  clearBuffer();
 
 /* _________________________________________
@@ -33,21 +33,8 @@ int main(int argc, char *argv[])
 
 	printf("Introduce un numero: \n-> ");
 
-	do
-	{
-		num = pedirFloat();
-		if(num < 0)
-		{
-			printf(
-				"\033[1;31mERROR: El numero tiene que ser mayor o igual a 0. \n"
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
-				"\033[1;31m-> \033[0m"
-			);
-		}
-	} 
-	while (num < 0); // Aqui se pueden añadir otras validaciones adicionales
+	num = pedirFloarPositivo();
 	
-
 	printf("Numero es: %2f", num);
     
 	printf("\n_________________________________________END\n\n");
@@ -57,7 +44,7 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-float pedirFloat()
+float pedirFloarPositivo()
 {
 	float num = 0;
 	int esValido = 0;
@@ -69,6 +56,14 @@ float pedirFloat()
 		{
 			printf(
 				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
+				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31m-> \033[0m"
+			);
+		}
+		else if(num < 0)
+		{
+			printf(
+				"\033[1;31mERROR: El numero debe ser mayor o igual a 0. \n"
 				"Por favor, inténtelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
