@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-void clearBuffer() {
+void clearBuffer()
+{
 	while (getchar() != '\n');
 }

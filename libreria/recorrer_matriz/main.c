@@ -20,8 +20,8 @@
 
 #include <stdio.h>
 
-#define NUMFILAS 2
-#define NUMCOL 3
+#define ROW 2
+#define COL 3
 
 void clearBuffer();
 
@@ -33,13 +33,16 @@ int main(int argc, char *argv[])
 	printf("\n_________________________________________START\n\n");
     
     // Declaración correcta del array
-	int elementos[NUMFILAS][NUMCOL] = {{1, 2, 3}, {4, 5, 6}};
+	int mtx[ROW][COL] = {
+		{1, 2, 3}, 
+		{4, 5, 6}
+	};
 
-	int indiceFila, indiceCol;
-	for (indiceFila = 0; indiceFila < NUMFILAS; ++indiceFila){
-		for (indiceCol=0 ; indiceCol < NUMCOL ; ++indiceCol){
-			printf("%d\n",elementos[indiceFila][indiceCol]);
+	for (int i = 0; i < ROW; ++i){
+		for (int j = 0 ; j < COL ; ++j){
+			printf("%d ",mtx[i][j]);
 		}
+		printf("\n");
     }
 
 	printf("\n_________________________________________END\n\n");
