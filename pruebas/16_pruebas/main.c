@@ -25,7 +25,11 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
+	char nombre[10] = {0};
 
+	scanf("%s", nombre);
+
+	printf("Nombre es: %s\n", nombre);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;
