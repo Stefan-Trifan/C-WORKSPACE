@@ -12,7 +12,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
-
+#define TAM 5
 // Funciones del programa
 
 // Funciones auxiliares
@@ -25,7 +25,12 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    
+    char nombre[TAM] = {0};
+
+	printf("Tu nombre (max %d caracteres): ", TAM - 1);
+	fgets(nombre, sizeof(nombre), stdin);
+
+	printf("Tu nombre es: %s", nombre);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
