@@ -14,11 +14,11 @@
 #include <stdio.h>
 #include <string.h>
 #define TAM 20
-struct persona
+typedef struct persona_t
 {
 	char nombre[TAM];
 	int edad;
-};
+}persona_t;
 // Funciones del programa
 
 // Funciones auxiliares
@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
 
 	int i = 0;
     
-    struct persona persona1 = {"Steve", 19};
-	struct persona persona2, persona3;
+    persona_t persona1 = {"Steve", 19};
+	persona_t persona2, persona3;
 
 	printf("Introduce nombre persona2: ");
 	while(i < TAM - 1 && ((persona2.nombre[i] = getchar()) != '\n'))
