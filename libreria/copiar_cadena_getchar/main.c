@@ -1,11 +1,11 @@
 /*
-	*	Autor
-		Stefan Trifan
+        *	Autor
+                Stefan Trifan
 
-	*   Estado
+        *   Estado
 
-	* 	Enunciado X
-		LoremIpsum
+        * 	Enunciado X
+                LoremIpsum
 */
 
 /* _________________________________________
@@ -23,21 +23,21 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
-    
+    printf("\n_________________________________________START\n\n");
+
     char str[TAM]; // 5 caracteres + '\0'
     int i = 0;
 
-    // Lee carácter a carácter hasta leer 5 o encontrar fin de línea/EOF.
-    while (i < TAM - 1 && (str[i] = getchar()) != '\n') {
+    while (i < TAM - 1 && (str[i] = getchar()) != '\n')
+    {
         i++; // Incrementa i solo si el carácter es válido
     }
-
     str[i] = '\0'; // Agregar el terminador nulo
+
     printf("Leído: %s\n", str);
-    
-	printf("\n_________________________________________END\n\n");
-	return 0;
+
+    printf("\n_________________________________________END\n\n");
+    return 0;
 }
 
 /* _________________________________________
@@ -48,5 +48,6 @@ int main(int argc, char *argv[])
 // Funciones auxiliares
 void clearBuffer()
 {
-	while (getchar() != '\n');
+    while (getchar() != '\n')
+        ;
 }

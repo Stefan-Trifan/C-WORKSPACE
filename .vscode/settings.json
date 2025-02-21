@@ -4,6 +4,7 @@
         "stdio.h": "c",
         "ratio": "c",
         "queue": "c",
-        "stack": "c"
+        "stack": "c",
+        "sstream": "c"
     }
 }

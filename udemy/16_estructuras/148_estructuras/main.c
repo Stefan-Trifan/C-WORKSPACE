@@ -12,9 +12,11 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#include <string.h>
+#define TAM 20
 struct persona
 {
-	char nombre[20];
+	char nombre[TAM];
 	int edad;
 };
 // Funciones del programa
@@ -28,16 +30,30 @@ void clearBuffer();
 int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
+
+	int i = 0;
     
-    struct persona persona1 = {"Steve", 19}, persona2;
+    struct persona persona1 = {"Steve", 19};
+	struct persona persona2, persona3;
 
-	persona2.nombre = "Marcos"; 
+	printf("Introduce nombre persona2: ");
+	while(i < TAM - 1 && ((persona2.nombre[i] = getchar()) != '\n'))
+	{
+		i++;
+	}
+	persona2.nombre[i] = '\0';
+
+	strcpy(persona3.nombre, "Guille");
+
 	persona2.edad = 2; 
-
+	persona3.edad = 2; 
 	printf("Nombre: %s\n", persona1.nombre);
 	printf("Edad:   %d\n", persona1.edad);
 	printf("Nombre: %s\n", persona2.nombre);
 	printf("Edad:   %d\n", persona2.edad);
+	printf("Nombre: %s\n", persona3.nombre);
+	printf("Edad:   %d\n", persona3.edad);
+	
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
