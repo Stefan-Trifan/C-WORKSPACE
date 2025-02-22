@@ -12,11 +12,11 @@
    Inicio cabecera */
 
 #include <stdio.h>
-#define TAM 2
+
 // Funciones del programa
-void pedirCadena(char *text, int tam);
 
 // Funciones auxiliares
+void pedirCadena(char texto[], int tam);
 void clearBuffer();
 
 /* _________________________________________
@@ -26,13 +26,7 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    char nombre[TAM] = {0};
-
-	printf("Escribe tu nombre\n");
-	pedirCadena(nombre, TAM);
-	printf("\n");
-
-	printf("Nombre completo es: %s\n", nombre);
+    
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -42,42 +36,37 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
-
-// Funciones auxiliares
-void pedirCadena(char *text, int tam)
+void pedirCadena(char texto[], int tam)
 {
-	int esValido = 0, i = 0;
+	int esValido = 1, i = 0;
+	char newChar;
 
-	printf("Max. %d caracteres -> ", tam - 1);
+	printf("(Max. %d caracteres):\n", tam - 1);
+	printf("-> ");
 
 	do
 	{
+		esValido = 1;
 		i = 0;
-		while(i < tam)
+		// Leer la entrada hasta '\n' o hasta que se llene el array (dejando espacio para '\0')
+		while (((newChar = getchar()) != '\n') && (i < tam - 1))
 		{
-			text[i] = getchar();
-			if(text[i] == '\n' && i < tam)
-			{
-				text[i] = '\0';
-				esValido = 1;
-				break;
-			}
+			texto[i] = newChar;
 			i++;
 		}
-	
-		if (i == tam)
+		texto[i] = '\0'; // Finalizar la cadena
+
+		if (i == tam - 1 && newChar != '\n')
 		{
-			printf(
-				"\033[1;31mERROR: Has superado el tamanio.\n\033[0m"
-				"\033[1;31mPor favor, inténtelo de nuevo. \n\033[0m"
-				"\033[1;31m-> \033[0m");
+			printf("\033[1;31mERROR: Has superado el tamaño. Por favor, inténtelo de nuevo. \n\033[0m"
+				   "\033[1;31m-> \033[0m");
 			clearBuffer();
 			esValido = 0;
 		}
-	} 
-	while (esValido != 1);
+	} while (!esValido);
 }
 
+// Funciones auxiliares
 void clearBuffer()
 {
 	while (getchar() != '\n');

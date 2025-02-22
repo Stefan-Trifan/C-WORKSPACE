@@ -25,16 +25,17 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    char str[TAM]; // 5 caracteres + '\0'
+    char nombre[TAM]; 
+
     int i = 0;
-
-    while (i < TAM - 1 && (str[i] = getchar()) != '\n')
+    while (i < TAM - 1 && (nombre[i] = getchar()) != '\n')
     {
-        i++; // Incrementa i solo si el carácter es válido
+        i++; 
     }
-    str[i] = '\0'; // Agregar el terminador nulo
+    nombre[i] = '\0'; 
+    clearBuffer();
 
-    printf("Leído: %s\n", str);
+    printf("Leído: %s\n", nombre);
 
     printf("\n_________________________________________END\n\n");
     return 0;
@@ -48,6 +49,5 @@ int main(int argc, char *argv[])
 // Funciones auxiliares
 void clearBuffer()
 {
-    while (getchar() != '\n')
-        ;
+    while (getchar() != '\n');
 }
