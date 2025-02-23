@@ -13,9 +13,10 @@
 /* _________________________________________
    Inicio cabecera */
 #include <stdio.h>
+#define GREEN_BOLD "\033[1;32m"
 #define RED_BOLD "\033[1;31m"
 #define RESET "\033[0m"
-#define TAM 21
+#define TAM 8
 // Funciones del programa
 int cadenasIguales(char* cadena1, char* cadena2);
 int tamCadena(char* cadena);
@@ -30,59 +31,52 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    int son_iguales = 1, i = 0, j = 0;
     char cadena1[TAM] = {0}, cadena2[TAM] = {0};
+    int i1 = 0, i2 = 0, son_iguales = 0;
 
     if(argc != 3)
     {
-        printf(RED_BOLD"Tienes que introducir 2 argumentos\n"RESET);
-        printf("\n_________________________________________FAIL\n\n");
+        printf(RED_BOLD"Tienes que introducir 2 argumentos\n");
+        printf("\n_________________________________________FAIL\n\n"RESET);
         return 0;
     }
 
-    while(i < TAM - 1 && argv[1][i] != '\0')
+    // Primer argumento
+    while(argv[1][i1] != '\0')
     {
-        cadena1[i] =  argv[1][i];
-        i++;
-    }
-    cadena1[i] = '\0';
-
-
-    while(j < TAM - 1 && argv[2][j] != '\0')
-    {
-        cadena2[j] =  argv[2][j];
-        j++;
-    }
-    cadena2[j] = '\0';
-
-    printf("Cadena1: %s\n", cadena1);
-    printf("Cadena2: %s\n", cadena2);
-    printf("i: %d\n", i);
-    printf("j: %d\n", j);
-
-    if(i == j)
-    {
-        for(int k = 0; k < i; k++)
+        cadena1[i1] = argv[1][i1];
+        i1++;
+        if(i1 >= TAM)
         {
-            if(cadena1[k] != cadena2[k])
-            {
-                son_iguales = 0;
-                break;
-            }
+            printf(RED_BOLD"Has introducido demasiados caracteres\n");
+            printf("\n_________________________________________FAIL\n\n"RESET);
+            return 0;
         }
     }
-    else
+    cadena1[i1] = '\0';
+
+    while(argv[2][i2] != '\0')
     {
-        son_iguales = 0;
+        cadena2[i2] = argv[2][i2];
+        i2++;
+        if(i2 >= TAM)
+        {
+            printf(RED_BOLD"Has introducido demasiados caracteres\n");
+            printf("\n_________________________________________FAIL\n\n"RESET);
+            return 0;
+        }
     }
+    cadena2[i2] = '\0';
+
+    son_iguales = cadenasIguales(cadena1, cadena2);
 
     if(son_iguales)
     {
-        printf("Las cadenas son iguales");
+        printf(GREEN_BOLD"Las cadenas son iguales"RESET);
     }
     else
     {
-        printf("Las cadenas no son iguales");
+        printf(RED_BOLD"Las cadenas no son iguales"RESET);
     }
 
     printf("\n_________________________________________END\n\n");
@@ -99,7 +93,26 @@ int main(int argc, char *argv[])
  */
 int cadenasIguales(char* cadena1, char* cadena2)
 {
-    return 0;
+    int tam1 = 0, tam2 = 0;
+
+    tam1 = tamCadena(cadena1);
+    tam2 = tamCadena(cadena2);
+
+    if(tam1 == tam2)
+    {
+        for(int i = 0; i < tam1; i++)
+        {
+            if(cadena1[i] != cadena2[i])
+            {
+                return 0;
+            }
+        }
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
 /**
@@ -108,7 +121,12 @@ int cadenasIguales(char* cadena1, char* cadena2)
  */
 int tamCadena(char* cadena)
 {
-    return 0;
+    int i = 0;
+    while(cadena[i] != '\0')
+    {
+        i++;
+    }
+    return i;
 }
 
 // Funciones auxiliares
