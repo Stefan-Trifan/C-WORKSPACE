@@ -1,11 +1,11 @@
 /*
         *	Autor
-                Stefan Trifan
+            Stefan Trifan
 
         *   Estado
 
         * 	Enunciado X
-                LoremIpsum
+            Esta funcion se queda solo con los caracteres necesarios
 */
 
 /* _________________________________________
