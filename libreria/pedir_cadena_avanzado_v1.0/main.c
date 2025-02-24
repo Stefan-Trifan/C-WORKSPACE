@@ -44,6 +44,15 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
+
+//      tam : 5
+//  tam - 1 : 4
+
+//  Entrada : rojo\n
+//        c : cojo\0
+//  text[i] : cojo\0
+//        i : 4
+
 void pedirCadena(char *text, int tam)
 {
     int i = 0, esValido = 0;
@@ -57,9 +66,7 @@ void pedirCadena(char *text, int tam)
 
             // printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
             if(c == '\n')
-			{
 				break;
-			}
                 
             text[i] = c;
             i++; 
