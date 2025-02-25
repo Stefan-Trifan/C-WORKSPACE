@@ -3,9 +3,10 @@
         Stefan Trifan
 
     *   Estado
+        Done
 
-    *   Enunciado X
-        Lorem Ipsum
+    *   Enunciado 1
+        Contador de caracteres
 */
 
 /* _________________________________________

@@ -3,9 +3,10 @@
         Stefan Trifan
 
     *   Estado
+        Done
 
-    *   Enunciado X
-        Lorem Ipsum
+    *   Enunciado 5 
+        Partidos de ping pong
 */
 
 /* _________________________________________

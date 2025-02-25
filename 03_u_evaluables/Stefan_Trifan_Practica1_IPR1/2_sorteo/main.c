@@ -3,9 +3,10 @@
         Stefan Trifan
 
     *   Estado
+        Done
 
-    *   Enunciado X
-        Lorem Ipsum
+    *   Enunciado 2 
+        Sorteo
 */
 
 /* _________________________________________
