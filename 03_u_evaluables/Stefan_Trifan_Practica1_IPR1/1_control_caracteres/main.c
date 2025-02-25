@@ -22,7 +22,6 @@
 
 #define TAM 51
 #define RED_BOLD "\033[1;31m"
-#define GREEN_BOLD "\033[1;32m"
 #define YELLOW_BOLD "\033[1;33m"
 #define RESET "\033[0m"
 
@@ -120,7 +119,6 @@ int main(int argc, char *argv[])
 /**
  * Función que lee del buffer de entrada y salida una cadena de
  * como máximo tam caracteres y devuelve el numero de caracteres
- * 
  * 
  * @param[out] cadena: Puntero donde se almacena el nombre del usuario 
  * @param[in] tam: Maximo de caracteres que puede tener la cadena
