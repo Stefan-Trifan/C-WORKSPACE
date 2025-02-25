@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
             "ERROR: Debes introducir 4 argumentos\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
-            return 1;
+        return 1;
     }
         
     // Declaracion de variables
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
             "ERROR: Los argumentos deben ser letras\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
-            return 1;
+        return 1;
     }
     // Comprobar si los argumentos son distintos entre ellos
     else if((c1 == c2) || (c1 == c3) || (c2 == c3))
@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
             "ERROR: Los argumentos deben ser distintos\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
-            return 1;
+        return 1;
     }
     // Comprobar si los argumentos son de una sola letra
     else if((argv[1][1] != '\0') || (argv[2][1] != '\0') || (argv[3][1] != '\0'))
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
             "ERROR: Los argumentos deben ocupar un solo caracter\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
-            return 1;
+        return 1;
     }
 
     // Pedimos el texto al usuario
@@ -139,9 +139,7 @@ int leerCadena(char* cadena, int tam)
             c = getchar();
     
             if(c == '\n')
-            {
                 break;
-            }
     
             cadena[i] = c;
             i++;
@@ -161,9 +159,7 @@ int leerCadena(char* cadena, int tam)
                 esValido = 0;
             }
             else
-            {
                 esValido = 1;
-            }
         }
     } 
     while(esValido != 1);
