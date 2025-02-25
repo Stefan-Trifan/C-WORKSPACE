@@ -85,6 +85,10 @@ void pedirCadena(char *text, int tam)
                 clearBuffer();
                 esValido = 0;
             }
+            else
+            {
+                esValido = 1;
+            }
         }
     } 
     while (esValido != 1);
