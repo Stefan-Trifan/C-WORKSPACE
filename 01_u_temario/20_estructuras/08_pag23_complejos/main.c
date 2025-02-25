@@ -34,15 +34,17 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	char *endptr2, *endptr3, *endptr4, *endptr5, signo;
-	complejos_t complejo[2];
-
 	if(argc != 6)
 	{
-		printf(RED_BOLD"ERROR: Tienes que introducir 6 argumentos");
+		printf(RED_BOLD
+			"ERROR: Tienes que introducir 6 argumentos\n"
+			"USO  : ./main 1 2 3 4\n");
 		printf("\n_________________________________________FAIL\n\n"RESET);
 		return 0;
 	}
+
+	char *endptr2, *endptr3, *endptr4, *endptr5, signo;
+	complejos_t complejo[2];
 
 	// Asignamos los parametros a nuestras variables
 	signo = *argv[1];
@@ -73,7 +75,7 @@ int main(int argc, char *argv[])
 	{
 		printf(RED_BOLD 
 			"ERROR: Alguno de los argumentos que has introducido no es un numero\n"
-			"USO  : ./main 1 2 3 4");
+			"USO  : ./main 1 2 3 4\n");
 		printf("\n_________________________________________FAIL\n\n"RESET);
 		return 0;
 	}

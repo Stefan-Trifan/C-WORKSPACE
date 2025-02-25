@@ -12,10 +12,11 @@
    Inicio cabecera */
 
 #include <stdio.h>
-
+#define TAM 5
 // Funciones del programa
 
 // Funciones auxiliares
+pedirCadena(char *texto, int tam);
 void clearBuffer();
 
 /* _________________________________________
@@ -24,8 +25,11 @@ void clearBuffer();
 int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
+
+	char texto[TAM];
     
-    
+    printf("Introduce una cadena: ");
+	pedirCadena(texto, TAM);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -37,6 +41,11 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
+pedirCadena(char *texto, int tam)
+{
+	
+}
+
 void clearBuffer()
 {
 	while (getchar() != '\n');
