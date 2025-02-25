@@ -63,14 +63,20 @@ int main(int argc, char *argv[])
 
 
     // Asignamos el nombre de cada jugador a las cadenas de nuestro array
-    // for(int i = 0; i < cont_jugadores; i++)
-    // {
-    //     for(int j = 0; j < TAM_STRING; j++)
-    //     {
-    //         jugador[i][j] = argv[i][j];
-
-    //     }
-    // }
+    for(int i = 0; i < cont_jugadores; i++)
+    {
+        int j = 0;
+        while(argv[i][j] != '\0')
+        {
+            jugador[i][j] = argv[i][j];
+            j++;
+        }
+        if(argv[i][j] != '\0')
+        {
+            jugador[i][j] = '\0';
+        }
+    }
+    printf("%s");
 
     // Comprobar nombres jugadores
 
@@ -181,7 +187,6 @@ int procesarJugadores(int i, char *argv[], int cont_jugadores)
     }
     return 0;
 }
-
 
 // Funciones auxiliares
 void clearBuffer()
