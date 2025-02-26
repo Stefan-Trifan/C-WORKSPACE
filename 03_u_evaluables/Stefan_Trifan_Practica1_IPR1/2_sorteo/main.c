@@ -29,8 +29,8 @@
 #define RESET "\033[0m"
 
 // Funciones del programa
-int procesarArgumentos(int argc, char *argv[], int *cont_jugadores, int *hay_num_ganadores);
-int procesarJugadores(int i, char *argv[], int cont_jugadores);
+int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[]);
+int procesarJugadores(int i, int cont_jugadores, char *argv[]);
 void guardarJugadores();
 
 // Funciones auxiliares
@@ -50,15 +50,15 @@ int main(int argc, char *argv[])
         error             = 0; // Guarda distintos codigos de errores
 
     // La funcion devuelve un codigo de error si se supera el limite de jugadores
-    error = procesarArgumentos(argc, argv, &cont_jugadores, &hay_num_ganadores);
+    error = procesarArgumentos(&cont_jugadores, &hay_num_ganadores, argc, argv);
     if(error != 0)
         return 1;
 
     // La funcion devuelve un error si los nombres de los jugadores no son correctos
     if(hay_num_ganadores)
-        error = procesarJugadores(2, argv, cont_jugadores); 
+        error = procesarJugadores(2, cont_jugadores, argv); 
     else
-        error = procesarJugadores(1, argv, cont_jugadores);
+        error = procesarJugadores(1, cont_jugadores, argv);
     if(error != 0)
         return 1;
 
@@ -79,7 +79,6 @@ int main(int argc, char *argv[])
             jugador[i][j] = '\0';
         }
     }
-    printf("%s");
 
     // Comprobar nombres jugadores
 
@@ -104,7 +103,7 @@ int main(int argc, char *argv[])
  * @param[out] hay_num_ganadores : 1 si hay numero de ganadores o 0 si hay solo 1 ganador
  * @return Si hay un error, devuelve el codigo del error
  */
-int procesarArgumentos(int argc, char *argv[], int *cont_jugadores, int *hay_num_ganadores)
+int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[])
 {
     // Si el usuario ejecuta el programa sin argumentos devuelve error
     if(argc == 1)
@@ -157,7 +156,7 @@ int procesarArgumentos(int argc, char *argv[], int *cont_jugadores, int *hay_num
  *      Los nombres de los jugadores contienen numero o son compuestos
  *      El numero de caracteres de un jugador supera el tamaño soportado por el string
  */
-int procesarJugadores(int i, char *argv[], int cont_jugadores)
+int procesarJugadores(int i, int cont_jugadores, char *argv[])
 {
     int num_letras_argumento = 0; // Cuenta el numero de caracteres por string
 
