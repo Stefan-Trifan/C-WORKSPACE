@@ -31,6 +31,7 @@
 // Funciones del programa
 int procesarArgumentos(int argc, char *argv[], int *cont_jugadores, int *hay_num_ganadores);
 int procesarJugadores(int i, char *argv[], int cont_jugadores);
+void guardarJugadores();
 
 // Funciones auxiliares
 void clearBuffer();
@@ -63,6 +64,8 @@ int main(int argc, char *argv[])
 
 
     // Asignamos el nombre de cada jugador a las cadenas de nuestro array
+    if(hay_num_ganadores)
+        guardarJugadores();
     for(int i = 0; i < cont_jugadores; i++)
     {
         int j = 0;
@@ -186,6 +189,17 @@ int procesarJugadores(int i, char *argv[], int cont_jugadores)
         }
     }
     return 0;
+}
+
+/**
+ * 
+ * 
+ * @param
+ * @param
+ */
+void guardarJugadores()
+{
+
 }
 
 // Funciones auxiliares
