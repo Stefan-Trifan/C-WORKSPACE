@@ -9,24 +9,23 @@
         Sorteo
 
     *   Testing
-        Con numero:
         Bien: ./main 1 Jose Steve 
-        Bien: ./main 1 Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate (10 jugadores, argc = 12)
-        Bien: ./main 1 Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate Juan (11 jugadores)
-        Bien: ./main Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate (10 jugadores, argc = 11)
+        Bien: ./main Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate
 
+        Mal: ./main 1 Jose
         Mal: ./main 1 uvuvuevuevueenyetuenwuevueugwemubwemossas Steve 
-        Mal: ./main 1 Jose-Vicente 3- Steve        
+        Mal: ./main 1 Jose-Vicente 3- Steve       
+        Mal: ./main = Steve Jose
 */
 
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // Para llamar a strtol()
 
 #define MAX_JUGADORES 10
-#define TAM_STRING 40
+#define TAM_STRING 41
 #define RED_BOLD "\033[1;31m"
 #define GREEN_BOLD "\033[1;32m"
 #define YELLOW_BOLD "\033[1;33m"
@@ -50,8 +49,8 @@ int main(int argc, char *argv[])
     // Definimos las variables
     char jugador[MAX_JUGADORES][TAM_STRING] = {0};
     int cont_jugadores = 0,
-        num_ganadores  = 0, // Especifica el usuario ha declarado un numero de jugadores
-        error          = 0; // Guarda distintos codigos de errores
+        num_ganadores  = 0, // Especifica si el usuario ha declarado un numero de jugadores
+        error          = 0; 
 
     // La funcion devuelve un codigo de error si se supera el limite de jugadores
     error = procesarArgumentos(&cont_jugadores, &num_ganadores, argc, argv);
@@ -71,7 +70,12 @@ int main(int argc, char *argv[])
         guardarJugadoresEnArray(2, jugador, argc , argv); // Comenzamos en argv[2]
     else
         guardarJugadoresEnArray(1, jugador, argc , argv); // Comenzamos en argv[1]
-    
+
+    // seleccionarGanador
+    if(num_ganadores = 0)
+        num_ganadores = 1;
+            
+
     printf("Num Ganadores    : %d\n", num_ganadores);
     printf("DEBUG Jugador 1  : %s\n", jugador[0]);
     printf("DEBUG Jugador 1  : %s\n", jugador[1]);
@@ -111,8 +115,8 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
     {
         printf(RED_BOLD
             "ERROR: Tienes que introducir minimo 2 jugadores\n"YELLOW_BOLD
-            "USO 1: ./main [nombre] [nombre]...[nombre]\n"
-            "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
+            "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
+            "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
             "\n_________________________________________FAIL\n\n"RESET);
         return 1; // error
     }
@@ -124,8 +128,8 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         {
             printf(RED_BOLD
                 "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10\n"YELLOW_BOLD
-                "USO 1: ./main [nombre] [nombre]...[nombre]\n"
-                "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
+                "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
+                "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
             return 1; // error
         }
@@ -140,8 +144,8 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         {
             printf(RED_BOLD
                 "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10\n"YELLOW_BOLD
-                "USO 1: ./main [nombre] [nombre]...[nombre]\n"
-                "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
+                "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
+                "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
             return 1; // error
         }
@@ -184,8 +188,8 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
                 printf(RED_BOLD
                     "ERROR: Los nombres de los jugadores no pueden \n"
                     "empezar por numero o tener nombres compuestos\n"YELLOW_BOLD
-                    "USO 1: ./main [nombre] [nombre]...[nombre]\n"
-                    "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
+                    "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
+                    "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                     "\n_________________________________________FAIL\n\n"RESET);
                 return 1; // error
             }
@@ -194,8 +198,8 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
             {
                 printf(RED_BOLD
                     "ERROR: El numero maximo de caracteres por jugador es %d\n"YELLOW_BOLD
-                    "USO 1: ./main [nombre] [nombre]...[nombre]\n"
-                    "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
+                    "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
+                    "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                     "\n_________________________________________FAIL\n\n"RESET, TAM_STRING - 1);
                 return 1; // error
             }
@@ -215,18 +219,18 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
  */
 void guardarJugadoresEnArray(int i, char jugador[MAX_JUGADORES][TAM_STRING], int argc ,char *argv[])
 {
-    int mejorarNombreVariable = i;
+    int i_inicio = i;
     for(; i < argc; i++)
         {
             int j = 0;
             while(argv[i][j] != '\0')
             {
-                jugador[i - mejorarNombreVariable][j] = argv[i][j];
+                jugador[i - i_inicio][j] = argv[i][j];
                 j++;
             }
             if(argv[i][j] == '\0')
             {
-                jugador[i - mejorarNombreVariable][j] = '\0';
+                jugador[i - i_inicio][j] = '\0';
             }
         }
 }
