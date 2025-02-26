@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
         guardarJugadoresEnArray(1, jugador, argc , argv); // Comenzamos en argv[1]
 
     // seleccionarGanador
-    if(num_ganadores = 0)
+    if(num_ganadores == 0)
         num_ganadores = 1;
             
 
