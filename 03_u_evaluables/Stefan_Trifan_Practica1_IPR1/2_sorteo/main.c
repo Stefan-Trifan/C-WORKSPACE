@@ -23,6 +23,8 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#include <stdlib.h>
+
 #define MAX_JUGADORES 10
 #define TAM_STRING 40
 #define RED_BOLD "\033[1;31m"
@@ -31,7 +33,7 @@
 #define RESET "\033[0m"
 
 // Funciones del programa
-int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[]);
+int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *argv[]);
 int comprobarNombresJugadores(int i, int argc, char *argv[]);
 void guardarJugadoresEnArray(int i, char jugador[MAX_JUGADORES][TAM_STRING], int argc ,char *argv[]);
 
@@ -47,17 +49,17 @@ int main(int argc, char *argv[])
 
     // Definimos las variables
     char jugador[MAX_JUGADORES][TAM_STRING] = {0};
-    int cont_jugadores    = 0,
-        hay_num_ganadores = 0, // Especifica el usuario ha declarado un numero de jugadores
-        error             = 0; // Guarda distintos codigos de errores
+    int cont_jugadores = 0,
+        num_ganadores  = 0, // Especifica el usuario ha declarado un numero de jugadores
+        error          = 0; // Guarda distintos codigos de errores
 
     // La funcion devuelve un codigo de error si se supera el limite de jugadores
-    error = procesarArgumentos(&cont_jugadores, &hay_num_ganadores, argc, argv);
+    error = procesarArgumentos(&cont_jugadores, &num_ganadores, argc, argv);
     if(error != 0)
         return 1;
 
     // La funcion devuelve un error si los nombres de los jugadores no son correctos
-    if(hay_num_ganadores)
+    if(num_ganadores)
         error = comprobarNombresJugadores(2, argc, argv); // Comenzamos en argv[2]
     else
         error = comprobarNombresJugadores(1, argc, argv); // Comenzamos en argv[1]
@@ -65,22 +67,22 @@ int main(int argc, char *argv[])
         return 1;
         
     // Guardamos en jugador[][] los jugadores
-    if(hay_num_ganadores)
+    if(num_ganadores)
         guardarJugadoresEnArray(2, jugador, argc , argv); // Comenzamos en argv[2]
     else
         guardarJugadoresEnArray(1, jugador, argc , argv); // Comenzamos en argv[1]
     
-
+    printf("Num Ganadores    : %d\n", num_ganadores);
     printf("DEBUG Jugador 1  : %s\n", jugador[0]);
-    printf("DEBUG Jugador 2  : %s\n", jugador[1]);
-    printf("DEBUG Jugador 3  : %s\n", jugador[2]);
-    printf("DEBUG Jugador 4  : %s\n", jugador[3]);
-    printf("DEBUG Jugador 5  : %s\n", jugador[4]);
-    printf("DEBUG Jugador 6  : %s\n", jugador[5]);
-    printf("DEBUG Jugador 7  : %s\n", jugador[6]);
-    printf("DEBUG Jugador 8  : %s\n", jugador[7]);
-    printf("DEBUG Jugador 9  : %s\n", jugador[8]);
-    printf("DEBUG Jugador 10 : %s\n", jugador[9]);
+    printf("DEBUG Jugador 1  : %s\n", jugador[1]);
+    printf("DEBUG Jugador 2  : %s\n", jugador[2]);
+    printf("DEBUG Jugador 3  : %s\n", jugador[3]);
+    printf("DEBUG Jugador 4  : %s\n", jugador[4]);
+    printf("DEBUG Jugador 5  : %s\n", jugador[5]);
+    printf("DEBUG Jugador 6  : %s\n", jugador[6]);
+    printf("DEBUG Jugador 7  : %s\n", jugador[7]);
+    printf("DEBUG Jugador 8  : %s\n", jugador[8]);
+    printf("DEBUG Jugador 9  : %s\n", jugador[9]);
 
     // Asignamos un ganador
     printf("\n_________________________________________END\n\n");
@@ -98,16 +100,19 @@ int main(int argc, char *argv[])
  *     jugadores que participan para cada caso
  * 
  * @param[out] cont_jugadores : guarda el numero de ganadores que participan en el sorteo
- * @param[out] hay_num_ganadores : guarda 1 si hay numero de ganadores o 0 si hay solo 1 ganador
+ * @param[out] num_ganadores : guarda 1 si hay numero de ganadores o 0 si hay solo 1 ganador
  * @return Si hay un error, devuelve 1
  */
-int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[])
+int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *argv[])
 {
+    char *endptr;
     // Si el usuario ejecuta el programa sin argumentos devuelve error
     if(argc == 1)
     {
         printf(RED_BOLD
-            "ERROR: Tienes que introducir minimo 2 jugadores\n"
+            "ERROR: Tienes que introducir minimo 2 jugadores\n"YELLOW_BOLD
+            "USO 1: ./main [nombre] [nombre]...[nombre]\n"
+            "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
             "\n_________________________________________FAIL\n\n"RESET);
         return 1; // error
     }
@@ -118,12 +123,14 @@ int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, ch
         if(argc < 4 || argc > MAX_JUGADORES + 2)
         {
             printf(RED_BOLD
-                "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10\n"
+                "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10\n"YELLOW_BOLD
+                "USO 1: ./main [nombre] [nombre]...[nombre]\n"
+                "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
             return 1; // error
         }
         *cont_jugadores = argc - 2;
-        *hay_num_ganadores = 1;
+        *num_ganadores = strtol(argv[1], &endptr, 10);
     }
     // Si el 2 argumento no es un numero
     else
@@ -132,7 +139,9 @@ int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, ch
         if(argc < 3 || argc > MAX_JUGADORES + 1)
         {
             printf(RED_BOLD
-                "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10\n"
+                "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10\n"YELLOW_BOLD
+                "USO 1: ./main [nombre] [nombre]...[nombre]\n"
+                "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
             return 1; // error
         }
@@ -174,7 +183,9 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
             {
                 printf(RED_BOLD
                     "ERROR: Los nombres de los jugadores no pueden \n"
-                    "empezar por numero o tener nombres compuestos\n"
+                    "empezar por numero o tener nombres compuestos\n"YELLOW_BOLD
+                    "USO 1: ./main [nombre] [nombre]...[nombre]\n"
+                    "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                     "\n_________________________________________FAIL\n\n"RESET);
                 return 1; // error
             }
@@ -182,7 +193,9 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
             if(num_letras_argumento > TAM_STRING - 1)
             {
                 printf(RED_BOLD
-                    "ERROR: El numero maximo de caracteres por jugador es %d\n"
+                    "ERROR: El numero maximo de caracteres por jugador es %d\n"YELLOW_BOLD
+                    "USO 1: ./main [nombre] [nombre]...[nombre]\n"
+                    "USO 2: ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                     "\n_________________________________________FAIL\n\n"RESET, TAM_STRING - 1);
                 return 1; // error
             }
