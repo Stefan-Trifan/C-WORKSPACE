@@ -164,8 +164,13 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
         while(argv[i][j] != '\0')
         {
             num_letras_argumento++;
-            // Jugadores llevan numeros o tienen nombres compuestos
-            if((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-')
+            // Jugadores llevan algun caracter que no sea letra
+            if(
+                !(
+                    (argv[i][j] >= 'a' && argv[i][j] <= 'z') || 
+                    (argv[i][j] >= 'A' && argv[i][j] <= 'Z')
+                )
+            )
             {
                 printf(RED_BOLD
                     "ERROR: Los nombres de los jugadores no pueden \n"
