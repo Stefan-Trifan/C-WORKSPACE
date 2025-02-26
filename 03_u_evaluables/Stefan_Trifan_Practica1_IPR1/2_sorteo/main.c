@@ -31,7 +31,7 @@
 // Funciones del programa
 int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[]);
 int procesarJugadores(int i, int cont_jugadores, char *argv[]);
-void guardarJugadores();
+// void guardarJugadores();
 
 // Funciones auxiliares
 void clearBuffer();
@@ -54,38 +54,25 @@ int main(int argc, char *argv[])
     if(error != 0)
         return 1;
 
+    printf("DEBUG           argc: %d\n", argc);
+
     // La funcion devuelve un error si los nombres de los jugadores no son correctos
     if(hay_num_ganadores)
-        error = procesarJugadores(2, cont_jugadores, argv); 
-    else
-        error = procesarJugadores(1, cont_jugadores, argv);
-    if(error != 0)
-        return 1;
-
-
-    // Asignamos el nombre de cada jugador a las cadenas de nuestro array
-    if(hay_num_ganadores)
-        guardarJugadores();
-    for(int i = 0; i < cont_jugadores; i++)
     {
-        int j = 0;
-        while(argv[i][j] != '\0')
-        {
-            jugador[i][j] = argv[i][j];
-            j++;
-        }
-        if(argv[i][j] != '\0')
-        {
-            jugador[i][j] = '\0';
-        }
+        error = procesarJugadores(2, cont_jugadores, argv); 
     }
-
+    else
+    {
+        error = procesarJugadores(1, cont_jugadores, argv);
+    }
+    if(error != 0)
+    {
+        return 1;
+    }
+        
+    // Asignamos el nombre de cada jugador a las cadenas de nuestro array
     // Comprobar nombres jugadores
-
     // Asignamos un ganador
-
-
-
     printf("\n_________________________________________END\n\n");
     return 0;
 }
@@ -160,6 +147,8 @@ int procesarJugadores(int i, int cont_jugadores, char *argv[])
 {
     int num_letras_argumento = 0; // Cuenta el numero de caracteres por string
 
+    printf("DEBUG cont_jugadores: %d\n", cont_jugadores);
+
     for(; i < cont_jugadores + 2; i++)
     {
         int j = 0;
@@ -188,17 +177,6 @@ int procesarJugadores(int i, int cont_jugadores, char *argv[])
         }
     }
     return 0;
-}
-
-/**
- * 
- * 
- * @param
- * @param
- */
-void guardarJugadores()
-{
-
 }
 
 // Funciones auxiliares
