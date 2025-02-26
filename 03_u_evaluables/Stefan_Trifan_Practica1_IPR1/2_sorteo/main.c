@@ -33,7 +33,7 @@
 // Funciones del programa
 int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[]);
 int comprobarNombresJugadores(int i, int argc, char *argv[]);
-// void guardarJugadores();
+void guardarJugadoresEnArray(int i, char jugador[MAX_JUGADORES][TAM_STRING], int argc ,char *argv[]);
 
 // Funciones auxiliares
 void clearBuffer();
@@ -58,52 +58,18 @@ int main(int argc, char *argv[])
 
     // La funcion devuelve un error si los nombres de los jugadores no son correctos
     if(hay_num_ganadores)
-        error = comprobarNombresJugadores(2, argc, argv); 
+        error = comprobarNombresJugadores(2, argc, argv); // Comenzamos en argv[2]
     else
-        error = comprobarNombresJugadores(1, argc, argv);
+        error = comprobarNombresJugadores(1, argc, argv); // Comenzamos en argv[1]
     if(error != 0)
         return 1;
-
-    // printf("DEBUG           argc: %d\n", argc);
-    // printf("DEBUG cont_jugadores: %d\n", cont_jugadores);
         
-    // Asignamos el nombre de cada jugador a las cadenas de nuestro array
-
-    // hay_num_ganadores
-    // ./main 1 uno\0 dos\0
+    // Guardamos en jugador[][] los jugadores
     if(hay_num_ganadores)
-    {
-        for(int i = 2; i < argc; i++)
-        {
-            int j = 0;
-            while(argv[i][j] != '\0')
-            {
-                jugador[i - 2][j] = argv[i][j];
-                j++;
-            }
-            if(argv[i][j] == '\0')
-            {
-                jugador[i - 2][j] = '\0';
-            }
-        }
-    }
+        guardarJugadoresEnArray(2, jugador, argc , argv); // Comenzamos en argv[2]
     else
-    {
-        for(int i = 1; i < argc; i++)
-        {
-            int j = 0;
-            while(argv[i][j] != '\0')
-            {
-                jugador[i - 1][j] = argv[i][j];
-                j++;
-            }
-            if(argv[i][j] == '\0')
-            {
-                jugador[i - 1][j] = '\0';
-            }
-        }
-    }
-   
+        guardarJugadoresEnArray(1, jugador, argc , argv); // Comenzamos en argv[1]
+    
 
     printf("DEBUG Jugador 1  : %s\n", jugador[0]);
     printf("DEBUG Jugador 2  : %s\n", jugador[1]);
@@ -131,9 +97,8 @@ int main(int argc, char *argv[])
  *     2: Ha declarado un numero de ganadores y cuenta los 
  *     jugadores que participan para cada caso
  * 
- * 
  * @param[out] cont_jugadores : guarda el numero de ganadores que participan en el sorteo
- * @param[out] hay_num_ganadores : 1 si hay numero de ganadores o 0 si hay solo 1 ganador
+ * @param[out] hay_num_ganadores : guarda 1 si hay numero de ganadores o 0 si hay solo 1 ganador
  * @return Si hay un error, devuelve 1
  */
 int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[])
@@ -200,7 +165,7 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
         {
             num_letras_argumento++;
             // Jugadores llevan numeros o tienen nombres compuestos
-            if((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-' )
+            if((argv[i][j] >= '0' && argv[i][j] <= '9') || argv[i][j] == '-')
             {
                 printf(RED_BOLD
                     "ERROR: Los nombres de los jugadores no pueden \n"
@@ -220,6 +185,32 @@ int comprobarNombresJugadores(int i, int argc, char *argv[])
         }
     }
     return 0;
+}
+
+/**
+ * Asignamos el nombre de cada jugador a las cadenas de nuestro array por referencia
+ * 
+ * @param[in] i :
+ *      Especifica el indice de argv dese el cual la funcion guarda nombres en el array
+ * @param[out] jugador : 
+ *      Guarda en las posiciones de jugador[][] los nombres de los jugadores
+ */
+void guardarJugadoresEnArray(int i, char jugador[MAX_JUGADORES][TAM_STRING], int argc ,char *argv[])
+{
+    int mejorarNombreVariable = i;
+    for(; i < argc; i++)
+        {
+            int j = 0;
+            while(argv[i][j] != '\0')
+            {
+                jugador[i - mejorarNombreVariable][j] = argv[i][j];
+                j++;
+            }
+            if(argv[i][j] == '\0')
+            {
+                jugador[i - mejorarNombreVariable][j] = '\0';
+            }
+        }
 }
 
 // Funciones auxiliares
