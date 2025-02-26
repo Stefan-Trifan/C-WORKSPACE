@@ -10,11 +10,13 @@
 
     *   Testing
         Con numero:
-        ./main 3 Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate (10 jugadores, argc = 12)
-        ./main 3 Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate Juan (11 jugadores)
+        Bien: ./main 1 Jose Steve 
+        Bien: ./main 1 Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate (10 jugadores, argc = 12)
+        Bien: ./main 1 Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate Juan (11 jugadores)
+        Bien: ./main Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate (10 jugadores, argc = 11)
 
-        Sin numero:
-        ./main Megan Pepe Steve Ana Val Carlos Jack Guada Gyan Mate (10 jugadores, argc = 11)
+        Mal: ./main 1 uvuvuevuevueenyetuenwuevueugwemubwemossas Steve 
+        Mal: ./main 1 Jose-Vicente 3- Steve        
 */
 
 /* _________________________________________
@@ -22,7 +24,7 @@
 
 #include <stdio.h>
 #define MAX_JUGADORES 10
-#define TAM_STRING 5
+#define TAM_STRING 40
 #define RED_BOLD "\033[1;31m"
 #define GREEN_BOLD "\033[1;32m"
 #define YELLOW_BOLD "\033[1;33m"
@@ -30,7 +32,7 @@
 
 // Funciones del programa
 int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[]);
-int procesarJugadores(int i, int cont_jugadores, char *argv[]);
+int comprobarNombresJugadores(int i, int argc, char *argv[]);
 // void guardarJugadores();
 
 // Funciones auxiliares
@@ -54,24 +56,66 @@ int main(int argc, char *argv[])
     if(error != 0)
         return 1;
 
-    printf("DEBUG           argc: %d\n", argc);
-
     // La funcion devuelve un error si los nombres de los jugadores no son correctos
     if(hay_num_ganadores)
+        error = comprobarNombresJugadores(2, argc, argv); 
+    else
+        error = comprobarNombresJugadores(1, argc, argv);
+    if(error != 0)
+        return 1;
+
+    // printf("DEBUG           argc: %d\n", argc);
+    // printf("DEBUG cont_jugadores: %d\n", cont_jugadores);
+        
+    // Asignamos el nombre de cada jugador a las cadenas de nuestro array
+
+    // hay_num_ganadores
+    // ./main 1 uno\0 dos\0
+    if(hay_num_ganadores)
     {
-        error = procesarJugadores(2, cont_jugadores, argv); 
+        for(int i = 2; i < argc; i++)
+        {
+            int j = 0;
+            while(argv[i][j] != '\0')
+            {
+                jugador[i - 2][j] = argv[i][j];
+                j++;
+            }
+            if(argv[i][j] == '\0')
+            {
+                jugador[i - 2][j] = '\0';
+            }
+        }
     }
     else
     {
-        error = procesarJugadores(1, cont_jugadores, argv);
+        for(int i = 1; i < argc; i++)
+        {
+            int j = 0;
+            while(argv[i][j] != '\0')
+            {
+                jugador[i - 1][j] = argv[i][j];
+                j++;
+            }
+            if(argv[i][j] == '\0')
+            {
+                jugador[i - 1][j] = '\0';
+            }
+        }
     }
-    if(error != 0)
-    {
-        return 1;
-    }
-        
-    // Asignamos el nombre de cada jugador a las cadenas de nuestro array
-    // Comprobar nombres jugadores
+   
+
+    printf("DEBUG Jugador 1  : %s\n", jugador[0]);
+    printf("DEBUG Jugador 2  : %s\n", jugador[1]);
+    printf("DEBUG Jugador 3  : %s\n", jugador[2]);
+    printf("DEBUG Jugador 4  : %s\n", jugador[3]);
+    printf("DEBUG Jugador 5  : %s\n", jugador[4]);
+    printf("DEBUG Jugador 6  : %s\n", jugador[5]);
+    printf("DEBUG Jugador 7  : %s\n", jugador[6]);
+    printf("DEBUG Jugador 8  : %s\n", jugador[7]);
+    printf("DEBUG Jugador 9  : %s\n", jugador[8]);
+    printf("DEBUG Jugador 10 : %s\n", jugador[9]);
+
     // Asignamos un ganador
     printf("\n_________________________________________END\n\n");
     return 0;
@@ -82,13 +126,15 @@ int main(int argc, char *argv[])
 
 // Funciones del programa
 /**
- * Comprueba si el usuario ha declarado un numero de ganadores 
- * y cuenta los jugadores que participan para cada caso
+ * Comprueba si el usuario:
+ *     1: Ha introducido el numero correcto de argumentos
+ *     2: Ha declarado un numero de ganadores y cuenta los 
+ *     jugadores que participan para cada caso
  * 
  * 
  * @param[out] cont_jugadores : guarda el numero de ganadores que participan en el sorteo
  * @param[out] hay_num_ganadores : 1 si hay numero de ganadores o 0 si hay solo 1 ganador
- * @return Si hay un error, devuelve el codigo del error
+ * @return Si hay un error, devuelve 1
  */
 int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, char *argv[])
 {
@@ -136,20 +182,17 @@ int procesarArgumentos(int *cont_jugadores, int *hay_num_ganadores, int argc, ch
  * Le pasamos como argumento el indice desde el cual tiene que comprobar los nombres
  * 
  * @param[in] i : 
- *      Especifica el indice dese el cual la funcion comprueba si los nombres 
+ *      Especifica el indice de argv dese el cual la funcion comprueba si los nombres 
  *      son correctos dependiendo si hay numero de ganadores o no
- * @param[in] cont_jugadores
  * @return devuelve un codigo error si:
  *      Los nombres de los jugadores contienen numero o son compuestos
  *      El numero de caracteres de un jugador supera el tamaño soportado por el string
  */
-int procesarJugadores(int i, int cont_jugadores, char *argv[])
+int comprobarNombresJugadores(int i, int argc, char *argv[])
 {
     int num_letras_argumento = 0; // Cuenta el numero de caracteres por string
 
-    printf("DEBUG cont_jugadores: %d\n", cont_jugadores);
-
-    for(; i < cont_jugadores + 2; i++)
+    for(; i < argc; i++)
     {
         int j = 0;
         num_letras_argumento = 0;
