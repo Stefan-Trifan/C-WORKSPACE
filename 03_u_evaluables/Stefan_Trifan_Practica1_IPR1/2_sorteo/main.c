@@ -22,7 +22,8 @@
    Inicio cabecera */
 
 #include <stdio.h>
-#include <stdlib.h> // Para llamar a strtol()
+#include <stdlib.h> // Para strtol(), srand() y rand()
+#include <time.h>   // Para time()
 
 #define MAX_JUGADORES 10
 #define TAM_STRING 41
@@ -46,12 +47,18 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    // Definimos las variables
-    char jugador[MAX_JUGADORES][TAM_STRING] = {0};
-    int cont_jugadores = 0,
-        num_ganadores  = 0, // Especifica si el usuario ha declarado un numero de jugadores
-        error          = 0; 
+    // todo mover variables arriba
 
+    // Definimos las variables
+    char jugador[MAX_JUGADORES][TAM_STRING] = {0},
+         ganador[MAX_JUGADORES][TAM_STRING] = {0};
+    int numeroAleatorio[MAX_JUGADORES - 1] = {0}, // Indices de los ganadores
+        cont_jugadores = 0,
+        num_ganadores  = 0, // Especifica si el usuario ha declarado un numero de jugadores
+        error          = 0,
+        random         = 0,
+        repetido       = 0;
+    
     // La funcion devuelve un codigo de error si se supera el limite de jugadores
     error = procesarArgumentos(&cont_jugadores, &num_ganadores, argc, argv);
     if(error != 0)
@@ -72,21 +79,7 @@ int main(int argc, char *argv[])
         guardarJugadoresEnArray(1, jugador, argc , argv); // Comenzamos en argv[1]
 
     // seleccionarGanador
-    if(num_ganadores == 0)
-        num_ganadores = 1;
-            
-
-    printf("Num Ganadores    : %d\n", num_ganadores);
-    printf("DEBUG Jugador 1  : %s\n", jugador[0]);
-    printf("DEBUG Jugador 1  : %s\n", jugador[1]);
-    printf("DEBUG Jugador 2  : %s\n", jugador[2]);
-    printf("DEBUG Jugador 3  : %s\n", jugador[3]);
-    printf("DEBUG Jugador 4  : %s\n", jugador[4]);
-    printf("DEBUG Jugador 5  : %s\n", jugador[5]);
-    printf("DEBUG Jugador 6  : %s\n", jugador[6]);
-    printf("DEBUG Jugador 7  : %s\n", jugador[7]);
-    printf("DEBUG Jugador 8  : %s\n", jugador[8]);
-    printf("DEBUG Jugador 9  : %s\n", jugador[9]);
+    seleccionarGanador();
 
     // Asignamos un ganador
     printf("\n_________________________________________END\n\n");
@@ -233,8 +226,86 @@ void guardarJugadoresEnArray(int i, char jugador[MAX_JUGADORES][TAM_STRING], int
         }
 }
 
+void seleccionarGanador(int num_ganadores, int cont_ganado)
+{
+    if(num_ganadores >= cont_jugadores) // No hay mas ganadores que jugadores
+    {
+        printf(RED_BOLD
+            "ERROR: El numero de ganadores debe ser inferior al numero de participantes\n"
+            "\n_________________________________________FAIL\n\n"RESET);
+        return 1; // error
+    }
+    // Si el usuario no especifica que hay ganadores por defecto debe haber 1 ganador
+    if(num_ganadores == 0)
+    {
+        num_ganadores = 1;
+    }
+    srand(time(NULL)); 
+    // Generamos de manera aleatoria un indice para cada ganador
+    // Los indices no se pueden repetir (un jugador no puede ganar 2 veces el mismo sorteo)
+    for(int i = 0; i < num_ganadores; i++)
+    {
+        do
+        {
+            repetido = 0;
+            random = rand() % cont_jugadores;
+            numeroAleatorio[i] = random;
+            // Comprobamos si el mismo indice ya ha salido
+            for(int j = 0; j < i; j++)
+            {
+                if(numeroAleatorio[j] == numeroAleatorio[i])
+                {
+                    repetido = 1;
+                }
+            }
+        } 
+        while (repetido);
+    }
+
+    // Asignamos los los indices de los ganadores a nuestro array de ganadores
+    for(int i = 0; i < num_ganadores; i++)
+    {
+        for(int j = 0; j <= TAM_STRING; j++)
+        {
+            ganador[i][j] = jugador[numeroAleatorio[i]][j];
+        }
+        printf(GREEN_BOLD"GANADOR %d: %s\n"RESET, i + 1, ganador[i]);
+    }
+}
+
 // Funciones auxiliares
 void clearBuffer()
 {
     while (getchar() != '\n');
 }
+
+/*
+    DEBUG 
+
+    printf("DEBUG random i = %d: %d\n", i, random);
+
+    printf("\n\n");
+    printf("DEBUG numeroAleatorio[0]: %d\n", numeroAleatorio[0]);
+    printf("DEBUG numeroAleatorio[1]: %d\n", numeroAleatorio[1]);
+    printf("DEBUG numeroAleatorio[2]: %d\n", numeroAleatorio[2]);
+    printf("DEBUG numeroAleatorio[3]: %d\n", numeroAleatorio[3]);
+    printf("DEBUG numeroAleatorio[4]: %d\n", numeroAleatorio[4]);
+    printf("DEBUG numeroAleatorio[5]: %d\n", numeroAleatorio[5]);
+    printf("\n\n");
+
+    printf("\n_________________________________________DEBUG\n\n");
+    printf("DEBUG Argc          : %d\n", argc);
+    printf("DEBUG Num Ganadores : %d\n", num_ganadores);
+    printf("DEBUG Num Jugadores : %d\n", cont_jugadores);
+    printf("DEBUG Jugador 0 : %s\n", jugador[0]);
+    printf("DEBUG Jugador 1 : %s\n", jugador[1]);
+    printf("DEBUG Jugador 2 : %s\n", jugador[2]);
+    printf("DEBUG Jugador 3 : %s\n", jugador[3]);
+    printf("DEBUG Jugador 4 : %s\n", jugador[4]);
+    printf("DEBUG Jugador 5 : %s\n", jugador[5]);
+    printf("DEBUG Jugador 6 : %s\n", jugador[6]);
+    printf("DEBUG Jugador 7 : %s\n", jugador[7]);
+    printf("DEBUG Jugador 8 : %s\n", jugador[8]);
+    printf("DEBUG Jugador 9 : %s\n", jugador[9]);
+    printf("\n_________________________________________DEBUG\n\n");
+*/
