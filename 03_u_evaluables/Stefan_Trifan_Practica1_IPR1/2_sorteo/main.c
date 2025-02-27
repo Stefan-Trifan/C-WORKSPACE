@@ -25,7 +25,7 @@
 #include <stdlib.h> // Para strtol(), srand() y rand()
 #include <time.h>   // Para time()
 
-#define MAX_JUG 10
+#define TAM_ARR 10
 #define TAM_STR 41
 #define RED_BOLD "\033[1;31m"
 #define GREEN_BOLD "\033[1;32m"
@@ -33,26 +33,34 @@
 #define RESET "\033[0m"
 
 // Funciones del programa
-int procesarArgumentos(
+int procesarArgumentos
+(
     int *cont_jugadores, 
     int *num_ganadores, 
     int argc, 
-    char *argv[]);
-int comprobarNombres(
+    char *argv[]
+);
+int comprobarNombres
+(
     int i, 
     int argc, 
-    char *argv[]);
-void guardarNombres(
+    char *argv[]
+);
+void guardarNombres
+(
     int i, 
-    char jugador[MAX_JUG][TAM_STR], 
+    char jugador[TAM_ARR][TAM_STR], 
     int argc,
-    char *argv[]);
-int seleccionarGanador(
+    char *argv[]
+);
+void seleccionarGanador
+(
     int num_ganadores, 
     int cont_jugadores, 
-    char jugador[MAX_JUG][TAM_STR], 
-    int numeroAleatorio[MAX_JUG - 1], 
-    char ganador[MAX_JUG][TAM_STR]);
+    char jugador[TAM_ARR][TAM_STR], 
+    int numeroAleatorio[TAM_ARR - 1], 
+    char ganador[TAM_ARR][TAM_STR]
+);
 
 // Funciones auxiliares
 void clearBuffer();
@@ -65,9 +73,9 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Definimos las variables
-    char jugador[MAX_JUG][TAM_STR] = {0},
-         ganador[MAX_JUG][TAM_STR] = {0};
-    int numeroAleatorio[MAX_JUG - 1] = {0}, // Indices de los ganadores
+    char jugador[TAM_ARR][TAM_STR] = {0},
+         ganador[TAM_ARR][TAM_STR] = {0};
+    int numeroAleatorio[TAM_ARR - 1] = {0}, // Indices de los ganadores
         cont_jugadores = 0,
         num_ganadores  = 0, // Especifica si el usuario ha declarado un numero de jugadores
         error          = 0;
@@ -92,9 +100,7 @@ int main(int argc, char *argv[])
         guardarNombres(1, jugador, argc , argv); // Comenzamos en argv[1]
 
     // Seleccionamos los ganadores del sorteo de manera aleatoria
-    error = seleccionarGanador(num_ganadores, cont_jugadores, jugador, numeroAleatorio, ganador);
-    if(error)
-        return 1;
+    seleccionarGanador(num_ganadores, cont_jugadores, jugador, numeroAleatorio, ganador);
 
     printf("\n_________________________________________END\n\n");
     return 0;
@@ -131,10 +137,10 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
     else if(argv[1][0] >= '0' && argv[1][0] <= '9' && argv[1][1] == '\0')
     {
         // Comprobamos que el usuario introduce entre 2 y 10 jugadores
-        if(argc < 4 || argc > MAX_JUG + 2)
+        if(argc < 4 || argc > TAM_ARR + 2)
         {
             printf(RED_BOLD
-                "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10.\n"YELLOW_BOLD
+                "ERROR: Tienes que introducir minimo 2 jugadores y  10.\n"YELLOW_BOLD
                 "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
                 "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
@@ -142,15 +148,23 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         }
         *cont_jugadores = argc - 2;
         *num_ganadores = strtol(argv[1], &endptr, 10);
+        // Comprobamos que no hay mas ganadores que jugadores
+        if(*num_ganadores >= *cont_jugadores) 
+        {
+            printf(RED_BOLD
+            "ERROR: El numero de ganadores debe ser inferior al numero de participantes\n"
+            "\n_________________________________________FAIL\n\n"RESET);
+            return 1; // error
+        }
     }
     // Si el 2 argumento no es un numero
     else
     {
         // Comprobamos que el usuario introduce entre 2 y 10 jugadores
-        if(argc < 3 || argc > MAX_JUG + 1)
+        if(argc < 3 || argc > TAM_ARR + 1)
         {
             printf(RED_BOLD
-                "ERROR: Tienes que introducir minimo 2 jugadores y maximo 10.\n"YELLOW_BOLD
+                "ERROR: Tienes que introducir minimo 2 jugadores y  10.\n"YELLOW_BOLD
                 "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
                 "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
@@ -162,7 +176,7 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
 }
 
 /**
- * Comprueba que ningun jugador supere el maximo de caracteres que pueda almacenar un string
+ * Comprueba que ningun jugador supere el  de caracteres que pueda almacenar un string
  * Comprobamos que los nombres de los jugadores no tengan numeros o nombres compuestos
  * Le pasamos como argumento el indice desde el cual tiene que comprobar los nombres
  * 
@@ -220,7 +234,7 @@ int comprobarNombres(int i, int argc, char *argv[])
  * @param[out] jugador : 
  *      Arreglo de string que guarda los nombres de los jugadores
  */
-void guardarNombres(int i, char jugador[MAX_JUG][TAM_STR], int argc, char *argv[])
+void guardarNombres(int i, char jugador[TAM_ARR][TAM_STR], int argc, char *argv[])
 {
     int i_inicio = i;
     for(; i < argc; i++)
@@ -241,25 +255,17 @@ void guardarNombres(int i, char jugador[MAX_JUG][TAM_STR], int argc, char *argv[
  * 
  * @param[in] numeroAleatorio Arreglo que almacena los indices de los ganadores
  * @param[in] ganador Arreglo que almacena los nombres de los ganadores
- * @return devuelve un error si el num de ganadores es mayor o igual al num de jugadores
  */
-int seleccionarGanador(
+void seleccionarGanador(
     int num_ganadores, 
     int cont_jugadores, 
-    char jugador[MAX_JUG][TAM_STR], 
-    int numeroAleatorio[MAX_JUG - 1], 
-    char ganador[MAX_JUG][TAM_STR])
+    char jugador[TAM_ARR][TAM_STR], 
+    int numeroAleatorio[TAM_ARR - 1], 
+    char ganador[TAM_ARR][TAM_STR])
 {
     int random   = 0,
         repetido = 0;
 
-    if(num_ganadores >= cont_jugadores) // No hay mas ganadores que jugadores
-    {
-        printf(RED_BOLD
-            "ERROR: El numero de ganadores debe ser inferior al numero de participantes\n"
-            "\n_________________________________________FAIL\n\n"RESET);
-        return 1; // error
-    }
     // Si el usuario no especifica que hay ganadores por defecto debe haber 1 ganador
     if(num_ganadores == 0)
         num_ganadores = 1;
@@ -297,7 +303,6 @@ int seleccionarGanador(
         }
         printf(GREEN_BOLD"%dº: %s\n"RESET, i + 1, ganador[i]); // Imprimimos los ganadores
     }
-    return 0;
 }
 
 // Funciones auxiliares
