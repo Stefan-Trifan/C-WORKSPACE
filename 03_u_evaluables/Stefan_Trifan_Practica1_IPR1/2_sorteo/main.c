@@ -107,8 +107,8 @@ int main(int argc, char *argv[])
 /**
  * Comprueba si el usuario:
  *     1: Ha introducido el numero correcto de argumentos
- *     2: Ha declarado un numero de ganadores y cuenta los 
- *     jugadores que participan para cada caso
+ *     2: Ha declarado un numero de ganadores y cuenta 
+ *        los jugadores que participan para cada caso
  * 
  * @param[out] cont_jugadores : guarda el numero de ganadores que participan en el sorteo
  * @param[out] num_ganadores : guarda el numero de ganadores
