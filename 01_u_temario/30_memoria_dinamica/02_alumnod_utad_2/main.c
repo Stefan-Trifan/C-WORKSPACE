@@ -27,14 +27,17 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	int num_alumnos = 0, suma_edades = 0, edad_minima = 0, edad_maxima = 0;
+	float edad_minima = 0,
+	      suma_edades = 0,
+	      edad_maxima = 0,
+	      num_alumnos = 0;
 
 	// Pedimos el num de alumnos
 	printf("Introduce el num de alumnos\n-> ");
 	num_alumnos = pedirEnteroPositivo();
 	printf("\n");
     
-    int *p_alumnos = (int*)malloc(sizeof(int) * num_alumnos);
+    int* p_alumnos = (int*)malloc(sizeof(int) * num_alumnos);
 
 	// Asignamos las edades
 	for(int i = 0; i < num_alumnos; i++)
@@ -42,16 +45,10 @@ int main(int argc, char *argv[])
 		printf("Edad Alumno %d\n-> ", i + 1);
 		*(p_alumnos + i) = pedirEnteroPositivo();
 		suma_edades += *(p_alumnos + i);
-	}
 
-	// Edad media
-	printf("\nLa edad media es: %d\n\n", suma_edades / num_alumnos);
-
-	// Menor y mayor de las edades
-	edad_minima = *(p_alumnos + 0);
-	edad_maxima = *(p_alumnos + 0);
-	for(int i = 1; i < num_alumnos; i++)
-	{
+		// Menor y mayor de las edades
+		edad_minima = *p_alumnos;
+		edad_maxima = *p_alumnos;
 		// Buscamos la edad minima
 		if(*(p_alumnos + i) < edad_minima)
 		{
@@ -63,8 +60,17 @@ int main(int argc, char *argv[])
 			edad_maxima = *(p_alumnos + i);
 		}
 	}
-	printf("La edad minima es: %d\n", edad_minima);
-	printf("La edad maxima es: %d\n", edad_maxima);
+
+	// Edad media
+	printf("\nLa edad media es: %.2f\n\n", suma_edades / num_alumnos);
+
+
+	for(int i = 0; i < num_alumnos; i++)
+	{
+
+	}
+	printf("La edad minima es: %.2f\n", edad_minima);
+	printf("La edad maxima es: %.2f\n", edad_maxima);
 	printf("\n");
 
 	// Imprimimos las edades
