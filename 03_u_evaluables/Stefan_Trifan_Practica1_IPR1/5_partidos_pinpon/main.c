@@ -23,7 +23,7 @@ typedef struct jugador_t
 {
     char nombre[TAM_STR];
     char apellidos[TAM_STR];
-    short edad;
+    int edad;
 }jugador_t;
 
 typedef struct fechas
