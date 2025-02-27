@@ -1,0 +1,109 @@
+/*
+	*	Autor
+		Stefan Trifan
+
+	*   Estado
+
+	* 	Enunciado X
+		LoremIpsum
+*/
+
+/* _________________________________________
+   Inicio cabecera */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Funciones del programa
+
+// Funciones auxiliares
+int pedirEnteroPositivo();
+void clearBuffer();
+
+/* _________________________________________
+   Inicio main() */
+
+int main(int argc, char *argv[])
+{
+	printf("\n_________________________________________START\n\n");
+
+	int num_alumnos = 0, suma_edades = 0, edad_minima = 0, edad_maxima = 0;
+
+	// Pedimos el num de alumnos
+	printf("Introduce el num de alumnos\n-> ");
+	num_alumnos = pedirEnteroPositivo();
+	printf("\n");
+    
+    int *p_alumnos = (int*)malloc(sizeof(int) * num_alumnos);
+
+	// Asignamos las edades
+	for(int i = 0; i < num_alumnos; i++)
+	{
+		printf("Edad Alumno %d\n-> ", i + 1);
+		*(p_alumnos + i) = pedirEnteroPositivo();
+		suma_edades += *(p_alumnos + i);
+	}
+
+	// Edad media
+	printf("\nLa edad media es: %d\n\n", suma_edades / num_alumnos);
+
+	// Menor y mayor de las edades
+	edad_minima = *(p_alumnos + 0);
+	edad_maxima = *(p_alumnos + 0);
+	for(int i = 1; i < num_alumnos; i++)
+	{
+		// Buscamos la edad minima
+		if(*(p_alumnos + i) < edad_minima)
+		{
+			edad_minima = *(p_alumnos + i);
+		}
+		// Buscamos la edad maxima
+		if(*(p_alumnos + i) > edad_maxima)
+		{
+			edad_maxima = *(p_alumnos + i);
+		}
+	}
+	printf("La edad minima es: %d\n", edad_minima);
+	printf("La edad maxima es: %d\n", edad_maxima);
+	printf("\n");
+
+	// Imprimimos las edades
+	printf("Las edades son: \n");
+	for(int i = 0; i < num_alumnos; i++)
+	{
+		printf("Edad Alumno %d: %d\n",i + 1, *(p_alumnos + i));
+	}
+    
+	printf("\n_________________________________________END\n\n");
+	return 0;
+}
+
+/* _________________________________________
+   Inicio definicion de funciones */
+
+// Funciones del programa
+
+// Funciones auxiliares
+int pedirEnteroPositivo()
+{
+	int num = 0, esValido = 0;
+	do
+	{
+		esValido = scanf("%d", &num);
+		clearBuffer();
+		if (esValido == 0 || num < 0)
+		{
+			printf(
+				"\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
+				"-> \033[0m"
+			);
+			esValido = 0;
+		}
+	}
+	while (esValido != 1);
+	return num;
+}
+void clearBuffer()
+{
+	while (getchar() != '\n');
+}

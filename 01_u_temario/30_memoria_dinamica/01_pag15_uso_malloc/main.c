@@ -13,6 +13,8 @@
 
 #include <stdio.h>
 
+#define TAM 10
+
 // Funciones del programa
 
 // Funciones auxiliares
@@ -25,7 +27,15 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    
+    int pares[TAM] = {0};
+
+	
+
+	for(int i = 0; i < TAM; i++)
+		pares[i] = i * 2;
+
+	for(int i = 0; i < TAM; i++)
+		printf("Numero %d: %d\n", i, pares[i]);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
