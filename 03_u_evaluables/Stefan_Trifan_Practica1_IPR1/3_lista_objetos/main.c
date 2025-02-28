@@ -63,15 +63,20 @@ int main(int argc, char *argv[])
 
     // Comprobamos que el formato de los objetos es correcto 
     // ./main 101:2.5:A\0 102:3.1:B\0 103:1.8:C\0 104:4.0:A\0 105:2.2:B\0 106:3.9:C\0
-    for(int i = 1; i < num_objetos; i++)
+    for(int i = 1; i < argc + 1; i++)
     {
         int j = 0;
-        while(argv[i][j] != ':' || argv[i][j] != '\0')
+        while(argv[i][j] != '\0')
         {
-            // Comprobamos si son solo numeros
-            if(argv[i][j] <= '0' || argv[i][j] >= '9')
+            // Comprobamos si el ID  son solo numeros
+            if(!(argv[i][j] >= '0' && argv[i][j] <= '9'))
             {
-                printf(RED"DEBUG Error %di %dj\n"RESET, i, j);
+                printf(RED
+                    "ERROR: Tienes que introducir entre 1 y 10 objetos.\n"YELLOW
+                    "Uso    : ./main [ID]:[PESO]:[CATEGORIA]...[ID]:[PESO]:[CATEGORIA]\n"
+                    "Ejemplo: ./main 101:2.5:A 104:4.0:B\n"RED
+                    "\n_________________________________________FAIL\n\n"RESET);
+                return 1;
             } 
             j++;
         }
@@ -89,7 +94,7 @@ int main(int argc, char *argv[])
     // Imprimimos los objetos en orden
 
     /* DEBUG LOG */
-    printf(YELLOW"DEBUG num_objetos: %d\n"RESET, num_objetos);
+    // printf("DEBUG num_objetos: %d\n", num_objetos);
 
     printf("\n_________________________________________END\n\n");
     return 0;
