@@ -21,15 +21,13 @@
 #include <stdio.h>
 
 #define TAM 51
-#define RED_BOLD "\033[1;31m"
-#define YELLOW_BOLD "\033[1;33m"
+#define RED "\033[1;31m"
+#define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
 
 // Funciones del programa
 int leerCadena(char* cadena, int tam);
 int cuentaCaracter(char* cadena, char caracter, int numCaracteres);
-
-// Funciones auxiliares
 void clearBuffer();
 
 /* _________________________________________
@@ -42,7 +40,7 @@ int main(int argc, char *argv[])
     // Comprobamos si el usuario introduce 4 argumentos
     if(argc != 4)
     {
-        printf(RED_BOLD
+        printf(RED
             "ERROR: Debes introducir 4 argumentos\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
@@ -65,7 +63,7 @@ int main(int argc, char *argv[])
         ((c2 < 'A' || c2 > 'Z') && (c2 < 'a' || c2 > 'z')) || 
         ((c3 < 'A' || c3 > 'Z') && (c3 < 'a' || c3 > 'z')))
     {
-        printf(RED_BOLD
+        printf(RED
             "ERROR: Los argumentos deben ser letras\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
@@ -74,7 +72,7 @@ int main(int argc, char *argv[])
     // Comprobar si los argumentos son distintos entre ellos
     else if((c1 == c2) || (c1 == c3) || (c2 == c3))
     {
-        printf(RED_BOLD
+        printf(RED
             "ERROR: Los argumentos deben ser distintos\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
@@ -83,7 +81,7 @@ int main(int argc, char *argv[])
     // Comprobar si los argumentos son de una sola letra
     else if((argv[1][1] != '\0') || (argv[2][1] != '\0') || (argv[3][1] != '\0'))
     {
-        printf(RED_BOLD
+        printf(RED
             "ERROR: Los argumentos deben ocupar un solo caracter\n"
             "USO  : ./main a b c"
             "\n_________________________________________FAIL\n\n"RESET);
@@ -149,7 +147,7 @@ int leerCadena(char* cadena, int tam)
             c = getchar();
             if(c != '\n')
             {
-                printf(YELLOW_BOLD
+                printf(YELLOW
                     "ALERTA: Has superado el limite de caracteres\n"
                     "Por favor, intentelo de nuevo (max. %d caracteres)\n"
                     "-> "RESET, TAM - 1);

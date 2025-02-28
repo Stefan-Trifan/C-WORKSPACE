@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define RED_BOLD "\033[1;31m"
+#define RED "\033[1;31m"
 #define RESET "\033[0m"
 typedef struct complejos_t
 {
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
 	if(argc != 6)
 	{
-		printf(RED_BOLD
+		printf(RED
 			"ERROR: Tienes que introducir 6 argumentos\n"
 			"USO  : ./main 1 2 3 4\n");
 		printf("\n_________________________________________FAIL\n\n"RESET);
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 	// Comprobamos el signo
 	if(signo != '+' && signo != '-' && signo != 'x' && signo != '/')
 	{
-		printf(RED_BOLD
+		printf(RED
 			"ERROR: \n"
 			"Signos admitidos: \n"
 			"+ : Sumar \n"
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	// Comprobamos los numeros
 	if(*endptr2 != '\0' || *endptr3 != '\0' || *endptr4 != '\0' || *endptr5 != '\0')
 	{
-		printf(RED_BOLD 
+		printf(RED 
 			"ERROR: Alguno de los argumentos que has introducido no es un numero\n"
 			"USO  : ./main 1 2 3 4\n");
 		printf("\n_________________________________________FAIL\n\n"RESET);

@@ -9,7 +9,7 @@
         Lista de objetos
 
     *   Testing
-        
+        ./main 101:2.5:A 102:3.1:B 103:1.8:C 104:4.0:A 105:2.2:B 106:3.9:C
 */
 
 /* _________________________________________
@@ -17,9 +17,10 @@
 
 #include <stdio.h>
 
-#define RED_BOLD "\033[1;31m"
-#define GREEN_BOLD "\033[1;32m"
-#define YELLOW_BOLD "\033[1;33m"
+#define TAM_ARR 10
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
 
 typedef struct objeto_t
@@ -31,10 +32,9 @@ typedef struct objeto_t
 objeto_t;
 
 // Funciones del programa
-int procesarObjetos(int argc);
-int guardarObjetos();
+int procesarArgumentos(int argc);
+int comprobarObjetos();
 void imprimirObjetos(char letra);
-
 // Funciones auxiliares
 void clearBuffer();
 
@@ -45,11 +45,51 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    objeto_t objeto[10];
-    int error = 0;
+    objeto_t objeto[TAM_ARR] = {0};
+    int error       = 0,
+        num_objetos = 0;
 
-    // Comprobamos el formato de los argumentos
-    procesarObjetos(argc);
+    // Comprobamos que el usuario respeta el limite de objetos
+    if(argc < 2 || argc > 11)
+    {
+        printf(RED
+            "ERROR  : Tienes que introducir entre 1 y 10 objetos.\n"YELLOW
+            "Uso    : ./main [ID]:[PESO]:[CATEGORIA]...[ID]:[PESO]:[CATEGORIA]\n"
+            "Ejemplo: ./main 101:2.5:A 104:4.0:B\n"RED
+            "\n_________________________________________FAIL\n\n"RESET);
+        return 1; // error
+    }
+    num_objetos = argc - 1;
+
+    // Comprobamos que el formato de los objetos es correcto 
+    // ./main 101:2.5:A\0 102:3.1:B\0 103:1.8:C\0 104:4.0:A\0 105:2.2:B\0 106:3.9:C\0
+    for(int i = 1; i < num_objetos; i++)
+    {
+        int j = 0;
+        while(argv[i][j] != ':' || argv[i][j] != '\0')
+        {
+            // Comprobamos si son solo numeros
+            if(argv[i][j] <= '0' || argv[i][j] >= '9')
+            {
+                printf(RED"DEBUG Error %di %dj\n"RESET, i, j);
+            } 
+            j++;
+        }
+    }
+
+
+
+
+
+
+
+    // Comprobamos que el formato de los objetos es correcto 
+    // Si son correctos los guardamos en nuestro array de estructuras
+
+    // Imprimimos los objetos en orden
+
+    /* DEBUG LOG */
+    printf(YELLOW"DEBUG num_objetos: %d\n"RESET, num_objetos);
 
     printf("\n_________________________________________END\n\n");
     return 0;
@@ -60,34 +100,14 @@ int main(int argc, char *argv[])
 
 // Funciones del programa
 /**
- * Comprobamos
- * - El formato de los argumentos es correcto
- * - El usuario no supera el limite de objetos
  */
-int procesarObjetos(int argc)
-{
-    if(argc < 2 || argc > 11)
-    {
-        printf(RED_BOLD
-            "ERROR: Tienes que introducir entre 1 y 10 objetos.\n"YELLOW_BOLD
-            "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
-            "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
-            "\n_________________________________________FAIL\n\n"RESET);
-        return 1; // error
-    }
-    return 0;
-}
-/**
- * Guardamos los objetos en nuestro array de estructuras
- * 
- */
-int guardarObjetos()
+int comprobarObjetos()
 {
     return 0;
 }
 
 /**
- * Imprimimos los objetos en orden
+ * 
  * 
  */
 void imprimirObjetos(char letra)

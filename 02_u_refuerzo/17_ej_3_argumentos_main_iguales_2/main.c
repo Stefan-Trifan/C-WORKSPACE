@@ -13,8 +13,8 @@
 /* _________________________________________
    Inicio cabecera */
 #include <stdio.h>
-#define GREEN_BOLD "\033[1;32m"
-#define RED_BOLD "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define RED "\033[1;31m"
 #define RESET "\033[0m"
 #define TAM 8
 // Funciones del programa
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
     if(argc != 3)
     {
-        printf(RED_BOLD"Tienes que introducir 2 argumentos\n");
+        printf(RED"Tienes que introducir 2 argumentos\n");
         printf("\n_________________________________________FAIL\n\n"RESET);
         return 0;
     }
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         i1++;
         if(i1 >= TAM)
         {
-            printf(RED_BOLD"Has introducido demasiados caracteres\n");
+            printf(RED"Has introducido demasiados caracteres\n");
             printf("\n_________________________________________FAIL\n\n"RESET);
             return 0;
         }
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
         i2++;
         if(i2 >= TAM)
         {
-            printf(RED_BOLD"Has introducido demasiados caracteres\n");
+            printf(RED"Has introducido demasiados caracteres\n");
             printf("\n_________________________________________FAIL\n\n"RESET);
             return 0;
         }
@@ -72,11 +72,11 @@ int main(int argc, char *argv[])
 
     if(son_iguales)
     {
-        printf(GREEN_BOLD"Las cadenas son iguales"RESET);
+        printf(GREEN"Las cadenas son iguales"RESET);
     }
     else
     {
-        printf(RED_BOLD"Las cadenas no son iguales"RESET);
+        printf(RED"Las cadenas no son iguales"RESET);
     }
 
     printf("\n_________________________________________END\n\n");

@@ -13,7 +13,7 @@
 /* _________________________________________
    Inicio cabecera */
 #include <stdio.h>
-#define RED_BOLD "\033[1;31m"
+#define RED "\033[1;31m"
 #define RESET "\033[0m"
 #define TAM 21
 // Funciones del programa
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
     if(argc != 3)
     {
-        printf(RED_BOLD"Tienes que introducir 2 argumentos\n"RESET);
+        printf(RED"Tienes que introducir 2 argumentos\n"RESET);
         printf("\n_________________________________________FAIL\n\n");
         return 0;
     }

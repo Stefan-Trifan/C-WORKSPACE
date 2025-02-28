@@ -14,9 +14,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#define RED_BOLD "\033[1;31m"
-#define GREEN_BOLD "\033[1;32m"
-#define YELLOW_BOLD "\033[1;33m"
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
 #define TAM_STRUCT 9
 #define TAM_STRING 4
@@ -134,7 +134,7 @@ void introducirZapato(struct zapato_t *zapato, int *contZapatos)
     printf("DEBUG Has introducido stock: %d\n\n", (zapato + *contZapatos)->stock);
 
     (*contZapatos)++;
-    printf(GREEN_BOLD
+    printf(GREEN
         "Nuevo zapato introducido \n"RESET
         "Numero de zapatos: %d\n", *contZapatos);
     printf("\n\n");
@@ -152,7 +152,7 @@ void imprimirZapatos(struct zapato_t *zapato, int contZapatos)
     {
         if(zapato[i].talla == talla_seleccionada)
         {
-            printf(GREEN_BOLD
+            printf(GREEN
                 "\n"
                 "Ref    : %d\n"
                 "Color  : %s\n"
@@ -173,11 +173,11 @@ void imprimirZapatos(struct zapato_t *zapato, int contZapatos)
     }
     if(contadorCoincidencias == 0)
     {
-        printf(YELLOW_BOLD"\nNo se han zapato con la talla %d\n"RESET, talla_seleccionada);
+        printf(YELLOW"\nNo se han zapato con la talla %d\n"RESET, talla_seleccionada);
     }
     else
     {
-        printf(GREEN_BOLD"Se han encontrado %d zapato(s) con talla %d\n"RESET, contadorCoincidencias, talla_seleccionada);
+        printf(GREEN"Se han encontrado %d zapato(s) con talla %d\n"RESET, contadorCoincidencias, talla_seleccionada);
     }
     printf("\n\n");
 }
@@ -188,7 +188,7 @@ void venderZapato(struct zapato_t *zapato, int *contZapatos)
     printf("\nMENU / Vender zapato \n");
     for(int i = 0; i < *contZapatos; i++)
     {
-        printf(GREEN_BOLD
+        printf(GREEN
             "\n"
             "Ref    : %d\n"
             "Color  : %s\n"
@@ -304,7 +304,7 @@ void pedirCadena(char *miembro, int tam)
         
         if(i == tam - 1 && c != '\n')
         {
-            printf(YELLOW_BOLD
+            printf(YELLOW
                 "Has introducido demasiados caracteres\n"
                 "Intentalo de nuevo\n"
                 "-> "RESET);
