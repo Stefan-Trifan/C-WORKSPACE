@@ -140,7 +140,7 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         if(argc < 4 || argc > TAM_ARR + 2)
         {
             printf(RED_BOLD
-                "ERROR: Tienes que introducir minimo 2 jugadores y  10.\n"YELLOW_BOLD
+                "ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"YELLOW_BOLD
                 "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
                 "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
@@ -164,7 +164,7 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         if(argc < 3 || argc > TAM_ARR + 1)
         {
             printf(RED_BOLD
-                "ERROR: Tienes que introducir minimo 2 jugadores y  10.\n"YELLOW_BOLD
+                "ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"YELLOW_BOLD
                 "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
                 "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
                 "\n_________________________________________FAIL\n\n"RESET);
