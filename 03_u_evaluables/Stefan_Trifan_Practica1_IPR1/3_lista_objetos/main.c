@@ -17,12 +17,18 @@
 
 #include <stdio.h>
 
+#define RED_BOLD "\033[1;31m"
+#define GREEN_BOLD "\033[1;32m"
+#define YELLOW_BOLD "\033[1;33m"
+#define RESET "\033[0m"
+
 typedef struct objeto_t
 {
     int id;
     float peso;
     char categoria;
-}objeto_t;
+}
+objeto_t;
 
 // Funciones del programa
 int procesarObjetos(int argc);
@@ -62,7 +68,12 @@ int procesarObjetos(int argc)
 {
     if(argc < 2 || argc > 11)
     {
-        
+        printf(RED_BOLD
+            "ERROR: Tienes que introducir entre 1 y 10 objetos.\n"YELLOW_BOLD
+            "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
+            "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED_BOLD
+            "\n_________________________________________FAIL\n\n"RESET);
+        return 1; // error
     }
     return 0;
 }
