@@ -9,13 +9,15 @@
         Sorteo
 
     *   Testing
-        Bien: ./main 1 Jose Steve 
-        Bien: ./main 6 Megan Pepe Steve Ana Val Carlos Marcos Guada Gyan Mate
+        Bien: 
+            ./main 1 Jose Steve 
+            ./main 6 Megan Pepe Steve Ana Val Carlos Marcos Guada Gyan Mate
 
-        Mal: ./main 1 Jose
-        Mal: ./main 1 MaximilianoAlejandroFernandezRodriguezGonzalez Steve 
-        Mal: ./main 1 Jose-Vicente 3- Steve       
-        Mal: ./main = Steve Jose
+        Mal: 
+            ./main 1 Jose
+            ./main 1 MaximilianoAlejandroFernandezRodriguezGonzalez Steve 
+            ./main 1 Jose-Vicente 3- Steve       
+            ./main = Steve Jose
 */
 
 /* _________________________________________
@@ -263,8 +265,7 @@ void seleccionarGanador(
     int numeroAleatorio[TAM_ARR - 1], 
     char ganador[TAM_ARR][TAM_STR])
 {
-    int random   = 0,
-        repetido = 0;
+    int repetido = 0;
 
     // Si el usuario no especifica que hay ganadores por defecto debe haber 1 ganador
     if(num_ganadores == 0)
@@ -278,8 +279,7 @@ void seleccionarGanador(
         do
         {
             repetido = 0;
-            random = rand() % cont_jugadores;
-            numeroAleatorio[i] = random;
+            numeroAleatorio[i] = rand() % cont_jugadores;
             // Comprobamos si el mismo indice ya ha salido
             for(int j = 0; j < i; j++)
             {
