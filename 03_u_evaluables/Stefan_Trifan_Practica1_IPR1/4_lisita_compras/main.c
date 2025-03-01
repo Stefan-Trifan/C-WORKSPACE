@@ -22,8 +22,11 @@
 
 typedef struct ingrediente_t
 {
-
-}ingrediente_t;
+    int nombre;
+    int cant;
+    int tipo;
+}
+ingrediente_t;
 
 // Funciones del programa
 void introducirIngrediente();
@@ -34,11 +37,11 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(int argc, char *argv[])
+int main()
 {
     printf("\n_________________________________________START\n\n");
 
-    ingrediente_t ingrediente[TAM_ARR][TAM_STR];
+    ingrediente_t ingrediente[TAM_ARR];
 
     printf("\n_________________________________________END\n\n");
     return 0;

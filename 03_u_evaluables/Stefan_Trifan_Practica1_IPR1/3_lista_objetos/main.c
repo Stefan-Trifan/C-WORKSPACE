@@ -19,7 +19,7 @@
 #include <stdlib.h> // Para strtol() y strtof()
 
 #define TAM_ARR 10
-#define TAM_TEMP 10
+#define TAM_TEMP 10 // Equivale a los digitos que puede tener un int
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"
 #define YELLOW "\033[1;33m"
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     objeto_t objeto[TAM_ARR] = {0};
-    int err         = 0; 
+    int err = 0; 
 
     // Comprobamos que el usuario respeta el limite de objetos
     if(argc < 2 || argc > 11)
@@ -222,10 +222,10 @@ void guardarObjetos(objeto_t *objeto, int argc, char *argv[])
         if(argv[i_str][i_char] == ':') i_char++;
 
         // Guardamos en nuestra estructura la categoria
-        if(argv[i_str][i_char] >= 65 && argv[i_str][i_char] <= 67) // Si la letra es mayuscula (Ej. 'A')
+        if(argv[i_str][i_char] >= 65 && argv[i_str][i_char] <= 67)    // Si la letra es mayuscula (Ej. 'A')
             (objeto + (i_str - 1))->categ = argv[i_str][i_char];
-        else // Si la letra es minuscula (Ej. 'a')
-            (objeto + (i_str - 1))->categ = argv[i_str][i_char] - 32; // Guardamos la letra en mauscula ('A')
+        else                                                          // Si la letra es minuscula (Ej. 'a')
+            (objeto + (i_str - 1))->categ = argv[i_str][i_char] - 32; // Convertimos la letra a mayuscula
     }
 }
 
