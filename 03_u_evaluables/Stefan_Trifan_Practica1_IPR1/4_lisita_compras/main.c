@@ -26,9 +26,9 @@
 
 typedef struct ingrediente_t
 {
-    int nombre;
+    char nombre[TAM_STR];
     int cant;
-    int tipo;
+    int tipo; // Crear enumeracion
 }
 ingrediente_t;
 
@@ -38,6 +38,7 @@ void introducirIngrediente(ingrediente_t *ingrediente,int cont_ingredientes);
 void eliminarIngrediente();
 // Funciones auxiliares
 int pedirEnteroPos();
+void pedirCadena(char arr[], int tam);
 void clearBuffer();
 
 /* _________________________________________
@@ -72,11 +73,17 @@ int main()
         }
         while (opcion < 1 || opcion > 4);
 
+        // todo Poner en la misma linea
         switch (opcion)
         {
-            case 1: verLista(); break;
-            case 2: introducirIngrediente(ingrediente, cont_ingredientes); break;
-            case 3: eliminarIngrediente(); break;
+            case 1: 
+                verLista(); 
+                break;
+            case 2: 
+                introducirIngrediente(ingrediente, cont_ingredientes); 
+                break;
+            case 3: eliminarIngrediente(); 
+                break;
         }
         
     } 
@@ -94,6 +101,14 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
+// typedef struct ingrediente_t
+// {
+//     char nombre[TAM_STR];
+//     int cant;
+//     int tipo; // Crear enumeracion
+// }
+// ingrediente_t;
+
 // Funciones del programa
 /**
  * 
@@ -102,6 +117,7 @@ void verLista()
 {
     printf("\n\n");
 }
+
 /**
  * @brief Introduce un ingrediente de la lista
  * @param[]      
@@ -109,8 +125,9 @@ void verLista()
  */
 void introducirIngrediente(ingrediente_t *ingrediente,int cont_ingredientes)
 {
+    char temp[TAM_STR];
     // Pedimos el nombre del ingrediente
-
+    pedirCadena(temp, TAM_STR);
     // Si el ingrediente no existe lo crea
 
     // Si el ingrediente ya existe actualizamos la nueva cantidad
@@ -128,6 +145,10 @@ void eliminarIngrediente()
 }
 
 // Funciones auxiliares
+/**
+ * @brief pide al usuario un entero positivo hasta que lo introduzca bien
+ * @return entero positivo
+ */
 int pedirEnteroPos()
 {
     int num = 0, esValido = 0;
@@ -143,6 +164,11 @@ int pedirEnteroPos()
     } 
     while (esValido != 1);
     return num;
+}
+
+void pedirCadena(char arr[], int tam)
+{
+
 }
 
 void clearBuffer()
