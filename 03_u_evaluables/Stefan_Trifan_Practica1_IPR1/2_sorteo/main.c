@@ -88,7 +88,6 @@ int main(int argc, char *argv[])
         err = comprobarNombres(2, argc, argv); // Comenzamos en argv[2]
     else
         err = comprobarNombres(1, argc, argv); // Comenzamos en argv[1]
-
     if(err) return 1;
         
     // Guardamos en el arreglo jugadores los jugadores
@@ -134,7 +133,7 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         // Comprobamos que el usuario introduce entre 2 y 10 jugadores
         if(argc < 4 || argc > TAM_ARR + 2)
         {
-            printf(RED"ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"RESET);
+            printf(RED"ERROR: Tienes que introducir entre 2 y %d jugadores.\n"RESET, TAM_ARR);
             verUso();
             return 1; // error
         }
@@ -154,7 +153,7 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         // Comprobamos que el usuario introduce entre 2 y 10 jugadores
         if(argc < 3 || argc > TAM_ARR + 1)
         {
-            printf(RED"ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"RESET);
+            printf(RED"ERROR: Tienes que introducir entre 2 y %d jugadores.\n"RESET, TAM_ARR);
             verUso();
             return 1; // error
         }

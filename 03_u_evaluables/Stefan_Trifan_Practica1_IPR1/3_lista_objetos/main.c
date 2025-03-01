@@ -16,8 +16,10 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#include <stdlib.h> // Para strtol() y strtof()
 
 #define TAM_ARR 10
+#define TAM_TEMP 10
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"
 #define YELLOW "\033[1;33m"
@@ -27,15 +29,15 @@ typedef struct objeto_t
 {
     int id;
     float peso;
-    char categoria;
+    char categ;
 }
 objeto_t;
 
 // Funciones del programa
 int procesarArgumentos(int argc);
 int comprobarObjetos(int argc, char *argv[]);
-int guardarObjetos();
-void imprimirObjetos(char letra);
+void guardarObjetos(objeto_t *objeto, int argc, char *argv[]);
+void imprimirObjetos(char letra, objeto_t *objeto, int argc);
 void verUso();
 // Funciones auxiliares
 void clearBuffer();
@@ -48,31 +50,27 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     objeto_t objeto[TAM_ARR] = {0};
-    int err            = 0,
-        num_objetos      = 0;
+    int err         = 0; 
 
     // Comprobamos que el usuario respeta el limite de objetos
     if(argc < 2 || argc > 11)
     {
-        printf(RED"ERROR: Tienes que introducir entre 1 y 10 objetos.\n"RESET);
+        printf(RED"ERROR: Tienes que introducir entre 1 y %d objetos.\n"RESET, TAM_ARR);
         verUso();
         return 1; // error
     }
-    num_objetos = argc - 1;
 
     // Devuelve un error si el ID, peso o categoria no son correctos
     err = comprobarObjetos(argc, argv);
     if(err) return 1;
 
-    // Si son correctos los guardamos en nuestro array de estructuras
-    // Utilizamos un arreglo de string intermedio
-    err = guardarObjetos();
-    if(err) return 1;
+    // Guardamos los objetos en nuestro array de estructuras
+    guardarObjetos(objeto, argc, argv);
 
-     // Imprimimos los objetos en orden
-
-    /* DEBUG LOG */
-    printf("DEBUG num_objetos: %d\n", num_objetos);
+    // Imprimimos los objetos en orden
+    imprimirObjetos('A', objeto, argc);
+    imprimirObjetos('B', objeto, argc);
+    imprimirObjetos('C', objeto, argc);
 
     printf("\n_________________________________________END\n\n");
     return 0;
@@ -179,21 +177,75 @@ int comprobarObjetos(int argc, char *argv[])
 }
 
 /**
- * 
- * 
+ * Guardamos los objetos en nuestro array de estructuras
+ * @param[out] objeto Array de estructuras que contiene los objetos
  */
-int guardarObjetos()
+void guardarObjetos(objeto_t *objeto, int argc, char *argv[])
 {
-    return 0;
+    for(int i_str = 1; i_str < argc; i_str++)
+    {
+        char temp[TAM_TEMP] = {0}; // Array temporal
+        int i_char = 0;
+        int i_temp = 0;
+
+        // 1º MIEMBRO
+        // Guardamos dentro de temp el ID
+        while(argv[i_str][i_char] != ':')
+        {
+            temp[i_temp] = argv[i_str][i_char];
+            i_char++;
+            i_temp++;
+        }
+        // Convertimos temp a INT y lo guardamos en nuestra estructura
+        (objeto + (i_str - 1))->id = strtol(temp, NULL, 10);
+
+        // 2º MIEMBRO
+        if(argv[i_str][i_char] == ':')
+        {
+            i_char++;
+            // Resteamos temp
+            i_temp = 0;
+            for(int i = 0; i < TAM_TEMP; i++) temp[i] = '\0';
+        }
+
+        // Guardamos dentro de temp el PESO
+        while(argv[i_str][i_char] != ':')
+        {
+            temp[i_temp] = argv[i_str][i_char];
+            i_char++;
+            i_temp++;
+        }
+        // Convertimos temp a FLOAT y lo guardamos en nuestra estructura
+        (objeto + (i_str - 1))->peso = strtof(temp, NULL);
+
+        // 3º MIEMBRO
+        if(argv[i_str][i_char] == ':') i_char++;
+
+        // Guardamos en nuestra estructura la categoria
+        (objeto + (i_str - 1))->categ = argv[i_str][i_char];
+    }
 }
 
 /**
- * 
+ * @param[in] letra : Recibe la categoria que va a imprimir la funcion 
  * 
  */
-void imprimirObjetos(char letra)
+void imprimirObjetos(char letra, objeto_t *objeto, int argc)
 {
-
+    printf("CATEGORIA %c\n\n", letra);
+    for(int i = 0; i < argc - 1; i++)
+    {
+        if(objeto[i].categ == letra)
+        {
+            printf(GREEN
+                "ID    : %d\n"
+                "Peso  : %.2f\n"
+                "Categ : %c\n"
+                "\n"RESET, 
+                objeto[i].id, objeto[i].peso, objeto[i].categ);
+        }
+    }
+    printf("\n");
 }
 
 void verUso()
@@ -210,3 +262,32 @@ void clearBuffer()
 {
     while (getchar() != '\n');
 }
+
+/* 
+    DEBUG LOG 
+    printf("DEBUG num_objetos: %d\n\n\n", argc - 1);
+
+    printf("DEBUG id 0   : %d\n", objeto[0].id);
+    printf("DEBUG id 1   : %d\n", objeto[1].id);
+    printf("DEBUG id 2   : %d\n", objeto[2].id);
+    printf("DEBUG id 3   : %d\n", objeto[3].id);
+    printf("DEBUG id 4   : %d\n", objeto[4].id);
+    printf("DEBUG id 5   : %d\n", objeto[5].id);
+    printf("DEBUG id 6   : %d\n", objeto[6].id);
+    printf("\n\n");
+    printf("DEBUG peso 0 : %.2f\n", objeto[0].peso);
+    printf("DEBUG peso 1 : %.2f\n", objeto[1].peso);
+    printf("DEBUG peso 2 : %.2f\n", objeto[2].peso);
+    printf("DEBUG peso 3 : %.2f\n", objeto[3].peso);
+    printf("DEBUG peso 4 : %.2f\n", objeto[4].peso);
+    printf("DEBUG peso 5 : %.2f\n", objeto[5].peso);
+    printf("DEBUG peso 6 : %.2f\n", objeto[6].peso);
+    printf("\n\n");
+    printf("DEBUG categ 0: %c\n", objeto[0].categ);
+    printf("DEBUG categ 1: %c\n", objeto[1].categ);
+    printf("DEBUG categ 2: %c\n", objeto[2].categ);
+    printf("DEBUG categ 3: %c\n", objeto[3].categ);
+    printf("DEBUG categ 4: %c\n", objeto[4].categ);
+    printf("DEBUG categ 5: %c\n", objeto[5].categ);
+    printf("DEBUG categ 6: %c\n", objeto[6].categ);
+*/
