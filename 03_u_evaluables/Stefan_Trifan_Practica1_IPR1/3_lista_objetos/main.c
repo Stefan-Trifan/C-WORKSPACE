@@ -146,7 +146,7 @@ int comprobarObjetos(int argc, char *argv[])
         }
         if(cont_punto_float > 1)
         {
-            printf(RED"ERROR: El float puede contener un unico punto\n"RESET);
+            printf(RED"ERROR: El PESO solo puede contener un unico punto decimal.\n"RESET);
             verUso();
             return 1; // Error
         }
@@ -222,7 +222,10 @@ void guardarObjetos(objeto_t *objeto, int argc, char *argv[])
         if(argv[i_str][i_char] == ':') i_char++;
 
         // Guardamos en nuestra estructura la categoria
-        (objeto + (i_str - 1))->categ = argv[i_str][i_char];
+        if(argv[i_str][i_char] >= 65 && argv[i_str][i_char] <= 67) // Si la letra es mayuscula (Ej. 'A')
+            (objeto + (i_str - 1))->categ = argv[i_str][i_char];
+        else // Si la letra es minuscula (Ej. 'a')
+            (objeto + (i_str - 1))->categ = argv[i_str][i_char] - 32; // Guardamos la letra en mauscula ('A')
     }
 }
 
