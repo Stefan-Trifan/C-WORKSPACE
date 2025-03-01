@@ -61,6 +61,7 @@ void seleccionarGanador
     int cont_jugadores, 
     char jugadores[TAM_ARR][TAM_STR]
 );
+void verUso();
 
 // Funciones auxiliares
 void clearBuffer();
@@ -123,11 +124,8 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
     // Si el usuario ejecuta el programa sin argumentos devuelve error
     if(argc == 1)
     {
-        printf(RED
-            "ERROR: Tienes que introducir minimo 2 jugadores.\n"YELLOW
-            "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
-            "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED
-            "\n_________________________________________FAIL\n\n"RESET);
+        printf(RED"ERROR: Tienes que introducir minimo 2 jugadores.\n"RESET);
+        verUso();
         return 1; // error
     }
     // Si el segundo argumento es el numero de ganadores
@@ -136,11 +134,8 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         // Comprobamos que el usuario introduce entre 2 y 10 jugadores
         if(argc < 4 || argc > TAM_ARR + 2)
         {
-            printf(RED
-                "ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"YELLOW
-                "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
-                "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED
-                "\n_________________________________________FAIL\n\n"RESET);
+            printf(RED"ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"RESET);
+            verUso();
             return 1; // error
         }
         *cont_jugadores = argc - 2;
@@ -148,9 +143,8 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         // Comprobamos que no hay mas ganadores que jugadores
         if(*num_ganadores >= *cont_jugadores) 
         {
-            printf(RED
-            "ERROR: El numero de ganadores debe ser inferior al numero de participantes\n"
-            "\n_________________________________________FAIL\n\n"RESET);
+            printf(RED"ERROR: El numero de ganadores debe ser inferior al numero de participantes\n"RESET);
+            verUso();
             return 1; // error
         }
     }
@@ -160,11 +154,8 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
         // Comprobamos que el usuario introduce entre 2 y 10 jugadores
         if(argc < 3 || argc > TAM_ARR + 1)
         {
-            printf(RED
-                "ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"YELLOW
-                "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
-                "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED
-                "\n_________________________________________FAIL\n\n"RESET);
+            printf(RED"ERROR: Tienes que introducir entre 2 y 10 jugadores.\n"RESET);
+            verUso();
             return 1; // error
         }
         *cont_jugadores = argc - 1;
@@ -201,20 +192,15 @@ int comprobarNombres(int i, int argc, char *argv[])
             {
                 printf(RED
                     "ERROR: Los nombres de los jugadores no pueden \n"
-                    "empezar por numero o tener nombres compuestos\n"YELLOW
-                    "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
-                    "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED
-                    "\n_________________________________________FAIL\n\n"RESET);
+                    "empezar por numero o tener nombres compuestos\n"RESET);
+                verUso();
                 return 1; // error
             }
             // Nombre jugador supera el tamaño que puede tener un string
             if(num_letras_argumento > TAM_STR - 1)
             {
-                printf(RED
-                    "ERROR: El nombre excede el límite de %d caracteres.\n"YELLOW
-                    "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
-                    "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"RED
-                    "\n_________________________________________FAIL\n\n"RESET, TAM_STR - 1);
+                printf(RED"ERROR: El nombre excede el límite de %d caracteres.\n"RESET, TAM_STR - 1);
+                verUso();
                 return 1; // error
             }
             j++;
@@ -295,6 +281,17 @@ void seleccionarGanador(
         }
         printf(GREEN"%dº: %s\n"RESET, i + 1, ganadores[i]); // Imprimimos los ganadores
     }
+}
+
+void verUso()
+{
+    printf(
+        YELLOW
+        "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
+        "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"
+        RED
+        "\n_________________________________________FAIL\n\n"
+        RESET);
 }
 
 // Funciones auxiliares

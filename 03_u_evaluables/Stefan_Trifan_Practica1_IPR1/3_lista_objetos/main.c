@@ -158,20 +158,17 @@ int comprobarObjetos(int argc, char *argv[])
             j++;
         }
         // CATEGORIA (CHAR)
-        while(argv[i][j] != '\0')
+        // Comprobamos la categoria es 'A', 'B' o 'C'
+        if(
+            argv[i][j]     != 'A' && argv[i][j] != 'B' && argv[i][j] != 'C' &&
+            argv[i][j]     != 'a' && argv[i][j] != 'b' && argv[i][j] != 'c' ||
+            argv[i][j + 1] != '\0'
+        )
         {
-            // Comprobamos la categoria es A, B o C
-            if(
-                argv[i][j] != 'A' && argv[i][j] != 'B' && argv[i][j] != 'C' &&
-                argv[i][j] != 'a' && argv[i][j] != 'b' && argv[i][j] != 'c'
-            )
-            {
-                printf(RED "ERROR 3: La CATEG debe ser 'A', 'B' o 'C'\n"RESET);
-                verUso();
-                return 1; // Error
-            } 
-            j++;
-        }
+            printf(RED "ERROR: La CATEG debe ser 'A', 'B' o 'C'\n"RESET);
+            verUso();
+            return 1; // Error
+        } 
         if(cont_separadores != 2)
         {
             printf("Formato incorrecto");
