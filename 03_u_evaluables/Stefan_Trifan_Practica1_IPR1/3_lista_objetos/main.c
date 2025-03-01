@@ -47,8 +47,7 @@ int main(int argc, char *argv[])
 
     objeto_t objeto[TAM_ARR] = {0};
     int error            = 0,
-        num_objetos      = 0,
-        cont_separadores = 0;
+        num_objetos      = 0;
 
     // Comprobamos que el usuario respeta el limite de objetos
     if(argc < 2 || argc > 11)
@@ -66,7 +65,10 @@ int main(int argc, char *argv[])
     // ./main 101:2.5:A\0 102:3.1:B\0 103:1.8:C\0 104:4.0:A\0 105:2.2:B\0 106:3.9:C\0
     for(int i = 1; i < argc; i++)
     {
-        int j = 0;
+        int j                = 0,
+            cont_separadores = 0,
+            cont_punto_float = 0;
+            
         while(argv[i][j] != ':')
         {
             // Comprobamos si el ID  son solo numeros
@@ -89,7 +91,10 @@ int main(int argc, char *argv[])
         while(argv[i][j] != ':')
         {
             // TODO Comprobamos el float
-            if(!(argv[i][j] >= '0' && argv[i][j] <= '9'))
+            if
+            (
+                !(argv[i][j] >= '0' && argv[i][j] <= '9')
+            )
             {
                 printf(RED
                     "ERROR 2: El PESO solo puede contener numeros\n"YELLOW
