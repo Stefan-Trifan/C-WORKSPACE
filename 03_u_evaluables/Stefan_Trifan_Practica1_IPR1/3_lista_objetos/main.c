@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     imprimirObjetos('B', objeto, argc);
     imprimirObjetos('C', objeto, argc);
 
-    printf("\n_________________________________________END\n\n");
+    printf("_________________________________________END\n\n");
     return 0;
 }
 
@@ -232,9 +232,14 @@ void guardarObjetos(objeto_t *objeto, int argc, char *argv[])
  */
 void imprimirObjetos(char letra, objeto_t *objeto, int argc)
 {
-    printf("CATEGORIA %c\n\n", letra);
+    int primera_coincidencia = 0;
     for(int i = 0; i < argc - 1; i++)
     {
+        if(!primera_coincidencia && objeto[i].categ == letra)
+        {
+            printf("CATEGORIA %c\n\n", letra);
+            primera_coincidencia++;
+        }
         if(objeto[i].categ == letra)
         {
             printf(GREEN
@@ -245,7 +250,6 @@ void imprimirObjetos(char letra, objeto_t *objeto, int argc)
                 objeto[i].id, objeto[i].peso, objeto[i].categ);
         }
     }
-    printf("\n");
 }
 
 void verUso()
