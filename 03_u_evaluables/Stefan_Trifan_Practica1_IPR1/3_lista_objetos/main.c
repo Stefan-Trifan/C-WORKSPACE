@@ -33,7 +33,8 @@ objeto_t;
 
 // Funciones del programa
 int procesarArgumentos(int argc);
-int comprobarObjetos();
+int comprobarObjetos(int argc, char *argv[]);
+int guardarObjetos();
 void imprimirObjetos(char letra);
 void verUso();
 // Funciones auxiliares
@@ -47,7 +48,7 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     objeto_t objeto[TAM_ARR] = {0};
-    int error            = 0,
+    int err            = 0,
         num_objetos      = 0;
 
     // Comprobamos que el usuario respeta el limite de objetos
@@ -59,7 +60,41 @@ int main(int argc, char *argv[])
     }
     num_objetos = argc - 1;
 
-    // Comprobamos que el formato de los objetos es correcto 
+    // Devuelve un error si el ID, peso o categoria no son correctos
+    err = comprobarObjetos(argc, argv);
+    if(err) return 1;
+
+    // Si son correctos los guardamos en nuestro array de estructuras
+    // Utilizamos un arreglo de string intermedio
+    err = guardarObjetos();
+    if(err) return 1;
+
+     // Imprimimos los objetos en orden
+
+    /* DEBUG LOG */
+    printf("DEBUG num_objetos: %d\n", num_objetos);
+
+    printf("\n_________________________________________END\n\n");
+    return 0;
+}
+
+/* _________________________________________
+   Inicio definicion de funciones */
+
+// Funciones del programa
+/**
+ * Comprobamos que el formato de los objetos es correcto 
+ * 
+ * @return 1 (error) si:
+ *      - El ID contiene contiene caracteres no numericos
+ *      - El PESO contiene caracteres no numericos que no sean '.'
+ *      - El punto decimal del PESO está mal colocado
+ *      - Hay mas de un punto decimal en PESO
+ *      - La CATEG es distinta de 'A', 'B' o 'C'
+ *      - La CATEG tiene mas de un solo caracter
+ */
+int comprobarObjetos(int argc, char *argv[])
+{
     for(int i = 1; i < argc; i++)
     {
         int j                = 0,
@@ -74,7 +109,7 @@ int main(int argc, char *argv[])
             {
                 printf(RED"ERROR: El ID solo puede contener numeros\n"RESET);
                 verUso();
-                return 1;
+                return 1; // Error
             } 
             j++;
         }
@@ -83,12 +118,12 @@ int main(int argc, char *argv[])
             cont_separadores++;
             j++;
         }
-         // PESO (FLOAT)
+        // PESO (FLOAT)
         if(argv[i][j] == '.')
         {
             printf(RED"ERROR: El punto del float esta mal colocado. Falta parte entera\n"RESET);
             verUso();
-            return 1;
+            return 1; // Error
         }
         while(argv[i][j] != ':')
         {
@@ -97,7 +132,7 @@ int main(int argc, char *argv[])
             {
                 printf(RED"ERROR: El PESO solo puede contener numeros o punto\n"RESET);
                 verUso();
-                return 1;
+                return 1; // Error
             } 
             if(argv[i][j] == '.')
             {
@@ -107,7 +142,7 @@ int main(int argc, char *argv[])
             {
                 printf(RED"ERROR: El punto del float esta mal colocado. Falta parte decimal\n"RESET);
                 verUso();
-                return 1;
+                return 1; // Error
             }
             j++;
         }
@@ -115,7 +150,7 @@ int main(int argc, char *argv[])
         {
             printf(RED"ERROR: El float puede contener un unico punto\n"RESET);
             verUso();
-            return 1;
+            return 1; // Error
         }
         if(argv[i][j] == ':')
         {
@@ -133,36 +168,24 @@ int main(int argc, char *argv[])
             {
                 printf(RED "ERROR 3: La CATEG debe ser 'A', 'B' o 'C'\n"RESET);
                 verUso();
-                return 1;
+                return 1; // Error
             } 
             j++;
         }
         if(cont_separadores != 2)
         {
             printf("Formato incorrecto");
-            return 1;
+            return 1; // Error
         }
     }
-
-    // Si son correctos los guardamos en nuestro array de estructuras
-    // Utilizamos un arreglo de string intermedio
-
-    // Imprimimos los objetos en orden
-
-    /* DEBUG LOG */
-    // printf("DEBUG num_objetos: %d\n", num_objetos);
-
-    printf("\n_________________________________________END\n\n");
     return 0;
 }
 
-/* _________________________________________
-   Inicio definicion de funciones */
-
-// Funciones del programa
 /**
+ * 
+ * 
  */
-int comprobarObjetos()
+int guardarObjetos()
 {
     return 0;
 }

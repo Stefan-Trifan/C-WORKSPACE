@@ -75,21 +75,20 @@ int main(int argc, char *argv[])
     // Definimos las variables
     char jugadores[TAM_ARR][TAM_STR] = {0};
     int cont_jugadores = 0,
-        num_ganadores  = 0, // Especifica si el usuario ha declarado un numero de jugadores
-        error          = 0;
+        num_ganadores  = 0,   // Especifica si el usuario ha declarado un numero de jugadores
+        err            = 0;
     
     // La funcion devuelve un codigo de error si se supera el limite de jugadores
-    error = procesarArgumentos(&cont_jugadores, &num_ganadores, argc, argv);
-    if(error)
-        return 1;
+    err = procesarArgumentos(&cont_jugadores, &num_ganadores, argc, argv);
+    if(err) return 1;
 
     // La funcion devuelve un error si los nombres de los jugadores no son correctos
     if(num_ganadores)
-        error = comprobarNombres(2, argc, argv); // Comenzamos en argv[2]
+        err = comprobarNombres(2, argc, argv); // Comenzamos en argv[2]
     else
-        error = comprobarNombres(1, argc, argv); // Comenzamos en argv[1]
-    if(error)
-        return 1;
+        err = comprobarNombres(1, argc, argv); // Comenzamos en argv[1]
+
+    if(err) return 1;
         
     // Guardamos en el arreglo jugadores los jugadores
     if(num_ganadores)
@@ -181,7 +180,7 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
  * @param[in] i : 
  *      Especifica el indice de argv dese el cual la funcion comprueba si los nombres 
  *      son correctos dependiendo si hay numero de ganadores o no
- * @return devuelve un error si:
+ * @return error si:
  *      Los nombres de los jugadores contienen numero o son compuestos
  *      El numero de caracteres de un jugador supera el tamaño soportado por el string
  */
