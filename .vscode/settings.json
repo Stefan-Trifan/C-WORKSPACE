@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "__locale": "c",
+        "ios": "c"
     }
 }

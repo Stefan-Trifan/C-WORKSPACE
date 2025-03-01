@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 
 // Funciones del programa
 /**
- * Comprobamos que el formato de los objetos es correcto 
+ * @brief Comprobamos que el formato de los objetos es correcto 
  * 
  * @return 1 (error) si:
  *      - El ID contiene contiene caracteres no numericos
@@ -177,7 +177,7 @@ int comprobarObjetos(int argc, char *argv[])
 }
 
 /**
- * Guardamos los objetos en nuestro array de estructuras
+ * @brief Guardamos los objetos en nuestro array de estructuras
  * @param[out] objeto Array de estructuras que contiene los objetos
  */
 void guardarObjetos(objeto_t *objeto, int argc, char *argv[])
@@ -230,8 +230,9 @@ void guardarObjetos(objeto_t *objeto, int argc, char *argv[])
 }
 
 /**
+ * @brief Imprime los objetos junto con un encabezado
+ *        Si una categoria no tiene objetos, no se imprime su encabezado
  * @param[in] letra : Recibe la categoria que va a imprimir la funcion 
- * 
  */
 void imprimirObjetos(char letra, objeto_t *objeto, int argc)
 {

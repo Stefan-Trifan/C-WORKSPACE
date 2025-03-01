@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
 
 // Funciones del programa
 /**
- * Comprueba si el usuario:
+ * @brief Comprueba si el usuario:
  *     1: Ha introducido el numero correcto de argumentos
  *     2: Ha declarado un numero de ganadores y cuenta 
  *        los jugadores que participan para cada caso
@@ -163,13 +163,14 @@ int procesarArgumentos(int *cont_jugadores, int *num_ganadores, int argc, char *
 }
 
 /**
- * Comprueba que ningun jugador supere el  de caracteres que pueda almacenar un string
- * Comprobamos que los nombres de los jugadores no tengan numeros o nombres compuestos
- * Le pasamos como argumento el indice desde el cual tiene que comprobar los nombres
+ * @brief 
+ *      Comprueba que ningun jugador supere el limite de caracteres que pueda almacenar un string
+ *      Comprobamos que los nombres de los jugadores no tengan numeros o nombres compuestos
+ *      Le pasamos como argumento el indice desde el cual tiene que comprobar los nombres
  * 
- * @param[in] i : 
- *      Especifica el indice de argv dese el cual la funcion comprueba si los nombres 
- *      son correctos dependiendo si hay numero de ganadores o no
+ * @param[in] i
+ *      Especifica el indice de argv dese el cual la funcion comprueba si 
+ *      los nombres son correctos dependiendo si hay numero de ganadores o no
  * @return error si:
  *      Los nombres de los jugadores contienen numero o son compuestos
  *      El numero de caracteres de un jugador supera el tamaño soportado por el string
@@ -209,11 +210,11 @@ int comprobarNombres(int i, int argc, char *argv[])
 }
 
 /**
- * Asignamos el nombre de cada jugador a las cadenas de nuestro array por referencia
+ * @brief Asignamos el nombre de cada jugador a las cadenas de nuestro array por referencia
  * 
- * @param[in] i :
+ * @param[in] i:
  *      Especifica el indice de argv dese el cual la funcion guarda nombres en el array
- * @param[out] jugadores : 
+ * @param[out] jugadores: 
  *      Arreglo de string que guarda los nombres de los jugadores
  */
 void guardarNombres(int i, char jugadores[TAM_ARR][TAM_STR], int argc, char *argv[])
@@ -233,7 +234,7 @@ void guardarNombres(int i, char jugadores[TAM_ARR][TAM_STR], int argc, char *arg
 }
 
 /**
- * Funcion que selecciona los ganadores
+ * @brief Funcion que selecciona los ganadores
  */
 void seleccionarGanador(
     int num_ganadores, 
