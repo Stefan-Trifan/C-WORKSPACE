@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 
-#define TAM_TXT 5
+#define TAM_TXT 51
 #define RED "\033[1;31m"
 #define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
@@ -124,11 +124,12 @@ int main(int argc, char *argv[])
 int leerCadena(char *cadena)
 {
     printf("Introduce el texto (max. %d caracteres)\n-> ", TAM_TXT - 1);
-    int i = 0, esValido = 0;
+    int i = 0, esValido;
     char c;
     do
     {
         i = 0;
+        esValido = 1;
         while (i < TAM_TXT - 1)
         {
             c = getchar();
@@ -142,25 +143,21 @@ int leerCadena(char *cadena)
         }
         cadena[i] = '\0'; 
 
+        // printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
+        
         if(i == TAM_TXT - 1)
         {
             c = getchar();
+            if(c != '\n')
+            {
+                printf(
+                    "\033[1;33mHas introducido demasiados caracteres\n"
+                    "Intentalo de nuevo\n"
+                    "-> \033[0m");
+                clearBuffer();
+                esValido = 0;
+            }
         }
-        // printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
-        
-        if(i == TAM_TXT - 1 && c != '\n')
-        {
-            printf(
-                "\033[1;33mHas introducido demasiados caracteres\n"
-                "Intentalo de nuevo\n"
-                "-> \033[0m");
-            clearBuffer();
-            esValido = 0;
-        }
-        else
-		{
-			esValido = 1;
-		}
     } 
     while (esValido != 1);
     return i;

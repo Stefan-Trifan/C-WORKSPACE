@@ -367,11 +367,12 @@ int pedirEnteroPos()
  */
 int pedirCadena(char *text)
 {
-    int i = 0, esValido = 0;
+    int i = 0, esValido;
     char c;
     do
     {
         i = 0;
+        esValido = 1;
         while (i < TAM_STR - 1)
         {
             c = getchar();
@@ -385,25 +386,21 @@ int pedirCadena(char *text)
         }
         text[i] = '\0'; 
 
+        // printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
+        
         if(i == TAM_STR - 1)
         {
             c = getchar();
+            if(c != '\n')
+            {
+                printf(
+                    "\033[1;33mHas introducido demasiados caracteres\n"
+                    "Intentalo de nuevo\n"
+                    "-> \033[0m");
+                clearBuffer();
+                esValido = 0;
+            }
         }
-        // printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
-        
-        if(i == TAM_STR - 1 && c != '\n')
-        {
-            printf(
-                "\033[1;33mHas introducido demasiados caracteres\n"
-                "Intentalo de nuevo\n"
-                "-> \033[0m");
-            clearBuffer();
-            esValido = 0;
-        }
-        else
-		{
-			esValido = 1;
-		}
     } 
     while (esValido != 1);
     return i;
