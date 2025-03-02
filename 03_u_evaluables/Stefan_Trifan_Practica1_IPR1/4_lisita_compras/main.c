@@ -54,8 +54,6 @@ int main()
 {
     printf("\n___________________________________________START\n\n");
 
-    // todo comentar bien el codigo
-
     // todo restablecer a 0
     ingrediente_t ingrediente[TAM_ARR] = 
     {
@@ -68,7 +66,6 @@ int main()
 
     do
     {
-        // todo descomentar
         printf(
             "+------------------------------------------+\n" 
             "|            LISTA DE LA COMPRA            |\n" 
@@ -91,23 +88,23 @@ int main()
         switch (opcion)
         {
             case 1: 
-                printf("\n\n\n\n");
+                printf("\n\n\n");
                 printf("Hay %d elementos en la lista\n", cont_ingredientes);
                 verLista(ingrediente, cont_ingredientes); 
-                printf("\n\n\n\n");
+                printf("\n\n\n");
                 break; 
             case 2: 
-                printf("\n\n\n\n");
+                printf("\n\n\n");
                 verLista(ingrediente, cont_ingredientes); 
                 introducirIngrediente(ingrediente, &cont_ingredientes); 
                 verLista(ingrediente, cont_ingredientes); 
-                printf("\n\n\n\n");
+                printf("\n\n\n");
                 break;
             case 3: 
-                printf("\n\n\n\n");
+                printf("\n\n\n");
                 verLista(ingrediente, cont_ingredientes);
                 eliminarIngrediente(ingrediente, &cont_ingredientes); 
-                printf("\n\n\n\n");
+                printf("\n\n\n");
                 break;
         }
         
@@ -117,7 +114,7 @@ int main()
     printf(
         "\n\n"
         "Muchas gracias por su visita!\n"
-        "Saliendo del programa...\n");
+        "Saliendo del programa...\n\n");
 
     printf("\n___________________________________________END\n\n");
     return 0;
@@ -128,7 +125,7 @@ int main()
 
 // Funciones del programa
 /**
- * @brief 
+ * @brief Imprime la tabla con los elementos de la lista
  */
 void verLista(ingrediente_t *ingrediente, int cont_ingredientes)
 {
@@ -169,7 +166,7 @@ void verLista(ingrediente_t *ingrediente, int cont_ingredientes)
  */
 void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 {
-    /// @brief array temporal donde guardamos el nombre del ingrediente 
+    /// Array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
     char temp[TAM_STR]      = {0};
     int existe_ingrediente = 0,
@@ -183,7 +180,6 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
         "(Max. %d caracteres)-> ", TAM_STR - 1);
     num_letras_user = pedirCadena(temp);
 
-    // todo crear funcion codigo repetido
     // Comprobamos si el elemento ya existe en la lista
     for(i = 0; i < *cont_ingredientes; i++)
     {
@@ -272,7 +268,7 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 {
     
-    /// @brief array temporal donde guardamos el nombre del ingrediente 
+    /// Array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
     char temp[TAM_STR]      = {0};
     int existe_ingrediente = 0,
@@ -286,7 +282,6 @@ void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
         "(Max. %d caracteres)-> ", TAM_STR - 1);
     num_letras_user = pedirCadena(temp);
 
-    // todo crear funcion codigo repetido
     // Comprobamos si el elemento ya existe en la lista
     for(i = 0; i < *cont_ingredientes; i++)
     {
@@ -350,7 +345,7 @@ void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 
 // Funciones auxiliares
 /**
- * @brief solicita al usuario un entero positivo hasta que introduzca un valor valido
+ * @brief Solicita al usuario un entero positivo hasta que introduzca un valor valido
  * @return entero positivo
  */
 int pedirEnteroPos()
