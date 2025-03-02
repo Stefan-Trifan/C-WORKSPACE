@@ -70,16 +70,16 @@ int main()
     {
         // todo descomentar
         printf(
-            "+-----------------------------------------+\n" 
-            "|           LISTA DE LA COMPRA            |\n" 
-            "|-----------------------------------------|\n"
-            "|         Selecciona una opcion:          |\n"
-            "|                                         |\n"
-            "| [1] Listar                              |\n"
-            "| [2] Introducir                          |\n"
-            "| [3] Eliminar                            |\n"
-            "| [4] Salir                               |\n"  
-            "+-----------------------------------------+\n"
+            "+------------------------------------------+\n" 
+            "|            LISTA DE LA COMPRA            |\n" 
+            "|------------------------------------------|\n"
+            "|          Selecciona una opcion:          |\n"
+            "|                                          |\n"
+            "| [1] Listar                               |\n"
+            "| [2] Introducir                           |\n"
+            "| [3] Eliminar                             |\n"
+            "| [4] Salir                                |\n"  
+            "+------------------------------------------+\n"
             "-> ");
 
         do{ 
@@ -98,15 +98,15 @@ int main()
                 break; 
             case 2: 
                 printf("\n\n\n\n");
+                verLista(ingrediente, cont_ingredientes); 
                 introducirIngrediente(ingrediente, &cont_ingredientes); 
-                verLista(ingrediente, cont_ingredientes); // Todo eliminar verLista
+                verLista(ingrediente, cont_ingredientes); 
                 printf("\n\n\n\n");
                 break;
             case 3: 
                 printf("\n\n\n\n");
                 verLista(ingrediente, cont_ingredientes);
                 eliminarIngrediente(ingrediente, &cont_ingredientes); 
-                verLista(ingrediente, cont_ingredientes);
                 printf("\n\n\n\n");
                 break;
         }
@@ -135,27 +135,27 @@ void verLista(ingrediente_t *ingrediente, int cont_ingredientes)
 
     if(cont_ingredientes)
     {
-        printf("+-----------------------------------------+\n");
+        printf("+------------------------------------------+\n");
         for(int i = 0; i < cont_ingredientes; i++)
         {
             if(ingrediente[i].tipo == GRAMOS)
             {
                 printf(
-                    "| %2dº | %15s | %6dg         |\n", 
+                    "| %2dº | %15s | %7dg         |\n", 
                     i + 1, ingrediente[i].nombre, ingrediente[i].cant);
             }
             else if (ingrediente[i].tipo == UNIDADES)
             {
                 printf(
-                    "| %2dº | %15s | %6d unidades |\n", 
+                    "| %2dº | %15s | %7d unidades |\n", 
                     i + 1, ingrediente[i].nombre, ingrediente[i].cant);
             }
             if(i < cont_ingredientes - 1)
             {
-                printf("|-----------------------------------------|\n");
+                printf("|------------------------------------------|\n");
             }
         }
-        printf("+-----------------------------------------+\n");
+        printf("+------------------------------------------+\n");
     }
     else
     {
@@ -318,19 +318,12 @@ void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
         (ingrediente + i)->tipo = GRAMOS;
         
         // Movemos todos los elementos superiores en la lista una posicion mas abajo
-        printf(
-            "DEBUG i = %d\n"
-            "DEBUG cont_elementos = %d\n", i, *cont_ingredientes);
-
-        // typedef struct ingrediente_t
-        // {
-        //     char nombre[TAM_STR];
-        //     int cant;
-        //     tipo_t tipo;
-        // }
-        // ingrediente_t;
-
-        for(; i < *cont_ingredientes + 3; i++)
+        (*cont_ingredientes)--;
+        // printf(
+        //     "DEBUG i = %d\n"
+        //     "DEBUG cont_elementos = %d\n", i, *cont_ingredientes);
+        
+        for(; i < *cont_ingredientes; i++)
         {
             int j = 0;
             while((ingrediente + i + 1)->nombre[j] != '\0')
@@ -338,14 +331,13 @@ void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
                 (ingrediente + i)->nombre[j] = (ingrediente + i + 1)->nombre[j];
                 j++;
             }
+            (ingrediente + i)->nombre[j] = '\0';
             (ingrediente + i)->cant = (ingrediente + i + 1)->cant;
             (ingrediente + i)->tipo = (ingrediente + i + 1)->tipo;
         }
 
-        (*cont_ingredientes)--;
-
-
         printf(GREEN"La lista ha sido actualizada con exito\n"RESET);
+        verLista(ingrediente, *cont_ingredientes); 
     }
     // Si el ingrediente no existe en la lista mostramos un error
     else
@@ -371,6 +363,11 @@ int pedirEnteroPos()
         if(esValido != 1 || num < 0)
         {
             printf(RED"ERROR: El numero debe ser positivo\n-> "RESET);
+            esValido = 0;
+        }
+        if(esValido == 1 && num > 9999999)
+        {
+            printf(RED"ERROR: El numero debe tener 7 digitos o menos\n-> "RESET);
             esValido = 0;
         }
     } 
