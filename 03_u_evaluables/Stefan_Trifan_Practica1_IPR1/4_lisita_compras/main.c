@@ -54,6 +54,8 @@ int main()
 {
     printf("\n___________________________________________START\n\n");
 
+    // todo comentar bien el codigo
+
     // todo restablecer a 0
     ingrediente_t ingrediente[TAM_ARR] = 
     {
@@ -89,19 +91,20 @@ int main()
         switch (opcion)
         {
             case 1: 
-                printf("\n\n");
+                printf("\n\n\n\n");
                 printf("Hay %d elementos en la lista\n", cont_ingredientes);
                 verLista(ingrediente, cont_ingredientes); 
                 printf("\n\n\n\n");
                 break; 
             case 2: 
-                printf("\n\n");
+                printf("\n\n\n\n");
                 introducirIngrediente(ingrediente, &cont_ingredientes); 
                 verLista(ingrediente, cont_ingredientes); // Todo eliminar verLista
                 printf("\n\n\n\n");
                 break;
             case 3: 
-                printf("\n\n");
+                printf("\n\n\n\n");
+                verLista(ingrediente, cont_ingredientes);
                 eliminarIngrediente(ingrediente, &cont_ingredientes); 
                 verLista(ingrediente, cont_ingredientes);
                 printf("\n\n\n\n");
@@ -313,17 +316,33 @@ void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
         }
         (ingrediente + i)->cant = 0;
         (ingrediente + i)->tipo = GRAMOS;
-        (*cont_ingredientes)--;
-
+        
         // Movemos todos los elementos superiores en la lista una posicion mas abajo
         printf(
             "DEBUG i = %d\n"
             "DEBUG cont_elementos = %d\n", i, *cont_ingredientes);
 
-        for(; i < *cont_ingredientes; i++)
+        // typedef struct ingrediente_t
+        // {
+        //     char nombre[TAM_STR];
+        //     int cant;
+        //     tipo_t tipo;
+        // }
+        // ingrediente_t;
+
+        for(; i < *cont_ingredientes + 3; i++)
         {
-            
+            int j = 0;
+            while((ingrediente + i + 1)->nombre[j] != '\0')
+            {
+                (ingrediente + i)->nombre[j] = (ingrediente + i + 1)->nombre[j];
+                j++;
+            }
+            (ingrediente + i)->cant = (ingrediente + i + 1)->cant;
+            (ingrediente + i)->tipo = (ingrediente + i + 1)->tipo;
         }
+
+        (*cont_ingredientes)--;
 
 
         printf(GREEN"La lista ha sido actualizada con exito\n"RESET);
