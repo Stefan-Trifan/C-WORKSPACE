@@ -53,17 +53,19 @@ int main(int argc, char *argv[])
 
 void pedirCadena(char *text, int tam)
 {
-    int i = 0, esValido = 1;
+    int i = 0, esValido;
     char c;
     do
     {
         i = 0;
+        esValido = 1;
         while (i < tam - 1)
         {
             c = getchar();
 
             // printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
-            if(c == '\n') break;
+            if(c == '\n')
+				break;
                 
             text[i] = c;
             i++; 
@@ -83,10 +85,6 @@ void pedirCadena(char *text, int tam)
                     "-> \033[0m");
                 clearBuffer();
                 esValido = 0;
-            }
-            else
-            {
-                esValido = 1;
             }
         }
     } 
