@@ -20,14 +20,14 @@
 
 #include <stdio.h>
 
-#define TAM_TXT 51
+#define TAM_TXT 5
 #define RED "\033[1;31m"
 #define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
 
 // Funciones del programa
-int leerCadena(char* cadena);
-int cuentaCaracter(char* cadena, char caracter, int numCaracteres);
+int leerCadena(char *cadena);
+int cuentaCaracter(char *cadena, char caracter, int numCaracteres);
 void clearBuffer();
 
 /* _________________________________________
@@ -121,42 +121,48 @@ int main(int argc, char *argv[])
  * @param[out] cadena: Puntero donde se almacena el nombre del usuario 
  * @return Numero de caracteres introducidos por el usuario
  */
-int leerCadena(char* cadena)
+int leerCadena(char *cadena)
 {
-    int i = 0, esValido = 1;
-    char c;
     printf("Introduce el texto (max. %d caracteres)\n-> ", TAM_TXT - 1);
+    int i = 0, esValido = 0;
+    char c;
     do
     {
         i = 0;
-        while(i < TAM_TXT - 1)
+        while (i < TAM_TXT - 1)
         {
             c = getchar();
-    
-            if(c == '\n') break;
-    
+
+            // printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
+            if(c == '\n')
+				break;
+                
             cadena[i] = c;
-            i++;
+            i++; 
         }
-        cadena[i] = '\0';
-    
+        cadena[i] = '\0'; 
+
         if(i == TAM_TXT - 1)
         {
             c = getchar();
-            if(c != '\n')
-            {
-                printf(YELLOW
-                    "ALERTA: Has superado el limite de caracteres\n"
-                    "Por favor, intentelo de nuevo (max. %d caracteres)\n"
-                    "-> "RESET, TAM_TXT - 1);
-                clearBuffer();
-                esValido = 0;
-            }
-            else 
-                esValido = 1;
         }
+        // printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
+        
+        if(i == TAM_TXT - 1 && c != '\n')
+        {
+            printf(
+                "\033[1;33mHas introducido demasiados caracteres\n"
+                "Intentalo de nuevo\n"
+                "-> \033[0m");
+            clearBuffer();
+            esValido = 0;
+        }
+        else
+		{
+			esValido = 1;
+		}
     } 
-    while(esValido != 1);
+    while (esValido != 1);
     return i;
 }
 
@@ -173,7 +179,7 @@ int leerCadena(char* cadena)
  *      Coincide con el tamanio de la cadena
  * @return Numero de veces que se repite la letra en la cadena
 */
-int cuentaCaracter(char* cadena, char caracter, int numCaracteres)
+int cuentaCaracter(char *cadena, char caracter, int numCaracteres)
 {
     int contadorCoincidencias = 0;
     
