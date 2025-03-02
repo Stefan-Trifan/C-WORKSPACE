@@ -18,7 +18,7 @@
 #include <stdio.h>
 
 #define TAM_ARR 10
-#define TAM_STR 16
+#define TAM_STR 5
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"
 #define YELLOW "\033[1;33m"
@@ -38,7 +38,7 @@ void introducirIngrediente(ingrediente_t *ingrediente,int cont_ingredientes);
 void eliminarIngrediente();
 // Funciones auxiliares
 int pedirEnteroPos();
-void pedirCadena(char arr[], int tam);
+void pedirCadena(char *text);
 void clearBuffer();
 
 /* _________________________________________
@@ -55,16 +55,16 @@ int main()
     do
     {
         printf(
-            "+--------------------------------+\n"
-            "|       LISTA DE LA COMPRA       |\n"
-            "|--------------------------------|\n"
-            "|     Selecciona una opcion:     |\n"
-            "|                                |\n"
+            // "+--------------------------------+\n"
+            // "|       LISTA DE LA COMPRA       |\n" // todo descomentar
+            // "|--------------------------------|\n"
+            // "|     Selecciona una opcion:     |\n"
+            // "|                                |\n"
             "| [1] Listar                     |\n"
             "| [2] Introducir                 |\n"
             "| [3] Eliminar                   |\n"
             "| [4] Salir                      |\n"  
-            "+--------------------------------+\n"
+            // "+--------------------------------+\n"
             "-> ");
 
         do{ 
@@ -111,7 +111,7 @@ int main()
 
 // Funciones del programa
 /**
- * 
+ * @brief
  */
 void verLista()
 {
@@ -120,19 +120,24 @@ void verLista()
 
 /**
  * @brief Introduce un ingrediente de la lista
- * @param[]      
- *      
  */
-void introducirIngrediente(ingrediente_t *ingrediente,int cont_ingredientes)
+void introducirIngrediente(ingrediente_t *ingrediente, int cont_ingredientes)
 {
     char temp[TAM_STR];
+
     // Pedimos el nombre del ingrediente
-    pedirCadena(temp, TAM_STR);
+    printf(
+        "Introduce el nombre del ingrediente que deseas aniadir\n"
+        "(Max. %d caracteres)-> ", TAM_STR - 1);
+    pedirCadena(temp);
+    printf("DEBUG temp : %s\n", temp);
+
     // Si el ingrediente no existe lo crea
 
     // Si el ingrediente ya existe actualizamos la nueva cantidad
     printf("\n\n");
 }
+
 /**
  * @brief Elimina un ingrediente de la lista
  */
@@ -146,7 +151,7 @@ void eliminarIngrediente()
 
 // Funciones auxiliares
 /**
- * @brief pide al usuario un entero positivo hasta que lo introduzca bien
+ * @brief solicita al usuario un entero positivo hasta que introduzca un valor valido
  * @return entero positivo
  */
 int pedirEnteroPos()
@@ -166,9 +171,49 @@ int pedirEnteroPos()
     return num;
 }
 
-void pedirCadena(char arr[], int tam)
+/**
+ * @brief Solicita al usuario una cadena de caracteres
+ *      - Si el usuario introduce más caracteres de los permitidos, 
+ *        se muestra un error y se le pide que vuelva a intentarlo.
+ * @param[out] text Puntero a un arreglo donde se almacena el ingrediente
+ */
+void pedirCadena(char *text)
 {
+    int esValido = 0;
+    char c;
+    do
+    {
+        int i = 0;
+        while(i < TAM_STR - 1)
+        {
+            c = getchar();
 
+            if(c == '\n') break;
+
+            text[i] = c;
+            i++;
+        }
+        text[i] = '\0';
+
+        if(i == TAM_STR - 1)
+        {
+            c = getchar();
+            if(c != '\n')
+            {
+                printf(
+                    "\033[1;33mHas introducido demasiados caracteres\n"
+                    "Intentalo de nuevo\n"
+                    "-> \033[0m");
+                clearBuffer();
+                esValido = 0;
+            }
+            else
+            {
+                esValido = 1;
+            }
+        }
+    } 
+    while (esValido != 1);
 }
 
 void clearBuffer()

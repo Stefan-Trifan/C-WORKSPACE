@@ -26,7 +26,7 @@
 #define RESET "\033[0m"
 
 // Funciones del programa
-int leerCadena(char* cadena, int tam);
+int leerCadena(char* cadena);
 int cuentaCaracter(char* cadena, char caracter, int numCaracteres);
 void clearBuffer();
 
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
     }
 
     // Pedimos el texto al usuario
-    numCaracteresTexto = leerCadena(texto, TAM_TXT);
+    numCaracteresTexto = leerCadena(texto);
     printf("\nTu texto de %d caracteres es: \n%s\n\n", numCaracteresTexto, texto);
 
     // Contamos las veces que se repite cada una de las letras
@@ -119,10 +119,9 @@ int main(int argc, char *argv[])
  * como máximo tam caracteres y devuelve el numero de caracteres
  * 
  * @param[out] cadena: Puntero donde se almacena el nombre del usuario 
- * @param[in] tam: Maximo de caracteres que puede tener la cadena
  * @return Numero de caracteres introducidos por el usuario
  */
-int leerCadena(char* cadena, int tam)
+int leerCadena(char* cadena)
 {
     int i = 0, esValido = 1;
     char c;

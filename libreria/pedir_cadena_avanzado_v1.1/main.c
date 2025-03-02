@@ -63,8 +63,7 @@ void pedirCadena(char *text, int tam)
             c = getchar();
 
             // printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
-            if(c == '\n')
-				break;
+            if(c == '\n') break;
                 
             text[i] = c;
             i++; 
