@@ -18,7 +18,7 @@
 #include <stdio.h>
 
 #define TAM_ARR 10
-#define TAM_STR 5
+#define TAM_STR 16
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"
 #define YELLOW "\033[1;33m"
@@ -33,7 +33,7 @@ typedef struct ingrediente_t
 ingrediente_t;
 
 // Funciones del programa
-void verLista();
+void verLista(ingrediente_t *ingrediente, int cont_ingredientes);
 void introducirIngrediente(ingrediente_t *ingrediente,int cont_ingredientes);
 void eliminarIngrediente();
 // Funciones auxiliares
@@ -48,9 +48,15 @@ int main()
 {
     printf("\n_________________________________________START\n\n");
 
-    ingrediente_t ingrediente[TAM_ARR];
+    // todo restablecer a 0
+    ingrediente_t ingrediente[TAM_ARR] = 
+    {
+        {"uvas", 500, 0},
+        {"tomates", 3, 1},
+        {"patatas", 10, 1}
+    };
     int opcion            = 0,
-        cont_ingredientes = 0;
+        cont_ingredientes = 3;
 
     do
     {
@@ -77,7 +83,7 @@ int main()
         switch (opcion)
         {
             case 1: 
-                verLista(); 
+                verLista(ingrediente, cont_ingredientes); 
                 break; 
             case 2: 
                 introducirIngrediente(ingrediente, cont_ingredientes); 
@@ -102,12 +108,42 @@ int main()
 /* _________________________________________
    Inicio definicion de funciones */
 
+// typedef struct ingrediente_t
+// {
+//     char nombre[TAM_STR];
+//     int cant;
+//     int tipo; // Crear enumeracion
+// }
+// ingrediente_t;
+
 // Funciones del programa
 /**
  * @brief
  */
-void verLista()
+void verLista(ingrediente_t *ingrediente, int cont_ingredientes)
 {
+    printf("\n\n");
+
+    if(cont_ingredientes)
+    {
+        printf("Hay %d elementos en la lista\n", cont_ingredientes);
+        for(int i = 0; i < cont_ingredientes; i++)
+        {
+            if(ingrediente[i].tipo == 0)
+            {
+                printf("%2dº - %15s, %5d gramos\n", i + 1, ingrediente[i].nombre, ingrediente[i].cant);
+            }
+            else
+            {
+                printf("%2dº - %15s, %5d unidades\n", i + 1, ingrediente[i].nombre, ingrediente[i].cant);
+            }
+        }
+    }
+    else
+    {
+        printf("No hay ingredientes en la lista\n");
+    }
+    
     printf("\n\n");
 }
 
@@ -123,7 +159,10 @@ void introducirIngrediente(ingrediente_t *ingrediente, int cont_ingredientes)
         "Introduce el nombre del ingrediente que deseas aniadir\n"
         "(Max. %d caracteres)-> ", TAM_STR - 1);
     pedirCadena(temp);
-    printf("DEBUG temp : %s\n", temp);
+    for(int i = 0; i < cont_ingredientes; i++)
+    {
+        
+    }
 
     // Si el ingrediente no existe lo crea
 
