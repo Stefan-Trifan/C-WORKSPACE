@@ -68,16 +68,16 @@ int main()
     {
         // todo descomentar
         printf(
-            "+-----------------------------------------+\n" 
-            "|           LISTA DE LA COMPRA            |\n" 
-            "|-----------------------------------------|\n"
-            "|         Selecciona una opcion:          |\n"
-            "|                                         |\n"
+            // "+-----------------------------------------+\n" 
+            // "|           LISTA DE LA COMPRA            |\n" 
+            // "|-----------------------------------------|\n"
+            // "|         Selecciona una opcion:          |\n"
+            // "|                                         |\n"
             "| [1] Listar                              |\n"
             "| [2] Introducir                          |\n"
             "| [3] Eliminar                            |\n"
             "| [4] Salir                               |\n"  
-            "+-----------------------------------------+\n"
+            // "+-----------------------------------------+\n"
             "-> ");
 
         do{ 
@@ -86,24 +86,24 @@ int main()
         }
         while (opcion < 1 || opcion > 4);
 
-        // todo Poner en la misma linea
         switch (opcion)
         {
             case 1: 
                 printf("\n\n");
                 verLista(ingrediente, cont_ingredientes); 
-                printf("\n\n");
+                printf("\n\n\n\n");
                 break; 
             case 2: 
                 printf("\n\n");
                 verLista(ingrediente, cont_ingredientes); // Todo eliminar verLista
                 introducirIngrediente(ingrediente, &cont_ingredientes); 
-                printf("\n\n");
+                // verLista(ingrediente, cont_ingredientes); // Todo eliminar verLista
+                printf("\n\n\n\n");
                 break;
             case 3: 
                 printf("\n\n");
                 eliminarIngrediente(); 
-                printf("\n\n");
+                printf("\n\n\n\n");
                 break;
         }
         
@@ -177,9 +177,10 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 {
     /// @brief array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
-    char temp[TAM_STR]; 
-    int existe          = 0,
-        num_letras_user = 0;
+    char temp[TAM_STR]      = {0};
+    int  existe_ingrediente = 0,
+         num_letras_user    = 0,
+         i                  = 0;
 
     // Pedimos el nombre del ingrediente
     printf(
@@ -188,7 +189,7 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
     num_letras_user = pedirCadena(temp);
 
     // Comprobamos si el elemento ya existe en la lista
-    for(int i = 0; i < *cont_ingredientes; i++)
+    for(i = 0; i < *cont_ingredientes; i++)
     {
         int num_letras_coinciden = 0, j = 0;
 
@@ -202,25 +203,22 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
         }
         if(num_letras_user == num_letras_coinciden && num_letras_coinciden == j)
         {
-            existe = 1;
+            existe_ingrediente = 1;
             break;
         }
     }
-
-    if(existe)
-    {
-        printf("El elemento existe en la lista");
-    }
-    else
-    {
-        printf("El elemento NO existe en la lista");
-    }
-
-    
-
-    // Si el ingrediente no existe lo crea
+    printf("DEBUG i = %d\n", i);
 
     // Si el ingrediente ya existe actualizamos la nueva cantidad
+    if(existe_ingrediente)
+    {
+        printf("El elemento existe en la lista\n");
+    }
+    // Si el ingrediente no existe lo crea
+    else
+    {
+        printf("El elemento NO existe en la lista\n");
+    }
 }
 
 /**
