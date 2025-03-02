@@ -92,6 +92,7 @@ void pedirCadena(char *text, int tam)
     } 
     while (esValido != 1);
 }
+
 void clearBuffer()
 {
 	while (getchar() != '\n');

@@ -55,8 +55,8 @@ int main()
     do
     {
         printf(
-            // "+--------------------------------+\n"
-            // "|       LISTA DE LA COMPRA       |\n" // todo descomentar
+            // "+--------------------------------+\n" // todo descomentar
+            // "|       LISTA DE LA COMPRA       |\n" 
             // "|--------------------------------|\n"
             // "|     Selecciona una opcion:     |\n"
             // "|                                |\n"
@@ -78,11 +78,12 @@ int main()
         {
             case 1: 
                 verLista(); 
-                break;
+                break; 
             case 2: 
                 introducirIngrediente(ingrediente, cont_ingredientes); 
                 break;
-            case 3: eliminarIngrediente(); 
+            case 3: 
+                eliminarIngrediente(); 
                 break;
         }
         
@@ -100,14 +101,6 @@ int main()
 
 /* _________________________________________
    Inicio definicion de funciones */
-
-// typedef struct ingrediente_t
-// {
-//     char nombre[TAM_STR];
-//     int cant;
-//     int tipo; // Crear enumeracion
-// }
-// ingrediente_t;
 
 // Funciones del programa
 /**
@@ -179,7 +172,7 @@ int pedirEnteroPos()
  */
 void pedirCadena(char *text)
 {
-    int esValido = 0;
+    int esValido = 1;
     char c;
     do
     {
@@ -200,10 +193,10 @@ void pedirCadena(char *text)
             c = getchar();
             if(c != '\n')
             {
-                printf(
-                    "\033[1;33mHas introducido demasiados caracteres\n"
-                    "Intentalo de nuevo\n"
-                    "-> \033[0m");
+                printf(YELLOW
+                    "Has introducido demasiados caracteres\n"
+                    "Intentelo de nuevo\n"
+                    "-> "RESET);
                 clearBuffer();
                 esValido = 0;
             }
@@ -211,7 +204,7 @@ void pedirCadena(char *text)
             {
                 esValido = 1;
             }
-        }
+        }  
     } 
     while (esValido != 1);
 }
