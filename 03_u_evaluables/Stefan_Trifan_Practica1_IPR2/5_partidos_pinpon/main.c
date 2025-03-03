@@ -66,28 +66,27 @@ int main()
 {
     printf("\n_________________________________________START\n\n");
 
-    // todo dar estilos tabla y controlar alineacion
 
     /// Probar el programa desde 0
-        // jugador_t lista_jugadores[N_JUG]     = {0};
-        // fecha_t   fecha_inicio               = {0};
-        // partido_t lista_partidos[N_PARTIDOS] = {0};
-
-    /// testing
-        jugador_t lista_jugadores[N_JUG]  = 
-        {
-            {"Alejandro", "Lopez", 19},
-            {"Natalia", "Garcia", 22},
-            {"Cristina", "Castillo", 22},
-            {"Eduardo", "Diaz", 22}
-        };
-        fecha_t fecha_inicio  = 
-        {
-            12,9,2025,21,29
-        };
+        jugador_t lista_jugadores[N_JUG]     = {0};
+        fecha_t   fecha_inicio               = {0};
         partido_t lista_partidos[N_PARTIDOS] = {0};
 
-/*     /// Pedimos los datos para cada jugador (4 en total)
+    /// testing
+        // jugador_t lista_jugadores[N_JUG]  = 
+        // {
+        //     {"Alejandro", "Lopez", 19},
+        //     {"Natalia", "Garcia", 22},
+        //     {"Cristina", "Castillo", 22},
+        //     {"Eduardo", "Diaz", 22}
+        // };
+        // fecha_t fecha_inicio  = 
+        // {
+        //     12,9,2025,21,29
+        // };
+        // partido_t lista_partidos[N_PARTIDOS] = {0};
+
+    /// Pedimos los datos para cada jugador (4 en total)
     printf("===== DATOS JUGADORES =====\n\n");
     for(int i = 0; i < N_JUG; i++)
     {
@@ -174,7 +173,7 @@ int main()
     } 
     while (fecha_inicio.min >= 60 || (fecha_inicio.hora == 21 && fecha_inicio.min > 29)); 
     
-    printf("\n\n"); */
+    printf("\n\n");
     
     // Configuramos los participantes de cada partido
     // Partido 1
