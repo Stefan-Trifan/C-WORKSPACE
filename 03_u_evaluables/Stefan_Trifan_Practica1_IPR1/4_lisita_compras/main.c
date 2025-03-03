@@ -71,7 +71,7 @@ int main()
     {
         printf(
             "+------------------------------------------+\n" 
-            "|            LISTA DE LA COMPRA            |\n" 
+            "|                MENU LISTA                |\n" 
             "|------------------------------------------|\n"
             "|          Selecciona una opcion:          |\n"
             "|                                          |\n"
@@ -130,41 +130,43 @@ int main()
 // Funciones del programa
 /**
  * @brief Imprime la lista de la compra en formato tabla
+ *        Si no hay ingredientes en la lista imprime un mensaje
+ * 
+ * @param[out] ingrediente Array de estructuras con cada uno de los ingredientes
+ * @param[in] cont_ingredientes Contador de ingredientes
  */
 void verLista(ingrediente_t *ingrediente, int cont_ingredientes)
 {
 
     if(cont_ingredientes)
     {
-        printf("+-----+-----------------+------------------+\n");
+        printf(
+            "+------------------------------------------+\n"
+            "|                 Mi lista                 |\n"
+            "+-----+-----------------+------------------+\n");
         for(int i = 0; i < cont_ingredientes; i++)
         {
             if(ingrediente[i].tipo == GRAMOS)
-            {
                 printf(
                     "| %2dº | %15s | %7dg         |\n", 
                     i + 1, ingrediente[i].nombre, ingrediente[i].cant);
-            }
             else if (ingrediente[i].tipo == UNIDADES)
-            {
                 printf(
                     "| %2dº | %15s | %7d unidades |\n", 
                     i + 1, ingrediente[i].nombre, ingrediente[i].cant);
-            }
-            
-                printf("+-----+-----------------+------------------+\n");
-        
+            printf("+-----+-----------------+------------------+\n");
         }
     }
     else
-    {
         printf("No hay ingredientes en la lista\n");
-    }
-    
 }
 
 /**
- * @brief Introduce un ingrediente de la lista
+ * @brief Actualiza la lista de ingredientes
+ *      1. Pide el nombre del ingrediente
+ *      2. Comprueba si el ingrediente existe
+ *          a. Si existe actualizamos la cantidad
+ *          b. Si no existe lo añade
  */
 void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 {
@@ -226,7 +228,7 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
     {
         printf("El elemento NO existe en la lista\n");
 
-        // Guardamos el nombre
+        // Copiamos el nombre del array temporal nuestra la lista
         int j = 0;
         while(temp[j] != '\0')
         {
@@ -259,6 +261,7 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
         } 
         while (opcion != 1 && opcion != 0);
 
+        // Actualizamos la cantidad de ingredientes
         (*cont_ingredientes)++;
     }
     printf(GREEN"La lista ha sido actualizada con exito\n"RESET);
@@ -266,10 +269,10 @@ void introducirIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 
 /**
  * @brief Elimina un ingrediente de la lista
+ *      - Si el ingrediente no existe en la lista avisamos al usuario
  */
 void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
 {
-    
     /// Array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
     char temp[TAM_STR]      = {0};
@@ -314,12 +317,13 @@ void eliminarIngrediente(ingrediente_t *ingrediente, int *cont_ingredientes)
         (ingrediente + i)->cant = 0;
         (ingrediente + i)->tipo = GRAMOS;
         
-        // Movemos todos los elementos superiores en la lista una posicion mas abajo
+        // Actualizamos el contador de ingredientes
         (*cont_ingredientes)--;
+        
+        // Movemos todos los elementos superiores en la lista una posicion mas abajo
         // printf(
         //     "DEBUG i = %d\n"
         //     "DEBUG cont_elementos = %d\n", i, *cont_ingredientes);
-        
         for(; i < *cont_ingredientes; i++)
         {
             int j = 0;
@@ -391,8 +395,7 @@ int pedirCadena(char *text)
             c = getchar();
 
             // printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
-            if(c == '\n')
-				break;
+            if(c == '\n') break;
                 
             text[i] = c;
             i++; 
