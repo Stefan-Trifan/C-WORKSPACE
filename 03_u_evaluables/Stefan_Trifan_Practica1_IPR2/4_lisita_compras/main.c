@@ -36,9 +36,9 @@ typedef struct ingrediente_t
 ingrediente_t;
 
 // Funciones del programa
-void verLista(ingrediente_t *arr_ingrediente, int cont_ingredientes);
-void introducirIngrediente(ingrediente_t *arr_ingrediente,int *cont_ingredientes);
-void eliminarIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingredientes);
+void verLista(ingrediente_t *lista_ingredientes, int cont_ingredientes);
+void introducirIngrediente(ingrediente_t *lista_ingredientes,int *cont_ingredientes);
+void eliminarIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredientes);
 // Funciones auxiliares
 int pedirEnteroPos();
 int pedirCadena(char *text);
@@ -52,17 +52,18 @@ int main()
     printf("\n___________________________________________START\n\n");
 
     // Probar el programa desde 0
-        ingrediente_t arr_ingrediente[TAM_ARR] = {0};
-        int cont_ingredientes = 0;
+        // ingrediente_t lista_ingredientes[TAM_ARR] = {0};
+        // int cont_ingredientes = 0;
 
     // testing: Probar el programa con ingredientes en la lista
-        // ingrediente_t arr_ingrediente[TAM_ARR] = 
-        // {
-        //     {"uvas", 500, GRAMOS},
-        //     {"tomates", 3, UNIDADES},
-        //     {"patatas", 10, UNIDADES}
-        // };
-        // int cont_ingredientes = 3; 
+        ingrediente_t lista_ingredientes[TAM_ARR] = 
+        {
+            {"uvas", 500, GRAMOS},
+            {"patatas", 10, UNIDADES},
+            {"tomates", 1500, GRAMOS},
+            {"huevos", 12, UNIDADES}
+        };
+        int cont_ingredientes = 4; 
     
     int opcion = 0;
 
@@ -94,16 +95,16 @@ int main()
                 printf("\n\n\n");
                 if(cont_ingredientes)
                     printf("Hay %d elementos en la lista\n", cont_ingredientes);
-                verLista(arr_ingrediente, cont_ingredientes); 
+                verLista(lista_ingredientes, cont_ingredientes); 
                 printf("\n\n\n");
                 break; 
             case 2: 
                 printf("\n\n\n");
                 if(cont_ingredientes < TAM_ARR)
                 {
-                    verLista(arr_ingrediente, cont_ingredientes); 
-                    introducirIngrediente(arr_ingrediente, &cont_ingredientes); 
-                    verLista(arr_ingrediente, cont_ingredientes); 
+                    verLista(lista_ingredientes, cont_ingredientes); 
+                    introducirIngrediente(lista_ingredientes, &cont_ingredientes); 
+                    verLista(lista_ingredientes, cont_ingredientes); 
                 }
                 else
                 {
@@ -113,8 +114,8 @@ int main()
                 break;
             case 3: 
                 printf("\n\n\n");
-                verLista(arr_ingrediente, cont_ingredientes);
-                eliminarIngrediente(arr_ingrediente, &cont_ingredientes); 
+                verLista(lista_ingredientes, cont_ingredientes);
+                eliminarIngrediente(lista_ingredientes, &cont_ingredientes); 
                 printf("\n\n\n");
                 break;
         }
@@ -139,10 +140,10 @@ int main()
  * @brief Imprime la lista de la compra en formato tabla
  *        Si no hay ingredientes en la lista imprime un mensaje
  * 
- * @param[out] arr_ingrediente Array de estructuras con cada uno de los ingredientes
+ * @param[out] lista_ingredientes Array de estructuras con cada uno de los ingredientes
  * @param[in] cont_ingredientes Contador de ingredientes
  */
-void verLista(ingrediente_t *arr_ingrediente, int cont_ingredientes)
+void verLista(ingrediente_t *lista_ingredientes, int cont_ingredientes)
 {
 
     if(cont_ingredientes)
@@ -153,14 +154,14 @@ void verLista(ingrediente_t *arr_ingrediente, int cont_ingredientes)
             "+-----+-----------------+------------------+\n");
         for(int i = 0; i < cont_ingredientes; i++)
         {
-            if(arr_ingrediente[i].tipo == GRAMOS)
+            if(lista_ingredientes[i].tipo == GRAMOS)
                 printf(
                     "| %2dº | %15s | %7dg         |\n", 
-                    i + 1, arr_ingrediente[i].nombre, arr_ingrediente[i].cant);
-            else if (arr_ingrediente[i].tipo == UNIDADES)
+                    i + 1, lista_ingredientes[i].nombre, lista_ingredientes[i].cant);
+            else if (lista_ingredientes[i].tipo == UNIDADES)
                 printf(
                     "| %2dº | %15s | %7d unidades |\n", 
-                    i + 1, arr_ingrediente[i].nombre, arr_ingrediente[i].cant);
+                    i + 1, lista_ingredientes[i].nombre, lista_ingredientes[i].cant);
             printf("+-----+-----------------+------------------+\n");
         }
     }
@@ -175,7 +176,7 @@ void verLista(ingrediente_t *arr_ingrediente, int cont_ingredientes)
  *          a. Si existe actualizamos la cantidad
  *          b. Si no existe lo añade
  */
-void introducirIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingredientes)
+void introducirIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredientes)
 {
     /// Array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
@@ -191,14 +192,15 @@ void introducirIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingrediente
         "(Max. %d caracteres)-> ", TAM_STR - 1);
     num_letras_user = pedirCadena(temp);
 
+    // TODO: crear funcion comprobarSiExiste() con este codigo
     // Comprobamos si el elemento ya existe en la lista
     for(i = 0; i < *cont_ingredientes; i++)
     {
         int num_letras_coinciden = 0, j = 0;
 
-        while(arr_ingrediente[i].nombre[j] != '\0')
+        while(lista_ingredientes[i].nombre[j] != '\0')
         {
-            if(temp[j] == arr_ingrediente[i].nombre[j])
+            if(temp[j] == lista_ingredientes[i].nombre[j])
             {
                 num_letras_coinciden++;
             };
@@ -214,21 +216,21 @@ void introducirIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingrediente
     // Si el ingrediente ya existe actualizamos la nueva cantidad
     if(existe_ingrediente)
     {
-        if(arr_ingrediente[i].tipo == GRAMOS)
+        if(lista_ingredientes[i].tipo == GRAMOS)
         {
             printf(
                 "\nActualmente hay %dg\n"
                 "Que cantidad desea aniadir?\n"
-                "-> ", arr_ingrediente[i].cant);
+                "-> ", lista_ingredientes[i].cant);
         }
         else
         {
             printf(
                 "\nActualmente hay %d unidades\n"
                 "Que cantidad desea aniadir?\n"
-                "-> ", arr_ingrediente[i].cant);
+                "-> ", lista_ingredientes[i].cant);
         }
-        (arr_ingrediente + i)->cant += pedirEnteroPos();
+        (lista_ingredientes + i)->cant += pedirEnteroPos();
     }
     // Si el ingrediente no existe lo crea
     else
@@ -239,14 +241,14 @@ void introducirIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingrediente
         int j = 0;
         while(temp[j] != '\0')
         {
-            (arr_ingrediente + i)->nombre[j] = temp[j];
+            (lista_ingredientes + i)->nombre[j] = temp[j];
             j++;
         }
-        (arr_ingrediente + i)->nombre[j] = '\0';
+        (lista_ingredientes + i)->nombre[j] = '\0';
 
         // Pedimos la cantidad
         printf("¿Que cantidad desea introducir?\n-> ");
-        (arr_ingrediente + i)->cant = pedirEnteroPos();
+        (lista_ingredientes + i)->cant = pedirEnteroPos();
 
         // Pedimos el tipo de medida
         do
@@ -259,11 +261,11 @@ void introducirIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingrediente
             opcion = pedirEnteroPos();
             if(opcion == 1)
             {
-                (arr_ingrediente + i)->tipo = UNIDADES;
+                (lista_ingredientes + i)->tipo = UNIDADES;
             }
             else
             {
-                (arr_ingrediente + i)->tipo = GRAMOS;
+                (lista_ingredientes + i)->tipo = GRAMOS;
             }
         } 
         while (opcion != 1 && opcion != 0);
@@ -278,7 +280,7 @@ void introducirIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingrediente
  * @brief Elimina un ingrediente de la lista
  *      - Si el ingrediente no existe en la lista avisamos al usuario
  */
-void eliminarIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingredientes)
+void eliminarIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredientes)
 {
     /// Array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
@@ -294,14 +296,15 @@ void eliminarIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingredientes)
         "(Max. %d caracteres)-> ", TAM_STR - 1);
     num_letras_user = pedirCadena(temp);
 
+    // TODO: crear funcion comprobarSiExiste() con este codigo
     // Comprobamos si el elemento ya existe en la lista
     for(i = 0; i < *cont_ingredientes; i++)
     {
         int num_letras_coinciden = 0, j = 0;
 
-        while(arr_ingrediente[i].nombre[j] != '\0')
+        while(lista_ingredientes[i].nombre[j] != '\0')
         {
-            if(temp[j] == arr_ingrediente[i].nombre[j])
+            if(temp[j] == lista_ingredientes[i].nombre[j])
             {
                 num_letras_coinciden++;
             };
@@ -319,10 +322,10 @@ void eliminarIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingredientes)
         // Si el ingrediente existe en la lista lo eliminamos
         for (int j = 0; j < TAM_STR; j++) 
         {
-            (arr_ingrediente + i)->nombre[j] = '\0';
+            (lista_ingredientes + i)->nombre[j] = '\0';
         }
-        (arr_ingrediente + i)->cant = 0;
-        (arr_ingrediente + i)->tipo = GRAMOS;
+        (lista_ingredientes + i)->cant = 0;
+        (lista_ingredientes + i)->tipo = GRAMOS;
         
         // Actualizamos el contador de ingredientes
         (*cont_ingredientes)--;
@@ -334,18 +337,18 @@ void eliminarIngrediente(ingrediente_t *arr_ingrediente, int *cont_ingredientes)
         for(; i < *cont_ingredientes; i++)
         {
             int j = 0;
-            while((arr_ingrediente + i + 1)->nombre[j] != '\0')
+            while((lista_ingredientes + i + 1)->nombre[j] != '\0')
             {
-                (arr_ingrediente + i)->nombre[j] = (arr_ingrediente + i + 1)->nombre[j];
+                (lista_ingredientes + i)->nombre[j] = (lista_ingredientes + i + 1)->nombre[j];
                 j++;
             }
-            (arr_ingrediente + i)->nombre[j] = '\0';
-            (arr_ingrediente + i)->cant = (arr_ingrediente + i + 1)->cant;
-            (arr_ingrediente + i)->tipo = (arr_ingrediente + i + 1)->tipo;
+            (lista_ingredientes + i)->nombre[j] = '\0';
+            (lista_ingredientes + i)->cant = (lista_ingredientes + i + 1)->cant;
+            (lista_ingredientes + i)->tipo = (lista_ingredientes + i + 1)->tipo;
         }
 
         printf(GREEN"La lista ha sido actualizada con exito\n"RESET);
-        verLista(arr_ingrediente, *cont_ingredientes); 
+        verLista(lista_ingredientes, *cont_ingredientes); 
     }
     // Si el ingrediente no existe en la lista mostramos un error
     else
