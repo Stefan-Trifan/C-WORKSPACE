@@ -52,6 +52,7 @@ typedef struct partido_t
 partido_t;
 
 // Funciones del programa
+void copiarCadena(char *origen, char *destino);
 
 // Funciones auxiliares
 void pedirCadena(char text[]);
@@ -65,12 +66,62 @@ int main()
 {
     printf("\n_________________________________________START\n\n");
 
-    jugador_t lista_jugadores[N_JUG]     = {0};
-    fecha_t   fecha_inicio               = {0};
-    partido_t lista_partidos[N_PARTIDOS] = {0};
-    
+    // todo dar estilos tabla y controlar alineacion
+
+    /// Probar el programa desde 0
+        // jugador_t lista_jugadores[N_JUG]     = {0};
+        // fecha_t   fecha_inicio               = {0};
+        // partido_t lista_partidos[N_PARTIDOS] = {0};
+
+    /// testing
+        jugador_t lista_jugadores[N_JUG]  = 
+        {
+            {"Alejandro", "Lopez", 19},
+            {"Natalia", "Garcia", 22},
+            {"Cristina", "Castillo", 22},
+            {"Eduardo", "Diaz", 22}
+        };
+        fecha_t fecha_inicio  = 
+        {
+            12,9,2025,12,30
+        };
+        partido_t lista_partidos[N_PARTIDOS] = {0};
+/*         partido_t lista_partidos[N_PARTIDOS] = 
+        {
+            {
+                {0, 0, 0},
+                {0, 0, 0},
+                0,0,0,0,0
+            },
+            {
+                {0, 0, 0},
+                {0, 0, 0},
+                0,0,0,0,0   
+            },
+            {
+                {0, 0, 0},
+                {0, 0, 0},
+                0,0,0,0,0
+            },
+            {
+                {0, 0, 0},
+                {0, 0, 0},
+                0,0,0,0,0
+            },
+            {
+                {0, 0, 0},
+                {0, 0, 0},
+                0,0,0,0,0
+            },
+            {
+                {0, 0, 22},
+                {0, 0, 22},
+                0,0,0,0,0
+            },
+        }; */
+
     /// Pedimos los datos para cada jugador (4)
-    printf("===== DATOS JUGADORES =====\n\n");
+/*     printf("===== DATOS JUGADORES =====\n\n");
     for(int i = 0; i < N_JUG; i++)
     {
         // Nombre
@@ -83,7 +134,7 @@ int main()
         printf(
             "JUGADOR %d - Ingrese apellidos\n"
             "(max. %d caracteres) -> ", i + 1, TAM_STR - 1);
-        pedirCadena((lista_jugadores + i)->nombre);
+        pedirCadena((lista_jugadores + i)->apellidos);
         printf("\n");    
         // Edad
         printf(
@@ -95,8 +146,8 @@ int main()
 
     printf("===== FECHA DEL TORNEO =====\n\n");
 
-    /// Pedimos dia/mes/año/hora/min del primer partido
-    /// Dia
+    // Pedimos dia/mes/año/hora/min del primer partido
+    // Dia
     printf("Ingrese el dia\n-> ");
     do
     {
@@ -123,10 +174,10 @@ int main()
     do
     {
         fecha_inicio.ano = pedirEnteroPos();
-        if(fecha_inicio.ano <= 2025 || fecha_inicio.ano > 2100)
-            printf(YELLOW"ALERTA: Anio no puede ser superior a 2100\n-> "RESET);
+        if(fecha_inicio.ano < 2025 || fecha_inicio.ano > 2100)
+            printf(YELLOW"ALERTA: Anio no puede ser \ninferior a 2024 o superior a 2100\n-> "RESET);
     } 
-    while (fecha_inicio.ano <= 2025 || fecha_inicio.ano > 2100);
+    while (fecha_inicio.ano < 2025 || fecha_inicio.ano > 2100);
     printf("\n");
 
     /// Hora
@@ -134,10 +185,10 @@ int main()
     do
     {
         fecha_inicio.hora = pedirEnteroPos();
-        if(fecha_inicio.hora >= 24)
-            printf(YELLOW"ALERTA: Horas no puede ser superior a 23\n-> "RESET);
+        if(fecha_inicio.hora > 21)
+            printf(YELLOW"ALERTA: Horas no puede ser superior a 20\n-> "RESET);
     } 
-    while (fecha_inicio.hora >= 24);
+    while (fecha_inicio.hora > 21);
     printf("\n");
 
     /// Min
@@ -148,19 +199,162 @@ int main()
         if(fecha_inicio.min >= 60)
             printf(YELLOW"ALERTA: Minutos no puede ser superior a 59\n-> "RESET);
     } 
-    while (fecha_inicio.min >= 60);
+    while (fecha_inicio.min >= 60); 
     
-    printf("\n\n");
-    // DEBUG imprimimos todos
+    printf("\n\n");*/
+
+    // DEBUG imprimimos los jugadores
+    printf(
+        "===== DATOS JUGADORES =====\n\n"
+        "lista_jugadores[0].nombre    : %s\n"
+        "lista_jugadores[0].apellidos : %s\n"
+        "lista_jugadores[0].edad      : %d\n\n"
+        "lista_jugadores[1].nombre    : %s\n"
+        "lista_jugadores[1].apellidos : %s\n"
+        "lista_jugadores[1].edad      : %d\n\n"
+        "lista_jugadores[2].nombre    : %s\n"
+        "lista_jugadores[2].apellidos : %s\n"
+        "lista_jugadores[2].edad      : %d\n\n"
+        "lista_jugadores[3].nombre    : %s\n"
+        "lista_jugadores[3].apellidos : %s\n"
+        "lista_jugadores[4].edad      : %d\n\n",
+        lista_jugadores[0].nombre,
+        lista_jugadores[0].apellidos,
+        lista_jugadores[0].edad,
+        lista_jugadores[1].nombre,
+        lista_jugadores[1].apellidos,
+        lista_jugadores[1].edad,
+        lista_jugadores[2].nombre,
+        lista_jugadores[2].apellidos,
+        lista_jugadores[2].edad,
+        lista_jugadores[3].nombre,
+        lista_jugadores[3].apellidos,
+        lista_jugadores[3].edad);
+    // DEBUG imprimimos las fechas
+    printf(
+        "===== FECHA =====\n\n"
+        "Fecha : %d/%d/%d a las %d:%d\n\n",
+        fecha_inicio.dia, fecha_inicio.mes, fecha_inicio.ano, fecha_inicio.hora, fecha_inicio.min);
     
+    // Configuramos los participantes de cada partido
+    // Partido 1
+    copiarCadena(lista_jugadores[0].nombre,    lista_partidos[0].jugador1.nombre);
+    copiarCadena(lista_jugadores[0].apellidos, lista_partidos[0].jugador1.apellidos);
+    copiarCadena(lista_jugadores[1].nombre,    lista_partidos[0].jugador2.nombre);
+    copiarCadena(lista_jugadores[1].apellidos, lista_partidos[0].jugador2.apellidos);
+    // Partido 2
+    copiarCadena(lista_jugadores[0].nombre,    lista_partidos[1].jugador1.nombre);
+    copiarCadena(lista_jugadores[0].apellidos, lista_partidos[1].jugador1.apellidos);
+    copiarCadena(lista_jugadores[2].nombre,    lista_partidos[1].jugador2.nombre);
+    copiarCadena(lista_jugadores[2].apellidos, lista_partidos[1].jugador2.apellidos);
+    // Partido 3
+    copiarCadena(lista_jugadores[0].nombre,    lista_partidos[2].jugador1.nombre);
+    copiarCadena(lista_jugadores[0].apellidos, lista_partidos[2].jugador1.apellidos);
+    copiarCadena(lista_jugadores[3].nombre,    lista_partidos[2].jugador2.nombre);
+    copiarCadena(lista_jugadores[3].apellidos, lista_partidos[2].jugador2.apellidos);
+    // Partido 4
+    copiarCadena(lista_jugadores[1].nombre,    lista_partidos[3].jugador1.nombre);
+    copiarCadena(lista_jugadores[1].apellidos, lista_partidos[3].jugador1.apellidos);
+    copiarCadena(lista_jugadores[2].nombre,    lista_partidos[3].jugador2.nombre);
+    copiarCadena(lista_jugadores[2].apellidos, lista_partidos[3].jugador2.apellidos);
+    // Partido 5
+    copiarCadena(lista_jugadores[1].nombre,    lista_partidos[4].jugador1.nombre);
+    copiarCadena(lista_jugadores[1].apellidos, lista_partidos[4].jugador1.apellidos);
+    copiarCadena(lista_jugadores[3].nombre,    lista_partidos[4].jugador2.nombre);
+    copiarCadena(lista_jugadores[3].apellidos, lista_partidos[4].jugador2.apellidos);
+    // Partido 6
+    copiarCadena(lista_jugadores[2].nombre,    lista_partidos[5].jugador1.nombre);
+    copiarCadena(lista_jugadores[2].apellidos, lista_partidos[5].jugador1.apellidos);
+    copiarCadena(lista_jugadores[3].nombre,    lista_partidos[5].jugador2.nombre);
+    copiarCadena(lista_jugadores[3].apellidos,    lista_partidos[5].jugador2.apellidos);
+
+    // Configuramos la fecha de cada partido
+    lista_partidos[0].fecha_inicio.dia = fecha_inicio.dia;
+    lista_partidos[0].fecha_inicio.mes = fecha_inicio.mes;
+    lista_partidos[0].fecha_inicio.ano = fecha_inicio.ano;
+    lista_partidos[0].fecha_inicio.hora = fecha_inicio.hora;
+    lista_partidos[0].fecha_inicio.min = fecha_inicio.min;
+    for(int i = 1; i < 6; i++)
+    {
+        lista_partidos[i].fecha_inicio.dia = fecha_inicio.dia;
+        lista_partidos[i].fecha_inicio.mes = fecha_inicio.mes;
+        lista_partidos[i].fecha_inicio.ano = fecha_inicio.ano;
+    }
+    // Asignamos la hora de cada partido
+
+    // Imprimimos los partidos
+    printf(
+        "===== PARTIDOS =====\n\n"
+        "PARTIDO 1: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
+        "PARTIDO 2: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
+        "PARTIDO 3: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
+        "PARTIDO 4: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
+        "PARTIDO 5: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
+        "PARTIDO 6: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n",
+        lista_partidos[0].jugador1.nombre,
+        lista_partidos[0].jugador1.apellidos,
+        lista_partidos[0].jugador2.nombre,
+        lista_partidos[0].jugador2.apellidos,
+        lista_partidos[0].fecha_inicio.dia,
+        lista_partidos[0].fecha_inicio.mes,
+        lista_partidos[0].fecha_inicio.ano,
+        lista_partidos[0].fecha_inicio.hora,
+        lista_partidos[0].fecha_inicio.min,
+
+        lista_partidos[1].jugador1.nombre,
+        lista_partidos[1].jugador1.apellidos,
+        lista_partidos[1].jugador2.nombre,
+        lista_partidos[1].jugador2.apellidos,
+        lista_partidos[1].fecha_inicio.dia,
+        lista_partidos[1].fecha_inicio.mes,
+        lista_partidos[1].fecha_inicio.ano,
+        lista_partidos[1].fecha_inicio.hora,
+        lista_partidos[1].fecha_inicio.min,
+
+        lista_partidos[2].jugador1.nombre,
+        lista_partidos[2].jugador1.apellidos,
+        lista_partidos[2].jugador2.nombre,
+        lista_partidos[2].jugador2.apellidos,
+        lista_partidos[2].fecha_inicio.dia,
+        lista_partidos[2].fecha_inicio.mes,
+        lista_partidos[2].fecha_inicio.ano,
+        lista_partidos[2].fecha_inicio.hora,
+        lista_partidos[2].fecha_inicio.min,
+
+        lista_partidos[3].jugador1.nombre,
+        lista_partidos[3].jugador1.apellidos,
+        lista_partidos[3].jugador2.nombre,
+        lista_partidos[3].jugador2.apellidos,
+        lista_partidos[3].fecha_inicio.dia,
+        lista_partidos[3].fecha_inicio.mes,
+        lista_partidos[3].fecha_inicio.ano,
+        lista_partidos[3].fecha_inicio.hora,
+        lista_partidos[3].fecha_inicio.min,
+
+        lista_partidos[4].jugador1.nombre,
+        lista_partidos[4].jugador1.apellidos,
+        lista_partidos[4].jugador2.nombre,
+        lista_partidos[4].jugador2.apellidos,
+        lista_partidos[4].fecha_inicio.dia,
+        lista_partidos[4].fecha_inicio.mes,
+        lista_partidos[4].fecha_inicio.ano,
+        lista_partidos[4].fecha_inicio.hora,
+        lista_partidos[4].fecha_inicio.min,
+
+        lista_partidos[5].jugador1.nombre,
+        lista_partidos[5].jugador1.apellidos,
+        lista_partidos[5].jugador2.nombre,
+        lista_partidos[5].jugador2.apellidos,
+        lista_partidos[5].fecha_inicio.dia,
+        lista_partidos[5].fecha_inicio.mes,
+        lista_partidos[5].fecha_inicio.ano,
+        lista_partidos[5].fecha_inicio.hora,
+        lista_partidos[5].fecha_inicio.min);
 
     /// Creamos los partidos
-        /// 1 - A con B
-        /// 2 - A con C
-        /// 3 - A con D
-        /// 4 - B con C
-        /// 5 - B con D
-        /// 6 - C con D
+
+
+    /// Imprimimos los partidos
 
     printf("\n_________________________________________END\n\n");
     return 0;
@@ -170,16 +364,26 @@ int main()
    Inicio definicion de funciones */
 
 // Funciones del programa
+void copiarCadena(char *origen, char *destino)
+{
+    int j = 0;
+    while(origen[j] != '\0')
+    {
+        destino[j] = origen[j];
+        j++;
+    }
+    destino[j] = '\0';
+}
 
 // Funciones auxiliares
-/*  DEBUG
+void pedirCadena(char text[])
+{
+    /*  DEBUG
     entrada:rojo\n
         i: 4
         c: o
-  text[i]: o
-*/
-void pedirCadena(char text[])
-{
+    text[i]: o
+    */
     int esValido, i;
     char c;
     do
