@@ -26,11 +26,22 @@ typedef struct jugador_t
     int edad;
 }jugador_t;
 
-typedef struct fechas
+typedef struct fecha_t
 {
     int dia;
     int mes;
     int ano;
+    int hora;
+    int min;
+}fechas_t;
+
+typedef struct partido_t
+{
+    int dia;
+    int mes;
+    int ano;
+    int hora;
+    int min;
 }jugador_t;
 
 // Funciones del programa
