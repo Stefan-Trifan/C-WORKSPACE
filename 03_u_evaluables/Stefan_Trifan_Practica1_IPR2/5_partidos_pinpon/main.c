@@ -83,45 +83,12 @@ int main()
         };
         fecha_t fecha_inicio  = 
         {
-            12,9,2025,12,30
+            12,9,2025,21,29
         };
         partido_t lista_partidos[N_PARTIDOS] = {0};
-/*         partido_t lista_partidos[N_PARTIDOS] = 
-        {
-            {
-                {0, 0, 0},
-                {0, 0, 0},
-                0,0,0,0,0
-            },
-            {
-                {0, 0, 0},
-                {0, 0, 0},
-                0,0,0,0,0   
-            },
-            {
-                {0, 0, 0},
-                {0, 0, 0},
-                0,0,0,0,0
-            },
-            {
-                {0, 0, 0},
-                {0, 0, 0},
-                0,0,0,0,0
-            },
-            {
-                {0, 0, 0},
-                {0, 0, 0},
-                0,0,0,0,0
-            },
-            {
-                {0, 0, 22},
-                {0, 0, 22},
-                0,0,0,0,0
-            },
-        }; */
 
-    /// Pedimos los datos para cada jugador (4)
-/*     printf("===== DATOS JUGADORES =====\n\n");
+/*     /// Pedimos los datos para cada jugador (4 en total)
+    printf("===== DATOS JUGADORES =====\n\n");
     for(int i = 0; i < N_JUG; i++)
     {
         // Nombre
@@ -180,13 +147,13 @@ int main()
     while (fecha_inicio.ano < 2025 || fecha_inicio.ano > 2100);
     printf("\n");
 
-    /// Hora
+    // /// Hora
     printf("Ingrese la hora de inicio\n-> ");
     do
     {
         fecha_inicio.hora = pedirEnteroPos();
         if(fecha_inicio.hora > 21)
-            printf(YELLOW"ALERTA: Horas no puede ser superior a 20\n-> "RESET);
+            printf(YELLOW"ALERTA: Horas no puede ser superior a 21\n-> "RESET);
     } 
     while (fecha_inicio.hora > 21);
     printf("\n");
@@ -196,45 +163,18 @@ int main()
     do
     {
         fecha_inicio.min = pedirEnteroPos();
-        if(fecha_inicio.min >= 60)
+        if(fecha_inicio.hora == 21 && fecha_inicio.min > 29)
+        {
+            printf(YELLOW"ALERTA: El ultimo partido debe ser antes de las 21:29\n-> "RESET);
+        }
+        else if(fecha_inicio.min >= 60)
+        {
             printf(YELLOW"ALERTA: Minutos no puede ser superior a 59\n-> "RESET);
+        }
     } 
-    while (fecha_inicio.min >= 60); 
+    while (fecha_inicio.min >= 60 || (fecha_inicio.hora == 21 && fecha_inicio.min > 29)); 
     
-    printf("\n\n");*/
-
-    // DEBUG imprimimos los jugadores
-    printf(
-        "===== DATOS JUGADORES =====\n\n"
-        "lista_jugadores[0].nombre    : %s\n"
-        "lista_jugadores[0].apellidos : %s\n"
-        "lista_jugadores[0].edad      : %d\n\n"
-        "lista_jugadores[1].nombre    : %s\n"
-        "lista_jugadores[1].apellidos : %s\n"
-        "lista_jugadores[1].edad      : %d\n\n"
-        "lista_jugadores[2].nombre    : %s\n"
-        "lista_jugadores[2].apellidos : %s\n"
-        "lista_jugadores[2].edad      : %d\n\n"
-        "lista_jugadores[3].nombre    : %s\n"
-        "lista_jugadores[3].apellidos : %s\n"
-        "lista_jugadores[4].edad      : %d\n\n",
-        lista_jugadores[0].nombre,
-        lista_jugadores[0].apellidos,
-        lista_jugadores[0].edad,
-        lista_jugadores[1].nombre,
-        lista_jugadores[1].apellidos,
-        lista_jugadores[1].edad,
-        lista_jugadores[2].nombre,
-        lista_jugadores[2].apellidos,
-        lista_jugadores[2].edad,
-        lista_jugadores[3].nombre,
-        lista_jugadores[3].apellidos,
-        lista_jugadores[3].edad);
-    // DEBUG imprimimos las fechas
-    printf(
-        "===== FECHA =====\n\n"
-        "Fecha : %d/%d/%d a las %d:%d\n\n",
-        fecha_inicio.dia, fecha_inicio.mes, fecha_inicio.ano, fecha_inicio.hora, fecha_inicio.min);
+    printf("\n\n"); */
     
     // Configuramos los participantes de cada partido
     // Partido 1
@@ -279,8 +219,18 @@ int main()
         lista_partidos[i].fecha_inicio.dia = fecha_inicio.dia;
         lista_partidos[i].fecha_inicio.mes = fecha_inicio.mes;
         lista_partidos[i].fecha_inicio.ano = fecha_inicio.ano;
+
+        if(lista_partidos[i - 1].fecha_inicio.min + 30 >= 60)
+        {
+            lista_partidos[i].fecha_inicio.hora = lista_partidos[i - 1].fecha_inicio.hora + 1;
+            lista_partidos[i].fecha_inicio.min = lista_partidos[i - 1].fecha_inicio.min + 30 - 60;
+        }
+        else
+        {
+            lista_partidos[i].fecha_inicio.hora = lista_partidos[i - 1].fecha_inicio.hora;
+            lista_partidos[i].fecha_inicio.min = lista_partidos[i - 1].fecha_inicio.min + 30;
+        } 
     }
-    // Asignamos la hora de cada partido
 
     // Imprimimos los partidos
     printf(
@@ -350,11 +300,6 @@ int main()
         lista_partidos[5].fecha_inicio.ano,
         lista_partidos[5].fecha_inicio.hora,
         lista_partidos[5].fecha_inicio.min);
-
-    /// Creamos los partidos
-
-
-    /// Imprimimos los partidos
 
     printf("\n_________________________________________END\n\n");
     return 0;
@@ -440,3 +385,41 @@ void clearBuffer()
 {
     while (getchar() != '\n');
 }
+
+/* DEBUG LOG
+
+    // DEBUG imprimimos los jugadores
+    printf(
+        "===== DATOS JUGADORES =====\n\n"
+        "lista_jugadores[0].nombre    : %s\n"
+        "lista_jugadores[0].apellidos : %s\n"
+        "lista_jugadores[0].edad      : %d\n\n"
+        "lista_jugadores[1].nombre    : %s\n"
+        "lista_jugadores[1].apellidos : %s\n"
+        "lista_jugadores[1].edad      : %d\n\n"
+        "lista_jugadores[2].nombre    : %s\n"
+        "lista_jugadores[2].apellidos : %s\n"
+        "lista_jugadores[2].edad      : %d\n\n"
+        "lista_jugadores[3].nombre    : %s\n"
+        "lista_jugadores[3].apellidos : %s\n"
+        "lista_jugadores[4].edad      : %d\n\n",
+        lista_jugadores[0].nombre,
+        lista_jugadores[0].apellidos,
+        lista_jugadores[0].edad,
+        lista_jugadores[1].nombre,
+        lista_jugadores[1].apellidos,
+        lista_jugadores[1].edad,
+        lista_jugadores[2].nombre,
+        lista_jugadores[2].apellidos,
+        lista_jugadores[2].edad,
+        lista_jugadores[3].nombre,
+        lista_jugadores[3].apellidos,
+        lista_jugadores[3].edad);
+        
+    // DEBUG imprimimos las fechas
+    printf(
+        "===== FECHA =====\n\n"
+        "Fecha : %d/%d/%d a las %d:%d\n\n",
+        fecha_inicio.dia, fecha_inicio.mes, fecha_inicio.ano, fecha_inicio.hora, fecha_inicio.min);
+
+*/
