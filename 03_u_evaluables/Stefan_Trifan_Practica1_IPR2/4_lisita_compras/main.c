@@ -51,19 +51,19 @@ int main()
 {
     printf("\n___________________________________________START\n\n");
 
-    // Probar el programa desde 0
-        // ingrediente_t lista_ingredientes[TAM_ARR] = {0};
-        // int cont_ingredientes = 0;
+    /// Probar el programa desde 0
+        ingrediente_t lista_ingredientes[TAM_ARR] = {0};
+        int cont_ingredientes = 0;
 
-    // testing: Probar el programa con ingredientes en la lista
-        ingrediente_t lista_ingredientes[TAM_ARR] = 
-        {
-            {"uvas", 500, GRAMOS},
-            {"patatas", 10, UNIDADES},
-            {"tomates", 1500, GRAMOS},
-            {"huevos", 12, UNIDADES}
-        };
-        int cont_ingredientes = 4; 
+    /// testing: Probar el programa con ingredientes en la lista
+        // ingrediente_t lista_ingredientes[TAM_ARR] = 
+        // {
+        //     {"uvas", 500, GRAMOS},
+        //     {"patatas", 10, UNIDADES},
+        //     {"tomates", 1500, GRAMOS},
+        //     {"huevos", 12, UNIDADES}
+        // };
+        // int cont_ingredientes = 4; 
     
     int opcion = 0;
 
@@ -149,9 +149,9 @@ void verLista(ingrediente_t *lista_ingredientes, int cont_ingredientes)
     if(cont_ingredientes)
     {
         printf(
-            "+------------------------------------------+\n"
-            "|                 Mi lista                 |\n"
-            "+-----+-----------------+------------------+\n");
+                    "+------------------------------------------+\n"
+                    "|                 Mi lista                 |\n"
+                    "+-----+-----------------+------------------+\n");
         for(int i = 0; i < cont_ingredientes; i++)
         {
             if(lista_ingredientes[i].tipo == GRAMOS)
@@ -162,7 +162,7 @@ void verLista(ingrediente_t *lista_ingredientes, int cont_ingredientes)
                 printf(
                     "| %2dº | %15s | %7d unidades |\n", 
                     i + 1, lista_ingredientes[i].nombre, lista_ingredientes[i].cant);
-            printf("+-----+-----------------+------------------+\n");
+            printf( "+-----+-----------------+------------------+\n");
         }
     }
     else
@@ -178,19 +178,19 @@ void verLista(ingrediente_t *lista_ingredientes, int cont_ingredientes)
  */
 void introducirIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredientes)
 {
-    /// Array temporal donde guardamos el nombre del ingrediente 
+    // Array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
-    char temp[TAM_STR]      = {0};
-    int existe_ingrediente = 0,
-        num_letras_user    = 0,
-        i                  = 0,
-        opcion             = 0;
+    char arr_temporal[TAM_STR] = {0};
+    int  existe_ingrediente    = 0,
+         num_letras_user       = 0,
+         i                     = 0,
+         opcion                = 0;
 
     // Pedimos el nombre del ingrediente
     printf(
         "\nIntroduce el nombre del ingrediente que deseas aniadir\n"
         "(Max. %d caracteres)-> ", TAM_STR - 1);
-    num_letras_user = pedirCadena(temp);
+    num_letras_user = pedirCadena(arr_temporal);
 
     // TODO: crear funcion comprobarSiExiste() con este codigo
     // Comprobamos si el elemento ya existe en la lista
@@ -200,7 +200,7 @@ void introducirIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredie
 
         while(lista_ingredientes[i].nombre[j] != '\0')
         {
-            if(temp[j] == lista_ingredientes[i].nombre[j])
+            if(arr_temporal[j] == lista_ingredientes[i].nombre[j])
             {
                 num_letras_coinciden++;
             };
@@ -239,9 +239,9 @@ void introducirIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredie
 
         // Copiamos el nombre del array temporal nuestra la lista
         int j = 0;
-        while(temp[j] != '\0')
+        while(arr_temporal[j] != '\0')
         {
-            (lista_ingredientes + i)->nombre[j] = temp[j];
+            (lista_ingredientes + i)->nombre[j] = arr_temporal[j];
             j++;
         }
         (lista_ingredientes + i)->nombre[j] = '\0';
@@ -284,17 +284,17 @@ void eliminarIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredient
 {
     /// Array temporal donde guardamos el nombre del ingrediente 
     // que introduce el usuario mientras comprobamos si ya existe o no
-    char temp[TAM_STR]      = {0};
-    int existe_ingrediente = 0,
-        num_letras_user    = 0,
-        i                  = 0,
-        opcion             = 0;
+    char arr_temporal[TAM_STR] = {0};
+    int  existe_ingrediente    = 0,
+         num_letras_user       = 0,
+         i                     = 0,
+         opcion                = 0;
 
     // Pedimos el nombre del ingrediente
     printf(
         "\nIntroduce el nombre del ingrediente que deseas eliminar\n"
         "(Max. %d caracteres)-> ", TAM_STR - 1);
-    num_letras_user = pedirCadena(temp);
+    num_letras_user = pedirCadena(arr_temporal);
 
     // TODO: crear funcion comprobarSiExiste() con este codigo
     // Comprobamos si el elemento ya existe en la lista
@@ -304,7 +304,7 @@ void eliminarIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredient
 
         while(lista_ingredientes[i].nombre[j] != '\0')
         {
-            if(temp[j] == lista_ingredientes[i].nombre[j])
+            if(arr_temporal[j] == lista_ingredientes[i].nombre[j])
             {
                 num_letras_coinciden++;
             };
