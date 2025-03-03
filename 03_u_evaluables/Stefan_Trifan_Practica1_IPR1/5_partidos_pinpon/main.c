@@ -41,7 +41,7 @@ void clearBuffer();
 /* _________________________________________
    Inicio main() */
 
-int main(int argc, char *argv[])
+int main()
 {
     printf("\n_________________________________________START\n\n");
 

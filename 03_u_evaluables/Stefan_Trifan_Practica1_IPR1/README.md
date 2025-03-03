@@ -15,6 +15,6 @@ Habrá 3 prácticas obligatorias pertenecientes a dicho bloque.
 
 NombreAlumno_Apellidos_Practica1_IPR1.zip
 
-- La entrega debe realizarse en BB antes del 21/10/2024 a las 23:59 No se admitirán entregas que no sigan el formato descrito anteriormente o que se realicen después de la fecha indicada. Si no se realiza la entrega el ejercicio se considerará suspenso con una calificación de 0
+- La entrega debe realizarse en BB antes del 4/03/2025 a las 23:59 No se admitirán entregas que no sigan el formato descrito anteriormente o que se realicen después de la fecha indicada. Si no se realiza la entrega el ejercicio se considerará suspenso con una calificación de 0
  
 Cualquier duda que tengáis podremos resolverla los días de clase de la semana que viene.
