@@ -19,6 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#define TAM 15
 
 void clearBuffer();
 
@@ -28,7 +29,55 @@ void clearBuffer();
 int main(int argc, char *argv[]){
     printf("\n_________________________________________START\n\n");
 
+    char nombre_origen[15]  = {0};
+    char nombre_destino[15] = {0};
+    int esValido;
 
+    printf("Introduce -> ");
+    do
+    {
+        int i = 0, esValido = 1;
+        char c;
+        while(i < TAM - 1)
+        {
+            c = getchar();
+
+            if(c == '\n') break;
+
+            nombre_origen[i] = c;
+            i++;
+        }
+        nombre_origen[i] = '\0';
+
+        if(i == TAM - 1)
+        {
+            c = getchar();
+            if(c != '\n')
+            {
+                printf("ERROR -> ");
+                clearBuffer();
+                esValido = 0;
+            }
+        }
+    } while(esValido != 1);
+        
+
+    
+
+    char *p_origen = nombre_origen;
+    char *p_destino = nombre_destino;
+
+    int i = 0;
+    while(*(p_origen + i) != '\0')
+    {
+        *(p_destino + i) = *(p_origen + i);
+        i++;
+    }
+
+    printf("nombre_origen:  %s\n", nombre_origen);
+    printf("p_origen:       %s\n", p_origen);
+    printf("p_destino:      %s\n", p_destino);
+    printf("nombre_destino: %s\n", nombre_destino);
 
     printf("\n_________________________________________END\n\n");
     return 0;
