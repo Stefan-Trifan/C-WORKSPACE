@@ -52,18 +52,18 @@ int main()
     printf("\n___________________________________________START\n\n");
 
     /// Probar el programa desde 0
-        // ingrediente_t lista_ingredientes[TAM_ARR] = {0};
-        // int cont_ingredientes = 0;
+        ingrediente_t lista_ingredientes[TAM_ARR] = {0};
+        int cont_ingredientes = 0;
 
     /// testing: Probar el programa con ingredientes en la lista
-        ingrediente_t lista_ingredientes[TAM_ARR] = 
-        {
-            {"uvas", 500, GRAMOS},
-            {"patatas", 10, UNIDADES},
-            {"tomates", 1500, GRAMOS},
-            {"huevos", 12, UNIDADES}
-        };
-        int cont_ingredientes = 4; 
+        // ingrediente_t lista_ingredientes[TAM_ARR] = 
+        // {
+        //     {"uvas", 500, GRAMOS},
+        //     {"patatas", 10, UNIDADES},
+        //     {"tomates", 1500, GRAMOS},
+        //     {"huevos", 12, UNIDADES}
+        // };
+        // int cont_ingredientes = 4; 
     
     int opcion = 0;
 
@@ -247,7 +247,7 @@ void introducirIngrediente(ingrediente_t *lista_ingredientes, int *cont_ingredie
         (lista_ingredientes + i)->nombre[j] = '\0';
 
         // Pedimos la cantidad
-        printf("¿Que cantidad desea introducir?\n-> ");
+        printf("Que cantidad desea introducir?\n-> ");
         (lista_ingredientes + i)->cant = pedirEnteroPos();
 
         // Pedimos el tipo de medida
