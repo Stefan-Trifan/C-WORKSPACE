@@ -279,7 +279,7 @@ void seleccionarGanador(
         {
             ganadores[i][j] = jugadores[numerosAleatorios[i]][j];
         }
-        printf(GREEN"%dº: %s\n"RESET, i + 1, ganadores[i]); // Imprimimos los ganadores
+        printf(GREEN"%d: %s\n"RESET, i + 1, ganadores[i]); // Imprimimos los ganadores
     }
 }
 
