@@ -82,7 +82,7 @@ int main()
         // };
         // fecha_t fecha_inicio  = 
         // {
-        //     12,9,2025,21,29
+        //     4,9,2025,0,32
         // };
         // partido_t lista_partidos[N_PARTIDOS] = {0};
 
@@ -146,7 +146,7 @@ int main()
     while (fecha_inicio.ano < 2025 || fecha_inicio.ano > 2100);
     printf("\n");
 
-    // /// Hora
+    /// Hora
     printf("Ingrese la hora de inicio\n-> ");
     do
     {
@@ -205,7 +205,7 @@ int main()
     copiarCadena(lista_jugadores[2].nombre,    lista_partidos[5].jugador1.nombre);
     copiarCadena(lista_jugadores[2].apellidos, lista_partidos[5].jugador1.apellidos);
     copiarCadena(lista_jugadores[3].nombre,    lista_partidos[5].jugador2.nombre);
-    copiarCadena(lista_jugadores[3].apellidos,    lista_partidos[5].jugador2.apellidos);
+    copiarCadena(lista_jugadores[3].apellidos, lista_partidos[5].jugador2.apellidos);
 
     // Configuramos la fecha de cada partido
     lista_partidos[0].fecha_inicio.dia = fecha_inicio.dia;
@@ -234,12 +234,12 @@ int main()
     // Imprimimos los partidos
     printf(
         "===== PARTIDOS =====\n\n"
-        "PARTIDO 1: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
-        "PARTIDO 2: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
-        "PARTIDO 3: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
-        "PARTIDO 4: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
-        "PARTIDO 5: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n"
-        "PARTIDO 6: \n%s %s vs %s %s \nFecha : %d/%d/%d a las %d:%d\n\n",
+        "PARTIDO 1: \n%s %s vs %s %s \nFecha - %d/%d/%d a las %02d:%02d\n\n"
+        "PARTIDO 2: \n%s %s vs %s %s \nFecha - %d/%d/%d a las %02d:%02d\n\n"
+        "PARTIDO 3: \n%s %s vs %s %s \nFecha - %d/%d/%d a las %02d:%02d\n\n"
+        "PARTIDO 4: \n%s %s vs %s %s \nFecha - %d/%d/%d a las %02d:%02d\n\n"
+        "PARTIDO 5: \n%s %s vs %s %s \nFecha - %d/%d/%d a las %02d:%02d\n\n"
+        "PARTIDO 6: \n%s %s vs %s %s \nFecha - %d/%d/%d a las %02d:%02d\n\n",
         lista_partidos[0].jugador1.nombre,
         lista_partidos[0].jugador1.apellidos,
         lista_partidos[0].jugador2.nombre,
