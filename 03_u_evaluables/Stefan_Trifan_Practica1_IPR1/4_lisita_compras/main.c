@@ -52,18 +52,18 @@ int main()
     printf("\n___________________________________________START\n\n");
 
     /// Probar el programa desde 0
-        ingrediente_t lista_ingredientes[TAM_ARR] = {0};
-        int cont_ingredientes = 0;
+        // ingrediente_t lista_ingredientes[TAM_ARR] = {0};
+        // int cont_ingredientes = 0;
 
     /// testing: Probar el programa con ingredientes en la lista
-        // ingrediente_t lista_ingredientes[TAM_ARR] = 
-        // {
-        //     {"uvas", 500, GRAMOS},
-        //     {"patatas", 10, UNIDADES},
-        //     {"tomates", 1500, GRAMOS},
-        //     {"huevos", 12, UNIDADES}
-        // };
-        // int cont_ingredientes = 4; 
+        ingrediente_t lista_ingredientes[TAM_ARR] = 
+        {
+            {"uvas", 500, GRAMOS},
+            {"patatas", 10, UNIDADES},
+            {"tomates", 1500, GRAMOS},
+            {"huevos", 12, UNIDADES}
+        };
+        int cont_ingredientes = 4; 
     
     int opcion = 0;
 
@@ -149,20 +149,20 @@ void verLista(ingrediente_t *lista_ingredientes, int cont_ingredientes)
     if(cont_ingredientes)
     {
         printf(
-                    "+------------------------------------------+\n"
-                    "|                 Mi lista                 |\n"
-                    "+-----+-----------------+------------------+\n");
+                    "+-----------------------------------------+\n"
+                    "|                Mi lista                 |\n"
+                    "+----+-----------------+------------------+\n");
         for(int i = 0; i < cont_ingredientes; i++)
         {
             if(lista_ingredientes[i].tipo == GRAMOS)
                 printf(
-                    "| %2dº | %15s | %7dg         |\n", 
+                    "| %2d | %15s | %7dg         |\n", 
                     i + 1, lista_ingredientes[i].nombre, lista_ingredientes[i].cant);
             else if (lista_ingredientes[i].tipo == UNIDADES)
                 printf(
-                    "| %2dº | %15s | %7d unidades |\n", 
+                    "| %2d | %15s | %7d unidades |\n", 
                     i + 1, lista_ingredientes[i].nombre, lista_ingredientes[i].cant);
-            printf( "+-----+-----------------+------------------+\n");
+            printf( "+----+-----------------+------------------+\n");
         }
     }
     else
