@@ -115,7 +115,8 @@ int main(int argc, char *argv[]){
 	else 
 	{
         printf(
-			"\033[1;31mERROR: Error en los parametros. Uso correcto: ./calculadora OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
+			"\033[1;31mERROR: Error en los parametros."
+			"Uso correcto: ./calculadora OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
 		);
         return 1;
     }
