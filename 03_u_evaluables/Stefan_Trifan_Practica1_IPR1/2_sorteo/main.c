@@ -199,7 +199,7 @@ int comprobarNombres(int i, int argc, char *argv[])
             // Nombre jugador supera el tamaño que puede tener un string
             if(num_letras_argumento > TAM_STR - 1)
             {
-                printf(RED"ERROR: El nombre excede el límite de %d caracteres.\n"RESET, TAM_STR - 1);
+                printf(RED"ERROR: El nombre excede el limite de %d caracteres.\n"RESET, TAM_STR - 1);
                 verUso();
                 return 1; // error
             }

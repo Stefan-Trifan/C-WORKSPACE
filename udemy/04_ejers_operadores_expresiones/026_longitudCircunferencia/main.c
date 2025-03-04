@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-	// Declaración de variables
+	// Declaracion de variables
 	float radio = 0, circunferencia = 0;
 
 	// Solicitar al usuario que introduzca el radio

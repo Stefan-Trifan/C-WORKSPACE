@@ -33,31 +33,31 @@ int main(int argc, char *argv[])
 	int resultado = 0;
 	int i = 0;
 
-	// Solicita al usuario que introduzca un número
-	printf("Introduce un número para ver si es perfecto: ");
+	// Solicita al usuario que introduzca un numero
+	printf("Introduce un numero para ver si es perfecto: ");
 	scanf("%d", &numMax);
 
-	// Inicializa el bucle para verificar si el número es perfecto
+	// Inicializa el bucle para verificar si el numero es perfecto
 	do {
-		// Verifica si el número actual es un divisor de numMax
+		// Verifica si el numero actual es un divisor de numMax
 		if(numMax % i == 0)
 		{
 			// Suma el divisor al resultado
 			resultado = resultado + i;
 		}
 		i++;
-	} while (i < numMax); // Continúa el bucle hasta que i sea menor que numMax
+	} while (i < numMax); // Continua el bucle hasta que i sea menor que numMax
 
-	// Verifica si la suma de los divisores es igual al número en sí
+	// Verifica si la suma de los divisores es igual al numero en si
 	if(resultado == numMax)
 	{
-		// Si es verdadero, el número es perfecto
-		printf("El número es perfecto");    
+		// Si es verdadero, el numero es perfecto
+		printf("El numero es perfecto");    
 	}
 	else
 	{
-		// Si es falso, el número no es perfecto
-		printf("El número no es perfecto");
+		// Si es falso, el numero no es perfecto
+		printf("El numero no es perfecto");
 	}
     
 	printf("\n_________________________________________END\n\n");

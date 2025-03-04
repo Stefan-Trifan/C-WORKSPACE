@@ -12,17 +12,17 @@
 	*   Estado: done
 
 	* 	Enunciado 49
-		Introducir una única línea que contenga entre 2 y 10 palabras separadas por coma (,), sin espacios, y presentarlas en orden inverso. Las palabras tendrán un máximo de 10 letras. El número de palabras es desconocido, sólo sabemos que serán como mínimo 2 y como máximo 10, el programa debe adaptarse a lo que introduzca el usuario.
+		Introducir una unica linea que contenga entre 2 y 10 palabras separadas por coma (,), sin espacios, y presentarlas en orden inverso. Las palabras tendran un maximo de 10 letras. El numero de palabras es desconocido, solo sabemos que seran como minimo 2 y como maximo 10, el programa debe adaptarse a lo que introduzca el usuario.
 
 		Condiciones
-		▪ En caso de introducir palabras de más de 10 letras, el programa mostrará un error y volverá a pedir una línea que contenga las palabras correctas.
-		▪ En caso de introducir más de 10 palabras, o menos de 2, el programa mostrará un error y volverá a pedir la línea.
+		▪ En caso de introducir palabras de mas de 10 letras, el programa mostrara un error y volvera a pedir una linea que contenga las palabras correctas.
+		▪ En caso de introducir mas de 10 palabras, o menos de 2, el programa mostrara un error y volvera a pedir la linea.
 		▪ Repetir hasta que se tengan todas las palabras introducidas correctamente.
-		▪ Mostrar las palabras en orden inverso de introducción, separadas por comas.
+		▪ Mostrar las palabras en orden inverso de introduccion, separadas por comas.
 
 		Ejemplo
-		▪ Usuario introduce la línea : perro,gato,oso
-		▪ El programa muestra la línea: oso,gato,perro
+		▪ Usuario introduce la linea : perro,gato,oso
+		▪ El programa muestra la linea: oso,gato,perro
 */
 
 /* _________________________________________
@@ -36,7 +36,7 @@
 #define MAX_LONGITUD 10
 
 bool validar_palabras(char palabras[][MAX_LONGITUD + 1], int cantidad) {
-    // Verificar que cada palabra tiene un máximo de 10 letras
+    // Verificar que cada palabra tiene un maximo de 10 letras
     for (int i = 0; i < cantidad; i++) {
         if (strlen(palabras[i]) > MAX_LONGITUD) {
             return false;
@@ -51,20 +51,20 @@ int main(int argc, char *argv[]) {
     int cantidad_palabras = 0;
 
     while (1) {
-        // Pedir al usuario una línea
-        printf("Introduce una línea con entre 2 y 10 palabras separadas por comas (sin espacios): ");
+        // Pedir al usuario una linea
+        printf("Introduce una linea con entre 2 y 10 palabras separadas por comas (sin espacios): ");
         fgets(linea, sizeof(linea), stdin);
 
-        // Eliminar el salto de línea si está presente
+        // Eliminar el salto de linea si esta presente
         linea[strcspn(linea, "\n")] = 0;
 
-        // Dividir la línea en palabras usando strtok
+        // Dividir la linea en palabras usando strtok
         char *token = strtok(linea, ",");
         cantidad_palabras = 0;
 
         while (token != NULL) {
             if (cantidad_palabras >= MAX_PALABRAS) {
-                cantidad_palabras++; // Para manejar el error de más de 10 palabras
+                cantidad_palabras++; // Para manejar el error de mas de 10 palabras
                 break;
             }
             strncpy(palabras[cantidad_palabras], token, MAX_LONGITUD);
@@ -81,11 +81,11 @@ int main(int argc, char *argv[]) {
 
         // Validar longitud de palabras
         if (!validar_palabras(palabras, cantidad_palabras)) {
-            printf("Error: Todas las palabras deben tener un máximo de 10 letras.\n");
+            printf("Error: Todas las palabras deben tener un maximo de 10 letras.\n");
             continue;
         }
 
-        // Si todo está bien, salir del bucle
+        // Si todo esta bien, salir del bucle
         break;
     }
 
@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
     printf("Las palabras en orden inverso son:\n");
     for (int i = cantidad_palabras - 1; i >= 0; i--) {
         printf("%s", palabras[i]);
-        if (i > 0) printf(","); // Separar con comas excepto la última palabra
+        if (i > 0) printf(","); // Separar con comas excepto la ultima palabra
     }
     printf("\n");
 

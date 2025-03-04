@@ -1,5 +1,5 @@
-//* continue sirve para terminar una iteración y pasar a la siguiente.
-//* break no sólo termina con una iteración, sino con el ciclo completo.
+//* continue sirve para terminar una iteracion y pasar a la siguiente.
+//* break no solo termina con una iteracion, sino con el ciclo completo.
 
 #include <stdio.h>
 

@@ -97,7 +97,7 @@ int pedirEnteroPositivo()
 		if (esValido == 0 || num < 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
+				"\033[1;31mERROR: El tipo de dato introducido no es valido.\n"
 				"-> \033[0m"
 			);
 			esValido = 0;

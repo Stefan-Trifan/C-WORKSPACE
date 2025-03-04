@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 
 	if(numeroEncontrado == 'V')
 	{
-		printf("El numero %d está en la posicion %d\n", num, i + 1);
+		printf("El numero %d esta en la posicion %d\n", num, i + 1);
 	}
 	else if(numeroEncontrado == 'F')
 	{
@@ -86,8 +86,8 @@ int pedirEntero()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. "
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. "
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;

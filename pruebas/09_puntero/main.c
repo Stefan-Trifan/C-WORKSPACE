@@ -30,10 +30,10 @@ int main(int argc, char *argv[])
 	printf("\n_________________________________________START\n\n");
     
     char micar = 'A';
-	char *punteroc; // punteroc es un puntero a un carácte
+	char *punteroc; // punteroc es un puntero a un caracte
 	*punteroc = &micar; // Contenido de 
 	micar = 'B';
-	*punteroc = 'C'; // El contenido de la dirección de memoria almacenada en punteroc ahora es 'C'"
+	*punteroc = 'C'; // El contenido de la direccion de memoria almacenada en punteroc ahora es 'C'"
 	
     
 	printf("\n_________________________________________END\n\n");

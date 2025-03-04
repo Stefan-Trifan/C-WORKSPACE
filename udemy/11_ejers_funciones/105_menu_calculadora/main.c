@@ -55,7 +55,7 @@ float solicitarFloat()
 		if(esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. Por favor, intentelo de nuevo. \n\033[0m"
 				"\033[1;31m-> \033[0m"
 			);
 		}
@@ -75,7 +75,7 @@ int solicitarEntero()
 		if(esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. Por favor, intentelo de nuevo. \n\033[0m"
 				"\033[1;31m-> \033[0m"
 			);
 		}
@@ -120,7 +120,7 @@ void menuCalculadora()
 				printf("Hasta luego!");
 				break;
 			default: 
-				printf("Opción invalida, introduce un numero del 1 al 5.\n\n");
+				printf("Opcion invalida, introduce un numero del 1 al 5.\n\n");
 				break;
 		}
 	} 

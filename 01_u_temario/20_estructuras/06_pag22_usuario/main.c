@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 	{
 		// Menu
 		printf(
-			"\n********** MENÚ PRINCIPAL **********\n"
+			"\n********** MENu PRINCIPAL **********\n"
 			"Por favor, introduce la opcion que deseas realizar \n"
 			"1. Introducir usuario\n"
 			"2. Imprimir usuario\n"
@@ -126,7 +126,7 @@ void imprimeUsuario(struct usuarios_t users[], int *contUsuarios)
         printf("Edad: %d\n", users[i].edad);
         printf("DNI: %s\n", users[i].dni);
         printf("Peso: %.2f kg\n", users[i].peso);
-        printf("Teléfono: %d\n", users[i].tel);
+        printf("Telefono: %d\n", users[i].tel);
 		printf("_________________________________________ \n\n");
 	}
 	printf("\n\n\n");
@@ -140,7 +140,7 @@ void pedirCadenaTexto(char texto[], int tam)
 
     do
     {
-        printf("(Máx %d caracteres, solo letras y espacios)\n-> ", tam - 1);
+        printf("(Max %d caracteres, solo letras y espacios)\n-> ", tam - 1);
         i = 0;
         esValido = 1;
 
@@ -166,7 +166,7 @@ void pedirCadena(char texto[], int tam)
 	int esValido = 1, i = 0;
 	char newChar;
 
-	printf("(máx %d caracteres):\n", tam - 1);
+	printf("(max %d caracteres):\n", tam - 1);
 	printf("-> ");
 
 	do
@@ -183,7 +183,7 @@ void pedirCadena(char texto[], int tam)
 
 		if (i == tam - 1 && newChar != '\n')
 		{
-			printf("\033[1;31mERROR: Has superado el tamaño. Por favor, inténtelo de nuevo. \n\033[0m"
+			printf("\033[1;31mERROR: Has superado el tamaño. Por favor, intentelo de nuevo. \n\033[0m"
 				   "\033[1;31m-> \033[0m");
 			clearBuffer();
 			esValido = 0;
@@ -202,8 +202,8 @@ float pedirFloat()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. "
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. "
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;
@@ -223,8 +223,8 @@ int pedirEntero()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. "
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. "
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;

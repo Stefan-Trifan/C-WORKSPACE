@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
  * @return 1 (error) si:
  *      - El ID contiene contiene caracteres no numericos
  *      - El PESO contiene caracteres no numericos que no sean '.'
- *      - El punto decimal del PESO está mal colocado
+ *      - El punto decimal del PESO esta mal colocado
  *      - Hay mas de un punto decimal en PESO
  *      - La CATEG es distinta de 'A', 'B' o 'C'
  *      - La CATEG tiene mas de un solo caracter

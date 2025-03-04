@@ -15,15 +15,15 @@
 		LoremIpsum
 */
 // Escribe un programa en el cual se solicite al usuario llenar un arreglo de 10 elementos 
-// (únicamente 0 y 1). Una vez que el usuario llene el arreglo con el número binario, 
-// podrá seleccionar entre alguna codificación:
+// (unicamente 0 y 1). Una vez que el usuario llene el arreglo con el numero binario, 
+// podra seleccionar entre alguna codificacion:
 
 // a) binario puro
 // b) Punto fijo (6 bit entero y 4 bit decimal)
 // c) complemento a 2
 
-// El programa realizará la conversión y como salida mostrará 
-// el resultado en representación decimal
+// El programa realizara la conversion y como salida mostrara 
+// el resultado en representacion decimal
 
 /* _________________________________________
    Inicio cabecera */
@@ -83,8 +83,8 @@ int main(int argc, char *argv[])
 		opcion = pedirEntero();
 		if(opcion < 1 || opcion > 3)
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido."
-				"Por favor, inténtelo de nuevo. \n\033[0m"
+				"\033[1;31mERROR: El tipo de dato introducido no es valido."
+				"Por favor, intentelo de nuevo. \n\033[0m"
 			);
 		printf("\n");
 
@@ -206,8 +206,8 @@ int pedirEntero()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. "
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. "
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;

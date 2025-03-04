@@ -36,12 +36,12 @@ int main(int argc, char *argv[])
 	int esFlotante = 0;
     
 	do{
-		printf("Cuanto estás dispuesto a pagar: ");
+		printf("Cuanto estas dispuesto a pagar: ");
 		esFlotante = scanf("%f", &presupuesto); // Comprobamos si introduce un numero valido
 		// Si no introdice un numero valido, limpiamos buffer
 
 		if(!esFlotante){
-			printf("Entrada no válida. Por favor, introduce un número.\n");
+			printf("Entrada no valida. Por favor, introduce un numero.\n");
 			clearBuffer();
 			presupuesto = 0;
 		}

@@ -115,8 +115,8 @@ int main(int argc, char *argv[])
 
 // Funciones del programa
 /**
- * @brief Función que lee del buffer de entrada y salida una cadena de
- * como máximo tam caracteres y devuelve el numero de caracteres
+ * @brief Funcion que lee del buffer de entrada y salida una cadena de
+ * como maximo tam caracteres y devuelve el numero de caracteres
  * 
  * @param[out] cadena: Puntero donde se almacena el nombre del usuario 
  * @return Numero de caracteres introducidos por el usuario
@@ -164,8 +164,8 @@ int leerCadena(char *cadena)
 }
 
 /**
- * @brief Función devuelve el número de veces que se encuentra 
- * el carácter en la cadena que se pasan como parámetros
+ * @brief Funcion devuelve el numero de veces que se encuentra 
+ * el caracter en la cadena que se pasan como parametros
  * 
  * @param[in] cadena: 
  *      Texto donde buscamos el numero de veces que se repite cada letra

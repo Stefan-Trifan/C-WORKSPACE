@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 			printf("Reprobado");
 			break;
 		default: 
-			printf("Nota no válida");
+			printf("Nota no valida");
 			break;
 	}
     

@@ -13,7 +13,7 @@
 
 	* 	Enunciado X
 		Escribe un programa que le pida al usuario los valores de una matriz cuadrada
-		3x3, la presente por pantalla, y luego muestre la suma de todos los números de
+		3x3, la presente por pantalla, y luego muestre la suma de todos los numeros de
 		la diagonal principal.
 */
 
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		for (int col = 0; col < 3; col++){ // Recorre las filas originales
 			printf("%d ", matriz[fila][col]); // Imprime traspuesta
 		}
-    	printf("\n"); // Salto de línea al final de cada columna
+    	printf("\n"); // Salto de linea al final de cada columna
 	}
     
 	printf("\n_________________________________________END\n\n");

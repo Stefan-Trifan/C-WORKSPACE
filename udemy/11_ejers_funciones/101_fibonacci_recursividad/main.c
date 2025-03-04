@@ -32,13 +32,13 @@ int main(int argc, char *argv[])
     
     int numMax = 0, esValido = 1;
 
-	// Pedimos el numero de elementos. Nos aseguramos de que recibimos los datos en formato válido
+	// Pedimos el numero de elementos. Nos aseguramos de que recibimos los datos en formato valido
 	printf("Cuantos elementos quieres: ");
 	do
 	{
 		if(esValido != 1)
 		{
-			printf("\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo: \033[0m");
+			printf("\033[1;31mERROR: El tipo de dato introducido no es valido. Por favor, intentelo de nuevo: \033[0m");
 		}
 		esValido = scanf("%d", &numMax);
 		if(numMax < 0)
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 /**
  * @brief Calcula el numero Fibonacci en un aposicion dada
  * @param numero Rrepresenta la psoicion del numero a calcular
- * @return El numero Fibonacci correspondiente a la posición indicada
+ * @return El numero Fibonacci correspondiente a la posicion indicada
  */
 int fibonacci(int numero)
 {

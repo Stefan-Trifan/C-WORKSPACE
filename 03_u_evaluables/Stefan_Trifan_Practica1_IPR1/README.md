@@ -1,20 +1,20 @@
-# Práctica 1 - Argumentos del main, estructuras, uniones, enumerados y typedef
+# Practica 1 - Argumentos del main, estructuras, uniones, enumerados y typedef
 
-- Ésta es la primera práctica evaluable (del bloque de prácticas obligatorias) que cuentan un 40% de la nota final. 
-Habrá 3 prácticas obligatorias pertenecientes a dicho bloque. 
-- En el documento adjunto tenéis el enunciado de la primera práctica y los detalles de lo que tenéis que hacer. 
-- Una vez realizada la entrega, se procederá a la realización de la tarea asociada a este ejercicio evaluable. Esta tarea consistirá en la realización de un programa (o varios) inspirado en uno de los realizados en el ejercicio evaluable.
-- La calificación del ejercicio evaluable saldrá de esta tarea y la entrega de los programas será imprescindible para su calificación.
-- La calificación de este ejercicio evaluable será un tercio del 40%
+- esta es la primera practica evaluable (del bloque de practicas obligatorias) que cuentan un 40% de la nota final. 
+Habra 3 practicas obligatorias pertenecientes a dicho bloque. 
+- En el documento adjunto teneis el enunciado de la primera practica y los detalles de lo que teneis que hacer. 
+- Una vez realizada la entrega, se procedera a la realizacion de la tarea asociada a este ejercicio evaluable. Esta tarea consistira en la realizacion de un programa (o varios) inspirado en uno de los realizados en el ejercicio evaluable.
+- La calificacion del ejercicio evaluable saldra de esta tarea y la entrega de los programas sera imprescindible para su calificacion.
+- La calificacion de este ejercicio evaluable sera un tercio del 40%
 
 ## Consideraciones y Formato de la entrega: 
 
-- El alumno realizará la práctica de forma individual. Cualquier indicio de copia supondrá el suspenso directo de la práctica y repercutir directamente en el aprobado de la asignatura.
-- Para la realización de los programas se puede utilizar cualquier editor, tipo NotePad++. Aplicar los conocimientos adquiridos en los temas 1 y 2 del temario
-- Los archivos generados deben incluirse en un fichero .zip que es el que el alumno debe entregar y subir a BB y que deberá estar nombrado de la siguiente manera:
+- El alumno realizara la practica de forma individual. Cualquier indicio de copia supondra el suspenso directo de la practica y repercutir directamente en el aprobado de la asignatura.
+- Para la realizacion de los programas se puede utilizar cualquier editor, tipo NotePad++. Aplicar los conocimientos adquiridos en los temas 1 y 2 del temario
+- Los archivos generados deben incluirse en un fichero .zip que es el que el alumno debe entregar y subir a BB y que debera estar nombrado de la siguiente manera:
 
 NombreAlumno_Apellidos_Practica1_IPR1.zip
 
-- La entrega debe realizarse en BB antes del 4/03/2025 a las 23:59 No se admitirán entregas que no sigan el formato descrito anteriormente o que se realicen después de la fecha indicada. Si no se realiza la entrega el ejercicio se considerará suspenso con una calificación de 0
+- La entrega debe realizarse en BB antes del 4/03/2025 a las 23:59 No se admitiran entregas que no sigan el formato descrito anteriormente o que se realicen despues de la fecha indicada. Si no se realiza la entrega el ejercicio se considerara suspenso con una calificacion de 0
  
-Cualquier duda que tengáis podremos resolverla los días de clase de la semana que viene.
+Cualquier duda que tengais podremos resolverla los dias de clase de la semana que viene.

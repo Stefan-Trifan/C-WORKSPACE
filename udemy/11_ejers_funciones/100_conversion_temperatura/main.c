@@ -42,11 +42,11 @@ int main(int argc, char *argv[])
 	{
 		// Pedimos grados Celsius
 		printf("Este programa convierte grados Celsius a grados Fahrenheit y a grados Kelvin.\n");
-		printf("Introduce el valor de los grados Celsius a continuación: ");
+		printf("Introduce el valor de los grados Celsius a continuacion: ");
 		if(scanf("%f", &gradosCelsius) != 1)
-		// Nos cercionamos de que el tipo de dato introducido por el usuario es válido
+		// Nos cercionamos de que el tipo de dato introducido por el usuario es valido
 		{
-			printf("Entrada no válida. Por favor, introduce un número.\n\n");
+			printf("Entrada no valida. Por favor, introduce un numero.\n\n");
 			clearBuffer();
 			gradosCelsius = 0;
 			continue;
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 			"1) Conversion a Kelvin\n"
 			"2) Conversion a Fahrenheit\n"
 			"3) Salir\n");
-		// Nos cercionamos de que el tipo de dato introducido por el usuario es válido
+		// Nos cercionamos de que el tipo de dato introducido por el usuario es valido
 		do
 		{
 			printf("-> ");

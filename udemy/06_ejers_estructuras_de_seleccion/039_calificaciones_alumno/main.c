@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		esEntero = scanf("%d", &nota);
 
 		if(!esEntero) {
-			printf("Entrada no válida. Por favor, introduce un número.\n");
+			printf("Entrada no valida. Por favor, introduce un numero.\n");
 			clearBuffer();
 		}
 

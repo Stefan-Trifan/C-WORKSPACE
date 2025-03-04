@@ -59,8 +59,8 @@ int main(int argc, char *argv[])
 		if(opcion < 1 || opcion > 7)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. "
-				"Por favor, inténtelo de nuevo. \n\033[0m");
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. "
+				"Por favor, intentelo de nuevo. \n\033[0m");
 		}
 			
 		switch (opcion)
@@ -174,8 +174,8 @@ int pedirEntero()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. "
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. "
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;

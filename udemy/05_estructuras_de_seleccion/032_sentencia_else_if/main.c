@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	else if (a + b == (c + 1) || a + b == (c - 1)){
 		printf("Casi sabes sumar"); 
 	} 
-	// Si ninguna condición es verdadera
+	// Si ninguna condicion es verdadera
 	else {
 		printf("No sabes sumar"); 
 	}

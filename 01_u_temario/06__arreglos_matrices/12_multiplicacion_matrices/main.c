@@ -12,8 +12,8 @@
 	*   Estado: tbd
 
 	* 	Enunciado X
-		Arrays Multidimensionales: Multiplicación matrices
-		Escribir un programa que calcule la multiplicación de dos matrices. Comprobad los resultados con la multiplicación de una matriz de 3x3 con una de 3x2.
+		Arrays Multidimensionales: Multiplicacion matrices
+		Escribir un programa que calcule la multiplicacion de dos matrices. Comprobad los resultados con la multiplicacion de una matriz de 3x3 con una de 3x2.
 */
 
 /* _________________________________________
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
         printf("\n");
     }	
 
-	printf("La multiplicación es: ");
+	printf("La multiplicacion es: ");
 	for (int i = 0; i < 3; i++) { // Filas
         for (int j = 0; j < 2; j++) { // Columnas
             printf("%d ", matriz2[i][j]);

@@ -6,8 +6,8 @@
 
     *   Enunciado X
         Escribe un programa en lenguaje C al que se le pase por argumentos del main 
-        dos cadenas (tamaño máximo 20 caracteres) y que compruebe que son iguales.
-        El programa mostrará imprimirá por pantalla si son iguales o no después de comprobarlo
+        dos cadenas (tamaño maximo 20 caracteres) y que compruebe que son iguales.
+        El programa mostrara imprimira por pantalla si son iguales o no despues de comprobarlo
 */
 
 /* _________________________________________
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 
 // Funciones del programa
 /**
- * Función que se le pasa como parámetros dos cadenas y 
+ * Funcion que se le pasa como parametros dos cadenas y 
  * devuelve verdadero si son iguales y falso si no lo son
  */
 int cadenasIguales(char* cadena1, char* cadena2)
@@ -103,7 +103,7 @@ int cadenasIguales(char* cadena1, char* cadena2)
 }
 
 /**
- * Función que se le pasa como parámetro una cadena y 
+ * Funcion que se le pasa como parametro una cadena y 
  * devuelve el numero de caracteres que tiene
  */
 int tamCadena(char* cadena)

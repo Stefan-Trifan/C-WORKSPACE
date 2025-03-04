@@ -11,70 +11,70 @@
 
 	*   Estado: todo
 
-	* 	Enunciado Password Numérica
-		Crea un programa en el que el usuario generará o cambiará una password numérica con unas condiciones determinadas y una vez generada introducirá una password y comprobará que sea correcta.
+	* 	Enunciado Password Numerica
+		Crea un programa en el que el usuario generara o cambiara una password numerica con unas condiciones determinadas y una vez generada introducira una password y comprobara que sea correcta.
 
 		Para ello el programa debe:
 
-		Presentar un menú que se repetirá hasta que no se le indique que se desea salir. Las opciones del menú dependerán de si el usuario ha generado una password correcta o no
+		Presentar un menu que se repetira hasta que no se le indique que se desea salir. Las opciones del menu dependeran de si el usuario ha generado una password correcta o no
 
-		Si no ha generado una clave correcta el menú será:
+		Si no ha generado una clave correcta el menu sera:
 		1.Generar password
 		2.Introducir password
 		3.Salir
-		Si se ha generado una clave correcta el menú será:
+		Si se ha generado una clave correcta el menu sera:
 		1.⁠ ⁠Cambia password
 		2.⁠ ⁠Introducir passwork
 		3.⁠ ⁠Salir
 
 		Las condiciones de password correcta son:
-		Ser un número entero de 7 cifras y
+		Ser un numero entero de 7 cifras y
 		Al menos 3 cifras deben ser pares.
 
-		Cuando se selecciona las opciones genera o cambia password se debe comprobar que se cumplen las condiciones y si no se cumplen indicárselo al usuario y volver a pedir que ingrese una password que cumpla las condiciones (7 cifras y al menos 3 pares).
+		Cuando se selecciona las opciones genera o cambia password se debe comprobar que se cumplen las condiciones y si no se cumplen indicarselo al usuario y volver a pedir que ingrese una password que cumpla las condiciones (7 cifras y al menos 3 pares).
 
-		Cuando se introduce una password se debe comprobar que esta coincida con la generada. Tanto si coincide como si no se deber informar al usuario y volver a presentar el menú.
+		Cuando se introduce una password se debe comprobar que esta coincida con la generada. Tanto si coincide como si no se deber informar al usuario y volver a presentar el menu.
 
 		Se deben utilizar las siguientes funciones:
 
-		/// Función que no se le pasa ningún parámetro y devuelve un entero con una passwod correcta
+		/// Funcion que no se le pasa ningun parametro y devuelve un entero con una passwod correcta
 		int generaPassword();
 
-		/// Función que se le pasa como parámetro un entero y devuelve verdadero si tiene 7 cifras y falso si no
+		/// Funcion que se le pasa como parametro un entero y devuelve verdadero si tiene 7 cifras y falso si no
 		int esNumero7cifras (int numero);
 
-		/// Función que se le pasa como parámetro un entero y devuelve verdadero si tiene al menos 3 cifras son pares y falso si no
+		/// Funcion que se le pasa como parametro un entero y devuelve verdadero si tiene al menos 3 cifras son pares y falso si no
 		int esNumero3pares (int numero);
 
-		/// Función que se le pasa como parámetros dos enteros y devuelve verdadero si son iguales y falso si no lo son
+		/// Funcion que se le pasa como parametros dos enteros y devuelve verdadero si son iguales y falso si no lo son
 		int sonNumerosIguales (int numero1, int numero2);
 
-		Un ejemplo de ejecución puede ser:
+		Un ejemplo de ejecucion puede ser:
 
 		./password_menu_red.exe
 
-		Menú:
+		Menu:
 		1.⁠ ⁠Genera password
 		2.⁠ ⁠Introducir password
 		3.⁠ ⁠Salir
-		Seleccione una opción: 1
+		Seleccione una opcion: 1
 		Genera una password de 7 cifras con al menos 3 pares: 1112222
 		Password generada correctamente.
 
-		Menú:
+		Menu:
 		1.⁠ ⁠Cambia password
 		2.⁠ ⁠Introducir password
 		3.⁠ ⁠Salir
 
-		Seleccione una opción: 2
+		Seleccione una opcion: 2
 		Introduce la password: 1112222
 		La password es correcta.
 
-		Menú:
+		Menu:
 		1.⁠ ⁠Cambia password
 		2.⁠ ⁠Introducir password
 		3.⁠ ⁠Salir
-		Seleccione una opción: 3
+		Seleccione una opcion: 3
 		Saliendo del programa.
 		*/
 
@@ -177,7 +177,7 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-// Función que no se le pasa ningún parámetro y devuelve un entero con una passwod correcta
+// Funcion que no se le pasa ningun parametro y devuelve un entero con una passwod correcta
 int generaPassword()
 {
 	int pass = 0;
@@ -186,19 +186,19 @@ int generaPassword()
 	return pass;
 }
 
-// Función que se le pasa como parámetro un entero y devuelve verdadero si tiene 7 cifras y falso si no
+// Funcion que se le pasa como parametro un entero y devuelve verdadero si tiene 7 cifras y falso si no
 int esNumero7cifras (int numero)
 {
 	return 0;
 }
 
-// Función que se le pasa como parámetro un entero y devuelve verdadero si tiene al menos 3 cifras son pares y falso si no
+// Funcion que se le pasa como parametro un entero y devuelve verdadero si tiene al menos 3 cifras son pares y falso si no
 int esNumero3pares (int numero)
 {
 	return 0;
 }
 
-// Función que se le pasa como parámetros dos enteros y devuelve verdadero si son iguales y falso si no lo son
+// Funcion que se le pasa como parametros dos enteros y devuelve verdadero si son iguales y falso si no lo son
 int sonNumerosIguales (int numero1, int numero2)
 {
 	if(numero1 == numero2)

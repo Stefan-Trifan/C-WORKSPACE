@@ -59,7 +59,7 @@ void pedirCadena(char *text, int tam) {
 
     do {
         i = 0;
-        esValido = 1;  // Suponemos que la entrada es válida
+        esValido = 1;  // Suponemos que la entrada es valida
         
         while (i < tam - 1) {
             c = getchar();
@@ -67,16 +67,16 @@ void pedirCadena(char *text, int tam) {
             if (c == '\n')   // Si presiona ENTER antes de llenar el buffer, salir
                 break;
             
-            if (c >= '0' && c <= '9') {  // Si se ingresa un número, reiniciar entrada
+            if (c >= '0' && c <= '9') {  // Si se ingresa un numero, reiniciar entrada
                 printf("\033[1;33mSolo puedes introducir letras\n"
-                       "Inténtalo de nuevo\n"
+                       "Intentalo de nuevo\n"
                        "-> \033[0m");
-                clearBuffer();  // ✅ Llamamos `clearBuffer()` aquí
-                esValido = 0;  // Marcar entrada como inválida
+                clearBuffer();  // ✅ Llamamos `clearBuffer()` aqui
+                esValido = 0;  // Marcar entrada como invalida
                 break;  // Salir del while y repetir la entrada
             }
 
-            text[i] = c;  // Guardar el carácter válido en la cadena
+            text[i] = c;  // Guardar el caracter valido en la cadena
             i++; 
         }
 
@@ -87,10 +87,10 @@ void pedirCadena(char *text, int tam) {
             c = getchar();
             if (c != '\n') {
                 printf("\033[1;33mHas introducido demasiados caracteres\n"
-                       "Inténtalo de nuevo\n"
+                       "Intentalo de nuevo\n"
                        "-> \033[0m");
-                clearBuffer();  // ✅ Llamamos `clearBuffer()` aquí también
-                esValido = 0;  // Marcar como inválido
+                clearBuffer();  // ✅ Llamamos `clearBuffer()` aqui tambien
+                esValido = 0;  // Marcar como invalido
             }
         }
 

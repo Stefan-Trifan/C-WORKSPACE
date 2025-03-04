@@ -12,7 +12,7 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		Comprobar si un número entero es primo, teniendo en cuenta que un primo solo tiene 2 divisores.
+		Comprobar si un numero entero es primo, teniendo en cuenta que un primo solo tiene 2 divisores.
 */
 
 /* _________________________________________

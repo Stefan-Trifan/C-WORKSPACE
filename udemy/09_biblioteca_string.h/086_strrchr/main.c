@@ -16,7 +16,7 @@
 */
 
 // strrchr(Cadena, Caracter)
-// Regresa el restante de la cadena a partir de la primera aparición del carácter indicado.
+// Regresa el restante de la cadena a partir de la primera aparicion del caracter indicado.
 
 /* _________________________________________
    Inicio cabecera */

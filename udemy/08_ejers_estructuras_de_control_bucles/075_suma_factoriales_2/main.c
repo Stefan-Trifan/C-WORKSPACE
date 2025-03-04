@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
 	printf("\n_________________________________________START\n\n");
 
 	int                      
-	limiteFactoriales   = 0, // Almacena el límite hasta el cual se calcularán los factoriales,
-	j                   = 1, // Contador utilizado para ayudar a calcular el factorial de cada número,
-	acumuladorFactorial = 1, // Guarda el valor del factorial en cada iteración, y lo va sumando a resultadoFinal,
+	limiteFactoriales   = 0, // Almacena el limite hasta el cual se calcularan los factoriales,
+	j                   = 1, // Contador utilizado para ayudar a calcular el factorial de cada numero,
+	acumuladorFactorial = 1, // Guarda el valor del factorial en cada iteracion, y lo va sumando a resultadoFinal,
     resultadoFinal      = 0; // Almacena el resultado final de la suma de los factoriales.    
 
     printf("Cuantos factoriales quieres sumar: ");

@@ -67,7 +67,7 @@ void pedirCadena(char *text, int tam)
 		{
 			printf(
 				"\033[1;31mERROR: Has superado el tamanio.\n\033[0m"
-				"\033[1;31mPor favor, inténtelo de nuevo. \n\033[0m"
+				"\033[1;31mPor favor, intentelo de nuevo. \n\033[0m"
 				"\033[1;31m-> \033[0m");
 			clearBuffer();
 			esValido = 0;

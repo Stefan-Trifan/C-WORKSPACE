@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	// Solicitar al usuario que seleccione un día de la semana
+	// Solicitar al usuario que seleccione un dia de la semana
 	int dia;
 
 	printf("Selecciona el dia de la semana como numero (del 1 al 7): ");

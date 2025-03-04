@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    // Declaración correcta del array
+    // Declaracion correcta del array
 	int mtx[ROW][COL] = {
 		{1, 2, 3}, 
 		{4, 5, 6}

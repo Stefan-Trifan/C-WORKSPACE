@@ -14,9 +14,9 @@
 	* 	Enunciado X
 		1. Repaso Punteros. Ejercicio
 		Crear un programa implemente tres funciones:
-		Función de cálculo del área de un círculo paso por valor
-		Función de cálculo del área de un círculo paso por referencia
-		Función de cálculo del área y de la longitud de la circunferencia de un círculo.
+		Funcion de calculo del area de un circulo paso por valor
+		Funcion de calculo del area de un circulo paso por referencia
+		Funcion de calculo del area y de la longitud de la circunferencia de un circulo.
 */
 
 /* _________________________________________
@@ -106,7 +106,7 @@ float pedirFloat()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. Por favor, inténtelo de nuevo. \n\033[0m"
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. Por favor, intentelo de nuevo. \n\033[0m"
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;

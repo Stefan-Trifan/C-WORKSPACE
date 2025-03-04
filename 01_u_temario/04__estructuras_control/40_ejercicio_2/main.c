@@ -70,14 +70,14 @@ int main(int argc, char *argv[])
 
 		/* 
 			Dividimos el mayor entre el menor
-			Si la división no es exacta, dividimos el divisor entre el resto obtenido y continuamos de esta forma hasta obtener una división exacta.
-			El m.c.d. es el último divisor. 
+			Si la division no es exacta, dividimos el divisor entre el resto obtenido y continuamos de esta forma hasta obtener una division exacta.
+			El m.c.d. es el ultimo divisor. 
 		*/
-		if(numMayor % numMenor == 0) // División exacta
+		if(numMayor % numMenor == 0) // Division exacta
 		{
 			m_c_d = numMenor;
 		}
-		else // División no exacta
+		else // Division no exacta
 		{
 			while(numMayor % numMenor != 0)
 			{
@@ -105,6 +105,6 @@ void clearBuffer()
 }
 
 /* _________________________________________
-   Herramientas de depuración */
+   Herramientas de depuracion */
 
 // printf("DEBUG nombreVariable: %d\n", variable);

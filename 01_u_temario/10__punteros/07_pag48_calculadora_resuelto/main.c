@@ -64,23 +64,23 @@ int main(int argc, char *argv[]){
 			int j = 4, k = 0;
 			while (argv[i][j] != '\0' && k < 19) 
 			{
-				operacion[k++] = argv[i][j++]; // Copia la operación a la cadena operacion
+				operacion[k++] = argv[i][j++]; // Copia la operacion a la cadena operacion
 			}
-			operacion[k] = '\0'; // Termina la cadena con un carácter nulo
+			operacion[k] = '\0'; // Termina la cadena con un caracter nulo
 			encontrado_ope = 1;
 		}
 	}
 
-	// Verifica que se hayan encontrado todos los parámetros necesarios
+	// Verifica que se hayan encontrado todos los parametros necesarios
 	if (!encontrado_op1 || !encontrado_op2 || !encontrado_ope) 
 	{
 		printf(
-			"\033[1;31mERROR: Error en los parámetros. Uso correcto: ./main OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
+			"\033[1;31mERROR: Error en los parametros. Uso correcto: ./main OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
 		);
 		return 1;
 	}
 	
-	// Realiza la operación correspondiente según el valor de operacion
+	// Realiza la operacion correspondiente segun el valor de operacion
 	if (
 		operacion[0] == 's' &&
 		operacion[1] == 'u' &&
@@ -115,7 +115,7 @@ int main(int argc, char *argv[]){
 	else 
 	{
         printf(
-			"\033[1;31mERROR: Error en los parámetros. Uso correcto: ./calculadora OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
+			"\033[1;31mERROR: Error en los parametros. Uso correcto: ./calculadora OP1=5 OP2=7 OPE=suma\n\n\n\033[0m"
 		);
         return 1;
     }

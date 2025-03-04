@@ -40,12 +40,12 @@ int main(int argc, char *argv[])
 		{
 			printf(
 				"\033[1;31mERROR: El numero tiene que ser positivo. \n"
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 		}
 	} 
-	while (num < 0); // Condiciones específicas de cada ejercicio en particular
+	while (num < 0); // Condiciones especificas de cada ejercicio en particular
     
     printf("Numero es: %d", num);
     
@@ -66,8 +66,8 @@ int pedirEntero()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. \n"
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;

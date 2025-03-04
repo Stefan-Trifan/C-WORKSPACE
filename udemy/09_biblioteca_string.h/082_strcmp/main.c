@@ -16,9 +16,9 @@
 */
 
 // strcmp(Cadena1, Cadena2)
-// Compara 2 cadenas de texto caracter a caracter, es case-sensitive (sensible a mayúsculas y minúsculas). 
-// Cuando se encuentra una diferencia, esta función devuelve un valor entero correspondiente 
-// a la diferencia de valor decimal según el código ASCII. 
+// Compara 2 cadenas de texto caracter a caracter, es case-sensitive (sensible a mayusculas y minusculas). 
+// Cuando se encuentra una diferencia, esta funcion devuelve un valor entero correspondiente 
+// a la diferencia de valor decimal segun el codigo ASCII. 
 // El cual corresponde a la siguiente tabla:
 
 //   Si Cadena1 es       :     Entonces devuelve

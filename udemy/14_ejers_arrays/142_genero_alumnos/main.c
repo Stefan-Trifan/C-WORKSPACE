@@ -12,9 +12,9 @@
 	*   Estado: 
 
 	* 	Enunciado X
-		Escriba un programa en C que solicite al usuario ingresar el número total de estudiantes en un curso de Algoritmos. 
-		Luego, el programa deberá pedir uno por uno el sexo de cada estudiante, permitiendo las opciones "hombre", "mujer" y cualquier otro valor como "indeterminado". 
-		Finalmente, el programa debe mostrar cuántos estudiantes son hombres, cuántos son mujeres y cuántos tienen un sexo no especificado correctamente.
+		Escriba un programa en C que solicite al usuario ingresar el numero total de estudiantes en un curso de Algoritmos. 
+		Luego, el programa debera pedir uno por uno el sexo de cada estudiante, permitiendo las opciones "hombre", "mujer" y cualquier otro valor como "indeterminado". 
+		Finalmente, el programa debe mostrar cuantos estudiantes son hombres, cuantos son mujeres y cuantos tienen un sexo no especificado correctamente.
 */
 
 /* _________________________________________
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	    num_indeterminados = 0;
 	char alumnos[50][SEXO] = {0};
 
-	printf("Introduce un numero de alumnos (máximo 50): \n");
+	printf("Introduce un numero de alumnos (maximo 50): \n");
 	num_alumnos = pedirEntero();
 	printf("\n");
 

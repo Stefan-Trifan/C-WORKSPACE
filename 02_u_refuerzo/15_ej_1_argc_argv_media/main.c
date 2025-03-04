@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
 
     printf("La media de los 3 num es: %f\n", sumaTotal / 3);
     printf("El numero minimo es:      %f\n", numMin);
-    printf("El numero máximo es:      %f\n", numMax);
+    printf("El numero maximo es:      %f\n", numMax);
 
     printf("\n_________________________________________END\n\n");
     return 0;

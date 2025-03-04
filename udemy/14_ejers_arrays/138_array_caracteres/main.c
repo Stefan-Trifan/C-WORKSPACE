@@ -82,7 +82,7 @@ void pedirNombre(char *nombre_antigo)
 
 		if (nombre_antigo[i] == '\n') // Si el usuario presiona ENTER, termina la lectura
 		{ 
-            nombre_antigo[i] = '\0'; // Reemplaza '\n' por '\0' para que sea una cadena válida
+            nombre_antigo[i] = '\0'; // Reemplaza '\n' por '\0' para que sea una cadena valida
             break;
         }
 	}

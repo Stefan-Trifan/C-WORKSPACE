@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-// Función que comprueba si es minuscula
+// Funcion que comprueba si es minuscula
 int esMinuscula(char caracter){
 
 	int resultado = 0;

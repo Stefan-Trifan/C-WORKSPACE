@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     {
         printf(
             "+---------------------------------+\n"
-            "|              MENÚ               |\n"
+            "|              MENu               |\n"
             "|---------------------------------|\n"
             "|      Seleccione una opcion      |\n"
             "|                                 |\n"
@@ -113,11 +113,11 @@ void introducirZapato(struct zapato_t *zapato, int *contZapatos)
     (zapato + *contZapatos)->referencia = pedirEnteroPositivo();
     printf("DEBUG Has introducido referencia: %d\n\n", (zapato + *contZapatos)->referencia);
 
-    printf("2. Color (máx %d caracteres)\n-> ", TAM_STRING - 1);
+    printf("2. Color (max %d caracteres)\n-> ", TAM_STRING - 1);
     pedirCadena((zapato + *contZapatos)->color, TAM_STRING);
     printf("DEBUG Has introducido color: %s\n\n", (zapato + *contZapatos)->color);
 
-    printf("3. Tipo (máx %d caracteres)\n-> ", TAM_STRING - 1);
+    printf("3. Tipo (max %d caracteres)\n-> ", TAM_STRING - 1);
     pedirCadena((zapato + *contZapatos)->tipo, TAM_STRING - 1);
     printf("DEBUG Has introducido tipo: %s\n\n", (zapato + *contZapatos)->tipo);
 
@@ -238,7 +238,7 @@ int pedirEnteroPositivo()
         if(esValido != 1)
         {
             printf(
-                "\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
+                "\033[1;31mERROR: El tipo de dato introducido no es valido.\n"
                 "-> \033[0m"
             );
         }
@@ -327,7 +327,7 @@ float pedirFloatPositivo()
         if(esValido != 1)
         {
             printf(
-                "\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
+                "\033[1;31mERROR: El tipo de dato introducido no es valido.\n"
                 "-> \033[0m"
             );
         }

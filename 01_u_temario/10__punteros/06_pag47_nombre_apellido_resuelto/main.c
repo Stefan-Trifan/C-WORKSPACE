@@ -32,17 +32,17 @@ int main(int argc, char *argv[])
 	char nombre[100];      // Para almacenar el nombre
 	char apellidos[100];   // Para almacenar los apellidos
 	int coma_encontrada = 0; // Bandera para detectar la coma
-	int index_nombre = 0, index_apellido = 0; // Índices para construir cadenas	
+	int index_nombre = 0, index_apellido = 0; // indices para construir cadenas	
     
 	// Verificar que al menos hay dos argumentos (apellido y nombre)
 	if (argc < 2) {
 		printf("Uso: %s <primer apellido> <segundo apellido>, <nombre>\n", argv[0]);
-		return 1; // Código de error
+		return 1; // Codigo de error
 	}
 
 	// Recorrer los argumentos desde el segundo (argv[1] en adelante)
 	for (int i = 1; i < argc; i++) {
-		// Recorrer cada carácter del argumento actual
+		// Recorrer cada caracter del argumento actual
 		for (int j = 0; argv[i][j] != '\0'; j++) {
 			if (argv[i][j] == ',') {
 				coma_encontrada = 1; // Encontramos la coma
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 			}
 		}
 		
-		// Agregar un espacio entre palabras, excepto después de la última
+		// Agregar un espacio entre palabras, excepto despues de la ultima
 		if (i < argc - 1) {
 			if (coma_encontrada) {
 				nombre[index_nombre++] = ' ';

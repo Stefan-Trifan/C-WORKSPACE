@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	printf("Introduce un numero: ");
 	scanf("%d", &numero);
 
-	// Utiliza el operador ternario para determinar si el número es par o impar
+	// Utiliza el operador ternario para determinar si el numero es par o impar
 	(numero % 2 == 0) ? printf("Numero es par") : printf("Numero es impar");
     
 	printf("\n_________________________________________END\n\n");

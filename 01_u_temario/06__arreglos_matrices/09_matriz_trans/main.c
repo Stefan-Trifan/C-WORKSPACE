@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		for (int fila = 0; fila < 3; fila++) { // Recorre las filas originales
 			printf("%d ", matriz[fila][col]); // Imprime traspuesta
 		}
-    printf("\n"); // Salto de línea al final de cada columna
+    printf("\n"); // Salto de linea al final de cada columna
 	}
 
 

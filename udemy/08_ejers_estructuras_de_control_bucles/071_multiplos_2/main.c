@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     
     int numMax = 0, base = 0;
 
-	printf("De que numero quieres sacar múltiplos (base): ");
+	printf("De que numero quieres sacar multiplos (base): ");
 	scanf("%d", &base);
 
 	printf("Hasta que numero quieres sacar multiplos: ");

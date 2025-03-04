@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
     
     int numero1, numero2, resultado;
 
-    printf("Introduce el primer número: ");
-    scanf("%d", &numero1); // Lee el primer número
+    printf("Introduce el primer numero: ");
+    scanf("%d", &numero1); // Lee el primer numero
 
-    printf("Introduce el segundo número: ");
-    scanf("%d", &numero2); // Lee el segundo número
+    printf("Introduce el segundo numero: ");
+    scanf("%d", &numero2); // Lee el segundo numero
 
     // ERROR: Se realiza una resta en lugar de una suma
     resultado = numero1 - numero2;
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     printf("La suma de %d y %d es: %d\n", numero1, numero2, resultado);
 
     // Otro ERROR: Mensaje incorrecto
-    printf("Fin del programa (¿Ocurrió todo correctamente?)\n");
+    printf("Fin del programa (¿Ocurrio todo correctamente?)\n");
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

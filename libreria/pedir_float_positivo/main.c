@@ -55,8 +55,8 @@ float pedirFloarPositivo()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es valido. \n"
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 		}
@@ -64,7 +64,7 @@ float pedirFloarPositivo()
 		{
 			printf(
 				"\033[1;31mERROR: El numero debe ser mayor o igual a 0. \n"
-				"Por favor, inténtelo de nuevo. \n\033[0m" 
+				"Por favor, intentelo de nuevo. \n\033[0m" 
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;

@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 			printf("*");
 		}
 
-		// Al final de cada fila, insertamos salto de línea y reseteamos las estrellas
+		// Al final de cada fila, insertamos salto de linea y reseteamos las estrellas
 		numEstrellasFila = 0;
 		printf("\n");
 	}

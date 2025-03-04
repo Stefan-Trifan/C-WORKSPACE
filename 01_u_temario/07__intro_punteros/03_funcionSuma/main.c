@@ -12,7 +12,7 @@
 	*   Estado: todo
 
 	* 	Enunciado X
-		Crear función que lea 
+		Crear funcion que lea 
 */
 
 /* _________________________________________

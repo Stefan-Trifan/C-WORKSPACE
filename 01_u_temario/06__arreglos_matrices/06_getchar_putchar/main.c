@@ -11,7 +11,7 @@
 
 	* 	Enunciado 26 - Ejemplo getchar() y putchar()
 		Solicita al usuario su nombre y apellido utilizando getchar(). 
-		Almacénalo en una cadena de caracteres de 40 elementos. 
+		Almacenalo en una cadena de caracteres de 40 elementos. 
 		Imprime ambas la cadena por pantalla con putchar().
 
 	!	Importante

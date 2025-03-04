@@ -77,7 +77,7 @@
 		}
 	
 		printf("El numero minimo es:    %f\n", numMin);
-		printf("El numero máximo es:    %f\n", numMax);
+		printf("El numero maximo es:    %f\n", numMax);
 		printf("La media de los num es: %f\n", sumaTotal / contNum);
 
 	

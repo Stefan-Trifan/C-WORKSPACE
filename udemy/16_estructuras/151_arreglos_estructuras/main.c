@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
 		printf("Nombre completo persona %d\n-> ", i);
 		fgets(alumnos[i].nombre_completo, sizeof(alumnos[i].nombre_completo), stdin);
-		// Eliminar el '\n' que fgets() almacena automáticamente
+		// Eliminar el '\n' que fgets() almacena automaticamente
 		int tam = strlen(alumnos[i].nombre_completo);
 		if (alumnos[i].nombre_completo[tam - 1] == '\n') 
 		{
@@ -82,8 +82,8 @@ int pedirEntero()
 		if (esValido == 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
-				"Por favor, inténtelo de nuevo.\n"
+				"\033[1;31mERROR: El tipo de dato introducido no es valido.\n"
+				"Por favor, intentelo de nuevo.\n"
 				"-> \033[0m"
 			);
 			esValido = 0;

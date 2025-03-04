@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	if(argc != 2)
 	{
-		printf("Ha ocurrido un error. Por favor, inténtelo de nuevo.\n\n\n");
+		printf("Ha ocurrido un error. Por favor, intentelo de nuevo.\n\n\n");
 		return 1;
 	}
 

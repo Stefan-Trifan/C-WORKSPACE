@@ -16,8 +16,8 @@
 */
 
 //* strcpy(Destino, Fuente)
-//* Permite copiar una cadena de texto en otra. Debes considerar que la dimensión del array
-//* destino debe ser igual o mayor que el array origen y que además sobrescribe el contenido del
+//* Permite copiar una cadena de texto en otra. Debes considerar que la dimension del array
+//* destino debe ser igual o mayor que el array origen y que ademas sobrescribe el contenido del
 //* destino (de existir).
 
 /* _________________________________________

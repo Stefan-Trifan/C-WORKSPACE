@@ -20,7 +20,7 @@
 
 #include <stdio.h>
 
-// Declaración de la función para limpiar el buffer de entrada
+// Declaracion de la funcion para limpiar el buffer de entrada
 void clearBuffer();
 
 /* _________________________________________
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 	
-	// Declaración de variables para el precio inicial y final
+	// Declaracion de variables para el precio inicial y final
 	float precioInicial = 0, precioFinal = 0;
 
 	// Solicita al usuario que introduzca el precio inicial
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-// Definición de la función para limpiar el buffer de entrada
+// Definicion de la funcion para limpiar el buffer de entrada
 void clearBuffer()
 {
 	while (getchar() != '\n');

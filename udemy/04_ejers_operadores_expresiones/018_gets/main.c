@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	// Imprime el nombre introducido por el usuario
 	printf("Tu nombre es: %s", nombre);
 	
-	// Retorna 0 indicando que el programa terminó correctamente
+	// Retorna 0 indicando que el programa termino correctamente
 	return 0;
 }
 

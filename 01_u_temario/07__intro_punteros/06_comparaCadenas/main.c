@@ -24,7 +24,7 @@
 int leerCadena(char cadena[], int maxTam);
 // int leerCadena(char *cadena, int maxTam);
 
-// Devolverá 0 si las cadenas no son iguales y 1 si las cadenas son iguales
+// Devolvera 0 si las cadenas no son iguales y 1 si las cadenas son iguales
 int comparaCadena(char cadena1[], char *cadena2);
 
 void clearBuffer();
@@ -62,9 +62,9 @@ int leerCadena(char cadena[], int maxTam) {
         int i = 0;
         while (cadena[i] != '\0') i++;
         if (i > 0 && cadena[i - 1] == '\n') {
-            cadena[i - 1] = '\0'; // Eliminar el salto de línea
+            cadena[i - 1] = '\0'; // Eliminar el salto de linea
         }
-        return 1; // Éxito
+        return 1; // exito
     }
     return 0; // Error
 }

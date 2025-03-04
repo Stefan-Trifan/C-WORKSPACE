@@ -388,7 +388,7 @@ int pedirEnteroPos()
 
 /**
  * @brief Solicita al usuario una cadena de caracteres
- *      - Si el usuario introduce más caracteres de los permitidos, 
+ *      - Si el usuario introduce mas caracteres de los permitidos, 
  *        se muestra un error y se le pide que vuelva a intentarlo.
  * @param[out] text Puntero a un arreglo donde se almacena el ingrediente
  */

@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     nombre[i] = '\0'; 
     clearBuffer();
 
-    printf("Leído: %s\n", nombre);
+    printf("Leido: %s\n", nombre);
 
     printf("\n_________________________________________END\n\n");
     return 0;

@@ -62,8 +62,8 @@ int pedirEntero()
 		if(esValido != 1)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
-				"Por favor, inténtelo de nuevo.\n"
+				"\033[1;31mERROR: El tipo de dato introducido no es valido.\n"
+				"Por favor, intentelo de nuevo.\n"
 				"-> \033[0m"
 			);
 		}
