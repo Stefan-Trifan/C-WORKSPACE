@@ -36,7 +36,8 @@ int main(int argc, char *argv[]){
     printf("Introduce -> ");
     do
     {
-        int i = 0, esValido = 1;
+        int i = 0;
+        esValido = 1;
         char c;
         while(i < TAM - 1)
         {
@@ -62,21 +63,19 @@ int main(int argc, char *argv[]){
     } while(esValido != 1);
         
 
-    
-
     char *p_origen = nombre_origen;
     char *p_destino = nombre_destino;
 
-    int i = 0;
-    while(*(p_origen + i) != '\0')
     {
-        *(p_destino + i) = *(p_origen + i);
-        i++;
+        int i = 0;
+        while (*(p_origen + i) != '\0')
+        {
+            *(p_destino + i) = *(p_origen + i);
+            i++;
+        }
     }
 
     printf("nombre_origen:  %s\n", nombre_origen);
-    printf("p_origen:       %s\n", p_origen);
-    printf("p_destino:      %s\n", p_destino);
     printf("nombre_destino: %s\n", nombre_destino);
 
     printf("\n_________________________________________END\n\n");
