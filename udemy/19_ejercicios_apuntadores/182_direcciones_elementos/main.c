@@ -25,7 +25,13 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    
+    int vector[10] = {0,1,2,3,4,5,6,7,8,9};
+	int* pvector = vector;
+
+	for(int i = 0; i < 10; i++)
+	{
+		printf("coordenada %d\n", *(pvector + i));
+	}
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

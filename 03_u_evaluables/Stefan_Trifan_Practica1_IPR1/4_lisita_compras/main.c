@@ -23,9 +23,9 @@
 
 typedef enum tipo_t 
 {
-    GRAMOS,
-    UNIDADES
-}tipo_t; 
+    GRAMOS, UNIDADES
+}
+tipo_t; 
 
 typedef struct ingrediente_t
 {

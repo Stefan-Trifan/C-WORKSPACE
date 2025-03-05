@@ -1,21 +1,66 @@
-/*
+/* 
     *   Autor
         Stefan Trifan
 
     *   Estado
-
-    *   Enunciado X
-        Lorem Ipsum
+        Done
 */
 
-/* _________________________________________
-   Inicio cabecera */
-
 #include <stdio.h>
-#define RED "\033[1;31m"
-#define GREEN "\033[1;32m"
-#define YELLOW "\033[1;33m"
-#define RESET "\033[0m"
+#include <stdlib.h>
+#include <string.h>
+
+// Funciones del programa
+
+// Funciones auxiliares
+
+/* ___________________________________
+Inicio main */
+
+int main(int argc, char *argv[])
+{
+    printf("___________________________________END");
+    return 0;
+}
+
+/* ___________________________________
+Inicio definicion de funciones */
+
+// Funciones del programa
+
+// Funciones auxiliares
+void clearBuffer()
+{
+    while(getchar() != '\n');
+}
+
+void clearBuffer()
+{
+    while (getchar() != '\n');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Funciones del programa
 
 // Funciones auxiliares
@@ -28,24 +73,8 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    printf(
-        "\033[1;31mERROR: El tipo de dato introducido no es valido. \n"
-        "Por favor, intentelo de nuevo. \n"
-        "-> \033[0m"
-    );
-    printf("\nAHORA BIEN \n");
-    printf(
-        "\033[1;31mERROR: El tipo de dato introducido no es valido.\n"
-        "Por favor, intentelo de nuevo.\n"
-        "-> \033[0m"
-    );
-    printf("\nAHORA BIEN \n");
-    printf(
-        "\033[1;33mALERTA: El tipo de dato introducido no es valido.\n"
-        "Por favor, intentelo de nuevo.\n"
-        "-> \033[0m"
-    );
-    printf("\nAHORA BIEN \n");
+
+
     printf("\n_________________________________________END\n\n");
     return 0;
 }
@@ -56,7 +85,3 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-void clearBuffer()
-{
-    while (getchar() != '\n');
-}
