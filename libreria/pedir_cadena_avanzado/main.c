@@ -50,10 +50,12 @@ int main(int argc, char *argv[])
 //        c :
 //  text[i] : 
 //        i :
+// printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
+// printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
 
 void pedirCadena(char *text, int tam)
 {
-    int i = 0, esValido;
+    int i, esValido;
     char c;
     do
     {
@@ -62,17 +64,12 @@ void pedirCadena(char *text, int tam)
         while (i < tam - 1)
         {
             c = getchar();
-
-            // printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
-            if(c == '\n')
-				break;
-                
+            
+            if(c == '\n') break;
             text[i] = c;
             i++; 
         }
         text[i] = '\0'; 
-
-        // printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
         
         if(i == tam - 1)
         {

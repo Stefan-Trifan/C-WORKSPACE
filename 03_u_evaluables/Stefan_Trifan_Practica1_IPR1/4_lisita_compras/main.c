@@ -21,6 +21,12 @@
 #define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
 
+typedef enum opcion_t 
+{
+    listar = 1, introducir, eliminar, salir
+}
+opcion_t; 
+
 typedef enum tipo_t 
 {
     GRAMOS, UNIDADES
@@ -65,7 +71,7 @@ int main()
         // };
         // int cont_ingredientes = 4; 
     
-    int opcion = 0;
+    opcion_t opcion;
 
     // Menu
     do
@@ -83,7 +89,8 @@ int main()
             "+------------------------------------------+\n"
             "-> ");
 
-        do{ 
+        do
+        { 
             opcion = pedirEnteroPos();
             if(opcion < 1 || opcion > 4) printf(RED"-> "RESET);
         }
@@ -91,14 +98,14 @@ int main()
 
         switch (opcion)
         {
-            case 1: 
+            case listar: 
                 printf("\n\n\n");
                 if(cont_ingredientes)
                     printf("Hay %d elementos en la lista\n", cont_ingredientes);
                 verLista(lista_ingredientes, cont_ingredientes); 
                 printf("\n\n\n");
                 break; 
-            case 2: 
+            case introducir: 
                 printf("\n\n\n");
                 if(cont_ingredientes < TAM_ARR)
                 {
@@ -112,11 +119,13 @@ int main()
                 }
                 printf("\n\n\n");
                 break;
-            case 3: 
+            case eliminar: 
                 printf("\n\n\n");
                 verLista(lista_ingredientes, cont_ingredientes);
                 eliminarIngrediente(lista_ingredientes, &cont_ingredientes); 
                 printf("\n\n\n");
+                break;
+            case salir: 
                 break;
         }
         
