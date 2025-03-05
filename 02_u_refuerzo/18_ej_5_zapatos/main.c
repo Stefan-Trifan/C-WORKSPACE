@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     {
         printf(
             "+---------------------------------+\n"
-            "|              MENu               |\n"
+            "|              MENU               |\n"
             "|---------------------------------|\n"
             "|      Seleccione una opcion      |\n"
             "|                                 |\n"
