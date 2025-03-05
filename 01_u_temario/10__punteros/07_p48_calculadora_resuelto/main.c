@@ -56,7 +56,8 @@ int main(int argc, char *argv[]){
 		}
 		else if (argv[i][0] == 'O' && argv[i][1] == 'P' && argv[i][2] == '2' && argv[i][3] == '=') 
 		{
-			op2 = strtol(argv[i] + 4, &endptr, 10); // Convierte OP2 a entero
+			op2 = strtol(argv[i] + 4, &endptr, 10); 
+			printf("DEBUG : %s\n", argv[i] + 4);// Convierte OP2 a entero
 			encontrado_op2 = 1;
 		}
 		else if (argv[i][0] == 'O' && argv[i][1] == 'P' && argv[i][2] == 'E' && argv[i][3] == '=') 
