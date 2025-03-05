@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	estaciones_t estacion_actual = otonio;
+	estaciones_t estacion_actual;
 	char estacion_usuario[10] = {0};
 
 	strcpy(estacion_usuario, argv[1]);
@@ -60,37 +60,31 @@ int main(int argc, char *argv[])
 		estacion_usuario[5] == 'v' &&
 		estacion_usuario[6] == 'e' && 
 		estacion_usuario[7] == 'r' &&
-		estacion_usuario[8] == 'a'
-	)
+		estacion_usuario[8] == 'a')
 	{
 		estacion_actual = primavera;
 	}
-	else if
-	(
+	else if(
 		estacion_usuario[0] == 'v' && 
 		estacion_usuario[1] == 'e' &&
 		estacion_usuario[2] == 'r' && 
 		estacion_usuario[3] == 'a' &&
 		estacion_usuario[4] == 'n' && 
-		estacion_usuario[5] == 'o'
-	)
+		estacion_usuario[5] == 'o')
 	{
 		estacion_actual = verano;
 	}
-	else if
-	(
+	else if(
 		estacion_usuario[0] == 'o' && 
 		estacion_usuario[1] == 't' &&
 		estacion_usuario[2] == 'o' && 
 		estacion_usuario[3] == 'n' &&
 		estacion_usuario[4] == 'i' && 
-		estacion_usuario[5] == 'o'
-	)
+		estacion_usuario[5] == 'o')
 	{
 		estacion_actual = otonio;
 	}
-	else if
-	(
+	else if(
 		estacion_usuario[0] == 'i' && 
 		estacion_usuario[1] == 'n' &&
 		estacion_usuario[2] == 'v' && 
@@ -98,8 +92,7 @@ int main(int argc, char *argv[])
 		estacion_usuario[4] == 'e' && 
 		estacion_usuario[5] == 'r' &&
 		estacion_usuario[6] == 'n' && 
-		estacion_usuario[7] == 'o'
-	)
+		estacion_usuario[7] == 'o')
 	{
 		estacion_actual = invierno;
 	}
