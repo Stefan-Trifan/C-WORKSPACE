@@ -25,13 +25,13 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    int a, b;
+    int b = 0;
 
-	// pedirValores(a,b);
+	printf("Introduce b \n-> ");
+	scanf("%d", &b);
 
 	printf(
-		"a = %d\n"
-		"b = %d\n", a, b);
+		"b = %d\n", b);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
