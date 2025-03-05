@@ -14,24 +14,29 @@
 #include <stdio.h>
 
 #define TAM_STR 12
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
 
 // Funciones del programa
-typedef union tipo_union
+typedef union descripcion_t
 {	
 	int tiene_baul;
 	int num_puertas;
 }
-tipo_union;
+descripcion_t;
 
-typedef struct tipo_estructura
+typedef struct vehiculo_t
 {
 	char tipo[TAM_STR];
-	tipo_union descripcion;
+	descripcion_t descripcion;
 }
-tipo_estructura;
+vehiculo_t;
 
 // Funciones auxiliares
 void pedirCadena(char *text);
+int pedirEntero();
 void clearBuffer();
 
 /* _________________________________________
@@ -41,22 +46,25 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	tipo_estructura vehiculo;
+	vehiculo_t vehiculo;
     
     printf("Ingresa el tipo de vehiculo (coche o motocicleta)\n-> ");
 	pedirCadena(vehiculo.tipo);
 
-	if(
+	if( 
         vehiculo.tipo[0] == 'c' &&
-        vehiculo.tipo[1] == 'c' &&
+        vehiculo.tipo[1] == 'o' &&
         vehiculo.tipo[2] == 'c' &&
-        vehiculo.tipo[3] == 'c' &&
-        vehiculo.tipo[4] == 'c')
+        vehiculo.tipo[3] == 'h' &&
+        vehiculo.tipo[4] == 'e' &&
+        vehiculo.tipo[5] == '\0')
     {
-
+        printf("Has introducido coche\n");
+        printf("Introduce el num de puertas-> \n");
+        vehiculo.descripcion.num_puertas = pedirEntero();
+        printf("Tienes un %s con %d puertas\n", vehiculo.tipo, vehiculo.descripcion.num_puertas);
     }
-    else if
-    (
+    else if(
         vehiculo.tipo[0]  == 'm' &&
         vehiculo.tipo[1]  == 'o' &&
         vehiculo.tipo[2]  == 't' &&
@@ -67,10 +75,34 @@ int main(int argc, char *argv[])
         vehiculo.tipo[7]  == 'l' &&
         vehiculo.tipo[8]  == 'e' &&
         vehiculo.tipo[9]  == 't' &&
-        vehiculo.tipo[10] == 'a'
-    )
+        vehiculo.tipo[10] == 'a' &&
+        vehiculo.tipo[11] == '\0')
     {
-        
+        printf("Has introducido motocicleta\n");
+        printf("Introduce 1 si tiene baul y 0 si no tiene\n-> \n");
+        do
+        {
+            vehiculo.descripcion.tiene_baul = pedirEntero();
+            if(vehiculo.descripcion.tiene_baul != 0 && vehiculo.descripcion.tiene_baul != 1)
+            {
+                printf(YELLOW"Tienes que introducir 0 o 1\n-> "RESET);
+            }
+        } 
+        while (vehiculo.descripcion.tiene_baul != 0 && vehiculo.descripcion.tiene_baul != 1);
+        if(vehiculo.descripcion.tiene_baul)
+        {
+            printf("Tienes una %s con baul\n", vehiculo.tipo);
+        }
+        else
+        {
+            printf("Tienes una %s con sin baul\n", vehiculo.tipo);
+        }
+    }
+    else
+    {
+        printf("Vehiculo debe ser coche o motocicleta\n");
+        printf(RED"\n_________________________________________FAIL\n\n"RESET);
+        return 1;
     }
     
 	printf("\n_________________________________________END\n\n");
@@ -121,6 +153,26 @@ void pedirCadena(char *text)
         }
     } 
     while (esValido != 1);
+}
+
+int pedirEntero()
+{
+    int num = 0, esValido = 0;
+    do
+    {
+        esValido = scanf("%d", &num);
+        clearBuffer();
+        if (esValido == 0)
+        {
+            printf(
+                "\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
+                "-> \033[0m"
+            );
+            esValido = 0;
+        }
+    }
+    while (esValido != 1);
+    return num;
 }
 
 void clearBuffer()
