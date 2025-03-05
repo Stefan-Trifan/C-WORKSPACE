@@ -33,7 +33,10 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	int arr1[4][5][2] = {0}, cont = 0, *puntero_a_arr1;
+	int arr1[4][5][2] = {0},
+	    cont          = 0,
+		
+	*puntero_a_arr1;
 	puntero_a_arr1 = &arr1[0][0][0];
 	
 	for(int i = 0; i < 40; i++)

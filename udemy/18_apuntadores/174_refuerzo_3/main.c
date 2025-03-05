@@ -25,7 +25,13 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
     
-    
+    int a, b;
+
+	// pedirValores(a,b);
+
+	printf(
+		"a = %d\n"
+		"b = %d\n", a, b);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;

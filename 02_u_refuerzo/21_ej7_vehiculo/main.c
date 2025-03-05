@@ -27,7 +27,7 @@ typedef union descripcion_t
 }
 descripcion_t;
 
-typedef struct vehiculo_t
+typedef struct
 {
 	char tipo[TAM_STR];
 	descripcion_t descripcion;
