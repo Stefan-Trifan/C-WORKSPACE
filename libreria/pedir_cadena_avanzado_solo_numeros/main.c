@@ -64,19 +64,19 @@ void pedirCadena(char *text, int tam) {
         while (i < tam - 1) {
             c = getchar();
 
-            if (c == '\n')   // Si presiona ENTER antes de llenar el buffer, salir
+            if (c == '\n')   // Si presiona enter antes de llenar el buffer, salir
                 break;
-            
-            if (c >= '0' && c <= '9') {  // Si se ingresa un numero, reiniciar entrada
-                printf("\033[1;33mSolo puedes introducir letras\n"
+
+            if (c < '0' || c > '9') {  // Si se ingresa un numero, reiniciar entrada
+                printf("\033[1;33mSolo puedes introducir numeros\n"
                        "Intentalo de nuevo\n"
                        "-> \033[0m");
-                clearBuffer();  // ✅ Llamamos `clearBuffer()` aqui
-                esValido = 0;  // Marcar entrada como invalida
-                break;  // Salir del while y repetir la entrada
+                clearBuffer();  // ✅
+                esValido = 0;  
+                break;  
             }
 
-            text[i] = c;  // Guardar el caracter valido en la cadena
+            text[i] = '\0';  // Guardar el caracter valido en la cadena
             i++; 
         }
 

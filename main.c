@@ -31,12 +31,13 @@ int main(int argc, char *argv[])
 {
     printf("________________________________________START\n\n");
 
-    int min = 5;
-    int max = 10;
+    int min = 0;
+    int max = 3;
 
     srand(time(NULL));
-    int num = min + rand() % (max - min + 1);
+    int num = min + rand() % (max + 1);
     printf("num %d\n",num);
+
     
 
     printf("________________________________________END\n\n");
