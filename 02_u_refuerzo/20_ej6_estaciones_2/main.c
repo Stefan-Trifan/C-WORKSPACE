@@ -21,14 +21,12 @@
 
 typedef enum estaciones_t 
 {
-	primavera, 
-	verano, 
-	otonio, 
-	invierno
+	primavera, verano, otonio, invierno, error
 }
 estaciones_t;
 
 // Funciones del programa
+void compararCadena(char estacion_usuario[10], estaciones_t *estacion_actual);
 
 // Funciones auxiliares
 void clearBuffer();
@@ -52,56 +50,7 @@ int main(int argc, char *argv[])
 
 	strcpy(estacion_usuario, argv[1]);
 
-	if(
-		estacion_usuario[0] == 'p' && 
-		estacion_usuario[1] == 'r' &&
-		estacion_usuario[2] == 'i' && 
-		estacion_usuario[3] == 'm' &&
-		estacion_usuario[4] == 'a' && 
-		estacion_usuario[5] == 'v' &&
-		estacion_usuario[6] == 'e' && 
-		estacion_usuario[7] == 'r' &&
-		estacion_usuario[8] == 'a')
-	{
-		estacion_actual = primavera;
-	}
-	else if(
-		estacion_usuario[0] == 'v' && 
-		estacion_usuario[1] == 'e' &&
-		estacion_usuario[2] == 'r' && 
-		estacion_usuario[3] == 'a' &&
-		estacion_usuario[4] == 'n' && 
-		estacion_usuario[5] == 'o')
-	{
-		estacion_actual = verano;
-	}
-	else if(
-		estacion_usuario[0] == 'o' && 
-		estacion_usuario[1] == 't' &&
-		estacion_usuario[2] == 'o' && 
-		estacion_usuario[3] == 'n' &&
-		estacion_usuario[4] == 'i' && 
-		estacion_usuario[5] == 'o')
-	{
-		estacion_actual = otonio;
-	}
-	else if(
-		estacion_usuario[0] == 'i' && 
-		estacion_usuario[1] == 'n' &&
-		estacion_usuario[2] == 'v' && 
-		estacion_usuario[3] == 'i' &&
-		estacion_usuario[4] == 'e' && 
-		estacion_usuario[5] == 'r' &&
-		estacion_usuario[6] == 'n' && 
-		estacion_usuario[7] == 'o')
-	{
-		estacion_actual = invierno;
-	}
-	else
-	{
-		printf(YELLOW"Opciones: primavera, verano, otonio, invierno\n\n"RESET);
-		return 1;
-	}
+	compararCadena(estacion_usuario, &estacion_actual);
 
 	switch (estacion_actual)
 	{
@@ -117,6 +66,8 @@ int main(int argc, char *argv[])
 		case invierno:
 			printf("El frio abraza el paisaje mientras la nieve y la calidez del hogar se disfrutan.");
 			break;
+		case error:
+			return 1;
 	}
 
 	printf("\n_________________________________________END\n\n");
@@ -127,6 +78,61 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+void compararCadena(char estacion_usuario[10], estaciones_t *estacion_actual)
+{
+	if(
+		estacion_usuario[0] == 'p' && 
+		estacion_usuario[1] == 'r' &&
+		estacion_usuario[2] == 'i' && 
+		estacion_usuario[3] == 'm' &&
+		estacion_usuario[4] == 'a' && 
+		estacion_usuario[5] == 'v' &&
+		estacion_usuario[6] == 'e' && 
+		estacion_usuario[7] == 'r' &&
+		estacion_usuario[8] == 'a')
+	{
+		*estacion_actual = primavera;
+	}
+	else if(
+		estacion_usuario[0] == 'v' && 
+		estacion_usuario[1] == 'e' &&
+		estacion_usuario[2] == 'r' && 
+		estacion_usuario[3] == 'a' &&
+		estacion_usuario[4] == 'n' && 
+		estacion_usuario[5] == 'o')
+	{
+		*estacion_actual = verano;
+	}
+	else if(
+		estacion_usuario[0] == 'o' && 
+		estacion_usuario[1] == 't' &&
+		estacion_usuario[2] == 'o' && 
+		estacion_usuario[3] == 'n' &&
+		estacion_usuario[4] == 'i' && 
+		estacion_usuario[5] == 'o')
+	{
+		*estacion_actual = otonio;
+	}
+	else if(
+		estacion_usuario[0] == 'i' && 
+		estacion_usuario[1] == 'n' &&
+		estacion_usuario[2] == 'v' && 
+		estacion_usuario[3] == 'i' &&
+		estacion_usuario[4] == 'e' && 
+		estacion_usuario[5] == 'r' &&
+		estacion_usuario[6] == 'n' && 
+		estacion_usuario[7] == 'o')
+	{
+		*estacion_actual = invierno;
+	}
+	else
+	{
+		printf(YELLOW"Opciones: primavera, verano, otonio, invierno\n");
+		*estacion_actual = 4;
+		printf("\n_________________________________________END\n\n"RESET);
+	}
+
+}
 
 // Funciones auxiliares
 void clearBuffer()

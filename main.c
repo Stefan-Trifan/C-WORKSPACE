@@ -1,43 +1,92 @@
-/*
+/* 
     *   Autor
         Stefan Trifan
 
     *   Estado
+        Done
 
-    *   Enunciado X
-        Lorem Ipsum
+    *   Testing
 */
 
-/* _________________________________________
-   Inicio cabecera */
-
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#define TAM_STR 5
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
 
 // Funciones del programa
 
 // Funciones auxiliares
+void pedirCadena(char *text);
 void clearBuffer();
 
-/* _________________________________________
-   Inicio main() */
+/*  ________________________________________
+    Inicio Main */
 
 int main(int argc, char *argv[])
 {
-    printf("\n_________________________________________START\n\n");
+    printf("________________________________________START\n\n");
 
+    int min = 5;
+    int max = 10;
 
+    srand(time(NULL));
+    int num = min + rand() % (max - min + 1);
+    printf("num %d\n",num);
+    
 
-    printf("\n_________________________________________END\n\n");
+    printf("________________________________________END\n\n");
     return 0;
 }
 
-/* _________________________________________
-   Inicio definicion de funciones */
+/*  ________________________________________
+    Inicio Definicion de Funciones */
 
 // Funciones del programa
 
 // Funciones auxiliares
+void pedirCadena(char *text)
+{
+    int i, esValido;
+    char c;
+    do
+    {
+        esValido = 1, i = 0;
+        while(i < TAM_STR - 1)
+        {
+            c = getchar();
+
+            if(c == '\n') break;
+
+            text[i] = c;
+            i++;
+        }
+        text[i] = '\0';
+
+        if(i == TAM_STR - 1)
+        {
+            c = getchar();
+
+            if(c != '\n')
+            {
+                printf(YELLOW
+                    "ALERTA. Has superado el limite de %d caracteres\n"
+                    "Por favor, intentelo de nuevo\n"
+                    "-> "RESET, 
+                    TAM_STR);
+                clearBuffer();
+                esValido = 0;
+            }
+        }
+    } 
+    while (esValido != 1);
+}
+
 void clearBuffer()
 {
-    while (getchar() != '\n');
+    while(getchar() != '\n');
 }

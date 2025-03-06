@@ -20,7 +20,7 @@
 #define RESET "\033[0m"
 
 // Funciones del programa
-typedef union descripcion_t
+typedef union
 {	
 	int tiene_baul;
 	int num_puertas;
