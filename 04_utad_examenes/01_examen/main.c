@@ -146,7 +146,6 @@ int main(int argc, char *argv[])
     // Mostramos los jugadores posicion ala con mas de 2 metros
     mostrarJugadoresAlaAltos(jugador, N_JUGADORES);
 
-
     printf("\n________________________________________END\n\n");
     return 0;
 }
@@ -160,7 +159,7 @@ int main(int argc, char *argv[])
  * 
  * @return num_caracteres: Numero de caracteres que tiene un string
  */
-int tamCadena (char* str)
+int tamCadena(char* str)
 {
     int num_caracteres = 0,
         i              = 0;
@@ -233,8 +232,7 @@ void mostrarJugadoresAlaAltos(jugador_t jugadores[], int total)
             printf(
                 "%s (%.2f m)\n",
                 jugadores[i].apellido, jugadores[i].altura);
-        }
-        
+        }  
     }
 }
 
