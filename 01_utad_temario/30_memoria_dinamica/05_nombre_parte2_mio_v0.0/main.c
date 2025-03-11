@@ -13,6 +13,8 @@
 
 #include <stdio.h>
 
+#define TAM_BLOQUE 10
+
 // Funciones del programa
 
 // Funciones auxiliares

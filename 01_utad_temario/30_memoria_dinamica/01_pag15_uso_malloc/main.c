@@ -29,8 +29,6 @@ int main(int argc, char *argv[])
     
     int pares[TAM] = {0};
 
-	
-
 	for(int i = 0; i < TAM; i++)
 		pares[i] = i * 2;
 

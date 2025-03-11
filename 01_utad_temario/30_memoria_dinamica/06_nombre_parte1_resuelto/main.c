@@ -1,11 +1,11 @@
 /*
-	*	Autor
+	*   Autor
 		Stefan Trifan
 
 	*   Estado
 
-	* 	Enunciado X
-		LoremIpsum
+	*   Enunciado X
+		Lorem Ipsum
 */
 
 /* _________________________________________
@@ -13,7 +13,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 // Funciones del programa
+char* leeLineaDinamica();
 
 // Funciones auxiliares
 void clearBuffer();
@@ -24,16 +26,15 @@ void clearBuffer();
 int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
-    
-    int *v, *p;
-	v = (int *) malloc(100 * sizeof(int));
-	v = (int *) calloc(100,  sizeof(int));
 
-	p = (int *) realloc(v, 150*sizeof(int));
+    int tam;
+    char* nombreapellido;
 
-	printf("v : %p\n", v);
-	printf("p : %p\n", p);
-    
+    printf("Introduce el nombre y apellido\n-> ");
+    nombreapellido = leeLineaDinamica ();
+
+    printf("\nNombre es: %s\n", nombreapellido);
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
@@ -42,6 +43,23 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+char* leeLineaDinamica () {
+    int i = 1;
+    char* cadena = (char*) malloc(sizeof(char));
+    int pos = 0;
+    char newChar = 0;
+
+    while((newChar = getchar()) != '\n') {
+        *(cadena + pos) = newChar;
+        // cadena[pos] = newChar;
+        pos++;
+        cadena = (char*) realloc(cadena, (pos + 1) * sizeof(char));
+    }
+
+    *(cadena + pos) = '\0';
+
+    return cadena;
+}
 
 // Funciones auxiliares
 void clearBuffer()
