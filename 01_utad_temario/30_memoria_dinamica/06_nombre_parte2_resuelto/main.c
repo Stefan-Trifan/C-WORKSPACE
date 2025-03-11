@@ -46,21 +46,21 @@ int main(int argc, char *argv[])
 // Funciones del programa
 char* leeLineaDinamica () {
     char* cadena = (char*) malloc(sizeof(char) * TAM_BLOQUE);
-    int pos = 0;
-    int tambloq = TAM_BLOQUE;
+    int i = 0;
+    int tam_bloque = TAM_BLOQUE;
     char newchar;
 
     while((newchar = getchar()) != '\n') {
-        cadena[pos] = newchar;
-        pos++;
-        if(pos == tambloq) {
-            tambloq += TAM_BLOQUE;
-            cadena = (char*) realloc(cadena, tambloq * sizeof(char));
-            // tambloq += tambloq + TAM_BLOQUE;
+        cadena[i] = newchar;
+        i++;
+        if(i == tam_bloque) {
+            tam_bloque += TAM_BLOQUE;
+            cadena = (char*) realloc(cadena, tam_bloque * sizeof(char));
+            // tam_bloque += tam_bloque + TAM_BLOQUE;
         }
     }
 
-    cadena[pos] = '\0';
+    cadena[i] = '\0';
     return cadena;
 }
 

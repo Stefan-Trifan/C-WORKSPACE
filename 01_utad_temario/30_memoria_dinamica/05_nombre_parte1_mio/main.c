@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 	nombre = leeLineaDinamica();
 	printf("Nombre es: %s\n", nombre);
 
+	free(nombre);
+
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
@@ -43,12 +45,12 @@ int main(int argc, char *argv[])
 // Funciones del programa
 char *leeLineaDinamica()
 {
-	char *p_nombre_alumno = (char *)malloc(sizeof(char)), c;
+	char *p_nombre_alumno = malloc(sizeof(char)), c;
 	int i = 0;
 	while((c = getchar()) != '\n')
 	{
+		p_nombre_alumno = realloc(p_nombre_alumno, (i + 1) * sizeof(char));
 		*(p_nombre_alumno + i) = c;
-		char* p_nombre_alumno = (char *)malloc(sizeof(char));
 		i++;
 	}
 	*(p_nombre_alumno + i) = '\0';

@@ -1,11 +1,11 @@
 /*
-	*	Autor
-		Stefan Trifan
+        *	Autor
+                Stefan Trifan
 
-	*   Estado
+        *   Estado
 
-	* 	Enunciado 23
-		LoremIpsum
+        * 	Enunciado 23
+                LoremIpsum
 */
 
 /* _________________________________________
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TAM 20
+#define TAM 10
 
 // Funciones del programa
 char *leeLineaDinamica();
@@ -23,49 +23,51 @@ char *leeLineaDinamica();
 void clearBuffer();
 
 /* _________________________________________
-   Inicio main() */
+       Inicio main() */
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+    printf("\n_________________________________________START\n\n");
 
-	char *nombre;
+    char *nombre;
 
-	printf("Introduce tu nombre\n-> ");
-	nombre = leeLineaDinamica();
-	printf("Nombre es: %s\n", nombre);
+    printf("Introduce tu nombre\n-> ");
+    nombre = leeLineaDinamica();
+    printf("Nombre es: %s\n", nombre);
 
-	free(nombre);
+    free(nombre);
 
-	printf("\n_________________________________________END\n\n");
-	return 0;
+    printf("\n_________________________________________END\n\n");
+    return 0;
 }
 
 /* _________________________________________
-   Inicio definicion de funciones */
+       Inicio definicion de funciones */
 
 // Funciones del programa
 char *leeLineaDinamica()
 {
-	char *p_cadena = (char *)malloc(sizeof(char) * TAM), c;
-	int i = 0;
+    char *p_nombre_alumno = malloc(sizeof(char) * TAM), c;
+    int i                  = 0,
+        incremento_memoria = TAM;
 
-	while((c = getchar()) != '\n')
-	{
-		*(p_cadena + i) = c;
-		if(i >= TAM)
+    while ((c = getchar()) != '\n')
+    {
+        if(i == incremento_memoria)
 		{
-			char* p_cadena = (char *)malloc(sizeof(char));
+            incremento_memoria += TAM;
+			p_nombre_alumno = realloc(p_nombre_alumno, incremento_memoria * sizeof(char));
 		}
-		i++;
-	}
-	*(p_cadena + i) = '\0';
+        p_nombre_alumno[i] = c;
+        i++;
+    }
+    p_nombre_alumno[i] = '\0';
 
-	return p_cadena;
+    return p_nombre_alumno;
 }
 
 // Funciones auxiliares
 void clearBuffer()
 {
-	while (getchar() != '\n');
+    while (getchar() != '\n');
 }
