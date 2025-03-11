@@ -29,7 +29,9 @@ int main(int argc, char *argv[])
 
     int i = 0;
     while (i < TAM - 1 && (nombre[i] = getchar()) != '\n')
+    {
         i++; 
+    }
     nombre[i] = '\0'; 
     clearBuffer();
 
