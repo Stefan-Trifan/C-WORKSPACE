@@ -27,27 +27,12 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	char nombre_alumno = 0;
-	char *p_nombre_alumno = &nombre_alumno;
-	int num_caracteres_usuario = 0, i = 0;
-    char c;
+	char *nombre;
 
 	printf("Introduce tu nombre\n-> ");
-	do
-	{
-		c = getchar();
+	nombre = leeLineaDinamica();
+	printf("Nombre es: %s\n", nombre);
 
-		if(c == '\n') break;
-
-		char* p_nombre_alumno = (char *)malloc(sizeof(char));
-		*(p_nombre_alumno + i) = c;
-	} 
-	while (c != '\n');
-	*(p_nombre_alumno + i) = '\0';
-
-	printf("Nombre es: %s\n", p_nombre_alumno);
-	
-    
 	printf("\n_________________________________________END\n\n");
 	return 0;
 }
@@ -58,7 +43,17 @@ int main(int argc, char *argv[])
 // Funciones del programa
 char *leeLineaDinamica()
 {
-	return 0;
+	char *p_nombre_alumno = (char *)malloc(sizeof(char)), c;
+	int i = 0;
+	while((c = getchar()) != '\n')
+	{
+		*(p_nombre_alumno + i) = c;
+		char* p_nombre_alumno = (char *)malloc(sizeof(char));
+		i++;
+	}
+	*(p_nombre_alumno + i) = '\0';
+
+	return p_nombre_alumno;
 }
 
 // Funciones auxiliares

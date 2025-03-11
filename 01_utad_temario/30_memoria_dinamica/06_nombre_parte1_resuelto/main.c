@@ -51,7 +51,6 @@ char* leeLineaDinamica () {
 
     while((newChar = getchar()) != '\n') {
         *(cadena + pos) = newChar;
-        // cadena[pos] = newChar;
         pos++;
         cadena = (char*) realloc(cadena, (pos + 1) * sizeof(char));
     }

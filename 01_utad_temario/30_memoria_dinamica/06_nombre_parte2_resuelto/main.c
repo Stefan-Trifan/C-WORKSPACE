@@ -29,7 +29,6 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-    int tam;
     char* nombreapellido;
 
     printf("Introduce el nombre y apellido\n-> ");
