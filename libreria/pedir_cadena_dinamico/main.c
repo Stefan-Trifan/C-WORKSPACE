@@ -25,17 +25,7 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    char nombre[TAM]; 
-
-    int i = 0;
-    while (i < TAM - 1 && (nombre[i] = getchar()) != '\n')
-    {
-        i++; 
-    }
-    nombre[i] = '\0'; 
-    clearBuffer();
-
-    printf("Leido: %s\n", nombre);
+    
 
     printf("\n_________________________________________END\n\n");
     return 0;

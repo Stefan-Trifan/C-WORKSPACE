@@ -19,7 +19,7 @@
    Inicio cabecera */
 
 #include <stdio.h>
-float pedirFloarPositivo();
+float pedirFloatPositivo();
 void  clearBuffer();
 
 /* _________________________________________
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
 	printf("Introduce un numero: \n-> ");
 
-	num = pedirFloarPositivo();
+	num = pedirFloatPositivo();
 	
 	printf("Numero es: %2f", num);
     
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-float pedirFloarPositivo()
+float pedirFloatPositivo()
 {
 	float num = 0;
 	int esValido = 0;
@@ -52,19 +52,10 @@ float pedirFloarPositivo()
 	{
 		esValido = scanf("%f", &num);
 		clearBuffer();
-		if (esValido == 0)
+		if (esValido == 0 || num < 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es valido. \n"
-				"Por favor, intentelo de nuevo. \n\033[0m" 
-				"\033[1;31m-> \033[0m"
-			);
-		}
-		else if(num < 0)
-		{
-			printf(
-				"\033[1;31mERROR: El numero debe ser mayor o igual a 0. \n"
-				"Por favor, intentelo de nuevo. \n\033[0m" 
+				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
 				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;
