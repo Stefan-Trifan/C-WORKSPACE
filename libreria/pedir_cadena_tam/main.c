@@ -64,7 +64,6 @@ void pedirCadena(char *text, int tam)
         while (i < tam - 1)
         {
             c = getchar();
-            
             if(c == '\n') break;
             text[i] = c;
             i++; 

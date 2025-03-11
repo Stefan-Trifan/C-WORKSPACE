@@ -19,9 +19,8 @@
    Inicio cabecera */
 
 #include <stdio.h>
-void clearBuffer();
-
-int pedirEnteroPositivo();
+float pedirFloatPos();
+void  clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -30,13 +29,13 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	int num = 0;
+	float num = 0;
 
-    printf("Introduce un numero entero \n-> ");
+	printf("Introduce un numero: \n-> ");
 
-	num = pedirEnteroPositivo();
-
-    printf("Numero es: %d", num);
+	num = pedirFloatPos();
+	
+	printf("Numero es: %2f", num);
     
 	printf("\n_________________________________________END\n\n");
 	return 0;
@@ -45,18 +44,19 @@ int main(int argc, char *argv[])
 /* _________________________________________
    Inicio definicion de funciones */
 
-int pedirEnteroPositivo()
+float pedirFloatPos()
 {
-	int num = 0, esValido = 0;
+	float num = 0;
+	int esValido = 0;
 	do
 	{
-		esValido = scanf("%d", &num);
+		esValido = scanf("%f", &num);
 		clearBuffer();
 		if (esValido == 0 || num < 0)
 		{
 			printf(
-				"\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
-				"-> \033[0m"
+				"\033[1;31mERROR: El tipo de dato introducido no es válido. \n"
+				"\033[1;31m-> \033[0m"
 			);
 			esValido = 0;
 		}
@@ -64,6 +64,7 @@ int pedirEnteroPositivo()
 	while (esValido != 1);
 	return num;
 }
+
 void clearBuffer()
 {
 	while (getchar() != '\n');
