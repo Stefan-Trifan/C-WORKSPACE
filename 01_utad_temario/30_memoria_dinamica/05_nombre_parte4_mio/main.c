@@ -1,11 +1,11 @@
 /*
         *	Autor
-                Stefan Trifan
+            Stefan Trifan
 
         *   Estado
 
-        * 	Enunciado 23
-                LoremIpsum
+        * 	Enunciado 
+            LoremIpsum
 */
 
 /* _________________________________________
@@ -15,13 +15,6 @@
 #include <stdlib.h>
 
 #define TAM 10
-
-typedef struct grupo
-{
-    char **alumnos;
-    int i_alumnos;
-}
-grupo;
 
 // Funciones del programa
 char *leeLineaDinamica();
@@ -37,51 +30,49 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    char **alumnos = malloc(sizeof(char *));
-    int es_nuevo_alumno = 0,
-        i_alumnos       = 0,
-        num_grupos      = 0;
-
-    // Preguntamos num de grupos
-    printf("Introduce el num. de grupos\n-> ");
-    num_grupos = pedirEnteroPos();
+    char ***grupo = (char ***)malloc(sizeof(char **));
+    int opcion    = 0,
+        i_alumnos = 0,
+        i_grupos  = 0;
 
     do
     {
-        // Preguntamos al usuario en que grupo quiere introducir nuevo alumno
-        int grupo_actual = 0;
-        grupo_actual = pedirEnteroPos();
-
         // Pedimos nombre para un alumno
         printf("Introduce el nombre\n-> ");
-        *(alumnos + i_alumnos) = leeLineaDinamica();
-        printf("Nombre es: %s\n", *(alumnos + i_alumnos));
+        **(grupo + i_alumnos) = leeLineaDinamica();
+        printf("Nombre es: %s\n", **(grupo + i_alumnos));
 
         // Preguntamos si el user quiere introducir mas alumnos
         // Si vamos a introducir ams alumnos, ajustamos el tam de **alumnos
-        do
+        printf(
+            "SELECCIONA\n"
+            "[1] - Introducir alumno en grupo actual\n"
+            "[2] - Introducir alumno en nuevo grupo\n"
+            "[3] - Salir\n"
+            "-> ");
+        opcion = pedirEnteroPos();
+
+        if(opcion == 1)
         {
-            printf(
-                "Introducimos otro alumno? Introduce: [1] - SI [O] - NO\n"
-                "-> ");
-            es_nuevo_alumno = pedirEnteroPos();
-        } 
-        while (es_nuevo_alumno != 1 && es_nuevo_alumno != 0);
-        if(es_nuevo_alumno == 1)
+            i_grupos++;
+            *grupo = (char **)realloc(grupo, sizeof(char *) * (i_grupos + 1));
+        }
+        
+        if(opcion == 2)
         {
             i_alumnos++;
-            alumnos = realloc(alumnos, sizeof(char *) * (i_alumnos + 1));
+            grupo = (char ***)realloc(grupo, sizeof(char **) * (i_alumnos + 1));
         }
     } 
-    while (es_nuevo_alumno == 1);
+    while (opcion != 3);
+
+    // Imprimimos los alumnos
     
     printf("\n\n\nLos alumnos que has introducido son: \n");
     for(int i = 0; i < i_alumnos + 1; i++)
     {
-        printf("Alumno [%d]: %s\n", i, *(alumnos + i));
+        // printf("Alumno [%d]: %s\n", i, *(grupo + i));
     }
-
-    free(alumnos);
 
     printf("\n_________________________________________END\n\n");
     return 0;
