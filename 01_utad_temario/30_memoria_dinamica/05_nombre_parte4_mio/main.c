@@ -16,6 +16,13 @@
 
 #define TAM 10
 
+typedef struct grupo
+{
+    char **alumnos;
+    int i_alumnos;
+}
+grupo;
+
 // Funciones del programa
 char *leeLineaDinamica();
 
@@ -30,12 +37,21 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    char **alumnos = (char **)malloc(sizeof(char *));
+    char **alumnos = malloc(sizeof(char *));
     int es_nuevo_alumno = 0,
-        i_alumnos       = 0;
+        i_alumnos       = 0,
+        num_grupos      = 0;
+
+    // Preguntamos num de grupos
+    printf("Introduce el num. de grupos\n-> ");
+    num_grupos = pedirEnteroPos();
 
     do
     {
+        // Preguntamos al usuario en que grupo quiere introducir nuevo alumno
+        int grupo_actual = 0;
+        grupo_actual = pedirEnteroPos();
+
         // Pedimos nombre para un alumno
         printf("Introduce el nombre\n-> ");
         *(alumnos + i_alumnos) = leeLineaDinamica();
@@ -54,7 +70,7 @@ int main(int argc, char *argv[])
         if(es_nuevo_alumno == 1)
         {
             i_alumnos++;
-            alumnos = (char **)realloc(alumnos, sizeof(char *) * (i_alumnos + 1));
+            alumnos = realloc(alumnos, sizeof(char *) * (i_alumnos + 1));
         }
     } 
     while (es_nuevo_alumno == 1);
