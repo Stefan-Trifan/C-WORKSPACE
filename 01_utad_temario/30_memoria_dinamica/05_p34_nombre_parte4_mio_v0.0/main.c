@@ -74,7 +74,6 @@ int main(int argc, char *argv[])
             // Expandimos el nuevo grupo para su primer alumno
             *(grupo + i_grupos) = (char **)realloc(*(grupo + i_grupos), (i_alumnos + 1) * sizeof(char *));
             *(*(grupo + i_grupos) + i_alumnos) = leeLineaDinamica();
-            i_grupos++;
             i_alumnos = 0;
             printf("\n\n");
         }

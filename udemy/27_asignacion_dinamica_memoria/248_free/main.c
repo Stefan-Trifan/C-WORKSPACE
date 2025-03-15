@@ -27,7 +27,23 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
+    int *p1 = NULL;
 
+    p1 = malloc(sizeof(int));
+
+    if(p1 == NULL)
+    {
+        printf("La memoria está llena\n");  
+    }
+    else
+    {
+        printf("Hay espacio\n");
+        *p1 = 15;
+        printf("p1 %d\n", *p1);
+    }
+
+    free(p1);
+    printf("p1 %d\n", *p1);
 
     printf("\n_________________________________________END\n\n");
     return 0;
