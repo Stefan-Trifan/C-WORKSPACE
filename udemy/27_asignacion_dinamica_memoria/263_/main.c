@@ -12,6 +12,8 @@
    Inicio cabecera */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 // Funciones del programa
 
