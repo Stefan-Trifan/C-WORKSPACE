@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     char ***grupo = (char ***)malloc(sizeof(char **));
+
     int opcion    = 0,
         i_alumnos = 0,
         i_grupos  = 0;
