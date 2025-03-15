@@ -3,6 +3,7 @@
             Stefan Trifan
 
         *   Estado
+            Sin terminar. No funciona
 
         * 	Enunciado 
             LoremIpsum
@@ -30,50 +31,69 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    char ***grupo = (char ***)malloc(sizeof(char **));
-
     int opcion    = 0,
         i_alumnos = 0,
         i_grupos  = 0;
 
+    // 1 Reservamos espacio para la lista de grupos
+    // 2 Reservamos espacio para la lista de alumnos dentro del primer grupo
+    char ***grupo       = (char ***)malloc(sizeof(char **));
+    *(grupo + i_grupos) = (char ** )malloc(sizeof(char * ));
+
     do
     {
-        // Pedimos nombre para un alumno
-        printf("Introduce el nombre\n-> ");
-        **(grupo + i_alumnos) = leeLineaDinamica();
-        printf("Nombre es: %s\n", **(grupo + i_alumnos));
-
-        // Preguntamos si el user quiere introducir mas alumnos
-        // Si vamos a introducir ams alumnos, ajustamos el tam de **alumnos
+        // Menu
         printf(
             "SELECCIONA\n"
-            "[1] - Introducir alumno en grupo actual\n"
+            "[1] - Introducir alumno en grupo actual (%d)\n"
             "[2] - Introducir alumno en nuevo grupo\n"
-            "[3] - Salir\n"
-            "-> ");
+            "[3] - Imprimir alumnos\n"
+            "[4] - Salir\n"
+            "-> ", i_grupos);
         opcion = pedirEnteroPos();
 
+        // Introducir alumno en grupo actual
         if(opcion == 1)
         {
-            i_grupos++;
-            *grupo = (char **)realloc(grupo, sizeof(char *) * (i_grupos + 1));
+           // Pedimos nombre para un alumno
+            printf("Introduce el nombre\n-> ");
+            *(grupo + i_grupos) = (char **)realloc(*(grupo + i_grupos), (i_alumnos + 1) * sizeof(char *));
+            *(*(grupo + i_grupos) + i_alumnos) = leeLineaDinamica();
+            i_alumnos++;
+            printf("\n\n");
         }
-        
+
+         // Introducir alumno en nuevo grupo
         if(opcion == 2)
         {
-            i_alumnos++;
-            grupo = (char ***)realloc(grupo, sizeof(char **) * (i_alumnos + 1));
-        }
-    } 
-    while (opcion != 3);
+            printf("Introduce el nombre\n-> ");
+            i_grupos++;
+            grupo = (char ***)realloc(grupo, (i_grupos + 1) * sizeof(char **));
+            *(grupo + i_grupos) = (char **)malloc(sizeof(char *));  
 
-    // Imprimimos los alumnos
-    
-    printf("\n\n\nLos alumnos que has introducido son: \n");
-    for(int i = 0; i < i_alumnos + 1; i++)
-    {
-        // printf("Alumno [%d]: %s\n", i, *(grupo + i));
-    }
+            // Expandimos el nuevo grupo para su primer alumno
+            *(grupo + i_grupos) = (char **)realloc(*(grupo + i_grupos), (i_alumnos + 1) * sizeof(char *));
+            *(*(grupo + i_grupos) + i_alumnos) = leeLineaDinamica();
+            i_grupos++;
+            i_alumnos = 0;
+            printf("\n\n");
+        }
+
+        // Imprimir alumnos
+        if (opcion == 3)
+        {
+            for (int i = 0; i <= i_grupos; i++) 
+            {
+                printf("Grupo %d:\n", i + 1);
+                for (int j = 0; j < i_alumnos; j++)
+                {
+                    printf("- %s\n", *(*(grupo + i) + j));
+                }
+            }
+
+            printf("\n\n");
+        }
+    } while (opcion != 4);
 
     printf("\n_________________________________________END\n\n");
     return 0;
