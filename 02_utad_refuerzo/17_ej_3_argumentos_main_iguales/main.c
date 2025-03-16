@@ -4,7 +4,7 @@
 
     *   Estado
 
-    *   Enunciado X
+    *   Enunciado
         Escribe un programa en lenguaje C al que se le pase por argumentos del main 
         dos cadenas (tamaño maximo 20 caracteres) y que compruebe que son iguales.
         El programa mostrara imprimira por pantalla si son iguales o no despues de comprobarlo

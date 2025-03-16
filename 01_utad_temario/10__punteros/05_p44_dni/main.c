@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		LoremIpsum
 
 		

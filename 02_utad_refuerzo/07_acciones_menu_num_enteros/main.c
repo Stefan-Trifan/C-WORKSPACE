@@ -11,7 +11,7 @@
 
 	*   Estado: doing
 
-	* 	Enunciado X
+	* 	Enunciado
 		Desarrolla un programa que muestre un menu con las siguientes opciones
 		El programa debe repetir el menu hasta que el usuario eliga una opcion valuida
 */

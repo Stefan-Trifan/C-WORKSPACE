@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		Comprobar si un numero entero es primo, teniendo en cuenta que un primo solo tiene 2 divisores.
 */
 

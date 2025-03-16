@@ -11,7 +11,7 @@
 
 	*   Estado: todo
 
-	* 	Enunciado X
+	* 	Enunciado
 		Hacer una funcion que reciba 2 cadenas y las compare
 		Primero comparar si las 2 casenas son iguales
 */

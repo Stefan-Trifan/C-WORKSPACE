@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		Escriba un programa en C que solicite al usuario ingresar el numero total de estudiantes en un curso de Algoritmos. 
 		Luego, el programa debera pedir uno por uno el sexo de cada estudiante, permitiendo las opciones "hombre", "mujer" y cualquier otro valor como "indeterminado". 
 		Finalmente, el programa debe mostrar cuantos estudiantes son hombres, cuantos son mujeres y cuantos tienen un sexo no especificado correctamente.

@@ -11,7 +11,7 @@
 
 	*   Estado: todo
 
-	* 	Enunciado X
+	* 	Enunciado
 		Crear funcion que lea 
 */
 

@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		 4  8 12 16 ..
 		 6 12 18 24 ..
 		 7 14 21 28 ..

@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		El objetivo de este programa es operar con variables de manera indirecta
 */
 

@@ -4,8 +4,14 @@
 
 	*   Estado
 
-	*   Enunciado X
-		Lorem Ipsum
+	*   Enunciado
+		▪ Solicitar al usuario que introduzca por teclado un conjunto de números
+		enteros.
+		▪ Estos deben irse almacenando mientras que sean menores que el
+		primero introducido.
+		▪ En el momento que esta condición no se cumpla no se deben pedir más
+		números al usuario y deben escribirse todos los que haya introducido
+		hasta ese momento.
 */
 
 /* _________________________________________

@@ -4,7 +4,7 @@
 
 	*   Estado
 
-	*   Enunciado X
+	*   Enunciado
 		./main + 1 2 3 4
 		./main + 3.5 2.0 1.5 1.0
 		./main + 1 2i 3 4i (significado)

@@ -9,7 +9,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Enunciado X
+	* 	Enunciado
 		Rellenar un array de 10 posiciones con numeros introducidos por el usuario
 		Una vez tengais el array con los datos del usuario imprimir el mayor, el menor y la media y la suma total
 */

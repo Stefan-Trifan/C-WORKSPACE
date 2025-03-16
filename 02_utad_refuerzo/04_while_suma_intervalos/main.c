@@ -12,7 +12,7 @@
 	* 	Introducir despues de scanf
 		limpiar()
 
-	* 	Enunciado X
+	* 	Enunciado
 		Este codigo pide al usuario un intervalo de numeros y un paso de incremento, 
 		luego calcula y muestra la suma acumulativa de los numeros en ese intervalo, 
 		actualizando el resultado con cada incremento.

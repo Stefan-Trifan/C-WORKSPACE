@@ -11,7 +11,7 @@
 
 	*   Estado: doing
 
-	* 	Enunciado X
+	* 	Enunciado
 		Escribe un programa que le pida al usuario los valores de una matriz cuadrada
 		3x3, la presente por pantalla, y luego muestre la suma de todos los numeros de
 		la diagonal principal.

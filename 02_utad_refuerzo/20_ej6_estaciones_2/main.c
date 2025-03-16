@@ -4,7 +4,7 @@
 
 	*   Estado
 
-	*   Enunciado X
+	*   Enunciado
 		Lorem Ipsum
 */
 

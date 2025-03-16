@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		Hacer una lista de 10 numeros, luego pedirle al usuario que digite un numero,
 		con una busqueda secuencial determinar si el numero existe en la lista o no 
 		e indicar en que posicion se encuentra

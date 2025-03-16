@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		1. Repaso Punteros. Ejercicio
 		Crear un programa implemente tres funciones:
 		Funcion de calculo del area de un circulo paso por valor

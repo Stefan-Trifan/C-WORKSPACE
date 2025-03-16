@@ -4,7 +4,7 @@
 
         *   Estado
 
-        * 	Enunciado X
+        * 	Enunciado
             Esta funcion se queda solo con los caracteres necesarios
 */
 

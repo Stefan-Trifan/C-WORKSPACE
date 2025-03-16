@@ -11,7 +11,7 @@
 
 	*   Estado: todo
 
-	* 	Enunciado X
+	* 	Enunciado
 		Suma de dos numeros mas pequeños de un array
 */
 

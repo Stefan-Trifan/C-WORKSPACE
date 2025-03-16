@@ -11,7 +11,7 @@
 
 	*   Estado: done
 
-	* 	Enunciado X
+	* 	Enunciado
 		Escribe un programa que inicialice una matriz de orden 3 por 4, por filas
 		y posteriormente la escriba por columnas (traspuesta)
 */

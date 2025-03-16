@@ -11,7 +11,7 @@
 
     *   Estado: doing
 
-    *   Enunciado X
+    *   Enunciado
         Arrays Multidimensionales: Multiplicacion matrices
         Escribir un programa que calcule la multiplicacion de dos matrices. Comprobad los resultados con la multiplicacion de una matriz de 3x3 con una de 3x2.
 */

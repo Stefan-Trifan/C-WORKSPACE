@@ -11,7 +11,7 @@
 
 	*   Estado: 
 
-	* 	Enunciado X
+	* 	Enunciado
 		LoremIpsum
 */
 // Escribe un programa en el cual se solicite al usuario llenar un arreglo de 10 elementos 

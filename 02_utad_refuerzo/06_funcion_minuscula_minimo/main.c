@@ -9,7 +9,7 @@
 		windows : gcc main.c -o main.exe
 				: ./main.exe
 
-	* 	Enunciado X
+	* 	Enunciado
 		Escribe un programa en C que le pida al usuario que introduzca un caracter y que compruebe si es minuscula o numero. El origrama debe seguir pidiendo caracter mientras que el usuario no introduzca un caracter o una minuscula
 */
 

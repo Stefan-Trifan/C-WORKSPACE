@@ -11,7 +11,7 @@
 
 	*   Estado: doing
 
-	* 	Enunciado X
+	* 	Enunciado
 		LoremIpsum
 */
 

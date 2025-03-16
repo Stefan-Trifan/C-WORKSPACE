@@ -12,7 +12,7 @@
 	* 	Introducir despues de scanf
 		limpiar()
 
-	* 	Enunciado X
+	* 	Enunciado
 		
 */
 
