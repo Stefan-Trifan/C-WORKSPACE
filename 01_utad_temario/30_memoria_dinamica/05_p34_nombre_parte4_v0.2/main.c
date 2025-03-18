@@ -45,10 +45,9 @@ int main(int argc, char *argv[])
     ***alumno = (char***)realloc(alumno, 3 * (sizeof(char**)));
     alumno[0][1] = leeLineaDinamica();
     
-
     printf("alumno[0][0] %s\n", alumno[0][0]);
     printf("alumno[0][1] %s\n", alumno[0][1]);
-    printf("alumno[0][2] %s\n", alumno[1][20]);
+    printf("alumno[1][0] %s\n", alumno[1][0]);
 
     printf("\n_________________________________________END\n\n");
     return 0;

@@ -1,93 +1,36 @@
-/* 
-    *   Autor
-        Stefan Trifan
-
-    *   Estado
-        Done
-
-    *   Testing
-*/
-
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <time.h>
-#define TAM_STR 5
-#define RED "\033[1;31m"
-#define GREEN "\033[1;32m"
-#define YELLOW "\033[1;33m"
-#define RESET "\033[0m"
 
-// Funciones del programa
-
-// Funciones auxiliares
-void pedirCadena(char *text);
-void clearBuffer();
-
-/*  ________________________________________
-    Inicio Main */
-
-int main(int argc, char *argv[])
+int main()
 {
-    printf("________________________________________START\n\n");
+#ifdef __STDC__
+    printf("Cumple con el estándar ANSI C\n");
+#endif
 
-    int min = 0;
-    int max = 3;
-
-    srand(time(NULL));
-    int num = min + rand() % (max + 1);
-    printf("num %d\n",num);
-
-    
-
-    printf("________________________________________END\n\n");
-    return 0;
-}
-
-/*  ________________________________________
-    Inicio Definicion de Funciones */
-
-// Funciones del programa
-
-// Funciones auxiliares
-void pedirCadena(char *text)
-{
-    int i, esValido;
-    char c;
-    do
+#ifdef __STDC_VERSION__
+    printf("STDC VERSION: %ld\n", __STDC_VERSION__);
+    if (__STDC_VERSION__ == 199409L)
     {
-        esValido = 1, i = 0;
-        while(i < TAM_STR - 1)
-        {
-            c = getchar();
+        printf("C94\n");
+    }
+    else if (__STDC_VERSION__ == 199901L)
+    {
+        printf("C99\n");
+    }
+    else if (__STDC_VERSION__ == 201112L)
+    {
+        printf("C11\n");
+    }
+    else if (__STDC_VERSION__ == 201710L)
+    {
+        printf("C17\n");
+    }
+    else if (__STDC_VERSION__ >= 202000L)
+    {
+        printf("C2x (posiblemente C23 o superior)\n");
+    }
+#else
+    printf("Probablemente es C89/C90\n");
+#endif
 
-            if(c == '\n') break;
-
-            text[i] = c;
-            i++;
-        }
-        text[i] = '\0';
-
-        if(i == TAM_STR - 1)
-        {
-            c = getchar();
-
-            if(c != '\n')
-            {
-                printf(YELLOW
-                    "ALERTA. Has superado el limite de %d caracteres\n"
-                    "Por favor, intentelo de nuevo\n"
-                    "-> "RESET, 
-                    TAM_STR);
-                clearBuffer();
-                esValido = 0;
-            }
-        }
-    } 
-    while (esValido != 1);
-}
-
-void clearBuffer()
-{
-    while(getchar() != '\n');
+    return 0;
 }
