@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-
+    int *hola = (int *)malloc(sizeof(int));
 
     printf("\n_________________________________________END\n\n");
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 /* _________________________________________

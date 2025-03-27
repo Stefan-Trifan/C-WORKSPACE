@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 
     printf("\n_________________________________________END\n\n");
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 /* _________________________________________
