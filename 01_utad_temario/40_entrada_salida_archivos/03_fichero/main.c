@@ -27,7 +27,19 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
+	FILE *fileDescriptor;
 
+	fileDescriptor = fopen("./textos/letras.txt", "w");
+
+	if(fileDescriptor != NULL)
+	{
+		printf("Error al abrir el archivo\n");
+		return EXIT_FAILURE;
+	}
+
+	fputs("hola mundo", fileDescriptor);
+
+	fclose(fileDescriptor);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;
