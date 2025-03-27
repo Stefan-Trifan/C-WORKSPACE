@@ -1,11 +1,11 @@
 /*
-        *	Autor
-            Stefan Trifan
+    *	Autor
+        Stefan Trifan
 
-        *   Estado
+    *   Estado
 
-        * 	Enunciado
-            Esta funcion se queda solo con los caracteres necesarios
+    * 	Enunciado
+        Esta funcion se queda solo con los caracteres necesarios
 */
 
 /* _________________________________________
