@@ -28,18 +28,30 @@ int main(int argc, char *argv[])
 	printf("\n_________________________________________START\n\n");
 
 	FILE *fileDescriptor;
+	char textoDestino[12];
 
+	// Creamos el fichero
 	fileDescriptor = fopen("./textos/letras.txt", "w");
 
-	if(fileDescriptor != NULL)
+	// Comprobamos si tiene extio
+	if(fileDescriptor == NULL)
 	{
 		printf("Error al abrir el archivo\n");
 		return EXIT_FAILURE;
 	}
 
+	// Escribimos en el archivo
 	fputs("hola mundo", fileDescriptor);
 
+	// Cerramos el archivo
 	fclose(fileDescriptor);
+
+	// Leemos el contenido del archivo
+	fileDescriptor = fopen("./textos/letras.txt", "r");
+	fgets(textoDestino, 12, fileDescriptor);
+
+	// Imprimimos el contenido por pantalla
+	printf("En el archivo pone: %s", textoDestino);
 
 	printf("\n_________________________________________END\n\n");
 	return 0;
