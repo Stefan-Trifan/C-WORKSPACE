@@ -137,7 +137,7 @@ int main()
         "Muchas gracias por su visita!\n"
         "Saliendo del programa...\n\n");
 
-    printf("\n___________________________________________END\n\n");
+    printf("\n___________________________________________EXIT_SUCCESS\n\n");
     return 0;
 }
 

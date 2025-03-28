@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
 	(cont == 2) ? printf("El numero es primo") : printf("El numero no es primo");
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

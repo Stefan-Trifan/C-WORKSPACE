@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	for(int i = 0; i < TAM; i++)
 		printf("Numero %d: %d\n", i, pares[i]);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

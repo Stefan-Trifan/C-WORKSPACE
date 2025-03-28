@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	nota_final = nota_parcial_1*0.18333333 + nota_parcial_2*0.18333333 + nota_parcial_3*0.18333333 + nota_examen_final*0.30 + nota_trabajo_final*0.15;
 	printf("Tu nota final es: %.2f", nota_final);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

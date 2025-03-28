@@ -101,11 +101,11 @@ int main(int argc, char *argv[])
     else
     {
         printf("Vehiculo debe ser coche o motocicleta\n");
-        printf(RED"\n_________________________________________FAIL\n\n"RESET);
+        printf(RED"\n_________________________________________EXIT_FAILURE\n\n"RESET);
         return 1;
     }
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

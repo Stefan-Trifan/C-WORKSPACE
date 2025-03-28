@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     imprimirObjetos('B', objeto, argc);
     imprimirObjetos('C', objeto, argc);
 
-    printf("_________________________________________END\n\n");
+    printf("_________________________________________EXIT_SUCCESS\n\n");
     return 0;
 }
 
@@ -261,7 +261,7 @@ void verUso()
     printf(YELLOW
         "Uso  : ./main [ID]:[PESO]:[CATEG]...[ID]:[PESO]:[CATEG]\n"
         "Ej.  : ./main 101:2.5:A 102:3:B 103:1:C\n"RED
-        "\n_________________________________________FAIL\n\n"RESET);
+        "\n_________________________________________EXIT_FAILURE\n\n"RESET);
 }
 
 

@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
     if(argc != 3)
     {
         printf(RED"Tienes que introducir 2 argumentos\n");
-        printf("\n_________________________________________FAIL\n\n"RESET);
+        printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
         return 0;
     }
 
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
         if(i1 >= TAM)
         {
             printf(RED"Has introducido demasiados caracteres\n");
-            printf("\n_________________________________________FAIL\n\n"RESET);
+            printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
             return 0;
         }
     }
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
         if(i2 >= TAM)
         {
             printf(RED"Has introducido demasiados caracteres\n");
-            printf("\n_________________________________________FAIL\n\n"RESET);
+            printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
             return 0;
         }
     }
@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
         printf(RED"Las cadenas no son iguales"RESET);
     }
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

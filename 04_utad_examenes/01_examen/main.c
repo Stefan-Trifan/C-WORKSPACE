@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
     {
         printf(RED
             "USO 2: ./main Ruiz base 1.92 Alonso ala 1.99 Serrano ala 2.01 Belmonte ala 2.02 Alcazar pivot 2.15\n"RESET
-            "\n________________________________________FAIL\n\n");
+            "\n________________________________________EXIT_FAILURE\n\n");
         return 1;
     }
 
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     {
         printf(RED
             "ERROR: El apellido no puede tener mas de %d caracteres\n"
-            "\n________________________________________FAIL\n\n"RESET, 
+            "\n________________________________________EXIT_FAILURE\n\n"RESET, 
             TAM_STR - 14);
         // Detenemos la ejecucion del resto del programa si un apellido 
         // supera el limite de caracteres

@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	if(argc != 2)
 	{
 		printf(RED"Error: Debes introducr 1 estacion");
-		printf("\n_________________________________________FAIL\n\n"RESET);
+		printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
 		return 1;
 	}
 
@@ -119,7 +119,7 @@ int main(int argc, char *argv[])
 			break;
 	}
 
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

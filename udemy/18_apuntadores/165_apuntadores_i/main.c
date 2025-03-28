@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	printf("%p\n",  pcifra); // 0x16f15b338 Direccion de memoria a la que apunta pcifra
 	printf("%p\n", &pcifra); // 0x16f15b330 Direccion de memoria de pcifra
 
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

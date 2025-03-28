@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
 		printf("No has llegado a 100. Has perdido el juego\n");
 	}
     
-	printf("\n_________________________________________END  \n\n");
+	printf("\n_________________________________________EXIT_SUCCESS  \n\n");
 	return 0;
 }
 

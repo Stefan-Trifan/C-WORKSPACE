@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		printf(RED
 			"ERROR: Tienes que introducir 6 argumentos\n"
 			"USO  : ./main 1 2 3 4\n");
-		printf("\n_________________________________________FAIL\n\n"RESET);
+		printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
 		return 0;
 	}
 
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 			"- : Restar \n"
 			"x : Multiplicar \n"
 			"/ : Divisor");
-		printf("\n_________________________________________FAIL\n\n"RESET);
+		printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
 		return 0;
 	}
 	
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 		printf(RED 
 			"ERROR: Alguno de los argumentos que has introducido no es un numero\n"
 			"USO  : ./main 1 2 3 4\n");
-		printf("\n_________________________________________FAIL\n\n"RESET);
+		printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
 		return 0;
 	}
 
@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
 			(complejo[1].parte_real * complejo[1].parte_real + complejo[1].parte_imag * complejo[1].parte_imag));
 	}
 
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

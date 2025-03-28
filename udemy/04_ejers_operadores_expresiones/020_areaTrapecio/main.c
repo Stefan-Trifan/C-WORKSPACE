@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	area = ((base_mayor+base_menor)*altura)/2;
 	printf("El area es:              %.2f", area);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

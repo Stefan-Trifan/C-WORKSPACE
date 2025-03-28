@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	strcpy(arrayDestino, "Hola Hola Hola"); // copiamos el contenido "Hola Hola Hola" a la variable destino
 	printf("%s\n", arrayDestino);  // Devuelve "Hola Hola Hola
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

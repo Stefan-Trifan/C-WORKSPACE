@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	r3 = *p2 + *p3;
 	printf("Los Resultados son: \nr1 %d \nr2 %d \nr3 %d\n", r1, r2, r3);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

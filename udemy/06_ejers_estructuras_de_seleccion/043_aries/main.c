@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 		printf("\nTu signo no es Aries");
 	};
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

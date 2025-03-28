@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     if(argc < 3)
 	{
 		printf("\033[1;31mERROR: Faltan argumentos");
-		printf("\n_________________________________________FAIL\033[0m\n\n");
+		printf("\n_________________________________________EXIT_FAILUREn\n");
 		return 1;
 	}
 
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 	// Imprimimos nombre apellido
 	printf("El nombre del alumno es %s, %s\n", nombre, apellido);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

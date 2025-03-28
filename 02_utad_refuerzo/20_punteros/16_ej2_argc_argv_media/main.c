@@ -48,7 +48,7 @@
 		if(contNum < 3 || contNum > 6)
 		{
 			printf("Uso %s num1 num2 num3\n", argv[0]);
-			printf("\n_________________________________________END\n\n");
+			printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 			return 1;
 		}
 
@@ -74,7 +74,7 @@
 		printf("Elemento que no se pudo converir: %c\n", *endptr);
 
 	
-		printf("\n_________________________________________END\n\n");
+		printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 		return 0;
   	}
    

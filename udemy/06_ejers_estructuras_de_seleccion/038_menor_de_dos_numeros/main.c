@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	
 	(numero1 > numero2) ? printf("El primer numero (%f) es mayor", numero1) : printf("El segundo numero (%f) es mayor", numero2);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

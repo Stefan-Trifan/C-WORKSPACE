@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     
 	(nota > 5.5) ? printf("Has aprobado") : printf("No has aprobado");
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

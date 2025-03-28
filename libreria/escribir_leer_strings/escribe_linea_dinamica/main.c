@@ -30,12 +30,13 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     char *texto;
+    printf("Introduce tu texto: ");
     texto = escribeLineaDinamica();
-    printf("Texto es: %s", texto);
+    printf("Texto es: %s\n", texto);
 
     free(texto);
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

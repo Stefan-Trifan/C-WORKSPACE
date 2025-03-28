@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     printf("num %.2f\n", *p_num);
     free(p_num);
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

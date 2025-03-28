@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     // Seleccionamos los ganadores del sorteo de manera aleatoria
     seleccionarGanador(num_ganadores, cont_jugadores, jugadores);
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 
@@ -290,7 +290,7 @@ void verUso()
         "USO 1 (1 ganador)        : ./main [nombre] [nombre]...[nombre]\n"
         "USO 2 (varios ganadores) : ./main [num_ganadores] [nombre] [nombre]...[nombre]\n"
         RED
-        "\n_________________________________________FAIL\n\n"
+        "\n_________________________________________EXIT_FAILURE\n\n"
         RESET);
 }
 

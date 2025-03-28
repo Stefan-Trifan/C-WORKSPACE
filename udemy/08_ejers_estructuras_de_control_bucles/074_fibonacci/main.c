@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		num1 = numActual;          //      num2 = 1,      num2 = 2,      num2 = 3,      num2 = 5 ...
 	}
 	
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

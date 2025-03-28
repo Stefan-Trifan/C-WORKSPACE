@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         printf(RED
             "ERROR: Debes introducir 4 argumentos\n"
             "USO  : ./main a b c"
-            "\n_________________________________________FAIL\n\n"RESET);
+            "\n_________________________________________EXIT_FAILURE\n\n"RESET);
         return 1;
     }
         
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         printf(RED
             "ERROR: Los argumentos deben ser letras\n"
             "USO  : ./main a b c"
-            "\n_________________________________________FAIL\n\n"RESET);
+            "\n_________________________________________EXIT_FAILURE\n\n"RESET);
         return 1;
     }
     // Comprobar si los argumentos son distintos entre ellos
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
         printf(RED
             "ERROR: Los argumentos deben ser distintos\n"
             "USO  : ./main a b c"
-            "\n_________________________________________FAIL\n\n"RESET);
+            "\n_________________________________________EXIT_FAILURE\n\n"RESET);
         return 1;
     }
     // Comprobar si los argumentos son de una sola letra
@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
         printf(RED
             "ERROR: Los argumentos deben ocupar un solo caracter\n"
             "USO  : ./main a b c"
-            "\n_________________________________________FAIL\n\n"RESET);
+            "\n_________________________________________EXIT_FAILURE\n\n"RESET);
         return 1;
     }
 
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
         c2, cont_c2, 
         c3, cont_c3);
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

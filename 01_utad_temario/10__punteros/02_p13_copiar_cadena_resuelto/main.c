@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     printf("cadena1: %s\n", cadena1);
     printf("cadena2: %s\n", cadena2);
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     printf("Longitud %d\n", longitud);
     printf("Nombre %s\n", p_nombre);
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

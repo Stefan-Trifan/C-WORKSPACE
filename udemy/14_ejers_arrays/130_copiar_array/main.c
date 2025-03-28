@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	for(int i = 0; i < TAM_ARR; i++)
 		printf("arr2[i] = %d\n", arr2[i]);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

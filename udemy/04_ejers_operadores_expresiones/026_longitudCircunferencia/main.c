@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	// Mostrar el resultado
 	printf("Circunferencia es: %f", circunferencia);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

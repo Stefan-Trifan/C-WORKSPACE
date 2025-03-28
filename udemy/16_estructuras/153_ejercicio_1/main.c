@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	printf("calle: %s\n", alumno.direccion_alumno.calle);
 	printf("numero: %d\n", alumno.direccion_alumno.numero);
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

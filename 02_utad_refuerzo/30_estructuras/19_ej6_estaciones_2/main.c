@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	if(argc != 2)
 	{
 		printf(RED"Error: Debes introducr 1 estacion");
-		printf("\n_________________________________________FAIL\n\n"RESET);
+		printf("\n_________________________________________EXIT_FAILURE\n\n"RESET);
 		return 1;
 	}
 
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 			return 1;
 	}
 
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 
@@ -129,7 +129,7 @@ void compararCadena(char estacion_usuario[10], estaciones_t *estacion_actual)
 	{
 		printf(YELLOW"Opciones: primavera, verano, otonio, invierno\n");
 		*estacion_actual = 4;
-		printf("\n_________________________________________END\n\n"RESET);
+		printf("\n_________________________________________EXIT_SUCCESS\n\n"RESET);
 	}
 
 }

@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     if(argc != 3)
     {
         printf(RED"Tienes que introducir 2 argumentos\n"RESET);
-        printf("\n_________________________________________FAIL\n\n");
+        printf("\n_________________________________________EXIT_FAILURE\n\n");
         return 0;
     }
 
@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
         printf("Las cadenas no son iguales");
     }
 
-    printf("\n_________________________________________END\n\n");
+    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

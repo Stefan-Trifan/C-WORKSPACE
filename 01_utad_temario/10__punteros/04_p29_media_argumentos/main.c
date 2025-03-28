@@ -35,7 +35,7 @@ int main(int argc, char * argv[])
 	if(argc == 1)
 	{
 		printf("Tienes que introducir varios parametros\n");
-		printf("\n_________________________________________END\n\n");
+		printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 		return 0;
 	}
 	else
@@ -57,7 +57,7 @@ int main(int argc, char * argv[])
 	printf("La media es: %.2f\n", resultadoMedia);
 
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	*punteroc = 'C'; // El contenido de la direccion de memoria almacenada en punteroc ahora es 'C'"
 	
     
-	printf("\n_________________________________________END\n\n");
+	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 
