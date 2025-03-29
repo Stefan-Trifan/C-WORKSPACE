@@ -5,7 +5,7 @@
     *   Estado
 
     *   Enunciado 3 - Autopista
-        Lorem Ipsum
+        Se debe desarrollar un programa que simule el funcionamiento de una autopista. 
 */
 
 /* _________________________________________

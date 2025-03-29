@@ -5,7 +5,6 @@
     *   Estado
 
     *   Enunciado 1 - Adivinar número entre 1 y 1000
-        Lorem Ipsum
 */
 
 /* _________________________________________
