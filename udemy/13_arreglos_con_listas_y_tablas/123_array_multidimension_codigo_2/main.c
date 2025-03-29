@@ -30,7 +30,7 @@ int pedirEntero();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
 	// Inicializamos la matriz
     int arreglo_3D[NUM_DIM3][NUM_ROWS][NUM_COLS] = 
@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
 
 	
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

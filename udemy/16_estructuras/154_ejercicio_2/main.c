@@ -34,7 +34,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	alumno_t Jorge, Juan;
 	strcpy(Jorge.asignaturas[0].materia, "Matematicas");
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	strcpy(Juan.asignaturas[1].materia, "Tecnologia");
 	strcpy(Juan.asignaturas[2].materia, "Religion");
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

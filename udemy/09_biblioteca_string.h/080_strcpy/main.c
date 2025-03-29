@@ -33,7 +33,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
 	char arrayOrigen[20]  = "Cadena de origen";
 	char arrayDestino[20] = ""; 
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	strcpy(arrayDestino, "Hola Hola Hola"); // copiamos el contenido "Hola Hola Hola" a la variable destino
 	printf("%s\n", arrayDestino);  // Devuelve "Hola Hola Hola
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

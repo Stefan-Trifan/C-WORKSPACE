@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	int nota = 0;
 	int esEntero = 0;
@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 		case 10: printf("Excelente sigue asi"); break;
 	}
 
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

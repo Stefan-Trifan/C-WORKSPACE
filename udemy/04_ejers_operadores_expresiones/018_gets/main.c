@@ -28,7 +28,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	// Declara una cadena de caracteres para el nombre
 	char nombre[40];

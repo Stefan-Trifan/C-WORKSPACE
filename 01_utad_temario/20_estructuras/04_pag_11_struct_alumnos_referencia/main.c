@@ -40,7 +40,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	struct alumnos_padre nuevo_alumno[TAM_STRUCT] = {
 		{21, 1.81, "Steve", "Trifan"},
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 	imprimirDatosAlumnoValor(nuevo_alumno);
 	imprimirDatosAlumnoReferencia(nuevo_alumno);
 
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

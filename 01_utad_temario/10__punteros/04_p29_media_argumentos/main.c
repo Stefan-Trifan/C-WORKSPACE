@@ -28,14 +28,14 @@ void clearBuffer();
 
 int main(int argc, char * argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	float contNumeros = 0, resultadoSumaTotal = 0, resultadoMedia = 0;
 
 	if(argc == 1)
 	{
 		printf("Tienes que introducir varios parametros\n");
-		printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+		printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 		return 0;
 	}
 	else
@@ -57,7 +57,7 @@ int main(int argc, char * argv[])
 	printf("La media es: %.2f\n", resultadoMedia);
 
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

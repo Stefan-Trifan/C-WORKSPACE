@@ -29,7 +29,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
 	char arr1[TAM_ARR],
 	     arr2[TAM_ARR];
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	printf("arr2: %s\n", arr2);
 
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

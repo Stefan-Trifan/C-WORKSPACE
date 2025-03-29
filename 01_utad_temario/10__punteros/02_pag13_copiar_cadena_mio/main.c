@@ -27,7 +27,7 @@ void clearBuffer();
    Inicio main() */
 
 int main(int argc, char *argv[]){
-    printf("\n_________________________________________START\n\n");
+    printf("\n___________________________START\n\n");
 
     char nombre_origen[15]  = {0};
     char nombre_destino[15] = {0};
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]){
     printf("nombre_origen:  %s\n", nombre_origen);
     printf("nombre_destino: %s\n", nombre_destino);
 
-    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

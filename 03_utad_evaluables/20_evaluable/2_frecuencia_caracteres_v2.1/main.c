@@ -38,7 +38,7 @@ int tamCadena(char *cadena);
 
 int main(int argc, char *argv[])
 {
-    printf("\n_________________________________________START\n\n");
+    printf("\n___________________________START\n\n");
 
     // Comprobamos que el usuario introduce al menos un caracter
     if (argc == 1)
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
     // Liberamos memoria reservada
     free(lista_caracteres);
 
-    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
     return EXIT_SUCCESS;
 }
 

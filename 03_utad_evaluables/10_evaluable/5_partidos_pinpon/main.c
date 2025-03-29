@@ -64,7 +64,7 @@ void clearBuffer();
 
 int main()
 {
-    printf("\n_________________________________________START\n\n");
+    printf("\n___________________________START\n\n");
 
 
     /// Probar el programa desde 0
@@ -300,7 +300,7 @@ int main()
         lista_partidos[5].fecha_inicio.hora,
         lista_partidos[5].fecha_inicio.min);
 
-    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

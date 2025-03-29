@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
     int numero;
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	// Utiliza el operador ternario para determinar si el numero es par o impar
 	(numero % 2 == 0) ? printf("Numero es par") : printf("Numero es impar");
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

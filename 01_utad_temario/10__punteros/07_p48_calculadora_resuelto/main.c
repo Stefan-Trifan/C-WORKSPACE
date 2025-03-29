@@ -32,7 +32,7 @@ void clearBuffer();
    Inicio main() */
 
 int main(int argc, char *argv[]){
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	long int op1 = 0, op2 = 0; 
 	char *endptr; 
@@ -122,7 +122,7 @@ int main(int argc, char *argv[]){
         return 1;
     }
 
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

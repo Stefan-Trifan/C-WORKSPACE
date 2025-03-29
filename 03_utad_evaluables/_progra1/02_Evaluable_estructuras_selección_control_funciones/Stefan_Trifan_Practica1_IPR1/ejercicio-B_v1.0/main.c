@@ -84,7 +84,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	// Declaramos las variables
 	int operaciones = 1;

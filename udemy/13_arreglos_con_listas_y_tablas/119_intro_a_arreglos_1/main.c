@@ -29,7 +29,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
     int array[3] = {24,5,26};
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	printf("Los nuevos valores son: %d %d %d", array[0], array[1], array[2]);
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

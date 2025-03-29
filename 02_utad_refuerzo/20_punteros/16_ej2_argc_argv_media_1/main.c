@@ -27,7 +27,7 @@
 	  Inicio main() */
    
    	int main(int argc, char *argv[]){
-	   printf("\n_________________________________________START\n\n");
+	   printf("\n___________________________START\n\n");
    
 		float num1      = 0,
 		      num2      = 0,
@@ -46,7 +46,7 @@
 		if(contNum <= 2 || contNum >= 8)
 		{
 			printf("Uso %s num1 num2 num3\n", argv[0]);
-			printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+			printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 			return 1;
 		}
 
@@ -81,7 +81,7 @@
 		printf("La media de los num es: %f\n", sumaTotal / contNum);
 
 	
-		printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+		printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 		return 0;
   	}
    

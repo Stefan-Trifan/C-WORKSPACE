@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
     float base_mayor, base_menor, altura, area;
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	area = ((base_mayor+base_menor)*altura)/2;
 	printf("El area es:              %.2f", area);
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

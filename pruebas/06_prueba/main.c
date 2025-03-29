@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
     int num1, num2, sum;
 	int *pnum1, *pnum2;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	sum = *pnum1 + *pnum2;
 	printf("Suma = %d", sum);
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

@@ -28,7 +28,7 @@ int pedirEntero();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
 
 	int num = 0;
 
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     
     printf("Numero es: %d", num);
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

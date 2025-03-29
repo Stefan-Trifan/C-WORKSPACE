@@ -28,7 +28,7 @@ float strtof(const char *str, char **endptr);
 
 int main(int argc, char *argv[])
 {
-    printf("\n_________________________________________START\n\n");
+    printf("\n___________________________START\n\n");
 
     float num1 = 0, num2 = 0, num3 = 0, numMin = 0, numMax = 0, sumaTotal = 0;
     char *endptr;
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
     printf("El numero minimo es:      %f\n", numMin);
     printf("El numero maximo es:      %f\n", numMax);
 
-    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
     return 0;
 }
 

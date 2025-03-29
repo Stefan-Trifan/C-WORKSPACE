@@ -23,7 +23,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n_________________________________________START\n\n");
+	printf("\n___________________________START\n\n");
     
     if(argc < 3)
 	{
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 	// Imprimimos nombre apellido
 	printf("El nombre del alumno es %s, %s\n", nombre, apellido);
     
-	printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
 	return 0;
 }
 

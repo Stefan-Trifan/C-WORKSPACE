@@ -30,7 +30,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-    printf("\n_________________________________________START\n\n");
+    printf("\n___________________________START\n\n");
 
     // Declaracion de variables
     // Reservamos espacio para el primer num aleatorio
@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
     // Liberamos memoria
     free(nums);
 
-    printf("\n\033[1;32m_________________________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
     return EXIT_SUCCESS;
 }
 
