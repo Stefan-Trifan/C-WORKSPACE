@@ -28,7 +28,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 	
 	// Declaracion de variables para el precio inicial y final
 	float precioInicial = 0, precioFinal = 0;
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	// Muestra el precio final
 	printf("Precio Final es: %f", precioFinal);
 
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

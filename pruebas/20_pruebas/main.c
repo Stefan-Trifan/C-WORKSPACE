@@ -64,7 +64,7 @@
    
    int main()
    {
-	   printf("\n___________________________START\n\n");
+	   printf("\n_________________________________________START\n\n");
    
 	   // todo dar estilos tabla y controlar alineacion
    
@@ -326,7 +326,7 @@
 		   lista_partidos[5].jugador2.nombre,
 		   lista_partidos[5].jugador2.apellidos);
    
-	   printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	   printf("\n_________________________________________EXIT\n\n");
 	   return 0;
    }
    

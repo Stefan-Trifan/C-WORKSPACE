@@ -29,7 +29,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
     char nombre_antigo[TAM] = {0}, nombre_nuevo[TAM] = {0};
 	int num_letras = 0;
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 		printf("%c", nombre_nuevo[i]);	
 	}
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

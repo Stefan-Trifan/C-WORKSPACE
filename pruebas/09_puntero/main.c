@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
     char micar = 'A';
 	char *punteroc; // punteroc es un puntero a un caracte
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	*punteroc = 'C'; // El contenido de la direccion de memoria almacenada en punteroc ahora es 'C'"
 	
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

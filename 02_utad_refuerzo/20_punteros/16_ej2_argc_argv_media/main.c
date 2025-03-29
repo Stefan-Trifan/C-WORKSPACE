@@ -27,7 +27,7 @@
 	  Inicio main() */
    
    	int main(int argc, char *argv[]){
-	    printf("\n___________________________START\n\n");
+	    printf("\n_________________________________________START\n\n");
 		
 		float nums[4]   = {0},
 		      num1      = 0,
@@ -48,7 +48,7 @@
 		if(contNum < 3 || contNum > 6)
 		{
 			printf("Uso %s num1 num2 num3\n", argv[0]);
-			printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+			printf("\n_________________________________________EXIT\n\n");
 			return 1;
 		}
 
@@ -74,7 +74,7 @@
 		printf("Elemento que no se pudo converir: %c\n", *endptr);
 
 	
-		printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+		printf("\n_________________________________________EXIT\n\n");
 		return 0;
   	}
    

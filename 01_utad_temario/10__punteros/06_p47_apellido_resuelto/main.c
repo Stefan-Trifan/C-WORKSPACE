@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 
 	char nombre[100];      // Para almacenar el nombre
 	char apellidos[100];   // Para almacenar los apellidos
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 	// Mostrar el resultado formateado
 	printf("%s %s\n", nombre, apellidos);
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

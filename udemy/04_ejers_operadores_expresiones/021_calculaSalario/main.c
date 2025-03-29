@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
     int horas = 0, salario_hora = 0, salario_total = 0;
 
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
 	printf("Tu salario total es: %d", salario_total);
 
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

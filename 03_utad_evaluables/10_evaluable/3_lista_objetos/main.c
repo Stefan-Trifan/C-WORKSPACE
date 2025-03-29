@@ -47,7 +47,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-    printf("\n___________________________START\n\n");
+    printf("\n_________________________________________START\n\n");
 
     objeto_t objeto[TAM_ARR] = {0};
     int err = 0; 

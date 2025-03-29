@@ -28,7 +28,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
     int num = 0, resultado = 0;
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 		printf("No es par");
 	}
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

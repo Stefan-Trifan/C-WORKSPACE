@@ -28,7 +28,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-    printf("\n___________________________START\n\n");
+    printf("\n_________________________________________START\n\n");
 
     // Reservamos espacio para 1 grupo inicialmente
     char ***alumno = (char***)malloc(sizeof(char**));
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     printf("alumno[0][1] %s\n", alumno[0][1]);
     printf("alumno[1][0] %s\n", alumno[1][0]);
 
-    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n_________________________________________EXIT\n\n");
     return 0;
 }
 

@@ -28,7 +28,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 
 	int                      
 	limiteFactoriales   = 0, // Almacena el limite hasta el cual se calcularan los factoriales,
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     
 	printf("Resultado Final es: %d", resultadoFinal);
 
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

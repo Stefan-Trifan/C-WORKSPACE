@@ -45,7 +45,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 
 	char a[20];
 
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 	gets(a);
 	printf("Tu nombre es: %s", a);
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

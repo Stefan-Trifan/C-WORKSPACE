@@ -23,7 +23,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
     int vector[10] = {0,1,2,3,4,5,6,7,8,9};
 	int* pvector = vector;
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		printf("coordenada %d\n", *(pvector + i));
 	}
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

@@ -33,7 +33,7 @@ float pedirFloat();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
     float MiRadio     = 0;
     float MiArea      = 0;
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     printf("Area por Referencia de un circulo es %.2f\n", MiAreaRef);
     printf("El area y la long de la circunferenicia de un circulo es %.2f\n ", MiAreaRef, MiLongCirc);
 
-    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n_________________________________________EXIT\n\n");
     return 0;
 }
 

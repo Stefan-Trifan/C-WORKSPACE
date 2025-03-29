@@ -28,7 +28,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 
 	int arr1[4][5][2], cont = 0, miPosicion = 0, miNum;
 	int *puntero_a_arr1;
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 
 	printf("El valor de tu posicion es %d\n", miNum);
 
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
 	int w = 10,
 	    x = 20,
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	r3 = *p2 + *p3;
 	printf("Los Resultados son: \nr1 %d \nr2 %d \nr3 %d\n", r1, r2, r3);
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

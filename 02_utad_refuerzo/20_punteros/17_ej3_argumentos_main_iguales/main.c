@@ -28,7 +28,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[]) 
 {
-    printf("\n___________________________START\n\n");
+    printf("\n_________________________________________START\n\n");
 
     int son_iguales = 1, i = 0, j = 0;
     char cadena1[TAM] = {0}, cadena2[TAM] = {0};
@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
         printf("Las cadenas no son iguales");
     }
 
-    printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+    printf("\n_________________________________________EXIT\n\n");
     return 0;
 }
 

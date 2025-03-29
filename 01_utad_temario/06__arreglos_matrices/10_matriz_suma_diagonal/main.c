@@ -30,7 +30,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
 	//Declaramos la matriz de 3x3
     int matriz[3][3];
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     	printf("\n"); // Salto de linea al final de cada columna
 	}
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

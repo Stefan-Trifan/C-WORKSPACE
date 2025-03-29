@@ -29,7 +29,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
     
     persona_t personas[TAM] = {0};
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 	printf("%d\n", personas[0].edad);
 	printf("%d\n", personas[1].edad);
     
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

@@ -29,7 +29,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 
 	int *p_num, primer_num, cont = 1;
 	p_num = (int *)malloc(sizeof(int));
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 		printf("*(p_num + %d) = %d\n",i, *(p_num + i));
 	}
 	
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 

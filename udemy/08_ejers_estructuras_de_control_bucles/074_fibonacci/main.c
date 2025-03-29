@@ -27,7 +27,7 @@ void clearBuffer();
 
 int main(int argc, char *argv[])
 {
-	printf("\n___________________________START\n\n");
+	printf("\n_________________________________________START\n\n");
 
 	int totalNumbers = 0;
 	int num2 = 0, num1 = 1, numActual;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		num1 = numActual;          //      num2 = 1,      num2 = 2,      num2 = 3,      num2 = 5 ...
 	}
 	
-	printf("\n\033[1;32m___________________________EXIT_SUCCESS\033[0m\n\n");
+	printf("\n_________________________________________EXIT\n\n");
 	return 0;
 }
 
