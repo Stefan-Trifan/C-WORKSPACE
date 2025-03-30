@@ -1,8 +1,6 @@
 <!-- 
 --------------- Menú de la Autopista ---------------
 1. Crear vehículo
-2. Actualizar posiciones
-3. Finalizar programa
 Seleccione una opción: 1
 
 Ingrese matrícula: 1234ASD
@@ -13,8 +11,6 @@ Velocidad (km/iteración): 150
 
 --------------- Menú de la Autopista ---------------
 1. Crear vehículo
-2. Actualizar posiciones
-3. Finalizar programa
 Seleccione una opción: 1
 
 Ingrese matrícula: 4321DSA
@@ -24,15 +20,11 @@ Carril (1-3): 2
 Velocidad (km/iteración): 50
 
 --------------- Menú de la Autopista ---------------
-1. Crear vehículo
 2. Actualizar posiciones
-3. Finalizar programa
 Seleccione una opción: 2
 
 --------------- Menú de la Autopista ---------------
 1. Crear vehículo
-2. Actualizar posiciones
-3. Finalizar programa
 Seleccione una opción: 1
 
 Ingrese matrícula: 5678QWE
@@ -42,16 +34,12 @@ Carril (1-3): 2
 Velocidad (km/iteración): 100
 
 --------------- Menú de la Autopista ---------------
-1. Crear vehículo
 2. Actualizar posiciones
-3. Finalizar programa
 Seleccione una opción: 2
 
 Accidente entre 4321DSA y 5678QWE en la posición 100
 
 --------------- Menú de la Autopista ---------------
-1. Crear vehículo
-2. Actualizar posiciones
 3. Finalizar programa
 Seleccione una opción: 3
 

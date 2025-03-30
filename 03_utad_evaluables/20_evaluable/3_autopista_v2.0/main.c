@@ -11,6 +11,10 @@
 /* _________________________________________
    Inicio cabecera */
 
+// TODO reemplazar pedirCadena por pedirCadenaDinamica
+// TODO comvertir coche_t.nombre y coche_t a memoria dinamica
+// TODO resetear estructura para test
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -82,10 +86,8 @@ int main(int argc, char *argv[])
     coche_t coche[100] = 
     {
         // X / tipo_vehiculo / X / carril / posicion / velocidad / es_accidentado
-        {"1111 111", 1, "Mateo", 1, 150, 0, 0},
-        {"2222 222", 1, "Luna ", 1, 350, 0, 0},
-        // {"3333 333", 1, "Steve", 1, 0, 50, 0},
-        // {"4444 444", 1, "Pepe ", 1, 0, 76, 0}
+        {"1234 ASD", 1, "Juan   ", 1, 0, 150, 0},
+        {"4321 DSA", 2, "Ana    ", 2, 0, 50, 0}
     };
     int num_coches = 2;
 
@@ -163,15 +165,15 @@ void crearVehiculo(coche_t coche[], int *num_coches)
 void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes) 
 {
     // Actualiza la posicion de cada vehiculo en la autopista
-    for (int i = 0; i < *num_coches; i++)
+    for(int i = 0; i < *num_coches; i++)
     {
         coche[i].posicion += coche[i].velocidad;
     }
 
     // Detecta accidentados
-    for (int i = 0; i < *num_coches; i++)
+    for(int i = 0; i < *num_coches; i++)
     {
-        for (int j = 0; j < i; j++)
+        for(int j = 0; j < i; j++)
         {
             if (
                 coche[i].posicion == coche[j].posicion && 
@@ -180,7 +182,8 @@ void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes)
                 printf(
                     YELLOW 
                     "ATENCION: Accidente entre %s y %s en la posición %d\n" RESET, 
-                    coche[i].matricula, coche[j].matricula, coche[i].posicion);
+                    coche[i].matricula, coche[j].matricula, coche[i].posicion
+                );
 
                 // Marcamos los coches accidentados
                 coche[i].es_accidentado = 1;
@@ -193,11 +196,12 @@ void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes)
 
     // Elimina los coches accidentados
     int indice_coche_intacto = 0;
-    for (int i = 0; i < *num_coches; i++)
+    for(int i = 0; i < *num_coches; i++)
     {
-        if (coche[i].es_accidentado == 0)
+        if(coche[i].es_accidentado == 0)
         {
-            coche[indice_coche_intacto++] = coche[i];
+            coche[indice_coche_intacto] = coche[i];
+            indice_coche_intacto++;
         }
     }
     *num_coches = indice_coche_intacto;
@@ -240,7 +244,7 @@ void finalizarPrograma(coche_t *coche, int *num_coches, int *dinero_recaudado, i
     // Muestra la informacion final
     printf("\n");
     printf("Vehículos que completaron el recorrido: %d\n", num_coches_final);
-    printf("Total recaudado en peajes: %d\n", *dinero_recaudado);
+    printf("Total recaudado en peajes: %d eur\n", *dinero_recaudado);
     printf("Número de accidentes: %d\n", num_accidentes);
 }
 
@@ -327,10 +331,6 @@ void clearBuffer()
     while (getchar() != '\n')
         ;
 }
-
-// TODO comvertir coche_t.nombre y coche_t a memoria dinamica
-// TODO eliminar mensajes de DEBUG
-// TODO resetear estructura para test
 
 // DEBUG Imprimir todos los vehiculos
 // printf("\n\n");

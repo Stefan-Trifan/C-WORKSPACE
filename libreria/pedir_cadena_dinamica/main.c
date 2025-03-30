@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 // Funciones del programa
 char *escribeLineaDinamica()
 {
-    char *ptexto_destino = malloc(sizeof(char) * TAM_BLOQUE);
+    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
     char c;
     int i = 0;
     int memoria_actual = TAM_BLOQUE;
@@ -56,14 +56,14 @@ char *escribeLineaDinamica()
         if (i == memoria_actual)
         {
             memoria_actual += TAM_BLOQUE;
-            ptexto_destino = realloc(ptexto_destino, memoria_actual * sizeof(char));
+            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
         }
-        ptexto_destino[i] = c;
+        p_texto_destino[i] = c;
         i++;
     }
-    ptexto_destino[i] = '\0';
+    p_texto_destino[i] = '\0';
 
-    return ptexto_destino;
+    return p_texto_destino;
 }
 
 // Funciones auxiliares
