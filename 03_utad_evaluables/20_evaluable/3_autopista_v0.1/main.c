@@ -42,9 +42,18 @@ typedef struct
 } coche_t;
 
 // Funciones del programa
-void crearVehiculo(coche_t coche[], int *num_coches);
-void actualizarPosiciones();
-void finalizarPrograma();
+void crearVehiculo(
+    coche_t coche[], 
+    int     *num_coches);
+void actualizarPosiciones(
+    coche_t *coche, 
+    int     *num_coches, 
+    int     *num_accidentes);
+void finalizarPrograma(
+    coche_t *coche, 
+    int     *num_coches, 
+    int     *dinero_recaudado, 
+    int     num_accidentes);
 void mostrarMenu();
 
 // Funciones auxiliares
@@ -61,9 +70,9 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // * Declaracion de variables
-    int opcion = 0, dinero_recaudado = 0;
-
-    int num_accidentes = 0;
+    int opcion           = 0,
+        dinero_recaudado = 0,
+        num_accidentes   = 0;
 
     // * PRODUCCION
     // coche_t coche[100];
@@ -73,111 +82,34 @@ int main(int argc, char *argv[])
     coche_t coche[100] = 
     {
         // X / tipo_vehiculo / X / carril / posicion / velocidad / es_accidentado
-        {"1111 111", 1, "Mateo", 1, 0, 100, 0},
-        {"2222 222", 1, "Luna ", 1, 0, 125, 0},
-        {"3333 333", 1, "Steve", 1, 0, 125, 0},
-        {"4444 444", 1, "Pepe ", 1, 0, 125, 0}
-        // {"5555 555", 1, "Mateo", 1, 0, 125, 0},
-        // {"6666 666", 1, "Megan", 1, 0, 125, 0},
-        // {"7777 777", 1, "Juan ", 1, 0, 125, 0},
-        // {"8888 888", 1, "Julio", 1, 0, 125, 0}
+        {"1111 111", 1, "Mateo", 1, 150, 0, 0},
+        {"2222 222", 1, "Luna ", 1, 350, 0, 0},
+        // {"3333 333", 1, "Steve", 1, 0, 50, 0},
+        // {"4444 444", 1, "Pepe ", 1, 0, 76, 0}
     };
-    int num_coches = 4;
-
-    // * actualizarPosiciones()
-    // Actualiza la posicion de cada vehiculo en la autopista
-    for (int i = 0; i < num_coches; i++)
-    {
-        coche[i].posicion += coche[i].velocidad;
-    }
-    // Detecta accidentados
-    for (int i = 0; i < num_coches; i++)
-    {
-        for (int j = 0; j < i; j++)
-        {
-            if (
-                coche[i].posicion == coche[j].posicion && 
-                coche[i].carril   == coche[j].carril)
-            {
-                printf(
-                    YELLOW 
-                    "ATENCION: Accidente entre %s y %s en la posición %d\n" RESET, 
-                    coche[i].matricula, coche[j].matricula, coche[i].posicion);
-
-                coche[i].es_accidentado = 1;
-                coche[j].es_accidentado = 1;
-
-                num_accidentes++;
-            }
-        }
-    }
-    // Elimina los coches accidentados
-    int indice_coche_intacto = 0;
-    for (int i = 0; i < num_coches; i++)
-    {
-        if (coche[i].es_accidentado == 0)
-        {
-            coche[indice_coche_intacto++] = coche[i];
-        }
-    }
-    num_coches = indice_coche_intacto;
-
-    // * finalizarPrograma()
-    // Realiza el recuento del dinero recaudado los peajes
-    for(int i = 0; i < num_coches; i++)
-    {
-        if(coche[i].tipo_vehiculo == MOTO && coche[i].posicion >= 300)
-        {
-            dinero_recaudado += 5;
-        }
-        else if(coche[i].tipo_vehiculo == COCHE && coche[i].posicion >= 300)
-        {
-            dinero_recaudado += 10;
-        }
-        else if(coche[i].tipo_vehiculo == CAMION && coche[i].posicion >= 300)
-        {
-            dinero_recaudado += 20;
-        }
-    }
+    int num_coches = 2;
 
     // * Menu
-    /*     do
-        {
-            mostrarMenu();
-            opcion = pedirEnteroPos();
-
-            switch (opcion)
-            {
-                case 1:
-                    crearVehiculo(coche, &num_coches);
-                    break;
-                case 2:
-                    ;
-                    break;
-                default: break;
-            }
-            printf("\n");
-        }
-        while (opcion != 3); */
-
-    // * DEBUG Imprimir todos los vehiculos
-    printf("\n\n");
-    for (int i = 0; i < num_coches; i++)
+    do
     {
-        printf("COCHE %d\n", i);
-        printf("matricula      = %s  \n", coche[i].matricula);
-        printf("tipo_vehiculo  = %d  \n", coche[i].tipo_vehiculo);
-        printf("nombre         = %s  \n", coche[i].nombre);
-        printf("carril         = %d  \n", coche[i].carril);
-        printf("posicion       = %d  \n", coche[i].posicion);
-        printf("velocidad      = %.2f\n", coche[i].velocidad);
-        printf("es_accidentado = %d\n", coche[i].es_accidentado);
+        mostrarMenu();
+        opcion = pedirEnteroPos();
+
+        switch (opcion)
+        {
+            case 1:
+                crearVehiculo(coche, &num_coches);
+                break;
+            case 2:
+                actualizarPosiciones(coche, &num_coches, &num_accidentes);;
+                break;
+            default: break;
+        }
         printf("\n");
-    }
-    printf("\n");
-    printf("num_coches       = %d\n", num_coches);
-    printf("num_accidentes   = %d\n", num_accidentes);
-    printf("dinero_recaudado = %d\n", dinero_recaudado);
+    } while (opcion != 3);
+
+    finalizarPrograma(coche, &num_coches, &dinero_recaudado, num_accidentes);
+
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
 }
@@ -188,28 +120,7 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 /**
- * Actualiza la posicion de cada vehiculo en la autopista
- * Comrpueba si han habido accidentes
- * - En caso positivo elimina los vehiculos accidentados
- * Realiza el recuento de los peajes
- */
-void actualizarPosiciones() 
-{
-    
-}
-
-/**
- * Muestra el numero de vehiculos que han completado el recorrido
- * Muestra el total recaudado en peajes
- * Muestra el total de accidentes
- */
-void finalizarPrograma() 
-{
-
-}
-
-/**
- * @brief Añade un nuevo vehiculo a la autopista
+ * Añade un nuevo vehiculo a la autopista
  */
 void crearVehiculo(coche_t coche[], int *num_coches)
 {
@@ -241,6 +152,96 @@ void crearVehiculo(coche_t coche[], int *num_coches)
 
     (*num_coches)++;
     printf(GREEN "Nuevo vehiculo aniadido\n" RESET);
+}
+
+/**
+ * Actualiza la posicion de cada vehiculo en la autopista
+ * Comrpueba si han habido accidentes
+ * - En caso positivo elimina los vehiculos accidentados
+ * Realiza el recuento de los peajes
+ */
+void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes) 
+{
+    // Actualiza la posicion de cada vehiculo en la autopista
+    for (int i = 0; i < *num_coches; i++)
+    {
+        coche[i].posicion += coche[i].velocidad;
+    }
+
+    // Detecta accidentados
+    for (int i = 0; i < *num_coches; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (
+                coche[i].posicion == coche[j].posicion && 
+                coche[i].carril   == coche[j].carril)
+            {
+                printf(
+                    YELLOW 
+                    "ATENCION: Accidente entre %s y %s en la posición %d\n" RESET, 
+                    coche[i].matricula, coche[j].matricula, coche[i].posicion);
+
+                // Marcamos los coches accidentados
+                coche[i].es_accidentado = 1;
+                coche[j].es_accidentado = 1;
+
+                (*num_accidentes)++;
+            }
+        }
+    }
+
+    // Elimina los coches accidentados
+    int indice_coche_intacto = 0;
+    for (int i = 0; i < *num_coches; i++)
+    {
+        if (coche[i].es_accidentado == 0)
+        {
+            coche[indice_coche_intacto++] = coche[i];
+        }
+    }
+    *num_coches = indice_coche_intacto;
+}
+
+/**
+ * Muestra el numero de vehiculos que han completado el recorrido
+ * Muestra el total recaudado en peajes
+ * Muestra el total de accidentes
+ */
+void finalizarPrograma(coche_t *coche, int *num_coches, int *dinero_recaudado, int num_accidentes) 
+{
+    // Realiza el recuento del dinero recaudado los peajes
+    for(int i = 0; i < *num_coches; i++)
+    {
+        if(coche[i].tipo_vehiculo == MOTO && coche[i].posicion >= 300)
+        {
+            *dinero_recaudado += 5;
+        }
+        else if(coche[i].tipo_vehiculo == COCHE && coche[i].posicion >= 300)
+        {
+            *dinero_recaudado += 10;
+        }
+        else if(coche[i].tipo_vehiculo == CAMION && coche[i].posicion >= 300)
+        {
+            *dinero_recaudado += 20;
+        }
+    }
+
+    // Realiza el recuento de los coches que han finalizado el recorrido
+    int num_coches_final = *num_coches;
+    for(int i = 0; i < *num_coches; i++)
+    {
+        if(coche[i].posicion < 300)
+        {
+            num_coches_final--;
+        }
+    }
+
+    // Muestra la informacion final
+    printf("\n");
+    printf("Vehículos que completaron el recorrido: %d\n", num_coches_final);
+    printf("Total recaudado en peajes: %d\n", *dinero_recaudado);
+    printf("Número de accidentes: %d\n", num_accidentes);
 }
 
 void mostrarMenu()
@@ -330,3 +331,18 @@ void clearBuffer()
 // TODO comvertir coche_t.nombre y coche_t a memoria dinamica
 // TODO eliminar mensajes de DEBUG
 // TODO resetear estructura para test
+
+// DEBUG Imprimir todos los vehiculos
+// printf("\n\n");
+// for (int i = 0; i < num_coches; i++)
+// {
+//     printf("COCHE %d\n", i);
+//     printf("matricula      = %s  \n", coche[i].matricula);
+//     printf("tipo_vehiculo  = %d  \n", coche[i].tipo_vehiculo);
+//     printf("nombre         = %s  \n", coche[i].nombre);
+//     printf("carril         = %d  \n", coche[i].carril);
+//     printf("posicion       = %d  \n", coche[i].posicion);
+//     printf("velocidad      = %.2f\n", coche[i].velocidad);
+//     printf("es_accidentado = %d  \n", coche[i].es_accidentado);
+//     printf("\n");
+// }
