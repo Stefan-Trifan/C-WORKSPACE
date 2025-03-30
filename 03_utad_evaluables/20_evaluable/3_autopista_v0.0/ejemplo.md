@@ -59,3 +59,31 @@ Vehículos que completaron el recorrido: 1
 Total recaudado en peajes: 10€
 Número de accidentes: 1  
 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- typedef struct
+{
+    char matricula[TAM_MATRICULA];
+    tipo_vehiculo_t tipo_vehiculo; 
+    char nombre[TAM_STR];
+    int carril;   // (1-3)
+    int posicion; // [0, 300]
+    float velocidad; 
+    int es_accidentado; // 
+}
+coche_t; -->
