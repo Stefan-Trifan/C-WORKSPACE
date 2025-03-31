@@ -31,7 +31,8 @@ typedef enum
     MOTO,
     COCHE,
     CAMION
-} tipo_vehiculo_t;
+} 
+tipo_vehiculo_t;
 
 // Estructura que almacena nuevos vehiculos en la autopista
 typedef struct
@@ -43,7 +44,8 @@ typedef struct
     int posicion; // [0, 300]
     float velocidad;
     int es_accidentado; // 1: Es accidentado, 0: No es accidentado
-} coche_t;
+} 
+coche_t;
 
 // Funciones del programa
 void crearVehiculo(
@@ -108,7 +110,8 @@ int main(int argc, char *argv[])
             default: break;
         }
         printf("\n");
-    } while (opcion != 3);
+    } 
+    while (opcion != 3);
 
     finalizarPrograma(coche, &num_coches, &dinero_recaudado, num_accidentes);
 
@@ -135,7 +138,8 @@ void crearVehiculo(coche_t coche[], int *num_coches)
     {
         printf("Tipo de vehículo (0=Moto, 1=Coche, 2=Camión): ");
         coche[*num_coches].tipo_vehiculo = pedirEnteroPos();
-    } while (coche[*num_coches].tipo_vehiculo < 0 || coche[*num_coches].tipo_vehiculo > 2);
+    }
+    while (coche[*num_coches].tipo_vehiculo < 0 || coche[*num_coches].tipo_vehiculo > 2);
 
     // nombre
     printf("Nombre del conductor: ");
@@ -146,7 +150,8 @@ void crearVehiculo(coche_t coche[], int *num_coches)
     {
         printf("Carril (1-3): ");
         coche[*num_coches].carril = pedirEnteroPos();
-    } while (coche[*num_coches].carril < 1 || coche[*num_coches].carril > 3);
+    }
+    while (coche[*num_coches].carril < 1 || coche[*num_coches].carril > 3);
 
     // velocidad
     printf("Velocidad (km/iteración): ");
@@ -288,7 +293,8 @@ void pedirCadena(char *text, int tam)
                 esValido = 0;
             }
         }
-    } while (esValido != 1);
+    }
+    while (esValido != 1);
 }
 
 int pedirEnteroPos()
@@ -304,7 +310,8 @@ int pedirEnteroPos()
                    "-> \033[0m");
             esValido = 0;
         }
-    } while (esValido != 1);
+    }
+    while (esValido != 1);
     return num;
 }
 
@@ -322,7 +329,8 @@ float pedirFloatPos()
                    "\033[1;31m-> \033[0m");
             esValido = 0;
         }
-    } while (esValido != 1);
+    }
+    while (esValido != 1);
     return num;
 }
 
