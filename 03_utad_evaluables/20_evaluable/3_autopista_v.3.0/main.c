@@ -11,9 +11,8 @@
 /* _________________________________________
    Inicio cabecera */
 
-// TODO reemplazar pedirCadena por pedirCadenaDinamica
 // TODO comvertir coche_t.nombre y coche_t a memoria dinamica
-// TODO resetear estructura para test
+// TODO resetear estructura para testing
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,29 +36,20 @@ tipo_vehiculo_t;
 // Estructura que almacena nuevos vehiculos en la autopista
 typedef struct
 {
-    char *matricula;
+    char  *matricula;
     tipo_vehiculo_t tipo_vehiculo; // (0=Moto, 1=Coche, 2=Camión)
-    char *nombre;
-    int carril;   // (1-3)
-    int posicion; // [0, 300]
-    float velocidad;
-    int es_accidentado; // 1: Es accidentado, 0: No es accidentado
+    char  *nombre;
+    int    carril;   // (1-3)
+    int    posicion; // [0, 300]
+    float  velocidad;
+    int    es_accidentado; // 1: Es accidentado, 0: No es accidentado
 } 
 coche_t;
 
 // Funciones del programa
-void crearVehiculo(
-    coche_t coche[], 
-    int     *num_coches);
-void actualizarPosiciones(
-    coche_t *coche, 
-    int     *num_coches, 
-    int     *num_accidentes);
-void finalizarPrograma(
-    coche_t *coche, 
-    int     *num_coches, 
-    int     *dinero_recaudado, 
-    int     num_accidentes);
+void crearVehiculo(coche_t **coche, int *num_coches);
+void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes); 
+void finalizarPrograma(coche_t *coche, int *num_coches, int *dinero_recaudado, int num_accidentes); 
 void mostrarMenu();
 
 // Funciones auxiliares
@@ -81,7 +71,7 @@ int main(int argc, char *argv[])
         num_accidentes   = 0;
 
     // * PRODUCCION
-    coche_t coche[100];
+    coche_t *coche = (coche_t *)malloc(sizeof(coche_t));
     int num_coches = 0;
 
     // * TESTING
@@ -102,7 +92,7 @@ int main(int argc, char *argv[])
         switch (opcion)
         {
             case 1:
-                crearVehiculo(coche, &num_coches);
+                crearVehiculo(&coche, &num_coches);
                 break;
             case 2:
                 actualizarPosiciones(coche, &num_coches, &num_accidentes);;
@@ -142,37 +132,38 @@ int main(int argc, char *argv[])
 /**
  * Añade un nuevo vehiculo a la autopista
  */
-void crearVehiculo(coche_t coche[], int *num_coches)
+void crearVehiculo(coche_t **coche, int *num_coches)
 {
     // matricula
     printf("Ingrese matrícula: ");
-    (coche + *num_coches)->matricula = pedirCadenaDinamica();
+    (*coche)[*num_coches].matricula = pedirCadenaDinamica();
 
     // tipo_vehiculo
     do
     {
         printf("Tipo de vehículo (0=Moto, 1=Coche, 2=Camión): ");
-        coche[*num_coches].tipo_vehiculo = pedirEnteroPos();
+        (*coche)[*num_coches].tipo_vehiculo = pedirEnteroPos();
     }
-    while (coche[*num_coches].tipo_vehiculo < 0 || coche[*num_coches].tipo_vehiculo > 2);
+    while ((*coche)[*num_coches].tipo_vehiculo < 0 || (*coche)[*num_coches].tipo_vehiculo > 2);
 
     // nombre
     printf("Nombre del conductor: ");
-    (coche + *num_coches)->nombre = pedirCadenaDinamica();
+    (*coche)[*num_coches].nombre = pedirCadenaDinamica();
 
     // carril
     do
     {
         printf("Carril (1-3): ");
-        coche[*num_coches].carril = pedirEnteroPos();
+        (*coche)[*num_coches].carril = pedirEnteroPos();
     }
-    while (coche[*num_coches].carril < 1 || coche[*num_coches].carril > 3);
+    while ((*coche)[*num_coches].carril < 1 || (*coche)[*num_coches].carril > 3);
 
     // velocidad
     printf("Velocidad (km/iteración): ");
-    coche[*num_coches].velocidad = pedirFloatPos();
+    (*coche)[*num_coches].velocidad = pedirFloatPos();
 
     (*num_coches)++;
+    *coche = realloc(*coche, sizeof(coche_t) * (*num_coches));
     printf(GREEN "Nuevo vehiculo aniadido\n" RESET);
 }
 
