@@ -21,6 +21,8 @@
 
 #define TAM_STR 50
 #define TAM_MATRICULA 11
+#define TAM_BLOQUE 10
+
 #define RED "\033[1;31m"
 #define GREEN "\033[1;32m"
 #define YELLOW "\033[1;33m"
@@ -37,9 +39,9 @@ tipo_vehiculo_t;
 // Estructura que almacena nuevos vehiculos en la autopista
 typedef struct
 {
-    char matricula[TAM_MATRICULA];
+    char *matricula;
     tipo_vehiculo_t tipo_vehiculo; // (0=Moto, 1=Coche, 2=Camión)
-    char nombre[TAM_STR];
+    char *nombre;
     int carril;   // (1-3)
     int posicion; // [0, 300]
     float velocidad;
@@ -63,7 +65,7 @@ void finalizarPrograma(
 void mostrarMenu();
 
 // Funciones auxiliares
-void pedirCadena(char *text, int tam);
+char *pedirCadenaDinamica();
 int pedirEnteroPos();
 float pedirFloatPos();
 void clearBuffer();
@@ -81,17 +83,17 @@ int main(int argc, char *argv[])
         num_accidentes   = 0;
 
     // * PRODUCCION
-    // coche_t coche[100];
-    // int num_coches = 0;
+    coche_t coche[100];
+    int num_coches = 0;
 
     // * TESTING
-    coche_t coche[100] = 
-    {
-        // X / tipo_vehiculo / X / carril / posicion / velocidad / es_accidentado
-        {"1234 ASD", 1, "Juan   ", 1, 0, 150, 0},
-        {"4321 DSA", 2, "Ana    ", 2, 0, 50, 0}
-    };
-    int num_coches = 2;
+    // coche_t coche[100] = 
+    // {
+    //     // X / tipo_vehiculo / X / carril / posicion / velocidad / es_accidentado
+    //     {"1234 ASD", 1, "Juan", 1, 0, 150, 0},
+    //     {"4321 DSA", 2, "Ana ", 2, 0, 50, 0}
+    // };
+    // int num_coches = 2;
 
     // * Menu
     do
@@ -115,6 +117,21 @@ int main(int argc, char *argv[])
 
     finalizarPrograma(coche, &num_coches, &dinero_recaudado, num_accidentes);
 
+    // * DEBUG Imprimir todos los vehiculos
+    printf("\n\n");
+    for (int i = 0; i < num_coches; i++)
+    {
+        printf("DEBUG COCHE %d\n", i);
+        printf("matricula      = %s  \n", coche[i].matricula);
+        printf("tipo_vehiculo  = %d  \n", coche[i].tipo_vehiculo);
+        printf("nombre         = %s  \n", coche[i].nombre);
+        printf("carril         = %d  \n", coche[i].carril);
+        printf("posicion       = %d  \n", coche[i].posicion);
+        printf("velocidad      = %.2f\n", coche[i].velocidad);
+        printf("es_accidentado = %d  \n", coche[i].es_accidentado);
+        printf("\n");
+    }
+
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
 }
@@ -131,7 +148,7 @@ void crearVehiculo(coche_t coche[], int *num_coches)
 {
     // matricula
     printf("Ingrese matrícula: ");
-    pedirCadena(coche[*num_coches].matricula, TAM_MATRICULA);
+    (coche + *num_coches)->matricula = pedirCadenaDinamica();
 
     // tipo_vehiculo
     do
@@ -143,7 +160,7 @@ void crearVehiculo(coche_t coche[], int *num_coches)
 
     // nombre
     printf("Nombre del conductor: ");
-    pedirCadena(coche[*num_coches].nombre, TAM_STR);
+    (coche + *num_coches)->nombre = pedirCadenaDinamica();
 
     // carril
     do
@@ -263,38 +280,26 @@ void mostrarMenu()
 }
 
 // Funciones auxiliares
-void pedirCadena(char *text, int tam)
+char *pedirCadenaDinamica()
 {
-    int i, esValido;
+    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
     char c;
-    do
-    {
-        i = 0;
-        esValido = 1;
-        while (i < tam - 1)
-        {
-            c = getchar();
-            if (c == '\n')
-                break;
-            text[i] = c;
-            i++;
-        }
-        text[i] = '\0';
+    int i = 0;
+    int memoria_actual = TAM_BLOQUE;
 
-        if (i == tam - 1)
+    while ((c = getchar()) != '\n')
+    {
+        if (i == memoria_actual)
         {
-            c = getchar();
-            if (c != '\n')
-            {
-                printf("\033[1;33mHas introducido demasiados caracteres\n"
-                       "Intentalo de nuevo\n"
-                       "-> \033[0m");
-                clearBuffer();
-                esValido = 0;
-            }
+            memoria_actual += TAM_BLOQUE;
+            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
         }
+        p_texto_destino[i] = c;
+        i++;
     }
-    while (esValido != 1);
+    p_texto_destino[i] = '\0';
+
+    return p_texto_destino;
 }
 
 int pedirEnteroPos()
@@ -339,18 +344,3 @@ void clearBuffer()
     while (getchar() != '\n')
         ;
 }
-
-// DEBUG Imprimir todos los vehiculos
-// printf("\n\n");
-// for (int i = 0; i < num_coches; i++)
-// {
-//     printf("COCHE %d\n", i);
-//     printf("matricula      = %s  \n", coche[i].matricula);
-//     printf("tipo_vehiculo  = %d  \n", coche[i].tipo_vehiculo);
-//     printf("nombre         = %s  \n", coche[i].nombre);
-//     printf("carril         = %d  \n", coche[i].carril);
-//     printf("posicion       = %d  \n", coche[i].posicion);
-//     printf("velocidad      = %.2f\n", coche[i].velocidad);
-//     printf("es_accidentado = %d  \n", coche[i].es_accidentado);
-//     printf("\n");
-// }
