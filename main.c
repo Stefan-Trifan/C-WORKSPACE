@@ -13,7 +13,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
+#define TAM_BLOQUE 5
 
 // Funciones del programa
 
@@ -28,10 +29,14 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    char *texto;
+    char *p_mi_texto;
+
     printf("Introduce tu linea dinamica: ");
-    texto = escribeLineaDinamica();
-    printf("Tu linea es: %s", *texto);
+    p_mi_texto = escribeLineaDinamica();
+
+    printf("\nTu linea es: %s", p_mi_texto);
+
+    free(p_mi_texto);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -43,11 +48,25 @@ int main(int argc, char *argv[])
 // Funciones del programa
 char *escribeLineaDinamica()
 {
-    char *letra;
+    char *p_texto = (char *)malloc(TAM_BLOQUE * sizeof(char));
+    char c;
+    int i = 0;
+    int memoria_actual = TAM_BLOQUE;
 
-    *letra = 'a';
+    while((c = getchar()) != '\n')
+    {
+        if(i == memoria_actual)
+        {
+            memoria_actual += TAM_BLOQUE;
+            p_texto = realloc(p_texto, memoria_actual * sizeof(char));
+        }
+        p_texto[i] = c;
+        i++;
+    }
+    p_texto[i] = '\0';
 
-    return letra;
+
+    return p_texto;
 }
 
 // Funciones auxiliares

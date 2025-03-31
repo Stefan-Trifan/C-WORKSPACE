@@ -17,9 +17,9 @@
 #define TAM_BLOQUE 5
 
 // Funciones del programa
-char *pedirCadenaDinamica();
 
 // Funciones auxiliares
+char *pedirCadenaDinamica();
 void clearBuffer();
 
 /* _________________________________________
@@ -30,8 +30,10 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     char *texto;
+    
     printf("Introduce tu texto: ");
     texto = pedirCadenaDinamica();
+
     printf("Texto es: %s\n", texto);
 
     free(texto);
