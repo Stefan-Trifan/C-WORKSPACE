@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     texto = escribeLineaDinamica();
     printf("Tu linea es: %s", *texto);
     // prueba
+    // prueba
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
