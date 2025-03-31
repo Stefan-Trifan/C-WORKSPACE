@@ -18,7 +18,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
-void escribeLineaTam(char *text, int tam);
+void pedirCadenaEstatica(char *text, int tam);
 void clearBuffer();
 
 /* _________________________________________
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	char text[TAM];
     
     printf("Introduce un texo (max %d caracteres)\n-> ", TAM - 1);
-	escribeLineaTam(text, TAM);
+	pedirCadenaEstatica(text, TAM);
 	printf("Tu text es: %s", text);
     
 	printf("\n_________________________________________EXIT\n\n");
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 // printf("DEBUG: i = %d, c = %c (%d)\n", i, c, c);
 // printf("DEBUG SALIDA WHILE: i = %d, c = %c (%d)\n", i, c, c);
 
-void escribeLineaTam(char *text, int tam)
+void pedirCadenaEstatica(char *text, int tam)
 {
     int i, esValido;
     char c;

@@ -18,6 +18,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
+char *escribeLineaDinamica();
 void clearBuffer();
 
 /* _________________________________________
@@ -27,7 +28,10 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-
+    char *texto;
+    printf("Introduce tu linea dinamica: ");
+    texto = escribeLineaDinamica();
+    printf("Tu linea es: %s", *texto);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -37,6 +41,14 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+char *escribeLineaDinamica()
+{
+    char *letra;
+
+    *letra = 'a';
+
+    return letra;
+}
 
 // Funciones auxiliares
 void clearBuffer()

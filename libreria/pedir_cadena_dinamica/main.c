@@ -17,7 +17,7 @@
 #define TAM_BLOQUE 5
 
 // Funciones del programa
-char *escribeLineaDinamica();
+char *pedirCadenaDinamica();
 
 // Funciones auxiliares
 void clearBuffer();
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     char *texto;
     printf("Introduce tu texto: ");
-    texto = escribeLineaDinamica();
+    texto = pedirCadenaDinamica();
     printf("Texto es: %s\n", texto);
 
     free(texto);
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
-char *escribeLineaDinamica()
+char *pedirCadenaDinamica()
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
     char c;
