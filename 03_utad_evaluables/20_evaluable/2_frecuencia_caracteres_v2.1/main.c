@@ -25,7 +25,8 @@ typedef struct char_info_t
 {
     char letra;
     int contador;
-} char_info_t;
+} 
+char_info_t;
 
 // Funciones del programa
 int buscarCaracter(char_info_t *lista, int tam, char c);

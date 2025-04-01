@@ -36,20 +36,29 @@ tipo_vehiculo_t;
 // Estructura que almacena nuevos vehiculos en la autopista
 typedef struct
 {
-    char  *matricula;
+    char *matricula;
     tipo_vehiculo_t tipo_vehiculo; // (0=Moto, 1=Coche, 2=Camión)
-    char  *nombre;
-    int    carril;   // (1-3)
-    int    posicion; // [0, 300]
-    float  velocidad;
-    int    es_accidentado; // 1: Es accidentado, 0: No es accidentado
+    char *nombre;
+    int   carril;   // (1-3)
+    int   posicion; // [0, 300]
+    float velocidad;
+    int   es_accidentado; // 1: Es accidentado, 0: No es accidentado
 } 
 coche_t;
 
 // Funciones del programa
-void crearVehiculo(coche_t **coche, int *num_coches);
-void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes); 
-void finalizarPrograma(coche_t *coche, int *num_coches, int *dinero_recaudado, int num_accidentes); 
+void crearVehiculo(
+    coche_t **coche, 
+    int      *num_coches);
+void actualizarPosiciones(
+    coche_t *coche, 
+    int     *num_coches, 
+    int     *num_accidentes); 
+void finalizarPrograma(
+    coche_t *coche, 
+    int     *num_coches, 
+    int     *dinero_recaudado, 
+    int      num_accidentes); 
 void mostrarMenu();
 
 // Funciones auxiliares
@@ -74,15 +83,6 @@ int main(int argc, char *argv[])
     coche_t *coche = (coche_t *)malloc(sizeof(coche_t));
     int num_coches = 0;
 
-    // * TESTING
-    // coche_t coche[100] = 
-    // {
-    //     // X / tipo_vehiculo / X / carril / posicion / velocidad / es_accidentado
-    //     {"1234 ASD", 1, "Juan", 1, 0, 150, 0},
-    //     {"4321 DSA", 2, "Ana ", 2, 0, 50, 0}
-    // };
-    // int num_coches = 2;
-
     // * Menu
     do
     {
@@ -105,20 +105,13 @@ int main(int argc, char *argv[])
 
     finalizarPrograma(coche, &num_coches, &dinero_recaudado, num_accidentes);
 
-    // * DEBUG Imprimir todos los vehiculos
-    printf("\n\n");
-    for (int i = 0; i < num_coches; i++)
+    // Liberamos la memoria reservada
+    for(int i = 0; i < num_coches; i++)
     {
-        printf("DEBUG COCHE %d\n", i);
-        printf("matricula      = %s  \n", coche[i].matricula);
-        printf("tipo_vehiculo  = %d  \n", coche[i].tipo_vehiculo);
-        printf("nombre         = %s  \n", coche[i].nombre);
-        printf("carril         = %d  \n", coche[i].carril);
-        printf("posicion       = %d  \n", coche[i].posicion);
-        printf("velocidad      = %.2f\n", coche[i].velocidad);
-        printf("es_accidentado = %d  \n", coche[i].es_accidentado);
-        printf("\n");
+        free(coche[i].matricula);
+        free(coche[i].nombre);
     }
+    free(coche);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -134,6 +127,9 @@ int main(int argc, char *argv[])
  */
 void crearVehiculo(coche_t **coche, int *num_coches)
 {
+    // Reserva memoria para un nuevo coche
+    *coche = realloc(*coche, sizeof(coche_t) * (*num_coches + 1));
+
     // matricula
     printf("Ingrese matrícula: ");
     (*coche)[*num_coches].matricula = pedirCadenaDinamica();
@@ -163,7 +159,6 @@ void crearVehiculo(coche_t **coche, int *num_coches)
     (*coche)[*num_coches].velocidad = pedirFloatPos();
 
     (*num_coches)++;
-    *coche = realloc(*coche, sizeof(coche_t) * (*num_coches));
     printf(GREEN "Nuevo vehiculo aniadido\n" RESET);
 }
 
@@ -181,12 +176,13 @@ void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes)
         coche[i].posicion += coche[i].velocidad;
     }
 
-    // Detecta accidentados
+    // Detecta accidentes
     for(int i = 0; i < *num_coches; i++)
     {
         for(int j = 0; j < i; j++)
         {
-            if (
+            // Si 2 coches están en la misma posicion y mismo carril
+            if ( 
                 coche[i].posicion == coche[j].posicion && 
                 coche[i].carril   == coche[j].carril)
             {
@@ -200,12 +196,13 @@ void actualizarPosiciones(coche_t *coche, int *num_coches, int *num_accidentes)
                 coche[i].es_accidentado = 1;
                 coche[j].es_accidentado = 1;
 
+                // Incrementamos el numero de accidentes
                 (*num_accidentes)++;
             }
         }
     }
 
-    // Elimina los coches accidentados
+    // Eliminamos los coches accidentados y actualizamos el numero de coches
     int indice_coche_intacto = 0;
     for(int i = 0; i < *num_coches; i++)
     {
@@ -254,6 +251,7 @@ void finalizarPrograma(coche_t *coche, int *num_coches, int *dinero_recaudado, i
 
     // Muestra la informacion final
     printf("\n");
+    printf("--- Estadísticas Finales ---\n");
     printf("Vehículos que completaron el recorrido: %d\n", num_coches_final);
     printf("Total recaudado en peajes: %d eur\n", *dinero_recaudado);
     printf("Número de accidentes: %d\n", num_accidentes);
@@ -330,6 +328,29 @@ float pedirFloatPos()
 
 void clearBuffer()
 {
-    while (getchar() != '\n')
-        ;
+    while (getchar() != '\n');
 }
+
+// * TESTING
+// coche_t coche[100] = 
+// {
+//     // X / tipo_vehiculo / X / carril / posicion / velocidad / es_accidentado
+//     {"1234 ASD", 1, "Juan", 1, 0, 150, 0},
+//     {"4321 DSA", 2, "Ana ", 2, 0, 50, 0}
+// };
+// int num_coches = 2;
+
+// * DEBUG Imprimir todos los vehiculos
+// printf("\n\n");
+// for (int i = 0; i < num_coches; i++)
+// {
+//     printf("DEBUG COCHE %d\n", i);
+//     printf("matricula      = %s  \n", coche[i].matricula);
+//     printf("tipo_vehiculo  = %d  \n", coche[i].tipo_vehiculo);
+//     printf("nombre         = %s  \n", coche[i].nombre);
+//     printf("carril         = %d  \n", coche[i].carril);
+//     printf("posicion       = %d  \n", coche[i].posicion);
+//     printf("velocidad      = %.2f\n", coche[i].velocidad);
+//     printf("es_accidentado = %d  \n", coche[i].es_accidentado);
+//     printf("\n");
+// }
