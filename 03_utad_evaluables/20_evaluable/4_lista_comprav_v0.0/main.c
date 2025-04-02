@@ -24,7 +24,7 @@ typedef int t_queue;
 
 // Funciones del programa
 void initQueue   (t_queue *q, int capacity);
-int  isFull      (t_queue *q);
+int  isFull      (t_queue *q); // No sirve
 int  isEmpty     (t_queue *q); 
 void resizeQueue (t_queue *q);
 void enqueue     (t_queue *q, char *name); 
