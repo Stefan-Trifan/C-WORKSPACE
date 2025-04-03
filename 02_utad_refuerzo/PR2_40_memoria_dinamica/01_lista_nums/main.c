@@ -15,8 +15,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAM 20
-
 // Funciones del programa
 void calcular_estadisticas(float *lista, int num, float *max, float *min, float *media);
 
@@ -31,14 +29,15 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
-	float *maximo, 
-		  *minimo, 
-		  *media;
+	// Declaracion de variables
+	float *lista;
+	float maximo;
+	float minimo;
+	float media;
+	int tam_lista;
 
-	float *lista = (float *)malloc(TAM * sizeof(float));
-
+	// Preguntamos que el tamanio que debe tener la lista
 	printf("Introduce un numero\n-> ");
-	*(lista + 0) = pedirFloat();
 	
 
 
@@ -51,7 +50,8 @@ int main(int argc, char *argv[])
 
 // Funciones del programa
 /**
- * Función que calcula las estadísticas a partir de los valores de la lista de números
+ * Función que calcula las estadísticas 
+ * a partir de los valores de la lista de números
  */
 void calcular_estadisticas(float *lista, int num, float *max, float *min, float *media)
 {
