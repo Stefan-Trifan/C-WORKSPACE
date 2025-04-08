@@ -40,9 +40,10 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    datos_jugador_t *jugador = (datos_jugador_t *)malloc(sizeof(datos_jugador_t));
-    FILE *fd = fopen("equipos", "w+");
+    datos_jugador_t *jugador = NULL;
+    FILE *fd = fopen("datosjugadores.txt", "w+");
     int opcion = 0;
+    int num_jugadores = 0;
 
     // Comprobamos si tiene extio
 	if(fd == NULL)
@@ -54,17 +55,22 @@ int main(int argc, char *argv[])
     // Introducimos jugadores
     do
     {
-        printf("Quieres introducir un usuario?\n[0] Si\n[1] No\n-> ");
+        printf("Quieres introducir un usuario?\n[1] Si\n[2] No\n-> ");
         opcion = pedirEnteroPos();
 
-        if(opcion == 0)
+        if(opcion == 1)
         {
             printf("Introduce el nombre del jugador\n-> ");
-            printf("Introduce el nombre del jugador\n-> ");
-            printf("Introduce el nombre del jugador\n-> ");
+            *(jugador + num_jugadores)->nombre_apellidos = pedirCadenaDinamica();
+
+            printf("Introduce el numero de la camiseta\n-> ");
+            
+
+            printf("Introduce el numero de goles\n-> ");
+            
         }
     } 
-    while (opcion != 1);
+    while (opcion != 2);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
