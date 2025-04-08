@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
     lineas_t texto;
     char** lineas = (char**)malloc(sizeof(char*));
 
+    
+
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
 }
