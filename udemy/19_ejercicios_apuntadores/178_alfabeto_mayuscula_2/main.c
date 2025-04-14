@@ -25,7 +25,18 @@ int main(int argc, char *argv[])
 {
 	printf("\n_________________________________________START\n\n");
 
+	char letra;
+	char *pletra = &letra;
 
+	for(letra = 'A'; letra <= 'Z'; letra++)
+	{
+		printf("%c ", *pletra);
+	}
+
+	for(letra = 'a'; letra <= 'z'; letra++)
+	{
+		printf("%c ", *pletra);
+	}
 
 	printf("\n_________________________________________EXIT\n\n");
 	return 0;

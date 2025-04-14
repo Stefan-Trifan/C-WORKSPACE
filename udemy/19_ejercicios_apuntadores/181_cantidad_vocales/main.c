@@ -16,7 +16,11 @@
 #include <string.h>
 
 // Funciones del programa
-
+int vocalA(char *);
+int vocalE(char *);
+int vocalI(char *);
+int vocalO(char *);
+int vocalU(char *);
 // Funciones auxiliares
 void clearBuffer();
 
@@ -27,7 +31,8 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-
+    char palabra[100];
+    fgets(palabra, 99, stdin);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -37,6 +42,30 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+int vocalA(char *)
+{
+
+}
+
+int vocalE(char *)
+{
+
+}
+
+int vocalI(char *)
+{
+
+}
+
+int vocalO(char *)
+{
+
+}
+
+int vocalU(char *)
+{
+
+}
 
 // Funciones auxiliares
 void clearBuffer()
