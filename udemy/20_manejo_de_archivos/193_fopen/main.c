@@ -27,7 +27,21 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
+    // Declaracion de variables
+    FILE *fd;
+    char direccion[] = "./prueba.txt";
 
+    // Abrimos el archivo
+    fd = fopen(direccion, "r");
+
+    if(fd == NULL)
+    {
+        printf("El archivo no existe\n");
+    }
+    else
+    {
+        printf("El archivo existe\n");
+    }
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
