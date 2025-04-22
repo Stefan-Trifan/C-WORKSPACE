@@ -3,7 +3,7 @@
         Stefan Trifan
 
     *   Estado
-        Doing
+        TODO no esta hecho
 
     *   Enunciado
         Lorem Ipsum
@@ -16,11 +16,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAM_BLOQUE 10
+#define TAM_BLOQUE 5
 
 // Funciones del programa
 
 // Funciones auxiliares
+char *leerCadenaDinamicaFichero();
 void clearBuffer();
 
 /* _________________________________________
@@ -31,6 +32,16 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
+    char *texto;
+    FILE *fd;
+
+    // Abrimos el fichero en modo lectura
+
+    // Llamamos a la funcion
+    texto = leerCadenaDinamicaFichero();
+
+    // Imprimimos el texto
+    printf("Texto: %s");
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -42,6 +53,11 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
+char *leerCadenaDinamicaFichero()
+{
+
+}
+
 void clearBuffer()
 {
     while (getchar() != '\n');
