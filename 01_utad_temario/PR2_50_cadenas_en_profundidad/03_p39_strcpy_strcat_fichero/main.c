@@ -1,0 +1,100 @@
+/*
+    *   Autor
+        Stefan Trifan
+
+    *   Estado
+        Done
+
+    *   Enunciado
+        Lorem Ipsum
+*/
+
+/* _________________________________________
+   Inicio cabecera */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define TAM_BLOQUE 10
+
+// Funciones del programa
+
+// Funciones auxiliares
+char *pedirCadenaDinamica();
+void clearBuffer();
+
+/* _________________________________________
+   Inicio main() */
+
+int main(int argc, char *argv[])
+{
+    printf("\n_________________________________________START\n\n");
+
+    // Declaracion de variables
+    FILE *fd;
+
+    char *nombre;
+    char *apellido;
+    char *nombre_completo;
+
+    // Pedimos nombre y apellido
+    printf("Introduce el nombre: ");
+    nombre = pedirCadenaDinamica();
+
+    printf("Introduce el apellido: ");
+    apellido = pedirCadenaDinamica();
+
+    // Contamos las letras que tiene el nombre
+    int cont1 = strlen(nombre);
+    
+    // Contamos las letras que tiene el apellido
+    int cont2 = strlen(apellido);
+
+    // Reservamos espacio en nombre para incluir el apellido
+    nombre_completo = (char *)calloc(cont1 + cont2 + 2, sizeof(char));
+
+    // Concatenamos
+    strcat(nombre_completo, nombre);
+    strcat(nombre_completo, " ");
+    strcat(nombre_completo, apellido);
+
+    // Imprimimos el nombre
+    printf("Nombre completo: %s", nombre_completo);
+
+    printf("\n_________________________________________EXIT\n\n");
+    return EXIT_SUCCESS;
+}
+
+/* _________________________________________
+   Inicio definicion de funciones */
+
+// Funciones del programa
+
+// Funciones auxiliares
+char *pedirCadenaDinamica()
+{
+    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
+    char c;
+    int i = 0;
+    int memoria_actual = TAM_BLOQUE;
+
+    while ((c = getchar()) != '\n')
+    {
+        if (i == memoria_actual)
+        {
+            memoria_actual += TAM_BLOQUE;
+            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
+        }
+        p_texto_destino[i] = c;
+        i++;
+    }
+    p_texto_destino[i] = '\0';
+
+    return p_texto_destino;
+}
+
+void clearBuffer()
+{
+    while (getchar() != '\n');
+}
