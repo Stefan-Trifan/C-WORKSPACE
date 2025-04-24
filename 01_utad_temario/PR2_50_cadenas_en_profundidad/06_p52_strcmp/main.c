@@ -23,6 +23,7 @@ typedef struct lineas_t
 lineas_t;
 
 // Funciones del programa
+char *leeLineaDinamicaFichero(FILE *fd);
 
 // Funciones auxiliares
 void clearBuffer();
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-
+    
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -44,6 +45,10 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+char *leeLineaDinamicaFichero(FILE *fd)
+{
+
+}
 
 // Funciones auxiliares
 void clearBuffer()
