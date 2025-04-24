@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
+    // Declaracion de variables
 
 
     printf("\n_________________________________________EXIT\n\n");
