@@ -3,7 +3,6 @@
         Stefan Trifan
 
     *   Estado
-        TODO no esta hecho
 
     *   Enunciado
         Lorem Ipsum
