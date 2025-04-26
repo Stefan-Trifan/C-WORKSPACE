@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
 // Funciones del programa
 char *pedirCadenaDinamica()
 {
+    // Declaracion de variables
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
     char c;
     int i = 0;
@@ -55,7 +56,7 @@ char *pedirCadenaDinamica()
 
     while ((c = getchar()) != '\n')
     {
-        if (i == memoria_actual)
+        if (i == memoria_actual - 1)
         {
             memoria_actual += TAM_BLOQUE;
             p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));

@@ -21,7 +21,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
-char *leerCadenaDinamicaFichero();
+char *leerCadenaDinamicaFichero(FILE *fd);
 void clearBuffer();
 
 /* _________________________________________
@@ -36,12 +36,13 @@ int main(int argc, char *argv[])
     FILE *fd;
 
     // Abrimos el fichero en modo lectura
+    fd = fopen("datos.txt", "r");
 
     // Llamamos a la funcion
-    texto = leerCadenaDinamicaFichero();
+    texto = leerCadenaDinamicaFichero(fd);
 
     // Imprimimos el texto
-    printf("Texto: %s");
+    printf("Texto en fichero: \n%s", texto);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -53,9 +54,27 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-char *leerCadenaDinamicaFichero()
+char *leerCadenaDinamicaFichero(FILE *fd)
 {
+    // Declaracion de variables
+    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
+    int memoria_actual = TAM_BLOQUE;
+    int i = 0;
+    char c;
 
+    while ((c = fgetc(fd)) != EOF)
+    {
+        if(i == memoria_actual - 1) 
+        {
+            memoria_actual += TAM_BLOQUE;
+            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
+        }
+        p_texto_destino[i] = c;
+        i++;
+    }
+    p_texto_destino[i] = '\0';
+
+    return p_texto_destino;
 }
 
 void clearBuffer()
