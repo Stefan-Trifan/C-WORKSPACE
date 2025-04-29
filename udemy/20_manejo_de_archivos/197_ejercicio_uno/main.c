@@ -42,14 +42,15 @@ int main(int argc, char *argv[])
     // Declaracion de variables
     FILE *fd;
     datos_t datos;
-    char file_name[] = "emails.txt";
+    char file_name[] = "./emails.txt";
     int opcion = 0;
     int num_users = 0;
 
     // Reservamos espacio para el primer usuario
     
     // Abrimos el archivo
-    fd = fopen(file_name, "a+");
+    fd = fopen("emails.txt", "a+");
+
     if(fd == NULL)
     {
         printf("Error.\n");
@@ -57,26 +58,28 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
+    // Empezamos a escribir datos
     do
     {
         printf("Introduce tu nombre\n-> ");
         datos.nombre = pedirCadenaDinamica();
-
         printf("Introduce tu apellido\n-> ");
         datos.apellidos = pedirCadenaDinamica();
-
         printf("Introduce tu email\n-> ");
         datos.email = pedirCadenaDinamica();
 
-        printf("DEBUG\n");
-        printf("datos.nombre    = %s\n", datos.nombre);
-        printf("datos.apellidos = %s\n", datos.apellidos);
-        printf("datos.email     = %s\n", datos.email);
+        fprintf(fd, "%s,%s,%s\n", datos.nombre, datos.apellidos, datos.email);
+        
+        // Guardamos los cambios inmediatamente
+        fclose(fd);
+        fd = fopen("emails.txt", "a+");
 
         printf("Deseas continuar?\n[1] Si\n[0] No\n-> ");
         opcion = pedirEntero();
     } 
     while (opcion != 0);
+
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
