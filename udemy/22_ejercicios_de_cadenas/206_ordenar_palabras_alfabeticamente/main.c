@@ -1,0 +1,99 @@
+/*
+    *   Autor
+        Stefan Trifan
+
+    *   Estado
+
+    *   Enunciado
+        Lorem Ipsum
+*/
+
+/* _________________________________________
+   Inicio cabecera */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define TAM_BLOQUE 10
+
+// Funciones del programa
+
+// Funciones auxiliares
+char *pedirCadenaDinamica();
+void clearBuffer();
+
+/* _________________________________________
+   Inicio main() */
+
+int main(int argc, char *argv[])
+{
+    printf("\n_________________________________________START\n\n");
+
+    // Declaracion de variables
+    char *cadena1;
+    char *cadena2;
+    int num;
+
+    // Pedimos las 2 cadenas
+    printf("> ");
+    cadena1 = pedirCadenaDinamica();
+    printf("> ");
+    cadena2 = pedirCadenaDinamica();
+
+    // Ordenamos alfabeticamente
+    num = strcmp(cadena1, cadena2);
+    if(num == 0)
+    {
+        printf("Las cadenas son iguales");
+    }
+    else if(num < 0)
+    {
+        printf("cadena1: %s\n", cadena1);
+        printf("cadena2: %s\n", cadena2);
+    }
+    else if(num > 0)
+    {
+        printf("cadena2: %s\n", cadena2);
+        printf("cadena1: %s\n", cadena1);
+    }
+
+    // Imprimomps las 2 cadenas
+
+    
+    printf("\n_________________________________________EXIT\n\n");
+    return EXIT_SUCCESS;
+}
+
+/* _________________________________________
+   Inicio definicion de funciones */
+
+// Funciones del programa
+
+// Funciones auxiliares
+char *pedirCadenaDinamica()
+{
+    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
+    char c;
+    int i = 0;
+    int memoria_actual = TAM_BLOQUE;
+
+    while ((c = getchar()) != '\n')
+    {
+        if (i == memoria_actual - 1)
+        {
+            memoria_actual += TAM_BLOQUE;
+            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
+        }
+        p_texto_destino[i] = c;
+        i++;
+    }
+    p_texto_destino[i] = '\0';
+
+    return p_texto_destino;
+}
+
+void clearBuffer()
+{
+    while (getchar() != '\n');
+}
