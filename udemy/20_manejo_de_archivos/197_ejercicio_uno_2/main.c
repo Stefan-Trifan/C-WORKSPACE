@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define DIRECCION "./datos.txt"
+
 // Funciones del programa
 
 // Funciones auxiliares
@@ -28,13 +30,21 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    char cadena1[] = "1234";
-    char cadena2[] = "1334";
-    int num;
+    FILE *fd;
+    char c;
 
-    num = strcmp(cadena2, cadena1);
+    // Abrimos el fichero
+    fd = fopen(DIRECCION, "a+");
 
-    printf("%d", num);
+    // Escribimos en el fichero
+    printf("Introducir texto en \"datos.txt\"\n-> ");
+    while((c = getchar()) != '\n')
+    {
+        putc(c, fd);
+    }
+
+    // Cerramos el archivo
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;

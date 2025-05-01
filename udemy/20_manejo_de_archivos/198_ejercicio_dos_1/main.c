@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define DIRECCION "./datos.txt"
+
 // Funciones del programa
 
 // Funciones auxiliares
@@ -28,7 +30,21 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
+    FILE *fd;
+    char c;
 
+    // Abrimos el fichero
+    fd = fopen(DIRECCION, "at");
+
+    // Escribimos en el fichero
+    printf("Introducir texto en \"datos.txt\"\n-> ");
+    while ((c = getchar()) != EOF)
+    {
+        fputc(c, fd);
+    }
+
+    // Cerramos el archivo
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -42,5 +58,6 @@ int main(int argc, char *argv[])
 // Funciones auxiliares
 void clearBuffer()
 {
-    while (getchar() != '\n');
+    while (getchar() != '\n')
+        ;
 }

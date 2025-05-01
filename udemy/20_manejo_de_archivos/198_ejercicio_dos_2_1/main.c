@@ -5,7 +5,9 @@
     *   Estado
 
     *   Enunciado
-        Lorem Ipsum
+        Tomar un archivo de texto y con la funcion fgetc() leer todo su contenido
+
+        fgetc(puntero_archivo);
 */
 
 /* _________________________________________
@@ -14,6 +16,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#define TAM_BLOQUE 10
+#define DIRECCION "datos.txt"
 
 // Funciones del programa
 
@@ -28,13 +33,18 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    char cadena1[] = "1234";
-    char cadena2[] = "1334";
-    int num;
+    FILE *fd;
+    char c;
 
-    num = strcmp(cadena2, cadena1);
+    // Abrimos el archivo
+    fd = fopen(DIRECCION, "r");
 
-    printf("%d", num);
+    // Probamos fgetc
+    while((c = fgetc(fd)) != EOF)
+    {
+        fputc(c, stdout);
+    }
+
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -46,6 +56,7 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
+
 void clearBuffer()
 {
     while (getchar() != '\n');

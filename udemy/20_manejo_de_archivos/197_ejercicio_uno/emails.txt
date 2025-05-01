@@ -1,3 +1,0 @@
-uno,dos,tres
-cuatro,cinco,seis
-uno,dos,tres

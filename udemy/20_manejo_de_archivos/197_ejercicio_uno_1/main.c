@@ -16,6 +16,7 @@
 #include <string.h>
 
 #define TAM_BLOQUE 10
+#define NOMBRE_ARCHIVO "emails.txt"
 
 typedef struct
 {
@@ -42,15 +43,11 @@ int main(int argc, char *argv[])
     // Declaracion de variables
     FILE *fd;
     datos_t datos;
-    char file_name[] = "./emails.txt";
     int opcion = 0;
     int num_users = 0;
-
-    // Reservamos espacio para el primer usuario
     
     // Abrimos el archivo
-    fd = fopen("emails.txt", "a+");
-
+    fd = fopen(NOMBRE_ARCHIVO, "a+");
     if(fd == NULL)
     {
         printf("Error.\n");
@@ -72,7 +69,7 @@ int main(int argc, char *argv[])
         
         // Guardamos los cambios inmediatamente
         fclose(fd);
-        fd = fopen("emails.txt", "a+");
+        fd = fopen(NOMBRE_ARCHIVO, "a+");
 
         printf("Deseas continuar?\n[1] Si\n[0] No\n-> ");
         opcion = pedirEntero();

@@ -15,6 +15,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define DIRECCION "datos.txt"
+
+typedef struct
+{
+    char nombre[20];
+    char apellidos[20];
+    char email[30];
+}
+datos_t;
+
 // Funciones del programa
 
 // Funciones auxiliares
@@ -28,13 +38,19 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    char cadena1[] = "1234";
-    char cadena2[] = "1334";
-    int num;
+    FILE *fd;
 
-    num = strcmp(cadena2, cadena1);
+    // Abrimos el archivo
+    fopen(fd, "w+");
+    if(fd == NULL)
+    {
+        printf("Error\n");
+        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
+        return EXIT_FAILURE;
+    }
 
-    printf("%d", num);
+    
+
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
