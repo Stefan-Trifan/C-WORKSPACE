@@ -19,9 +19,9 @@
 
 typedef struct
 {
-    char *nombre_apellidos;
+    char *nombre_completo;
     int   num_camiseta;
-    int   num_golges;
+    int   num_goles;
 }
 datos_jugador_t;
 
@@ -40,37 +40,45 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    datos_jugador_t *jugador = NULL;
-    FILE *fd = fopen("datosjugadores.txt", "w+");
+    datos_jugador_t jugador;
+    FILE *fd;
     int opcion = 0;
-    int num_jugadores = 0;
+    jugador.num_camiseta = 1;
 
-    // Comprobamos si tiene extio
+    // Abrimps el fichero
+    fd = fopen("datosjugadores.txt", "a");
 	if(fd == NULL)
 	{
 		printf("Error al abrir el archivo\n");
-		return EXIT_FAILURE;
+		printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
+        return EXIT_FAILURE;
 	}
 
     // Introducimos jugadores
     do
     {
-        printf("Quieres introducir un usuario?\n[1] Si\n[2] No\n-> ");
+        // Pedimos los datos
+        printf("Introduce el nombre del jugador\n-> ");
+        jugador.nombre_completo = pedirCadenaDinamica();
+
+        printf("Introduce el numero de goles\n-> ");
+        jugador.num_goles = pedirEnteroPos();
+        
+        // Escribimos los datos en el fichero
+        fprintf(fd, "%s,%d,%d\n", jugador.nombre_completo,jugador.num_camiseta,jugador.num_goles);
+        
+        free(jugador.nombre_completo);
+
+        printf("Quieres introducir otro usuario?\n[1] Si\n[0] No\n-> ");
         opcion = pedirEnteroPos();
-
-        if(opcion == 1)
+        if(opcion != 0)
         {
-            printf("Introduce el nombre del jugador\n-> ");
-            *(jugador + num_jugadores)->nombre_apellidos = pedirCadenaDinamica();
-
-            printf("Introduce el numero de la camiseta\n-> ");
-            
-
-            printf("Introduce el numero de goles\n-> ");
-            
-        }
+            jugador.num_camiseta++;
+        }   
     } 
-    while (opcion != 2);
+    while (opcion != 0);
+
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -82,7 +90,6 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-
 char *pedirCadenaDinamica()
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);

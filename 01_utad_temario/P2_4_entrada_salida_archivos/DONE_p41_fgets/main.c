@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define DIRECCION "datos.txt"
+
 // Funciones del programa
 
 // Funciones auxiliares
@@ -28,7 +30,21 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
+    FILE *fd;
+    char cadena1[20];
+    
+    // Abrimos el fichero
+    fd = fopen(DIRECCION, "r");
+    if(fd == NULL)
+    {
+        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
+        return EXIT_FAILURE;
+    }
 
+    fgets(cadena1, 19, fd);
+    printf("%s", cadena1);
+    fgets(cadena1, 19, fd);
+    printf("%s", cadena1);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
