@@ -37,11 +37,14 @@ int main(int argc, char *argv[])
     fd = fopen(DIRECCION, "r");
 
     // Leemos el archivo
+    printf("+---------+\n");
     while((c = getc(fd)) != EOF)
     {
         if(c != ';')
         {
-            printf("%c", c);
+            printf(
+                "| %c | %3d |\n"
+                "+---------+\n", c, c);
         }
     }
 
