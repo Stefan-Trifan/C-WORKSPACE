@@ -32,10 +32,10 @@ typedef struct
 datos_jugador_t;
 
 // Funciones del programa
-void agregarJugador(datos_jugador_t** equipo, int *num_jugadores);
-void mostrarGoleadores(datos_jugador_t *equipo, int num_jugadores);
-void guardarJugadores(datos_jugador_t *equipo, int num_jugadores);
-void liberarMemoria(datos_jugador_t *equipo, int num_jugadores);
+void agregarJugador(datos_jugador_t **jugador, int *num_jugadores);
+void mostrarGoleadores(datos_jugador_t *jugador, int num_jugadores);
+void guardarJugadores(datos_jugador_t *jugador, int num_jugadores);
+void liberarMemoria(datos_jugador_t *jugador, int num_jugadores);
 void menu();
 
 // Funciones auxiliares
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    datos_jugador_t *equipo;
+    datos_jugador_t *jugador;
     FILE *fd;
     int opcion = 0;
     int num_jugadores = 0;
@@ -74,16 +74,16 @@ int main(int argc, char *argv[])
         switch (opcion)
         {
             case AGREGAR: 
-                agregarJugador(&equipo, &num_jugadores);
+                agregarJugador(&jugador, &num_jugadores);
                 break;
             case MOSTRAR: 
-                mostrarGoleadores(equipo, num_jugadores);
+                mostrarGoleadores(jugador, num_jugadores);
                 break;
             case GUARDAR: 
-                guardarJugadores(equipo, num_jugadores);
+                guardarJugadores(jugador, num_jugadores);
                 break;
             case SALIR: 
-                liberarMemoria(equipo, num_jugadores);
+                liberarMemoria(jugador, num_jugadores);
                 printf("Saliendo del programa...\n");
                 break;
         }
@@ -105,15 +105,29 @@ int main(int argc, char *argv[])
  * Al introducir un jugador, se deberá pedir los datos (nombre/apellidos y goles) al usuario, 
  * y se deberá almacenar enuna lista reservada de forma dinámica.
  */
-void agregarJugador(datos_jugador_t **equipo, int *num_jugadores)
+void agregarJugador(datos_jugador_t **jugador, int *num_jugadores)
 {
+    // Incrementamos el numero de jugadores
+    (*num_jugadores)++;
 
+    // Reservamos espacio para el nuevo jugador
+    if(*num_jugadores == 1)
+    {
+        *jugador = malloc(sizeof(datos_jugador_t));
+    }
+    else if(*num_jugadores >= 2)
+    {
+        *jugador = realloc(*jugador, *num_jugadores * sizeof(datos_jugador_t));
+    }
+
+    
 }
+
 /**
  * Al elegir esta opción, se pedirá un número de goles mínimo al usuario, y se deberán 
  * mostrar todos los jugadores almacenados anteriormente con un número de goles superior al introducido.
  */
-void mostrarGoleadores(datos_jugador_t *equipo, int num_jugadores)
+void mostrarGoleadores(datos_jugador_t *jugador, int num_jugadores)
 {
 
 }
@@ -122,12 +136,12 @@ void mostrarGoleadores(datos_jugador_t *equipo, int num_jugadores)
  * Al elegir esta opción se guardarán en un fichero (datosjugadores.txt) 
  * los datos de los jugadores que se hayan introducido y no se hayan guardado previamente
  */
-void guardarJugadores(datos_jugador_t *equipo, int num_jugadores)
+void guardarJugadores(datos_jugador_t *jugador, int num_jugadores)
 {
 
 }
 
-void liberarMemoria(datos_jugador_t *equipo, int num_jugadores)
+void liberarMemoria(datos_jugador_t *jugador, int num_jugadores)
 {
 
 }
