@@ -1,11 +1,6 @@
 /*
     *   Autor
         Stefan Trifan
-
-    *   Estado
-
-    *   Enunciado
-        Lorem Ipsum
 */
 
 /* _________________________________________
@@ -15,7 +10,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct {} listaPalabras_t;
+// Estructura para almacenar la información de las palabras que se van a buscar
+typedef struct 
+{
+    char *palabra;
+    int ocurrencias;
+    int *numeros_de_linea;
+} 
+palabraInfo_t;
+
+// Estructura para almacenar la lista de información
+typedef struct 
+{
+    palabraInfo_t *lista_palabras;
+    int num_palabras;
+} 
+listaPalabras_t;
 
 // Funciones del programa
 void examinaLinea(char *lineaAux, int numLinea, listaPalabras_t listaPalabras);
@@ -32,7 +42,7 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    if(argc != 3)
+    if(argc < 3)
     {
         printf("USO: ./main <Nombre de fichero> <Palabras a buscar>\n");
         printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
@@ -65,7 +75,8 @@ void examinaLinea(char *lineaAux, int numLinea, listaPalabras_t listaPalabras)
  */
 char *leeLineaDinamicaFile(FILE *fd)
 {
-
+    char *c;
+    return c;
 }
 
 /**

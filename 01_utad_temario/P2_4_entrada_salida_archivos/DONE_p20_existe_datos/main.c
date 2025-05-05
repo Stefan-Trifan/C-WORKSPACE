@@ -1,11 +1,6 @@
 /*
-	*   Autor
-		Stefan Trifan
-
-	*   Estado
-
-	*   Enunciado
-		Lorem Ipsum
+    *   Autor
+        Stefan Trifan
 */
 
 /* _________________________________________
