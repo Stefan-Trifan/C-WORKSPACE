@@ -75,34 +75,26 @@ int main(int argc, char *argv[])
     }
 
     // Creamos el archivo de salida
-    nombre_fichero_salida = malloc((strlen(argv[1]) + 5)* sizeof(char));
+    nombre_fichero_salida = malloc((strlen(argv[1]) + 5) * sizeof(char));
     strcpy(nombre_fichero_salida, argv[1]);
     strcat(nombre_fichero_salida, ".out");
     fd_salida = fopen(nombre_fichero_salida, "w");
 
-    // Creamos la lista de palabras
+    // Iniciamos la lista de palabras
     caja_lista_palabras.num_palabras = argc - 2;
     caja_lista_palabras.lista_palabras = malloc(caja_lista_palabras.num_palabras * sizeof(palabra_info_t));
     for(int i = 0; i < caja_lista_palabras.num_palabras; i++)
     {
+        // Guardamos las palabras
         caja_lista_palabras.lista_palabras[i].palabra = malloc(sizeof(char) * (strlen(argv[i+2]) + 1));
-        strcpy(caja_lista_palabras.lista_palabras[i].palabra, argv[i+2]);
+        strcpy(caja_lista_palabras.lista_palabras[i].palabra, argv[i + 2]);
         caja_lista_palabras.lista_palabras[i].num_ocurrencias = 0;
         caja_lista_palabras.lista_palabras[i].numeros_de_linea = NULL;
     }
     
+    
 
     // Liberamos la memoria asignada
-    fclose(fd_entrada);
-    fclose(fd_salida);
-    free(nombre_fichero_salida);
-
-    for (int i = 0; i < caja_lista_palabras.num_palabras; i++)
-    {
-        free(caja_lista_palabras.lista_palabras[i].palabra);
-    }
-    free(caja_lista_palabras.lista_palabras);
-
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
