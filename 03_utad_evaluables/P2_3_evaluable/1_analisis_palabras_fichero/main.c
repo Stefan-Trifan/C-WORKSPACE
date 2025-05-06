@@ -53,9 +53,10 @@ int main(int argc, char *argv[])
 
     // Declaracion de variables
     lista_palabras_t caja_lista_palabras;
-    FILE *fd_entrada;
-    FILE *fd_salida;
+    FILE *fd_in;
+    FILE *fd_out;
     char *nombre_fichero_salida;
+    int num_lineas = 0;
 
     // Comprobamos el numero de parametros
     if(argc < 3) 
@@ -66,8 +67,8 @@ int main(int argc, char *argv[])
     }
 
     // Comprobamos si el archivo existe
-    fd_entrada = fopen(argv[1], "r");
-    if(fd_entrada == NULL)
+    fd_in = fopen(argv[1], "r");
+    if(fd_in == NULL)
     {
         printf(RED"ERROR: El archivo no se ha encontrado"RESET);
         printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
@@ -78,7 +79,7 @@ int main(int argc, char *argv[])
     nombre_fichero_salida = malloc((strlen(argv[1]) + 5) * sizeof(char));
     strcpy(nombre_fichero_salida, argv[1]);
     strcat(nombre_fichero_salida, ".out");
-    fd_salida = fopen(nombre_fichero_salida, "w");
+    fd_out = fopen(nombre_fichero_salida, "w");
 
     // Iniciamos la lista de palabras
     caja_lista_palabras.num_palabras = argc - 2;
@@ -86,13 +87,39 @@ int main(int argc, char *argv[])
     for(int i = 0; i < caja_lista_palabras.num_palabras; i++)
     {
         // Guardamos las palabras
-        caja_lista_palabras.lista_palabras[i].palabra = malloc(sizeof(char) * (strlen(argv[i+2]) + 1));
+        caja_lista_palabras.lista_palabras[i].palabra = malloc(sizeof(char) * (strlen(argv[i + 2]) + 1));
         strcpy(caja_lista_palabras.lista_palabras[i].palabra, argv[i + 2]);
         caja_lista_palabras.lista_palabras[i].num_ocurrencias = 0;
         caja_lista_palabras.lista_palabras[i].numeros_de_linea = NULL;
     }
     
+    /* // DEBUG - Imprimimos las palabras guardas
+    for(int i = 0; i < caja_lista_palabras.num_palabras; i++)
+    {
+        printf("%s ", caja_lista_palabras.lista_palabras[i].palabra);
+    }
+    printf("\n"); */ 
     
+    // Contamos el numero de lineas
+    {
+        char c = fgetc(fd_in);
+        while(c != EOF)
+        {
+            if((c = fgetc(fd_in)) == '\n')
+            {
+                num_lineas++;
+            }
+        }
+        num_lineas++;
+        /* // DEBUG
+        printf("num lineas = %d", num_lineas); */
+    }
+
+    // Examinamos linea por linea
+    // Comprobamos si la palabra está en el archivo con examinalinea
+    // linea_aux puede ser leerLineaDinamicaFichero
+    // Si está, modificamos los miembros de la lista 
+    // Si está, modificamos el archivo .out
 
     // Liberamos la memoria asignada
 
