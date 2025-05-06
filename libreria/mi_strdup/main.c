@@ -24,7 +24,12 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
+    char *origen = "Esta es mi cadena";
+    char *destino;
 
+    destino = mi_strdup(origen);
+
+    printf("Destino: %s", destino);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -39,12 +44,15 @@ int main(int argc, char *argv[])
 char *mi_strdup(const char *origen)
 {
     char *destino = NULL;
-    int len = strlen(origen) + 1;
+    int len;
+
+    len = strlen(origen) + 1;
     destino = (char *)malloc(len * sizeof(char));
-    if (destino) 
+    if(destino)
     {
         strcpy(destino, origen);
     }
+    
     return destino;
 }
 
