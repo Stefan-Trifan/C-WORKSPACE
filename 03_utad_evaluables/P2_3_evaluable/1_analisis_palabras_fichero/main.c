@@ -31,14 +31,14 @@ palabra_info_t;
 // Estructura para almacenar la lista de información
 typedef struct 
 {
-    palabra_info_t *lista_palabras;
+    palabra_info_t *palabra_info;
     int num_palabras;
 } 
-lista_palabras_t;
+caja_palabras_t;
 
 // Funciones del programa
-void examinaLinea(char *linea_aux, int num_linea, lista_palabras_t caja_lista_palabras);
-void escribirResultado(lista_palabras_t caja_lista_palabras, char *nombre_fichero_origen);
+void examinaLinea(char *linea_aux, int num_linea, caja_palabras_t caja_palabras);
+void escribirResultado(caja_palabras_t caja_palabras, char *nombre_fichero_origen);
 
 // Funciones auxiliares
 char *leerLineaDinamicaFichero(FILE *fd);
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    lista_palabras_t caja_lista_palabras;
+    caja_palabras_t caja_palabras;
     FILE *fd_in;
     FILE *fd_out;
     char *nombre_fichero_salida;
@@ -82,25 +82,25 @@ int main(int argc, char *argv[])
     fd_out = fopen(nombre_fichero_salida, "w");
 
     // Iniciamos la lista de palabras
-    caja_lista_palabras.num_palabras = argc - 2;
-    caja_lista_palabras.lista_palabras = malloc(caja_lista_palabras.num_palabras * sizeof(palabra_info_t));
-    for(int i = 0; i < caja_lista_palabras.num_palabras; i++)
+    caja_palabras.num_palabras = argc - 2;
+    caja_palabras.palabra_info = malloc(caja_palabras.num_palabras * sizeof(palabra_info_t));
+    for(int i = 0; i < caja_palabras.num_palabras; i++)
     {
         // Guardamos las palabras
-        caja_lista_palabras.lista_palabras[i].palabra = malloc(sizeof(char) * (strlen(argv[i + 2]) + 1));
-        strcpy(caja_lista_palabras.lista_palabras[i].palabra, argv[i + 2]);
-        caja_lista_palabras.lista_palabras[i].num_ocurrencias = 0;
-        caja_lista_palabras.lista_palabras[i].numeros_de_linea = NULL;
+        caja_palabras.palabra_info[i].palabra = malloc(sizeof(char) * (strlen(argv[i + 2]) + 1));
+        strcpy(caja_palabras.palabra_info[i].palabra, argv[i + 2]);
+        caja_palabras.palabra_info[i].num_ocurrencias = 0;
+        caja_palabras.palabra_info[i].numeros_de_linea = NULL;
     }
     
     /* // DEBUG - Imprimimos las palabras guardas
-    for(int i = 0; i < caja_lista_palabras.num_palabras; i++)
+    for(int i = 0; i < caja_palabras.num_palabras; i++)
     {
-        printf("%s ", caja_lista_palabras.lista_palabras[i].palabra);
+        printf("%s ", caja_palabras.palabra_info[i].palabra);
     }
     printf("\n"); */ 
     
-    // Contamos el numero de lineas
+    // Contamos el numero de lineas del fichero
     {
         char c = fgetc(fd_in);
         while(c != EOF)
@@ -135,9 +135,9 @@ int main(int argc, char *argv[])
  * Esta función recibe una línea y el número de línea y modifica 
  * la lista de palabras para añadir la información encontrada. 
  */
-void examinaLinea(char *linea_aux, int num_linea, lista_palabras_t lista_palabras)
+void examinaLinea(char *linea_aux, int num_linea, caja_palabras_t palabra_info)
 {
-
+    
 }
 
 /**
@@ -146,7 +146,7 @@ void examinaLinea(char *linea_aux, int num_linea, lista_palabras_t lista_palabra
  * el número de ocurrencias y las líneas en las que aparece, si una 
  * palabra aparece varias veces en una línea aparecerá duplicada en la lista
  */
-void escribirResultado(lista_palabras_t caja_lista_palabras, char *nombre_fichero_origen)
+void escribirResultado(caja_palabras_t caja_palabras, char *nombre_fichero_origen)
 {
 
 }
