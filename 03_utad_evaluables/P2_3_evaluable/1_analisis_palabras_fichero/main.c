@@ -37,11 +37,11 @@ typedef struct
 lista_palabras_t;
 
 // Funciones del programa
-void examinaLinea(char *linea_aux, int num_linea, lista_palabras_t lista_palabras);
-void escribirResultado(lista_palabras_t lista, char *nombre_fichero_origen);
+void examinaLinea(char *linea_aux, int num_linea, lista_palabras_t caja_lista_palabras);
+void escribirResultado(lista_palabras_t caja_lista_palabras, char *nombre_fichero_origen);
 
 // Funciones auxiliares
-char *leeLineaDinamicaFile(FILE *fd);
+char *leerLineaDinamicaFichero(FILE *fd);
 void clearBuffer();
 
 /* _________________________________________
@@ -52,8 +52,10 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    FILE *fd_in;
-    FILE *fd_out;
+    lista_palabras_t caja_lista_palabras;
+    FILE *fd_entrada;
+    FILE *fd_salida;
+    char *nombre_fichero_salida;
 
     // Comprobamos el numero de parametros
     if(argc < 3) 
@@ -64,8 +66,8 @@ int main(int argc, char *argv[])
     }
 
     // Comprobamos si el archivo existe
-    fd_in = fopen(argv[1], "r");
-    if(fd_in == NULL)
+    fd_entrada = fopen(argv[1], "r");
+    if(fd_entrada == NULL)
     {
         printf(RED"ERROR: El archivo no se ha encontrado"RESET);
         printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
@@ -73,7 +75,34 @@ int main(int argc, char *argv[])
     }
 
     // Creamos el archivo de salida
-    fd_out = fopen(strcat(argv[1], ".out"), "w");
+    nombre_fichero_salida = malloc((strlen(argv[1]) + 5)* sizeof(char));
+    strcpy(nombre_fichero_salida, argv[1]);
+    strcat(nombre_fichero_salida, ".out");
+    fd_salida = fopen(nombre_fichero_salida, "w");
+
+    // Creamos la lista de palabras
+    caja_lista_palabras.num_palabras = argc - 2;
+    caja_lista_palabras.lista_palabras = malloc(caja_lista_palabras.num_palabras * sizeof(palabra_info_t));
+    for(int i = 0; i < caja_lista_palabras.num_palabras; i++)
+    {
+        caja_lista_palabras.lista_palabras[i].palabra = malloc(sizeof(char) * (strlen(argv[i+2]) + 1));
+        strcpy(caja_lista_palabras.lista_palabras[i].palabra, argv[i+2]);
+        caja_lista_palabras.lista_palabras[i].num_ocurrencias = 0;
+        caja_lista_palabras.lista_palabras[i].numeros_de_linea = NULL;
+    }
+    
+
+    // Liberamos la memoria asignada
+    fclose(fd_entrada);
+    fclose(fd_salida);
+    free(nombre_fichero_salida);
+
+    for (int i = 0; i < caja_lista_palabras.num_palabras; i++)
+    {
+        free(caja_lista_palabras.lista_palabras[i].palabra);
+    }
+    free(caja_lista_palabras.lista_palabras);
+
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -98,7 +127,7 @@ void examinaLinea(char *linea_aux, int num_linea, lista_palabras_t lista_palabra
  * el número de ocurrencias y las líneas en las que aparece, si una 
  * palabra aparece varias veces en una línea aparecerá duplicada en la lista
  */
-void escribirResultado(lista_palabras_t lista, char *nombre_fichero_origen)
+void escribirResultado(lista_palabras_t caja_lista_palabras, char *nombre_fichero_origen)
 {
 
 }
@@ -108,7 +137,7 @@ void escribirResultado(lista_palabras_t lista, char *nombre_fichero_origen)
  * Esta función obtiene la siguiente línea de un fichero ya abierto y devuelve 
  * un puntero a la cadena con memoria reservada dinámicamente. Utiliza fgetc
  */
-char *leeLineaDinamicaFile(FILE *fd)
+char *leerLineaDinamicaFichero(FILE *fd)
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
     int memoria_actual = TAM_BLOQUE;
