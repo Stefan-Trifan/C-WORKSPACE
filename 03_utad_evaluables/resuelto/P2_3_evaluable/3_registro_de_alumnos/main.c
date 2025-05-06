@@ -16,7 +16,8 @@ typedef enum
 {
     GUARDADO,
     SIN_GUARDAR
-} estado_t;
+} 
+estado_t;
 
 typedef struct
 {
@@ -24,14 +25,17 @@ typedef struct
     char *apellido;
     int edad;
     estado_t estado;
-} alumno_t;
+} 
+alumno_t;
 
 /* Funciones del programa */
-alumno_t *cargarAlumnos(FILE *f, int *num_alumnos);
+alumno_t *cargarAlumnos(FILE *fd, int *num_alumnos);
 void listarAlumnos(alumno_t *lista, int num_alumnos);
 void aniadirAlumno(alumno_t **lista, int *num_alumnos);
-void guardarAlumnos(FILE *f, alumno_t *lista, int num_alumnos);
+void guardarAlumnos(FILE *fd, alumno_t *lista, int num_alumnos);
 void buscarAlumno(alumno_t *lista, int num_alumnos);
+
+// Funciones auxiliares
 char *pedirCadenaDinamica();
 int pedirEnteroPos();
 void clearBuffer();
@@ -43,17 +47,17 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    FILE *f;
+    FILE *fd;
     alumno_t *alumnos;
     int num_alumnos = 0;
     int opcion = 0;
 
     // abrir el fichero
-    f = fopen("alumnos.txt", "a+");
+    fd = fopen("alumnos.txt", "a+");
 
     // Cargo los alumnos que ya estaban
-    rewind(f);
-    alumnos = cargarAlumnos(f, &num_alumnos);
+    rewind(fd);
+    alumnos = cargarAlumnos(fd, &num_alumnos);
 
     // Menú principal
     do
@@ -75,7 +79,7 @@ int main(int argc, char *argv[])
             aniadirAlumno(&alumnos, &num_alumnos);
             break;
         case 3:
-            guardarAlumnos(f, alumnos, num_alumnos);
+            guardarAlumnos(fd, alumnos, num_alumnos);
             break;
         case 4:
             buscarAlumno(alumnos, num_alumnos);
@@ -93,7 +97,7 @@ int main(int argc, char *argv[])
     }
     free(alumnos);
 
-    fclose(f);
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -103,7 +107,7 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // cargar alumnos del fichero
-alumno_t *cargarAlumnos(FILE *f, int *num_alumnos)
+alumno_t *cargarAlumnos(FILE *fd, int *num_alumnos)
 {
     alumno_t *lista = NULL;
     char nombre[100], apellido[100];
@@ -111,7 +115,7 @@ alumno_t *cargarAlumnos(FILE *f, int *num_alumnos)
 
     lista = malloc(sizeof(alumno_t));
 
-    while (fscanf(f, "Nombre: %[^,],Apellido: %[^,],Edad: %d\n", nombre, apellido, &edad) == 3)
+    while (fscanf(fd, "Nombre: %[^,],Apellido: %[^,],Edad: %d\n", nombre, apellido, &edad) == 3)
     {
         lista = realloc(lista, (*num_alumnos + 1) * sizeof(alumno_t));
 
@@ -161,18 +165,18 @@ void aniadirAlumno(alumno_t **lista, int *num_alumnos)
 }
 
 // guarda en fichero los alumnos no guardados
-void guardarAlumnos(FILE *f, alumno_t *lista, int num_alumnos)
+void guardarAlumnos(FILE *fd, alumno_t *lista, int num_alumnos)
 {
     for (int i = 0; i < num_alumnos; i++)
     {
         if (lista[i].estado == SIN_GUARDAR)
         {
-            fprintf(f, "Nombre: %s,Apellido: %s,Edad: %d\n", lista[i].nombre, lista[i].apellido, lista[i].edad);
+            fprintf(fd, "Nombre: %s,Apellido: %s,Edad: %d\n", lista[i].nombre, lista[i].apellido, lista[i].edad);
             lista[i].estado = GUARDADO;
         }
     }
 
-    fflush(f);
+    fflush(fd);
     printf("Datos guardados correctamente.\n");
 }
 
@@ -237,6 +241,5 @@ int pedirEnteroPos()
 // limpia el buffer de entrada
 void clearBuffer()
 {
-    while (getchar() != '\n')
-        ;
+    while (getchar() != '\n');
 }

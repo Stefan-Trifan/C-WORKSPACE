@@ -11,6 +11,11 @@
 #include <string.h>
 
 #define TAM_BLOQUE 10
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
+#define DIRECCION "datosjugadores.txt"
 
 typedef enum
 {
@@ -47,18 +52,8 @@ int main(int argc, char *argv[])
 
     // Declaracion de variables
     datos_jugador_t *jugador;
-    FILE *fd;
     int opcion = 0;
     int num_jugadores = 0;
-
-    // Abrimps el fichero
-    fd = fopen("datosjugadores.txt", "a");
-    if (fd == NULL)
-    {
-        printf("Error al abrir el archivo\n");
-        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
-        return EXIT_FAILURE;
-    }
 
     // Introducimos jugadores
     do
@@ -70,22 +65,38 @@ int main(int argc, char *argv[])
         {
             case AGREGAR: 
                 agregarJugador(&jugador, &num_jugadores);
+
+                // INICIO DEBUG
+                printf(YELLOW"\n");
+                printf("num_jugadores = %d\n\n", num_jugadores);
+                for(int i = 0; i < num_jugadores; i++)
+                {
+                    printf("JUGADOR[%d]\n", i);
+                    printf("nombre_completo: %s\n", (jugador + i)->nombre_completo);
+                    printf("num_camiseta:    %d\n", (jugador + i)->num_camiseta);
+                    printf("num_goles:       %d\n", (jugador + i)->num_goles);
+                    printf("\n");
+                }
+                printf(RESET); 
+                // FIN DEBUG
+
                 break;
             case MOSTRAR: 
                 mostrarGoleadores(jugador, num_jugadores);
                 break;
             case GUARDAR: 
                 guardarJugadores(jugador, num_jugadores);
+                num_jugadores = 0;
                 break;
             case SALIR: 
+                guardarJugadores(jugador, num_jugadores);
                 liberarMemoria(jugador, num_jugadores);
                 printf("Saliendo del programa...\n");
                 break;
         }
+        printf("\n\n");
     } 
     while (opcion != 4);
-
-    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -95,6 +106,7 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+
 /**
  * 
  * Al introducir un jugador, se deberá pedir los datos (nombre/apellidos y goles) al usuario, 
@@ -115,16 +127,14 @@ void agregarJugador(datos_jugador_t **jugador, int *num_jugadores)
         *jugador = realloc(*jugador, *num_jugadores * sizeof(datos_jugador_t));
     }
 
-    
-}
+    // Configuramos el jugador
+    printf("Introduce el nombre completo del jugador\n-> ");
+    (*jugador + (*num_jugadores - 1))->nombre_completo = pedirCadenaDinamica();
 
-/**
- * Al elegir esta opción, se pedirá un número de goles mínimo al usuario, y se deberán 
- * mostrar todos los jugadores almacenados anteriormente con un número de goles superior al introducido.
- */
-void mostrarGoleadores(datos_jugador_t *jugador, int num_jugadores)
-{
+    (*jugador + (*num_jugadores - 1))->num_camiseta = *num_jugadores;
 
+    printf("Introduce el numero de goles\n-> ");
+    (*jugador + (*num_jugadores - 1))->num_goles = pedirEnteroPos();
 }
 
 /**
@@ -133,12 +143,69 @@ void mostrarGoleadores(datos_jugador_t *jugador, int num_jugadores)
  */
 void guardarJugadores(datos_jugador_t *jugador, int num_jugadores)
 {
+    FILE *fd;
 
+    fd = fopen(DIRECCION, "a");
+
+    // Guardamos los nuevos jugadores
+    if(num_jugadores >= 1)
+    {
+        for(int i = 0; i < num_jugadores; i++)
+        {
+            fprintf(
+                fd,
+                "%s,%d,%d\n", 
+                (jugador + i)->nombre_completo, 
+                (jugador + i)->num_camiseta, 
+                (jugador + i)->num_goles);
+        }
+        printf(GREEN"Se han guardados los nuevos jugadores\n"RESET);
+    }
+    else
+    {
+        printf(GREEN"No hay mas jugadores que agregar\n"RESET);
+    }
+    
+    // Reseteamos la estructura
+    for(int i = 0; i < num_jugadores; i++)
+    {
+        (jugador + i)->nombre_completo = NULL;
+        (jugador + i)->num_camiseta = 0;
+        (jugador + i)->num_goles = 0;
+    }
+    
+    fclose(fd);
+}
+
+/**
+ * Al elegir esta opción, se pedirá un número de goles mínimo al usuario, y se deberán 
+ * mostrar todos los jugadores almacenados anteriormente con un número de goles superior al introducido.
+ */
+void mostrarGoleadores(datos_jugador_t *jugador, int num_jugadores)
+{
+    int num_goles_minimo;
+
+    printf("Cual es el minimo de goles?\n-> ");
+    num_goles_minimo = pedirEnteroPos();
+    for(int i = 0; i < num_jugadores; i++)
+    {
+        if((jugador + i)->num_goles >= num_goles_minimo)
+        {
+            printf("\n");
+            printf("nombre_completo: %s\n", (jugador + i)->nombre_completo);
+            printf("num_camiseta:    %d\n", (jugador + i)->num_camiseta);
+            printf("num_goles:       %d\n", (jugador + i)->num_goles);
+            printf("\n");
+        }
+    }
 }
 
 void liberarMemoria(datos_jugador_t *jugador, int num_jugadores)
 {
-
+    for(int i = 0; i < num_jugadores; i++)
+    {
+        free(jugador[i].nombre_completo);
+    }
 }
 
 void menu()

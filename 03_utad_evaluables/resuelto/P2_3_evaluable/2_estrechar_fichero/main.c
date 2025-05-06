@@ -14,11 +14,12 @@
 typedef struct
 {
     char *linea;
-} linea_t;
+} 
+linea_t;
 
 /* Funciones del programa */
 char *leerLinea(FILE *f);
-void procesarLinea(char *linea, FILE *salida, int max_chars);
+void procesarLinea(char *linea, FILE *fd_out, int max_chars);
 void clearBuffer();
 
 /* _________________________________________
@@ -29,15 +30,15 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Variables
-    FILE *entrada;
-    FILE *salida;
+    FILE *fd_in;
+    FILE *fd_out;
     char *linea;
     int max_chars;
 
     // Comprobamos que se pasan los tres argumentos
     if (argc != 4)
     {
-        printf("Error: Debes pasar el fichero de entrada, salida y número de caracteres\n");
+        printf("Error: Debes pasar el fichero de entrada, fd_out y número de caracteres\n");
         return EXIT_FAILURE;
     }
 
@@ -45,19 +46,19 @@ int main(int argc, char *argv[])
     max_chars = atoi(argv[3]);
 
     // Abrimos los ficheros
-    entrada = fopen(argv[1], "r");
-    salida = fopen(argv[2], "w");
+    fd_in = fopen(argv[1], "r");
+    fd_out  = fopen(argv[2], "w");
 
     // Procesamos el fichero línea por línea
-    while ((linea = leerLinea(entrada)) != NULL)
+    while ((linea = leerLinea(fd_in)) != NULL)
     {
-        procesarLinea(linea, salida, max_chars);
+        procesarLinea(linea, fd_out, max_chars);
         free(linea);
     }
 
     // Cerramos los ficheros
-    fclose(entrada);
-    fclose(salida);
+    fclose(fd_in);
+    fclose(fd_out);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -115,7 +116,7 @@ char *leerLinea(FILE *f)
 
 // procesar cada línea
 // Si la línea es más larga que max_chars, la corto en partes
-void procesarLinea(char *linea, FILE *salida, int max_chars)
+void procesarLinea(char *linea, FILE *fd_out, int max_chars)
 {
     int len = strlen(linea);
     int i = 0;
@@ -143,8 +144,8 @@ void procesarLinea(char *linea, FILE *salida, int max_chars)
         parte[k++] = '\n';
         parte[k] = '\0';
 
-        // Escribo la parte al fichero de salida
-        fputs(parte, salida);
+        // Escribo la parte al fichero de fd_out
+        fputs(parte, fd_out);
 
         // Si el siguiente caracter es espacio, lo salto
         if (i < len && linea[i] == ' ')

@@ -175,7 +175,6 @@ void escribirResultado(caja_palabras_t caja_palabras, char *nombre_fichero_orige
 }
 
 // Funciones auxiliares
-
 char *leerLineaDinamicaFichero(FILE *fd)
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
