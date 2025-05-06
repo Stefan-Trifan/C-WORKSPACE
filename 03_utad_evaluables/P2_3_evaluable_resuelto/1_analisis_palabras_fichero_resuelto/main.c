@@ -1,9 +1,6 @@
 /*
     *   Autor
         Stefan Trifan
-
-    *   Testing
-        ./main datos.txt Hola
 */
 
 /* _________________________________________
