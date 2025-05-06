@@ -1,8 +1,7 @@
 /*
- * Autor: Web GPT
- * Estado: Terminado
- * Ejercicio: Registro de alumnos
- */
+    *   Autor
+        Stefan Trifan
+*/
 
 /* _________________________________________
    Inicio cabecera */
