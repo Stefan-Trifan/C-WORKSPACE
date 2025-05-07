@@ -23,7 +23,20 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
+    FILE *fd = fopen("datos.txt", "r+");
+    char c;
 
+    while((c = fgetc(fd)) != EOF)
+    {
+        
+        if(c == ';')
+        {
+            fseek(fd, -1, SEEK_CUR);
+            fputc('-', fd);
+        }
+    }
+
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
