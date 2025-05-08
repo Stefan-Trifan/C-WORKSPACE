@@ -1,27 +1,24 @@
 /*
-        *	Autor
-                Stefan Trifan
+    *   Autor
+        Stefan Trifan
 
-        * 	Compilar
-                mac     : comp (compilar)
-                                  run  (ejecutar)
-                                  brun (compilar y ejecutar)
-                windows : gcc main.c -o main.exe
-                                : ./main.exe
+    *   Estado
 
-        *   Estado:
-
-        * 	Enunciado
-                LoremIpsum
+    *   Enunciado
+        Lorem Ipsum
 */
 
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
-void clearBuffer();
+#include <stdlib.h>
+#include <string.h>
 
-float pedirFloatPos();
+// Funciones del programa
+
+// Funciones auxiliares
+void clearBuffer();
 
 /* _________________________________________
    Inicio main() */
@@ -30,40 +27,20 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    float num = 0;
+    // Declaracion de variables
 
-    printf("Introduce un numero entero \n-> ");
-
-    num = pedirFloatPos();
-
-    printf("Numero es: %f", num);
 
     printf("\n_________________________________________EXIT\n\n");
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 /* _________________________________________
    Inicio definicion de funciones */
 
-float pedirFloatPos()
-{
-    float num = 0;
-    int esValido = 0;
-    do
-    {
-        esValido = scanf("%f", &num);
-        clearBuffer();
-        if (esValido == 0 || num < 0)
-        {
-            printf("\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
-                   "-> \033[0m");
-            esValido = 0;
-        }
-    } while (esValido != 1);
-    return num;
-}
+// Funciones del programa
+
+// Funciones auxiliares
 void clearBuffer()
 {
-    while (getchar() != '\n')
-        ;
+    while (getchar() != '\n');
 }
