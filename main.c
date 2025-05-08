@@ -1,24 +1,27 @@
 /*
-    *   Autor
-        Stefan Trifan
+        *	Autor
+                Stefan Trifan
 
-    *   Estado
+        * 	Compilar
+                mac     : comp (compilar)
+                                  run  (ejecutar)
+                                  brun (compilar y ejecutar)
+                windows : gcc main.c -o main.exe
+                                : ./main.exe
 
-    *   Enunciado
-        Lorem Ipsum
+        *   Estado:
+
+        * 	Enunciado
+                LoremIpsum
 */
 
 /* _________________________________________
    Inicio cabecera */
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-// Funciones del programa
-
-// Funciones auxiliares
 void clearBuffer();
+
+float pedirFloatPos();
 
 /* _________________________________________
    Inicio main() */
@@ -27,30 +30,40 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    // Declaracion de variables
-    char linea[]        = "11;22;33;44;55";
-    int  *lista_numeros = (int *)malloc(5 * sizeof(int));
-    char *token = strtok(linea, ";");
+    float num = 0;
 
-    int i = 0;
-    while(*token != NULL)
-    {
-        linea[i] = atoi(token);
-    }
+    printf("Introduce un numero entero \n-> ");
 
-    printf("%s", token);
+    num = pedirFloatPos();
+
+    printf("Numero es: %f", num);
 
     printf("\n_________________________________________EXIT\n\n");
-    return EXIT_SUCCESS;
+    return 0;
 }
 
 /* _________________________________________
    Inicio definicion de funciones */
 
-// Funciones del programa
-
-// Funciones auxiliares
+float pedirFloatPos()
+{
+    float num = 0;
+    int esValido = 0;
+    do
+    {
+        esValido = scanf("%f", &num);
+        clearBuffer();
+        if (esValido == 0 || num < 0)
+        {
+            printf("\033[1;31mERROR: El tipo de dato introducido no es válido.\n"
+                   "-> \033[0m");
+            esValido = 0;
+        }
+    } while (esValido != 1);
+    return num;
+}
 void clearBuffer()
 {
-    while (getchar() != '\n');
+    while (getchar() != '\n')
+        ;
 }
