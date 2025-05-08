@@ -20,7 +20,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
-void *mi_strcat_dinamico(char **destino, const char *origen);
+void mi_strcat_dinamico(char **destino, const char *origen);
 char *pedirCadenaDinamica();
 void clearBuffer();
 
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-void *mi_strcat_dinamico(char **destino, const char *origen)
+void mi_strcat_dinamico(char **destino, const char *origen)
 {
     *destino = realloc(*destino, sizeof(char) * (strlen(*destino) + strlen(origen) + 1));
 

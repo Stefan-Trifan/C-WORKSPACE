@@ -19,7 +19,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
-char *pedirCadenaDinamica();
+char *pedirCadenaDinamica();    
 void clearBuffer();
 
 /* _________________________________________
