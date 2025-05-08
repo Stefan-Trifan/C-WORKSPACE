@@ -10,19 +10,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAM_BLOQUE 10
-
-typedef struct
-{
-    int    num_lineas;
-    char **lineas;
-}
-lineas_t;
+#define TAM_BLOQUE 5
 
 // Funciones del programa
 
 // Funciones auxiliares
-char *pedirCadenaDinamica();
+char *leerFicheroDinamicoTodo(FILE *fd);
 void clearBuffer();
 
 /* _________________________________________
@@ -32,10 +25,18 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    lineas_t texto;
-    char** lineas = (char**)malloc(sizeof(char*));
+    // Declaracion de variables
+    char *texto;
+    FILE *fd;
 
-    
+    // Abrimos el fichero en modo lectura
+    fd = fopen("datos.txt", "r");
+
+    // Llamamos a la funcion
+    texto = leerFicheroDinamicoTodo(fd);
+
+    // Imprimimos el texto
+    printf("Texto en fichero: \n%s", texto);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -47,16 +48,17 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-char *pedirCadenaDinamica()
+char *leerFicheroDinamicoTodo(FILE *fd)
 {
+    // Declaracion de variables
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
-    char c;
-    int i = 0;
     int memoria_actual = TAM_BLOQUE;
+    int i = 0;
+    char c;
 
-    while ((c = getchar()) != '\n')
+    while ((c = fgetc(fd)) != EOF)
     {
-        if (i == memoria_actual)
+        if(i == memoria_actual - 1) 
         {
             memoria_actual += TAM_BLOQUE;
             p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));

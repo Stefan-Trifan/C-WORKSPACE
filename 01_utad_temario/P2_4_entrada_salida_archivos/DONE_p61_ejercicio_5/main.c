@@ -10,15 +10,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define DIRECCION "datos.txt"
 #define TAM_BLOQUE 10
+#define DIRECCION "datos.txt"
 
-#define RED "\033[1;31m"
-#define GREEN "\033[1;32m"
-#define YELLOW "\033[1;33m"
-#define RESET "\033[0m"
+typedef struct
+{
+    int    num_lineas;
+    char **lineas;
+}
+lineas_t;
 
 // Funciones del programa
+void guardarLineasFichero(lineas_t *caja_texto_fichero, FILE *fd);
+int contarLineasFichero(FILE *fd);
 
 // Funciones auxiliares
 char *leerFicheroDinamicoLinea(FILE *fd, int num_linea);
@@ -32,31 +36,20 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    FILE *fd = fopen(DIRECCION, "r+");
-    int num_linea_origen  = 4;
-    int num_linea_destino = 2;
-    char *str_linea_origen;
-    char *str_linea_destino;
+    lineas_t caja_texto_fichero;
+    FILE *fd;
 
-    // Comprobamos que el archivo existe
-    if(fd == NULL)
-    {
-        printf(RED"oopsi. No se ha podido localizar el archivo\n"RESET);
-        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
-        return EXIT_FAILURE;
-    }
+    // Abrimos el fichero
+    fd = fopen(DIRECCION, "r");
 
-    // Guardamos la linea de origen y de destino
-    str_linea_origen  = leerFicheroDinamicoLinea(fd, num_linea_origen);
-    str_linea_destino = leerFicheroDinamicoLinea(fd, num_linea_destino);
+    // Contamos las lineas que tiene el fichero
+    caja_texto_fichero.num_lineas = contarLineasFichero(fd);
 
-    // Imprimimos la linea de origen y de destino
-    printf("Linea origen:  %s\n", str_linea_origen);
-    printf("Linea destino: %s\n", str_linea_destino);
+    // Guardamos las lineas del fichero en nuestra estructura
+    guardarLineasFichero(&caja_texto_fichero, fd);
 
-    // Borramos la linea de destino
-    
-    // Reemplazamos en el fichero las 2 lineas
+    // Cerramos el archivo
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -66,6 +59,36 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+int contarLineasFichero(FILE *fd)
+{
+    int num_lineas = 0;
+    char c;
+
+    if((c = fgetc(fd)) != EOF)
+    {
+        num_lineas = 1;
+        while((c = fgetc(fd)) != EOF)
+        {
+            if(c == '\n')
+            {
+                num_lineas++;
+            }
+        }
+    }
+    rewind(fd);
+
+    return num_lineas;
+}
+
+void guardarLineasFichero(lineas_t *caja_texto_fichero, FILE *fd)
+{
+    caja_texto_fichero->lineas = malloc(caja_texto_fichero->num_lineas * sizeof(char *));
+    for(int i = 0; i < caja_texto_fichero->num_lineas; i++)
+    {
+        caja_texto_fichero->lineas[i] = leerFicheroDinamicoLinea(fd, i);
+        printf("Linea %d: %s\n", i, caja_texto_fichero->lineas[i]);
+    }
+}
 
 // Funciones auxiliares
 char *leerFicheroDinamicoLinea(FILE *fd, int num_linea)
@@ -76,17 +99,15 @@ char *leerFicheroDinamicoLinea(FILE *fd, int num_linea)
     int memoria_actual = TAM_BLOQUE;
     int linea_actual = 0;
 
-    rewind(fd);
-
     while ((c = fgetc(fd)) != EOF)
     {
-        if (c == '\n')
+        if(c == '\n')
         {
             linea_actual++;
         }
-        else if (linea_actual == num_linea)
+        else if(linea_actual == num_linea)
         {
-            if (i == memoria_actual - 1)
+            if (i == memoria_actual)
             {
                 memoria_actual += TAM_BLOQUE;
                 p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));

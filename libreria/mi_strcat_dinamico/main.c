@@ -20,7 +20,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
-char *mi_strcat_dinamico(char *destino, const char *origen);
+void *mi_strcat_dinamico(char **destino, const char *origen);
 char *pedirCadenaDinamica();
 void clearBuffer();
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     printf("Introduce la segunda cadena\n-> ");
     cadena_2 = pedirCadenaDinamica();
 
-    cadena_1 = mi_strcat_dinamico(cadena_1, cadena_2);
+    mi_strcat_dinamico(&cadena_1, cadena_2);
 
     printf("%s", cadena_1);
 
@@ -55,16 +55,14 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-char *mi_strcat_dinamico(char *destino, const char *origen)
+void *mi_strcat_dinamico(char **destino, const char *origen)
 {
-    destino = realloc(destino, sizeof(char) * (strlen(destino) + strlen(origen) + 1));
+    *destino = realloc(*destino, sizeof(char) * (strlen(*destino) + strlen(origen) + 1));
 
-    if (destino)
+    if (*destino)
     {
-        strcat(destino, origen);
+        strcat(*destino, origen);
     }
-
-    return destino;
 }
 
 char *pedirCadenaDinamica()
