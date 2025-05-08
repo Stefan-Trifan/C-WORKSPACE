@@ -13,7 +13,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
-char *mi_strdup(const char *origen);
+char *mi_strcpy_dinamico(const char *origen);
 void clearBuffer();
 
 /* _________________________________________
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     char *origen = "Esta es mi cadena";
     char *destino;
 
-    destino = mi_strdup(origen);
+    destino = mi_strcpy_dinamico(origen);
 
     printf("Destino: %s", destino);
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-char *mi_strdup(const char *origen)
+char *mi_strcpy_dinamico(const char *origen)
 {
     char *destino = NULL;
     int len;

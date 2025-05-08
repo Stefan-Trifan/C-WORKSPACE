@@ -10,6 +10,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define TAM_BLOQUE 10
+
 typedef struct direccion
 {
     char *nombre_calle;
@@ -29,7 +31,7 @@ ciudadano_t;
 // Funciones del programa
 
 // Funciones auxiliares
-char *mi_strdup(const char *origen);
+char *leerFicheroDinamicoTodo(FILE *fd);
 void clearBuffer();
 
 /* _________________________________________
@@ -39,20 +41,19 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
+    // TODO Falta recibir parametros argc
+
     // Declaracion de variables
-    char *p_nombre_fichero;
+    char *p_nombre_fichero = "addrress.json.txt";
+    FILE *fd = fopen(p_nombre_fichero, "r");
+    ciudadano_t ciudadano[2];
+    char *texto_fichero;
 
-    // Comprobamos los parametros del main
-    if(argc != 2)
-    {
-        printf("Faltan parametros\n");
-        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
-        return EXIT_FAILURE;
-    }
+    // Guardamos el texto del fichero
+    texto_fichero = leerFicheroDinamicoTodo(fd);
 
-    // Guardamos el nombre del fichero que vamos a utilizar
-    p_nombre_fichero = mi_strdup(argv[1]);
-    printf("%s", p_nombre_fichero);
+    // Imprimimos el texto del fichero
+    printf("%s", texto_fichero);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -64,16 +65,26 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-char *mi_strdup(const char *origen)
+char *leerFicheroDinamicoTodo(FILE *fd)
 {
-    char *destino = NULL;
-    int len = strlen(origen) + 1;
-    destino = (char *)malloc(len * sizeof(char));
-    if (destino) 
+    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
+    int memoria_actual = TAM_BLOQUE;
+    int i = 0;
+    char c;
+
+    while ((c = fgetc(fd)) != EOF)
     {
-        strcpy(destino, origen);
+        if (i == memoria_actual - 1)
+        {
+            memoria_actual += TAM_BLOQUE;
+            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
+        }
+        p_texto_destino[i] = c;
+        i++;
     }
-    return destino;
+    p_texto_destino[i] = '\0';
+
+    return p_texto_destino;
 }
 
 void clearBuffer()
