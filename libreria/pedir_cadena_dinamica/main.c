@@ -1,11 +1,11 @@
 /*
-    *	Autor
+    *   Autor
         Stefan Trifan
 
     *   Estado
 
-    * 	Enunciado
-        Esta funcion se queda solo con los caracteres necesarios
+    *   Enunciado
+        Lorem Ipsum
 */
 
 /* _________________________________________
@@ -13,13 +13,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-#define TAM_BLOQUE 5
+#include <string.h>
 
 // Funciones del programa
 
 // Funciones auxiliares
-char *pedirCadenaDinamica();
 void clearBuffer();
 
 /* _________________________________________
@@ -29,45 +27,17 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    char *texto;
-    
-    printf("Introduce tu texto: ");
-    texto = pedirCadenaDinamica();
+    // Declaracion de variables
 
-    printf("Texto es: %s\n", texto);
-
-    free(texto);
 
     printf("\n_________________________________________EXIT\n\n");
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 /* _________________________________________
    Inicio definicion de funciones */
 
 // Funciones del programa
-char *pedirCadenaDinamica()
-{
-    // Declaracion de variables
-    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
-    char c;
-    int i = 0;
-    int memoria_actual = TAM_BLOQUE;
-
-    while ((c = getchar()) != '\n')
-    {
-        if (i == memoria_actual - 1)
-        {
-            memoria_actual += TAM_BLOQUE;
-            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
-        }
-        p_texto_destino[i] = c;
-        i++;
-    }
-    p_texto_destino[i] = '\0';
-
-    return p_texto_destino;
-}
 
 // Funciones auxiliares
 void clearBuffer()
