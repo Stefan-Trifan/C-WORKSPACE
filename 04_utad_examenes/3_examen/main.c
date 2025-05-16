@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 {
     printf("\n____________________________________START\n\n");
 
-    if (argc != 2)
+    if (argc = 2)
     {
         printf(RED "Error: Tienes que introducir el nombre del archivo\n" RESET);
         printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
@@ -85,8 +85,7 @@ int main(int argc, char *argv[])
         fila_actual = leeLineaDinamicaFichero(fd_in, i);
 
         strcpy(contenido, strtok(fila_actual, "<"));
-        strcpy(contenido, strstr(fila_actual, ">"));
-
+        strcpy(contenido, strstr(fila_actual, ">")); 
         contenido[0] = ' ';
 
         // Imprimimos en pantalla la etiqueta y el contenido
