@@ -17,12 +17,16 @@
 #include <string.h>
 
 #define TAM_BLOQUE 10
+#define RED "\033[1;31m"
+#define GREEN "\033[1;32m"
+#define YELLOW "\033[1;33m"
+#define RESET "\033[0m"
 
 // Funciones del programa
 
 // Funciones auxiliares
 void mi_strcat_dinamico(char **destino, const char *origen);
-char *leerFicheroDinamicoLinea(FILE *fd, int num_linea);
+char *leerFicheroDinamicoLinea(FILE *fd);
 void clearBuffer();
 
 /* _________________________________________
@@ -34,6 +38,7 @@ int main(int argc, char *argv[])
 
     if(argc != 2)
     {
+        printf(RED"Introduce el nombre dek archivo"RESET);
         printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
         return EXIT_FAILURE;
     }
@@ -42,18 +47,17 @@ int main(int argc, char *argv[])
     FILE *fd = fopen(argv[1], "r");
     char *nombre_alumno   = NULL;
     char *apellido_alumno = NULL;
-    char *nombre_completo = malloc(sizeof(char));
-    nombre_completo[0] = '\0';
+    char *nombre_completo = calloc(1, sizeof(char));;
 
     if(fd == NULL)
     {
-        printf("oopsi te has equivocado\n");
+        printf(RED"oopsi te has equivocado\n"RESET);
         printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
         return EXIT_FAILURE;
     }
 
-    nombre_alumno   = leerFicheroDinamicoLinea(fd, 0);
-    apellido_alumno = leerFicheroDinamicoLinea(fd, 1);
+    nombre_alumno   = leerFicheroDinamicoLinea(fd);
+    apellido_alumno = leerFicheroDinamicoLinea(fd);
 
     mi_strcat_dinamico(&nombre_completo, nombre_alumno);
     mi_strcat_dinamico(&nombre_completo, " ");
@@ -62,6 +66,11 @@ int main(int argc, char *argv[])
     printf("nombre_alumno   = %s\n", nombre_alumno);
     printf("apellido_alumno = %s\n", apellido_alumno);
     printf("nombre_completo = %s\n", nombre_completo);
+
+    free(nombre_alumno);
+    free(apellido_alumno);
+    free(nombre_completo);
+    fclose(fd);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -83,36 +92,24 @@ void mi_strcat_dinamico(char **destino, const char *origen)
     }
 }
 
-char *leerFicheroDinamicoLinea(FILE *fd, int num_linea)
+char *leerFicheroDinamicoLinea(FILE *fd)
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
-    char c;
-    int i = 0;
     int memoria_actual = TAM_BLOQUE;
-    int linea_actual = 0;
+    int i = 0;
+    char c;
 
-    rewind(fd);
-
-    while ((c = fgetc(fd)) != EOF)
+    while ((c = fgetc(fd)) != EOF && c != '\n')
     {
-        if (c == '\n')
+        if (i == memoria_actual - 1)
         {
-            linea_actual++;
+            memoria_actual += TAM_BLOQUE;
+            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
         }
-        else if (linea_actual == num_linea)
-        {
-            if (i == memoria_actual - 1)
-            {
-                memoria_actual += TAM_BLOQUE;
-                p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
-            }
-            p_texto_destino[i] = c;
-            i++;
-        }
+        p_texto_destino[i] = c;
+        i++;
     }
     p_texto_destino[i] = '\0';
-
-    rewind(fd);
 
     return p_texto_destino;
 }

@@ -41,9 +41,13 @@ int main(int argc, char *argv[])
     printf("Introduce la segunda cadena\n-> ");
     cadena_2 = pedirCadenaDinamica();
 
+    cadena_1 = mi_strcat_dinamico(cadena_1, " ");
     cadena_1 = mi_strcat_dinamico(cadena_1, cadena_2);
 
     printf("%s", cadena_1);
+
+    free(cadena_1);
+    free(cadena_2);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
