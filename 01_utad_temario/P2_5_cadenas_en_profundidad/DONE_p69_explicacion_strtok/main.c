@@ -1,6 +1,11 @@
 /*
     *   Autor
         Stefan Trifan
+
+    *   Estado
+
+    *   Enunciado
+        Lorem Ipsum
 */
 
 /* _________________________________________
@@ -13,9 +18,9 @@
 #define TAM_BLOQUE 10
 
 // Funciones del programa
+char *pedirCadenaDinamica();
 
 // Funciones auxiliares
-char *leerCadenaDinamicaFichero(FILE *fd);
 void clearBuffer();
 
 /* _________________________________________
@@ -26,33 +31,37 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    FILE *fd;
-    char *linea;
-    char *nombre;
-    char *apellido;
-    int edad;
+    char cadena_original[] = "uno;dos;tres;cuatro";
+    char *token_primero;
+    char *token_segundo;
+    char *token_tercero;
+    char *token_cuarto;
 
-    // Abrimos el fichero
-    fd = fopen("./datos.csv", "r");
-    if (fd == NULL) {
-        printf("Error abriendo el archivo");
-        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
-        return EXIT_FAILURE;
-    }
+    // Imprimir
+    printf("Antes de strtok, cadena_original   = %s\n\n\n\n", cadena_original);
+    
 
-    // Sacamos la linea del fichero
-    linea = leerCadenaDinamicaFichero(fd);
+    // Primer punto
+    token_primero = strtok(cadena_original, ";");
 
-    // Leemos los datos
-    nombre   = strtok(linea, ";");
-    apellido = strtok(NULL, ";");
-    edad     = atoi(strtok(NULL, ";"));
+    // Segundo Punto
+    token_segundo = strtok(NULL, ";"); 
 
-    // Imprimos los datos
-    printf("Nombre:   %s\n", nombre);
-    printf("Apellido: %s\n", apellido);
-    printf("Edad:     %d\n", edad);
+    // Tercero Punto
+    token_tercero = strtok(NULL, ";");  
 
+    // Cuarto Punto
+    token_cuarto = strtok(NULL, ";");  
+
+    // Imprimir
+    printf("token_primero\n-> %s\n\n", token_primero);
+    printf("token_segundo\n-> %s\n\n", token_segundo);
+    printf("token_tercero\n-> %s\n\n", token_tercero);
+    printf("token_cuarto\n-> %s\n\n\n\n", token_cuarto);
+
+    printf("Despues de strtok, cadena_original = %s\n\n\n\n", cadena_original);
+    
+    
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
 }
@@ -61,14 +70,16 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
-char *leerCadenaDinamicaFichero(FILE *fd)
+
+// Funciones auxiliares
+char *pedirCadenaDinamica()
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
-    int memoria_actual = TAM_BLOQUE;
-    int i = 0;
     char c;
+    int i = 0;
+    int memoria_actual = TAM_BLOQUE;
 
-    while ((c = fgetc(fd)) != EOF)
+    while ((c = getchar()) != '\n')
     {
         if (i == memoria_actual - 1)
         {
@@ -83,7 +94,6 @@ char *leerCadenaDinamicaFichero(FILE *fd)
     return p_texto_destino;
 }
 
-// Funciones auxiliares
 void clearBuffer()
 {
     while (getchar() != '\n');
