@@ -31,11 +31,15 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    char *cadena_original = "uno.dos.tres.cuatro";
+    char cadena_original[] = "uno.dos.tres.cuatro";
     char *token_primero;
     char *token_segundo;
     char *token_tercero;
     char *token_cuarto;
+
+    // Imprimir
+    printf("Antes de strtok, cadena_original   = %s\n\n\n\n", cadena_original);
+    
 
     // Primer punto
     token_primero = strtok(cadena_original, ".");
@@ -50,12 +54,12 @@ int main(int argc, char *argv[])
     token_cuarto = strtok(NULL, ".");  
 
     // Imprimir
-    printf("%s\n\n\n\n", cadena_original);
-
     printf("token_primero\n-> %s\n\n", token_primero);
     printf("token_segundo\n-> %s\n\n", token_segundo);
     printf("token_tercero\n-> %s\n\n", token_tercero);
-    printf("token_cuarto\n-> %s\n\n", token_cuarto);
+    printf("token_cuarto\n-> %s\n\n\n\n", token_cuarto);
+
+    printf("Despues de strtok, cadena_original = %s\n\n\n\n", cadena_original);
     
     
     printf("\n_________________________________________EXIT\n\n");
