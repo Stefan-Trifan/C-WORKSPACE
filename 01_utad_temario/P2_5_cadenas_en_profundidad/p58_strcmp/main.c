@@ -24,7 +24,6 @@ int main(int argc, char *argv[])
 
     // Declaracion de variables
 
-
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
 }

@@ -59,6 +59,7 @@ char *leerFicheroDinamicoLinea(FILE *fd)
 
     return p_texto_destino;
 }
+
 void clearBuffer()
 {
     while (getchar() != '\n');

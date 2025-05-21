@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     // Declaracion de variables
     char *origen = "cadena1";
-    char destino[8];
+    char destino[8] = {0};
 
     printf("Antes:\n");
     printf("origen : %s\n", origen);

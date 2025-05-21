@@ -1,11 +1,6 @@
 /*
     *   Autor
         Stefan Trifan
-
-    *   Estado
-
-    *   Enunciado
-        Lorem Ipsum
 */
 
 /* _________________________________________
@@ -18,9 +13,9 @@
 #define TAM_BLOQUE 10
 
 // Funciones del programa
-char *pedirCadenaDinamica();
 
 // Funciones auxiliares
+char *pedirCadenaDinamica();
 void clearBuffer();
 
 /* _________________________________________
@@ -31,33 +26,37 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    char *cadena_original = "uno.dos.tres.cuatro";
-    char *token_primero;
-    char *token_segundo;
-    char *token_tercero;
-    char *token_cuarto;
+    char *cadena;
+    char caracter;
+    char *existe;
 
-    // Primer punto
-    token_primero = strtok(cadena_original, ".");
+    // Pedimos la cadena y el caracter
+    printf("Introduce la cadena de caracteres: ");
+    cadena = pedirCadenaDinamica();
 
-    // Segundo Punto
-    token_segundo = strtok(NULL, "."); 
-
-    // Tercero Punto
-    token_tercero = strtok(NULL, ".");  
-
-    // Cuarto Punto
-    token_cuarto = strtok(NULL, ".");  
-
-    // Imprimir
-    printf("%s\n\n\n\n", cadena_original);
-
-    printf("token_primero\n-> %s\n\n", token_primero);
-    printf("token_segundo\n-> %s\n\n", token_segundo);
-    printf("token_tercero\n-> %s\n\n", token_tercero);
-    printf("token_cuarto\n-> %s\n\n", token_cuarto);
+    printf("Introduce el caracter: ");
+    scanf("%c", &caracter);
+    clearBuffer();
     
-    
+    // Comprobamos si se encuentra
+    existe = strchr(cadena, caracter);
+
+
+    // Imprimos el resultado
+    if(existe != NULL)
+    {
+        // Si existe, calculamos la i
+        int posicion = existe - cadena;
+
+        printf("Existe! Esta en la %d de la cadena", posicion);
+    }
+    else
+    {
+        printf("No existe");
+    }
+
+    free(cadena);
+
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
 }
@@ -66,8 +65,6 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
-
-// Funciones auxiliares
 char *pedirCadenaDinamica()
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
@@ -77,7 +74,7 @@ char *pedirCadenaDinamica()
 
     while ((c = getchar()) != '\n')
     {
-        if (i == memoria_actual - 1)
+        if (i == memoria_actual)
         {
             memoria_actual += TAM_BLOQUE;
             p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
@@ -90,6 +87,7 @@ char *pedirCadenaDinamica()
     return p_texto_destino;
 }
 
+// Funciones auxiliares
 void clearBuffer()
 {
     while (getchar() != '\n');

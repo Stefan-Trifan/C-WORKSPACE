@@ -1,6 +1,11 @@
 /*
     *   Autor
         Stefan Trifan
+
+    *   Estado
+
+    *   Enunciado
+        Lorem Ipsum
 */
 
 /* _________________________________________
@@ -14,6 +19,7 @@
 
 // Funciones del programa
 char *pedirCadenaDinamica();
+
 // Funciones auxiliares
 void clearBuffer();
 
@@ -25,16 +31,29 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    char *cadena;
-    char letra;
+    char *cadena_original = "uno.dos.tres.cuatro.cinco";
+    char *p_primero;
+    char *p_segundo;
+    char *p_penultimo;
+    char *p_ultimo;
 
-    // Pedimos la cadena y el caracter
-    printf("Introduce la cadena de caracteres: ");
-    cadena = pedirCadenaDinamica();
+    // Primer punto
+    p_primero  = strchr (cadena_original, '.');
 
-    printf("Introduce la letra: ");
-    scanf("%c", letra);
+    // Segundo Punto
+    p_segundo    = strchr (p_primero + 1, '.');  
+    
+    // Ultimo punto
+    p_ultimo   = strrchr(cadena_original, '.');
 
+    // Imprimir
+    printf("%s\n\n\n\n", cadena_original);
+
+    printf("p_primero\n-> %s\n\n", p_primero);
+    printf("p_segundo\n-> %s\n\n", p_segundo);
+    printf("p_ultimo\n-> %s\n\n", p_ultimo);
+    
+    
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
 }
@@ -43,6 +62,8 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
+
+// Funciones auxiliares
 char *pedirCadenaDinamica()
 {
     char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
@@ -52,7 +73,7 @@ char *pedirCadenaDinamica()
 
     while ((c = getchar()) != '\n')
     {
-        if (i == memoria_actual)
+        if (i == memoria_actual - 1)
         {
             memoria_actual += TAM_BLOQUE;
             p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
@@ -65,7 +86,6 @@ char *pedirCadenaDinamica()
     return p_texto_destino;
 }
 
-// Funciones auxiliares
 void clearBuffer()
 {
     while (getchar() != '\n');
