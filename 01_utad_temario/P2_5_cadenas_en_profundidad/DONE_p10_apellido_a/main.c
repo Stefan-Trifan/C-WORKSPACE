@@ -18,8 +18,8 @@
 #define TAM_BLOQUE 10
 
 // Funciones del programa
-char *convertir_a_mayus(char *cadena);
-char *convertir_a_minus(char *cadena);
+void convertir_a_mayus(char *cadena);
+void convertir_a_minus(char *cadena);
 
 // Funciones auxiliares
 char *mi_strdup(const char *origen);
@@ -32,32 +32,38 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    // TODO recibir nombre_completo por linea de comandos
+    // Recibir apellido por linea de comandos
     if(argc != 2)
     {
+        printf("\033[1;31mERROR: Tienes que introducir el nombre\n");
         printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
         return EXIT_FAILURE;
     }
 
     // Declaramos las variables
-    char *nombre_completo;
+    char *apellido;
     char *nombre_mayus;
     char *nombre_minus;
 
-    // Guardamos los nombres en las variables
-    nombre_completo = mi_strdup(argv[1]);
+    // Guardamos el apellido
+    apellido = mi_strdup(argv[1]);
 
-    nombre_mayus = mi_strdup(nombre_completo);
-    nombre_minus = mi_strdup(nombre_completo);
+    nombre_mayus = mi_strdup(apellido);
+    nombre_minus = mi_strdup(apellido);
 
     // Convertimos
     convertir_a_mayus(nombre_mayus);
-    nombre_minus = convertir_a_minus(nombre_completo);
+    convertir_a_minus(nombre_minus);
 
     // Imprimmos los apellidos en mayuscula y en minuscula
-    printf("nombre_completo: %s\n", nombre_completo);
-    printf("nombre_mayus: %s\n", nombre_mayus);
-    printf("nombre_minus: %s\n", nombre_minus);
+    printf("apellido:        %s\n", apellido);
+    printf("nombre_mayus:    %s\n", nombre_mayus);
+    printf("nombre_minus:    %s\n", nombre_minus);
+
+    // Liberamos la memoria reservada
+    free(apellido);
+    free(nombre_mayus);
+    free(nombre_minus);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -67,7 +73,7 @@ int main(int argc, char *argv[])
    Inicio definicion de funciones */
 
 // Funciones del programa
-char *convertir_a_mayus(char *cadena)
+void convertir_a_mayus(char *cadena)
 {
     int i = 0;
 
@@ -79,11 +85,9 @@ char *convertir_a_mayus(char *cadena)
         }
         i++;
     }
-
-    return cadena;
 }
 
-char *convertir_a_minus(char *cadena)
+void convertir_a_minus(char *cadena)
 {
     int i = 0;
 
@@ -95,8 +99,6 @@ char *convertir_a_minus(char *cadena)
         }
         i++;
     }
-
-    return cadena;
 }
 
 // Funciones auxiliares
