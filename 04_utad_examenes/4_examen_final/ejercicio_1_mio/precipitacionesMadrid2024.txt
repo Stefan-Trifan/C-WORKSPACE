@@ -14,3 +14,7 @@ Diciembre;4.9 (l/m2)
 Mes de máxima precipitación:    123.40 l/m²
 Mes de mínima precipitación:    4.90 l/m²
 Media anual de precipitaciones: 42.38 l/m²
+
+Mes de máxima precipitación:    123.40 l/m²
+Mes de mínima precipitación:    4.90 l/m²
+Media anual de precipitaciones: 42.38 l/m²
