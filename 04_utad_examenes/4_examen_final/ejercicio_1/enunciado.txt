@@ -1,0 +1,129 @@
+Histórico de precipitaciones 
+
+El histórico de precipitaciones mensuales acaecidas en Madrid durante el año 2024 se almacena en el fichero de nombre “precipitacionesMadrid2024.txt”. Este nombre es conocido por el programa y lo puede abrir directamente.
+
+ 
+
+El formato del fichero es el siguiente:
+
+La primera línea es la cabecera con los nombres de cada uno de los campos
+Mes;Precipitación media (l/m²)
+El resto del fichero está formado por 12 líneas, una para cada mes, con el siguiente formato:
+<mes>;<valor> (l/m2)
+Por ejemplo: 
+
+Enero;71.7 (l/m2)
+Los requisitos del programa son:
+
+Extraer del fichero los valores mensuales de precipitaciones.
+Calcular el mes de precipitaciones máximas, mínimas y la media de precipitaciones anuales.
+Presentar por pantalla cada uno de los valores calculados anteriormente
+Agregar al final del fichero las líneas con los datos estadísticos calculados (mes con precipitaciones máximas, mínimas y media de precipitaciones).
+ 
+
+Ejemplo de fichero “precipitacionesMadrid2024.txt”: 
+
+ 
+
+Mes;Precipitación media (l/m²) 
+
+Enero;71.7 (l/m2)   
+
+Febrero;30.0 (l/m2)
+
+Marzo;102.0 (l/m2)  
+
+Abril;61.0 (l/m2)
+
+Mayo; 30 (l/m2)
+
+Junio;13.0 (l/m2)
+
+Julio;9.0 (l/m2)
+
+Agosto;13.0 (l/m2)
+
+Septiembre;19.7 (l/m2)
+
+Octubre;123.4 (l/m2)
+
+Noviembre;30.8 (l/m2)
+
+Diciembre;4.9 (l/m2)
+
+ 
+
+No es necesario el uso de estructuras o listas dinámicas de estructuras, sólo se pide parsear ciertos datos leídos de fichero.
+
+ 
+
+Se pide implementar las siguientes funciones:
+
+// Devuelve una línea del fichero que se pasa como 
+
+// parámetro utilizando la función getc o fgetc y 
+
+// reservando memoria dinamica 
+
+char* leeLineaDinamicaFichero(FILE *fd);
+
+// Función que de una línea que se le pasa como 
+
+// parámetro se extrae el valor las precipitaciones
+
+float ObtenerPrecipitacion( char *cadena);
+
+ 
+
+ 
+
+Ejemplo de ejecución:
+
+
+
+$ ./precipitaciones.exe
+
+Mes de máxima precipitación: Octubre (123.4 l/m²)
+
+Mes de mínima precipitación: Diciembre (4.9 l/m²)
+
+Media anual de precipitaciones: 42.38 l/m²
+
+ 
+
+Contenido del fichero después de modificarlo:
+
+ 
+
+Mes;Precipitación media (l/m²)     
+
+Enero;71.7 (l/m2)           
+
+Febrero;30.0 (l/m2)
+
+Marzo;102.0 (l/m2)         
+
+Abril;61.0 (l/m2)
+
+Mayo; 30 (l/m2)
+
+Junio;13.0 (l/m2)
+
+Julio;9.0 (l/m2)
+
+Agosto;13.0 (l/m2)
+
+Septiembre;19.7 (l/m2)
+
+Octubre;123.4 (l/m2)
+
+Noviembre;30.8 (l/m2)
+
+Diciembre;4.9 (l/m2)
+
+Mes de máxima precipitación: Octubre (123.4 l/m²)
+
+Mes de mínima precipitación: Diciembre (4.9 l/m²)
+
+Media anual de precipitaciones: 42.38 l/m²
+

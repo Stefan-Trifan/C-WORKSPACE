@@ -1,0 +1,16 @@
+Mes;Precipitación media (l/m²) 
+Enero;71.7 (l/m2)   
+Febrero;30.0 (l/m2)
+Marzo;102.0 (l/m2)  
+Abril;61.0 (l/m2)
+Mayo;30 (l/m2)
+Junio;13.0 (l/m2)
+Julio;9.0 (l/m2)
+Agosto;13.0 (l/m2)
+Septiembre;19.7 (l/m2)
+Octubre;123.4 (l/m2)
+Noviembre;30.8 (l/m2)
+Diciembre;4.9 (l/m2)
+Mes de máxima precipitación:    123.40 l/m²
+Mes de mínima precipitación:    4.90 l/m²
+Media anual de precipitaciones: 42.38 l/m²

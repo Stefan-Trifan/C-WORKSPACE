@@ -1,0 +1,154 @@
+Ensayo
+Censo Animales
+
+
+
+Se desea realizar el censo de especies animales de una determinada zona.
+
+Se desea realizar este censo a partir de un programa de manera que el usuario introduzca la información de cada especie por el teclado y sea almacenada en un fichero cuyo nombre es introducido por parámetros del main.
+
+ 
+
+Los datos de cada especie que se almacenarán en la estructura datosEspecie_t son:
+
+Nombre Común. Nombre común (ej. Lobo ibérico)
+Grupo taxonómico: Clasificación general. Solo se tendrán en cuenta los siguientes MAMIFERO, AVE, REPTIL, DESCONOCIDO.
+Cantidad de ejemplares: Número de individuos censados.
+ 
+
+El programa tendrá como requisitos: 
+
+El nombre del fichero con los datos de las especies censadas se le pasarán al programa por parámetros del main.
+Los datos de cada especie son introducidos por teclado por el usuario sin conocer el número de especies total que se van a introducir. Cuando se pida los datos de “Grupo taxonómico”, el usuario debe introducir “MAMIFERO, AVE o REPTIL”. En caso de no hacerlo (cualquier otra combinación de caracteres), el valor se considerará “DESCONOCIDO” y el programa debe volver a pedirlo hasta que introduzca un grupo válido. Para comprobar grupos taxonómicos válidos, se recomienda usar una variable global como la siguiente:
+                char* grupoStr[]= { "MAMIFERO", "AVE", "REPTIL", "DESCONOCIDO"};
+
+Igualmente, cuando se pida la cantidad, el usuario debe introducir un valor numérico válido. En caso contrario, se debe volver a pedir hasta que introduzca un número válido.
+El uso de memoria deberá optimizarse.
+El programa debe pedir datos de cada especie hasta que el usuario lo desee (preguntar si debe continuar después de haber leído una especie correctamente).
+Una vez que el usuario haya determinado no seguir introduciendo datos (el usuario selecciona que no quiere introducir más), el programa debe presentar por pantalla todas las especies introducidas en esa sesión en orden inverso (primero aparecerá la última especie introducida).
+Una vez presentadas, se añadirán al fichero pasado por parámetros del main con el siguiente formato, y se cerrará para salvar su contenido:
+<Nombre común>;<grupo taxonómico>;<cantidad de ejemplares>
+
+ 
+
+Se pide implementar las siguientes funciones:
+
+// Devuelve la cadena de caracteres que el usuario ha //escrito en el teclado por terminal 
+
+// reservando memoria de manera dinamica 
+
+char* leeLineaDinamica();
+
+ 
+
+// Función que, dada una cadena, compara con todos
+
+// los grupos taxonómicos válidos, y devuelve el 
+
+// enumerado correspondiente.
+
+// Si no es un grupo válido, devuelve el valor 
+
+// enumerado "DESCONOCIDO”
+
+grupo_e stringAGrupo(char* grupo)
+
+ 
+
+// Función que pide datos de una especie por terminal
+
+// Rellena un elemento de tipo "especie_t" con 
+
+// datos leidos y lo devuelve por parámetros de return 
+
+especie_t pideEspecie()
+
+ 
+
+Un ejemplo de ejecución puede ser:
+
+ 
+
+Introduzca nombre de especie:
+
+Leon
+
+Introduzca grupo:
+
+MANIFERO
+
+Grupo no válido
+
+Introduzca grupo:
+
+MAMIFERO
+
+Introduzca número de individuos:
+
+a12
+
+Cantidad no válida
+
+Introduzca número de individuos:
+
+12
+
+Desea salir? Si/No
+
+No
+
+Introduzca nombre de especie:
+
+Aguila
+
+Introduzca grupo:
+
+AVE
+
+Introduzca número de individuos:
+
+34
+
+Desea salir? Si/No
+
+No
+
+Introduzca nombre de especie:
+
+Iguana
+
+Introduzca grupo:
+
+Reptil
+
+Grupo no válido
+
+Introduzca grupo:
+
+REPTIL
+
+Introduzca número de individuos:
+
+23
+
+Desea salir? Si/No
+
+Si
+
+Nombre: Iguana
+
+Grupo: REPTIL
+
+Numero: 23
+
+Nombre: Aguila
+
+Grupo: AVE
+
+Numero: 34
+
+Nombre: Leon
+
+Grupo: MAMIFERO
+
+Numero: 12
