@@ -26,7 +26,12 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
+    FILE *fd = fopen("datos.txt", "r");
 
+    char *cadena;
+    cadena = leerFicheroDinamicoLinea(fd);
+
+    printf("%s", cadena);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;

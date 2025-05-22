@@ -4,13 +4,13 @@
 
 #define TAM_BLOQUE 10
 
-// Lee una lÃ­nea dinÃ¡mica usando fgetc
+// Lee una linea dinÃ¡mica usando fgetc
 char *leeLineaDinamicaFichero(FILE *fd);
 
-// FunciÃ³n para generar nombre de salida con extensiÃ³n .out
+// Funcion para generar nombre de salida con extension .out
 char *generaNombreSalida(char *nombreEntrada);
 
-// Procesa lÃ­nea, muestra etiqueta y contenido, y escribe contenido al fichero
+// Procesa linea, muestra etiqueta y contenido, y escribe contenido al fichero
 void procesarLinea(char *linea, FILE *f_out);
 
 int main(int argc, char *argv[])
@@ -106,7 +106,7 @@ char *generaNombreSalida(char *nombreEntrada)
     return nuevo_nombre;
 }
 
-// Procesa lÃ­nea, muestra etiqueta y contenido, y escribe contenido al fichero
+// Procesa linea, muestra etiqueta y contenido, y escribe contenido al fichero
 void procesarLinea(char *linea, FILE *f_out)
 {
     char *inicioEtiqueta = strchr(linea, '<'); // <b>Hola mundo </b>

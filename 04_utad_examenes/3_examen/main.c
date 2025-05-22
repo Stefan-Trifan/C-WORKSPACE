@@ -1,167 +1,154 @@
-/**
- * Autor: Stefan Trifan
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#define RED "\033[1;31m"
-#define GREEN "\033[1;32m"
-#define YELLOW "\033[1;33m"
-#define RESET "\033[0m"
-
 #define TAM_BLOQUE 10
 
-// Declaracion de funciones
+// Lee una lÃ­nea dinÃ¡mica usando fgetc
+char *leeLineaDinamicaFichero(FILE *fd);
+
+// FunciÃ³n para generar nombre de salida con extensiÃ³n .out
 char *generaNombreSalida(char *nombreEntrada);
 
-// Funciones auxiliares
-char *leeLineaDinamicaFichero(FILE *fd, int num_linea);
+// Procesa lÃ­nea, muestra etiqueta y contenido, y escribe contenido al fichero
+void procesarLinea(char *linea, FILE *f_out);
 
 int main(int argc, char *argv[])
 {
-    printf("\n____________________________________START\n\n");
-
-    if (argc = 2)
+    if (argc < 2)
     {
-        printf(RED "Error: Tienes que introducir el nombre del archivo\n" RESET);
-        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
-        return EXIT_FAILURE;
+        fprintf(stderr, "Uso: %s <nombre_fichero>\n", argv[0]);
+        return 1;
     }
 
-    // Configuramos el nombre del archivo de entrada
-    char *direccion_fichero_entrada = (char *)malloc(sizeof(char) * strlen(argv[1]));
-    strcpy(direccion_fichero_entrada, argv[1]);
-
-    // Declaracion de variables
-    char *direccion_fichero_salida;
-    FILE *fd_in = fopen(direccion_fichero_entrada, "r");
-    char *fila_actual;
-    int num_lineas_fichero;
-
-    // Comprobamos que el archivo se ha abierto correctamente
-    if (fd_in == NULL)
+    FILE *fd_In = fopen(argv[1], "r");
+    if (!fd_In)
     {
-        printf(RED "Error: No se ha podido encontrar el archivo\n" RESET);
-        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
-        return EXIT_FAILURE;
+        perror("No se pudo abrir el fichero de entrada");
+        return 1;
     }
 
-    // Generamos el nombre del fichero de salida
-    direccion_fichero_salida = generaNombreSalida(direccion_fichero_entrada);
-
-    // Construimos el archivo de salida con la extension .out
-    FILE *fd_out = fopen(direccion_fichero_salida, "w");
-
-    // Contamos el numero de filas
-    char c = fgetc(fd_in);
-    if (c != EOF)
+    char *nombreSalida = generaNombreSalida(argv[1]);
+    FILE *fd_Out = fopen(nombreSalida, "w");
+    if (!fd_Out)
     {
-        num_lineas_fichero++;
-    }
-    while ((c = fgetc(fd_in)) != EOF)
-    {
-        if (c == '\n')
-        {
-            num_lineas_fichero++;
-        }
+        perror("No se pudo crear el fichero de salida");
+        free(nombreSalida);
+        fclose(fd_In);
+        return 1;
     }
 
-    // Recorremos cada una de las filas para procesarlas
-    for (int i = 1; i <= num_lineas_fichero; i++)
+    char *linea;
+    while ((linea = leeLineaDinamicaFichero(fd_In)) != NULL)
     {
-        char etiqueta[50];
-        char contenido[100];
-
-        // Extraemos el valor de las etiquetas
-        fila_actual = leeLineaDinamicaFichero(fd_in, i);
-
-        strcpy(etiqueta, strstr(fila_actual, ">"));
-        strcpy(etiqueta, strtok(fila_actual, ">"));
-        strcpy(etiqueta, strtok(fila_actual, "<"));
-
-        // Extraemos el contenido de las etiquetas
-        fila_actual = leeLineaDinamicaFichero(fd_in, i);
-
-        strcpy(contenido, strtok(fila_actual, "<"));
-        strcpy(contenido, strstr(fila_actual, ">")); 
-        contenido[0] = ' ';
-
-        // Imprimimos en pantalla la etiqueta y el contenido
-        printf("Etiqueta: %s\n", etiqueta);
-        printf("Contenido:%s\n\n", contenido);
-
-        // Escribimos en el archivo solamente el contenido de las etiquetas
-        fprintf(fd_out, "%s\n", contenido);
+        procesarLinea(linea, fd_Out);
+        free(linea);
     }
 
-    free(direccion_fichero_entrada);
-    free(direccion_fichero_salida);
-    fclose(fd_in);
-    fclose(fd_out);
+    free(nombreSalida);
+    fclose(fd_In);
+    fclose(fd_Out);
 
-    printf("\n____________________________________START\n\n");
+    return 0;
 }
 
-// Declaracion de funciones
-/**
- * Función para generar nombre de salida con extensión .out
- */
+char *leeLineaDinamicaFichero(FILE *fd)
+{
+    int tam = TAM_BLOQUE;
+    char *LineaFich = (char *)malloc(sizeof(char) * tam);
+
+    char newchar;
+    int i = 0;
+    while (((newchar = fgetc(fd)) != '\n') && (newchar != EOF))
+    {
+        LineaFich[i++] = newchar;
+        if (i >= tam + 1)
+        {
+            tam += TAM_BLOQUE;
+            LineaFich = (char *)realloc(LineaFich, sizeof(char) * tam);
+        }
+    }
+    LineaFich[i] = '\0';
+
+    if (i == 0 && newchar == EOF)
+    {
+        LineaFich = NULL;
+    }
+
+    return (LineaFich);
+}
+
 char *generaNombreSalida(char *nombreEntrada)
 {
-    char *nombre_salida = (char *)malloc(sizeof(char) * strlen(nombreEntrada));
+    // Busca la Ãºltima apariciÃ³n del punto (.) para detectar la extensiÃ³n.
+    const char *extension = strrchr(nombreEntrada, '.');
+    int len_base;
 
-    // Copiamos el nombre original
-    if (nombre_salida)
+    // Comprueba si es .txt.
+    if (extension && strcmp(extension, ".txt") == 0)
     {
-        strcpy(nombre_salida, nombreEntrada);
+        len_base = extension - nombreEntrada;
+    }
+    else
+    {
+        len_base = strlen(nombreEntrada);
     }
 
-    // Quitamos la extension .txt
-    nombre_salida = strtok(nombre_salida, ".");
+    char *nuevo_nombre = malloc(len_base + 5); // ".out" + '\0' = 5 caracteres
+    if (!nuevo_nombre)
+        return NULL;
 
-    // Aniadimos la extension .out
-    strcat(nombre_salida, ".out");
+    // Copia la parte del nombre sin la extensiÃ³n y le concatena .out
+    strncpy(nuevo_nombre, nombreEntrada, len_base);
+    nuevo_nombre[len_base] = '\0';
+    strcat(nuevo_nombre, ".out");
 
-    return nombre_salida;
+    return nuevo_nombre;
 }
 
-// Funciones auxiliares
-/**
- * Lee una línea almacenada en memoria dinámica
- * usando getc o fgetc
- */
-char *leeLineaDinamicaFichero(FILE *fd, int num_linea)
+// Procesa lÃ­nea, muestra etiqueta y contenido, y escribe contenido al fichero
+void procesarLinea(char *linea, FILE *f_out)
 {
-    char *p_cadena_destino = (char *)malloc(sizeof(char) * TAM_BLOQUE);
-    int memoria_actual = TAM_BLOQUE;
-    int linea_actual = 1;
-    int i = 0;
-    char c;
+    char *inicioEtiqueta = strchr(linea, '<'); // <b>Hola mundo </b>
+    if (!inicioEtiqueta)
+        return;
 
-    rewind(fd);
+    char *finEtiqueta = strchr(inicioEtiqueta, '>'); //>Hola mundo </b>
+    if (!finEtiqueta)
+        return;
 
-    while ((c = fgetc(fd)) != EOF)
+    int lenEtiqueta = finEtiqueta - inicioEtiqueta - 1; // 1
+    char *etiqueta = malloc(lenEtiqueta + 1);
+    strncpy(etiqueta, inicioEtiqueta + 1, lenEtiqueta); // b
+    etiqueta[lenEtiqueta] = '\0';
+
+    char *valor = finEtiqueta + 1;      // Hola mundo
+    char *cierre = strstr(valor, "</"); //</b>
+    if (!cierre)
     {
-        if (c == '\n')
-        {
-            linea_actual++;
-        }
-        else if (linea_actual == num_linea)
-        {
-            if (i == memoria_actual - 1)
-            {
-                memoria_actual += TAM_BLOQUE;
-                p_cadena_destino = (char *)realloc(p_cadena_destino, sizeof(char) * memoria_actual);
-            }
-            p_cadena_destino[i] = c;
-            i++;
-        }
+        free(etiqueta);
+        return;
     }
-    p_cadena_destino[i] = '\0';
 
-    rewind(fd);
+    int lenValor = cierre - valor; // 10
+    char *contenido = malloc(lenValor + 1);
+    strncpy(contenido, valor, lenValor); // Hola mundo
+    contenido[lenValor] = '\0';
 
-    return p_cadena_destino;
+    printf("Etiqueta: %s\n", etiqueta);
+    printf("Contenido: %s\n\n", contenido);
+    fprintf(f_out, "%s\n", contenido);
+
+    free(etiqueta);
+    free(contenido);
 }
+
+// Version 2 de la funcion generaNombreSalida
+/*
+char* generaNombreSalida( char *nombreEntrada){
+        char* nombreSalida=(char*)malloc(sizeof(char)*(strlen(nombreEntrada)+5));//+1 por el '\0' y +4 por ".out"
+        nombreSalida=strtok(nombreEntrada,".");//cojo el nombreEntrada hasta el . de la extension
+        nombreSalida=strcat(nombreSalida,".out");//aÃ±ado .out al final
+        return nombreSalida;
+}
+*/

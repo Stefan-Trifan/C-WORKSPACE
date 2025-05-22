@@ -20,7 +20,7 @@
 // Funciones del programa
 
 // Funciones auxiliares
-void mi_strcat_dinamico(char **destino, const char *origen);
+void mi_strcat_dinamico(char **destino, char *origen);
 char *pedirCadenaDinamica();
 void clearBuffer();
 
@@ -32,18 +32,20 @@ int main(int argc, char *argv[])
     printf("\n_________________________________________START\n\n");
 
     // Declaracion de variables
-    char *cadena_1;
-    char *cadena_2;
+    char *origen;
+    char *destino;
 
-    printf("Introduce la priemra cadena\n-> ");
-    cadena_1 = pedirCadenaDinamica();
+    // Pedimos
+    printf("-> ");
+    origen = pedirCadenaDinamica();
+    printf("-> ");
+    destino = pedirCadenaDinamica();
 
-    printf("Introduce la segunda cadena\n-> ");
-    cadena_2 = pedirCadenaDinamica();
+    // Copiamos
+    mi_strcat_dinamico(&destino, origen);
 
-    mi_strcat_dinamico(&cadena_1, cadena_2);
-
-    printf("%s", cadena_1);
+    // Imprimimos
+    printf("%s", destino);
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -55,11 +57,11 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-void mi_strcat_dinamico(char **destino, const char *origen)
+void mi_strcat_dinamico(char **destino, char *origen)
 {
     *destino = realloc(*destino, sizeof(char) * (strlen(*destino) + strlen(origen) + 1));
-
-    if (*destino)
+    
+    if(*destino != NULL)
     {
         strcat(*destino, origen);
     }
@@ -89,6 +91,5 @@ char *pedirCadenaDinamica()
 
 void clearBuffer()
 {
-    while (getchar() != '\n')
-        ;
+    while (getchar() != '\n');
 }

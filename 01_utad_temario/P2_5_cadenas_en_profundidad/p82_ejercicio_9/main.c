@@ -1,6 +1,11 @@
 /*
     *   Autor
         Stefan Trifan
+
+    *   Estado
+
+    *   Enunciado
+        Lorem Ipsum
 */
 
 /* _________________________________________
@@ -10,28 +15,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAM_BLOQUE 10
-
-typedef struct direccion
-{
-    char *nombre_calle;
-    char *piso;
-    char puerta;
-}
-direccion_t;
-
-typedef struct ciudadano
-{
-    char *nombre;
-    int edad;
-    direccion_t direccion;
-}
-ciudadano_t;
-
 // Funciones del programa
 
 // Funciones auxiliares
-char *leerFicheroDinamicoTodo(FILE *fd);
+char *mi_strcpy_dinamico(const char *origen);
 void clearBuffer();
 
 /* _________________________________________
@@ -41,19 +28,36 @@ int main(int argc, char *argv[])
 {
     printf("\n_________________________________________START\n\n");
 
-    // TODO Falta recibir parametros argc
-
+    // todo descomentar bloque
+    // Comprobamos que el numero de parametros es correcto
+    // if(argc != 2)
+    // {
+    //     printf("\033[31mERROR: Uso: ./main addrress.json\n\033[0m");
+    //     printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
+    //     return EXIT_FAILURE;
+    // }
+    // char *nombre_fichero = NULL; // todo descomentar y mover
+    // nombre_fichero = mi_strcpy_dinamico(argv[1]); // todo descomentar y mover
+      
     // Declaracion de variables
-    char *p_nombre_fichero = "addrress.json.txt";
-    FILE *fd = fopen(p_nombre_fichero, "r");
-    ciudadano_t ciudadano[2];
-    char *texto_fichero;
+    char nombre_fichero[] = "addrress.json.txt"; // todo reemplazar 
+    FILE *fd;
 
-    // Guardamos el texto del fichero
-    texto_fichero = leerFicheroDinamicoTodo(fd);
+    // Se pide crear un programa que reciba por argc/argv el nombre de un fichero "json"
+    fd = fopen(nombre_fichero, "a+");
+    if(fd == NULL)
+    {
+        printf("\033[31mERROR: No ha sido posible abrir el archivo \n\033[0m");
+        printf("\033[31m\n_________________________________________FAIL\n\n\033[0m");
+        return EXIT_FAILURE;
+    }
 
-    // Imprimimos el texto del fichero
-    printf("%s", texto_fichero);
+    // Se debe leer el fichero, almacenarlo en memoria y mostrar su contenido formateado 
+
+    // Se debe crear un menú que almacene nuevos datos como los mostrados. 
+    // El usuario que introduce elementos hasta que pida parar 
+
+    // Se debe escribir los nuevos datos al fichero json antes de cerrar el programa
 
     printf("\n_________________________________________EXIT\n\n");
     return EXIT_SUCCESS;
@@ -65,26 +69,19 @@ int main(int argc, char *argv[])
 // Funciones del programa
 
 // Funciones auxiliares
-char *leerFicheroDinamicoTodo(FILE *fd)
+char *mi_strcpy_dinamico(const char *origen)
 {
-    char *p_texto_destino = malloc(sizeof(char) * TAM_BLOQUE);
-    int memoria_actual = TAM_BLOQUE;
-    int i = 0;
-    char c;
+    char *destino = NULL;
+    int len;
 
-    while ((c = fgetc(fd)) != EOF)
+    len = strlen(origen) + 1;
+    destino = (char *)malloc(len * sizeof(char));
+    if(destino)
     {
-        if (i == memoria_actual - 1)
-        {
-            memoria_actual += TAM_BLOQUE;
-            p_texto_destino = realloc(p_texto_destino, memoria_actual * sizeof(char));
-        }
-        p_texto_destino[i] = c;
-        i++;
+        strcpy(destino, origen);
     }
-    p_texto_destino[i] = '\0';
-
-    return p_texto_destino;
+    
+    return destino;
 }
 
 void clearBuffer()
