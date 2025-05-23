@@ -1,0 +1,2 @@
+Peliculanus;MAMIFERO;900
+perrito;REPTIL;300
