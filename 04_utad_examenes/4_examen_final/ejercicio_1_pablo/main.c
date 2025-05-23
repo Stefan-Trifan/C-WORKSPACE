@@ -27,13 +27,7 @@ int main()
     int numRepeticiones = 0;
 
     // Array que guarda los meses
-    char *listaMeses[] = 
-    {
-        "Enero", "Febrero", "Marzo", 
-        "Abril", "Mayo", "Junio", 
-        "Julio", "Agosto", "Septiembre", 
-        "Octubre", "Noviembre", "Diciembre"
-    };
+    char *listaMeses[] = {"Enero","Febrero", "Marzo", "Abril", "Mayo","Junio", "Julio", "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"};
 
     // Guardamos los datos
     while (!feof(fd))

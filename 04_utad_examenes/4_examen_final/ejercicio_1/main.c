@@ -21,7 +21,7 @@
 
 // Funciones del programa
 char* leeLineaDinamicaFichero(FILE *fd);
-float obtenerPrecipitacion( char *cadena);
+float obtenerPrecipitacion(char *cadena);
 // Inicializamos una nueva instancia de la estructra. Reservamos memoria
 // Funciones auxiliares
 void clearBuffer();
