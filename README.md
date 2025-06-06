@@ -2,7 +2,6 @@
 
 > [!NOTE]
 > Este repositorio recoge **todo el trabajo, temario y ejercicios** realizados en **programación en C** durante el primer curso del grado en Ingeniería del Software.
-
 > Incluye tanto el contenido de las asignaturas universitarias como el material adicional que he completado por cuenta propia para reforzar mis conocimientos.
 
 ## Contenido del repositorio
